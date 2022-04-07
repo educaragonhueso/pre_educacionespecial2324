@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Click/Tap To Zoom Image Examples</title>
+<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/zoom/image-zoom.css" />
+<style>
+   .container { margin: 150px auto; max-width: 640px; }
+   body { background-color: #ccc; }
+   </style>
+</head>
+
+<body><div id="jquery-script-menu">
+<div class="jquery-script-center">
+<ul>
+<li><a href="https://www.jqueryscript.net/zoom/click-tap-image.html">Download This Plugin</a></li>
+<li><a href="https://www.jqueryscript.net/">Back To jQueryScript.Net</a></li>
+</ul><div id="carbon-block"></div>
+<div class="jquery-script-ads"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-2783044520727903";
+/* jQuery_demo */
+google_ad_slot = "2780937993";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+<div class="jquery-script-clear"></div>
+</div>
+</div>
+   <div class="container"><h1>Click/Tap To Zoom Image Examples</h1><p>Click/tap to zoom-in on an image, pan around to inspect the details and click again to zoom-out</p><h2>Default:</h2><img id="imageZoom" src="https://source.unsplash.com/CkW90N_oro8/1200x900" alt="A image to apply the ImageZoom plugin">
+      <h2>Zoom Level: 2x</h2><img id="imageZoom2" src="https://source.unsplash.com/CkW90N_oro8/1200x900" alt="A image to apply the ImageZoom plugin"></div>
+   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="js/image-zoom.js"></script>
+<script>
+   $(document).ready(function(){
+                     $('#imageZoom').imageZoom();
+                     $('#imageZoom2').imageZoom({zoom : 200});
+                  });
+               </script>
+</body>
+</html>
+

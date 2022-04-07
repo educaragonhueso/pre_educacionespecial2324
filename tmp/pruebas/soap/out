@@ -1,0 +1,96 @@
+Setting up SOAP options
+Configuring WSDL
+Checking SoapClient exists
+Creating webservice connection to https://preaplicaciones.aragon.es/svcd_core/services/ResidenceVerification?wsdl
+Enviando solicitud padrón...
+SoapFault Object
+(
+    [message:protected] => Unmarshalling Error: 11/11/2012 
+    [string:Exception:private] => 
+    [code:protected] => 0
+    [file:protected] => /datos/www/preadmespecial.aragon.es/public_admespecial/educacionespecial/pruebas/soap/soap_comprobar_padron.php
+    [line:protected] => 76
+    [trace:Exception:private] => Array
+        (
+            [0] => Array
+                (
+                    [file] => /datos/www/preadmespecial.aragon.es/public_admespecial/educacionespecial/pruebas/soap/soap_comprobar_padron.php
+                    [line] => 76
+                    [function] => __call
+                    [class] => SoapClient
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => residenceVerification
+                            [1] => Array
+                                (
+                                    [0] => stdClass Object
+                                        (
+                                            [arg0] => stdClass Object
+                                                (
+                                                    [applicationId] => GIR
+                                                    [organismCode] => ORG07458
+                                                    [userCode] => 00000000T
+                                                    [residenceVerificationRequest] => stdClass Object
+                                                        (
+                                                            [identificationData] => stdClass Object
+                                                                (
+                                                                    [documentNumber] => 30000052W
+                                                                    [documentType] => NIF
+                                                                )
+
+                                                            [purposeData] => stdClass Object
+                                                                (
+                                                                    [consent] => Si
+                                                                    [fileNumber] => 001
+                                                                    [procedureNumber] => 466
+                                                                    [purposeText] => Test
+                                                                    [purposeValidationCode] => 
+                                                                )
+
+                                                            [residenceSpecificDataVR] => stdClass Object
+                                                                (
+                                                                    [location] => 297
+                                                                    [province] => 50
+                                                                )
+
+                                                            [specificBirthDataVR] => stdClass Object
+                                                                (
+                                                                    [birthDate] => 11/11/2012
+                                                                    [locationCode] => 297
+                                                                    [provinceCode] => 50
+                                                                )
+
+                                                            [userSpecificDataVR] => stdClass Object
+                                                                (
+                                                                    [nationality] => Espanyol
+                                                                )
+
+                                                            [userData] => stdClass Object
+                                                                (
+                                                                    [name] => EDUARDO
+                                                                    [surname1] => SANCHEZ
+                                                                    [surname2] => MARTIN
+                                                                )
+
+                                                        )
+
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [previous:Exception:private] => 
+    [faultstring] => Unmarshalling Error: 11/11/2012 
+    [faultcode] => soap:Client
+)
+NULL
+Script complete
+

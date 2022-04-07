@@ -1,0 +1,110 @@
+SoapFault Object
+(
+    [message:protected] => Error Fetching http headers
+    [string:Exception:private] => 
+    [code:protected] => 0
+    [file:protected] => /datos/www/preadmespecial.aragon.es/public_admespecial/educacionespecial2223/scripts/soap/funciones_soap.php
+    [line:protected] => 486
+    [trace:Exception:private] => Array
+        (
+            [0] => Array
+                (
+                    [function] => __doRequest
+                    [class] => SoapClient
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => <?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://ws.core.svcd.aragon.es/"><SOAP-ENV:Body><ns1:historicalBenefitsINSS><arg0><applicationId>ADMEG</applicationId><organismCode>ORG07458</organismCode><userCode>00000000T</userCode><historicalBenefitsINSSRequest><identificationData><documentNumber>09749212H</documentNumber><documentType>NIF</documentType></identificationData><purposeData><consent>Si</consent><fileNumber>001</fileNumber><procedureNumber>466</procedureNumber><purposeText>Test</purposeText></purposeData><specificHistoricalBenefitsINSSData><endDate>01/01/2022</endDate><startDate>01/01/2021</startDate></specificHistoricalBenefitsINSSData><userData><name>BONIFACIA</name><surname1>PASCUAL</surname1><surname2>PICO</surname2></userData></historicalBenefitsINSSRequest></arg0></ns1:historicalBenefitsINSS></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+                            [1] => https://preaplicaciones.aragon.es:443/svcd_core/services/HistoricalBenefitsINSS
+                            [2] => 
+                            [3] => 1
+                            [4] => 0
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [file] => /datos/www/preadmespecial.aragon.es/public_admespecial/educacionespecial2223/scripts/soap/funciones_soap.php
+                    [line] => 486
+                    [function] => __call
+                    [class] => SoapClient
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => historicalBenefitsINSS
+                            [1] => Array
+                                (
+                                    [0] => stdClass Object
+                                        (
+                                            [arg0] => stdClass Object
+                                                (
+                                                    [applicationId] => ADMEG
+                                                    [organismCode] => ORG07458
+                                                    [userCode] => 00000000T
+                                                    [historicalBenefitsINSSRequest] => stdClass Object
+                                                        (
+                                                            [identificationData] => stdClass Object
+                                                                (
+                                                                    [documentNumber] => 09749212H
+                                                                    [documentType] => NIF
+                                                                )
+
+                                                            [purposeData] => stdClass Object
+                                                                (
+                                                                    [consent] => Si
+                                                                    [fileNumber] => 001
+                                                                    [procedureNumber] => 466
+                                                                    [purposeText] => Test
+                                                                )
+
+                                                            [userData] => stdClass Object
+                                                                (
+                                                                    [name] => BONIFACIA
+                                                                    [surname1] => PASCUAL
+                                                                    [surname2] => PICO
+                                                                )
+
+                                                            [specificHistoricalBenefitsINSSData] => stdClass Object
+                                                                (
+                                                                    [startDate] => 01/01/2021
+                                                                    [endDate] => 01/01/2022
+                                                                )
+
+                                                        )
+
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [file] => /datos/www/preadmespecial.aragon.es/public_admespecial/educacionespecial2223/scripts/soap/zonapruebas/soap_comprobar_historicalbenefits.php
+                    [line] => 10
+                    [function] => comprobarBeneficiosHistoricos
+                    [args] => Array
+                        (
+                            [0] => 09749212H
+                            [1] => BONIFACIA
+                            [2] => PASCUAL
+                            [3] => PICO
+                            [4] => 01/01/2021
+                            [5] => 01/01/2022
+                        )
+
+                )
+
+        )
+
+    [previous:Exception:private] => 
+    [faultstring] => Error Fetching http headers
+    [faultcode] => HTTP
+)

@@ -1,0 +1,59 @@
+
+
+PARAMETROS
+
+
+$params = array(
+'anagrama'=>'lhueso@aragon.es','idApplication'=>'GIR','date'=>'03/02/2021',
+'description'=>'Aviso pruebas admision edespecial', 'entityId'=>'10050','user'=>'00000000T',
+'mailSubject'=>'Prueba aviso', 'subject'=>'Subject aviso','type'=>'pruebasedesp'
+);
+
+SOAP ejemplo con xml
+
+https://gist.github.com/johnkary/7782110
+
+
+MENSAJE SOPORTE:
+
+Buenos días,
+
+Cuando el error es debido a la  IP los parámetros no llegan nulos a SGA y el mensaje de error está controlado.
+
+No podemos saber si el problema se debe al orden de los parámetros ya que hemos probado desde SOAP cambiando el orden de todos los parámetros y funciona correctamente.
+
+El problema está en la petición php. Hay casos en los que es necesario enviar un xml con una estructura concreta.
+
+Se adjunta una página que explica como enviar un xml en la petición, la cual pone un ejemplo que creemos que puede ayudar al usuario:
+
+https://academy.leewayweb.com/como-enviar-xml-a-un-webservice-con-php/
+
+Además, para que el usuario pueda ver el xml de la petición que envía ahora mismo, puede hacer lo siguiente dado su código php:
+
+En primer lugar, activar la traza en su cliente SOAP ya que es necesaria para poder utilizar la función ‘getLastRequest' y la función 'getLastResponse’:
+
+$client = new SoapClient('https://preaplicaciones.aragon.es/sga_core/services/AdviceService?wsdl', array('trace' => 1));
+$res = $client->__soapCall('createAdvice', array($params));
+$request = $client->__getLastRequest();
+$response = $client->__getLastResponse();
+var_dump($request);
+var_dump($response);
+
+Espero que le sirva de ayuda, un saludo
+
+MENASJE CLEMENTE
+
+No conozco nada de php, pero viendo estos dos ejemplos verás cómo llama al método del webservice :
+
+-Método GetWhoIs
+
+https://luciano.com.ar/2016/11/realizar-llamadas-soap-desde-php/
+
+-Método ResolveIP
+
+https://academy.leewayweb.com/como-consumir-un-webservice-soap-con-php/
+
+WEB EJEMPLO CONSUMIR SOAP
+
+https://leifmadsen.wordpress.com/2009/08/04/consuming-soap-complextype-webservice-with-php/ 
+

@@ -1,0 +1,23 @@
+<form lang="es" id="fsolicitud"  class="was-validated formsolicitud"  name="contact-form"  method="POST" readonly>
+   <p type="button" class="btn btn-primary bform" data-toggle="collapse" data-target="#personales">DATOS PERSONALES<span> <i class="fas fa-angle-down"></i></span></p>
+   <div id="personales" class="collapse">
+      <div class="row">
+         <div class="col-md-4">
+            <div class="md-form mb-0">
+               Primer apellido*
+               <input type="text" id="apellido1" value="" name="apellido1" placeholder="Primer apellido"  class="form-control" required>
+            </div>
+         </div>
+      </div>
+   </div>
+   <form action="/scripts/ajax/subirfichero.php"  method="post" id="formpruebas">
+      <input value="ficheropruebas" type="file" name="baremo_file_pruebas" campobaremo="acogimiento" id="fbaremo_pruebas" style="display:none" class="fbaremo">
+      <label for="fbaremo_pruebas" id="fapruebas" class="botonform">Agrega fichero justificativo acogimiento</label>
+   </form>
+   <div id="personales" class="collapse">
+      <div class="row">
+               Segundo apellido*
+               <input type="text" id="apellido1" value="" name="apellido1" placeholder="Primer apellido"  class="form-control" required>
+      </div>
+   </div>
+</form>

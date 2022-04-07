@@ -1,0 +1,15 @@
+Delect b.* from alumnos a, baremo b where b.id_alumno=a.id_alumno and token=tos de hermanos admision
+
+   Usando el token del alumno
+      select a.nombre,a.apellido1 from alumnos a,alumnos_hermanos_admision ah,alumnos b where a.id_alumno=ah.id_alumno and b.id_alumno=ah.id_hermano and a.token='cdac892b31b28fdf';
+
+      select * from alumnos_hermanos_admision where id_alumno in(select id_alumno from alumnos where token='cdac892b31b28fdf');
+
+Baremo por token
+
+    select b.* from alumnos a, baremo b where b.id_alumno=a.id_alumno and token='8c5b35b5b45239ae'\G
+
+Usuarios por token
+
+   select u.* from usuarios u, alumnos a where u.id_usuario=a.id_usuario and token='f9a565d6cc694390';
+

@@ -1,0 +1,695 @@
+Array
+(
+    [id_centro] => 22002338
+)
+SELECT count(id_alumno) as plazas FROM alumnos_definitiva where id_centro_destino=22002338 and est_desp_sorteo='admitida' and tipoestudios='ebo'SELECT vacantes_ebo,vacantes_tva  from centros where id_centro=22002338VACANTES: Array
+(
+    [0] => stdClass Object
+        (
+            [vacantes_ebo] => 0
+            [vacantes_tva] => 0
+        )
+
+)
+PLAZAS: Array
+(
+    [0] => 1
+    [1] => 0
+)
+ERROR: VACANTES NEGATIVAS CENTRO: 22002338
+UPDATE centros set vacantes_ebo_original=-1,vacantes_ebo=-1,vacantes_tva_original=0,vacantes_tva=0 where id_centro=22002338
+Array
+(
+    [id_centro] => 22002511
+)
+SELECT count(id_alumno) as plazas FROM alumnos_definitiva where id_centro_destino=22002511 and est_desp_sorteo='admitida' and tipoestudios='ebo'SELECT vacantes_ebo,vacantes_tva  from centros where id_centro=22002511VACANTES: Array
+(
+    [0] => stdClass Object
+        (
+            [vacantes_ebo] => 0
+            [vacantes_tva] => 8
+        )
+
+)
+PLAZAS: Array
+(
+    [0] => 3
+    [1] => 0
+)
+ERROR: VACANTES NEGATIVAS CENTRO: 22002511
+UPDATE centros set vacantes_ebo_original=-3,vacantes_ebo=-3,vacantes_tva_original=8,vacantes_tva=8 where id_centro=22002511
+Array
+(
+    [id_centro] => 22003835
+)
+SELECT count(id_alumno) as plazas FROM alumnos_definitiva where id_centro_destino=22003835 and est_desp_sorteo='admitida' and tipoestudios='ebo'SELECT vacantes_ebo,vacantes_tva  from centros where id_centro=22003835VACANTES: Array
+(
+    [0] => stdClass Object
+        (
+            [vacantes_ebo] => 1
+            [vacantes_tva] => 0
+        )
+
+)
+PLAZAS: Array
+(
+    [0] => 3
+    [1] => 0
+)
+ERROR: VACANTES NEGATIVAS CENTRO: 22003835
+UPDATE centros set vacantes_ebo_original=-2,vacantes_ebo=-2,vacantes_tva_original=0,vacantes_tva=0 where id_centro=22003835
+Array
+(
+    [id_centro] => 22004891
+)
+SELECT count(id_alumno) as plazas FROM alumnos_definitiva where id_centro_destino=22004891 and est_desp_sorteo='admitida' and tipoestudios='ebo'SELECT vacantes_ebo,vacantes_tva  from centros where id_centro=22004891VACANTES: Array
+(
+    [0] => stdClass Object
+        (
+            [vacantes_ebo] => 2
+            [vacantes_tva] => 11
+        )
+
+)
+PLAZAS: Array
+(
+    [0] => 3
+    [1] => 0
+)
+ERROR: VACANTES NEGATIVAS CENTRO: 22004891
+UPDATE centros set vacantes_ebo_original=-1,vacantes_ebo=-1,vacantes_tva_original=11,vacantes_tva=11 where id_centro=22004891
+Array
+(
+    [id_centro] => 22005157
+)
+SELECT count(id_alumno) as plazas FROM alumnos_definitiva where id_centro_destino=22005157 and est_desp_sorteo='admitida' and tipoestudios='ebo'SELECT vacantes_ebo,vacantes_tva  from centros where id_centro=22005157VACANTES: Array
+(
+    [0] => stdClass Object
+        (
+            [vacantes_ebo] => 19
+            [vacantes_tva] => 0
+        )
+
+)
+PLAZAS: Array
+(
+    [0] => 5
+    [1] => 0
+)
+
+UPDATE centros set vacantes_ebo_original=14,vacantes_ebo=14,vacantes_tva_original=0,vacantes_tva=0 where id_centro=22005157
+Array
+(
+    [id_centro] => 22010001
+)
+SELECT count(id_alumno) as plazas FROM alumnos_definitiva where id_centro_destino=22010001 and est_desp_sorteo='admitida' and tipoestudios='ebo'SELECT vacantes_ebo,vacantes_tva  from centros where id_centro=22010001VACANTES: Array
+(
+    [0] => stdClass Object
+        (
+            [vacantes_ebo] => 5
+            [vacantes_tva] => 6
+        )
+
+)
+PLAZAS: Array
+(
+    [0] => 1
+    [1] => 0
+)
+
+UPDATE centros set vacantes_ebo_original=4,vacantes_ebo=4,vacantes_tva_original=6,vacantes_tva=6 where id_centro=22010001
+Array
+(
+    [id_centro] => 44003259
+)
+SELECT count(id_alumno) as plazas FROM alumnos_definitiva where id_centro_destino=44003259 and est_desp_sorteo='admitida' and tipoestudios='ebo'SELECT vacantes_ebo,vacantes_tva  from centros where id_centro=44003259VACANTES: Array
+(
+    [0] => stdClass Object
+        (
+            [vacantes_ebo] => 20
+            [vacantes_tva] => 2
+        )
+
+)
+PLAZAS: Array
+(
+    [0] => 4
+    [1] => 0
+)
+
+UPDATE centros set vacantes_ebo_original=16,vacantes_ebo=16,vacantes_tva_original=2,vacantes_tva=2 where id_centro=44003259
+Array
+(
+    [id_centro] => 44004148
+)
+SELECT count(id_alumno) as plazas FROM alumnos_definitiva where id_centro_destino=44004148 and est_desp_sorteo='admitida' and tipoestudios='ebo'SELECT vacantes_ebo,vacantes_tva  from centros where id_centro=44004148VACANTES: Array
+(
+    [0] => stdClass Object
+        (
+            [vacantes_ebo] => 0
+            [vacantes_tva] => 10
+        )
+
+)
+PLAZAS: Array
+(
+    [0] => 5
+    [1] => 0
+)
+ERROR: VACANTES NEGATIVAS CENTRO: 44004148
+UPDATE centros set vacantes_ebo_original=-5,vacantes_ebo=-5,vacantes_tva_original=10,vacantes_tva=10 where id_centro=44004148
+Array
+(
+    [id_centro] => 50000850
+)
+SELECT count(id_alumno) as plazas FROM alumnos_definitiva where id_centro_destino=50000850 and est_desp_sorteo='admitida' and tipoestudios='ebo'SELECT vacantes_ebo,vacantes_tva  from centros where id_centro=50000850VACANTES: Array
+(
+    [0] => stdClass Object
+        (
+            [vacantes_ebo] => 0
+            [vacantes_tva] => 0
+        )
+
+)
+PLAZAS: Array
+(
+    [0] => 0
+    [1] => 0
+)
+
+UPDATE centros set vacantes_ebo_original=0,vacantes_ebo=0,vacantes_tva_original=0,vacantes_tva=0 where id_centro=50000850
+Array
+(
+    [id_centro] => 50004612
+)
+SELECT count(id_alumno) as plazas FROM alumnos_definitiva where id_centro_destino=50004612 and est_desp_sorteo='admitida' and tipoestudios='ebo'SELECT vacantes_ebo,vacantes_tva  from centros where id_centro=50004612VACANTES: Array
+(
+    [0] => stdClass Object
+        (
+            [vacantes_ebo] => 0
+            [vacantes_tva] => 0
+        )
+
+)
+PLAZAS: Array
+(
+    [0] => 1
+    [1] => 0
+)
+ERROR: VACANTES NEGATIVAS CENTRO: 50004612
+UPDATE centros set vacantes_ebo_original=-1,vacantes_ebo=-1,vacantes_tva_original=0,vacantes_tva=0 where id_centro=50004612
+Array
+(
+    [id_centro] => 50006049
+)
+SELECT count(id_alumno) as plazas FROM alumnos_definitiva where id_centro_destino=50006049 and est_desp_sorteo='admitida' and tipoestudios='ebo'SELECT vacantes_ebo,vacantes_tva  from centros where id_centro=50006049VACANTES: Array
+(
+    [0] => stdClass Object
+        (
+            [vacantes_ebo] => 1
+            [vacantes_tva] => 0
+        )
+
+)
+PLAZAS: Array
+(
+    [0] => 1
+    [1] => 0
+)
+
+UPDATE centros set vacantes_ebo_original=0,vacantes_ebo=0,vacantes_tva_original=0,vacantes_tva=0 where id_centro=50006049
+Array
+(
+    [id_centro] => 50006128
+)
+SELECT count(id_alumno) as plazas FROM alumnos_definitiva where id_centro_destino=50006128 and est_desp_sorteo='admitida' and tipoestudios='ebo'SELECT vacantes_ebo,vacantes_tva  from centros where id_centro=50006128VACANTES: Array
+(
+    [0] => stdClass Object
+        (
+            [vacantes_ebo] => 6
+            [vacantes_tva] => 0
+        )
+
+)
+PLAZAS: Array
+(
+    [0] => 1
+    [1] => 0
+)
+
+UPDATE centros set vacantes_ebo_original=5,vacantes_ebo=5,vacantes_tva_original=0,vacantes_tva=0 where id_centro=50006128
+Array
+(
+    [id_centro] => 50007376
+)
+SELECT count(id_alumno) as plazas FROM alumnos_definitiva where id_centro_destino=50007376 and est_desp_sorteo='admitida' and tipoestudios='ebo'SELECT vacantes_ebo,vacantes_tva  from centros where id_centro=50007376VACANTES: Array
+(
+    [0] => stdClass Object
+        (
+            [vacantes_ebo] => 1
+            [vacantes_tva] => 0
+        )
+
+)
+PLAZAS: Array
+(
+    [0] => 3
+    [1] => 0
+)
+ERROR: VACANTES NEGATIVAS CENTRO: 50007376
+UPDATE centros set vacantes_ebo_original=-2,vacantes_ebo=-2,vacantes_tva_original=0,vacantes_tva=0 where id_centro=50007376
+Array
+(
+    [id_centro] => 50007674
+)
+SELECT count(id_alumno) as plazas FROM alumnos_definitiva where id_centro_destino=50007674 and est_desp_sorteo='admitida' and tipoestudios='ebo'SELECT vacantes_ebo,vacantes_tva  from centros where id_centro=50007674VACANTES: Array
+(
+    [0] => stdClass Object
+        (
+            [vacantes_ebo] => 0
+            [vacantes_tva] => 6
+        )
+
+)
+PLAZAS: Array
+(
+    [0] => 7
+    [1] => 3
+)
+ERROR: VACANTES NEGATIVAS CENTRO: 50007674
+UPDATE centros set vacantes_ebo_original=-7,vacantes_ebo=-7,vacantes_tva_original=3,vacantes_tva=3 where id_centro=50007674
+Array
+(
+    [id_centro] => 50008630
+)
+SELECT count(id_alumno) as plazas FROM alumnos_definitiva where id_centro_destino=50008630 and est_desp_sorteo='admitida' and tipoestudios='ebo'SELECT vacantes_ebo,vacantes_tva  from centros where id_centro=50008630VACANTES: Array
+(
+    [0] => stdClass Object
+        (
+            [vacantes_ebo] => 0
+            [vacantes_tva] => 0
+        )
+
+)
+PLAZAS: Array
+(
+    [0] => 0
+    [1] => 0
+)
+
+UPDATE centros set vacantes_ebo_original=0,vacantes_ebo=0,vacantes_tva_original=0,vacantes_tva=0 where id_centro=50008630
+Array
+(
+    [id_centro] => 50008678
+)
+SELECT count(id_alumno) as plazas FROM alumnos_definitiva where id_centro_destino=50008678 and est_desp_sorteo='admitida' and tipoestudios='ebo'SELECT vacantes_ebo,vacantes_tva  from centros where id_centro=50008678VACANTES: Array
+(
+    [0] => stdClass Object
+        (
+            [vacantes_ebo] => 0
+            [vacantes_tva] => 0
+        )
+
+)
+PLAZAS: Array
+(
+    [0] => 0
+    [1] => 0
+)
+
+UPDATE centros set vacantes_ebo_original=0,vacantes_ebo=0,vacantes_tva_original=0,vacantes_tva=0 where id_centro=50008678
+Array
+(
+    [id_centro] => 50008915
+)
+SELECT count(id_alumno) as plazas FROM alumnos_definitiva where id_centro_destino=50008915 and est_desp_sorteo='admitida' and tipoestudios='ebo'SELECT vacantes_ebo,vacantes_tva  from centros where id_centro=50008915VACANTES: Array
+(
+    [0] => stdClass Object
+        (
+            [vacantes_ebo] => 5
+            [vacantes_tva] => 0
+        )
+
+)
+PLAZAS: Array
+(
+    [0] => 0
+    [1] => 0
+)
+
+UPDATE centros set vacantes_ebo_original=5,vacantes_ebo=5,vacantes_tva_original=0,vacantes_tva=0 where id_centro=50008915
+Array
+(
+    [id_centro] => 50009488
+)
+SELECT count(id_alumno) as plazas FROM alumnos_definitiva where id_centro_destino=50009488 and est_desp_sorteo='admitida' and tipoestudios='ebo'SELECT vacantes_ebo,vacantes_tva  from centros where id_centro=50009488VACANTES: Array
+(
+    [0] => stdClass Object
+        (
+            [vacantes_ebo] => 14
+            [vacantes_tva] => 3
+        )
+
+)
+PLAZAS: Array
+(
+    [0] => 1
+    [1] => 0
+)
+
+UPDATE centros set vacantes_ebo_original=13,vacantes_ebo=13,vacantes_tva_original=3,vacantes_tva=3 where id_centro=50009488
+Array
+(
+    [id_centro] => 50009646
+)
+SELECT count(id_alumno) as plazas FROM alumnos_definitiva where id_centro_destino=50009646 and est_desp_sorteo='admitida' and tipoestudios='ebo'SELECT vacantes_ebo,vacantes_tva  from centros where id_centro=50009646VACANTES: Array
+(
+    [0] => stdClass Object
+        (
+            [vacantes_ebo] => 6
+            [vacantes_tva] => 0
+        )
+
+)
+PLAZAS: Array
+(
+    [0] => 1
+    [1] => 0
+)
+
+UPDATE centros set vacantes_ebo_original=5,vacantes_ebo=5,vacantes_tva_original=0,vacantes_tva=0 where id_centro=50009646
+Array
+(
+    [id_centro] => 50010387
+)
+SELECT count(id_alumno) as plazas FROM alumnos_definitiva where id_centro_destino=50010387 and est_desp_sorteo='admitida' and tipoestudios='ebo'SELECT vacantes_ebo,vacantes_tva  from centros where id_centro=50010387VACANTES: Array
+(
+    [0] => stdClass Object
+        (
+            [vacantes_ebo] => 1
+            [vacantes_tva] => 0
+        )
+
+)
+PLAZAS: Array
+(
+    [0] => 8
+    [1] => 0
+)
+ERROR: VACANTES NEGATIVAS CENTRO: 50010387
+UPDATE centros set vacantes_ebo_original=-7,vacantes_ebo=-7,vacantes_tva_original=0,vacantes_tva=0 where id_centro=50010387
+Array
+(
+    [id_centro] => 50011537
+)
+SELECT count(id_alumno) as plazas FROM alumnos_definitiva where id_centro_destino=50011537 and est_desp_sorteo='admitida' and tipoestudios='ebo'SELECT vacantes_ebo,vacantes_tva  from centros where id_centro=50011537VACANTES: Array
+(
+    [0] => stdClass Object
+        (
+            [vacantes_ebo] => 0
+            [vacantes_tva] => 0
+        )
+
+)
+PLAZAS: Array
+(
+    [0] => 10
+    [1] => 0
+)
+ERROR: VACANTES NEGATIVAS CENTRO: 50011537
+UPDATE centros set vacantes_ebo_original=-10,vacantes_ebo=-10,vacantes_tva_original=0,vacantes_tva=0 where id_centro=50011537
+Array
+(
+    [id_centro] => 50017369
+)
+SELECT count(id_alumno) as plazas FROM alumnos_definitiva where id_centro_destino=50017369 and est_desp_sorteo='admitida' and tipoestudios='ebo'SELECT vacantes_ebo,vacantes_tva  from centros where id_centro=50017369VACANTES: Array
+(
+    [0] => stdClass Object
+        (
+            [vacantes_ebo] => 0
+            [vacantes_tva] => 0
+        )
+
+)
+PLAZAS: Array
+(
+    [0] => 3
+    [1] => 0
+)
+ERROR: VACANTES NEGATIVAS CENTRO: 50017369
+UPDATE centros set vacantes_ebo_original=-3,vacantes_ebo=-3,vacantes_tva_original=0,vacantes_tva=0 where id_centro=50017369
+Array
+(
+    [id_centro] => 50018131
+)
+SELECT count(id_alumno) as plazas FROM alumnos_definitiva where id_centro_destino=50018131 and est_desp_sorteo='admitida' and tipoestudios='ebo'SELECT vacantes_ebo,vacantes_tva  from centros where id_centro=50018131VACANTES: Array
+(
+    [0] => stdClass Object
+        (
+            [vacantes_ebo] => 0
+            [vacantes_tva] => 0
+        )
+
+)
+PLAZAS: Array
+(
+    [0] => 7
+    [1] => 0
+)
+ERROR: VACANTES NEGATIVAS CENTRO: 50018131
+UPDATE centros set vacantes_ebo_original=-7,vacantes_ebo=-7,vacantes_tva_original=0,vacantes_tva=0 where id_centro=50018131
+Array
+(
+    [id_centro] => 50019408
+)
+SELECT count(id_alumno) as plazas FROM alumnos_definitiva where id_centro_destino=50019408 and est_desp_sorteo='admitida' and tipoestudios='ebo'SELECT vacantes_ebo,vacantes_tva  from centros where id_centro=50019408VACANTES: Array
+(
+    [0] => stdClass Object
+        (
+            [vacantes_ebo] => 0
+            [vacantes_tva] => 4
+        )
+
+)
+PLAZAS: Array
+(
+    [0] => 4
+    [1] => 0
+)
+ERROR: VACANTES NEGATIVAS CENTRO: 50019408
+UPDATE centros set vacantes_ebo_original=-4,vacantes_ebo=-4,vacantes_tva_original=4,vacantes_tva=4 where id_centro=50019408
+SELECT id_alumno,nombre,id_centro_estudios_origen,id_centro_destino,tipoestudios FROM alumnos where est_desp_sorteo='admitida' or (est_desp_sorteo='noadmitida' and reserva=0)PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50018830, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50006050, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50007376, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50006037, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50007376, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50006311, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 22003835, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50007789, PLAZAS LIBRES: 14 LIBERANDO VACANTES DE RESERVA EN CENTRO 50007789, ALUMNOS: Array
+(
+    [id_alumno] => 180
+    [nombre] => Eric
+    [id_centro_estudios_origen] => 50007789
+    [id_centro_destino] => 50009488
+    [tipoestudios] => ebo
+)
+
+ACTUALIZANDO VACANTES CENTROS, VACANTES: 0, INC: 1 CONSULTA: UPDATE centros set vacantes_ebo=vacantes_ebo+1,vacantes_ebo_original=vacantes_ebo_original+1 where id_centro=50007789PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: -2 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 22004566, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50018271, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50008630, PLAZAS LIBRES: 6 LIBERANDO VACANTES DE RESERVA EN CENTRO 50008630, ALUMNOS: Array
+(
+    [id_alumno] => 187
+    [nombre] => ignacio rafael
+    [id_centro_estudios_origen] => 50008630
+    [id_centro_destino] => 50007674
+    [tipoestudios] => tva
+)
+
+ACTUALIZANDO VACANTES CENTROS, VACANTES: 0, INC: 1 CONSULTA: UPDATE centros set vacantes_tva=vacantes_tva+1,vacantes_tva_original=vacantes_tva_original+1 where id_centro=50008630PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50018143, PLAZAS LIBRES: 1 LIBERANDO VACANTES DE RESERVA EN CENTRO 50018143, ALUMNOS: Array
+(
+    [id_alumno] => 191
+    [nombre] => JAVIER
+    [id_centro_estudios_origen] => 50018143
+    [id_centro_destino] => 50010387
+    [tipoestudios] => ebo
+)
+
+ACTUALIZANDO VACANTES CENTROS, VACANTES: 0, INC: 1 CONSULTA: UPDATE centros set vacantes_ebo=vacantes_ebo+1,vacantes_ebo_original=vacantes_ebo_original+1 where id_centro=50018143PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50000850, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50011070, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 22000585, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 22003835, PLAZAS LIBRES: 2 LIBERANDO VACANTES DE RESERVA EN CENTRO 22003835, ALUMNOS: Array
+(
+    [id_alumno] => 202
+    [nombre] => JENNIFER
+    [id_centro_estudios_origen] => 22003835
+    [id_centro_destino] => 22004891
+    [tipoestudios] => ebo
+)
+
+ACTUALIZANDO VACANTES CENTROS, VACANTES: 0, INC: 1 CONSULTA: UPDATE centros set vacantes_ebo=vacantes_ebo+1,vacantes_ebo_original=vacantes_ebo_original+1 where id_centro=22003835PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50019019, PLAZAS LIBRES: 1 LIBERANDO VACANTES DE RESERVA EN CENTRO 50019019, ALUMNOS: Array
+(
+    [id_alumno] => 203
+    [nombre] => ADRIAN
+    [id_centro_estudios_origen] => 50019019
+    [id_centro_destino] => 50010387
+    [tipoestudios] => ebo
+)
+
+ACTUALIZANDO VACANTES CENTROS, VACANTES: 0, INC: 1 CONSULTA: UPDATE centros set vacantes_ebo=vacantes_ebo+1,vacantes_ebo_original=vacantes_ebo_original+1 where id_centro=50019019PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50011343, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 44003041, PLAZAS LIBRES: 20 LIBERANDO VACANTES DE RESERVA EN CENTRO 44003041, ALUMNOS: Array
+(
+    [id_alumno] => 206
+    [nombre] => CRISTOPHER
+    [id_centro_estudios_origen] => 44003041
+    [id_centro_destino] => 44003259
+    [tipoestudios] => ebo
+)
+
+ACTUALIZANDO VACANTES CENTROS, VACANTES: 0, INC: 1 CONSULTA: UPDATE centros set vacantes_ebo=vacantes_ebo+1,vacantes_ebo_original=vacantes_ebo_original+1 where id_centro=44003041PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50005768, PLAZAS LIBRES: 1 LIBERANDO VACANTES DE RESERVA EN CENTRO 50005768, ALUMNOS: Array
+(
+    [id_alumno] => 207
+    [nombre] => JORGE
+    [id_centro_estudios_origen] => 50005768
+    [id_centro_destino] => 50010387
+    [tipoestudios] => ebo
+)
+
+ACTUALIZANDO VACANTES CENTROS, VACANTES: 0, INC: 1 CONSULTA: UPDATE centros set vacantes_ebo=vacantes_ebo+1,vacantes_ebo_original=vacantes_ebo_original+1 where id_centro=50005768PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: -2 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50001167, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50018258, PLAZAS LIBRES: 1 LIBERANDO VACANTES DE RESERVA EN CENTRO 50018258, ALUMNOS: Array
+(
+    [id_alumno] => 216
+    [nombre] => MARIO FLORIN
+    [id_centro_estudios_origen] => 50018258
+    [id_centro_destino] => 50010387
+    [tipoestudios] => ebo
+)
+
+ACTUALIZANDO VACANTES CENTROS, VACANTES: 0, INC: 1 CONSULTA: UPDATE centros set vacantes_ebo=vacantes_ebo+1,vacantes_ebo_original=vacantes_ebo_original+1 where id_centro=50018258PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: -1 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 44004801, PLAZAS LIBRES: -1 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 44003636, PLAZAS LIBRES: -1 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50001350, PLAZAS LIBRES: -1 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50002810, PLAZAS LIBRES: -1 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50006001, PLAZAS LIBRES: 1 LIBERANDO VACANTES DE RESERVA EN CENTRO 50006001, ALUMNOS: Array
+(
+    [id_alumno] => 223
+    [nombre] => Diego
+    [id_centro_estudios_origen] => 50006001
+    [id_centro_destino] => 50010387
+    [tipoestudios] => ebo
+)
+
+ACTUALIZANDO VACANTES CENTROS, VACANTES: 0, INC: 1 CONSULTA: UPDATE centros set vacantes_ebo=vacantes_ebo+1,vacantes_ebo_original=vacantes_ebo_original+1 where id_centro=50006001PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50006128, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50009488, PLAZAS LIBRES: 1 LIBERANDO VACANTES DE RESERVA EN CENTRO 50009488, ALUMNOS: Array
+(
+    [id_alumno] => 229
+    [nombre] => LOREDANA
+    [id_centro_estudios_origen] => 50009488
+    [id_centro_destino] => 50010387
+    [tipoestudios] => ebo
+)
+
+ACTUALIZANDO VACANTES CENTROS, VACANTES: 0, INC: 1 CONSULTA: UPDATE centros set vacantes_ebo=vacantes_ebo+1,vacantes_ebo_original=vacantes_ebo_original+1 where id_centro=50009488PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 22002302, PLAZAS LIBRES: -2 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: -2 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50010478, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50010478, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50009531, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50004053, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50009749, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 22004839, PLAZAS LIBRES: 2 LIBERANDO VACANTES DE RESERVA EN CENTRO 22004839, ALUMNOS: Array
+(
+    [id_alumno] => 239
+    [nombre] => JOSE MARIA
+    [id_centro_estudios_origen] => 22004839
+    [id_centro_destino] => 22004891
+    [tipoestudios] => ebo
+)
+
+ACTUALIZANDO VACANTES CENTROS, VACANTES: 0, INC: 1 CONSULTA: UPDATE centros set vacantes_ebo=vacantes_ebo+1,vacantes_ebo_original=vacantes_ebo_original+1 where id_centro=22004839PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50006220, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50019019, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50009786, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 5 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50006025, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 2 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50005975, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 44003041, PLAZAS LIBRES: 20 LIBERANDO VACANTES DE RESERVA EN CENTRO 44003041, ALUMNOS: Array
+(
+    [id_alumno] => 251
+    [nombre] => ALONSO
+    [id_centro_estudios_origen] => 44003041
+    [id_centro_destino] => 44003259
+    [tipoestudios] => ebo
+)
+
+ACTUALIZANDO VACANTES CENTROS, VACANTES: 0, INC: 1 CONSULTA: UPDATE centros set vacantes_ebo=vacantes_ebo+1,vacantes_ebo_original=vacantes_ebo_original+1 where id_centro=44003041PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50019287, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50005768, PLAZAS LIBRES: 1 LIBERANDO VACANTES DE RESERVA EN CENTRO 50005768, ALUMNOS: Array
+(
+    [id_alumno] => 255
+    [nombre] => ALBA
+    [id_centro_estudios_origen] => 50005768
+    [id_centro_destino] => 50010387
+    [tipoestudios] => ebo
+)
+
+ACTUALIZANDO VACANTES CENTROS, VACANTES: 0, INC: 1 CONSULTA: UPDATE centros set vacantes_ebo=vacantes_ebo+1,vacantes_ebo_original=vacantes_ebo_original+1 where id_centro=50005768PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50019251, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50019299, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 22010876, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: -2 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50009786, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: -2 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50007042, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 22003835, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 6 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50017679, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50005677, PLAZAS LIBRES: 2 LIBERANDO VACANTES DE RESERVA EN CENTRO 50005677, ALUMNOS: Array
+(
+    [id_alumno] => 268
+    [nombre] => MARCELO
+    [id_centro_estudios_origen] => 50005677
+    [id_centro_destino] => 50009646
+    [tipoestudios] => ebo
+)
+
+ACTUALIZANDO VACANTES CENTROS, VACANTES: 0, INC: 1 CONSULTA: UPDATE centros set vacantes_ebo=vacantes_ebo+1,vacantes_ebo_original=vacantes_ebo_original+1 where id_centro=50005677PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50011151, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50007789, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 1 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 20 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50007017, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 1 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50007789, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50019287, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50008630, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50004703, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 20 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50008371, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50008678, PLAZAS LIBRES: -3 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50011318, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50006207, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 22000585, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50008149, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50019251, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: -1 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 6 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50006037, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50006049, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 0 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 22002156, PLAZAS LIBRES: 19 LIBERANDO VACANTES DE RESERVA EN CENTRO 22002156, ALUMNOS: Array
+(
+    [id_alumno] => 306
+    [nombre] => ALVARO LEONEL
+    [id_centro_estudios_origen] => 22002156
+    [id_centro_destino] => 22005157
+    [tipoestudios] => ebo
+)
+
+ACTUALIZANDO VACANTES CENTROS, VACANTES: 0, INC: 1 CONSULTA: UPDATE centros set vacantes_ebo=vacantes_ebo+1,vacantes_ebo_original=vacantes_ebo_original+1 where id_centro=22002156PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 19 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 22000706, PLAZAS LIBRES: 19 LIBERANDO VACANTES DE RESERVA EN CENTRO 22000706, ALUMNOS: Array
+(
+    [id_alumno] => 308
+    [nombre] => DAVID
+    [id_centro_estudios_origen] => 22000706
+    [id_centro_destino] => 22005157
+    [tipoestudios] => ebo
+)
+
+ACTUALIZANDO VACANTES CENTROS, VACANTES: 0, INC: 1 CONSULTA: UPDATE centros set vacantes_ebo=vacantes_ebo+1,vacantes_ebo_original=vacantes_ebo_original+1 where id_centro=22000706PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 0, PLAZAS LIBRES: 19 PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 22000706, PLAZAS LIBRES: 19 LIBERANDO VACANTES DE RESERVA EN CENTRO 22000706, ALUMNOS: Array
+(
+    [id_alumno] => 310
+    [nombre] => BISBAL
+    [id_centro_estudios_origen] => 22000706
+    [id_centro_destino] => 22005157
+    [tipoestudios] => ebo
+)
+
+ACTUALIZANDO VACANTES CENTROS, VACANTES: 0, INC: 1 CONSULTA: UPDATE centros set vacantes_ebo=vacantes_ebo+1,vacantes_ebo_original=vacantes_ebo_original+1 where id_centro=22000706PROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO 50017451, PLAZAS LIBRES: 0 
+Actualizadas vacantes centros para fase 2 a las 08:05 del dia 28-May-2021
+Copiando tabla fase2....
+
+INSERT IGNORE INTO alumnos_fase2 SELECT
+t1.id_alumno,t1.nombre,t1.apellido1,t1.apellido2,t1.localidad,t1.calle_dfamiliar,'nodata'
+as coordenadas,t1.nombre_centro,t1.tipoestudios,t1.fase_solicitud,t1.estado_solicitud,t1.transporte,'0' as nordensorteo,'0' as nasignado,t1.puntos_validados,t1.id_centro,t2.centro1,t2.id_centro1,t3.centro2,t3.id_centro2,t4.centro3,t4.id_centro3,t5.centro4,t5.id_centro4,t6.centro5,t6.id_centro5,t7.centro6,t7.id_centro6, 'nocentro' as centro_definitivo, '0' as id_centro_definitivo,t1.id_centro_estudios_origen as id_centro_origen,t8.centro_origen,t1.reserva,t1.reserva as reserva_original,'automatica' as tipo_modificacion,'0' as activado_fase3 FROM 
+	(SELECT a.id_alumno, a.nombre, a.apellido1, a.apellido2,a.loc_dfamiliar as localidad,a.calle_dfamiliar,c.nombre_centro,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado as nasignado,b.puntos_validados,a.id_centro_destino as id_centro,a.id_centro_estudios_origen,a.est_desp_sorteo,a.reserva FROM alumnos a left join baremo b on b.id_alumno=a.id_alumno 
+	left join centros c on a.id_centro_destino=c.id_centro  order by c.id_centro desc, a.tipoestudios asc,a.transporte desc, b.puntos_validados desc)
+	as t1 
+	left join 
+	(SELECT a.id_alumno,c.id_centro as id_centro1, c.nombre_centro as centro1 from alumnos a, centros c where c.id_centro=a.id_centro_destino1) 
+	as t2 on t1.id_alumno=t2.id_alumno
+left join 
+	(SELECT a.id_alumno,c.id_centro as id_centro2, c.nombre_centro as centro2 from alumnos a, centros c where c.id_centro=a.id_centro_destino2) 
+	as t3 on t1.id_alumno=t3.id_alumno
+left join 
+	(SELECT a.id_alumno,c.id_centro as id_centro3, c.nombre_centro as centro3 from alumnos a, centros c where c.id_centro=a.id_centro_destino3) 
+	as t4 on t1.id_alumno=t4.id_alumno
+left join 
+	(SELECT a.id_alumno,c.id_centro as id_centro4, c.nombre_centro as centro4 from alumnos a, centros c where c.id_centro=a.id_centro_destino4) 
+	as t5 on t1.id_alumno=t5.id_alumno
+left join 
+	(SELECT a.id_alumno,c.id_centro as id_centro5, c.nombre_centro as centro5 from alumnos a, centros c where c.id_centro=a.id_centro_destino5) 
+	as t6 on t1.id_alumno=t6.id_alumno
+left join 
+	(SELECT a.id_alumno,c.id_centro as id_centro6, c.nombre_centro as centro6 from alumnos a, centros c where c.id_centro=a.id_centro_destino6) 
+	as t7 on t1.id_alumno=t7.id_alumno
+left join 
+	(SELECT a.id_alumno,c.id_centro as id_centro_origen, c.nombre_centro as centro_origen from alumnos a, centros c where c.id_centro=a.id_centro_estudios_origen) 
+	as t8 on t1.id_alumno=t8.id_alumno WHERE t1.fase_solicitud!='borrador' and t1.est_desp_sorteo='noadmitida'
+
+
+INSERT IGNORE INTO alumnos_fase2_tmp SELECT
+t1.id_alumno,t1.nombre,t1.apellido1,t1.apellido2,t1.localidad,t1.calle_dfamiliar,'nodata'
+as coordenadas,t1.nombre_centro,t1.tipoestudios,t1.fase_solicitud,t1.estado_solicitud,t1.transporte,'0' as nordensorteo,'0' as nasignado,t1.puntos_validados,t1.id_centro,t2.centro1,t2.id_centro1,t3.centro2,t3.id_centro2,t4.centro3,t4.id_centro3,t5.centro4,t5.id_centro4,t6.centro5,t6.id_centro5,t7.centro6,t7.id_centro6, 'nocentro' as centro_definitivo, '0' as id_centro_definitivo,t1.id_centro_estudios_origen as id_centro_origen,t8.centro_origen,t1.reserva,t1.reserva as reserva_original,'automatica' as tipo_modificacion,'0' as activado_fase3 FROM 
+	(SELECT a.id_alumno, a.nombre, a.apellido1, a.apellido2,a.loc_dfamiliar as localidad,a.calle_dfamiliar,c.nombre_centro,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado as nasignado,b.puntos_validados,a.id_centro_destino as id_centro,a.id_centro_estudios_origen,a.est_desp_sorteo,a.reserva FROM alumnos a left join baremo b on b.id_alumno=a.id_alumno 
+	left join centros c on a.id_centro_destino=c.id_centro  order by c.id_centro desc, a.tipoestudios asc,a.transporte desc, b.puntos_validados desc)
+	as t1 
+	left join 
+	(SELECT a.id_alumno,c.id_centro as id_centro1, c.nombre_centro as centro1 from alumnos a, centros c where c.id_centro=a.id_centro_destino1) 
+	as t2 on t1.id_alumno=t2.id_alumno
+left join 
+	(SELECT a.id_alumno,c.id_centro as id_centro2, c.nombre_centro as centro2 from alumnos a, centros c where c.id_centro=a.id_centro_destino2) 
+	as t3 on t1.id_alumno=t3.id_alumno
+left join 
+	(SELECT a.id_alumno,c.id_centro as id_centro3, c.nombre_centro as centro3 from alumnos a, centros c where c.id_centro=a.id_centro_destino3) 
+	as t4 on t1.id_alumno=t4.id_alumno
+left join 
+	(SELECT a.id_alumno,c.id_centro as id_centro4, c.nombre_centro as centro4 from alumnos a, centros c where c.id_centro=a.id_centro_destino4) 
+	as t5 on t1.id_alumno=t5.id_alumno
+left join 
+	(SELECT a.id_alumno,c.id_centro as id_centro5, c.nombre_centro as centro5 from alumnos a, centros c where c.id_centro=a.id_centro_destino5) 
+	as t6 on t1.id_alumno=t6.id_alumno
+left join 
+	(SELECT a.id_alumno,c.id_centro as id_centro6, c.nombre_centro as centro6 from alumnos a, centros c where c.id_centro=a.id_centro_destino6) 
+	as t7 on t1.id_alumno=t7.id_alumno
+left join 
+	(SELECT a.id_alumno,c.id_centro as id_centro_origen, c.nombre_centro as centro_origen from alumnos a, centros c where c.id_centro=a.id_centro_estudios_origen) 
+	as t8 on t1.id_alumno=t8.id_alumno WHERE t1.fase_solicitud!='borrador' and t1.est_desp_sorteo='noadmitida'
+
+Copia tabla solicitudesfase2 realizada corectamente a las 08:05 del dia 28-May-2021
