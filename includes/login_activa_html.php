@@ -38,7 +38,7 @@
    </head>
    <body>
       <div class="wrapper">
-         <h2>ADMISIÓN CENTROS EDUCACIÓN ESPECIAL CURSO 2022/2023</h2><p>La convocatoria se abrirá hoy viernes a las 9:00h</p>
+         <h2>ADMISIÓN CENTROS EDUCACIÓN ESPECIAL CURSO 2022/2023</h2><p>La fase de insciprción ha finalizado</p>
 <?php //print_r($_SERVER);
 ?>
 <?php if(($hoy>=DIA_INICIO_INSCRIPCION and $hoy <= DIA_FIN_INSCRIPCION and MANTENIMIENTO=='NO') OR IPREMOTA1==$_SERVER['HTTP_X_FORWARDED_FOR'] OR IPREMOTA2==$_SERVER['HTTP_X_FORWARDED_FOR']) 
@@ -73,13 +73,15 @@
                </div>
             </div> 
          </form>
+         <?php if($hoy<=DIA_FIN_INSCRIPCION){?>
             <div id="concorreo" style="">
                <p>Pulsa en 'Crear Solicitud' para acceder al formulario de creación de solicitudes.</p><p> Cuando lo completes recibirás un enlace en tu correo electrónico.</p><p> Dicho enlace te servirá para seguir todo el proceso incluyendo posibles modificaciones de solicitud, listados de admitidos etc...</p>
                <a href="index.php" class="btn btn-primary" value="Crear solicitud">Crear solicitud</a>
             </div>    
+         <?php }?>
 <?php }
 else
-   echo '<h4>PAGINA EN MANTENIMIENTO</h4>';
+   echo '<h4></h4>';
 
 ?>
       </div> <!--finn del wrapper-->   

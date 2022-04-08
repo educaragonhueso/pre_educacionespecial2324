@@ -1,4 +1,504 @@
 Centro;Apellidos;Nombre;EnseÃ±anza;"Fecha Nacimiento";estado
+SEGEDA;"Cham Touray";Abdoul;ebo;2005-05-13;continua
+SEGEDA;Catana;"Alejandro Marian";ebo;2011-02-07;continua
+SEGEDA;"Romeo Valiente";Alexandra;ebo;2007-08-27;continua
+SEGEDA;"Lefdali Bahffa";Amira;ebo;2006-12-30;continua
+SEGEDA;"Abejez Pirvu";Antonio;ebo;2005-01-01;continua
+SEGEDA;"LOPEZ RODRIGUEZ";Antonio;ebo;2008-07-01;continua
+SEGEDA;"Marqués Sánchez";Antonio;ebo;2008-04-29;continua
+SEGEDA;"Oke Olayinka";"Beckham Napoleón";tva;2004-05-11;continua
+SEGEDA;"Abadía Borja";Brayan;ebo;2005-04-01;"no continua"
+SEGEDA;Mihoc;Claudia;ebo;2005-10-23;continua
+SEGEDA;Elmasouf;Elyas;ebo;2013-10-04;continua
+SEGEDA;Riza;"Emil Cristian";ebo;2008-03-16;continua
+SEGEDA;"Berrocal de Oliveira";Fernando;ebo;2011-03-22;continua
+SEGEDA;"Sierra Cabello";Iulen;ebo;2006-01-23;continua
+SEGEDA;"LAZARO SILVA";"JUAN JOSE";ebo;2008-05-30;continua
+SEGEDA;"Zdranca Jiménez";Kevin;ebo;2012-03-13;continua
+SEGEDA;"Beldjilali Osmani";Malik;ebo;2014-03-06;continua
+SEGEDA;"Navarro Flor";"Manuel Jesús";ebo;2008-05-26;continua
+SEGEDA;"JIMÉNEZ BERRIO";"MARIA DEL CARMEN";ebo;2007-07-11;continua
+SEGEDA;"Antón Bendicho";Miguel;ebo;2010-11-30;continua
+SEGEDA;CHAKOUR;MOHAMED;ebo;2016-03-28;continua
+SEGEDA;"GIL MORARI";Óscar;ebo;2005-07-29;continua
+SEGEDA;"Pacheco Nuevo";Óscar;ebo;2014-03-20;continua
+SEGEDA;"Miret Marín";Paula;ebo;2007-02-08;continua
+SEGEDA;"Berrocal de Oliveira";Pedro;ebo;2009-08-17;continua
+SEGEDA;"Ruiz Alonso";Roberto;tva;2004-12-04;continua
+SEGEDA;"FUNEZ ARROYO";RODRIGO;ebo;2015-10-26;continua
+SEGEDA;Darabaneanu;"Romario Dumitru";ebo;2005-03-26;continua
+SEGEDA;"Riad Mallouli";Sara;ebo;2007-07-27;continua
+SEGEDA;Petre;Sebastian;ebo;2013-07-15;continua
+SEGEDA;"Arrué Serrano";Yaiza;ebo;2005-03-08;continua
+SEGEDA;"Abadía Borja";Yerik;ebo;2012-03-22;continua
+SEGEDA;"Vivas García";Aarón;tva;2002-05-07;continua
+SEGEDA;"Forcén Gaspar";"Alejandro Jesús";tva;2003-12-20;continua
+SEGEDA;Medrea;"Iuliana María";tva;2002-03-08;continua
+SEGEDA;"Brosel Pérez";Mario;tva;2003-04-17;continua
+SEGEDA;"Vlad Vlad";"Nuria María";tva;2003-12-14;continua
+SEGEDA;"Abboubi Chafiq";Salma;tva;2003-06-10;continua
+"JEAN PIAGET";"Granados Bielsa";ABEL;ebo;2004-01-08;continua
+"JEAN PIAGET";"Hernández Giménez";ABRAHAM;ebo;2005-11-20;continua
+"JEAN PIAGET";"Alcaya Benedí";ADRIÁN;ebo;2008-08-06;continua
+"JEAN PIAGET";"Aranda Montañés";ADRIÁN;ebo;2005-09-20;continua
+"JEAN PIAGET";"Díaz Lagares";ADRIÁN;ebo;2006-10-26;continua
+"JEAN PIAGET";"Carranza Ortín";ADRIANA;ebo;2006-12-11;continua
+"JEAN PIAGET";"Padillo Guerrero";AGUSTÍN;ebo;2008-04-13;continua
+"JEAN PIAGET";"García Díaz";"AINHOA VALENTINA";ebo;2013-10-24;continua
+"JEAN PIAGET";"Benito Carceller";ALEJANDRO;ebo;2007-08-01;continua
+"JEAN PIAGET";"Gros Ayuso";ALEJANDRO;ebo;2008-07-09;continua
+"JEAN PIAGET";"Midón Sarmiento";ALEJANDRO;ebo;2014-02-14;continua
+"JEAN PIAGET";"Nalvay Giménez";ALEJANDRO;ebo;2007-06-13;continua
+"JEAN PIAGET";"Simón Gracia";ALEJANDRO;ebo;2005-12-15;continua
+"JEAN PIAGET";"Lores Martínez";"ALESANDRO MANUEL";ebo;2006-01-27;continua
+"JEAN PIAGET";"Nogueira Julián";ALICIA;ebo;2009-04-10;continua
+"JEAN PIAGET";"Rusu Carmona";ALICIA;ebo;2011-11-05;continua
+"JEAN PIAGET";"Pardos Guiu";ANA;ebo;2018-09-02;continua
+"JEAN PIAGET";"Jadan Crespo";"ANA YAMILETH";ebo;2013-12-24;continua
+"JEAN PIAGET";"González Camino";ÁNGELA;ebo;2006-09-02;continua
+"JEAN PIAGET";"El Mourabit";AYMANE;ebo;2009-05-26;continua
+"JEAN PIAGET";"Forcada Mainar";BEATRIZ;ebo;2004-05-16;continua
+"JEAN PIAGET";"De Oliveira Siqueira";"BRYAN WILLIAM";ebo;2010-03-23;continua
+"JEAN PIAGET";"Yago Monge";CANDELA;ebo;2011-05-17;continua
+"JEAN PIAGET";"Guajardo Ruiz";CARLA;ebo;2006-03-03;continua
+"JEAN PIAGET";"Hostaled Cortés";"CLARA BEATRIZ";ebo;2008-09-26;continua
+"JEAN PIAGET";"Heredia Albitre";DANIEL;ebo;2004-05-11;continua
+"JEAN PIAGET";Vlasceanu;"EDUARD GABRIEL";ebo;2015-11-18;continua
+"JEAN PIAGET";"Rubio Lisbona";"EIDAN FRANCISCO";ebo;2011-03-21;continua
+"JEAN PIAGET";"Blanco Puga";ENOL;ebo;2005-10-08;continua
+"JEAN PIAGET";Cismaru;"ERIC MARIAN";ebo;2011-07-30;continua
+"JEAN PIAGET";"Posa Navarro";FERNANDO;ebo;2012-02-20;continua
+"JEAN PIAGET";Sandaliuk;GEORGII;ebo;2010-11-30;continua
+"JEAN PIAGET";"Sagardoy Agudo";GONZALO;ebo;2011-02-05;continua
+"JEAN PIAGET";"Bescos Barrio";HUGO;ebo;2006-08-07;continua
+"JEAN PIAGET";"Diego Martín";HUGO;ebo;2014-08-26;continua
+"JEAN PIAGET";"Salido Larrayad";IKER;ebo;2006-11-03;continua
+"JEAN PIAGET";"Sola Pérez";ISABELLA;ebo;2016-01-21;continua
+"JEAN PIAGET";"Cester  Pardos";IVÁN;ebo;2005-06-06;continua
+"JEAN PIAGET";"Gutiérrez Olmedo";IVÁN;ebo;2014-10-21;continua
+"JEAN PIAGET";"Espiérrez Romero";JAIME;ebo;2005-11-13;continua
+"JEAN PIAGET";"Rodriguez Lafuente";JAIRO;ebo;2012-01-21;continua
+"JEAN PIAGET";"Gracia Gómez";JAVIER;ebo;2005-04-20;continua
+"JEAN PIAGET";"Gabarre Gabarre";JESÚS;ebo;2006-08-09;continua
+"JEAN PIAGET";"González Toro";JOEL;ebo;2008-02-28;continua
+"JEAN PIAGET";"Sierra Mené";JORGE;ebo;2011-08-13;continua
+"JEAN PIAGET";"Hernández Aros";"JOSÉ ANDRÉS";ebo;2014-01-30;continua
+"JEAN PIAGET";"Montanel Binaburo";JUAN;ebo;2004-02-25;continua
+"JEAN PIAGET";"Blasco Soares";JULIA;ebo;2011-04-15;continua
+"JEAN PIAGET";"Blasco Pueyo";LAURA;ebo;2009-10-30;continua
+"JEAN PIAGET";"De Yarza González Lacarra";LAURA;ebo;2009-08-04;continua
+"JEAN PIAGET";"Biel Viaplana";LEYRE;ebo;2004-04-04;continua
+"JEAN PIAGET";"Brianso Bueno";LUCAS;ebo;2009-06-23;continua
+"JEAN PIAGET";"Escartín Liberio";LUCAS;ebo;2007-05-04;continua
+"JEAN PIAGET";"Abad Gálvez";LUCÍA;ebo;2009-04-27;continua
+"JEAN PIAGET";"Salazar Marco";LUCÍA;ebo;2004-10-21;continua
+"JEAN PIAGET";"Marcuello Gil";LUIS;ebo;2006-10-20;continua
+"JEAN PIAGET";"Saavedra Vanhauwaert";LUIS;ebo;2013-09-02;continua
+"JEAN PIAGET";"Gómez Castañeda";"MARA NATASHA";ebo;2013-07-23;continua
+"JEAN PIAGET";Kessler;MARC;ebo;2017-12-07;continua
+"JEAN PIAGET";"Martínez Lerena";MARCOS;ebo;2010-12-27;continua
+"JEAN PIAGET";"Gonzalvo de Gregorio";MARÍA;ebo;2008-06-02;continua
+"JEAN PIAGET";"Navarro Jiménez";MARIO;ebo;2005-08-02;continua
+"JEAN PIAGET";"Ariño Martínez";MIGUEL;ebo;2005-03-24;continua
+"JEAN PIAGET";"García Oscáriz";MIGUEL;ebo;2010-06-13;continua
+"JEAN PIAGET";"Giménez Giménez";MIGUEL;ebo;2006-03-13;continua
+"JEAN PIAGET";"Martínez González";MIRANDA;ebo;2008-07-27;continua
+"JEAN PIAGET";"El Mourabit";"MOHAMED AMINE";ebo;2014-07-23;continua
+"JEAN PIAGET";"Errer Bouzeid";"MOHAMED FADEL";ebo;2009-01-25;continua
+"JEAN PIAGET";"Fandos Cuartero";NEREA;ebo;2004-05-24;continua
+"JEAN PIAGET";"Medel Condón";PEDRO;ebo;2007-01-10;continua
+"JEAN PIAGET";"Bautista Dual";RAFAEL;ebo;2011-11-21;continua
+"JEAN PIAGET";"Khoder Al Mohamed";ROWAIDEH;ebo;2008-06-01;continua
+"JEAN PIAGET";"Martín Abad";RUTH;ebo;2013-06-14;continua
+"JEAN PIAGET";"Santana Cruz";"SAMANTHA DIGNALID";ebo;2005-03-22;continua
+"JEAN PIAGET";"Esteve Burillo";SAÚL;ebo;2018-03-10;continua
+"JEAN PIAGET";"Soler Paracuellos";SHEREZADE;ebo;2012-07-20;continua
+"JEAN PIAGET";"Chtioui Quílez";TARIK;ebo;2004-07-14;continua
+"JEAN PIAGET";"Martín Rubio";VERA;ebo;2011-04-11;continua
+"JEAN PIAGET";"Sánchez Cartié";VERA;ebo;2009-05-29;continua
+"JEAN PIAGET";"Campo Franca";ALBA;ebo;2003-05-11;continua
+"JEAN PIAGET";"Miñana Franco";ALBA;ebo;2003-01-13;continua
+"JEAN PIAGET";"Campaña Ortega";ALEJANDRO;tva;2003-01-03;continua
+"JEAN PIAGET";"Pérez Báguena";ALEJANDRO;tva;2003-06-09;continua
+"JEAN PIAGET";"Blanco Badal";ANA;tva;2003-05-05;continua
+"JEAN PIAGET";"Guillén Rey";CRISTIAN;tva;2003-02-08;continua
+"JEAN PIAGET";"Cebrián Sánchez";DAVID;tva;2002-08-20;continua
+"JEAN PIAGET";"Mayoral Bordonaba";DAVID;tva;2003-07-14;continua
+"JEAN PIAGET";"Úrbez Comps";ENRIQUE;tva;2003-10-07;continua
+"JEAN PIAGET";"Revilla Gutiérrez";JACOBO;tva;2002-02-21;continua
+"JEAN PIAGET";"Ariño Martínez";MARCO;tva;2003-11-22;continua
+"JEAN PIAGET";"Galbe Ostalé";MATÍAS;tva;2003-04-02;continua
+"JEAN PIAGET";"Fofana Suko";MUSA;tva;2003-06-21;continua
+"JEAN PIAGET";Soporán;RAÚL;tva;2003-01-10;continua
+"JEAN PIAGET";"Valenciano Bueno";SANDRA;tva;2003-11-13;continua
+"ANGEL RIVIÈRE";"Martínez Pablo";Eric;ebo;2017-05-17;continua
+"ANGEL RIVIÈRE";"HERNANDEZ RUBIO";Fernando;ebo;2012-11-15;continua
+"ANGEL RIVIÈRE";"Escudero Sorrosal";Francisco;ebo;2007-01-15;continua
+"ANGEL RIVIÈRE";Daoud;Hajjar;ebo;2011-08-13;continua
+"ANGEL RIVIÈRE";"Arrese Pallarés";Irene;ebo;2011-07-21;continua
+"ANGEL RIVIÈRE";"LÓPEZ CANDAU";IRENE;ebo;2007-07-10;continua
+"ANGEL RIVIÈRE";"Soria Peribañez";Iván;ebo;2010-09-20;continua
+"ANGEL RIVIÈRE";"López Jiménez";Jairo;ebo;2012-03-07;continua
+"ANGEL RIVIÈRE";"Burriel Molinos";Javi;ebo;2015-09-01;continua
+"ANGEL RIVIÈRE";"Gabarre Pérez";Joel;ebo;2012-05-24;continua
+"ANGEL RIVIÈRE";"GALLEGO DA ENCARNACAO";LEONARDO;ebo;2011-09-10;continua
+"ANGEL RIVIÈRE";"Chulde Huanca";"Leonel Eduardo";ebo;2011-07-05;continua
+"ANGEL RIVIÈRE";"Santiago Jiménez";Libertad;tva;2006-04-26;continua
+"ANGEL RIVIÈRE";"Ndao Feidor";Magat;ebo;2013-12-24;continua
+"ANGEL RIVIÈRE";"Macai Barbu";Marcos;ebo;2010-12-20;continua
+"ANGEL RIVIÈRE";"Alonso Santamaría";Marina;ebo;2010-11-05;continua
+"ANGEL RIVIÈRE";"García Ferrer";Mario;ebo;2010-10-17;continua
+"ANGEL RIVIÈRE";"Escanilla Baena";Marta;ebo;2007-02-01;continua
+"ANGEL RIVIÈRE";"Padillo Yagual";"Marta Elena";ebo;2013-08-06;continua
+"ANGEL RIVIÈRE";THIAM;Mor;ebo;2013-04-28;continua
+"ANGEL RIVIÈRE";"Ali Farman";Nabeel;tva;2006-11-23;continua
+"ANGEL RIVIÈRE";"González Suárez";"Naylet Milagro";ebo;2007-12-21;continua
+"ANGEL RIVIÈRE";"Jiménez Blanaru";"Nicol Denisa";tva;2004-10-20;continua
+"ANGEL RIVIÈRE";"Contamina Lucas";Paola;ebo;2017-01-14;continua
+"ANGEL RIVIÈRE";"Cervera Oroquieta";Pilar;ebo;2007-09-27;continua
+"ANGEL RIVIÈRE";Coulibaly;Tenifing;ebo;2012-09-26;continua
+"ANGEL RIVIÈRE";"Juan Zragua";Walid;ebo;2014-05-04;continua
+"ANGEL RIVIÈRE";"BORRASA PEREZ";Yvette;ebo;2008-08-20;continua
+"ANGEL RIVIÈRE";Shi;Zihan;ebo;2014-11-24;continua
+"ANGEL RIVIÈRE";"Guajardo León";Aitana;tva;2002-05-11;continua
+"ANGEL RIVIÈRE";"Franco Pisa";Alba;tva;2002-10-01;continua
+"ANGEL RIVIÈRE";"Ezquerra Domingo";Diego;tva;2003-09-13;continua
+"ANGEL RIVIÈRE";"Piquero Chicano";Lidia;tva;2002-07-31;continua
+"ANGEL RIVIÈRE";"Cimorra Sebastián";Pilar;tva;2002-04-18;continua
+"ANGEL RIVIÈRE";"Krubally Toure";Yenaba;tva;2003-09-15;continua
+"ANGEL RIVIÈRE";"Sarabia Oriol";"Aimar Sifang";tva;2005-02-01;continua
+"ANGEL RIVIÈRE";Tintoi;Amedea;ebo;2017-04-22;continua
+"ANGEL RIVIÈRE";"GABARRE CORTES";ANAYELI;ebo;2014-10-30;continua
+"ANGEL RIVIÈRE";"FRANCO URREA";ÁNGEL;ebo;2013-12-28;continua
+"ANGEL RIVIÈRE";"Cervera Oroquieta";Ángela;ebo;2007-09-27;continua
+"ANGEL RIVIÈRE";"Martín Salas";Biel;ebo;2008-12-26;continua
+"ANGEL RIVIÈRE";"Delgado De Castro";Carla;tva;2004-02-18;continua
+"ANGEL RIVIÈRE";"Sevil Sagarra";Clara;ebo;2013-12-23;continua
+"ANGEL RIVIÈRE";"Pueyo Beltrán";Daniel;ebo;2016-03-15;continua
+"ANGEL RIVIÈRE";"Rey Jiménez";Daniel;ebo;2008-02-14;continua
+"ANGEL RIVIÈRE";"Rojano García";Daniel;ebo;2011-06-09;continua
+"ANGEL RIVIÈRE";"SÁNCHEZ MARÍN";David;ebo;2015-11-13;continua
+"ANGEL RIVIÈRE";"Vinacua Torres";David;ebo;2015-07-15;continua
+"ANGEL RIVIÈRE";"Ortega Gonzalo";Diego;tva;2004-07-02;continua
+"ANGEL RIVIÈRE";"Marin Ocejo";Eric;ebo;2009-12-30;continua
+"RINCÓN DE GOYA";"Romero Chica";Aarón;ebo;2010-03-11;continua
+"RINCÓN DE GOYA";"Fernández  Lafuente";Adrián;ebo;2007-03-22;continua
+"RINCÓN DE GOYA";"Andrés Gines";Adriana;ebo;2006-12-03;continua
+"RINCÓN DE GOYA";Nepeyvoda;Anastasia;ebo;2005-01-05;continua
+"RINCÓN DE GOYA";"Delgado Valencia";Ariadna;tva;2004-03-19;continua
+"RINCÓN DE GOYA";"Pérez Cedano";Arley;ebo;2007-09-14;continua
+"RINCÓN DE GOYA";Nepeyvoda;Artem;ebo;2006-08-17;continua
+"RINCÓN DE GOYA";"Duarte Izquierdo";Clara;ebo;2014-07-21;continua
+"RINCÓN DE GOYA";"Oropeza Pérez";"Cristhian David";ebo;2016-04-14;continua
+"RINCÓN DE GOYA";"Yobano Yobano";Cristina;ebo;2006-09-20;continua
+"RINCÓN DE GOYA";"Martínez Martínez";Daniela;ebo;2007-08-25;continua
+"RINCÓN DE GOYA";"Esteves Alves";David;ebo;2007-06-07;continua
+"RINCÓN DE GOYA";"Aparicio Reyes";"David Habraham";ebo;2009-08-06;continua
+"RINCÓN DE GOYA";"Sánchez Pérez";Eduardo;ebo;2011-01-11;continua
+"RINCÓN DE GOYA";"Pineda Sancho";Eloy;ebo;2013-01-09;continua
+"RINCÓN DE GOYA";"Santiago Salguero";Emilio;ebo;2007-05-07;continua
+"RINCÓN DE GOYA";"Pascual Santos";Enzo;ebo;2011-01-07;continua
+"RINCÓN DE GOYA";"Gabarri Romero";Ezequiel;ebo;2006-04-06;continua
+"RINCÓN DE GOYA";"Lázaro Pérez";Fran;ebo;2011-07-15;continua
+"RINCÓN DE GOYA";"Sanz Beltrán";Guenael;ebo;2008-10-27;continua
+"RINCÓN DE GOYA";"Cebollada  Talayero";Hugo;ebo;2009-01-26;continua
+"RINCÓN DE GOYA";"Serrano Santamaría";Irene;ebo;2012-02-24;continua
+"RINCÓN DE GOYA";"Herrero Vázquez";"Ismael Mario";ebo;2007-08-03;continua
+"RINCÓN DE GOYA";"Ferrer Rumbo";Itziar;ebo;2007-03-17;continua
+"RINCÓN DE GOYA";"Peixoto Ribeiro";"Jorge Daniel";ebo;2009-01-30;continua
+"RINCÓN DE GOYA";"Sanjuan Martínez";Julia;ebo;2006-02-15;continua
+"RINCÓN DE GOYA";"Ali Fazilat";Kashif;ebo;2007-03-22;continua
+"RINCÓN DE GOYA";Ciocan;Lorena;ebo;2007-05-16;continua
+"RINCÓN DE GOYA";"Arellano Melero";Lucas;ebo;2006-12-10;continua
+"RINCÓN DE GOYA";"Díaz Gordo";Lucía;ebo;2008-12-03;continua
+"RINCÓN DE GOYA";"Alonso Garcés";Mara;ebo;2013-09-06;continua
+"RINCÓN DE GOYA";"Badía Lumbreras";Marcos;ebo;2011-03-17;continua
+"RINCÓN DE GOYA";"Cornago Escorihuela";Marcos;ebo;2014-11-07;continua
+"RINCÓN DE GOYA";"Díaz Montanés";Marta;ebo;2006-07-19;continua
+"RINCÓN DE GOYA";"Velázquez Oliver";Marta;ebo;2008-01-22;continua
+"RINCÓN DE GOYA";"González  Márquez";Martín;ebo;2014-04-29;continua
+"RINCÓN DE GOYA";"Diaz Miranem";"Milja Ulrika";tva;2004-09-29;continua
+"RINCÓN DE GOYA";"El Khattabi";"Mohamed Reda";ebo;2008-06-12;continua
+"RINCÓN DE GOYA";"Gabarri Romero";Nazareth;tva;2004-08-13;continua
+"RINCÓN DE GOYA";"Dávila Franco";"Nicolás Gael";ebo;2007-02-14;continua
+"RINCÓN DE GOYA";"Bautista Lasobras";Olivia;ebo;2007-07-27;continua
+"RINCÓN DE GOYA";"Valiente Benito";Pablo;tva;2004-05-03;continua
+"RINCÓN DE GOYA";"Cezón Iordache";Raúl;ebo;2007-11-25;continua
+"RINCÓN DE GOYA";"Pinar Chetioui";Rayan;ebo;2016-12-11;continua
+"RINCÓN DE GOYA";"Pérez Alonso";Samuel;ebo;2006-09-12;continua
+"RINCÓN DE GOYA";"Mouatamid Touil";Sara;ebo;2005-03-26;continua
+"RINCÓN DE GOYA";"Sánchez Notivol";Sergio;tva;2004-05-01;continua
+"RINCÓN DE GOYA";Ilie;"Sergio Bogdan";ebo;2013-05-08;continua
+"RINCÓN DE GOYA";Romascan;"Sergio Ilie";ebo;2006-07-19;continua
+"RINCÓN DE GOYA";"Al Amri Ruiz";Sundus;ebo;2016-01-26;continua
+"RINCÓN DE GOYA";"Campillos Menéndez";Vera;ebo;2016-09-09;continua
+"RINCÓN DE GOYA";"Hidalgo  Casado";Victor;ebo;2014-10-23;continua
+"RINCÓN DE GOYA";"Dos Santos Silva";"Víctor Enmanuel";tva;2004-01-17;continua
+"RINCÓN DE GOYA";"Torralba Vizarraga";Yasmina;ebo;2014-10-04;continua
+"RINCÓN DE GOYA";"Teodorova Hristova";Yoana;ebo;2012-10-01;continua
+"RINCÓN DE GOYA";"Guerrero Julian";Aarón;tva;2002-03-07;continua
+"RINCÓN DE GOYA";Stefan;Alexandru;tva;2003-02-14;continua
+"RINCÓN DE GOYA";Nepeyvoda;Andrii;tva;2003-02-03;continua
+"RINCÓN DE GOYA";Jaidar;Chaimaa;tva;2002-03-31;continua
+"RINCÓN DE GOYA";"De Bustos Aguado";"David Justiniano";tva;2002-08-07;continua
+"RINCÓN DE GOYA";Serban;"Delia Roxana";tva;2002-06-16;continua
+"RINCÓN DE GOYA";"Medrano Correas";Diego;tva;2003-04-07;continua
+"RINCÓN DE GOYA";"Llamas Pacheco";"Francis Noraima";tva;2003-05-28;continua
+"RINCÓN DE GOYA";"Loulidi  Hamilou";Ibrahim;tva;2002-01-28;continua
+"RINCÓN DE GOYA";"Poveda Heredia";"J Medardo";tva;2002-09-28;continua
+"RINCÓN DE GOYA";"Bernal Vela";Juan;tva;2003-02-13;continua
+"RINCÓN DE GOYA";"Borja Clavería";"Maria Clara";tva;2003-05-03;continua
+"RINCÓN DE GOYA";"López Perdomo";"Nicole Andrera";tva;2003-05-06;continua
+"RINCÓN DE GOYA";"Tejero Velázquez";Sara;tva;2003-07-14;continua
+"RINCÓN DE GOYA";"Giménez Gabarre";Saray;tva;2003-03-06;continua
+"RINCÓN DE GOYA";"Herrero Vázquez";Soraya;tva;2003-10-06;continua
+"RINCÓN DE GOYA";"Royo Vicente";Victoria;tva;2003-11-10;continua
+ALBORADA;"CLAVERÍA DUAL";Adolfo;tva;2004-02-04;continua
+ALBORADA;"HERNÁNDEZ SOLER";ADONAY;ebo;2011-12-13;continua
+ALBORADA;"DEL TIEMPO TRASOBARES";Adrián;ebo;2008-12-14;continua
+ALBORADA;"SOLSONA BONED";ADRIAN;ebo;2015-07-08;continua
+ALBORADA;"Olmos Gomera";Alba;ebo;2008-04-04;continua
+ALBORADA;BUZATU;"ALBERT CRISTIAN";ebo;2006-10-30;continua
+ALBORADA;"CEPRIÁN NERVIÓN";ALEJANDRA;tva;2004-02-05;continua
+ALBORADA;"RUIZ LABORDA";Alejandra;ebo;2011-09-01;continua
+ALBORADA;"Llorente Marro";Alejandro;ebo;2007-09-03;continua
+ALBORADA;"GUTIÉRREZ SÁNCHEZ";"Alejandro Daniel";ebo;2005-10-25;continua
+ALBORADA;"Laguna Quirós";Andrés;ebo;2013-05-09;continua
+ALBORADA;"IMAS CAMPO";Ariana;tva;2004-01-07;continua
+ALBORADA;"Antezana Blanco";"Camila Nicole";ebo;2006-07-20;continua
+ALBORADA;"CASES ALTURA";Celia;ebo;2008-12-31;continua
+ALBORADA;"LÓPEZ HERNÁNDEZ";Claudia;tva;2004-06-20;continua
+ALBORADA;"IGARZA CERULIA";Cristian;ebo;2011-08-19;continua
+ALBORADA;"GONZÁLEZ URDÁNIZ";David;ebo;2006-11-28;continua
+ALBORADA;Stan;"David Costin";ebo;2006-12-20;continua
+ALBORADA;"ZEPEDA ESPINOZA";"Denzel Alejandro";ebo;2015-02-24;continua
+ALBORADA;"TORRES SANCHEZ";DIANA;tva;2004-06-20;continua
+ALBORADA;"Ayensa Santos";Diego;ebo;2007-08-15;continua
+ALBORADA;"BROCATE PLO";DIEGO;ebo;2010-10-24;continua
+ALBORADA;MIHAI;"EDUARD RAFAEL";ebo;2012-02-02;continua
+ALBORADA;CAPRARU;"Elisa Andreea";ebo;2012-09-26;continua
+ALBORADA;IKENHI;FAVOUR;ebo;2006-01-31;continua
+ALBORADA;"PEIXOTO TEIXEIRA";"Francisco Manuel";ebo;2012-10-09;continua
+ALBORADA;"Metaute Polo";Gorka;ebo;2006-01-16;continua
+ALBORADA;"OUBAHSYN EL HAFID";HAJAR;ebo;2014-11-08;continua
+ALBORADA;"SANCHO BENITO";"HUGO DAVID";ebo;2016-06-26;continua
+ALBORADA;"RUBIO PRIETO";Iago;tva;2004-01-02;continua
+ALBORADA;"FRANCO MONTÓN";Irene;ebo;2006-06-01;continua
+ALBORADA;"FLAMARIQUE PARDIÑAS";Isabel;ebo;2013-08-23;continua
+ALBORADA;"Romeo Romero";Iván;ebo;2007-06-06;continua
+ALBORADA;TODOROV;"IVO IVAYLOV";ebo;2011-01-15;continua
+ALBORADA;"LORENTE ANSÓN";Jaime;ebo;2007-09-14;continua
+ALBORADA;"Monguilod Villa";Javier;ebo;2006-07-03;continua
+ALBORADA;"Pueyo Lázaro";Javier;ebo;2006-02-10;continua
+ALBORADA;BEGOUG;JAWAD;ebo;2013-07-09;continua
+ALBORADA;TOURAY;Jeinaba;ebo;2005-09-20;continua
+ALBORADA;"Díaz Comín";Jorge;ebo;2007-11-09;continua
+ALBORADA;"PERALTA RAMÍREZ";Jorge;ebo;2007-06-15;continua
+ALBORADA;"TRAID RUIZ";JORGE;ebo;2010-01-28;continua
+ALBORADA;"MILLÁN LAFUENTE";"JOSÉ LUIS";ebo;2006-11-24;continua
+ALBORADA;"LONDOÑO MERA";"Juan Sebastian";ebo;2005-09-21;continua
+ALBORADA;Bader;Khalid;tva;2004-02-23;continua
+ALBORADA;TALIBI;LINA;ebo;2016-06-22;continua
+ALBORADA;"VICENTE GRACIA";Lizer;ebo;2013-01-30;continua
+ALBORADA;Bacircea;Loredana;ebo;2005-08-07;continua
+ALBORADA;"FERNÁNDEZ FOZ";Lucas;ebo;2009-09-09;continua
+ALBORADA;"LARGO PÉREZ";Lucas;ebo;2008-04-18;continua
+ALBORADA;"RELANCIO LAPIEDRA";LUCAS;ebo;2016-06-15;continua
+ALBORADA;"SIERRA LOPEZ";LUCIA;ebo;2005-10-20;continua
+ALBORADA;"MIMÉ DIEYE";Mamadou;ebo;2009-02-28;continua
+ALBORADA;"PARACUELLOS REBLET";Marcos;ebo;2013-09-23;continua
+ALBORADA;"LAZARO IGLESIAS";"MARIA DE OBARRA";ebo;2012-07-26;continua
+ALBORADA;"AZNAREZ RUIZ";"María Pilar";tva;2004-12-25;continua
+ALBORADA;Andrei;"Mario Florin";ebo;2015-06-26;continua
+ALBORADA;"SALVADOR JURADO";Martín;ebo;2015-10-17;continua
+ALBORADA;"SÁNCHEZ GALLEGO";MATHIAS;ebo;2013-11-13;continua
+ALBORADA;"García Casbas";Máximo;ebo;2006-03-12;continua
+ALBORADA;"EL MAANAWI";Meriam;ebo;2010-01-02;continua
+ALBORADA;"FERRERO BAUTISTA";"MIGUEL ANGEL";ebo;2012-07-07;continua
+ALBORADA;"GIMENO RUZ";Miriam;ebo;2010-05-11;continua
+ALBORADA;FATMI;"MUSTAFA ABDELLAM";ebo;2014-03-24;continua
+ALBORADA;"HAMHAM KIDOUN";Nabil;ebo;2006-08-14;continua
+ALBORADA;"RODRIGUES ARELLANO";Nayara;ebo;2008-03-12;continua
+ALBORADA;LIULEA;Nicolae;ebo;2008-11-30;continua
+ALBORADA;"Valencia Guillén";Nicolás;ebo;2011-04-26;continua
+ALBORADA;Chaouchi;Ouail;ebo;2016-12-27;continua
+ALBORADA;ARROUN;Oumayma;ebo;2007-04-07;continua
+ALBORADA;"CRESPO SIERRA";Pablo;ebo;2007-03-19;continua
+ALBORADA;"ISASI DE ISASMENDI MODREGO";PAULA;ebo;2011-01-13;continua
+ALBORADA;"GIMÉNEZ COLMENERO";Rafael;ebo;2009-01-30;continua
+ALBORADA;NIANG;ROKHEYA;ebo;2015-07-14;continua
+ALBORADA;"GARCIA MAS";Ruben;ebo;2009-03-06;continua
+ALBORADA;MOUHOUB;Salim;tva;2004-02-21;continua
+ALBORADA;"HAMHAM MEZOUAR";Salma;ebo;2008-12-02;continua
+ALBORADA;"Latorre Casanova";Sergi;ebo;2011-11-15;continua
+ALBORADA;"SERRANO DE LOS SANTOS";Sergio;ebo;2007-08-30;continua
+ALBORADA;"LAVILLA DÍAZ";"Sergio Luis";ebo;2005-12-05;continua
+ALBORADA;"Valero Saz";Tagore;ebo;2006-10-21;continua
+ALBORADA;BELABACI;TINHINANE;ebo;2017-11-27;continua
+ALBORADA;"Salas Sanz";Valeria;ebo;2010-09-19;continua
+ALBORADA;"NICOLAU BORRUEL";Vera;ebo;2009-09-16;continua
+ALBORADA;BAHTA;"Yonas Tikue";ebo;2011-04-29;continua
+ALBORADA;"Ruiz Bernad";Aitana;tva;2003-09-23;continua
+ALBORADA;"TAPIA MÁRQUEZ";"Carlos Enrique";tva;2002-03-30;continua
+ALBORADA;"BOUIZY MIFTAN";"El Mehdi";tva;2003-10-22;continua
+ALBORADA;"GIMÉNEZ PÉREZ";EMILIO;tva;2003-11-09;continua
+ALBORADA;"TORRES FERRER";Esteban;tva;2003-03-30;continua
+ALBORADA;"MORENO SÁNCHEZ";Eva;tva;2003-04-15;continua
+ALBORADA;"SERAL DIEZ";Ismael;tva;2002-09-14;continua
+ALBORADA;GINECHI;Jihane;tva;2003-03-16;continua
+ALBORADA;"ROMERO REGO";"José Manuel";tva;2003-02-08;continua
+ALBORADA;"QUERO TEJERO";Marcos;tva;2002-07-20;continua
+ALBORADA;"Maestro Quibus";Marta;tva;2002-11-19;continua
+ALBORADA;"REMIRO MARTINEZ";Miriam;tva;2003-09-08;continua
+ALBORADA;"FERNÁNDEZ DE LA ROSA";"Pablo Lorién";tva;2003-07-23;continua
+ALBORADA;"GIMÉNEZ PÉREZ";PEDRO;tva;2002-08-06;continua
+ALBORADA;"LOPES MONTEIRO";Ruben;tva;2002-09-30;continua
+"MARÍA SORIANO";"MENDES BELLOC";ADRIÁN;ebo;2011-04-12;continua
+"MARÍA SORIANO";"Heredero Laudo";Aitana;ebo;2008-07-28;continua
+"MARÍA SORIANO";"Salavera Vidaurre";Aitor;ebo;2006-11-05;continua
+"MARÍA SORIANO";"FERNANDO CHERNYAKOV";ALEX;ebo;2015-12-31;continua
+"MARÍA SORIANO";"FERNÁNDEZ ESTALLO";"ANA MARÍA";ebo;2008-12-04;continua
+"MARÍA SORIANO";"MASSIE NSANG";"ANGEL JEREMIAS";ebo;2008-10-06;continua
+"MARÍA SORIANO";"TORRES FRAILE";Antonio;ebo;2005-10-18;continua
+"MARÍA SORIANO";"Dual Mendoza";"Antonio Joel";ebo;2009-01-19;continua
+"MARÍA SORIANO";"GRACIA VIÑAS";ARWEN;ebo;2005-09-17;continua
+"MARÍA SORIANO";"Benito Zueco";Carlota;ebo;2007-07-27;continua
+"MARÍA SORIANO";"MEJÍAS HERNÁNDEZ";Cristian;ebo;2005-06-29;continua
+"MARÍA SORIANO";"Iliev Petrov";Elías;ebo;2006-07-15;continua
+"MARÍA SORIANO";"SANCHEZ GUARDADO";"Giovanni Marcelo";ebo;2014-08-31;continua
+"MARÍA SORIANO";"Las Heras Catalina";Hugo;ebo;2008-04-29;continua
+"MARÍA SORIANO";"Segura Loren";Ignacio;ebo;2005-05-15;continua
+"MARÍA SORIANO";"Aina Gan";Isabel;tva;2004-12-01;"no continua"
+"MARÍA SORIANO";"MARÍN SEVILLA";JOEL;ebo;2006-06-03;continua
+"MARÍA SORIANO";"LOPEZ RODRIGUEZ";José;ebo;2005-05-26;continua
+"MARÍA SORIANO";"MARÍN JUBERÍAS";"JUAN JOSÉ";ebo;2006-06-25;continua
+"MARÍA SORIANO";"DUAL MENDOZA";JUDA;ebo;2010-06-28;continua
+"MARÍA SORIANO";"GONZÁLEZ ANDRÉS";JULIA;tva;2004-12-15;"no continua"
+"MARÍA SORIANO";"VARGAS MIRANDA";"KAROL DANIELA";tva;2002-11-21;"no continua"
+"MARÍA SORIANO";"Stanciu Martinez";Laura;ebo;2009-01-20;continua
+"MARÍA SORIANO";"LUCAS QUINTANILLA";LUCIA;ebo;2012-12-17;continua
+"MARÍA SORIANO";"TOLON ENA";"LUCIA SILVANA";ebo;2015-06-20;continua
+"MARÍA SORIANO";"Carrasco Alejandre";María;ebo;2007-03-04;continua
+"MARÍA SORIANO";Roman;"Marina Andreea";ebo;2010-07-24;continua
+"MARÍA SORIANO";"GARCÍA PELAYO";MARIO;tva;2002-10-26;"no continua"
+"MARÍA SORIANO";Gagiu;"Marius Raúl";ebo;2008-08-11;continua
+"MARÍA SORIANO";Bokhari;Mohamed;ebo;2010-06-24;continua
+"MARÍA SORIANO";TUNKARA;MUSA;ebo;2015-01-04;continua
+"MARÍA SORIANO";"Arriero Espinosa";PALOMA;tva;2003-08-26;"no continua"
+"MARÍA SORIANO";"BARÓN CUADRADO";Paula;tva;2003-10-14;"no continua"
+"MARÍA SORIANO";"POYO POLO";RICARDO;ebo;2006-09-14;continua
+"MARÍA SORIANO";"Peña Lora";Samuel;ebo;2006-07-04;continua
+"MARÍA SORIANO";"Soufiane Jiménez";Sara;ebo;2008-01-29;continua
+"MARÍA SORIANO";"VIDAL VERNAZA";"SASHA VICTORIA";ebo;2010-10-06;continua
+"MARÍA SORIANO";"Lessel Gracia";Yousef;ebo;2009-09-28;continua
+"LOS PUEYOS";"EL YAAGOUBI";ADAM;ebo;2008-06-06;continua
+"LOS PUEYOS";GHARBAOUI;ADAM;ebo;2012-04-19;continua
+"LOS PUEYOS";"Remacha Benedí";Alberto;ebo;2012-07-07;continua
+"LOS PUEYOS";"Idoype Bonilla";Alvaro;tva;2004-11-02;continua
+"LOS PUEYOS";"GRACIA MBANG";CESAR;tva;2004-01-18;continua
+"LOS PUEYOS";"MBO NCHAMA";"CIRILO ALEJANDRO";ebo;2010-12-02;continua
+"LOS PUEYOS";"Díaz Chavero";Daniel;tva;2004-10-09;continua
+"LOS PUEYOS";"Sánchez Herrando";David;ebo;2010-03-01;continua
+"LOS PUEYOS";"Ascuntar Sinche";"Dennis Hernán";ebo;2014-05-28;continua
+"LOS PUEYOS";"MATUTE MARIÑOSO";ERIC;ebo;2007-09-25;continua
+"LOS PUEYOS";"REYES MARTINEZ";"Ian Aaron";ebo;2015-09-03;continua
+"LOS PUEYOS";"MARTIN MATEOS";Jaime;ebo;2014-01-12;continua
+"LOS PUEYOS";"Mínguez Salinas";Javier;ebo;2007-08-11;continua
+"LOS PUEYOS";"ENEME ASOMO";"JOSE ANTONIO";ebo;2007-07-22;continua
+"LOS PUEYOS";"EKUA LOPEZ";"JUAN CARLOS";ebo;2008-12-17;continua
+"LOS PUEYOS";"ESTEBAN NGUEMA";"Juan Luis";ebo;2005-10-14;continua
+"LOS PUEYOS";"MATEO MATEOS";LIAM;ebo;2016-09-17;continua
+"LOS PUEYOS";"MENÉ NARTÍN";LUCÍA;ebo;2013-06-27;continua
+"LOS PUEYOS";"RONCAGLIOLO TRUJILLO";"Mariano Alberto";ebo;2007-08-07;continua
+"LOS PUEYOS";RIAD;"Mohamed Taha";ebo;2018-01-11;continua
+"LOS PUEYOS";"RUÍZ ESTAUN";SAMUEL;ebo;2007-10-15;continua
+"LOS PUEYOS";"HERNÁNDEZ ÁLVAREZ";SARA;ebo;2009-11-08;continua
+"LOS PUEYOS";Mbaye;"Seydina Mouhamed";ebo;2015-11-27;continua
+"LOS PUEYOS";Mbaye;"Seynabou Ndiaye";ebo;2013-08-08;continua
+"LOS PUEYOS";ANDREI;"Viorel Gabriel";ebo;2010-04-24;continua
+"LOS PUEYOS";"LARGO GOMEZ";ALBERTO;tva;2003-06-11;continua
+"LOS PUEYOS";"Lázaro Aguilar";Axier;tva;2003-11-12;continua
+"LOS PUEYOS";"Sánchez Casas";Ignacio;tva;2002-12-25;continua
+"LOS PUEYOS";"García Martínez";Jorge;tva;2002-08-08;continua
+"LOS PUEYOS";"Barón Iso";Susana;tva;2002-10-31;continua
+"SAN GERMÁN";"OLALLA AGUILAR";Adrián;ebo;2016-05-23;continua
+"SAN GERMÁN";"MORALES GÁLLEGO";ADRIANA;ebo;2007-11-11;continua
+"SAN GERMÁN";"CRESPO BARRIOS";AINHOA;ebo;2011-06-09;continua
+"SAN GERMÁN";"Blandon Rocha";"Brandon David";ebo;2006-11-15;continua
+"SAN GERMÁN";"HERNÁNDEZ ORTEGA";BRAYAN;ebo;2008-12-20;continua
+"SAN GERMÁN";"MORALES GIAGASTRU";DANIEL;ebo;2015-03-27;continua
+"SAN GERMÁN";"ALASTUEY CAMPOS";DIEGO;ebo;2010-04-17;continua
+"SAN GERMÁN";"BELLO CABRIA";DIEGO;ebo;2010-07-03;continua
+"SAN GERMÁN";"LORENZ LAHOZ";DIEGO;ebo;2016-08-01;continua
+"SAN GERMÁN";"GARCIA TRIGUERO";Elsa;ebo;2017-12-19;continua
+"SAN GERMÁN";"RUIZ BAETA";HUGO;ebo;2010-12-11;continua
+"SAN GERMÁN";RADULESCU;"IAN ALEXANDRU";ebo;2012-06-07;continua
+"SAN GERMÁN";"Luna Zorrilla";Izan;ebo;2014-03-28;continua
+"SAN GERMÁN";"GARCÍA ROS";JESÚS;ebo;2008-07-23;continua
+"SAN GERMÁN";"MOLINE CARBAJAL";JIMENA;ebo;2011-10-28;continua
+"SAN GERMÁN";"GARCIA IBARZO";Marío;ebo;2005-07-20;continua
+"SAN GERMÁN";"GARRIDO HERNÁNDEZ";MARTÍN;ebo;2016-06-01;continua
+"SAN GERMÁN";ALI;NOMAN;ebo;2006-11-26;continua
+"SAN GERMÁN";"MURILLO SÁNCHEZ";PAULA;ebo;2013-08-28;continua
+"SAN GERMÁN";"OWONO ANGÜE";Rosita;ebo;2018-10-20;continua
+"SAN GERMÁN";"CARRILLO MARADIAGA";"SERGIO MANUEL";ebo;2007-06-13;continua
+"RECTOR MAMÉS ESPERABÉ";Attif;Adem;ebo;2008-01-12;continua
+"RECTOR MAMÉS ESPERABÉ";"Aroca Fago";Adrián;ebo;2014-02-24;continua
+"RECTOR MAMÉS ESPERABÉ";"Vigo Pérez";Andrea;ebo;2007-02-22;continua
+"RECTOR MAMÉS ESPERABÉ";"Lavilla Cortés";Daniel;ebo;2013-03-18;continua
+"RECTOR MAMÉS ESPERABÉ";"Osanz Gómez";Diego;ebo;2011-05-26;continua
+"RECTOR MAMÉS ESPERABÉ";"Martínez Vicente";"Enmanuel de Jesús";ebo;2005-12-29;continua
+"RECTOR MAMÉS ESPERABÉ";"Gracia Duato";Estela;ebo;2008-01-17;continua
+"RECTOR MAMÉS ESPERABÉ";Dankambary;Hafiz;ebo;2005-11-10;continua
+"RECTOR MAMÉS ESPERABÉ";"Florián Sánchez";Jimena;ebo;2015-10-04;continua
+"RECTOR MAMÉS ESPERABÉ";"Salvatierra Mayo";Jorge;ebo;2011-04-05;continua
+"RECTOR MAMÉS ESPERABÉ";Attif;Mohamed;ebo;2010-11-20;continua
+"RECTOR MAMÉS ESPERABÉ";"Santillán Ortega";"Natalia Paola";ebo;2013-03-06;continua
+"RECTOR MAMÉS ESPERABÉ";Djilali;Saiah;ebo;2015-01-03;continua
+"RECTOR MAMÉS ESPERABÉ";Djilali;Yassin;ebo;2015-01-03;continua
+"RECTOR MAMÉS ESPERABÉ";Sadiakhou;Yenaba;ebo;2013-06-27;continua
+"RECTOR MAMÉS ESPERABÉ";Laghraibi;Youssef;ebo;2010-09-16;continua
+CEDES;"BAILO GIL";Alejandro;ebo;2007-11-21;continua
+CEDES;"Ibáñez Luna";Alejandro;ebo;2007-11-14;continua
+CEDES;"PAESA NOVELLA";ALONSO;ebo;2012-08-20;continua
+CEDES;"DE LEÓN DOMÍNGUEZ";"ASHLEY ARIADNA";ebo;2009-11-18;continua
+CEDES;"BONILLA ACEDO";CRISTIAN;ebo;2005-11-30;continua
+CEDES;"HERNANDEZ CABRERA";CRISTIAN;ebo;2007-09-24;continua
+CEDES;"AGUILAR MUÑOZ";DIEGO;ebo;2005-09-08;continua
+CEDES;"FRANCO BORAO";DIEGO;ebo;2008-09-25;continua
+CEDES;"PINA ALLO";DIEGO;ebo;2015-04-23;continua
+CEDES;"HUERTA VILLARROYA";GABRIEL;tva;2004-06-12;continua
+CEDES;"REGLERO LUCIANO-OLIVEIRA";Gabriel;ebo;2010-01-31;continua
+CEDES;"PEREZ NAVARRO";GUILLERMO;ebo;2005-06-15;continua
+CEDES;"GIMENEZ LOPEZ";HUGO;ebo;2009-03-11;continua
+CEDES;"LANZUELA RUBIO";HUGO;ebo;2007-04-14;continua
+CEDES;"Blasco Buil";Izarbe;tva;2004-05-26;continua
+CEDES;"AGUARON IBARS";Jesus;ebo;2005-12-01;continua
+CEDES;"SANTOS DE LAS HERAS";JOHANA;ebo;2008-08-08;continua
+CEDES;"NEGRE ANTORÁN";JORGE;ebo;2007-07-15;continua
+CEDES;"CARDIEL CALOMARDE";José;ebo;2008-12-31;continua
+CEDES;"París Salas";"José Luis";tva;2004-02-11;continua
+CEDES;"ESTEVE LEORZA";JULEN;tva;2004-10-10;continua
+CEDES;"BUENDÍA MOHEDANO";Laura;ebo;2005-01-28;continua
+CEDES;"Negredo Calonge";Lorién;ebo;2006-08-18;continua
+CEDES;"Mojica Dinconiu";"Lucas Javier";ebo;2012-10-19;continua
+CEDES;"Pérez Guallart";Luis;tva;2004-12-24;continua
+CEDES;"Longas Martín";Luna;ebo;2008-08-06;continua
+CEDES;"MIANA GUERRERO";Manuel;ebo;2008-12-11;continua
+CEDES;"Gracia Gil";Marcos;ebo;2008-03-06;continua
+CEDES;"Jiménez Calvo";Marcos;ebo;2005-06-14;continua
+CEDES;"Ramón Berduque";Mario;ebo;2009-03-03;continua
+CEDES;"GARICANO GUALLAR";MIGUEL;ebo;2007-01-18;continua
+CEDES;"BERGES ARBUÉS";"ÓSCAR DANIEL";ebo;2006-01-09;continua
+CEDES;"TEMPRADO ZAPATA";PABLO;ebo;2007-01-31;continua
+CEDES;"QUIRÓS PÉREZ-LLANTADA";Paula;ebo;2005-11-12;continua
+CEDES;"Morón Álvarez";Pedro;ebo;2005-12-12;continua
+CEDES;"Hernández Pedrosa";Alba;tva;2002-02-22;continua
+CEDES;"SABIO LOPEZ";ALEJANDRO;tva;2003-07-18;continua
+CEDES;"Miravete Castañeda";"Ana Mercedes";tva;2003-05-23;continua
+CEDES;"Roldán Blanco";Cristian;tva;2003-10-10;continua
+CEDES;"RODRIGUEZ TEJADA";DANIEL;tva;2002-08-12;continua
+CEDES;"Ndiaye Niang";Idrissa;tva;2003-11-09;continua
 "ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";KORCHI;Abdelkader;ebo;2005-01-22;continua
 "ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";"Dikatuka Lema";Abel;ebo;2009-09-16;continua
 "ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";"Artieda Alonso";Adrián;ebo;2014-11-28;continua
@@ -129,3 +629,366 @@ Centro;Apellidos;Nombre;EnseÃ±anza;"Fecha Nacimiento";estado
 "ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";"BELTRÁN CABALLERO";SAIOA;tva;2002-08-22;continua
 "ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";"Latorre Rubio";Samuel;tva;2002-05-31;continua
 "ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";"Prat López";Santiago;tva;2003-01-13;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"WALID EZZATRI";ADAM;ebo;2009-02-18;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"GROS CASTON";ADRIAN;ebo;2014-07-10;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"MARTIN GIL";ADRIAN;ebo;2016-07-21;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"RODRIGUEZ BROCHERO";AINHOA;ebo;2016-10-31;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"LEQUIO LECHON";ALBA;ebo;2007-10-24;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"Loureda Álvarez";Alejandro;ebo;2014-10-17;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"PARACUELLOS JIMÉNEZ";ALEJANDRO;ebo;2007-07-02;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"LORENZO GARCÍA";ALESSIA;ebo;2015-09-18;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";MUHAMMAD;Ali;ebo;2014-01-02;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";ADIR;"Alina Emilia";ebo;2006-01-16;"no continua"
+"LA PURÍSIMA PARA NIÑOS SORDOS";"CASTRILLO IRITIA";ÁLVARO;ebo;2018-12-22;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"Hernández Pérez";Álvaro;ebo;2017-04-21;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"YANES GARCÍA ROSALES";ÁLVARO;ebo;2009-03-31;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"Arencibia Mantilla";Amanda;ebo;2008-06-19;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";Lica;"Bianca Mihaela";ebo;2012-12-05;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";FORD;BLESSING;ebo;2007-09-12;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"MOREIRA GARCIA";CALEB;ebo;2016-07-19;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"Salas Cid";César;ebo;2017-02-10;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";DIAKITE;"CHEICK OUMAR";ebo;2014-04-30;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"TRUJILLO PEREZ";"CHRIS JOSEPH";ebo;2011-07-28;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"SALGADO CERRITO";"CLARA ROSA";ebo;2006-10-11;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"Torrez Palma";"Clara Valeria";ebo;2015-10-16;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"CARRION GIRAL";CLAUDIA;ebo;2016-05-16;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"Escanero Gelpi";Cristian;ebo;2011-10-31;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"Gómez Aular";Daniel;ebo;2009-08-15;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"Ochoa Barreras";Daniel;ebo;2012-01-14;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";CALDARARU;"DARIA FLORENTINA M";ebo;2016-10-24;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"GRACIA LAGA";DAVID;ebo;2009-04-13;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"GONZALEZ GABARRE";Diango;ebo;2018-02-22;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";Ionas;"Diego Nicolae";ebo;2009-01-04;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";HUSSAIN;Dilawar;ebo;2010-03-11;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"RIO DOMINGO";"EFRAH DEL";ebo;2009-10-25;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"SOTO MARTINEZ";EIDEN;ebo;2017-08-31;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"Enfedaque Piquer";"Elisa Valentina";ebo;2017-02-14;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"FERNANDEZ HERNANDEZ";FERNANDO;ebo;2009-08-18;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"BERMEJO FERNANDEZ";GABRIEL;ebo;2014-02-20;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"RAMÍREZ GARCÍA";IAN;ebo;2014-02-18;"no continua"
+"LA PURÍSIMA PARA NIÑOS SORDOS";"González Sánchez";Inés;ebo;2014-12-02;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"Bernad Casanova";Irene;ebo;2015-05-03;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"PEREZ RODRIGUEZ";JAIME;ebo;2018-08-05;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"DIAZ DIAZ";JANA;ebo;2014-10-24;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"JIMENEZ JIMENEZ";Jaqueline;ebo;2015-12-09;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"ALONSO MARTINEZ";JAVIER;ebo;2009-04-13;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";LI;Jiahao;ebo;2011-10-19;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"Elotmani Azzaoui";Jinan;ebo;2013-10-16;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"COCA ROYO";JORGE;ebo;2012-07-17;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"Lorenzo García";Jorge;ebo;2015-09-18;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"TEDESCO ALVARADO";Josabet;ebo;2012-03-12;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"GABARRE GABARRE";JOSE;ebo;2008-11-03;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"AGUERRI BARCOS";JULEN;ebo;2014-04-01;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"FAJARDO CHAVEZ";"JUSTIN AARON";ebo;2010-07-22;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"LISO DE LOS SANTOS";"JUSTIN ALEXANDER";ebo;2013-01-03;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";DEMBELE;"Kuta Faustina";ebo;2007-07-12;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"MENJON FANDOS";LAURA;ebo;2006-03-18;"no continua"
+"LA PURÍSIMA PARA NIÑOS SORDOS";"NSI NCHAMA";"LAURA DELFINA";ebo;2008-04-20;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"Ferrer Rubio";Leo;ebo;2017-09-10;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"Giménez Álvarez";Leyre;ebo;2012-02-21;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"CABRERA LEBRON";Loreilis;ebo;2007-06-24;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";TOURAY;MAHAMADU;ebo;2014-12-18;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"Colás Castrillo";María;ebo;2011-07-14;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"PONTAQUE BORRAZ";MARIO;ebo;2016-11-15;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"Naulaguari Guambaña";"Marisol Fernanda";ebo;2011-06-15;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"Buil García";Martín;ebo;2017-01-13;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"Corcho Laguardia";Martin;ebo;2016-06-29;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"MONASTERIO RODRIGO";Martin;ebo;2011-10-08;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"TIESTOS PALLARÉS";MARTÍN;ebo;2015-08-08;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"González Vera";"Minerva Valentina";ebo;2011-09-13;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"BENHENNI TAYED";"MOHAMED ELIAS";ebo;2011-12-03;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"GIMÉNEZ SORIANO";MOISES;ebo;2008-05-01;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"Torres Burgos";Mónica;ebo;2006-08-17;"no continua"
+"LA PURÍSIMA PARA NIÑOS SORDOS";"Martín Jiménez";Natalia;ebo;2011-05-09;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"VICENTE GRACIA";"NICOLAS BOGDAN";ebo;2011-10-28;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"González Bouzán";Óscar;ebo;2013-09-10;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";Zamfirescu;"Roberto Carlos";ebo;2013-07-27;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"TORIL GILBER";ROCÍO;ebo;2015-10-28;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";HUANG;"RONG JUN";ebo;2009-06-17;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";Bellagh;Samir;ebo;2006-03-15;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"Gabarre Giménez";Sandra;ebo;2017-07-20;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"TOMAS COARASA";SARA;ebo;2010-11-30;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"Ramírez Arcos";"Sara Isabella";ebo;2012-09-12;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"RODRIGO GARCIA";SERGIO;ebo;2006-08-26;"no continua"
+"LA PURÍSIMA PARA NIÑOS SORDOS";"Osei Appiah";Seth;ebo;2017-07-11;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"Manjarres Delgado";Ulises;ebo;2011-06-23;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"SALGADO CERRITO";"VALERIA NIKOLLE";ebo;2010-06-18;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";"Huerta Yus";Vega;ebo;2013-10-23;continua
+"LA PURÍSIMA PARA NIÑOS SORDOS";LIU;Yihan;ebo;2015-04-09;continua
+"SAN BRAULIO";BELLALI;ADAM;ebo;2012-04-04;continua
+"SAN BRAULIO";"Palacios Jimeno";Alejandro;ebo;2007-08-24;continua
+"SAN BRAULIO";Bolan;"Alexandru Mihaita";ebo;2008-01-09;continua
+"SAN BRAULIO";"DE LUIS ADAM";DIEGO;ebo;2016-07-17;continua
+"SAN BRAULIO";FLOREA;"Emma Mihaela";ebo;2017-11-16;continua
+"SAN BRAULIO";"Yanez Quinatoa";"Erik David";ebo;2007-01-16;continua
+"SAN BRAULIO";"Calderón Ferrero";Félix;ebo;2012-08-22;continua
+"SAN BRAULIO";"Romero Fernández";Israel;ebo;2015-08-04;continua
+"SAN BRAULIO";"Gonçalves Dos Santos";Jenifer;ebo;2007-09-26;continua
+"SAN BRAULIO";PILIPENKO;Jonathan;ebo;2013-12-20;continua
+"SAN BRAULIO";"ZERPA VALDERRAMA";"José Antonio";ebo;2010-09-25;continua
+"SAN BRAULIO";"Yumani Hammi";Limam;ebo;2012-07-27;continua
+"SAN BRAULIO";"De Carranza Hernández";Martina;ebo;2010-11-10;continua
+"SAN BRAULIO";"CHTIOUANE CULEA";Mohamed;ebo;2008-07-20;continua
+"SAN BRAULIO";"NSUE ASIA";NEYZHAN;ebo;2014-10-31;continua
+"SAN BRAULIO";"CHIRINO PEREZ";Saelys;ebo;2011-12-16;continua
+"SAN BRAULIO";"Vericad Negrao";Theo;ebo;2014-01-28;continua
+"JULIÁN SANZ IBÁÑEZ";"MORENO SEMPER";ALONSO;ebo;2012-09-26;continua
+"JULIÁN SANZ IBÁÑEZ";Hamed;Ayoub;ebo;2014-03-12;continua
+"JULIÁN SANZ IBÁÑEZ";Sajaia;Gabriel;ebo;2014-12-01;continua
+"JULIÁN SANZ IBÁÑEZ";LEOVEANU;"INDRA NIRVANA";ebo;2006-05-19;continua
+"JULIÁN SANZ IBÁÑEZ";"MBA ENGONO";JHONATHAN;ebo;2008-03-24;continua
+"JULIÁN SANZ IBÁÑEZ";"REYES CASTILLO";"JOEL ALEJANDRO";ebo;2011-06-05;continua
+"JULIÁN SANZ IBÁÑEZ";"PEÑA CORTÉS";NAYARA;ebo;2009-08-02;continua
+"JULIÁN SANZ IBÁÑEZ";"CARRETERO MARTINEZ";Nicolás;ebo;2013-07-24;continua
+"JULIÁN SANZ IBÁÑEZ";"CÁMARA KEITA";OUMAR;ebo;2010-05-19;continua
+"JULIÁN SANZ IBÁÑEZ";"JIMENEZ OLIVER";TONY;ebo;2007-06-05;continua
+"JULIÁN SANZ IBÁÑEZ";"MAZA DE PEDRO";"VALENTINA GRACE";ebo;2014-08-07;continua
+"JULIÁN SANZ IBÁÑEZ";"El Houssini El Idrissi";Youssef;ebo;2015-08-21;continua
+MONCAYO;"Hernández Escalera";Alexander;ebo;2012-02-23;continua
+MONCAYO;"Lapizondo Carreras";Eneko;ebo;2003-09-05;continua
+MONCAYO;"Carbonell Gabarri";"Francisco Javier";ebo;2013-12-13;continua
+MONCAYO;"Matute Tacuri";"Jesús Alejandro";ebo;2016-09-23;continua
+MONCAYO;"Baho Barberán";Leila;ebo;2006-05-17;continua
+MONCAYO;Gadean;"Sara Andreea";ebo;2007-11-30;continua
+"CAMPO DE BORJA";"El Ouakili";Adam;ebo;2013-11-05;continua
+"CAMPO DE BORJA";ILIE;"DIEGO MUGUREL";ebo;2009-04-30;continua
+"CAMPO DE BORJA";GROZAVU;"FLOAREA DANIELA";ebo;2015-04-10;continua
+"CAMPO DE BORJA";"Liébana Clavería";"José  Miguel";ebo;2011-04-09;continua
+"CAMPO DE BORJA";"SEGUÍN BAQUERO";MOISÉS;tva;2004-10-20;continua
+"CAMPO DE BORJA";Rebiai;Soundous;ebo;2011-09-07;continua
+"CAMPO DE BORJA";"GARCÍA LAJUSTICIA";TANIA;ebo;2004-01-27;continua
+"GLORIA FUERTES";"BERENGUEL DÍAZ";AARÓN;ebo;2008-02-12;continua
+"GLORIA FUERTES";"Villanueva Doñate";Aarón;tva;2004-05-25;continua
+"GLORIA FUERTES";"IFRAN MUHAMMAD";AAYAN;ebo;2015-11-06;continua
+"GLORIA FUERTES";"El Ghoufairi";Abderrazq;ebo;2005-07-30;continua
+"GLORIA FUERTES";"Espallargas Ibáñez";Abraham;ebo;2006-12-31;continua
+"GLORIA FUERTES";PICKER;"ADAM LAITH";ebo;2014-06-13;continua
+"GLORIA FUERTES";"Llop Altadill";Alan;ebo;2010-12-13;continua
+"GLORIA FUERTES";"ORTA PIQUER";ALBERTO;ebo;2005-01-24;continua
+"GLORIA FUERTES";"ROCA PIERA";ALEJANDRO;ebo;2006-08-28;continua
+"GLORIA FUERTES";"Marinescu Trandafir";"Andrei Claudiu";ebo;2013-04-12;continua
+"GLORIA FUERTES";RAGUEB;ASMA;ebo;2009-08-07;continua
+"GLORIA FUERTES";SALMONTE;AXEL;tva;2004-11-28;continua
+"GLORIA FUERTES";LAKHIEL;BRAHIM;tva;2004-10-19;continua
+"GLORIA FUERTES";"RUIZ BES";DAFNE;ebo;2012-05-13;continua
+"GLORIA FUERTES";"PARÍS CERRUDO";DANIEL;ebo;2006-06-17;continua
+"GLORIA FUERTES";"Turón Insa";Daniel;ebo;2006-04-06;continua
+"GLORIA FUERTES";"Millán Zapater";David;ebo;2010-09-03;continua
+"GLORIA FUERTES";"Ruiz Milian";Dayron;ebo;2006-05-30;continua
+"GLORIA FUERTES";"BELLES BLASCO";DIEGO;ebo;2008-12-09;continua
+"GLORIA FUERTES";"Tena Mestre";Elsa;ebo;2009-04-30;continua
+"GLORIA FUERTES";"SONSONA ALLOZA";ERIC;ebo;2007-10-30;continua
+"GLORIA FUERTES";"CUBILES SUAREZ";"FRANCISCO JOSÉ";ebo;2007-11-29;continua
+"GLORIA FUERTES";"GARCÍA SÁNCHEZ";"FRANCISCO MANUEL";ebo;2008-01-10;continua
+"GLORIA FUERTES";BOUAICHA;HAITAM;ebo;2013-12-09;continua
+"GLORIA FUERTES";ACHAHBAR;HAMZA;ebo;2011-06-13;continua
+"GLORIA FUERTES";"BARRANCO LÓPEZ";ÍKER;ebo;2005-11-12;continua
+"GLORIA FUERTES";CHERAR;"IONELA  SABINA";ebo;2008-06-25;continua
+"GLORIA FUERTES";"LORENTE CRESPO";ISRAEL;ebo;2011-12-16;continua
+"GLORIA FUERTES";"Maté Castillo";Iván;ebo;2005-12-15;continua
+"GLORIA FUERTES";"FUENTES MUÑOZ";"IVÁN JAVIER";ebo;2005-02-11;continua
+"GLORIA FUERTES";Ahmindach;Iyad;ebo;2017-11-22;continua
+"GLORIA FUERTES";"Pellicé Pisco";"José Antonio";ebo;2005-01-19;continua
+"GLORIA FUERTES";"HERNÁNDEZ OLIVER";"JOSÉ MANUEL";ebo;2015-02-14;continua
+"GLORIA FUERTES";"Almagro López";Leida;ebo;2011-08-16;continua
+"GLORIA FUERTES";"Horna Fuentes";Leyre;ebo;2008-02-29;continua
+"GLORIA FUERTES";"González Jurado";Lucía;ebo;2006-09-04;continua
+"GLORIA FUERTES";"BASURTO CALIXTO";LUNA;ebo;2006-02-20;continua
+"GLORIA FUERTES";"BALAGUER HERRERA";MARCOS;ebo;2006-04-25;continua
+"GLORIA FUERTES";"Sebastiá Villalba";Miguel;ebo;2008-03-08;continua
+"GLORIA FUERTES";"Bilbao Varela";Nahím;ebo;2015-09-04;continua
+"GLORIA FUERTES";"PANDO MOYA";NEREA;ebo;2007-01-05;continua
+"GLORIA FUERTES";BAYA;NOUREDINE;ebo;2010-06-04;continua
+"GLORIA FUERTES";"FUERTES ALEGRE";PABLO;tva;2004-08-08;continua
+"GLORIA FUERTES";"BUISÁN MAULEÓN";PATRICIA;ebo;2005-08-08;continua
+"GLORIA FUERTES";Ahmad;Raheem;ebo;2015-03-04;continua
+"GLORIA FUERTES";"PASTOR CORTES";RAUL;ebo;2006-11-11;continua
+"GLORIA FUERTES";"ROBLES MAIRÉN";SAMUEL;ebo;2011-05-29;continua
+"GLORIA FUERTES";TIABI;SANAA;ebo;2009-03-05;continua
+"GLORIA FUERTES";"TOLÓN CASTRO";SERGIO;ebo;2008-04-04;continua
+"GLORIA FUERTES";SOUMBOUNDOU;"SERIN SALIU";ebo;2013-10-12;continua
+"GLORIA FUERTES";"AHMED MAMI";SUADO;ebo;2008-05-31;continua
+"GLORIA FUERTES";"BLASCO LARA";UXUE;ebo;2013-04-16;continua
+"GLORIA FUERTES";"Lorea Peralta";Yoel;ebo;2013-09-27;continua
+"GLORIA FUERTES";LARHLID;ZOLIJA;ebo;2011-08-04;continua
+"GLORIA FUERTES";"Cristian Ignat";Antonio;tva;2003-11-14;continua
+"GLORIA FUERTES";Pascu;"Bianca Madalina";tva;2002-02-26;continua
+"GLORIA FUERTES";"LECHA GONZÁLEZ";IVAN;tva;2003-04-04;continua
+"GLORIA FUERTES";"FECÉ  SANZ";LUCAS;tva;2003-11-26;continua
+"GLORIA FUERTES";"Berenguer Celma";"Pablo Miguel";tva;2002-04-30;continua
+"GLORIA FUERTES";"PITARCH GARCÉS";PATRICIA;tva;2003-06-24;continua
+"GLORIA FUERTES";"GIMÉNEZ  GARCÍA";RUBÉN;tva;2003-11-18;continua
+ARBOLEDA;"CALVÉ PÉREZ";ALEJANDRO;ebo;2007-12-03;continua
+ARBOLEDA;"Dolz Vicente";Alonso;ebo;2014-09-11;continua
+ARBOLEDA;"GARCÍA FORTEA";ÁLVARO;ebo;2017-03-11;continua
+ARBOLEDA;"GÓMEZ GONZÁLEZ";ANDRÉS;ebo;2007-08-14;continua
+ARBOLEDA;"Arellano Medina";"Antuaneth Haruni";tva;2004-04-29;"no continua"
+ARBOLEDA;"VILLARROYA VILLALBA";ASIER;ebo;2013-07-31;continua
+ARBOLEDA;Amin;Asmae;ebo;2011-04-20;continua
+ARBOLEDA;"FERRER VILLARROYA";AUREA;ebo;2005-01-18;continua
+ARBOLEDA;"GUAYLUPO SALAZAR";CRISTOPHER;ebo;2010-03-03;continua
+ARBOLEDA;"JIMENA CRUZ";DANIEL;tva;2004-02-06;continua
+ARBOLEDA;"ROVIRA MARTÍNEZ";DANIELA;ebo;2015-10-28;continua
+ARBOLEDA;"Sebastián Garrote";Danna;ebo;2005-12-02;continua
+ARBOLEDA;"Uroz López";David;ebo;2011-11-18;continua
+ARBOLEDA;"VICARIA CÁRDENAS";DAVID;ebo;2014-06-30;continua
+ARBOLEDA;"Torrijo Barrado";Diana;ebo;2009-05-07;continua
+ARBOLEDA;"COLÁS BELMONTE";GEMA;ebo;2017-12-03;continua
+ARBOLEDA;"GALLEGO SÁNCHEZ TORIL";HÉCTOR;ebo;2013-03-02;continua
+ARBOLEDA;"GÓMEZ PRERA";ISAAC;ebo;2009-10-01;continua
+ARBOLEDA;"GRACIA CUMPLIDO";JARA;ebo;2012-11-26;continua
+ARBOLEDA;"Redón Paz";Javier;ebo;2013-11-16;continua
+ARBOLEDA;"OREA CONEJOS";JORGE;ebo;2008-01-08;continua
+ARBOLEDA;"GRACIA DOMINGO";JUDITH;ebo;2008-05-08;continua
+ARBOLEDA;"Guillén Doñate";Lucas;ebo;2008-11-18;continua
+ARBOLEDA;"Millán Ruiz";Marcos;ebo;2009-07-02;continua
+ARBOLEDA;"Saz Manrique";Marta;tva;2004-03-16;"no continua"
+ARBOLEDA;"Utrillas Iglesias";Martina;ebo;2016-06-17;continua
+ARBOLEDA;"El Orch";Nassime;ebo;2013-02-15;continua
+ARBOLEDA;"SANCHEZ ELIAS";PEDRO;ebo;2006-09-09;continua
+ARBOLEDA;"FERRER VILLARROYA";PILAR;ebo;2006-04-04;continua
+ARBOLEDA;DEVORA;RANYEL;ebo;2016-11-24;continua
+ARBOLEDA;COSTEA;"RAZVAN ELIAS";ebo;2010-12-03;continua
+ARBOLEDA;"BLASCO RUEDA";RUBÉN;tva;2004-07-22;continua
+ARBOLEDA;"Crespo Blasco";Rubén;tva;2004-08-27;"no continua"
+ARBOLEDA;"MATEO CEBRIÁN";RUBÉN;ebo;2006-09-05;continua
+ARBOLEDA;KOROL;VICTORIA;ebo;2018-01-29;continua
+ARBOLEDA;"RENGIFO GARCIA";"YASTIN YISSELA";ebo;2006-12-14;continua
+ARBOLEDA;"SOMOHANO MARTÍNEZ";"YONIS IRÁN";tva;2004-12-27;"no continua"
+ARBOLEDA;"Barra Navas";Carlos;tva;2002-01-29;continua
+ARBOLEDA;TOUFIK;CHAIMAE;tva;2002-12-06;continua
+ARBOLEDA;"VIVAS MARTÍN";DAVID;tva;2003-06-04;continua
+ARBOLEDA;"DIAZ NAVARRETE";"JUAN FLORENCIO";tva;2002-04-22;continua
+ARBOLEDA;"REYES GONZÁLEZ";"KEMELLY ALTAGRACIA";tva;2002-10-20;continua
+ARBOLEDA;"SAMPER GÓMEZ";"MARÍA TERESA";tva;2002-09-26;continua
+ARBOLEDA;"GUILLÉN GÓMEZ";RAÚL;tva;2002-11-06;continua
+ARBOLEDA;"HERNANDO DEL CARMEN";SARA;tva;2002-01-03;continua
+ARBOLEDA;"IVANOV DONDUKOV";SVILEN;tva;2002-03-21;continua
+"SAN JORGE";"FERNÁNDEZ LÓPEZ";ACHER;ebo;2008-01-18;continua
+"SAN JORGE";"BURTON CARDENAS";AITANA;ebo;2007-09-19;continua
+"SAN JORGE";"SOARES DIAS";"ALESSANDRO AUGUSTO";ebo;2005-09-17;continua
+"SAN JORGE";"TALAVERA GONZALEZ";ALVARO;ebo;2015-07-10;continua
+"SAN JORGE";"FUENTES VIÑUALES";AMAIA;ebo;2018-07-23;continua
+"SAN JORGE";"MORTE GAZOL";ANDRES;ebo;2014-08-16;continua
+"SAN JORGE";"ER RADOUANI";BILAL;ebo;2010-01-28;continua
+"SAN JORGE";"Gonzales Solorzano";"César Mesut";ebo;2013-03-31;continua
+"SAN JORGE";"DUAL GIMENEZ";CRISTIAN;ebo;2010-11-07;continua
+"SAN JORGE";"ARAZO MUNIESA";DARIO;ebo;2014-08-13;continua
+"SAN JORGE";"Abián Hernández";David;ebo;2005-05-03;continua
+"SAN JORGE";"TORRES JUSTE";DAVID;ebo;2005-10-30;continua
+"SAN JORGE";"Hapa Ursu";"Eduard Mateo";ebo;2013-09-27;continua
+"SAN JORGE";MOTOI;EMANUEL;ebo;2005-09-07;continua
+"SAN JORGE";"CONTE SANCHEZ";ENEKO;ebo;2011-04-08;continua
+"SAN JORGE";"Campeny Crespo";Erik;ebo;2007-08-03;continua
+"SAN JORGE";"SANCHO MORCILLA";GABRIEL;ebo;2015-02-27;continua
+"SAN JORGE";"SUAREZ PEREZ";GABRIEL;ebo;2009-10-08;continua
+"SAN JORGE";"Ordóñez Fergusson";"Ivana Sophia";ebo;2010-03-17;continua
+"SAN JORGE";"PÉREZ FRANCO";IXEIA;ebo;2016-03-20;continua
+"SAN JORGE";"NUENO MARTINEZ";IZAN;ebo;2015-06-25;continua
+"SAN JORGE";"GIMÉNEZ GIMÉNEZ";JESUS;ebo;2017-04-15;continua
+"SAN JORGE";"VIEDMA BONED";JESÚS;ebo;2017-04-02;continua
+"SAN JORGE";Cissokho;"Lasana Bakari";ebo;2017-12-27;continua
+"SAN JORGE";"ANES ZABORRAS";LIBERTAD;ebo;2009-01-01;continua
+"SAN JORGE";"CASTAN ISABAL";LORETO;ebo;2016-01-09;continua
+"SAN JORGE";"ALONSO BARRANCO";LUCAS;ebo;2010-12-09;continua
+"SAN JORGE";"COLMENAR PEREZ DE CAMINO";"MANUEL DIEGO";ebo;2014-11-08;continua
+"SAN JORGE";"Campeny Crespo";Marc;ebo;2007-08-03;continua
+"SAN JORGE";"Ruz de Miguel";Marcos;ebo;2014-11-16;continua
+"SAN JORGE";"MILLÁN SALVADOR";MARIO;ebo;2012-02-12;continua
+"SAN JORGE";"DUERTO MAZA";MARTINA;ebo;2013-06-04;continua
+"SAN JORGE";"Luzán Pérez";Mateo;ebo;2007-04-29;continua
+"SAN JORGE";"Sanmartín Maza";Miguel;ebo;2008-11-10;continua
+"SAN JORGE";"ESPUÑA PASCUAL";NICOLÁS;ebo;2013-11-20;continua
+"SAN JORGE";"PERIZ VIU";PABLO;ebo;2005-02-16;continua
+"SAN JORGE";"SAN JOSE ARILLA";PAULA;tva;2004-04-21;continua
+"SAN JORGE";"VIVED ANGUERA";VICTOR;ebo;2007-08-14;continua
+"SAN JORGE";"Ferreiro Delgado";Daniel;tva;2003-05-29;continua
+"SAN JORGE";"MARTÍNEZ LARDIÉS";Héctor;tva;2002-05-24;continua
+"SAN JORGE";"DIAZ VENTURA";"JOSE MARIA";tva;2002-09-08;continua
+"SAN JORGE";"ASCASO CANTIN";LAURA;tva;2002-08-16;continua
+"LA ALEGRÍA";"El Moutaouakil";Abdelkebir;tva;2004-11-22;continua
+"LA ALEGRÍA";"Fuentes Delgado";Adán;ebo;2007-09-14;continua
+"LA ALEGRÍA";"Padilla  Da Silva";Alejandro;ebo;2013-08-16;continua
+"LA ALEGRÍA";"ARRIETA RESTREPO";ALEXIA;ebo;2013-03-03;continua
+"LA ALEGRÍA";"Reim González";"Álvaro Leonel";ebo;2009-12-29;continua
+"LA ALEGRÍA";"ZARAGOZA OSUNA";Ángela;ebo;2009-06-03;continua
+"LA ALEGRÍA";ABDERRAHMANE;BADRA;ebo;2012-05-28;continua
+"LA ALEGRÍA";"Nganso Pettcha Alpuente";Betania;ebo;2010-06-22;continua
+"LA ALEGRÍA";Dumitru;Bisbal;ebo;2007-08-11;continua
+"LA ALEGRÍA";"MURILLO TORRES";BRUNO;ebo;2009-05-29;continua
+"LA ALEGRÍA";"Segarra Royo";Chabier;tva;2004-08-30;continua
+"LA ALEGRÍA";"VALENZUELA MARTINEZ";Dario;tva;2004-12-01;continua
+"LA ALEGRÍA";Dumitru;David;ebo;2007-08-11;continua
+"LA ALEGRÍA";"OSUNA AZNAR";Gabriel;ebo;2012-03-11;continua
+"LA ALEGRÍA";"MUR  BERNUÉS";HÉCTOR;ebo;2010-03-12;continua
+"LA ALEGRÍA";"Fofana Konte";Henda;tva;2004-07-31;continua
+"LA ALEGRÍA";"TRIBAK ACHARKI";HUDAIFA;ebo;2008-10-29;continua
+"LA ALEGRÍA";"PARDOS ANDREU";ÍÑIGO;ebo;2010-09-17;continua
+"LA ALEGRÍA";"ÁLVAREZ SENZ";Iván;ebo;2009-08-21;continua
+"LA ALEGRÍA";"ASENOV VESELINOV";Jan;ebo;2009-11-27;continua
+"LA ALEGRÍA";"PRIETO VEGA";"JUAN PABLO";ebo;2005-10-04;continua
+"LA ALEGRÍA";"MORER JULIAN";Judith;ebo;2011-01-17;continua
+"LA ALEGRÍA";"Boateng Medina";"Kevin Ramón";ebo;2012-04-05;continua
+"LA ALEGRÍA";Khoudi;"Lyna Salsabil";ebo;2007-10-26;continua
+"LA ALEGRÍA";"Sorribas Contreras";Marcos;tva;2004-03-26;continua
+"LA ALEGRÍA";HAMMOUDAN;Marwan;ebo;2009-09-21;continua
+"LA ALEGRÍA";"TEJERO CAMPO";Mateo;ebo;2008-10-01;continua
+"LA ALEGRÍA";"ERBAH BOUGADIMA";Merouane;ebo;2011-01-27;continua
+"LA ALEGRÍA";"GIMENEZ NAVARRO";MIGUEL;ebo;2006-08-27;continua
+"LA ALEGRÍA";"Diarra Traore";MODIBO;ebo;2006-01-03;continua
+"LA ALEGRÍA";SALHI;MOHAMMED;ebo;2006-07-05;continua
+"LA ALEGRÍA";"HURTADO GIRÓN";"NOELIA VALENTINA";ebo;2009-09-04;continua
+"LA ALEGRÍA";"TUNKARA  NIMAGA";"Nyma Teresa";ebo;2006-03-20;continua
+"LA ALEGRÍA";"MORENO TRIBALDÓS";Pol;ebo;2005-08-03;continua
+"LA ALEGRÍA";"MIHAILOVA VESKOVA";REMI;ebo;2005-04-27;continua
+"LA ALEGRÍA";"COULIBALY KONATE";Safiatou;ebo;2007-03-29;continua
+"LA ALEGRÍA";"Zapata Naranjo";Samantha;ebo;2005-04-13;continua
+"LA ALEGRÍA";"Acín Moya";"Samuel Antonio";tva;2004-07-19;continua
+"LA ALEGRÍA";KEITA;SEYDOU;ebo;2011-03-20;continua
+"LA ALEGRÍA";"LORDA PERALTA";VERA;ebo;2012-10-17;continua
+"LA ALEGRÍA";"GIMÉNEZ NAVARRO";YOLANDA;ebo;2008-01-25;continua
+"LA ALEGRÍA";"CHAM SISSAWO";Yousuf;ebo;2011-08-24;continua
+"LA ALEGRÍA";SILLAH;YUSUF;ebo;2005-06-05;continua
+"LA ALEGRÍA";"Hurtado Dominguez";Zoe;tva;2004-08-22;continua
+"LA ALEGRÍA";"ENRIQUEZ CANALIS";Carolina;tva;2003-05-09;continua
+"LA ALEGRÍA";"ERAS PEIRON";Jaime;tva;2003-10-09;continua
+"LA ALEGRÍA";"Lagüéns Larrosa";Javier;tva;2003-11-02;continua
+"LA ALEGRÍA";VargasFerrer;"Julia Alegria";tva;2003-01-11;continua
+"LA ALEGRÍA";"Martínez Pérez";María;tva;2003-10-20;continua
+"LA ALEGRÍA";"BIBOLOTTI MARTÍN";Sandra;tva;2003-10-30;continua
+"LA ALEGRÍA";"YEBOAH PEREA";Tiffany;tva;2002-08-03;continua
+"BIELLO ARAGÓN";"Betrán Fuertes";Iker;ebo;2005-04-22;continua
+"BIELLO ARAGÓN";"SANTOS PÉREZ";JENNIFER;ebo;2007-05-24;continua
+"BIELLO ARAGÓN";"GUTIÉRREZ AGENJO";"José María";ebo;2007-10-18;continua
+"BIELLO ARAGÓN";"Serpa Pérez";"MARIA LIBERTAD";ebo;2005-12-27;"no continua"
+"BIELLO ARAGÓN";"Oliván Villacampa";Marcos;tva;2003-01-14;continua
+MONTECORONA;"ABADÍAS PÉREZ";ALEJANDRO;ebo;2013-01-04;continua
+MONTECORONA;DEAC;"ANDREI MIHAI";ebo;2013-01-28;continua
+MONTECORONA;"Martínez Terrén";Carlota;ebo;2008-11-06;continua
+MONTECORONA;"Pérez Navarro";David;ebo;2012-05-12;continua
+MONTECORONA;"BOSQUE CASTAÑO";IBÓN;ebo;2009-03-14;continua
+MONTECORONA;"AÑAÑOS URDANETA";Izarbe;ebo;2015-06-12;continua
+MONTECORONA;"TORRIJO GARCÍA";MARCOS;ebo;2010-07-25;continua
+MONTECORONA;"ASTUDILLO TERÁN";Sofía;ebo;2011-07-29;continua
+MONTECORONA;"HERNÁNDEZ JORGE";SORAYA;ebo;2006-09-20;"no continua"
+MONTECORONA;"GUTIERREZ MARULANDA";ZULENY;ebo;2014-09-09;continua
+PIRÁMIDE;"GIMÉNEZ LÓPEZ";AINARA;tva;2008-05-12;continua
+PIRÁMIDE;"JIMÉNEZ GIMÉNEZ";AITANA;tva;2007-06-11;continua
+PIRÁMIDE;"Buecher Aliaga";Arturo;tva;2010-03-09;continua
+PIRÁMIDE;"Ferrández Lacasta";"Aurora Candela";tva;2007-02-02;continua
+PIRÁMIDE;"MONGÍO CAMPO";CARLOS;tva;2004-12-14;continua
+PIRÁMIDE;HOLA;"DENISA M";ebo;2006-09-21;"no continua"
+PIRÁMIDE;"Becana Prats";Héctor;ebo;2007-09-03;continua
+PIRÁMIDE;"BELLOC ESCOLANO";JAIME;ebo;2008-05-30;continua
+PIRÁMIDE;"HURTADO PACO";"BRENDA MELODY";tva;2002-04-20;continua
+"PÍO XII";"Antimasveres Hernández";Aitana;ebo;2010-02-25;continua
+"PÍO XII";Braik;Dina;ebo;2010-02-08;continua
+"PÍO XII";Botezatu;"Eduard Adrián";ebo;2010-10-31;continua
+"PÍO XII";"Torrez Contreras";"José Daniel";ebo;2007-10-01;continua
+"PÍO XII";"Giménez Fernández";Josefa;ebo;2006-07-18;continua
+"PÍO XII";"De Jesús Segura";"Juan Emilio";ebo;2014-03-22;continua
+"PÍO XII";"Mejía Bonilla";"Marco Orestes";ebo;2014-11-10;continua
+"PÍO XII";"Escudero Peña";Mayka;ebo;2006-01-13;"no continua"
+"PÍO XII";"Bautista Amayas";"Pedro José";ebo;2012-05-22;continua
+"PÍO XII";"Giménez Giménez";Shayra;ebo;2007-07-06;continua
+"PÍO XII";"Antimasveres Hernández";Yudit;ebo;2007-07-24;continua

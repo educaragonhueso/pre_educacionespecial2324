@@ -98,7 +98,7 @@ class ListadosController{
 		elseif($modo=='csv')
 		{
          $log->warning("ENTRANDO EN LISTADO DE SOLICITUDES CSV");
-         $allsolicitudes=$solicitud->getTodasSolicitudes($id_centro,0,$subtipo_listado,$estado_convocatoria,$log,$rol);
+         $allsolicitudes=$solicitud->getTodasSolicitudes($id_centro,0,$subtipo_listado,$estado_convocatoria,$log,$rol,$provincia);
 		}
 		elseif($modo=='provisionales')
 		{

@@ -1,8 +1,10 @@
 <?php
 session_start();
+
 date_default_timezone_set("Europe/Madrid");
 setlocale(LC_TIME, "spanish");
-
+if(!$_SESSION)
+   header('login_activa.php');
 if(isset($_SESSION['dir_base']))
    $dir_base=$_SESSION['dir_base'];
 else
@@ -93,7 +95,7 @@ if(isset($_GET['token']))
    $_SESSION['token']=$_GET['token'];
 }
 $_SESSION['id_centro']=$id_centro;
-$solo_lectura=0;
+$solo_lectura=1;
 $solcentro=0;
 if(isset($_GET['solcentro']))
    $solcentro=1;
@@ -125,8 +127,8 @@ if(isset($_GET['token']) or $rol=='alumno')
    }
    $log_editar_solicitud->warning(" LOGINICIO: EDITANTO SOLICITUD, id_alumno: ".$id_alumno." id centro:".$id_centro);   
 
-   if($estado_convocatoria>ESTADO_FININSCRIPCION or $rol=='centro') 
-      $solo_lectura=1;
+   //if($estado_convocatoria>=10 or $rol=='centro') 
+   $solo_lectura=1;
    
    $sform=$scontroller->showFormSolicitud($id_alumno,$id_centro,$rol,1,0,$estado_convocatoria,$conexion,$convocatoria,$log_editar_solicitud,$solo_lectura);
    $botonimp='<a href="imprimirsolicitud.php?id='.$id_alumno.'" target="_blank"><input class="btn btn-primary imprimirsolicitud"  type="button" value="Vista Previa Impresion Documento"/></a>';

@@ -1619,7 +1619,7 @@ and id_alumno in (select id_alumno from alumnos WHERE id_centro_destino=$c)";
       else return 0;
    }
 
-	public function getTodasSolicitudes($c=1,$tipo=1,$subtipo_listado,$estado_convocatoria=0,$log='',$rol='alumno') 
+	public function getTodasSolicitudes($c=1,$tipo=1,$subtipo_listado,$estado_convocatoria=0,$log='',$rol='alumno',$provincia) 
    {
 		$tabla_alumnos='alumnos';
 		
