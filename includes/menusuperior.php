@@ -2,6 +2,7 @@
 $listado='disponible';
 $directoriobase='educacionespecial2223';
 $ficheroebo='scripts/datossalida/pdflistados/sorteo/lfase2_sol_ebo_admin.pdf';
+$token=$_SESSION['token'];
 if (!file_exists($ficheroebo))
    $listado='';
 ?>            
@@ -54,7 +55,6 @@ if (!file_exists($ficheroebo))
   <?php }
 ?>
 <?php 
-   $token=$_SESSION['token'];
    if($_SESSION['usuario_autenticado'])
    {
       if(1 or ($_SESSION['rol']=='alumno' and ($_SESSION['estado_convocatoria']==21 or $_SESSION['estado_convocatoria']==31)) or $_SESSION['rol']=='admin')
@@ -130,7 +130,7 @@ if (!file_exists($ficheroebo))
          </li>
       <?php }?>
       
-		<?php if($_SESSION['estado_convocatoria']>=ESTADO_RECLAMACIONES_BAREMADAS and $_SESSION['rol']!='alumno') {?>
+		<?php if($_SESSION['estado_convocatoria']>=DIA_PUBLICACION_BAREMADAS and $_SESSION['rol']!='alumno') {?>
             <li class="nav-item active msuperior dropdown" id="mprovisional">
                <a class="show_provisionales nav-link dropdown-toggle desplegable2" id="navbardrop" data-toggle="dropdown" href="#">Provisional</a>
                <div class="dropdown-menu">

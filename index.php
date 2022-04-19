@@ -127,8 +127,11 @@ if(isset($_GET['token']) or $rol=='alumno')
    }
    $log_editar_solicitud->warning(" LOGINICIO: EDITANTO SOLICITUD, id_alumno: ".$id_alumno." id centro:".$id_centro);   
 
-   //if($estado_convocatoria>=10 or $rol=='centro') 
-   $solo_lectura=1;
+   if($rol=='sp') 
+      $solo_lectura=1;
+   else
+      $solo_lectura=1;
+      
    
    $sform=$scontroller->showFormSolicitud($id_alumno,$id_centro,$rol,1,0,$estado_convocatoria,$conexion,$convocatoria,$log_editar_solicitud,$solo_lectura);
    $botonimp='<a href="imprimirsolicitud.php?id='.$id_alumno.'" target="_blank"><input class="btn btn-primary imprimirsolicitud"  type="button" value="Vista Previa Impresion Documento"/></a>';

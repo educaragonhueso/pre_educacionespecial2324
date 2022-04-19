@@ -73,11 +73,6 @@ $log_editar_solicitud->warning(print_r($dochtml,true));
 $contenido='<div id="gallery">'.$dochtml.'</div>';
 $sform=str_replace('<div id="gallery"></div>',$contenido,$sform);
 
-######################################################################################
-$log_editar_solicitud->warning("FORMULARIO ORIGINAL: ".$sform);
-$log_editar_solicitud->warning("CONTENIDO HTML.$contenido");
-$log_editar_solicitud->warning("FORMULARIO:".$sform);
-######################################################################################
 if($rol!='alumno' and $estado_convocatoria==21)
 {
    $cabecerareclamaciones='<div id="filarecbaremo'.$id_alumno.'" type="button" class="btn btn-primary formrecbaremo" data-toggle="collapse" data-target="#recbaremo'.$id_alumno.'">RECLAMACIONES BAREMO<span> <i class="fas fa-angle-down"></i></span></div>';

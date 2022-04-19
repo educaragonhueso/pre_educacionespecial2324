@@ -294,7 +294,7 @@ $('body').on('click', '.send', function(e)
                else
                   $.alert({
                   title: 'ERROR ACTUALIZANDO',
-                  content: 'Contacta con el administrador lhueso@aragon.es'
+                  content: 'Revisa el centro solicitado o Contacta con el administrador lhueso@aragon.es'
                   });
             }
             }
@@ -1611,7 +1611,7 @@ $(".show_solicitudes").click(function () {
                   $(".tresumenmat").remove();
                   $("#l_matricula").html(data);
                   $("#filasolicitud").remove();
-                  $("#navgir").after(data);
+                  //$("#navgir").after(data);
                }
                else
                {
@@ -1658,6 +1658,7 @@ $(".lbaremadas").click(function () {
             }
             else
             {
+               console.log("vrol: "+data);
                //$("#sol_table").remove();
                //$(".titulolistado").remove();
                //$(".descargalistado").remove();
@@ -1672,6 +1673,7 @@ $(".lbaremadas").click(function () {
                {
                   $("tresumensol").remove();
                   $("#cab_fnuevasolicitud").after(data);
+                  $(".wrapper").html(data);
                }
             }
          },
@@ -1782,9 +1784,9 @@ $.ajax({
 			{
 				$("#mapcontrol").hide();
 				$("#map-canvas").hide();
-					$("#tresumen"+vid_centro).show();
-					$("#l_matricula").html(data);
-					$(".tresumenmat").show();
+				$("#tresumen"+vid_centro).show();
+				$("#l_matricula").html(data);
+				$(".tresumenmat").show();
 			}
       			},
       error: function() {
@@ -1809,14 +1811,14 @@ $.ajax({
 				{
 				console.log("en matricula");
 				console.log("MOSTRANDO MATRICULADOS CON ROL: "+vrol);
-				if($('#mat_table'+vid_centro).length) $('#mat_table'+vid_centro).toggle();
-				else $('#table'+vid_centro).after(data).show('slow');
+			   	if($('#mat_table'+vid_centro).length) $('#mat_table'+vid_centro).toggle();
+				   else $('#table'+vid_centro).after(data).show('slow');
 	
 				}
 				else
 				{
-				$("#tresumen").show();
-				$("#l_matricula").html(data);
+				   $("#tresumen").show();
+				   $("#l_matricula").html(data);
 				}
       },
       error: function() {

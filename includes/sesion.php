@@ -21,7 +21,7 @@ else if($_SESSION['fecha_actual']>=DIA_INICIO_INSCRIPCION and $_SESSION['fecha_a
  		$_SESSION['estado_convocatoria'] =ESTADO_INSCRIPCION;
 else if($_SESSION['fecha_actual']>DIA_FIN_INSCRIPCION and $_SESSION['fecha_actual']<DIA_PUBLICACION_BAREMADAS)       
  		$_SESSION['estado_convocatoria'] =ESTADO_FININSCRIPCION;
-else if($_SESSION['fecha_actual']==DIA_PUBLICACION_BAREMADAS)       
+else if($_SESSION['fecha_actual']>=DIA_PUBLICACION_BAREMADAS and $_SESSION['fecha_actual']<DIA_FIN_RECLAMACIONES_BAREMADAS)       
  		$_SESSION['estado_convocatoria'] =ESTADO_PUBLICACION_BAREMADAS;
 else if($_SESSION['fecha_actual']>DIA_FIN_RECLAMACIONES_BAREMADAS and $_SESSION['fecha_actual']<DIA_PUBLICACION_DEFINITIVOS)       
  		$_SESSION['estado_convocatoria'] =ESTADO_PUBLICACION_PROVISIONAL;//valor 60

@@ -73,7 +73,7 @@ class SolicitudController{
          $this->formulario=str_replace('input','input disabled',$this->formulario);
          $this->formulario=str_replace('input disabled type="hidden"','input type="hidden"',$this->formulario);
          $this->formulario=str_replace('select','select disabled',$this->formulario);
-         if($rol=='centro' or $rol=='sp' or $rol=='admin')
+         if($rol=='centro' or $rol=='sp')
          { 
             #bloqueamos los campos de formulario de estado de solicitud
             $this->formulario=str_replace('input disabled type="radio" name="fase_solicitud" value="validada"','input type="radio" name="fase_solicitud" value="validada"',$this->formulario);
@@ -81,8 +81,6 @@ class SolicitudController{
             
             $this->formulario=str_replace('input disabled type="radio" name="estado_solicitud" value="irregular"','input type="radio" name="estado_solicitud" value="irregular"',$this->formulario);
             $this->formulario=str_replace('input disabled type="radio" name="estado_solicitud" value="apta"','input type="radio" name="estado_solicitud" value="apta"',$this->formulario);
-            if($rol=='sp' or $rol=='admin')
-               $this->formulario=str_replace('input disabled type="radio" name="transporte"','input type="radio" name="transporte"',$this->formulario);
          }
          #bloqueamos los botones de agregar doc
          //$this->formulario=preg_replace('/<a id="enlacefj.*\/a>/','',$this->formulario);

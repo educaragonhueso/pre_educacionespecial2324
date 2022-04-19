@@ -96,6 +96,8 @@ else
 	}
 }
 
+/*
+hay q descomentrarlo para q funcione cuando los campos están deshabilitados, o sea para no tenerlo en cuenta
 $fsol_salida['id_centro_destino']=$id_centro_destino;
 ######################################################################################
 if($id_centro_destino==0) 
@@ -103,6 +105,7 @@ if($id_centro_destino==0)
    print('ERROR GUARDANDO DATOS: EL CENTRO SOLICITADO NO EXISTE O NO ES DE EDUCACIÓN ESPECIAL');
    exit();
 }
+*/
 //si el centro incluye un asterisco, para diferenciar ed especial del resto, lo quitamos
 $fsol_salida['id_centro_estudios_origen']=trim($fsol_salida['id_centro_estudios_origen'],'*');
 //procesamos los centros d elos hermanos de alumnos en admisión
@@ -299,7 +302,6 @@ else //MODIFICACION SOLICITUD
          //$contenido="Soliciutd modificada, pulsa en este $enlace_solicitud_centro para acceder";
          $contenido_correo="La solicitud se ha modificado, puedes acceder directamente desde este enlace: $enlace_solicitud_centro";
          $tipo_correo='Modificación solicitud Educación Especial curso 22/23';   
-         //para probar enviamos correo solo al riviere
          $log_actualizar->warning("ENVIANDO CORREO CENTRO: contenido: $contenido_correo");
          $rescorreo=$notificacion->enviarCorreo('Solicitud modificada',$correo_centro,$contenido_correo,$tipo_correo);          
          $log_actualizar->warning("ENVIADO CORREO: respuesta:: $rescorreo");
@@ -310,7 +312,7 @@ else //MODIFICACION SOLICITUD
       $contenido_correo_alumno="La solicitud se ha modificado, puedes acceder directamente desde este enlace: $enlace_solicitud_alumno";
       $tipo_correo='Modificación solicitud Educación Especial curso 22/23';   
       //$contenido="Soliciutd modificada, pulsa en este $enlace_solicitud_centro para acceder";
-      $rescorreo=$notificacion->enviarCorreo('Solicitud modificada',$correo,$contenido_correo_alumno,$tipo_correo);          
+      #$rescorreo=$notificacion->enviarCorreo('Solicitud modificada',$correo,$contenido_correo_alumno,$tipo_correo);          
    }
    //al haberse actualizado debe firmarse de nuevo, pero solo si lo hace el ciudadano, no la administracion
    if($rol!='admin' and $rol!='centro' and $rol!='sp')
