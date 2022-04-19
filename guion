@@ -34,7 +34,7 @@ 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
 COMANDOS ÚTILES PARA GENERAR CONSULTAS MYSQL
 ---------------------------------------------------------
 
-Listados de fmilias numerosa o monoparental
+lListados de fmilias numerosa o monoparental
 
    select nombre_centro, nombre,apellido1,apellido2,dni_alumno,datos_tutor1,dni_tutor1,datos_tutor2,dni_tutor2 into outfile '/var/lib/mysql-files/listadonumerosa1.csv' FIELDS TERMINATED BY ';' OPTIONALLY ENCLOSED BY '"' from centros ce, baremo b,alumnos a where ce.id_centro=a.id_centro_destino and a.id_alumno=b.id_alumno and marcado_numerosa=1 ;
 
