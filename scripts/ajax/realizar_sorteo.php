@@ -49,7 +49,7 @@ if($_POST['rol']=='admin')
 	{
 		########################################################################################
 		########################################################################################
-		if($list->asignarNumSol()!=1){ print("Error asignando numero para el sorteo");exit();}
+		if($list->asignarNumSol($log_sorteo)!=1){ print("Error asignando numero para el sorteo");exit();}
       $log_sorteo->warning("REALIZADO ASIGNACION NUMERO");
 		//actualizamos el centro para marcar la fase del sorteo
 		$tcentro->setFaseSorteo(2);

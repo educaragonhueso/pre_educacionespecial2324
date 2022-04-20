@@ -53,7 +53,89 @@ class ListadosController{
  
 	return $allbaremos;
 	}
-   public function asignarNumSol()
+
+#FUNCIONES PARA EL SORTEO Y ASIGNACIÓN DE NÚMERO ALEATORIO
+######################################################################################
+   public function asignarNumSol($log)
+   {
+      $sql="SET @r := 0";
+      $this->conexion->query($sql);
+      //ponemos todas a cero para evitar inconsistencias
+      $sql1="UPDATE  alumnos SET nasignado =0";
+      $sql2="UPDATE  alumnos SET nasignado = (@r := @r + 1) where fase_solicitud!='borrador' ORDER BY  RAND()";
+
+      if($this->conexion->query($sql1) and $this->conexion->query($sql2))
+      {
+         $r=$this->asignarNumConjuntas($log);
+         return $r;
+      }
+      else{
+         return 0;
+      }
+   }
+   public function asignarNumConjuntas($log)
+   {
+      $idsalumnos=array();
+      $sql="SELECT id_alumno,nasignado FROM alumnos where fase_solicitud!='borrador' ORDER BY nasignado asc";
+      $i=0;
+      $log->warning("ASIGNANDO CONJUNTAS $sql");
+      $r=$this->conexion->query($sql);
+      while ($obj = $r->fetch_object())
+      {
+         $id_alumno_actual=$obj->id_alumno;
+         $nasignado_actual=$obj->nasignado;
+         $hermanos_actual=$this->getHermanos($id_alumno_actual,$log);
+         //$log->warning(print_r($hermanos_actual,true));
+         if(sizeof($hermanos_actual)>=1)
+         {
+            $log->warning("HAY HERMANOS\n");
+            $log->warning("NASIGNADO $nasignado_actual\n");
+            $log->warning("COMPROBANDO HERMANOS DE $id_alumno_actual\n");
+            $data_hermano=$this->checkHermanos($hermanos_actual,$idsalumnos,$log);
+            $id_hermano=$data_hermano['id_alumno'];
+            $n_hermano=$data_hermano['nasignado'];
+            $log->warning("id hermano: $id_hermano\n");
+            if($id_hermano!=0)
+            {
+               $log->warning("HAY HERMANOS ANTERIORES\n");
+
+               $sql="UPDATE alumnos SET nasignado=$n_hermano WHERE id_alumno=$id_alumno_actual and fase_solicitud!='borrador'";
+               $log->warning("SET NUMERO HERMANO: $sql\n");
+               $res=$this->conexion->query($sql);
+
+               $sql="UPDATE alumnos SET nasignado=nasignado-1 WHERE nasignado>$nasignado_actual and fase_solicitud!='borrador'";
+               $log->warning("SET NUMERO NUMEROS MAYORES: $sql\n");
+               $res=$this->conexion->query($sql);
+            }
+         }
+         $idsalumnos[$i]['id_alumno']=$id_alumno_actual;
+         $idsalumnos[$i]['nasignado']=$nasignado_actual;
+         $i++;
+      }
+      return 1;
+   }
+    public function getHermanos($id_alumno,$log)
+   {
+      $hermanos=array();
+      $sql="SELECT h.id_hermano as id_hermano FROM alumnos a,alumnos_hermanos_admision h WHERE h.id_alumno=a.id_alumno AND a.id_alumno=$id_alumno";
+      $r=$this->conexion->query($sql);
+      while ($obj = $r->fetch_object())
+         $hermanos[]=$obj->id_hermano;
+      return $hermanos;
+  }
+   public function checkHermanos($h,$ids,$log)
+   {
+    //  $log->warning("COMPROBANDO HERMANOS");
+    //  $log->warning(print_r($h,true));
+    //  $log->warning(print_r($ids,true));
+      foreach($h as $hermano)
+         foreach($ids as $al)
+            if($hermano==$al['id_alumno'])
+               return $al;
+      return 0;
+  }
+
+   public function asignarNumSol_old()
 	{
 		$sql="SET @r := 0";
 		$this->conexion->query($sql);
