@@ -28,6 +28,11 @@ sincronizar con el remoto
          git remote add origin git@github.com:educaragonhueso/pro_educacionespecial2223.git
          git pull
 
+
+Si modificamos el PRE para luego hacer otro merge o pull del pro hay q primero usar el comando:
+git reset --hard HEAD
+
+
 TOKEN edes
 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
 

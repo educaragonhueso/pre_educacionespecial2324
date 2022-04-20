@@ -495,8 +495,11 @@ class ListadosController{
 			$tipoestudios_anterior=$tipoestudios_actual;
          
          $tipoestudios_actual=$sol->tipoestudios;
-			$centroactual=$sol->id_centro_destino;
-
+         if(isset($sol->id_centro_destino))
+            $centroactual=$sol->id_centro_destino;
+         else
+            $centroactual=$sol->id_centro;
+	
 			if($sol->tipoestudios=='tva' and $cabadmin==0)
 			{
 				$cabadmin=1;
