@@ -64,7 +64,6 @@ elseif($tipo=='pdf_usu')
 	$log_genpdfs->warning("OBTENIENDO RESUMEN USUARIOS PDF");
 	$datoslistado=$list->getUsuarios($rol,$id_centro,$log_genpdfs,$provincia); 
 
-   $enlace='https://admespecial.aragon.es/educacionespecial2223/index.php';
    $cab=array('CENTRO','NOMBRE','ENLACE');
 }
 ###################################################################################

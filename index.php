@@ -127,7 +127,9 @@ if(isset($_GET['token']) or $rol=='alumno')
    }
    $log_editar_solicitud->warning(" LOGINICIO: EDITANTO SOLICITUD, id_alumno: ".$id_alumno." id centro:".$id_centro);   
 
-   if($rol=='sp') 
+   if($rol=='admin') 
+      $solo_lectura=0;
+   else if($rol=='sp') 
       $solo_lectura=1;
    else
       $solo_lectura=1;

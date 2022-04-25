@@ -223,7 +223,7 @@ class Solicitud {
 	}
   public function copiaTablaCentro($centro,$tabla_destino,$log)
 	{
-		$sql="SELECT a.nombre,a.apellido1,a.apellido2,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado as nasignado,a.est_desp_sorteo,c.nombre_centro,b.*,a.id_centro_destino as id_centro_destino FROM alumnos a left join baremo b on b.id_alumno=a.id_alumno left join centros c on a.id_centro_destino=c.id_centro where fase_solicitud!='borrador' and estado_solicitud='apta'";
+		$sql="SELECT a.nombre,a.apellido1,a.apellido2,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado as nasignado,a.est_desp_sorteo,c.nombre_centro,b.*,a.id_centro_destino as id_centro_destino FROM alumnos a left join baremo b on b.id_alumno=a.id_alumno left join centros c on a.id_centro_destino=c.id_centro where fase_solicitud!='borrador'";
 	//volcamos la tabla con los datos de solicitudes y los del baremo tal como aparecen en el listado de provisionales o definitivosa
 		if($centro!=1)
 			{
@@ -265,8 +265,9 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
 	return 1;
 	}
 
-  public function getFaseCentro($id_centro=1){
+  public function getFaseCentro($id_centro=1,$log){
 	$query="SELECT fase_sorteo FROM centros WHERE id_centro=$id_centro";	
+   $log->warning("CONSULTA FASECENTRO: ".$query);
 	$r=$this->conexion->query($query);
 	$row = $r->fetch_object();
 	if(isset($row))	
@@ -279,11 +280,14 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
       $check_hermanosbaremo=$sol['num_hbaremo'];
       //si el centro esta en estado de baremacion, ya se ha hecho el sorteo, pasamos a la tabal de provisionales
       $fase=0;
+      //hay q descomentarlo pero falla cuando los campos están deshabilitados
+      /*
       if(isset($sol['id_centro_destino']))
       {
-         $fase=$this->getFaseCentro($sol['id_centro_destino']);
+         $fase=$this->getFaseCentro($sol['id_centro_destino'],$log);
          if($fase==-1) return 0;
       }
+      */
       $query_alumnos="UPDATE alumnos SET ";
       $query_hermanos_admision="UPDATE alumnos SET ";
       $query_hermanos_baremo="UPDATE alumnos_hermanos_admision SET ";
@@ -1990,11 +1994,12 @@ as nasignado,c.nombre_centro, a.puntos_validados,a.id_centro_destino as id_centr
       }
 		elseif($subtipo_listado=='excluidos_prov')
       {
-		   if($rol=='admin' or $rol=='sp')
-			   $sql="SELECT a.id_alumno,a.nombre,a.apellido1,a.apellido2,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado
-as nasignado,c.nombre_centro, a.puntos_validados,a.id_centro_destino as id_centro  FROM $tabla_alumnos a left join centros c on a.id_centro_destino=c.id_centro where fase_solicitud!='borrador' and( estado_solicitud='duplicada' or estado_solicitud='irregular') $orden";
-			else
-			   $sql="SELECT a.id_alumno,a.nombre,a.apellido1,a.apellido2,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado as nasignado, a.puntos_validados FROM $tabla_alumnos a left join centros c on a.id_centro_destino=c.id_centro where fase_solicitud!='borrador'  and( estado_solicitud='duplicada' or estado_solicitud='irregular') and c.id_centro=$c $orden";
+          if($rol=='admin' or $rol=='sp')
+            $sql="SELECT a.id_alumno,a.nombre,a.apellido1,a.apellido2,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado
+as nasignado,c.nombre_centro, a.puntos_validados,a.id_centro_destino as id_centro  FROM $tabla_alumnos a,alumnos_orden ao,centros c WHERE ao.id_alumno=a.id_alumno aND a.id_centro_destino=c.id_centro AND fase_solicitud!='borrador' AND( estado_solicitud='duplicada' or estado_solicitud='irregular') $orden";
+         else
+            $sql="SELECT a.id_alumno,a.nombre,a.apellido1,a.apellido2,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado as nasignado, a.puntos_validados FROM $tabla_alumnos a, alumnos_orden ao,centros c WHERE ao.id_alumno=a.id_alumno AND  a.id_centro_destino=c.id_centro AND fase_solicitud!='borrador'  and( estado_solicitud='duplicada' or estado_solicitud='irregular') and c.id_centro=$c $orden";
+
       }
 				$log->warning("CONSULTA SOLICITUDES PROVISIONALES SUBTIPO: ".$subtipo_listado);
 				$log->warning($sql);

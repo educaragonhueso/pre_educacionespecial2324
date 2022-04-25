@@ -1,24 +1,16 @@
 Centro;"Primer apellido";"Segundo apellido";Nombre;EnseÃ±anza;"Criterios prioritarios";"Localidad domicilio familiar";Fase;Estado;"Puntos validados";"Numero sorteo asignado";"Centro Origen";"Reserva de Plaza";Conjunta
-"RINCÓN DE GOYA";CASAS;ALCAZAR;"LUIS ANGEL";ebo;2;;baremada;apta;16;0;NOCENTRO;0;no
-"RINCÓN DE GOYA";MARTINEZ;BUIL;SOFIA;ebo;2;;baremada;apta;16;0;NOCENTRO;0;no
-"RINCÓN DE GOYA";ROMANO;ALFARO;TRIANA;ebo;2;;baremada;apta;9;0;NOCENTRO;0;no
-"RINCÓN DE GOYA";VILLA;ARTIGAS;"ISABEL ALEJANDRA";ebo;2;;baremada;apta;8;0;NOCENTRO;0;no
-"RINCÓN DE GOYA";Hidalgo;Arnal;Alai;ebo;1;;baremada;apta;8;0;NOCENTRO;0;no
-"RINCÓN DE GOYA";CUCU;nodata;"DAVID ANDREI";ebo;2;;baremada;apta;8;0;NOCENTRO;0;no
-"RINCÓN DE GOYA";Lorenz;Lahoz;Diego;ebo;2;;baremada;apta;7;0;NOCENTRO;1;no
-"RINCÓN DE GOYA";Palenzuela;Calzón;Martina;ebo;1;;baremada;apta;7;0;NOCENTRO;0;no
-"RINCÓN DE GOYA";ASARE;nodata;"KELVIN NANA";ebo;2;;validada;apta;7;0;NOCENTRO;0;no
-"RINCÓN DE GOYA";Alcántara;García;Sandra;ebo;1;;baremada;apta;7;0;NOCENTRO;0;no
-"RINCÓN DE GOYA";Sidk;nodata;Mosab;ebo;1;;baremada;apta;6;0;NOCENTRO;0;no
-"RINCÓN DE GOYA";JARAMILLO;ESPINALES;"JOSE MIGUEL";ebo;2;;baremada;apta;6;0;NOCENTRO;0;si
-"RINCÓN DE GOYA";BORJA;CLAVERÍA;ANTONIO;ebo;1;;baremada;apta;6;0;NOCENTRO;0;no
-"RINCÓN DE GOYA";Monteiro-Tavares;Furtado;"Jenny Mª";ebo;2;;baremada;apta;6;0;NOCENTRO;0;no
-"RINCÓN DE GOYA";Pitta;Mercado;"Julius Cesare";ebo;1;;baremada;apta;6;0;NOCENTRO;0;no
-"RINCÓN DE GOYA";JARAMILLO;ESPINALES;"ANGEL LEONARDO";ebo;2;;baremada;apta;6;0;NOCENTRO;0;si
-"RINCÓN DE GOYA";HERNANDEZ;GIMENEZ;ALICIA;ebo;2;;baremada;apta;5;0;NOCENTRO;0;no
-"RINCÓN DE GOYA";"SALAZAR ";NUÑEZ;"JEFFREY JAEL";ebo;2;;baremada;apta;4;0;NOCENTRO;0;no
-"RINCÓN DE GOYA";Soufiane;Jimenez;Sara;ebo;2;;baremada;apta;2;0;NOCENTRO;0;no
-"RINCÓN DE GOYA";"Almansa ";"El fakih";Adán;ebo;2;;baremada;apta;0;0;NOCENTRO;0;no
-"RINCÓN DE GOYA";YE;nodata;QIANFEI;ebo;2;;baremada;apta;0;0;NOCENTRO;0;no
-"RINCÓN DE GOYA";LECINA;PINA;MIGUEL;ebo;2;;baremada;apta;0;0;NOCENTRO;0;no
-"RINCÓN DE GOYA";Galera;Lazaro;"Jose Carlos";tva;2;;baremada;irregular;5;0;NOCENTRO;1;no
+"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";CERVERA;OROQUIETA;PILAR;ebo;2;;validada;apta;15;0;"ANGEL RIVIÈRE";1;si
+"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";CERVERA;OROQUIETA;ANGELA;ebo;2;;validada;apta;15;0;"ANGEL RIVIÈRE";1;si
+"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";Hernández;Berdejo;Enrique;ebo;2;;validada;apta;9;0;NOCENTRO;0;no
+"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";MONREAL;ZUECO;"AROA ZHILI";ebo;2;;validada;apta;8;0;NOCENTRO;0;no
+"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";PINA;ALLO;DIEGO;ebo;2;;validada;apta;7;0;CEDES;1;no
+"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";MARTÍN;MATEOS;JAIME;ebo;2;;validada;apta;7;0;"LOS PUEYOS";1;no
+"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";Chen;nodata;Jun;ebo;2;;validada;apta;7;0;NOCENTRO;0;no
+"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";Quinteiro;Garzon;"Juan José";ebo;2;;validada;apta;7;0;"BASILIO PARAÍSO";0;no
+"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";PADILLO;ANDOLZ;MARTIN;ebo;2;;validada;apta;7;0;NOCENTRO;0;no
+"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";Leo;Ferrer;Rubio;ebo;2;;validada;apta;6;0;"LA PURÍSIMA PARA NIÑOS SORDOS";1;no
+"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";"Del Río";Domingo;Efram;ebo;2;;validada;apta;6;0;"LA PURÍSIMA PARA NIÑOS SORDOS";1;no
+"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";Peñas;"Martín ";Raúl;ebo;2;;validada;apta;6;0;NOCENTRO;0;no
+"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";ION;nodata;"ERIC NICOLAS";ebo;2;;validada;apta;5;0;NOCENTRO;0;no
+"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";GARRIDO;HERNÁNDEZ;MARTÍN;ebo;2;;validada;apta;3;0;"SAN GERMÁN";1;no
+"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";Monteiro-Tavares;Furtado;"Janny Mª";ebo;2;;borrador;apta;0;0;NOCENTRO;0;no

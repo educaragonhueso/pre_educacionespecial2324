@@ -60,7 +60,7 @@ $log_listados_provisionales->warning("OBTENIDAS SOLICITUDES PROVISIONALES ");
 ######################################################################################
 //actualizamos las solicitudes por si hay cambios para tener en cuenta el sorteo previo
 
-$formato=''; //formato listado en el pdf
+$formato='provisional'; //formato listado en el pdf
 $anchuracelda=10;
 $primera_celda=20;
 if($_POST['pdf']==1)
