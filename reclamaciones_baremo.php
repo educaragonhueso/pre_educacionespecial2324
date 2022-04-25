@@ -61,17 +61,23 @@ $dochtml=$solicitud->getDocHtml($id_alumno,'scripts/fetch/reclamacionesbaremo/',
          {
              $form_reclamaciones=str_replace("input","input disabled",$form_reclamaciones);
              $form_reclamaciones=preg_replace("/<button.*<\/button>/","",$form_reclamaciones);
+             $form_reclamaciones=str_replace("</textarea>",$motivoreclamacion."</textarea>",$form_reclamaciones);
          }
          $fr=str_replace("+idalumno","$id_alumno",$form_reclamaciones);
-       
+      
+         print($fr); 
          if($dochtml!='')
          {
+            print("<hr>");
+            print("<h4>DOCUMENTOS GUARDADOS: </h4>");
+            print_r($dochtml);
+            /*
             $origen='<div id="gallery"></div>';
             $destino='<div id="gallery">'.$dochtml.'</div>';
 	         $fr=str_replace($origen,$destino,$fr);
              $fr=preg_replace("/<button .*Retirar documento<\/button>/","",$fr);
+            */
          }
-            print($fr);
       ?>
 </div>
 <script>

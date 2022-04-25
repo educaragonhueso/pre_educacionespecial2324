@@ -111,11 +111,9 @@ class Solicitud {
    $ret="";
    if($tipo=='pdf')
    {
+      $ret.="<h5><b>Documento: </b></h5>";
       $idfile=str_replace('.','',$f);
       $idfile=str_replace(' ','_',$idfile);
-      //los centros no pueden modifciar los documentos
-      if($rol!='centro')
-         $ret= "<button class='bdocfile' ficherooriginal='".$f."'  fichero='$idfile'>Retirar documento</button>";
       $ret.='<div>';
       $ret.="<p class='docpdf' id='".$idfile."'>$f</p>";
       if($doc=='solicitud')
@@ -124,22 +122,28 @@ class Solicitud {
          $ret.="<div class='verdocumentos'><a href='scripts/fetch/reclamacionesbaremo/$id_alumno/".$f."' style='color:black!important' target='_blank'>Ver documento</a></div>";
       else if($doc=='provisional')
          $ret.="<div class='verdocumentos'><a href='scripts/fetch/reclamacionesprovisional/$id_alumno/".$f."' style='color:black!important' target='_blank'>DESCARGAR PDF $f</a></div>";
+      //los centros no pueden modifciar los documentos
+      if($rol!='centro')
+         $ret= "<button class='bdocfile' ficherooriginal='".$f."'  fichero='$idfile'>Retirar documento</button>";
       $ret.='</div>';
+      $ret.='<hr>';
    }
    else
    {
+      $ret.="<h5><b>Imagen: </b></h5>";
       $data = file_get_contents($ndir."/".$f);
       $idfile=str_replace('.','',$f);
       $idfile=str_replace(' ','_',$idfile);
       $imgbase64 = 'data:image/' . $ext . ';base64,' . base64_encode($data);
-      if($rol!='centro')
-         $ret= "<button class='bdoc' ficherooriginal='".$f."' fichero='".$idfile."'>Retirar imagen</button>";
       if($doc=='solicitud')
          $ret.="<div class='verdocumentos'><a href='scripts/fetch/uploads/$id_alumno/".$f."' style='color:black!important' target='_blank'>VER IMAGEN </a></div>";
       else if($doc=='baremo')
-         $ret.="<div class='verdocumentos'><a href='scripts/fetch/reclamaciones/$id_alumno/".$f."' style='color:black!important' target='_blank'>VER IMAGEN </a></div>";
+         $ret.="<div class='verdocumentos'><a href='scripts/fetch/reclamacionesbaremo/$id_alumno/".$f."' style='color:black!important' target='_blank'>VER IMAGEN </a></div>";
       $ret.="<figure id='$idfile' class='containerZoom' style='background-image:url(".$imgbase64.");background-size: 150%;'>";
       $ret.="<img style='width:60%' src='".$imgbase64."'></figure><br>"; 
+      if($rol!='centro')
+         $ret.= "<button class='bdoc' ficherooriginal='".$f."' fichero='".$idfile."'>Retirar imagen</button>";
+      $ret.='<hr>';
    }
    return $ret;
   }
@@ -1475,19 +1479,19 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
       {
          $log->warning("CONSULTA ROL $rol:");
          //si ya hemos llegado a provionales baremadas vamos directos a la tabla 
-         $sql="SELECT * FROM alumnos_baremada_final WHERE $centro=$id_centro";
+         $sql="SELECT * FROM alumnos_baremada_final WHERE $centro=$id_centro ORDER BY apellido1,nombre";
       }
 	   elseif($rol=='admin') //para administradorn
       {
          $log->warning("CONSULTA BAREMADAS, ROL ADMIN :");
          //si ya hemos llegado a provionales baremadas vamos directos a la tabla 
-            $sql="SELECT a.*,nombre_centro FROM alumnos_baremada_final a, centros bc WHERE bc.id_centro=a.id_centro_destino ORDER BY a.id_centro_destino,a.tipoestudios";
+            $sql="SELECT a.*,nombre_centro FROM alumnos_baremada_final a, centros bc WHERE bc.id_centro=a.id_centro_destino ORDER BY a.id_centro_destino,a.tipoestudios,a.apellido1";
       }
 	   elseif($rol=='sp') //para servicio provincial
       {
          $log->warning("CONSULTA BAREMADAS, ROL SP :");
          //si ya hemos llegado a provionales baremadas vamos directos a la tabla 
-         $sql="SELECT * FROM alumnos_baremada_final WHERE provincia='$provincia'";
+         $sql="SELECT * FROM alumnos_baremada_final a,centros c WHERE a.id_centro_destino=c.id_centro AND  c.provincia='$provincia' ORDER BY a.id_centro_destino,a.tipoestudios, a.apellido1";
       }
 		$log->warning("DENTRO DE GET SOLICIUTES BAREMADAS, ID_CENTRO:$id_centro ID_ALUMNO: $id_alumno");
       $log->warning($sql);

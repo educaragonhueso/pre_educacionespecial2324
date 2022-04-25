@@ -28,7 +28,7 @@ $notificacion=new Notificacion(WSDL_CORREO,AP_ID,$fecha,0);
 ######################################################################################
 
 $id_alumno=$_POST['id_alumno'];
-$motivo=$_POST['motivo'];
+$motivo=$conexion->real_escape_string($_POST['motivo']);
 
 $dsql="DELETE FROM reclamaciones WHERE tipo='baremo' and id_alumno=$id_alumno";
 $isql="INSERT INTO reclamaciones VALUES('baremo','$id_alumno','$motivo',now())";

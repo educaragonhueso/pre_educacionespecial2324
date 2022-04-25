@@ -57,16 +57,19 @@ if (!file_exists($ficheroebo))
 <?php 
    if($_SESSION['usuario_autenticado'])
    {
-
-      if(($_SESSION['rol']=='alumno' and ($_SESSION['estado_convocatoria']>=ESTADO_RECLAMACIONES_BAREMADAS) AND $_SESSION['estado_convocatoria']<=ESTADO_RECLAMACIONES_PROVISIONAL) or $_SESSION['rol']=='admin')
+      if(1 or ($_SESSION['rol']=='alumno' and ($_SESSION['estado_convocatoria']==21 or $_SESSION['estado_convocatoria']==31)) or $_SESSION['rol']=='admin')
       {
       echo '<li class="nav-item msuperior dropdown">';
          echo '<a class="show_provisionales nav-link dropdown-toggle desplegable" id="navbardrop" data-toggle="dropdown" href="#">Formulario reclamaciones</a>';
          echo '<div class="dropdown-menu">';
             if($_SESSION['estado_convocatoria']==ESTADO_RECLAMACIONES_BAREMADAS)
+            { 
                echo "<a id='reclamacion_baremo'  class='reclamacion dropdown-item' href='reclamaciones_baremo.php?token=$token' target='_blank'>Reclamación baremo </a>";
+            }
             if($_SESSION['estado_convocatoria']==ESTADO_RECLAMACIONES_PROVISIONAL)
+            { 
                echo '<a id="reclamacion_listaprovisional" class="reclamacion dropdown-item" href="reclamaciones_listaprovisional.php" target="_blank">Reclamación listado provisional </a>';
+            }
          echo '</div>';
       echo '</li>';
       }
@@ -112,11 +115,11 @@ if (!file_exists($ficheroebo))
              <a class="show_provisionales nav-link dropdown-toggle desplegable2" id="navbardrop" data-toggle="dropdown" href="#">Lista baremo</a>
              <div class="dropdown-menu">
 
-            <?php if($_SESSION['estado_convocatoria']>ESTADO_PUBLICACION_PROVISIONAL){?>
+            <?php if($_SESSION['estado_convocatoria']>=ESTADO_FININSCRIPCION or ($rol!='alumno' and $rol!='anonimo')){?>
                <a class="lbaremadas dropdown-item" href="#" id="sor_ale" data-subtipo="sor_ale" data-tipo="sorteo">Numero aleatorio </a>;
              <?php }?>
              
-            <?php if($_SESSION['estado_convocatoria']>=ESTADO_PUBLICACION_BAREMADAS){?>
+            <?php if($_SESSION['estado_convocatoria']>=ESTADO_FININSCRIPCION or ($rol!='alumno' and $rol!='anonimo')){?>
                <a class="lbaremadas dropdown-item" href="#" data-tipo="sorteo" data-subtipo="sor_bar">Solicitudes baremadas</a>
              <?php }?>
              <?php if($_SESSION['rol']!='alumno'){?>

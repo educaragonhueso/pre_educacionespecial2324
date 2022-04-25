@@ -5,7 +5,7 @@ $form_reclamaciones='
         <div class="col-md-4">
             <div class="md-form mb-0">
             Describe el motivo de la reclamación
-                <input type="text" id="motivo_reclamacion+idalumno" value="" name="motivo+idalumno" placeholder="Motivo reclamación, si es mayor de 250 caracteres introducirlo como una captura"  class="form-control" required>
+                <textarea cols="50" rows="10" type="text" id="motivo_reclamacion+idalumno" value="" name="motivo+idalumno" placeholder="Motivo reclamación, si es mayor de 250 caracteres introducirlo como una captura"  class="form-control" required></textarea>
             </div>
         </div>
       </div>

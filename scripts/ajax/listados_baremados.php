@@ -53,7 +53,7 @@ if($subtipo_listado=='sor_det') {$nombre_listado='LISTADO DETALLE BAREMO';$forma
 #SI ES ANTES DEL SORTEO
 $log_listados_baremados->warning("LOGINICIO: OBTENIENDO SOLICITUDES BAREMADAS SUBTIPO: $subtipo_listado ESTADO CONVOCATORIA: $estado_convocatoria, ID CENTRO: $id_centro formato: $formato, provincia: $provincia");
 
-if($estado_convocatoria<ESTADO_PUBLICACION_PROVISIONAL)
+if($estado_convocatoria<ESTADO_PUBLICACION_BAREMADAS)
    $solicitudes=$list->getSolicitudes($id_centro,$estado_convocatoria,'normal',$subtipo_listado,$solicitud,$log_listados_baremados,0,$rol,$provincia); 
 else
    $solicitudes=$list->getSolicitudes($id_centro,$estado_convocatoria,'baremadas',$subtipo_listado,$solicitud,$log_listados_baremados,0,$rol,$provincia); 

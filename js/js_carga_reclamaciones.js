@@ -1,5 +1,4 @@
 $(document).ready(function(){
-console.log("CARGANDO REC, CONVOCATORIA: "+convocatoria);
 let filesDone = 0
 let filesToDo = 0
 let progressBar = document.getElementById('progress-bar')
@@ -13,6 +12,7 @@ form_data.append("token",token);
 form_data.append("id_alumno",id_alumno);
 
 $('body').on('change', '#freclamaciones', function(e){
+console.log("CARGANDO REC, CONVOCATORIA: "+convocatoria);
    var ficheros=[];
    console.log("En rec, añadiendo ficheros baremo")
    previewFilesRec(this.files);
