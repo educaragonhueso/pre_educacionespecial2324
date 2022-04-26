@@ -1225,7 +1225,6 @@ if($rol!='admin' or $rol=='alumno')
 {
 $formsol.= ' 
 	          <div class="text-center text-md-left">
-               <a class="btn btn-primary beliminarsolicitud" >ELIMINAR</a>
              </div>';
 }
 $formsol.=

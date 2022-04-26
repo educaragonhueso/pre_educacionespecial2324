@@ -46,7 +46,7 @@
          echo "";
       }else
       {
-         if($hoy> DIA_FIN_INSCRIPCION) echo '<h4>PÁGINA NE MANTENIMIENTO, EN UNOS MINUTOS SE ACTIVARÁ</h4>';
+         #if($hoy> DIA_FIN_INSCRIPCION) echo '<h4>PÁGINA NE MANTENIMIENTO, EN UNOS MINUTOS SE ACTIVARÁ</h4>';
          if($hoy< DIA_INICIO_INSCRIPCION) echo '<h4>NO SE HA INICIADO EL PLAZO DE ADMISIÓN</h4>';
          }?>
 

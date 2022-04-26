@@ -124,7 +124,7 @@ class Solicitud {
          $ret.="<div class='verdocumentos'><a href='scripts/fetch/reclamacionesprovisional/$id_alumno/".$f."' style='color:black!important' target='_blank'>DESCARGAR PDF $f</a></div>";
       //los centros no pueden modifciar los documentos
       if($rol!='centro')
-         $ret= "<button class='bdocfile' ficherooriginal='".$f."'  fichero='$idfile'>Retirar documento</button>";
+         $ret.= "<button class='bdocfile' ficherooriginal='".$f."'  fichero='$idfile'>Retirar documento</button>";
       $ret.='</div>';
       $ret.='<hr>';
    }
@@ -1516,7 +1516,7 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
           $noborradora='';
           $noborradorc='';
       }
-      if($estado_convocatoria>=ESTADO_RECLAMACIONES_BAREMADAS AND $estado_convocatoria<ESTADO_RECLAMACIONES_PROVISIONALES)
+      if($estado_convocatoria>=ESTADO_RECLAMACIONES_BAREMADAS AND $estado_convocatoria<ESTADO_RECLAMACIONES_PROVISIONAL)
          $filtrorec=" AND (rec.tipo='baremo' OR rec.tipo IS NULL)";
       else
          $filtrorec=" AND (rec.tipo='provisional' OR rec.tipo IS NULL)";
@@ -1535,7 +1535,7 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
       }
 	   elseif($rol=='admin') //para administradorn
       {
-         $log->warning("CONSULTA VALIDADAS, ROL ADMIN :");
+         $log->warning("CONSULTA VALIDADAS, ROL ADMIN :".ESTADO_RECLAMACIONES_PROVISIONAL);
          //si ya hemos llegado a provionales baremadas vamos directos a la tabla 
          if($estado_convocatoria>=ESTADO_PUBLICACION_PROVISIONAL and $subtipo=='sor_bar')
          {
@@ -1974,6 +1974,9 @@ as nasignado,c.nombre_centro, a.puntos_validados,a.id_centro_destino as id_centr
 		$log->warning("CCONSULTA SOLICITUDES PROVISIONALES");
       //si el estado de la convocatoria es previo a provisioonales la tabla del
       //baremo es la original
+      //if($estado_convocatoria>=ESTADO_RECLAMACIONES_BAREMADAS and $estado_convocatoria<ESTADO_PUBLICACION_PROVISIONAL)
+      //    $tabla_alumnos='alumnos';
+      //else
       $tabla_alumnos='alumnos_provisional';
 		
       $orden=" ORDER BY id_centro,tipoestudios,ao.transporte asc,ao.puntos_validados desc,ao.hermanos_tutores desc,ao.conjunta desc,ao.proximidad desc,ao.renta desc,ao.sobrevenida desc,ao.discapacidad desc,ao.familia desc,ao.orden asc";

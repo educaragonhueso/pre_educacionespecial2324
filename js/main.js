@@ -1832,13 +1832,14 @@ $('body').on('click', '.cabcensol', function(e){
   vid_centro=vid_centro.replace('cabcensol','');
    console.log("mostrando solicitudes id centro: "+vid_centro);
   var vrol=$('#rol').attr("value");
+  var vestado_convocatoria=$('#estado_convocatoria').attr("value");
   var vprovincia=$('#provincia').attr("value");
   if($("#sol_table"+vid_centro).length){ $("#sol_table"+vid_centro).toggle(); return;}
 if(vrol=='centro') return;
 $.ajax({
   method: "POST",
   url: "../"+directoriobase+"/scripts/ajax/mostrar_solicitudes.php",
-  data: {id_centro:vid_centro,rol:vrol,provincia:vprovincia},
+  data: {id_centro:vid_centro,rol:vrol,provincia:vprovincia,estado_convocatoria:vestado_convocatoria},
       success: function(data) 
 		{
          if(vrol.indexOf('admin')!=-1 || vrol.indexOf('sp')!=-1)

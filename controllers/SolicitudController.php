@@ -138,9 +138,14 @@ class SolicitudController{
       {
          $this->formulario=str_replace('class="btn btn-primary bform crojo"','class="btn btn-primary bform cverde"',$this->formulario);
       }		
-      
-      $this->formulario=str_replace('GRABAR','ACTUALIZAR',$this->formulario);
-      $this->formulario=str_replace('send"','send" data-idal="'.$id.'"',$this->formulario);
+     
+      if($rol=='alumno') 
+      {  
+         $origen='<a class="btn btn-primary send" >GRABAR SOLICITUD</a>';
+         $this->formulario=str_replace($origen,'',$this->formulario);
+      }
+      else
+         $this->formulario=str_replace('send"','send" data-idal="'.$id.'"',$this->formulario);
    
       $log->warning("PROCESANDO SOL");	
       $log->warning(print_r($dsolicitud,true));	

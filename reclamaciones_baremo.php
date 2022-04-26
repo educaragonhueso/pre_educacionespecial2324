@@ -61,8 +61,8 @@ $dochtml=$solicitud->getDocHtml($id_alumno,'scripts/fetch/reclamacionesbaremo/',
          {
              $form_reclamaciones=str_replace("input","input disabled",$form_reclamaciones);
              $form_reclamaciones=preg_replace("/<button.*<\/button>/","",$form_reclamaciones);
-             $form_reclamaciones=str_replace("</textarea>",$motivoreclamacion."</textarea>",$form_reclamaciones);
          }
+         $form_reclamaciones=str_replace("</textarea>",$motivoreclamacion."</textarea>",$form_reclamaciones);
          $fr=str_replace("+idalumno","$id_alumno",$form_reclamaciones);
       
          print($fr); 

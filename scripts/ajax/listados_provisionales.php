@@ -54,6 +54,11 @@ $log_listados_provisionales->warning("OBTENIENDO SOLICITUDES PROVISIONALES, ESTA
 ######################################################################################
 
 //mostramos las solitudes completas sin incluir borrador
+/*
+if($estado_convocatoria<ESTADO_PUBLICACION_PROVISIONAL)
+   $solicitudes=$list->getSolicitudes($id_centro,$estado_convocatoria,'normal',$subtipo_listado,$tsolicitud,$log_listados_provisionales,0,$rol,$provincia); 
+else
+*/
 $solicitudes=$list->getSolicitudes($id_centro,$estado_convocatoria,'provisionales',$subtipo_listado,$tsolicitud,$log_listados_provisionales,0,$rol,$provincia); 
 ######################################################################################
 $log_listados_provisionales->warning("OBTENIDAS SOLICITUDES PROVISIONALES ");

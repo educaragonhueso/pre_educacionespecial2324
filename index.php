@@ -33,6 +33,7 @@ else
 if(isset($_GET['token']) and $_SESSION['rol']=='anonimo')
 {
    $_SESSION['rol']='alumno';
+   $rol='alumno';
    $_SESSION['usuario_autenticado']=1;
 }
 if(isset($_GET['provincia']))
