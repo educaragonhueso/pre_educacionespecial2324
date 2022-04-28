@@ -1,12 +1,13 @@
 <?php
 session_start();
-print_r($_SESSION);
 if(isset($_SESSION['convocatoria'])) 
    $convocatoria=$_SESSION['convocatoria'];
 else
    $convocatoria='educacionespecial2223';
 
 require_once "config/config_global.php";
+require_once "includes/sesion.php";
+$estado_convocatoria=$_SESSION['estado_convocatoria'];
 require_once DIR_CORE.'/Conectar.php';
 require_once DIR_BASE.'/clases/models/Solicitud.php';
 require_once DIR_CLASES.'LOGGER.php';
@@ -57,9 +58,10 @@ $dochtml=$solicitud->getDocHtml($id_alumno,'scripts/fetch/reclamacionesbaremo/',
          include('includes/form_reclamacionbaremo.php');
 	      $form_reclamaciones=str_replace("collapse","".$motivoreclamacion."'",$form_reclamaciones);
          $form_reclamaciones=str_replace("value","value='".$motivoreclamacion."'",$form_reclamaciones);
-         if($rol!='alumno')
+         if($rol!='alumno' or $estado_convocatoria>=60)
          {
              $form_reclamaciones=str_replace("input","input disabled",$form_reclamaciones);
+             $form_reclamaciones=str_replace("textarea","textarea disabled",$form_reclamaciones);
              $form_reclamaciones=preg_replace("/<button.*<\/button>/","",$form_reclamaciones);
          }
          $form_reclamaciones=str_replace("</textarea>",$motivoreclamacion."</textarea>",$form_reclamaciones);

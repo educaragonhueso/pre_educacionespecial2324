@@ -25,8 +25,10 @@ else if($_SESSION['fecha_actual']>=DIA_PUBLICACION_BAREMADAS and $_SESSION['fech
       $_SESSION['estado_convocatoria'] =ESTADO_PUBLICACION_BAREMADAS;
 else if($_SESSION['fecha_actual']>=DIA_INICIO_RECLAMACIONES_BAREMADAS and $_SESSION['fecha_actual']<=DIA_FIN_RECLAMACIONES_BAREMADAS)
       $_SESSION['estado_convocatoria'] =ESTADO_RECLAMACIONES_BAREMADAS;
-else if($_SESSION['fecha_actual']>DIA_FIN_RECLAMACIONES_BAREMADAS and $_SESSION['fecha_actual']<DIA_PUBLICACION_DEFINITIVOS)       
+else if($_SESSION['fecha_actual']>DIA_FIN_RECLAMACIONES_BAREMADAS and $_SESSION['fecha_actual']<DIA_INICIO_RECLAMACIONES_PROVSIONAL)       
  		$_SESSION['estado_convocatoria'] =ESTADO_PUBLICACION_PROVISIONAL;//valor 60
+else if($_SESSION['fecha_actual']>=DIA_INICIO_RECLAMACIONES_PROVISIONAL and $_SESSION['fecha_actual']<=DIA_FIN_RECLAMACIONES_PROVISIONAL)
+      $_SESSION['estado_convocatoria'] =ESTADO_RECLAMACIONES_PROVISIONAL;
 else if($_SESSION['fecha_actual']>=DIA_PUBLICACION_DEFINITIVOS and $_SESSION['fecha_actual']<DIA_FASE3)       
  		$_SESSION['estado_convocatoria'] =ESTADO_DEFINITIVOS;
 else

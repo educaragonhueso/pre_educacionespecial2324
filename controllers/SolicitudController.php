@@ -144,8 +144,7 @@ class SolicitudController{
          $origen='<a class="btn btn-primary send" >GRABAR SOLICITUD</a>';
          $this->formulario=str_replace($origen,'',$this->formulario);
       }
-      else
-         $this->formulario=str_replace('send"','send" data-idal="'.$id.'"',$this->formulario);
+		$this->formulario=str_replace('GRABAR','ACTUALIZAR',$this->formulario);
    
       $log->warning("PROCESANDO SOL");	
       $log->warning(print_r($dsolicitud,true));	

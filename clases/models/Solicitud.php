@@ -402,7 +402,7 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
       $log->warning(print_r($hermanos_baremo,true));
 
       //si el rol es de centro no borramos datos
-      if($rol=='alumno')
+      if($rol=='alumno' or $rol=='admin')
       {
          //eliminamos los hermanos para volver a insertarlos
          $sql="DELETE FROM alumnos_hermanos_baremo WHERE id_alumno=$id";

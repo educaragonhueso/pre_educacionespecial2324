@@ -61,6 +61,7 @@ if (!file_exists($ficheroebo))
       if(($_SESSION['rol']=='alumno' and ($_SESSION['estado_convocatoria']>=ESTADO_RECLAMACIONES_BAREMADAS) AND $_SESSION['estado_convocatoria']<=ESTADO_RECLAMACIONES_PROVISIONAL) or $_SESSION['rol']=='admin')
       {
       echo '<li class="nav-item msuperior dropdown">';
+            if($_SESSION['estado_convocatoria']==ESTADO_RECLAMACIONES_BAREMADAS or $_SESSION['estado_convocatoria']==ESTADO_RECLAMACIONES_PROVISIONAL )
          echo '<a class="show_provisionales nav-link dropdown-toggle desplegable" id="navbardrop" data-toggle="dropdown" href="#">Formulario reclamaciones</a>';
          echo '<div class="dropdown-menu">';
             if($_SESSION['estado_convocatoria']==ESTADO_RECLAMACIONES_BAREMADAS)
@@ -137,7 +138,7 @@ if (!file_exists($ficheroebo))
                </div>
             </li>
 			<?php }?>
-		<?php if($_SESSION['estado_convocatoria']>=ESTADO_PUBLICACION_PROVISIONAL){?>
+		<?php if($_SESSION['estado_convocatoria']>=ESTADO_DEFINITIVOS and $_SESSION['rol']!='alumno' and $_SESSION['rol']!='anonimo'){?>
 		   <?php if(($_SESSION['estado_convocatoria']>=40 and $_SESSION['rol']=='alumno') or $_SESSION['rol']!='alumno'){?>
                             <li class="nav-item active msuperior dropdown" id="mdefinitivo">
                                  <a class="show_definitivos nav-link dropdown-toggle desplegable2" id="navbardrop" data-toggle="dropdown" href="#">Definitivos</a>
@@ -172,7 +173,7 @@ if (!file_exists($ficheroebo))
              echo '</li>';
                
 		      }
-		      if($_SESSION['estado_convocatoria']>=60)
+		      if($_SESSION['estado_convocatoria']>=60 and $_SESSION['rol']!='alumno' and $_SESSION['rol']!='anonimo')
             {
                echo '<li class="nav-item active msuperior" id="matriculafinal">';
                   echo '<a class="show_matricula_final nav-link" data-subtipo="mat_final" href="#">Matrícula final</a>';
