@@ -72,8 +72,10 @@ function BasicTable($header,$data,$comp,$tam,$tipoinforme,$primera_celda)
    $celdadatos=30;
 	if($tipoinforme=='provisional' or $tipoinforme=='definitivo')
    {
-       $margen=15;
-      return;
+      $primera_celda=35;
+      $celdadatos=30;
+      $margen=5;
+      $celdavalores=30; 
    }
    else if(strcmp('detalle_baremo',$tipoinforme)==0)
    {

@@ -113,7 +113,7 @@ if (!file_exists($ficheroebo))
              <a class="show_provisionales nav-link dropdown-toggle desplegable2" id="navbardrop" data-toggle="dropdown" href="#">Lista baremo</a>
              <div class="dropdown-menu">
 
-            <?php if($_SESSION['estado_convocatoria']>ESTADO_PUBLICACION_PROVISIONAL){?>
+            <?php if($_SESSION['estado_convocatoria']>=ESTADO_PUBLICACION_PROVISIONAL){?>
                <a class="lbaremadas dropdown-item" href="#" id="sor_ale" data-subtipo="sor_ale" data-tipo="sorteo">Numero aleatorio </a>;
              <?php }?>
              
@@ -173,7 +173,7 @@ if (!file_exists($ficheroebo))
              echo '</li>';
                
 		      }
-		      if($_SESSION['estado_convocatoria']>=60 and $_SESSION['rol']!='alumno' and $_SESSION['rol']!='anonimo')
+		      if($_SESSION['estado_convocatoria']>=100 and $_SESSION['rol']!='alumno' and $_SESSION['rol']!='anonimo')
             {
                echo '<li class="nav-item active msuperior" id="matriculafinal">';
                   echo '<a class="show_matricula_final nav-link" data-subtipo="mat_final" href="#">Matrícula final</a>';

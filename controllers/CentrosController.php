@@ -38,7 +38,7 @@ coordenadas!='nodata'");
      //    $r[]=$row; 
     return $r;
     }
-   public function getAllCentros($provincia='todas',$clase='todos')
+   public function getAllCentros_old($provincia='todas',$clase='todos')
    {
       if($clase=='todos')
       {
@@ -49,6 +49,22 @@ coordenadas!='nodata'");
       {
          if($provincia=='todas')	$sql="SELECT id_centro FROM centros where id_centro>1 and clase_centro='especial' and id_centro in(select id_centro from matricula)";
          else	$sql="SELECT id_centro FROM centros where id_centro>1 and clase_centro='especial' and id_centro in(select id_centro from matricula) and provincia='$provincia'";
+      }
+      $query=$this->conexion->query($sql);
+      if($query) return $query;
+      else return 0; 
+   }
+   public function getAllCentros($provincia='todas',$clase='todos')
+   {
+      if($clase=='todos')
+      {
+         if($provincia=='todas')	$sql="SELECT id_centro FROM centros where id_centro>1";
+         else	$sql="SELECT id_centro FROM centros where id_centro>1 and provincia='$provincia'";
+      }
+      elseif($clase=='especial')
+      {
+         if($provincia=='todas')	$sql="SELECT id_centro FROM centros where id_centro>1 and clase_centro='especial'";
+         else	$sql="SELECT id_centro FROM centros where id_centro>1 and clase_centro='especial' and provincia='$provincia'";
       }
       $query=$this->conexion->query($sql);
       if($query) return $query;

@@ -52,11 +52,11 @@ $campos_bbdd_pdf_mat=array('nombre_centro','gruposebo','puestosebo','plazasactua
 $campos_cabecera_admitidos_prov=array('Nombre centro','Tipo','Nº Orden','NºAleatorio','Primer Apellido','Segundo apellido','Nombre','Criterios prioritarios','Puntos Baremo');
 $campos_bbdd_admitidos_prov=array('nombre_centro','tipoestudios','nordensorteo','nasignado','apellido1','apellido2','nombre','transporte','puntos_validados');
 
-$campos_cabecera_noadmitidos_prov=array('Nombre centro','Tipo','Nº Orden','NºAleatorio','Primer Apellido','Segundo apellido','Nombre','Tipo','Criterios prioritarios','Puntos Baremo');
-$campos_bbdd_noadmitidos_prov=array('nombre_centro','tipoestudios','nordensorteo','nasignado','apellido1','apellido2','nombre','tipoestudios','transporte','puntos_validados');
+$campos_cabecera_noadmitidos_prov=array('Nombre centro','Tipo','Nº Orden','NºAleatorio','Primer Apellido','Segundo apellido','Nombre','Criterios prioritarios','Puntos Baremo');
+$campos_bbdd_noadmitidos_prov=array('nombre_centro','tipoestudios','nordensorteo','nasignado','apellido1','apellido2','nombre','transporte','puntos_validados');
 
-$campos_cabecera_excluidos_prov=array('Nombre centro','Tipo','Nº Orden','NºAleatorio','Primer Apellido','Segundo apellido','Nombre','Tipo','Criterios prioritarios','Puntos Baremo');
-$campos_bbdd_excluidos_prov=array('nombre_centro','tipoestudios','nordensorteo','nasignado','apellido1','apellido2','nombre','tipoestudios','transporte','puntos_validados');
+$campos_cabecera_excluidos_prov=array('Nombre centro','Tipo','Nº Orden','NºAleatorio','Primer Apellido','Segundo apellido','Nombre','Criterios prioritarios','Puntos Baremo');
+$campos_bbdd_excluidos_prov=array('nombre_centro','tipoestudios','nordensorteo','nasignado','apellido1','apellido2','nombre','transporte','puntos_validados');
 
 
 //DATOS PARA LISTADOS DEFINITIVOS

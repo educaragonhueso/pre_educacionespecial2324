@@ -101,9 +101,7 @@ $solcentro=0;
 if(isset($_GET['solcentro']))
    $solcentro=1;
 
-if(($_SESSION['version']=='PRE' or $_SESSION['mantenimiento']=='SI') and $rol!='alumno' and $rol!='anonimo')
-   print_r($_SESSION);
-if($_SESSION['rol']=='admin')
+if($_SESSION['version']=='PRE' or $_SESSION['mantenimiento']=='SI')
    print_r($_SESSION);
 ##CABECERA##
 include('includes/head.php');

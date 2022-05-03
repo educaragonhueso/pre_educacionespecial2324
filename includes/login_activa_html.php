@@ -81,7 +81,7 @@
          <?php }?>
 <?php }
 else
-   echo '<h4></h4>';
+   echo '<h4>Página en mantenimiento, se restaurará en unos minutos</h4>';
 
 ?>
       </div> <!--finn del wrapper-->   

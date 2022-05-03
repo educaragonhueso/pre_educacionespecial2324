@@ -94,6 +94,7 @@ else
 		   $id_centro_destino=$solicitud->getCentroId($fsol_tmp['id_centro_destino'],$log_nueva);
    
 	}
+   $fsol_salida['id_centro_destino']=$id_centro_destino;
 }
 
 /*

@@ -128,6 +128,4 @@ else//accedemos como centro
 {
 print("NO ES UN USUARIO CON PERMISOS");
 }
-
-
 ?>
