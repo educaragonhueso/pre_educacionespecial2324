@@ -134,6 +134,15 @@ class Centro{
       else 
          return 0;
    }
+    public function setNoAdmitidas($c,$log)
+   {
+      $sql="update alumnos set est_desp_sorteo='noadmitida' where id_centro_destino=$c";
+      if($c=='22002511')
+         $log->warning("SET NO ADMI: $sql");
+      $query1=$this->conexion->query($sql);
+      return 1;
+   }
+
    public function getVacantesCentrosFase0($rol='centro',$log)
 	{
       if($rol=='centro')

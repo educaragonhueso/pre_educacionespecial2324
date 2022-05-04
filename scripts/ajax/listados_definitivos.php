@@ -56,7 +56,8 @@ if($estado_convocatoria>=ESTADO_PUBLICACION_PROVISIONAL and $estado_convocatoria
       $nsolicitudes=$tcentro->getNumSolicitudes($id_centro);
       $nsorteo=$tcentro->getNumeroSorteo();
       //$dsorteo=$tcentro->getVacantes('centro');
-		$dsorteo=$tcentr->getVacantesCentro($log_listados_provisionales);
+      $tcentro->setNoAdmitidas($id_centro,$log_listados_definitivos);//ponemos las de ese centro a no admitidas
+		$dsorteo=$tcentr->getVacantesCentro($log_listados_definitivos);
 		$vacantes_ebo=$dsorteo['ebo'];
 		$vacantes_tva=$dsorteo['tva'];
       
@@ -88,6 +89,8 @@ if($estado_convocatoria>=ESTADO_PUBLICACION_PROVISIONAL and $estado_convocatoria
       	$centrotmp=new Centro($conexion,$id_centrotmp,'no',0);
 			$centrotmp->setId($id_centrotmp);
 			$centrotmp->setNombre();
+         $centrotmp->setNoAdmitidas($id_centrotmp,$log_listados_definitivos);//ponemos las de ese centro a no admitidas
+
 			$nsolicitudescentro=$centrotmp->getNumSolicitudes($id_centrotmp,1);
 			if($nsolicitudescentro==0) continue;
 			$nombrecentro=$centrotmp->getNombre();
@@ -120,9 +123,9 @@ $log_listados_definitivos->warning("OBTENIENDO LISTADOS DEFINITIVOSS, CENTRO: ".
 //mostramos las solitudes completas sin incluir borrador
 $solicitudes=$list->getSolicitudes($id_centro,$estado_convocatoria,'definitivos',$subtipo_listado,$tsolicitud,$log_listados_definitivos,0,$rol,$provincia); 
 
+$formato='definitivos'; //formato listado en el pdf
 if($_POST['pdf']==1)
 {
-   $formato=''; //formato listado en el pdf
    $anchuracelda=10;
    $primera_celda=20;
 	$datos=array();

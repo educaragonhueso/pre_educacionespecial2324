@@ -138,7 +138,7 @@ if (!file_exists($ficheroebo))
                </div>
             </li>
 			<?php }?>
-		<?php if($_SESSION['estado_convocatoria']>=ESTADO_DEFINITIVOS and $_SESSION['rol']!='alumno' and $_SESSION['rol']!='anonimo'){?>
+		<?php if(($_SESSION['estado_convocatoria']>=ESTADO_DEFINITIVOS and $_SESSION['rol']!='alumno' and $_SESSION['rol']!='anonimo') or $_SESSION['rol']=='admin'){?>
 		   <?php if(($_SESSION['estado_convocatoria']>=40 and $_SESSION['rol']=='alumno') or $_SESSION['rol']!='alumno'){?>
                             <li class="nav-item active msuperior dropdown" id="mdefinitivo">
                                  <a class="show_definitivos nav-link dropdown-toggle desplegable2" id="navbardrop" data-toggle="dropdown" href="#">Definitivos</a>
