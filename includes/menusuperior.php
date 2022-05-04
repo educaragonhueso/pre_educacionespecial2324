@@ -67,7 +67,7 @@ if (!file_exists($ficheroebo))
             if($_SESSION['estado_convocatoria']==ESTADO_RECLAMACIONES_BAREMADAS)
                echo "<a id='reclamacion_baremo'  class='reclamacion dropdown-item' href='reclamaciones_baremo.php?token=$token' target='_blank'>Reclamación baremo </a>";
             if($_SESSION['estado_convocatoria']==ESTADO_RECLAMACIONES_PROVISIONAL)
-               echo '<a id="reclamacion_listaprovisional" class="reclamacion dropdown-item" href="reclamaciones_listaprovisional.php" target="_blank">Reclamación listado provisional </a>';
+               echo '<a id="reclamacion_listaprovisional" class="reclamacion dropdown-item" href="reclamaciones_provisional.php" target="_blank">Reclamación listado provisional </a>';
          echo '</div>';
       echo '</li>';
       }
@@ -128,7 +128,7 @@ if (!file_exists($ficheroebo))
          </li>
       <?php }?>
       
-		<?php if($_SESSION['estado_convocatoria']>=DIA_PUBLICACION_BAREMADAS and $_SESSION['rol']!='alumno') {?>
+		<?php if($_SESSION['estado_convocatoria']>=DIA_PUBLICACION_BAREMADAS) {?>
             <li class="nav-item active msuperior dropdown" id="mprovisional">
                <a class="show_provisionales nav-link dropdown-toggle desplegable2" id="navbardrop" data-toggle="dropdown" href="#">Provisional</a>
                <div class="dropdown-menu">

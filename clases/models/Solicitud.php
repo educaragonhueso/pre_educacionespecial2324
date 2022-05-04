@@ -86,10 +86,10 @@ class Solicitud {
   {
    $extensiones=array("jpg","jpeg","png");
    $res="NO DOC";
-   $ndir=$dir."/".$id_alumno;
+   $ndir=$dir.$id_alumno;
    //return $ndir;
    $htmldoc='';
-    if(file_exists($ndir)==0) return '';
+    if(file_exists($ndir)==0) return "NO HAY FICHEROS $ndir";
     if ($handle = opendir($ndir)) 
     {
        while (false !== ($fichero = readdir($handle))) {
@@ -121,7 +121,7 @@ class Solicitud {
       else if($doc=='baremo')
          $ret.="<div class='verdocumentos'><a href='scripts/fetch/reclamacionesbaremo/$id_alumno/".$f."' style='color:black!important' target='_blank'>Ver documento</a></div>";
       else if($doc=='provisional')
-         $ret.="<div class='verdocumentos'><a href='scripts/fetch/reclamacionesprovisional/$id_alumno/".$f."' style='color:black!important' target='_blank'>DESCARGAR PDF $f</a></div>";
+         $ret.="<div class='verdocumentos'><a href='scripts/fetch/reclamacionesprovisional/$id_alumno/".$f."' style='color:black!important' target='_blank'>Ver PDF $f</a></div>";
       //los centros no pueden modifciar los documentos
       if($rol!='centro')
          $ret.= "<button class='bdocfile' ficherooriginal='".$f."'  fichero='$idfile'>Retirar documento</button>";
@@ -139,6 +139,8 @@ class Solicitud {
          $ret.="<div class='verdocumentos'><a href='scripts/fetch/uploads/$id_alumno/".$f."' style='color:black!important' target='_blank'>VER IMAGEN </a></div>";
       else if($doc=='baremo')
          $ret.="<div class='verdocumentos'><a href='scripts/fetch/reclamacionesbaremo/$id_alumno/".$f."' style='color:black!important' target='_blank'>VER IMAGEN </a></div>";
+      else if($doc=='provisional')
+         $ret.="<div class='verdocumentos'><a href='scripts/fetch/reclamacionesprovisional/$id_alumno/".$f."' style='color:black!important' target='_blank'>VER IMAGEN </a></div>";
       $ret.="<figure id='$idfile' class='containerZoom' style='background-image:url(".$imgbase64.");background-size: 150%;'>";
       $ret.="<img style='width:60%' src='".$imgbase64."'></figure><br>"; 
       if($rol!='centro')
@@ -1979,7 +1981,7 @@ as nasignado,c.nombre_centro, a.puntos_validados,a.id_centro_destino as id_centr
       //else
       $tabla_alumnos='alumnos_provisional';
 		
-      $orden=" ORDER BY id_centro,tipoestudios,ao.transporte asc,ao.puntos_validados desc,ao.hermanos_tutores desc,ao.conjunta desc,ao.proximidad desc,ao.renta desc,ao.sobrevenida desc,ao.discapacidad desc,ao.familia desc,ao.orden asc";
+      $orden=" ORDER BY c.id_centro,tipoestudios,ao.transporte asc,ao.puntos_validados desc,ao.hermanos_tutores desc,ao.conjunta desc,ao.proximidad desc,ao.renta desc,ao.sobrevenida desc,ao.discapacidad desc,ao.familia desc,ao.orden asc";
 		
       $resultSet=array();
 		if($subtipo_listado=='admitidos_prov')
@@ -2002,7 +2004,7 @@ as nasignado,c.nombre_centro, a.puntos_validados,a.id_centro_destino as id_centr
             $sql="SELECT a.id_alumno,a.nombre,a.apellido1,a.apellido2,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado
 as nasignado,c.nombre_centro, a.puntos_validados,a.id_centro_destino as id_centro  FROM $tabla_alumnos a LEFT JOIN alumnos_orden ao ON ao.id_alumno=a.id_alumno, centros c WHERE a.id_centro_destino=c.id_centro AND fase_solicitud!='borrador' AND( estado_solicitud='duplicada' or estado_solicitud='irregular') $orden";
          else
-            $sql="SELECT a.id_alumno,a.nombre,a.apellido1,a.apellido2,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado as nasignado, a.puntos_validados FROM $tabla_alumnos a LEFT JOIN alumnos_orden ao ON ao.id_alumno=a.id_alumno,centros c WHERE a.id_centro_destino=c.id_centro AND fase_solicitud!='borrador'  and( estado_solicitud='duplicada' or estado_solicitud='irregular') and c.id_centro=$c $orden";
+            $sql="SELECT a.id_alumno,a.nombre,a.apellido1,a.apellido2,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado as nasignado, a.puntos_validados FROM $tabla_alumnos a LEFT JOIN alumnos_orden ao ON ao.id_alumno=a.id_alumno,centros c WHERE a.id_centro_destino=c.id_centro AND fase_solicitud!='borrador' and( estado_solicitud='duplicada' or estado_solicitud='irregular') and c.id_centro=$c $orden";
 
       }
 				$log->warning("CONSULTA SOLICITUDES PROVISIONALES SUBTIPO: ".$subtipo_listado);

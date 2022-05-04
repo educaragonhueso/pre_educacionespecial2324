@@ -1,9 +1,11 @@
 $(document).ready(function(){
+console.log("Cargando reclamaciones");
 let filesDone = 0
 let filesToDo = 0
 let progressBar = document.getElementById('progress-bar')
 let token = $('#token').attr("value")
 let id_alumno = $('#id_alumno').attr('value')
+let tiporec = $('#tiporeclamacion').attr('value')
 let dropArea = document.getElementById('drop-area');
 
 var form_data=new FormData();
@@ -57,7 +59,7 @@ function eliminarFichero (f,id)
    console.log("eliminando doc de idalumno "+id_alumno);
 	$.ajax({
 	  method: "POST",
-	  data: {id_alumno:id,fichero:f,token:token,rol:vrol},
+	  data: {id_alumno:id,fichero:f,rol:vrol,tiporec:'provisional'},
 	  url:'../'+convocatoria+'/scripts/ajax/borrar_reclamaciones.php',
 	      success: function(data) {
 				$.alert({
@@ -101,7 +103,6 @@ function previewFilesRec(files)
 {
   files = [...files]
   initializeProgress(files.length) // <- Add this line
-  //files.forEach(uploadFile)
   files.forEach(previewFileRec)
 }
 function handleFiles(files)
@@ -145,17 +146,18 @@ function handleDrop(e) {
 function uploadFileRecBaremo(file) {
 let id_alumno = $('[name=breclamaciones]').attr('id')
 id_alumno=id_alumno.replace('reclamacion','');
-console.log("subiendo id_alumno: "+id_alumno);
+console.log("subiendo iiid_alumno: "+id_alumno);
+console.log("subiendo tiporec: "+tiporec);
 form_data.append('id_alumno',id_alumno);
 console.log(form_data);
 $.ajax({
-     url: 'scripts/fetch/get_reclamaciones_baremo.php', 
+     url: 'scripts/fetch/get_reclamaciones_'+tiporec+'.php', 
      type: 'post',
      data: form_data,
      contentType: false,
      processData: false,
      success: function (response) {
-            console.log("En reclamaciones baremo, subido"+response);
+            console.log("En reclamaciones "+tiporec+", subido"+response);
      }
    });
 }

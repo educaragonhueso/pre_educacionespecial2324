@@ -302,7 +302,7 @@ class ListadosController{
 		$li="<tr class='filasol' id='filasol".$sol->id_alumno."' style='color:black'>";
       $li.="<td class='calumno dalumno prueba' data-token='".$sol->token."'  data-idal='".$sol->id_alumno."'>".$sol->id_alumno."-".strtoupper($sol->apellido1).",".strtoupper($sol->nombre)."</td>";
       if($sol->tipo=='baremo')
-         $rec="Ver reclamación de baremo";
+         $rec="Ver reclamación listado provisional";
       else
          $rec="No hay reclamación";
       $token=$sol->token;
@@ -311,7 +311,7 @@ class ListadosController{
       else
          $id_centro=$sol->id_centro;
          
-      $enlacerec="reclamaciones_baremo.php?id_centro=$id_centro&token=$token";
+      $enlacerec="reclamaciones_provisional.php?id_centro=$id_centro&token=$token";
 		$li.="<td id='$token' class='reclamacion'><a href='$enlacerec'>$rec</a></td>";
 		$li.="<td id='print".$sol->id_alumno."' class='fase printsol'><i class='fa fa-print psol' aria-hidden='true'></i></td>";
 		$li.="<td id='fase".$sol->id_alumno."' class='fase'>".$sol->fase_solicitud."</td>";
