@@ -60,6 +60,7 @@ if (!file_exists($ficheroebo))
 
       if(($_SESSION['rol']=='alumno' and ($_SESSION['estado_convocatoria']>=ESTADO_RECLAMACIONES_BAREMADAS) AND $_SESSION['estado_convocatoria']<=ESTADO_RECLAMACIONES_PROVISIONAL) or $_SESSION['rol']=='admin')
       {
+      /*
       echo '<li class="nav-item msuperior dropdown">';
             if($_SESSION['estado_convocatoria']==ESTADO_RECLAMACIONES_BAREMADAS or $_SESSION['estado_convocatoria']==ESTADO_RECLAMACIONES_PROVISIONAL )
          echo '<a class="show_provisionales nav-link dropdown-toggle desplegable" id="navbardrop" data-toggle="dropdown" href="#">Formulario reclamaciones</a>';
@@ -70,6 +71,7 @@ if (!file_exists($ficheroebo))
                echo '<a id="reclamacion_listaprovisional" class="reclamacion dropdown-item" href="reclamaciones_provisional.php" target="_blank">Reclamación listado provisional </a>';
          echo '</div>';
       echo '</li>';
+      */
       }
       if($_SESSION['rol']!='alumno' and $_SESSION['estado_convocatoria']>=0)
       {
@@ -138,7 +140,7 @@ if (!file_exists($ficheroebo))
                </div>
             </li>
 			<?php }?>
-		<?php if(($_SESSION['estado_convocatoria']>=ESTADO_DEFINITIVOS and $_SESSION['rol']!='alumno' and $_SESSION['rol']!='anonimo') or $_SESSION['rol']=='admin'){?>
+		<?php if(($_SESSION['estado_convocatoria']>=ESTADO_RECLAMACIONES_PROVISIONAL and $_SESSION['rol']!='alumno' and $_SESSION['rol']!='anonimo') or $_SESSION['rol']=='admin'){?>
 		   <?php if(($_SESSION['estado_convocatoria']>=40 and $_SESSION['rol']=='alumno') or $_SESSION['rol']!='alumno'){?>
                             <li class="nav-item active msuperior dropdown" id="mdefinitivo">
                                  <a class="show_definitivos nav-link dropdown-toggle desplegable2" id="navbardrop" data-toggle="dropdown" href="#">Definitivos</a>
@@ -150,7 +152,7 @@ if (!file_exists($ficheroebo))
                             </li>
 		   <?php }?>
 		<?php }?>
-		<?php if($_SESSION['rol']!='anonimo' and $_SESSION['rol']!='alumno'  and $_SESSION['estado_convocatoria']>=ESTADO_FASE2) 
+		<?php if($_SESSION['rol']!='anonimo' and $_SESSION['rol']!='alumno'  and $_SESSION['estado_convocatoria']>=ESTADO_FASE2 OR $_SESSION['rol']=='admin') 
             {
              echo '<li class="nav-item active msuperior dropdown" id="mdefinitivo">';
              echo '<a class="nav-link dropdown-toggle desplegable2" id="navbardrop" data-toggle="dropdown" href="#">FASE II</a>';

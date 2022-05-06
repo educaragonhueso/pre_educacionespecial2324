@@ -1520,8 +1520,10 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
       }
       if($estado_convocatoria>=ESTADO_RECLAMACIONES_BAREMADAS AND $estado_convocatoria<ESTADO_RECLAMACIONES_PROVISIONAL)
          $filtrorec=" AND (rec.tipo='baremo' OR rec.tipo IS NULL)";
-      else
+      else if($estado_convocatoria==ESTADO_RECLAMACIONES_PROVISIONAL)
          $filtrorec=" AND (rec.tipo='provisional' OR rec.tipo IS NULL)";
+      else
+         $filtrorec=" AND (rec.tipo='provisional' OR rec.tipo='baremo' OR rec.tipo IS NULL)";
          
 		//MOSTRAMOS DATOS VALIDADOS
 		if($rol=='centro' or $rol=='alumno') //para centros o alumnos del centro
@@ -1984,24 +1986,24 @@ as nasignado,c.nombre_centro, a.puntos_validados,a.id_centro_destino as id_centr
 		if($subtipo_listado=='admitidos_prov')
       {
 		   if($rol=='admin' or $rol=='sp')
-			   $sql="SELECT a.id_alumno,a.nombre,a.apellido1,a.apellido2,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado as nasignado,c.nombre_centro,a.puntos_validados,a.id_centro_destino as id_centro FROM $tabla_alumnos a LEFT JOIN alumnos_orden ao ON ao.id_alumno=a.id_alumno, centros c WHERE a.id_centro_destino=c.id_centro AND fase_solicitud!='borrador' and estado_solicitud='apta' and est_desp_sorteo='admitida' $orden";
+			   $sql="SELECT a.id_alumno,a.nombre,a.apellido1,a.apellido2,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado as nasignado,c.nombre_centro,a.puntos_validados,a.id_centro_destino as id_centro FROM $tabla_alumnos a LEFT JOIN alumnos_orden_provisional ao ON ao.id_alumno=a.id_alumno, centros c WHERE a.id_centro_destino=c.id_centro AND fase_solicitud!='borrador' and estado_solicitud='apta' and est_desp_sorteo='admitida' $orden";
 			else
-			   $sql="SELECT a.id_alumno,a.nombre,a.apellido1,a.apellido2,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado as nasignado,c.nombre_centro,a.puntos_validados,a.id_centro_destino as id_centro FROM $tabla_alumnos a LEFT JOIN alumnos_orden ao ON ao.id_alumno=a.id_alumno, centros c WHERE a.id_centro_destino=c.id_centro AND fase_solicitud!='borrador' and estado_solicitud='apta' and est_desp_sorteo='admitida' and c.id_centro=$c $orden";
+			   $sql="SELECT a.id_alumno,a.nombre,a.apellido1,a.apellido2,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado as nasignado,c.nombre_centro,a.puntos_validados,a.id_centro_destino as id_centro FROM $tabla_alumnos a LEFT JOIN alumnos_orden_provisional ao ON ao.id_alumno=a.id_alumno, centros c WHERE a.id_centro_destino=c.id_centro AND fase_solicitud!='borrador' and estado_solicitud='apta' and est_desp_sorteo='admitida' and c.id_centro=$c $orden";
       }
 		elseif($subtipo_listado=='noadmitidos_prov')
       {
 		   if($rol=='admin' or $rol=='sp')
-			   $sql="SELECT a.id_alumno,a.nombre,a.apellido1,a.apellido2,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado as nasignado,c.nombre_centro,a.puntos_validados,a.id_centro_destino as id_centro FROM $tabla_alumnos a LEFT JOIN alumnos_orden ao ON ao.id_alumno=a.id_alumno, centros c WHERE a.id_centro_destino=c.id_centro AND fase_solicitud!='borrador' and estado_solicitud='apta' and est_desp_sorteo='noadmitida' $orden";
+			   $sql="SELECT a.id_alumno,a.nombre,a.apellido1,a.apellido2,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado as nasignado,c.nombre_centro,a.puntos_validados,a.id_centro_destino as id_centro FROM $tabla_alumnos a LEFT JOIN alumnos_orden_provisional ao ON ao.id_alumno=a.id_alumno, centros c WHERE a.id_centro_destino=c.id_centro AND fase_solicitud!='borrador' and estado_solicitud='apta' and est_desp_sorteo='noadmitida' $orden";
 		   else
-			   $sql="SELECT a.id_alumno,a.nombre,a.apellido1,a.apellido2,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado as nasignado,c.nombre_centro,a.puntos_validados,a.id_centro_destino as id_centro FROM $tabla_alumnos a LEFT JOIN alumnos_orden ao ON a.id_alumno=ao.id_alumno, centros c WHERE a.id_centro_destino=c.id_centro AND fase_solicitud!='borrador' and estado_solicitud='apta' and est_desp_sorteo='noadmitida' and c.id_centro=$c $orden";
+			   $sql="SELECT a.id_alumno,a.nombre,a.apellido1,a.apellido2,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado as nasignado,c.nombre_centro,a.puntos_validados,a.id_centro_destino as id_centro FROM $tabla_alumnos a LEFT JOIN alumnos_orden_provisional ao ON a.id_alumno=ao.id_alumno, centros c WHERE a.id_centro_destino=c.id_centro AND fase_solicitud!='borrador' and estado_solicitud='apta' and est_desp_sorteo='noadmitida' and c.id_centro=$c $orden";
       }
 		elseif($subtipo_listado=='excluidos_prov')
       {
           if($rol=='admin' or $rol=='sp')
             $sql="SELECT a.id_alumno,a.nombre,a.apellido1,a.apellido2,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado
-as nasignado,c.nombre_centro, a.puntos_validados,a.id_centro_destino as id_centro  FROM $tabla_alumnos a LEFT JOIN alumnos_orden ao ON ao.id_alumno=a.id_alumno, centros c WHERE a.id_centro_destino=c.id_centro AND fase_solicitud!='borrador' AND( estado_solicitud='duplicada' or estado_solicitud='irregular') $orden";
+as nasignado,c.nombre_centro, a.puntos_validados,a.id_centro_destino as id_centro  FROM $tabla_alumnos a LEFT JOIN alumnos_orden_provisional ao ON ao.id_alumno=a.id_alumno, centros c WHERE a.id_centro_destino=c.id_centro AND fase_solicitud!='borrador' AND( estado_solicitud='duplicada' or estado_solicitud='irregular') $orden";
          else
-            $sql="SELECT a.id_alumno,a.nombre,a.apellido1,a.apellido2,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado as nasignado, a.puntos_validados FROM $tabla_alumnos a LEFT JOIN alumnos_orden ao ON ao.id_alumno=a.id_alumno,centros c WHERE a.id_centro_destino=c.id_centro AND fase_solicitud!='borrador' and( estado_solicitud='duplicada' or estado_solicitud='irregular') and c.id_centro=$c $orden";
+            $sql="SELECT a.id_alumno,a.nombre,a.apellido1,a.apellido2,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado as nasignado, a.puntos_validados FROM $tabla_alumnos a LEFT JOIN alumnos_orden_provisional ao ON ao.id_alumno=a.id_alumno,centros c WHERE a.id_centro_destino=c.id_centro AND fase_solicitud!='borrador' and( estado_solicitud='duplicada' or estado_solicitud='irregular') and c.id_centro=$c $orden";
 
       }
 				$log->warning("CONSULTA SOLICITUDES PROVISIONALES SUBTIPO: ".$subtipo_listado);

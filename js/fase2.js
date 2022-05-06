@@ -13,7 +13,7 @@ $(".lfase2").click(function () {
   var vestado_convocatoria=$('#estado_convocatoria').val();
 	$.ajax({
 	  method: "POST",
-	  url: "../educacionespecial/scripts/ajax/listados_solicitudes_fase2.php",
+	  url: "../"+edicion+"/scripts/ajax/listados_solicitudes_fase2.php",
 	  data: {asignar:'0',rol:vrol,subtipo:vsubtipo,pdf:vpdf,estado_convocatoria:vestado_convocatoria,sorteo_fase2:vsorteo_fase2,provincia:vprovincia,id_centro:vidcentro},
 	  success: function(data) {
 				$("#mapcontrol").hide();
@@ -37,7 +37,7 @@ var vidcentro=$('#id_centro').text();
 	$.ajax({
 	  method: "POST",
 	  data: {asignar:'1',rol:vrol,subtipo:vsubtipo,estado_convocatoria:vestado_convocatoria,sorteo_fase2:vsorteo_fase2},
-	  url:'../educacionespecial/scripts/ajax/listados_solicitudes_fase2.php',
+	  url:'../'+edicion+'/scripts/ajax/listados_solicitudes_fase2.php',
 	      success: function(data) {
 		      alert("NUMERO ALEATORIO ASIGNADO CORRECTAMENTE");
             $("#boton_asignar_numero_fase2").remove();
@@ -74,7 +74,7 @@ return;
 	$.ajax({
 	  method: "POST",
 	  data: {asignar:'2',rol:vrol,nsorteo:parseInt(vnum_sorteo),estado_convocatoria:vestado_convocatoria,subtipo:vsubtipo},
-	  url:'../educacionespepcial/scripts/ajax/listados_solicitudes_fase2.php',
+	  url:'../'+edicion+'/scripts/ajax/listados_solicitudes_fase2.php',
 	      success: function(data) {
 		      alert("SORTEO REALIZADO CORRECTAMENTE");
 				$("#sol_table").remove();
@@ -96,7 +96,7 @@ var vsubtipo=$(this).attr("data-subtipo");
 	$.ajax({
 	  method: "POST",
 	  data: {subtipo:vsubtipo},
-	  url:'../educacionespecial/scripts/servidor/sc_asignavacantes_fase2.php',
+	  url:'../'+edicion+'/scripts/servidor/sc_asignavacantes_fase2.php',
 	      success: function(data) {
             console.log("plazas asignadas"+data);
 				alert(data);
@@ -225,7 +225,7 @@ if(vidcactual==vidcdefinitivo)
 $.ajax({
   method: "POST",
   data: {id_alumno:vid,centrodefinitivo:vcdefinitivo,idcentrodefinitivo:vidcdefinitivo,vacdefinitivo:vvacdefinitivo,tipoestudios:vtipoestudios,centroactual:vcactual,idcentroactual:vidcactual},
-  url:'../educacionespecial/scripts/ajax/cambio_estado_fase2.php',
+  url:'../'+edicion+'/scripts/ajax/cambio_estado_fase2.php',
   success: function(data) 
   {
    console.log(data);

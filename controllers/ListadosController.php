@@ -13,7 +13,7 @@ class ListadosController{
       $res='';
       $form_nuevasolicitud='<div class="input-group-append" id="cab_fnuevasolicitud"><button class="btn btn-outline-info" id="nuevasolicitud" type="button">Nueva solicitud</button></div>';
       $filtro_solicitudes='<input type="text" class="form-control" id="filtrosol"  placeholder="Introduce datos del alumno o centro"><small id="emailHelp" class="form-text text-muted"></small>';
-      $log->warning("ENTRANDO EN SHOWLISTADOSOLICITUDES,idcentro: $id_centro estado: $estado_convocatoria");
+      $log->warning("ENTRANDO EN SHOWLISTADOSOLICITUDES, rol: $rol, idcentro: $id_centro estado: $estado_convocatoria");
 	   $solicitudes=$this->getSolicitudes($id_centro,$estado_convocatoria,'normal','normal',$solicitud,$log,$id_alumno,$rol,$provincia); 
       
       if($rol!='alumno' and $rol!='anonimo')
@@ -301,7 +301,7 @@ class ListadosController{
 	
 		$li="<tr class='filasol' id='filasol".$sol->id_alumno."' style='color:black'>";
       $li.="<td class='calumno dalumno prueba' data-token='".$sol->token."'  data-idal='".$sol->id_alumno."'>".$sol->id_alumno."-".strtoupper($sol->apellido1).",".strtoupper($sol->nombre)."</td>";
-      if($sol->tipo=='baremo')
+      if($sol->tipo=='provisional')
          $rec="Ver reclamación listado provisional";
       else
          $rec="No hay reclamación";
