@@ -1,4 +1,5 @@
 $(document).ready(function(){
+ console.log("en fichero fase2"+edicion); 
 //LISTADO SOLICITUDES FASEII
 $(".lfase2").click(function () {
  console.log("en fase2"); 
@@ -183,11 +184,24 @@ $('body').on('click', '.cdefinitivo', function(e){
   }
   var vreserva=$("#centro_origen"+vid).attr("data-reserva");
   var vclasorigen=$(".vacantes"+vtipoestudios+vidcorigen).attr("class");
-			
- vacantesfinales_def=+vvacdefinitivo-1;
- vacantesfinales_act=+vvaccactual+1;
- 
-vacantesfinales_corigen=+vvaccorigen+1;
+
+if(vidcorigen==vidcdefinitivo & vidcorigen!=0 & vreserva=='reserva1')
+{
+   vacantesfinales_def=+vvacdefinitivo;
+   vacantesfinales_act=+vvaccactual;
+   vacantesfinales_corigen=+vvaccorigen;
+		$.alert({
+			title: 'TIENE RESERVA EN ESE CENTRO',
+			content: 'CONTINUAR'
+			});
+}
+else
+{
+   vacantesfinales_def=+vvacdefinitivo-1;
+   vacantesfinales_act=+vvaccactual+1;
+   vacantesfinales_corigen=+vvaccorigen+1;
+}
+   
  
 console.log("Centro definitivo: "+vcdefinitivo);
 console.log("id centro definitivo: "+vidcdefinitivo);
@@ -203,28 +217,9 @@ console.log("vacantes finales actual: "+vacantesfinales_act);
 console.log("CENTRO ESTUDIOS ORIGEN: "+vidcorigen);
 console.log("vacantes finales CORIGEN: "+vacantesfinales_corigen);
 console.log("Reserva CORIGEN: "+vreserva);
-
-/*
-if(vidcorigen==vidcdefinitivo & vidcorigen!=0)
-{
-		$.alert({
-			title: 'TIENE RESERVA EN ESE CENTRO',
-			content: 'CONTINUAR'
-			});
-		return;
-}
-*/
-if(vidcactual==vidcdefinitivo)
-{
-		$.alert({
-			title: 'YA SE ENCUENTRA EN ESE CENTRO',
-			content: 'CONTINUAR'
-			});
-		return;
-}
 $.ajax({
   method: "POST",
-  data: {id_alumno:vid,centrodefinitivo:vcdefinitivo,idcentrodefinitivo:vidcdefinitivo,vacdefinitivo:vvacdefinitivo,tipoestudios:vtipoestudios,centroactual:vcactual,idcentroactual:vidcactual},
+  data: {id_alumno:vid,centrodefinitivo:vcdefinitivo,idcentrodefinitivo:vidcdefinitivo,vacdefinitivo:vvacdefinitivo,tipoestudios:vtipoestudios,centroactual:vcactual,idcentroactual:vidcactual,reserva:vreserva,idcorigen:vidcorigen},
   url:'../'+edicion+'/scripts/ajax/cambio_estado_fase2.php',
   success: function(data) 
   {

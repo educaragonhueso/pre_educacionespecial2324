@@ -1,7 +1,6 @@
 $(document).ready(function(){
-//var directoriobase='educacionespecial2223';
-var directoriobase='educacionespecial2223';
-var urlbase='https://preadmespecial.aragon.es/educacionespecial2223/';
+var directoriobase=edicion;
+var urlbase='https://preadmespecial.aragon.es/'+edicion;
 //////////////////////////////////////////////////////////////
 //COMPROBACIONES DE DATOS VIA SOAP
 //COMPROBAR DATOS DE IDENTIDAD, PADRON, FAMILIA NUMEROSA Y DISCAPACIDAD

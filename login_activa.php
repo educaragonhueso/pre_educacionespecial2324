@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-require_once $_SERVER['CONTEXT_DOCUMENT_ROOT']."/educacionespecial2223/config/config_global.php";
+require_once $_SERVER['CONTEXT_DOCUMENT_ROOT']."/educacionespecial2324/config/config_global.php";
 require_once DIR_CORE.'/Conectar.php';
 require_once 'includes/sesion.php';
 require_once DIR_CLASES.'LOGGER.php';
@@ -23,7 +23,7 @@ $centro=new Centro($conexion,0,'ajax');
 $numero_sorteo=$centro->getNumeroSorteo();
 $_SESSION['numero_sorteo']=$numero_sorteo;
 header('Content-Type: text/html; charset=UTF-8');  
-if(($_SESSION['version']=='PRE' or $_SESSION['mantenimiento']=='SI') and $_SESSION['rol']!='alumno' and $_SESSION['rol']!='anonimo') print_r($_SESSION);
+//if(($_SESSION['version']=='PRE' or $_SESSION['mantenimiento']=='SI') and $_SESSION['rol']!='alumno' and $_SESSION['rol']!='anonimo') print_r($_SESSION);
 
 // Define variables and initialize with empty values
 $nombre_usuario = $clave = "";

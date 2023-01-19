@@ -59,7 +59,7 @@ class SolicitudController{
          $destino='<input type="radio" name="transporte" disabled';
          $this->formulario=str_replace($original,$destino,$this->formulario);
       }
-      //si es para solo lectura quitamos el boton de actualizar
+      //si es para solo lectura desactivamos controles de entrada
       if($solo_lectura==1) 
       {
          //$this->formulario=preg_replace('/<p type="button" class="btn btn-primary bform" id="labeldocumentos".*<\/p>/','',$this->formulario);
@@ -139,9 +139,13 @@ class SolicitudController{
          $this->formulario=str_replace('class="btn btn-primary bform crojo"','class="btn btn-primary bform cverde"',$this->formulario);
       }		
      
-      if($rol=='alumno') 
+      if($rol=='alumno' and $estado_convocatoria>=10) 
       {  
          $origen='<a class="btn btn-primary send" >GRABAR SOLICITUD</a>';
+         if($estado_convocatoria==10)
+            $destino='<a class="btn btn-primary send" >ACTUALIZAR SOLICITUD</a>';
+         else
+            $destino='';
          $this->formulario=str_replace($origen,'',$this->formulario);
       }
 		$this->formulario=str_replace('GRABAR','ACTUALIZAR',$this->formulario);
@@ -317,7 +321,7 @@ class SolicitudController{
             continue;
          }
          //controles de formulario tipo radio
-         if($skey=='baremo_proximidad_domicilio' or $skey=='baremo_discapacidad' or $skey=='baremo_tipo_familia_monoparental' or $skey=='baremo_tipo_familia_numerosa' or $skey=='baremo_tipo_familia_monoparental' or $skey=='transporte' or $skey=='fase_solicitud' or $skey=='estado_solicitud' or $skey=='reserva' or $skey=='conjunta')
+         if($skey=='baremo_proximidad_domicilio' or $skey=='baremo_discapacidad' or $skey=='baremo_tipo_familia_monoparental' or $skey=='baremo_tipo_familia_numerosa' or $skey=='transporte' or $skey=='fase_solicitud' or $skey=='estado_solicitud' or $skey=='reserva' or $skey=='conjunta')
          {
             $check="";
             //if($sval>0 or $sval=='dfamiliar' or $sval=='dlaboral' or $sval=='dllimitrofe' or $sval=='dflimitrofe')

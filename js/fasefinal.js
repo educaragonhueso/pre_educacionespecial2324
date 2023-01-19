@@ -13,7 +13,7 @@ $(".lfinales").click(function () {
   var vestado_convocatoria=$('#estado_convocatoria').val();
 	$.ajax({
 	  method: "POST",
-	  url: "../educacionespecial/scripts/ajax/listados_solicitudes_fase2_finales.php",
+	  url: "../"+edicion+"/scripts/ajax/listados_solicitudes_fase2_finales.php",
 	  data: {rol:vrol,subtipo:vsubtipo,pdf:vpdf,estado_convocatoria:vestado_convocatoria,id_centro:vidcentro,id_alumno:vid_alumno},
 	  success: function(data) {
 				$("#mapcontrol").hide();

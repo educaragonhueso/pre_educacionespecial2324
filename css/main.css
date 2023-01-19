@@ -4,6 +4,28 @@
 {
    margin-bottom:10px;
 }
+
+td,th
+{
+   text-align:left!important;
+}
+
+#tabla_pc
+{
+    width: 200%;
+    margin-left: -57%;
+    margin-top: 40px;
+}
+
+.cajainfo
+{
+  border-radius: 25px;
+  border: 2px solid #565853;
+  padding: 20px;
+  margin-left:24%; 
+  width:50%; 
+}
+
 .usuario
 {
    width: 90%!important;
@@ -175,7 +197,9 @@ color: black!important
 
 .wrapper {
     //display: flex;
-    width: 100%;
+   width: 100%;
+   padding-top:0px!important;
+   text-align:center;
 }
 
 #sidebar {
@@ -335,7 +359,6 @@ table-dark td, .table-dark th, .table-dark thead th {
 }
 
 thead{
-background-color: black;
 }
 
 .send,.bvalidarsolicitud,.beliminarsolicitud

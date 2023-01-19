@@ -301,7 +301,7 @@ id_centro=$idcentro";
 				$vasignada=0;
 				//revisar cada alumno (hay q considerar el orden de elección del alumno, el sorteo etc.) y si ha solicitado plaza en primera opción
 				foreach($alumnos_fase2 as $alumno)
-					{
+				{
 					
 					if(!$post) print(PHP_EOL."ENTRANDO ALUMNO, centro: ".strtoupper($alumno->centro_definitivo)." ".$alumno->tipoestudios." ".$tipoestudios.PHP_EOL);
 					$this->log_asigna_fase2->warning("ENTRANDO ALUMNO, centro: ".strtoupper($alumno->centro_definitivo)." ".$alumno->tipoestudios." ".$tipoestudios);
@@ -314,10 +314,16 @@ id_centro=$idcentro";
 					
 					continue;
 					}
-					
-					$this->log_asigna_fase2->warning("ID ALUMNO EN PROCESO: ".$alumno->id_alumno." NOMBRE ALUMNO: ".$alumno->nombre);
-					if(!$post) print(PHP_EOL."ID ALUMNO EN PROCESO: ".$alumno->id_alumno." NOMBRE ALUMNO: ".$alumno->nombre.PHP_EOL);
-					$this->log_asigna_fase2->warning("CENTRO ACTUAL: $nombrecentro $idcentro CENTRO PEDIDO ALUMNO: ".$alumno->{$indicecentro}." NOMBRE ALUMNO: ".$alumno->nombre);
+				
+               $this->log_asigna_fase2->warning("DATOS ALUMNO: ");	
+               $this->log_asigna_fase2->warning(print_r($alumno,true));	
+					$this->log_asigna_fase2->warning("ID ALUMNO EN PROCESO: ".$alumno->id_alumno." NOMBRE ALUMNO: ".$alumno->nombre." INDICE CENTRO ALTERNATIVO: ".$centro_alternativo);
+					if(!$post) print(PHP_EOL."ID ALUMNO EN PROCESO: ".$alumno->id_alumno." INDICE CENTRO ALTERNATIVO: ".$centro_alternativo.PHP_EOL);
+					$this->log_asigna_fase2->warning("CENTRO ACTUAL EN PROCESO: $nombrecentro $idcentro CENTRO PEDIDO ALUMNO: ".$alumno->{$indicecentro}." NOMBRE ALUMNO: ".$alumno->nombre);
+               
+					$this->log_asigna_fase2->warning("INDICE CENTRO: ".$idcentro);
+					$this->log_asigna_fase2->warning("INDICE CENTRO ALUMNO: ".$alumno->$indicecentro);
+					$this->log_asigna_fase2->warning(" CENTRO DEFINITIVO ALUMNO: ".$alumno->centro_definitivo);
 					if(!$post) print("CENTRO ACTUAL: $nombrecentro $idcentro CENTRO PEDIDO ALUMNO: ".$alumno->{$indicecentro}." NOMBRE ALUMNO: ".$alumno->nombre." CENTRO DEFINITIVO ALUMNO: ".$alumno->centro_definitivo.PHP_EOL);
 				
 					//solo asignamos plaza a alumnos sin centro definitivo	
@@ -368,8 +374,8 @@ id_centro=$idcentro";
 						if(!$post) print(PHP_EOL."Terminado centro: $nombrecentro".PHP_EOL);
 						break;
 						}
-					}
 				}
+			}
 			//actualizamos las vacantes en el centro cuyas plazas se han procesado
 			if($this->setVacantesCentroFase2($centro['id_centro'],$vacantes,$tipoestudios)!=1) return 0;
 			}
@@ -420,13 +426,11 @@ id_centro=$idcentro";
          //$plazaslibres=1;
          print("\nPROBANDO LIBERAR VACANTES DE RESERVA EN CENTRO $corigen, PLAZAS LIBRES: $plazaslibres \n");
 			if($corigen!=0 and $cdestino!=$corigen and $plazaslibres>=0)
-			//if($corigen!=0 and $cdestino!=$corigen)
 			{
-        
-         print("LIBERANDO VACANTES DE RESERVA EN CENTRO $corigen, ALUMNOS: ");
-         print_r($a);
-			//print_r($a);exit();
-			if($this->setVacantesCentroFase2($corigen,0,$tipoestudios,1)!=1) return 0;
+            print("LIBERANDO VACANTES DE RESERVA EN CENTRO $corigen, ALUMNOS: ");
+            print_r($a);
+            //print_r($a);exit();
+            if($this->setVacantesCentroFase2($corigen,0,$tipoestudios,1)!=1) return 0;
 			}
 		}
 	return 1;
@@ -551,7 +555,7 @@ id_centro=$idcentro";
 		if(!$res) return $this->conexion->error;
 		$sqlfase2="SELECT
 t1.id_alumno,t1.nombre,t1.apellido1,t1.apellido2,t1.localidad,t1.calle_dfamiliar,'nodata'
-as coordenadas,t1.nombre_centro,t1.tipoestudios,t1.fase_solicitud,t1.estado_solicitud,t1.transporte,'0' as nordensorteo,'0' as nasignado,t1.puntos_validados,t1.id_centro,t2.centro1,t2.id_centro1,t3.centro2,t3.id_centro2,t4.centro3,t4.id_centro3,t5.centro4,t5.id_centro4,t6.centro5,t6.id_centro5,t7.centro6,t7.id_centro6, 'nocentro' as centro_definitivo, '0' as id_centro_definitivo,t1.id_centro_estudios_origen as id_centro_origen,t8.centro_origen,t1.reserva,t1.reserva as reserva_original,'automatica' as tipo_modificacion,'0' as activado_fase3 FROM 
+as coordenadas,t1.nombre_centro,t1.tipoestudios,t1.fase_solicitud,t1.estado_solicitud,t1.transporte,t1.nordensorteo,t1.nasignado,t1.puntos_validados,t1.id_centro,t2.centro1,t2.id_centro1,t3.centro2,t3.id_centro2,t4.centro3,t4.id_centro3,t5.centro4,t5.id_centro4,t6.centro5,t6.id_centro5,t7.centro6,t7.id_centro6, 'nocentro' as centro_definitivo, '0' as id_centro_definitivo,t1.id_centro_estudios_origen as id_centro_origen,t8.centro_origen,t1.reserva,t1.reserva as reserva_original,'automatica' as tipo_modificacion,'0' as activado_fase3 FROM 
 	(SELECT a.id_alumno, a.nombre, a.apellido1, a.apellido2,a.loc_dfamiliar as localidad,a.calle_dfamiliar,c.nombre_centro,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado as nasignado,b.puntos_validados,a.id_centro_destino as id_centro,a.id_centro_estudios_origen,a.est_desp_sorteo,a.reserva FROM alumnos a left join baremo b on b.id_alumno=a.id_alumno 
 	left join centros c on a.id_centro_destino=c.id_centro  order by c.id_centro desc, a.tipoestudios asc,a.transporte desc, b.puntos_validados desc)
 	as t1 
@@ -577,7 +581,7 @@ left join
 	(SELECT a.id_alumno,c.id_centro as id_centro_origen, c.nombre_centro as centro_origen from alumnos a, centros c where c.id_centro=a.id_centro_estudios_origen) 
 	as t8 on t1.id_alumno=t8.id_alumno WHERE t1.fase_solicitud!='borrador' and t1.est_desp_sorteo='noadmitida'
 ";
-		$sql='INSERT IGNORE INTO '.$tabla.' '.$sqlfase2;
+		$sql='INSERT INTO '.$tabla.' '.$sqlfase2;
 		print(PHP_EOL.$sql.PHP_EOL);
 		if($this->conexion->query($sql)) return 1;
 		else return $this->conexion->error;

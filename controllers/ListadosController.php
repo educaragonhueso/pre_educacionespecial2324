@@ -538,9 +538,12 @@ class ListadosController{
 
 	return $html;
 	}
-   public function showListadoFase2($a,$rol='centro',$cabecera=array(),$camposdatos=array(),$provisional=0,$subtipo='')
+   public function showListadoFase2($a,$rol='centro',$cabecera=array(),$camposdatos=array(),$provisional=0,$subtipo='',$log,$vacantes_centros)
    {
-		$centros=$this->getCentrosNombreVacantesFase2();
+		//$centros=$this->getCentrosNombreVacantesFase2();
+		$centros=$vacantes_centros;
+      $log->warning("CENTROS: ");
+      $log->warning(print_r($centros,true));
 		$htmlcentros="";
 		$fase=2;
 		//preparamos desplegable con centros y vacantes 
@@ -562,13 +565,6 @@ class ListadosController{
             $htmlcentros.="<option class='vacantestva".$centro['id_centro']."' value='$cdata_completo'>".$cdata_parcial."</option>";
          }
       }
-      /*
-		//preparamos boton para activar o desactivar dupllicado o sol irregular
-		if($subtipo=='lfase3_sol_ebo' or $subtipo=='lfase3_sol_tva')
-		{
-			$fase=3;
-		}
-      */
 	
 	$centroanterior='';
 	$centroactual='';
@@ -837,12 +833,12 @@ class ListadosController{
 	    <tbody>';
 	$i=0;
 	foreach($a as $obj)
-		{
+	{
 		if($i%3==0){ $tres.="<tr>";$j=1;}
-		$tres.="<td style='width: 16.66%'>".$obj->nombre_centro."</td><td id='ebo$obj->id_centro'>".$obj->vacantes_ebo."</td><td id='tva$obj->id_centro'>".$obj->vacantes_tva."</td>";
+		$tres.="<td style='width: 16.66%'>".$obj['nombre_centro']."</td><td id='ebo".$obj['id_centro']."'>".$obj['vacantes_ebo']."</td><td id='tva".$obj['id_centro']."'>".$obj['vacantes_tva']."</td>";
 		if($j%3==0) $tres.="</tr>";
 		$i++;$j++;
-		}
+	}
     	$tres.="</tbody> </table></div>";
 		
 	return $tres;

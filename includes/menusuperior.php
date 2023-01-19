@@ -1,12 +1,15 @@
-<?php if(isset($_SESSION['provincia'])) {$provincia=$_SESSION['provincia'];} else $provincia='todas';
+<?php 
+if(isset($_SESSION['provincia'])) {$provincia=$_SESSION['provincia'];} else $provincia='todas';
 $listado='disponible';
-$directoriobase='educacionespecial2223';
+$directoriobase=$_SESSION['edicion'];
 $ficheroebo='scripts/datossalida/pdflistados/sorteo/lfase2_sol_ebo_admin.pdf';
 $token=$_SESSION['token'];
+if($_SESSION['version']=='PRE')
+   print_r($_SESSION);
 if (!file_exists($ficheroebo))
    $listado='';
 ?>            
-<h2 style='text-align:center;'>ADMISION ALUMNOS EDUCACION ESPECIAL CURSO 2022-2023</h2>
+<h2 style='text-align:center;'>ADMISION ALUMNOS EDUCACION ESPECIAL CURSO <?php echo $_SESSION['curso_largo']; ?> </h2>
 <p hidden id='id_centro'><?php echo $_SESSION['id_centro'];?></p> 
 <p hidden id='estado_convocatoria' value='<?php echo $_SESSION['estado_convocatoria'];?>'></p> 
 <p hidden id='rol' value='<?php echo $_SESSION['rol'];?>'></p> 

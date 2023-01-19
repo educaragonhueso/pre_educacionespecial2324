@@ -2,10 +2,9 @@
 //VARIABLE GLOBALES
 var vficheros=[];
 var form_data = new FormData();
-var directoriobase='educacionespecial2223';
-//var convocatoria='educacionespecial2223';
-var urlbase='https://admespecial.aragon.es/educacionespecial2223';
-var urlbasesol='https://admespecial.aragon.es/educacionespecial2223';
+var directoriobase=edicion;
+var urlbase='https://preadmespecial.aragon.es/'+edicion;
+var urlbasesol='https://preadmespecial.aragon.es/'+edicion;
 /////////////////////////////////////////////////////////////////////////////////
 //FUNCIN DE PRUEBA PARA SUBIR ARCHIVOS, DE MOMENTO SIN USAR
 $('body').on('click', '#subirdoc', function(e){
@@ -153,7 +152,7 @@ $('body').on('click', '.send', function(e)
       $.ajax({
          type: "POST",
          data: {fsol:fsolicitud,idsol:vid,modo:vmodo,id_centro:vid_centro,ptsbaremo:vptsbaremo,rol:vrol,estado_convocatoria:vestado_convocatoria,id_alumno:vid_alumno,token:vtoken},
-         url:'../educacionespecial2223/scripts/ajax/guardar_solicitud.php',
+         url:'../'+edicion+'/scripts/ajax/guardar_solicitud.php',
          success: function(data) {
          if(data.indexOf('1062')!=-1) 
          {
@@ -523,7 +522,13 @@ $('body').on('change', 'input[type=checkbox][name=baremo_tutores_centro],input[t
       $('#baremo_validar_'+idbaremo).val('0');
       var idboton='boton_baremo_validar_'+idbaremo;
       $('[name='+idboton+']').text(texto);
+      //mostramos boton agregar fichero
+      $("#afbaremo_"+idbaremo).hide();
+      if(vrol!='alumno' & vrol!='anonimo')
+         $("#msg_comprobacion_"+idbaremo).show();
    }
+   else
+      $("#afbaremo_"+idbaremo).show();
 });
 
 //si pulsamos en 'ninguna' discapacidad no ponemos validacion
@@ -1532,49 +1537,6 @@ $('body').on('click', '.calumno', function(e){
   console.log("directorio "+enlacealumno);
   window.open(enlacealumno,'_blank');
   return;
-  if($('#filasolicitud'+vid).length) 
-  {
-   console.log("Mostrando fila centro "+vidcentro);
-	//$('#filasolicitud'+vid).toggle();
-	//$('#filarecbaremo'+vid).toggle();
-	$('#datosalumno'+vid).toggle();
-	return;
-  }
-  if(vrol=='alumno' & vid!=vid_alumno) return;
-  $.ajax({
-  method: "POST",
-  data: {id_alumno:vid,modo:vmodo,pin:vpin,rol:vrol,id_centro:vidcentro,estado_convocatoria:vestado_convocatoria},
-  url:'../'+directoriobase+'/scripts/ajax/editar_solicitud.php',
-   success: function(data) 
-   {
-   console.log("ok ajax ");
-  if($('#filasolicitud'+vid).length) 
-   if(vrol.indexOf("alumno")!=-1)
-   {
-      if(data.indexOf("SOLICITUDAPTA")!=-1)
-         $.alert({
-            title: 'LA SOLICITUD ESTÁ MARCADA COMO APTA, NO PUEDE MODIFICARSE',
-            content: 'CONTINUAR'
-            });
-   
-      console.log("idfila "+idappend);
-      //$("#"+idappend).after(data);
-      if($("#tablasolicitud").length!=0)
-         $("#tablasolicitud").toggle();
-      else	$("#l_matricula").after(data);
-   }
-   if(vrol.indexOf("centro")!=-1 | vrol.indexOf("admin")!=-1)
-   {
-      console.log("añadiendo sol");
-      $("#"+idappend).after(data);
-   }
-   if(vestado_convocatoria=='3') {disableForm($('#fsolicitud'+vid)) ;}
-   },
-   error: function() 
-   {
-      alert('PROBLEMAS EDITANDO SOLICITUD!');
-   }
-});
 });
 //FIN AÑADIR FORMULARIO DE MODIFICACION DE SOLICITUD
 

@@ -39,20 +39,16 @@
    <!-- Bootstrap Date-Picker Plugin -->
    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
-   <script>
-      var convocatoria="educacionespecial2223";
-   </script>
 <?php 
    	echo  '<script src="config/global.js"></script>';
    	echo  '<script src="js/soap.js"></script>';
-   	echo  '<script src="js/fase2.js"></script>';
    	echo  '<script src="js/fasefinal.js"></script>';
 ?>
     <script src="js/login.js"></script>
     <script src="js/main.js"></script>
     <script src="js/validaciones.js"></script>
-    <script src="js/js_carga_reclamaciones.js"></script>
     <!--<script src="js/js_carga_docs.js"></script>-->
     <script src="js/js_carga_ficheros_baremo.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
+    <script src="js/fase2.js"></script>
 </head>

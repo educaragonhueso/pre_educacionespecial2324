@@ -20,6 +20,7 @@ Crear un repo desde cero, en github
    EN GITHUB:           Crear repo en github
    EN LINEA COMANDOS:   
          git remote add origin git@github.com:educaragonhueso/pro_educacionespecial2223.git
+         git commit -m 'fc'
          git branch -M main
          git push -u origin main
 
@@ -47,3 +48,6 @@ lListados de fmilias numerosa o monoparental
    select nombre,apellido1,apellido2,dni_alumno,datos_tutor1,dni_tutor1,datos_tutor2,dni_tutor2 into outfile '/var/lib/mysql-files/listadonumerosa.csv' FIELDS TERMINATED BY ';' OPTIONALLY ENCLOSED BY '"' from baremo b,alumnos a where a.id_alumno=b.id_alumno and marcado_numerosa=1 ;
 
 
+Añadir centro de origen
+
+update alumnos a set id_centro_estudios_origen=(select id_centro_estudios_origen from PRE_EDUCACIONESPECIAL2223_TMP.alumnos b where a.id_alumno=b.id_alumno); 

@@ -1,5 +1,10 @@
 <?php
-require_once $_SERVER['CONTEXT_DOCUMENT_ROOT']."/educacionespecial/config/config_global.php";
+######################
+# script para modificar/editar y crear solicitudes
+######################
+
+//CARGAMOS CONFIGURACION GENERAL SCRIPTS AJAX
+include('../../config/config_global.php');
 require_once DIR_CLASES.'/LOGGER.php';
 require_once DIR_APP.'/parametros.php';
 require_once DIR_BASE.'/controllers/ListadosController.php';
@@ -92,14 +97,16 @@ if($_POST['rol']=='admin' or $_POST['rol']=='sp' or $_POST['rol']=='centro')
       $pdf->Output(DIR_SOR.$nombrefichero.'.pdf','F');
    }
 
-   $tablaresumen=$tcentro->getResumenFase2($_POST['rol']);
-   print($list->showTablaResumenFase2($tablaresumen,$ncol=1));
+   //$tablaresumen=$tcentro->getResumenFase2($_POST['rol']);
+   $vacantes_centros=$tcentro->getVacantesCentros($log_listados_solicitudes_fase2_finales);
+   print($list->showTablaResumenFase2($vacantes_centros,$ncol=1));
    #print($list->showFiltrosTipo());
    print($filtro_datos);
    print("<div id='listado_fasefinal' style='text-align:center'><h1>LISTADO LISTADO SOLICITUDES FINAL FASE II</h1></div>");
    $boton_descarga="<button type='button' class='btn btn-info' onclick='window.open(\"".DIR_SOR_WEB.$nombrefichero.".pdf\",\"_blank\");'>Descarga listado</button>";
    print($boton_descarga.'<br>'); //
 }
-print($list->showListadoFase2($solicitudes,$rol,$$cabecera,$$camposdatos,$provisional=1,$subtipo_listado));
+//print($list->showListadoFase2($solicitudes,$rol,$$cabecera,$$camposdatos,$provisional=1,$subtipo_listado));
+print($list->showListadoFase2($solicitudes,$rol,$$cabecera,$$camposdatos,$provisional=1,$subtipo_listado,$log_listados_solicitudes_fase2_finales,$vacantes_centros));
 print($script);
 ?>

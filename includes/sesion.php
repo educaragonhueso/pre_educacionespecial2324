@@ -1,6 +1,16 @@
 <?php
 date_default_timezone_set("Europe/Madrid");
 setlocale(LC_TIME, "spanish");
+
+$_SESSION['ainicio_ebo']=AINICIO_EBO;
+$_SESSION['afin_ebo']=AFIN_EBO;
+$_SESSION['ainicio_tva']=AINICIO_TVA;
+$_SESSION['afin_tva']=AFIN_TVA;
+$_SESSION['ados']=ADOS;
+
+$_SESSION['cursoanterior_largo']=CURSOANTERIOR_LARGO;
+$_SESSION['curso_largo']=CURSO_LARGO;
+$_SESSION['edicion']=EDICION;
 $_SESSION['estado_convocatoria']=0;
 $_SESSION['mantenimiento']=MANTENIMIENTO;
 $_SESSION['rol'] = 'anonimo';      
@@ -10,7 +20,6 @@ $_SESSION['usuario_autenticado'] =0;
 $_SESSION['provincia']='todas';
 //Versión PRE o PRO
 $_SESSION['version']=VERSION;
-$_SESSION['convocatoria']=CONVOCATORIA;
 $_SESSION['id_centro'] =-1;      
 $_SESSION['fecha_actual'] = date("Y/m/d");      
 $_SESSION['url_base'] =URL_BASE;    

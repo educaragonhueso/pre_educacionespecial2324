@@ -1,5 +1,11 @@
 <?php
-require_once $_SERVER['CONTEXT_DOCUMENT_ROOT']."/educacionespecial/config/config_global.php";
+######################
+# script para modificar/editar y crear solicitudes
+######################
+
+//CARGAMOS CONFIGURACION GENERAL SCRIPTS AJAX
+include('../../config/config_global.php');
+
 require_once DIR_CLASES.'/LOGGER.php';
 require_once DIR_APP.'/parametros.php';
 require_once DIR_BASE.'/controllers/ListadosController.php';
@@ -55,7 +61,6 @@ style="margin-top:5px">
 $solicitudes=$tsolicitud->getSolicitudesFase2($subtipo_listado,$rol,$id_centro,$estado_convocatoria,$log_listados_solicitudes_fase2); 
 ######################################################################################
 $log_listados_solicitudes_fase2->warning("OBTENIDAS $nsolicitudes SOLICITUDES FASE II:");
-$log_listados_solicitudes_fase2->warning(print_r($solicitudes,true));
 ######################################################################################
 $nombrefichero=$subtipo_listado.'_admin';
 if($_POST['rol']=='admin' or $_POST['rol']=='sp' or $_POST['rol']=='centro')
@@ -86,21 +91,25 @@ if($_POST['rol']=='admin' or $_POST['rol']=='sp' or $_POST['rol']=='centro')
       $pdf->SetFont('Arial','I',8);
         // Page number
       $pdf->Cell(40,10,'SELLO CENTRO',1,0,'C');
-      $pdf->Cell(140,10,'En ______________________ a ____de________ de 2021',0,0,'C');
+      $pdf->Cell(140,10,'En ______________________ a ____de________ de 2022',0,0,'C');
       $pdf->Cell(0,10,'Firmado:',0,0);
       $pdf->Ln();
       $pdf->Cell(220,10,'El Director/a',0,0,'R');
+#resumen=$tcentro->getResumenFase2($_POST['rol']);;
       $pdf->Output(DIR_SOR.$nombrefichero.'.pdf','F');
    }
 
 $tablaresumen=$tcentro->getResumenFase2($_POST['rol']);
-print($list->showTablaResumenFase2($tablaresumen,$ncol=1));
+$vacantes_centros=$tcentro->getVacantesCentros($log_listados_solicitudes_fase2);
+$log_listados_solicitudes_fase2->warning("RESUMEN VACANTES TODOS CENTROS:");
+$log_listados_solicitudes_fase2->warning(print_r($vacantes_centros,true));
+print($list->showTablaResumenFase2($vacantes_centros,$ncol=1));
 #print($list->showFiltrosTipo());
 print($filtro_datos);
 print("<div id='listado_fase2' style='text-align:center'><h1>LISTADO LISTADO SOLICITUDES NO ADMITIDAS FASE 2</h1></div>");
 $boton_descarga="<button type='button' class='btn btn-info' onclick='window.open(\"".DIR_SOR_WEB.$nombrefichero.".pdf\",\"_blank\");'>Descarga listado</button>";
 if($subtipo_listado!='lfase2_sol_sor') print($boton_descarga.'<br>'); //
 }
-print($list->showListadoFase2($solicitudes,$_POST['rol'],$$cabecera,$$camposdatos,$provisional=1,$subtipo_listado));
+print($list->showListadoFase2($solicitudes,$_POST['rol'],$$cabecera,$$camposdatos,$provisional=1,$subtipo_listado,$log_listados_solicitudes_fase2,$vacantes_centros));
 print($script);
 ?>

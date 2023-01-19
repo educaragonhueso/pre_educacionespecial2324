@@ -98,7 +98,7 @@ if($_POST['pdf']==1)
 	$cab=$$cabecera;
 	$pdf->SetFont('Helvetica','',8);
 	$pdf->AddPage('L','',0,$nombre_listado);
-	$pdf->BasicTable($cab,$datos,0,$anchuracelda,$formato,$primera_celda);
+	$pdf->BasicTable($cab,$datos,0,$anchuracelda,$$formato,$primera_celda);
 	$pdf->Ln(20);
 	 // Arial italic 8
 	$pdf->SetFont('Arial','I',8);

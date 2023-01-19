@@ -78,8 +78,8 @@ $campos_bbdd_lfase2_sol_sor=array('apellido1','apellido2','nombre','tipoestudios
 $campos_cabecera_lfase2_sol_ebo=array('Ap1','Ap2','Nombre','Cen.Adj');
 $campos_bbdd_lfase2_sol_ebo=array('apellido1','apellido2','nombre','centro_definitivo');
 */
-$campos_cabecera_lfase2_sol_ebo=array('Ap1','Ap2','Nombre','Loc','Calle','Cen.Pref','Cen.Alt','Baremo','Prioridad','Estado','Cen.Adj','NSorteo','Centros','Reserva');
-$campos_bbdd_lfase2_sol_ebo=array('apellido1','apellido2','nombre','localidad','calle_dfamiliar','nombre_centro','centro1','puntos_validados','transporte','estado_solicitud','centro_definitivo','nasignado','centrosdisponibles','centro_origen');
+$campos_cabecera_lfase2_sol_ebo=array('Ap1','Ap2','Nombre','Loc','Calle','Cen.Ori','Cen.Pref','Cen.Alt','Baremo','Prioridad','Estado','Cen.Adj','NSorteo','Centros','Reserva');
+$campos_bbdd_lfase2_sol_ebo=array('apellido1','apellido2','nombre','localidad','calle_dfamiliar','centro_origen','nombre_centro','centro1','puntos_validados','transporte','estado_solicitud','centro_definitivo','nasignado','centrosdisponibles','centro_origen');
 
 $campos_cabecera_lfase2_sol_tva=array('Ap1','Ap2','Nombre','Loc','Calle','Cen.Pref','Cen.Alt','Baremo','Prioridad','Estado','Cen.Adj','NSorteo','Centros','Reserva');
 $campos_bbdd_lfase2_sol_tva=array('apellido1','apellido2','nombre','localidad','calle_dfamiliar','nombre_centro','centro1','puntos_validados','transporte','estado_solicitud','centro_definitivo','nasignado','centrosdisponibles','centro_origen');

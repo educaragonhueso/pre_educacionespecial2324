@@ -124,6 +124,8 @@ $log_listados_definitivos->warning("OBTENIENDO LISTADOS DEFINITIVOSS, CENTRO: ".
 $solicitudes=$list->getSolicitudes($id_centro,$estado_convocatoria,'definitivos',$subtipo_listado,$tsolicitud,$log_listados_definitivos,0,$rol,$provincia); 
 
 $formato='definitivos'; //formato listado en el pdf
+$anchuracelda=10;
+$primera_celda=20;
 if($_POST['pdf']==1)
 {
    $anchuracelda=10;

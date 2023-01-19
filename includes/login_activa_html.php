@@ -37,23 +37,33 @@
 
    </head>
    <body>
+      <?php include("includes/estados_convocatoria.php");?>
+      <?php 
+         $rr=20;
+         if($_SESSION['estado_convocatoria']==0)  echo M0;
+         if($_SESSION['estado_convocatoria']==10) echo M10;
+         if($_SESSION['estado_convocatoria']==19) echo M19;
+         if($_SESSION['estado_convocatoria']==20) echo M20;
+         if($_SESSION['estado_convocatoria']==21) echo M21;
+         if($_SESSION['estado_convocatoria']==30) echo M30;
+         if($_SESSION['estado_convocatoria']==40) echo M40;
+      ?>
       <div class="wrapper">
-         <h2>ADMISIÓN CENTROS EDUCACIÓN ESPECIAL CURSO 2022/2023</h2><p>La fase de insciprción ha finalizado</p>
-<?php //print_r($_SERVER);
-?>
-<?php if(($hoy>=DIA_INICIO_INSCRIPCION and $hoy <= DIA_FIN_INSCRIPCION and MANTENIMIENTO=='NO') OR IPREMOTA1==$_SERVER['HTTP_X_FORWARDED_FOR'] OR IPREMOTA2==$_SERVER['HTTP_X_FORWARDED_FOR']) 
-      {
-         echo "";
-      }else
-      {
-         #if($hoy> DIA_FIN_INSCRIPCION) echo '<h4>PÁGINA NE MANTENIMIENTO, EN UNOS MINUTOS SE ACTIVARÁ</h4>';
-         if($hoy< DIA_INICIO_INSCRIPCION) echo '<h4>NO SE HA INICIADO EL PLAZO DE ADMISIÓN</h4>';
-         }?>
 
-<?php  if(MANTENIMIENTO=='NO' OR IPREMOTA1==$_SERVER['HTTP_X_FORWARDED_FOR'] OR IPREMOTA2==$_SERVER['HTTP_X_FORWARDED_FOR']){ ?>
-<?php  if(IPREMOTA1==$_SERVER['HTTP_X_FORWARDED_FOR'] OR IPREMOTA2==$_SERVER['HTTP_X_FORWARDED_FOR']){ $_SESSION['acceso']='restringido';} ?>
+<?php  
+if(MANTENIMIENTO=='NO' OR IPREMOTA1==$_SERVER['HTTP_X_FORWARDED_FOR'] OR IPREMOTA2==$_SERVER['HTTP_X_FORWARDED_FOR'])
+{
+   if($_SESSION['estado_convocatoria']==10)
+   {
+       echo "<p>Pulsa en 'Crear Solicitud' para acceder al formulario de creación de solicitudes.</p><p> Cuando lo completes recibirás un enlace en tu correo electrónico.</p><p> Dicho enlace te servirá para seguir todo el proceso incluyendo posibles modificaciones de solicitud, listados de admitidos etc...</p>";
+
+       echo '<a href="index.php" class="btn btn-primary" value="Crear solicitud" style="margin-bottom:10px">Crear solicitud</a>';
+   }
+}
+else echo '<h4>PAGINA EN MANTENIMIENTO</h4>';
+?>
          <div class="form-group">
-            <input id="verfcredenciales" class="btn btn-primary" value="Acceder con credenciales">
+            <button id="verfcredenciales" class="btn btn-primary" value="Acceder con credenciales">Acceder con credenciales <p style="font-size:10px"><i>(solo para personal de la administración)</i></p></button>
          </div>
          <form action="" method="post">
             <div id="concredenciales" style="display:none">
@@ -73,17 +83,10 @@
                </div>
             </div> 
          </form>
-         <?php if($hoy<=DIA_FIN_INSCRIPCION){?>
-            <div id="concorreo" style="">
-               <p>Pulsa en 'Crear Solicitud' para acceder al formulario de creación de solicitudes.</p><p> Cuando lo completes recibirás un enlace en tu correo electrónico.</p><p> Dicho enlace te servirá para seguir todo el proceso incluyendo posibles modificaciones de solicitud, listados de admitidos etc...</p>
-               <a href="index.php" class="btn btn-primary" value="Crear solicitud">Crear solicitud</a>
-            </div>    
-         <?php }?>
-<?php }
-else
-   echo '<h4>Página en mantenimiento, se restaurará en unos minutos</h4>';
-
-?>
+      <div class="form-group">
+         <button id="verprocesocompleto" class="btn btn-primary" value="proceso completo">Ver insecuencia del proceso completo</button>
+         <div id="tabla_pc" style="display:none"><?php echo PC;?></div>
+      </div>
       </div> <!--finn del wrapper-->   
       
       <footer class="page-footer font-small stylish-color-dark pt-4 mt-4">

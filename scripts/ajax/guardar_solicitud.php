@@ -16,6 +16,7 @@ require_once DIR_BASE.'/clases/models/Solicitud.php';
 require_once DIR_BASE.'/controllers/SolicitudController.php';
 require_once DIR_CLASES.'LOGGER.php';
 require_once DIR_BASE.'/clases/core/Notificacion.php';
+require_once DIR_BASE.'/clases/core/Comprobaciones.php';
 require_once DIR_APP.'parametros.php';
 
 ######################################################################################
@@ -78,8 +79,10 @@ parse_str($fsol_entrada, $fsol_salida);
 if($rol=='anonimo' or $rol=='alumno')
 {
    //obtenemos el id del centro a partir del nombre indicado en el formualrio
-   $id_centro_destino=$solicitud->getCentroId($fsol_salida['id_centro_destino'],$log_nueva);
-   $id_centro_destino=$solicitud->getCentroId($fsol_salida['id_centro_destino'],$log_actualizar);
+   if($modo=='GRABAR SOLICITUD')
+      $id_centro_destino=$solicitud->getCentroId($fsol_salida['id_centro_destino'],$log_nueva);
+   else
+      $id_centro_destino=$solicitud->getCentroId($fsol_salida['id_centro_destino'],$log_actualizar);
 }
 else
 {
@@ -94,26 +97,18 @@ else
 		   $id_centro_destino=$solicitud->getCentroId($fsol_tmp['id_centro_destino'],$log_nueva);
    
 	}
-   $fsol_salida['id_centro_destino']=$id_centro_destino;
 }
 
-/*
-hay q descomentrarlo para q funcione cuando los campos están deshabilitados, o sea para no tenerlo en cuenta
 $fsol_salida['id_centro_destino']=$id_centro_destino;
+
 ######################################################################################
 if($id_centro_destino==0) 
 {
    print('ERROR GUARDANDO DATOS: EL CENTRO SOLICITADO NO EXISTE O NO ES DE EDUCACIÓN ESPECIAL');
    exit();
 }
-*/
 //si el centro incluye un asterisco, para diferenciar ed especial del resto, lo quitamos
 $fsol_salida['id_centro_estudios_origen']=trim($fsol_salida['id_centro_estudios_origen'],'*');
-//procesamos los centros d elos hermanos de alumnos en admisión
-//$fsol_salida['hermanos_admision_id_centro_origen1']=$solicitud->getCentroId($fsol_salida['hermanos_admision_id_centro_origen1'],$log_nueva);
-
-//obtenemos los ids de los centros de origen según los ids recibidos
-//$fsol_salida['id_centro_estudios_origen']=$solicitud->getCentroId($fsol_salida['id_centro_estudios_origen'],$log_nueva);
 $fsol_salida['id_centro_estudios_origen']=$solicitud->getCentroOrigenId($fsol_salida['id_centro_estudios_origen'],$log_nueva);
 
 //procesmoas los centros adicionales
@@ -130,52 +125,15 @@ for($i=1;$i<7;$i++)
 $log_actualizar->warning("POST ACTUALIZAR");
 if($modo=='GRABAR SOLICITUD')
 {
-   //comprobamos los campos tipo check: padres trabajan en el cenntro y renta inferior
-   if(!isset($fsol_salida['baremo_marcado_proximidad_domicilio']))
-      $fsol_salida['baremo_marcado_proximidad_domicilio']=0;
-   if(!isset($fsol_salida['baremo_proximidad_domicilio']))
-      $fsol_salida['baremo_proximidad_domicilio']=0;
-   if(!isset($fsol_salida['baremo_tutores_centro']))
-      $fsol_salida['baremo_tutores_centro']=0;
-   if(!isset($fsol_salida['baremo_situacion_sobrevenida']))
-      $fsol_salida['baremo_situacion_sobrevenida']=0;
-   if(!isset($fsol_salida['baremo_renta_inferior']))
-      $fsol_salida['baremo_renta_inferior']=0;
-   if(!isset($fsol_salida['baremo_acogimiento']))
-      $fsol_salida['baremo_acogimiento']=0;
-   if(!isset($fsol_salida['baremo_genero']))
-      $fsol_salida['baremo_genero']=0;
-   if(!isset($fsol_salida['baremo_terrorismo']))
-      $fsol_salida['baremo_terrorismo']=0;
-   if(!isset($fsol_salida['baremo_parto']))
-      $fsol_salida['baremo_parto']=0;
-   if(!isset($fsol_salida['baremo_discapacidad_hermanos']))
-      $fsol_salida['baremo_discapacidad_hermanos']=0;
-   if(!isset($fsol_salida['baremo_discapacidad_alumno']))
-      $fsol_salida['baremo_discapacidad_alumno']=0;
-   if(!isset($fsol_salida['baremo_marcado_numerosa']))
-      $fsol_salida['baremo_marcado_numerosa']=0;
-   if(!isset($fsol_salida['baremo_tipo_familia_numerosa']))
-      $fsol_salida['baremo_tipo_familia_numerosa']=0;
-   if(!isset($fsol_salida['baremo_marcado_monoparental']))
-      $fsol_salida['baremo_marcado_monoparental']=0;
-   if(!isset($fsol_salida['baremo_tipo_familia_monoparental']))
-      $fsol_salida['baremo_tipo_familia_monoparental']=0;
-   //comprobamos los campos tipo check: padres trabajan en el cenntro y renta inferior
-   if(!isset($fsol_salida['nuevaesc']))
-      $fsol_salida['nuevaesc']=0;
-   if(!isset($fsol_salida['num_hbaremo']))
-      $fsol_salida['num_hbaremo']=0;
-   if(!isset($fsol_salida['cumplen']))
-      $fsol_salida['cumplen']=0;
-   if(!isset($fsol_salida['oponenautorizar']))
-      $fsol_salida['oponenautorizar']=0;
-######################################################################################
+   $fsol_salida=comprobarChecks($fsol_salida);
+   ######################################################################################
+   $log_nueva->warning("GRABANDO NUEVA SOLICITUD");
+   $log_nueva->warning("======================================");
    $log_nueva->warning("DATOS ENTRADA:");
    $log_nueva->warning(print_r($fsol_entrada,true));
    $log_nueva->warning("DATOS PARSEADOS:");
    $log_nueva->warning(print_r($fsol_salida,true));
-######################################################################################
+   ######################################################################################
    $fsol_salida['token']=$token;
    $res=$solicitud->save($fsol_salida,$_POST['idsol'],$rol,$log_nueva);
    if($res<=0) 
@@ -191,37 +149,39 @@ if($modo=='GRABAR SOLICITUD')
    }
    else
    { 
-      $log_nueva->warning("SOLICITUD GUARDADADA ROL:MODO ".$rol.":".$modo);
+      $log_nueva->warning("SOLICITUD GUARDADADA CON ROL:MODO ".$rol.":".$modo);
       $log_nueva->warning(print_r($res,true));
       
       $aldata=explode(":",$res);
       if(isset($aldata[0])) $id_alumno=$aldata[0]; 
       else $id_alumno=$token;
-
       
       $correo=$solicitud->getCorreo($token,$log_nueva);
       $telefono=$solicitud->getTelefono($token,$log_nueva);
       $clave=$solicitud->getClave($token);
       $niftutor=$solicitud->getNifTutor($token);
          
-      $url_solicitud_alumno=URL_BASE.CONVOCATORIA."/index.php?token=$token";
+      $url_solicitud_alumno=URL_BASE.EDICION."/index.php?token=$token";
       $enlace_solicitud_alumno="<a href='$url_solicitud_alumno' target='_blank'>ENLACE</a>";
 
-      $enlace_correo="https://".$_SERVER['SERVER_NAME']."/".CONVOCATORIA."/index.php?token=".$token;
-      //$contenido_correo="\nHas creado una nueva solicitud, para verla o modificarla puedes usar el usuario: $niftutor y clave: $clave\n";
+      $enlace_correo="https://".$_SERVER['SERVER_NAME']."/".EDICION."/index.php?token=".$token;
       $contenido_correo="\nHas creado una nueva solicitud, para verla o modificarla debes usar este enlace:$enlace_solicitud_alumno ";
       $tipo_correo='Correo confirmación solicitud centros Educación Especial';
-      $log_nueva->warning("OBTENIDO CORREO: ".$correo);
+      
       if($rol!='admin' and $rol!='centro' and $rol!='sp')      
       {
+         ######################################################################################
          $log_nueva->warning("ENVIANDO CORREO: $correo Contenido: $contenido_correo");
          $rescorreo=$notificacion->enviarCorreo('Confirmación Solicitud',$correo,$contenido_correo,$tipo_correo);
          $log_nueva->warning("RESPUESTA CORREO: ".$rescorreo);
+         ######################################################################################
       }   
       
+      ######################################################################################
       $log_nueva->warning("CORREO ENVIADO A: ".$id_alumno);
       $log_nueva->warning("CORREO: ".$correo);
       $log_nueva->warning("TOKEN: ".$token);
+      ######################################################################################
       
       //si es nueva y anonima se devuelve la clave para acceder despues y se cambia el directorio de documentos
       if (!$conexion->commit()) 
@@ -237,54 +197,18 @@ else //MODIFICACION SOLICITUD
    //si el rol es de alumno modificamos los check ya q si no se han marcado no se modificarán
    if($rol=='alumno' or $rol=='anonimo')
    {
-      //comprobamos los campos tipo check: padres trabajan en el cenntro y renta inferior
-      if(!isset($fsol_salida['baremo_marcado_proximidad_domicilio']))
-         $fsol_salida['baremo_marcado_proximidad_domicilio']=0;
-      if(!isset($fsol_salida['baremo_proximidad_domicilio']))
-         $fsol_salida['baremo_proximidad_domicilio']=0;
-      if(!isset($fsol_salida['baremo_tutores_centro']))
-         $fsol_salida['baremo_tutores_centro']=0;
-      if(!isset($fsol_salida['baremo_situacion_sobrevenida']))
-         $fsol_salida['baremo_situacion_sobrevenida']=0;
-      if(!isset($fsol_salida['baremo_renta_inferior']))
-         $fsol_salida['baremo_renta_inferior']=0;
-      if(!isset($fsol_salida['baremo_acogimiento']))
-         $fsol_salida['baremo_acogimiento']=0;
-      if(!isset($fsol_salida['baremo_genero']))
-         $fsol_salida['baremo_genero']=0;
-      if(!isset($fsol_salida['baremo_terrorismo']))
-         $fsol_salida['baremo_terrorismo']=0;
-      if(!isset($fsol_salida['baremo_parto']))
-         $fsol_salida['baremo_parto']=0;
-      if(!isset($fsol_salida['baremo_discapacidad_hermanos']))
-         $fsol_salida['baremo_discapacidad_hermanos']=0;
-      if(!isset($fsol_salida['baremo_discapacidad_alumno']))
-         $fsol_salida['baremo_discapacidad_alumno']=0;
-      if(!isset($fsol_salida['baremo_marcado_numerosa']))
-         $fsol_salida['baremo_marcado_numerosa']=0;
-      if(!isset($fsol_salida['baremo_tipo_familia_numerosa']))
-         $fsol_salida['baremo_tipo_familia_numerosa']=0;
-      if(!isset($fsol_salida['baremo_marcado_monoparental']))
-         $fsol_salida['baremo_marcado_monoparental']=0;
-      if(!isset($fsol_salida['baremo_tipo_familia_monoparental']))
-         $fsol_salida['baremo_tipo_familia_monoparental']=0;
-      if(!isset($fsol_salida['nuevaesc']))
-         $fsol_salida['nuevaesc']=0;
-      if(!isset($fsol_salida['num_hbaremo']))
-         $fsol_salida['num_hbaremo']=0;
-      if(!isset($fsol_salida['cumplen']))
-         $fsol_salida['cumplen']=0;
-      if(!isset($fsol_salida['oponenautorizar']))
-         $fsol_salida['oponenautorizar']=0;
+      //comprobamos los campos tipo check solo para usuarios alumnos 
+      $fsol_salida=comprobarChecks($fsol_salida);
    }
+   
    $correo=$solicitud->getCorreo($token,$log_actualizar);
    $telefono=$solicitud->getTelefono($token,$log_actualizar);
    
    ######################################################################################
-      $log_actualizar->warning("DATOS ENTRADA:");
-      $log_actualizar->warning(print_r($fsol_entrada,true));
-      $log_actualizar->warning("DATOS PARSEADOS:");
-      $log_actualizar->warning(print_r($fsol_salida,true));
+   $log_actualizar->warning("DATOS ENTRADA:");
+   $log_actualizar->warning(print_r($fsol_entrada,true));
+   $log_actualizar->warning("DATOS PARSEADOS:");
+   $log_actualizar->warning(print_r($fsol_salida,true));
    ######################################################################################
    //modificamos solicitud teniendo en cuenta la fase en la q esta el centro y el estado de la convocatoria
    $res=$solicitud->update($fsol_salida,$id_alumno,$token,$rol,$log_actualizar);
@@ -293,12 +217,14 @@ else //MODIFICACION SOLICITUD
    {
       $rus=$solicitud->setValidada($token);
       $correo_centro=$solicitud->getCorreoCentro($id_centro_destino);
+      #!!!!!!!!!!!!!SOLO PARA PRUEBAS!!!!!!!!!!!!!!!!
+      $correo_centro='obabakoak@gmail.com'; 
       $token_centro=$solicitud->getTokenCentro($id_centro_destino);
 
       $log_actualizar->warning("DATOS CENTRO: correo: $correo_centro, token: $token_centro, id_centro: $id_centro_destino");
       if($correo_centro!=-1)
       {
-         $url_solicitud_centro=URL_BASE.CONVOCATORIA."/index.php?token=".$token."&tokencentro=$token_centro";
+         $url_solicitud_centro=URL_BASE.EDICION."/index.php?token=".$token."&tokencentro=$token_centro";
          $enlace_solicitud_centro="<a href='$url_solicitud_centro' target='_blank'>ENLACE</a>";
          //$contenido="Soliciutd modificada, pulsa en este $enlace_solicitud_centro para acceder";
          $contenido_correo="La solicitud se ha modificado, puedes acceder directamente desde este enlace: $enlace_solicitud_centro";
@@ -308,7 +234,7 @@ else //MODIFICACION SOLICITUD
          $log_actualizar->warning("ENVIADO CORREO: respuesta:: $rescorreo");
       }
       //enviamos modificaicon al alumnno
-      $url_solicitud_alumno=URL_BASE.CONVOCATORIA."/index.php?token=".$token;
+      $url_solicitud_alumno=URL_BASE.EDICION."/index.php?token=".$token;
       $enlace_solicitud_alumno="<a href='$url_solicitud_alumno' target='_blank'>ENLACE</a>";
       $contenido_correo_alumno="La solicitud se ha modificado, puedes acceder directamente desde este enlace: $enlace_solicitud_alumno";
       $tipo_correo='Modificación solicitud Educación Especial curso 22/23';   

@@ -10,5 +10,8 @@ $('body').on('click', '#verfcorreo', function(e){
    $('#concredenciales').hide();
    $('#concorreo').toggle();
 });
+$('body').on('click', '#verprocesocompleto', function(e){
+   $('#tabla_pc').toggle();
+});
 });
 

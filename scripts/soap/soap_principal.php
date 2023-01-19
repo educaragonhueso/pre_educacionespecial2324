@@ -159,8 +159,6 @@ else if($tipo=='imv')
    }
 
 }
-
-
 print($respuesta);
 
 

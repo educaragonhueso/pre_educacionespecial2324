@@ -22,8 +22,6 @@ else
 }
 if(isset($_SESSION['convocatoria'])) 
    $convocatoria=$_SESSION['convocatoria'];
-else
-   $convocatoria='educacionespecial2223';
 
 if(isset($_SESSION['id_centro']))
    $id_centro=$_SESSION['id_centro'];
@@ -126,14 +124,11 @@ if(isset($_GET['token']) or $rol=='alumno')
    }
    $log_editar_solicitud->warning(" LOGINICIO: EDITANTO SOLICITUD, id_alumno: ".$id_alumno." id centro:".$id_centro);   
 
-   if($rol=='admin') 
+   if(($rol=='alumno' or $rol=='anonimo') and $estado_convocatoria==10)
       $solo_lectura=0;
-   else if($rol=='sp') 
-      $solo_lectura=1;
    else
       $solo_lectura=1;
       
-   
    $sform=$scontroller->showFormSolicitud($id_alumno,$id_centro,$rol,1,0,$estado_convocatoria,$conexion,$convocatoria,$log_editar_solicitud,$solo_lectura);
    $botonimp='<a href="imprimirsolicitud.php?id='.$id_alumno.'" target="_blank"><input class="btn btn-primary imprimirsolicitud"  type="button" value="Vista Previa Impresion Documento"/></a>';
    $tokenhtml='<input type="hidden" id="token" name="ntoken" value="'.$token.'">';

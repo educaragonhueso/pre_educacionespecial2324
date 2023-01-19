@@ -234,7 +234,7 @@ $formsol.=
          <label><input id="nuevaesc" type="radio" name="nuevaesc" value="1" data-reserva="1" class="nuevaesc">Nueva escolarización</label>
       </div>
       <div class="radio" data-target="tnuevaesc" >
-         <label><input id="renesc" type="radio" name="nuevaesc" value="2" data-reserva="0">Alumno escolarizado curso 21/22</label>
+         <label><input id="renesc" type="radio" name="nuevaesc" value="2" data-reserva="0">Alumno escolarizado curso '.$_SESSION["cursoanterior_largo"].'</label>
       </div>
    </div>
  </div>
@@ -366,11 +366,11 @@ $formsol.=
      <div class="col-md-3">
          <div class="md-form mb-0">
             <div class="form-group">
-               Enseñanza solicitda del primer hermano
+               Enseñanza solicitada del primer hermano
                <select class="form-control" id="hermanos_admision_tipoestudios1" value="" name="hermanos_admision_tipoestudios1">
-					    <option class="hamo1" value="ebo">INFANTIL-EBO <i>(Nacidos de 2005 a 2019 ambos inclusive)</i></option>
-					    <option class="hamo1" value="tva">TVA <i>(Nacidos del 2002 al 2004)</i></option>
-					    <option class="hamo1" value="dos">DOS AÑOS <i>Nacidos en 2020</i></option>
+					    <option class="hamo1" value="ebo">INFANTIL-EBO <i>(Nacidos de '.$_SESSION["ainicio_ebo"].' a '.$_SESSION["afin_ebo"].' ambos inclusive)</i></option>
+					    <option class="hamo1" value="tva">TVA <i>(Nacidos de '.$_SESSION["ainicio_tva"].' a '.$_SESSION["afin_tva"].' ambos inclusive)</i></option>
+					    <option class="hamo1" value="dos">DOS AÑOS <i>Nacidos en '.$_SESSION["ados"].'</i></option>
                </select>
             </div>
          </div>
@@ -432,9 +432,9 @@ $formsol.=
             <div class="form-group">
                Enseñanza solicitada del segundo hermano
                <select class="form-control" id="hermanos_admision_tipoestudios2" value="" name="hermanos_admision_tipoestudios2">
-					    <option class="hamo2" value="ebo">INFANTIL-EBO <i>(Nacidos de 2005 a 2019 ambos inclusive)</i></option>
-					    <option class="hamo2" value="tva">TVA <i>(Nacidos del 2002 al 2004)</i></option>
-					    <option class="hamo2" value="ebo">DOS AÑOS <i>Nacidos en 2020</i></option>
+					    <option class="hamo2" value="ebo">INFANTIL-EBO <i>(Nacidos de '.$_SESSION["ainicio_ebo"].' a '.$_SESSION["afin_ebo"].' ambos inclusive)</i></option>
+					    <option class="hamo2" value="tva">TVA <i>(Nacidos de '.$_SESSION["ainicio_tva"].' a '.$_SESSION["afin_tva"].' ambos inclusive)</i></option>
+					    <option class="hamo2" value="dos">DOS AÑOS <i>Nacidos en '.$_SESSION["ados"].'</i></option>
                </select>
             </div>
          </div>
@@ -496,9 +496,9 @@ $formsol.=
             <div class="form-group">
                Enseñanza solicitada del segundo hermano
                <select class="form-control" id="hermanos_admision_tipoestudios3" value="" name="hermanos_admision_tipoestudios3">
-					    <option class="hamo3" value="ebo">INFANTIL-EBO <i>(Nacidos de 2005 a 2019 ambos inclusive)</i></option>
-					    <option class="hamo3" value="tva">TVA <i>(Nacidos del 2002 al 2004)</i></option>
-					    <option class="hamo3" value="dos">DOS AÑOS <i>Nacidos en 2020</i></option>
+					    <option class="hamo3" value="ebo">INFANTIL-EBO <i>(Nacidos de '.$_SESSION["ainicio_ebo"].' a '.$_SESSION["afin_ebo"].' ambos inclusive)</i></option>
+					    <option class="hamo3" value="tva">TVA <i>(Nacidos de '.$_SESSION["ainicio_tva"].' a '.$_SESSION["afin_tva"].' ambos inclusive)</i></option>
+					    <option class="hamo3" value="dos">DOS AÑOS <i>Nacidos en '.$_SESSION["ados"].'</i></option>
                </select>
             </div>
          </div>
@@ -547,9 +547,9 @@ $formsol.=
                         <div class="md-form mb-0">
 				<div class="form-group">
 					<select class="form-control" name="tipoestudios" id="tipoestudios">
-					    <option class="hamo" value="ebo">INFANTIL-EBO <i>(Nacidos de 2005 a 2019 ambos inclusive)</i></option>
-					    <option class="hamo" value="tva">TVA <i>(Nacidos del 2002 al 2004)</i></option>
-					    <option class="hamo" value="dos">DOS AÑOS <i>Nacidos en 2020</i></option>
+					    <option class="hamo" value="ebo">INFANTIL-EBO <i>(Nacidos de '.$_SESSION["ainicio_ebo"].' a '.$_SESSION["afin_ebo"].' ambos inclusive)</i></option>
+					    <option class="hamo" value="tva">TVA <i>(Nacidos de '.$_SESSION["ainicio_tva"].' a '.$_SESSION["afin_tva"].' ambos inclusive)</i></option>
+					    <option class="hamo" value="dos">DOS AÑOS <i>Nacidos en '.$_SESSION["ados"].'</i></option>
 					</select>
 				</div>
                         </div>
@@ -672,7 +672,7 @@ $formsol.=
       </div>
       <div id="caja_fbaremo_situacion_sobrevenida">            
             <input value="ficherosituacion_sobrevenida" type="file" name="baremo_file_situacion_sobrevenida" campobaremo="situacion_sobrevenida" id="fbaremo_situacion_sobrevenida" style="display:none" class="fbaremo">
-            <label for="fbaremo_situacion_sobrevenida" id="fbaremo" class="botonform">Agrega fichero justificativo situacion sobrevenida</label>
+            <label for="fbaremo_situacion_sobrevenida" id="afbaremo_situacion_sobrevenida" class="botonform" style="display:none">Agrega fichero justificativo situacion sobrevenida</label>
       </div>
       <a id="enlacefjsituacion_sobrevenida" style="display:none" class="enlacefbaremo" target="_blank">Ver fichero</a>
       <a id="borrarsituacion_sobrevenida" class="enlacefbaremo enlaceborrarfichero" style="display:none" target="_blank">Retirar fichero</a>
@@ -686,12 +686,6 @@ $formsol.=
          <label> Renta inferior IMV (Ingreso Mínimo vital)</label>
          <br><span class="ttip" data-toggle="tooltip" title="Texto proximidad domicilio"><i class="infobaremo">Ver información detallada</i></span>
       </div>
-      <div id="caja_fbaremo_renta_inferior">            
-            <input value="ficherorenta_inferior" type="file" name="baremo_file_renta_inferior" campobaremo="renta_inferior" id="fbaremo_renta_inferior" style="display:none" class="fbaremo">
-            <label for="fbaremo_renta_inferior" id="fbaremo" class="botonform">Agrega fichero justificativo renta inferior</label>
-      </div>
-      <a id="enlacefjrenta_inferior" style="display:none" class="enlacefbaremo" target="_blank">Ver fichero</a>
-      <a id="borrarrenta_inferior" class="enlacefbaremo enlaceborrarfichero" style="display:none" target="_blank">Retirar fichero</a>
       <input type="hidden" id="baremo_validar_renta_inferior" value="0" name="baremo_validar_renta_inferior">
       <button name="boton_baremo_validar_renta_inferior" type="button" class="btn btn-outline-dark validar">Validar renta</button>
       <button name="boton_baremo_comprobar_renta" type="button" class="btn btn-outline-dark comprobar" tipo="imv">Comprobar renta</button>
@@ -744,7 +738,7 @@ $formsol.=
         	   <div class="col-md-3">
                <div id="caja_fbaremo_acogimiento">            
                      <input value="ficheroacogimiento" type="file" name="baremo_file_acogimiento" campobaremo="acogimiento" id="fbaremo_acogimiento" style="display:none" class="fbaremo">
-                     <label for="fbaremo_acogimiento" id="facogimiento" class="botonform">Agrega fichero justificativo acogimiento</label>
+                     <label for="fbaremo_acogimiento" id="afbaremo_acogimiento" class="botonform" style="display:none">Agrega fichero justificativo acogimiento</label>
                </div>
                <a id="enlacefjacogimiento" style="display:none" class="enlacefbaremo" target="_blank">Ver fichero</a>
                <a id="borraracogimiento" class="enlacefbaremo enlaceborrarfichero" style="display:none" target="_blank">Retirar fichero</a>
@@ -752,7 +746,7 @@ $formsol.=
         	   <div class="col-md-3">
                <div id="caja_fbaremo_genero">            
                      <input value="ficherogenero" type="file" name="baremo_file_genero" campobaremo="genero" id="fbaremo_genero" style="display:none" class="fbaremo">
-                     <label for="fbaremo_genero" id="fgenero" class="botonform">Agrega fichero justificativo género</label>
+                     <label for="fbaremo_genero" id="afbaremo_genero" class="botonform" style="display:none">Agrega fichero justificativo género</label>
                </div>
                <a id="enlacefjgenero" style="display:none" class="enlacefbaremo" target="_blank">Ver fichero</a>
                <a id="borrargenero" class="enlacefbaremo enlaceborrarfichero" style="display:none" target="_blank">Retirar fichero</a>
@@ -760,7 +754,7 @@ $formsol.=
         	   <div class="col-md-3">
                <div id="caja_fbaremo_terrorismo">            
                      <input value="ficheroterrorismo" type="file" name="baremo_file_terrorismo" campobaremo="genero" id="fbaremo_terrorismo" style="display:none" class="fbaremo">
-                     <label for="fbaremo_terrorismo" id="fbaremo" class="botonform">Agrega fichero justificativo terrorismo</label>
+                     <label for="fbaremo_terrorismo" id="afbaremo_terrorismo" class="botonform" style="display:none">Agrega fichero justificativo terrorismo</label>
                </div>
                <a id="enlacefjterrorismo" style="display:none" class="enlacefbaremo" target="_blank">Ver fichero</a>
                <a id="borrarterrorismo" class="enlacefbaremo enlaceborrarfichero" style="display:none" target="_blank">Retirar fichero</a>
@@ -768,7 +762,7 @@ $formsol.=
         	   <div class="col-md-3">
                <div id="caja_fbaremo_parto">            
                      <input value="ficheroparto" type="file" name="baremo_file_parto" campobaremo="parto" id="fbaremo_parto" style="display:none" class="fbaremo">
-                     <label for="fbaremo_parto" id="fbaremo" class="botonform">Agrega fichero justificativo parto múltiple</label>
+                     <label for="fbaremo_parto" id="afbaremo_parto" class="botonform" style="display:none">Agrega fichero justificativo parto múltiple</label>
                </div>
                <a id="enlacefjparto" style="display:none" class="enlacefbaremo" target="_blank">Ver fichero</a>
                <a id="borrarparto" class="enlacefbaremo enlaceborrarfichero" style="display:none" class="enlacefbaremo" target="_blank">Retirar fichero</a>

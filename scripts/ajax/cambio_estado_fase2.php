@@ -1,5 +1,11 @@
 <?php
-require_once $_SERVER['CONTEXT_DOCUMENT_ROOT']."/educacionespecial/config/config_global.php";
+######################
+# script para modificar estado solicitudes en fase 2, o indicar el centro
+######################
+
+//CARGAMOS CONFIGURACION GENERAL SCRIPTS AJAX
+include('../../config/config_global.php');
+
 require_once DIR_BASE.'/clases/core/Conectar.php';
 require_once DIR_CLASES.'/LOGGER.php';
 require_once DIR_BASE.'/clases//models/Centro.php';
@@ -29,11 +35,24 @@ $id_centroelegido=$_POST['idcentrodefinitivo'];
 $vacantes_centroelegido=$_POST['vacdefinitivo'];
 $tipoestudios=$_POST['tipoestudios'];
 
+$id_centro_origen=$_POST['idcorigen'];
+$reserva=$_POST['reserva'];
+
 $centro_origen->setId($id_centroactual);
 $centro_destino->setId($id_centroelegido);
 $centro_destino->setNombre($id_centroelegido);
 
 $nombre_centro_destino=$centro_destino->getNombre();
+
+//SI EL CENTRO ORIGEN Y DEF ES EL MISMO Y HAY RESERVA NO HACEMOS NADA
+if($id_centro_origen==$id_centroelegido and $id_centro_origen!=0 and $reserva=='reserva1')
+{
+   $sql="update alumnos_fase2 set centro_definitivo='".$nombre_centro_destino."',id_centro_definitivo=$id_centroelegido,tipo_modificacion='manual' where id_alumno=".$_POST['id_alumno'];
+   $result=$conexion->query($sql);
+   $conexion->close();
+	print("OK");
+   exit();
+}
 
 if($_POST['tipoestudios']=='ebo') $tipo=1;
 else $tipo=2;
