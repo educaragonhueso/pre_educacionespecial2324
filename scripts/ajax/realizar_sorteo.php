@@ -31,7 +31,7 @@ $provincia='todas';
 $estado_convocatoria=$_POST['estado_convocatoria'];
 
 $hoy = date("Y/m/d");
-$list=new ListadosController('alumnos',$conexion);
+$list=new ListadosController('alumnos',$conexion,$estado_convocatoria);
 
 $tcentro=new Centro($conexion,1,'ajax');
 $tsolicitud=new Solicitud($conexion);

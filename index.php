@@ -117,6 +117,7 @@ if(isset($_GET['token']) or $rol=='alumno')
  
    if(isset($_GET['token']))
    {
+      $log_editar_solicitud->warning("::::LOGINICIO: EDITANTO SOLICITUD");   
       $id_centro=$solicitud->getIdCentroFromToken($token,$log_editar_solicitud);
       $fase_solicitud=$solicitud->getFaseSolicitudFromToken($token,$log_editar_solicitud);
       if($fase_solicitud=='borrador')
@@ -155,9 +156,9 @@ if(isset($_GET['token']) or $rol=='alumno')
 }
 else
 {
-   $lcontroller=new ListadosController('alumnos',$conexion);
+   $lcontroller=new ListadosController('alumnos',$conexion,$estado_convocatoria);
    //mostramos las solicitudes según el rol
-   $listado_solicitudes=$lcontroller->showListadoSolicitudes($rol,$id_centro,$estado_convocatoria,$solicitud,$log_listados_solicitudes,$id_alumno,$provincia);
+   $listado_solicitudes=$lcontroller->showListadoSolicitudes($rol,$id_centro,$solicitud,$log_listados_solicitudes,$id_alumno,$provincia);
    $tablaresumen=$tcentro->getResumen($rol,'alumnos',$log_listados_solicitudes);
    $tablaresumen=$lcontroller->showTablaResumenSolicitudes($tablaresumen,$nombre_centro,$id_centro);
    ##FILTROS DE OPCIONES DE VALIDACION Y DE COMPROBACION 

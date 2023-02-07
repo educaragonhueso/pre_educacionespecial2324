@@ -29,7 +29,7 @@ if(isset($_POST['subtipo']))
 	$subtipo_listado=$_POST['subtipo'];//dentro de cada tipo, el subtipo de listado, para ebo o tva
 
 $filtro_datos='<input type="text" class="form-control" id="filtrosol"  placeholder="Introduce datos del alumno"><small id="emailHelp" class="form-text text-muted"></small>';
-$list=new ListadosController('matricula',$conexion);
+$list=new ListadosController('matricula',$conexion,$estado_convocatoria);
 $utils=new UtilidadesAdmision($conexion);
 $tsolicitud=new Solicitud($conexion);
 $tcentro=new Centro($conexion,1,'ajax');

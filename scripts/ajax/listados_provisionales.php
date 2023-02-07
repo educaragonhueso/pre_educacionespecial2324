@@ -37,7 +37,7 @@ $tcentro=new Centro($conexion,$_POST['id_centro'],'ajax');
 $tcentro->setNombre();
 $tsolicitud=new Solicitud($conexion);
 $ccentros=new CentrosController(0,$conexion);
-$list=new ListadosController('alumnos',$conexion);
+$list=new ListadosController('alumnos',$conexion,$estado_convocatoria);
 
 $nsolicitudes=$tcentro->getNumSolicitudes($id_centro);
 
@@ -53,13 +53,7 @@ $log_listados_provisionales->warning("OBTENIENDO SOLICITUDES PROVISIONALES, CENT
 $log_listados_provisionales->warning("OBTENIENDO SOLICITUDES PROVISIONALES, ESTADO CONVOCATORIA:  ".$estado_convocatoria);
 ######################################################################################
 
-//mostramos las solitudes completas sin incluir borrador
-/*
-if($estado_convocatoria<ESTADO_PUBLICACION_PROVISIONAL)
-   $solicitudes=$list->getSolicitudes($id_centro,$estado_convocatoria,'normal',$subtipo_listado,$tsolicitud,$log_listados_provisionales,0,$rol,$provincia); 
-else
-*/
-$solicitudes=$list->getSolicitudes($id_centro,$estado_convocatoria,'provisionales',$subtipo_listado,$tsolicitud,$log_listados_provisionales,0,$rol,$provincia); 
+$solicitudes=$list->getSolicitudes($id_centro,'provisionales',$subtipo_listado,$tsolicitud,$log_listados_provisionales,0,$rol,$provincia); 
 ######################################################################################
 $log_listados_provisionales->warning("OBTENIDAS SOLICITUDES PROVISIONALES ");
 ######################################################################################

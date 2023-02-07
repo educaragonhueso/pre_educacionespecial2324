@@ -1,6 +1,6 @@
 $(document).ready(function(){
 console.log("CARGANDO FUNC BAREMO");
-var urlbase='educacionespecial2223/';
+var urlbase=edicion;
 var fbaremohtml='<form enctype="multipart/form-data" action="/scripts/ajax/subirfichero.php"  method="post" id="fpruebas"><input type="file" name="baremo_file_domicilio" id="fbaremo_domicilio"></form>';
 
 $('body').on('change', '.fbaremo', function(e)
@@ -47,7 +47,8 @@ function eliminarFichero (ub)
 	      success: function(data) {
             console.log(data);
 				$.alert({
-					title: data
+					title: data,
+               content: ''
 					});
 		},error: function (request, status, error) {
         alert(error);
@@ -56,9 +57,32 @@ function eliminarFichero (ub)
 }
 
 function subirfichero(fdata,token,tipo) {
+   console.log("subiendo fichero de tipo: "+tipo);
+   $.ajax({
+        url: 'scripts/fetch/subir_fichero_baremo.php', 
+        type: 'post',
+        data: fdata,
+        contentType: false,
+        processData: false,
+        success: function (response) {
+         var extension=response.substr(response.length - 4);
+         console.log("subiendo fichero de tipo: "+extension);
+         console.log("subido urlbase: "+urlbase);
+         stipo=tipo.replace("fbaremo_","");
+         var ubicacionweb='scripts/fetch/ficherosbaremo/'+token+'/'+tipo+extension;
+         var ubicacionsistema=directorio_base+'/scripts/fetch/ficherosbaremo/'+token+'/'+tipo+extension;
+         var subicacionsistema=directorio_base+'/scripts/fetch/ficherosbaremo/'+token+'/'+stipo+extension;
+         var enlacefichero='<a id="enlacefj'+stipo+'" class="enlacefbaremo" href="'+ubicacionweb+'" target="_blank">Ver fichero</a>';
+         var enlace_borrar_fichero='<a id="borrar'+stipo+'" class="enlacefbaremo enlaceborrarfichero" data="'+ubicacionsistema+'" target="_blank">Retirar fichero</a>';
+         $("#caja_"+tipo).after(enlace_borrar_fichero);
+         $("#caja_"+tipo).after(enlacefichero);
+        }
+      });
+}
+function subirfichero_old(fdata,token,tipo) {
    console.log("subiendo fichero a: "+token);
    
-   var ubicacion='/educacionespecial2223/scripts/fetch/ficherosbaremo/'+token+'/'+tipo+'.pdf';
+   var ubicacion='/scripts/fetch/ficherosbaremo/'+token+'/'+tipo+'.pdf';
    console.log("subiendo fichero a: "+ubicacion);
    var enlacefichero='<a class="enlacefbaremo" href="'+ubicacion+'" target="_blank">Ver fichero</a>';
    var enlace_borrar_fichero='<a class="enlacefbaremo enlaceborrarfichero" data="'+ubicacion+'" target="_blank">Retirar fichero</a>';

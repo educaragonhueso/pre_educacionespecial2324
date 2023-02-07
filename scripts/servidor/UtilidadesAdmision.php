@@ -14,7 +14,250 @@ class UtilidadesAdmision{
       $this->log_fase2=new logWriter('log_fase2',DIR_LOGS);
       $this->log_asigna_fase2=new logWriter('log_asigna_fase2',DIR_LOGS);
       $this->log_sorteo_fase2=new logWriter('log_sorteo_fase2',DIR_LOGS);
+  }
+  public function getMatriculaComprobarBaremo()
+  {
+   $ares=array();
+   $sql="SELECT a.id_alumno,dni_alumno,dni_tutor1,dni_tutor2,sitlaboral,renta_inferior
+         FROM alumnos a,baremo b
+         WHERE a.id_alumno=b.id_alumno AND fase_solicitud!='borrador' AND estado_solicitud='apta' ";      
+	$res=$this->conexion->query($sql);
+	if(!$res) return $this->conexion->error;
+	while($row=$res->fetch_assoc())
+      $ares[]=$row;
+   return  $ares;
+
+  }
+  public function getSolicitudesComprobarBaremo($token='')
+  {
+   $ares=array();
+   if($token=='')
+   {
+      $sql="SELECT *
+            FROM alumnos a,baremo b,centros c
+            WHERE a.id_alumno=b.id_alumno AND c.id_centro=a.id_Centro_destino AND fase_solicitud!='borrador' AND estado_solicitud='apta' ";      
    }
+   else  
+   {
+      $sql="SELECT *
+            FROM alumnos a,baremo b,centros c
+            WHERE a.id_alumno=b.id_alumno AND c.id_centro=a.id_Centro_destino AND fase_solicitud!='borrador' AND estado_solicitud='apta' AND a.token='$token'";      
+   }
+	$res=$this->conexion->query($sql);
+	if(!$res) return $this->conexion->error;
+	while($row=$res->fetch_assoc())
+      $ares[]=$row;
+   return  $ares;
+
+  }
+  public function recalcularBaremo($aldata)
+  {
+   $r=array();   
+   $puntos_baremo=0;
+   $puntos_baremo_validados=0;
+   $nhdisc=0;
+   $nombre=$aldata['nombre'];
+   $apellido1=$aldata['apellido1'];
+   $apellido2=$aldata['apellido2'];
+   $nombre_centro=$aldata['nombre_centro'];
+   $dni=$aldata['dni_alumno'];
+   $dni1=$aldata['dni_tutor1'];
+   $dni2=$aldata['dni_tutor2'];
+   
+   $sri=$aldata['renta_inferior'];
+   $rri=$aldata['comprobar_renta_inferior'];
+
+   $sdh=$aldata['discapacidad_hermanos'];
+   $rdh=$aldata['comprobar_discapacidad_hermanos'];
+
+   $sda=$aldata['discapacidad_alumno'];
+   $rda=$aldata['comprobar_discapacidad_alumno'];
+   $dnidisc1=$aldata['dnidisc1'];
+   if($dnidisc1!='nodata' and $dnidisc1!='')
+      $nhdisc++;
+   $dnidisc2=$aldata['dnidisc2'];
+   if($dnidisc2!='nodata' and $dnidisc2!='')
+      $nhdisc++;
+   $dnidisc3=$aldata['dnidisc3'];
+   if($dnidisc3!='nodata' and $dnidisc3!='')
+      $nhdisc++;
+   
+   print("NDISC: ".$nhdisc);
+   $sfn=$aldata['marcado_numerosa'];
+   $rfn=$aldata['comprobar_familia_numerosa'];
+   $tfn=$aldata['tipo_familia_numerosa'];
+   
+   $sfm=$aldata['marcado_monoparental'];
+   $rfm=$aldata['comprobar_familia_monoparental'];
+   $tfm=$aldata['tipo_familia_monoparental'];
+   
+   //calcuklamos el baremo de los campos q no se compruebasn
+   $pdom=$aldata['marcado_proximidad_domicilio'];
+   $vpdom=$aldata['validar_proximidad_domicilio'];
+   $valorpdom=$aldata['proximidad_domicilio'];
+   if($pdom==1)
+   {
+      if($valorpdom=='dfamiliar')
+         $puntos=6;
+      if($valorpdom=='dlaboral')
+         $puntos=5;
+      if($valorpdom=='dflimitrofe')
+         $puntos=3;
+      if($valorpdom=='dllimitrofe')
+         $puntos=2;
+      $puntos_baremo=$puntos_baremo+$puntos;
+      if($vpdom==1)
+      {
+         $puntos_baremo_validados=$puntos_baremo_validados+$puntos;
+      }
+   }
+
+   $tutorescentro=$aldata['tutores_centro'];
+   $vtutorescentro=$aldata['validar_tutores_centro'];
+   if($tutorescentro==1)
+   {
+      $puntos_baremo=$puntos_baremo+4;
+      if($vtutorescentro==1)
+         $puntos_baremo_validados=$puntos_baremo_validados+4;
+   }
+   if($sri==1)
+   {
+      $puntos_baremo=$puntos_baremo+5;
+      if($rri==2)
+         $puntos_baremo_validados=$puntos_baremo_validados+5;
+   }
+
+   $acog=$aldata['acogimiento'];
+   $vacog=$aldata['validar_acogimiento'];
+   if($acog==1)
+   {
+      $puntos_baremo=$puntos_baremo+1;
+      if($vacog==1)
+         $puntos_baremo_validados=$puntos_baremo_validados+1;
+   }
+
+   $genero=$aldata['genero'];
+   $vgenero=$aldata['validar_genero'];
+   if($genero==1)
+   {
+      $puntos_baremo=$puntos_baremo+1;
+      if($vgenero==1)
+         $puntos_baremo_validados=$puntos_baremo_validados+1;
+   }
+
+   $ter=$aldata['terrorismo'];
+   $vter=$aldata['validar_terrorismo'];
+   if($ter==1)
+   {
+      $puntos_baremo=$puntos_baremo+1;
+      if($vter==1)
+         $puntos_baremo_validados=$puntos_baremo_validados+1;
+   }      
+
+   $parto=$aldata['parto'];
+   $vparto=$aldata['validar_parto'];
+   if($parto==1)
+   {
+      $puntos_baremo=$puntos_baremo+1;
+      if($vparto==1)
+         $puntos_baremo_validados=$puntos_baremo_validados+1;
+   }
+   if($sda==1)
+   {
+      $puntos_baremo=$puntos_baremo+1;
+      if($rda==2)
+         $puntos_baremo_validados=$puntos_baremo_validados+1;
+   }
+   if($sdh==1)
+   {
+      $puntos_baremo=$puntos_baremo+$nhdisc;
+      if($rdh==2)
+         $puntos_baremo_validados=$puntos_baremo_validados+$nhdisc;
+   }
+   if($sfn==1)
+   {
+      if($tfn==1) $pf=1;
+      else        $pf=2;
+      $puntos_baremo=$puntos_baremo+$pf;
+      if($rfn==2)
+         $puntos_baremo_validados=$puntos_baremo_validados+$pf;
+   }
+   if($sfm==1)
+   {
+      if($tfm==1) $pf=1;
+      else        $pf=2;
+      $puntos_baremo=$puntos_baremo+$pf;
+      if($rfm==2)
+         $puntos_baremo_validados=$puntos_baremo_validados+$pf;
+   }
+   $r['rda']=$rda;   
+   $r['pb']=$puntos_baremo;   
+   $r['pbv']=$puntos_baremo_validados;   
+   return $r;   
+  }
+  public function comprobarBaremo($tipo,$dni,$dni1,$dni2)
+  {
+      //0 no comprobado, 1 comp negativa, 2 comp positiva
+      $r=rand(1,2);
+      return $r;
+  }
+  public function actualizarBaremo($dbaremo,$id_alumno,$log='')
+  {
+   $pb=$dbaremo['pb'];
+   $pbv=$dbaremo['pbv'];
+   $sql="UPDATE baremo SET puntos_validados=$pbv,puntos_totales=$pb WHERE id_alumno=$id_alumno";      
+   if($log!='')
+      $log->warning("ACTUALIZANDO BAREMO FINAL: ".$sql);
+	$res=$this->conexion->query($sql);
+	if(!$res) return $this->conexion->error;
+   return  1;
+   
+  }
+  public function actualizarBaremo_old($dbaremo,$id_alumno,$log='')
+  {
+   $pb=$dbaremo['pb'];
+   $pbv=$dbaremo['pbv'];
+   $rda=$dbaremo['rda'];
+   $token_hermanos=$this->getTokenHermanosAdmision($id_alumno); 
+   //$datos_baremo=$this->getDatosBaremoAlumno($id_alumno); 
+   if($log!='')
+   {
+      $log->warning("ACTUALIZANDO BAREMO FINAL TOKEN HERMANOS: ");
+      $log->warning(print_r($token_hermanos,true));
+   }
+   if(sizeof($token_hermanos)>0)
+   {
+      foreach($token_hermanos as $t)
+      {
+         $token_hermano=$t->token;
+         //primero borramos la entrada de baremo del hermano
+         //$dql="DELETE FROM baremo WHERE id_alumno IN (SELECT id_alumno FROM alumnos WHERE token='$token_hermano')";      
+	      //$res=$this->conexion->query($dql);
+         print("\nACT HERMANO");
+         $sql="UPDATE baremo SET comprobar_discapacidad_alumno=$rda, puntos_validados=$pbv,puntos_totales=$pb WHERE id_alumno IN (SELECT id_alumno FROM alumnos WHERE token='$token_hermano')";      
+         $log->warning("ACTUALIZANDO COMPPP HERMANOS: ".$sql);
+         print($sql);
+	      $res=$this->conexion->query($sql);
+      }
+   }     
+   $sql="UPDATE baremo SET puntos_validados=$pbv,puntos_totales=$pb WHERE id_alumno=$id_alumno";      
+   print("\nACT ALUMNO");
+   print($sql);
+   if($log!='')
+      $log->warning("ACTUALIZANDO BAREMO FINAL: ".$sql);
+	$res=$this->conexion->query($sql);
+	if(!$res) return $this->conexion->error;
+   return  1;
+   
+  }
+  public function actualizaComprobaciones($tipo,$id,$vc)
+  {
+   $ares=array();
+   $sql="UPDATE baremo SET $tipo=$vc WHERE id_alumno=$id";      
+	$res=$this->conexion->query($sql);
+	if(!$res) return $this->conexion->error;
+   return  1;
+  }
 	public function setDuplicados() 
 	{
 		$alumnos=$this->getAlumnosParaDuplicados();
@@ -40,6 +283,18 @@ class UtilidadesAdmision{
 	{
 		$resultSet=array();
 		$sql="SELECT id_alumno,nombre,apellido1,apellido2,fnac FROM alumnos";
+		$query=$this->conexion->query($sql);
+		if($query)
+		while ($row = $query->fetch_object()) {
+		   $resultSet[]=$row;
+		}
+		return $resultSet;
+    }
+   public function getTokenHermanosAdmision($id_alumno)
+	{
+		$resultSet=array();
+		$sql="SELECT token FROM alumnos WHERE id_alumno IN(SELECT id_hermano FROM alumnos_hermanos_admision ah WHERE ah.id_alumno=$id_alumno)";
+      print($sql);
 		$query=$this->conexion->query($sql);
 		if($query)
 		while ($row = $query->fetch_object()) {
@@ -382,6 +637,17 @@ id_centro=$idcentro";
 		//print("FIN asignaciones $tipoestudios".PHP_EOL);
 		return 1;
 	}
+   public function getDatosBaremoAlumno($id_alumno)
+	{
+		$resultSet=array();
+		$sql="SELECT * FROM baremo WHERE id_alumno=$id_alumno";
+		$query=$this->conexion->query($sql);
+		if($query)
+		while ($row = $query->fetch_object()) {
+		   $resultSet[]=$row;
+		}
+		return $resultSet;
+    }
    public function getAlumnosReserva()
 	{
 		$resultSet=array();

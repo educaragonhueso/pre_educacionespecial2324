@@ -21,7 +21,7 @@ $_SESSION['provincia']='todas';
 //Versión PRE o PRO
 $_SESSION['version']=VERSION;
 $_SESSION['id_centro'] =-1;      
-$_SESSION['fecha_actual'] = date("Y/m/d");      
+$_SESSION['fecha_actual'] = date("Y/m/d H:i:s");      
 $_SESSION['url_base'] =URL_BASE;    
 
 if($_SESSION['fecha_actual']<DIA_INICIO_INSCRIPCION)       
@@ -41,6 +41,6 @@ else if($_SESSION['fecha_actual']>=DIA_INICIO_RECLAMACIONES_PROVISIONAL and $_SE
 else if($_SESSION['fecha_actual']>=DIA_PUBLICACION_DEFINITIVOS and $_SESSION['fecha_actual']<DIA_FASE3)       
  		$_SESSION['estado_convocatoria'] =ESTADO_DEFINITIVOS;
 else
- 		$_SESSION['estado_convocatoria'] =ESTADO_FASE2;
+ 		$_SESSION['estado_convocatoria'] =ESTADO_ASIGNACION_AUTOMATICA;
 
       

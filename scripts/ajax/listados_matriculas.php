@@ -23,6 +23,7 @@ $conexion=$conectar->conexion();
 $rol=$_POST['rol']; 
 $id_centro=$_POST['id_centro']; 
 $provincia=$_POST['provincia']; 
+$estado_convocatoria=$_POST['estado_convocatoria']; 
 
 if($rol=='admin' or $rol=='sp') 
 {
@@ -30,12 +31,12 @@ if($rol=='admin' or $rol=='sp')
   // $rol='admin';
   // $provincia='todas';
    $log_listados_matricula->warning("OBTENIENDO DATOS DE MATRICULA");
-	$cencont=new CentrosController($conexion);
+	$cencont=new CentrosController($conexion,$estado_convocatoria);
 	print($cencont->showTablas($rol,$id_centro,'matricula',$provincia,'especial',$log_listados_matricula));
 }
 else
 {
-	$list=new ListadosController('matricula',$conexion);
+	$list=new ListadosController('matricula',$conexion,$estado_convocatoria);
 	$tcentro=new Centro($conexion,$_POST['id_centro'],'ajax');
 	$tcentro->setNombre();
 	$nombre_centro=$tcentro->getNombre();

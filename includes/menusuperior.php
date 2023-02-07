@@ -51,7 +51,11 @@ if (!file_exists($ficheroebo))
                 <a class="dropdown-item" href="documentacion/a3a_domlaboralcajena_2223.pdf" id="doca4" target="_blank">Anexo IV A Certificado Domicilio Laborali Cuenta Ajena</a>
                 <a class="dropdown-item" href="documentacion/a3a_domlaboralcpropia_2223.pdf" id="doca4" target="_blank">Anexo IV B Responsable Domicilio Laboral Cuenta Propia</a>
                 <a class="dropdown-item" href="documentacion/a4_reaghermanos_2223.pdf" id="doca4" target="_blank">Anexo IV Solicitud Reagrupamiento de Hermanos</a>
-                <a class="dropdown-item" href="documentacion/a1a_calendario_2223.pdf"  target="_blank">Calendario Admisión Educación Especial</a>;
+                <a class="dropdown-item" href="documentacion/a1a_calendario_2223.pdf" target="_blank">Calendario Admisión Educación Especial</a>;
+                <?php if($_SESSION['rol']=='admin'){?>
+                  <a class="dropdown-item" href="documentacion/doc_pruebas.html" id="ccen" target="_blank">Claves centros</a>;
+                  <a class="dropdown-item" href="documentacion/csv_comprobaciones.csv" id="csvc" target="_blank">CSV Comprobaciones</a>;
+               <?php } ?>
 			    </div>
          </li>
        </ul>
@@ -155,7 +159,7 @@ if (!file_exists($ficheroebo))
                             </li>
 		   <?php }?>
 		<?php }?>
-		<?php if($_SESSION['rol']!='anonimo' and $_SESSION['rol']!='alumno'  and $_SESSION['estado_convocatoria']>=ESTADO_FASE2 OR $_SESSION['rol']=='admin') 
+		<?php if(($_SESSION['rol']=='admin' or $_SESSION['rol']=='sp') and ($_SESSION['estado_convocatoria']>=ESTADO_ASIGNACION_AUTOMATICA)) 
             {
              echo '<li class="nav-item active msuperior dropdown" id="mdefinitivo">';
              echo '<a class="nav-link dropdown-toggle desplegable2" id="navbardrop" data-toggle="dropdown" href="#">FASE II</a>';

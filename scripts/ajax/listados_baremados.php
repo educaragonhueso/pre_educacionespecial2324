@@ -34,7 +34,7 @@ $estado_convocatoria=$_POST['estado_convocatoria'];
 $tipo_listado=$_POST['tipo'];//listados del sorteo, provisionales o definitivos
 $subtipo_listado=$_POST['subtipo'];//dentro de cada tipo, el subtipo de listado
 $filtro_datos='<input type="text" class="form-control" id="filtrosol"  placeholder="Introduce datos del alumno"><small id="emailHelp" class="form-text text-muted"></small>';
-$list=new ListadosController('alumnos',$conexion);
+$list=new ListadosController('alumnos',$conexion,$estado_convocatoria);
 $tcentro=new Centro($conexion,$_POST['id_centro'],'ajax');
 $tcentro->setNombre();
 $nombre_centro=$tcentro->getNombre();
@@ -54,9 +54,9 @@ if($subtipo_listado=='sor_det') {$nombre_listado='LISTADO DETALLE BAREMO';$forma
 $log_listados_baremados->warning("LOGINICIO: OBTENIENDO SOLICITUDES BAREMADAS SUBTIPO: $subtipo_listado ESTADO CONVOCATORIA: $estado_convocatoria, ID CENTRO: $id_centro formato: $formato, provincia: $provincia");
 
 if($estado_convocatoria<ESTADO_PUBLICACION_BAREMADAS or $subtipo_listado=='sor_ale' or $subtipo_listado=='sor_det')
-   $solicitudes=$list->getSolicitudes($id_centro,$estado_convocatoria,'normal',$subtipo_listado,$solicitud,$log_listados_baremados,0,$rol,$provincia); 
+   $solicitudes=$list->getSolicitudes($id_centro,'normal',$subtipo_listado,$solicitud,$log_listados_baremados,0,$rol,$provincia); 
 else
-   $solicitudes=$list->getSolicitudes($id_centro,$estado_convocatoria,'baremadas',$subtipo_listado,$solicitud,$log_listados_baremados,0,$rol,$provincia); 
+   $solicitudes=$list->getSolicitudes($id_centro,'baremadas',$subtipo_listado,$solicitud,$log_listados_baremados,0,$rol,$provincia); 
    
 ######################################################################################
 $log_listados_baremados->warning("OBBTENIDAS SOLICITUDES GENERALES BAREMADAS");

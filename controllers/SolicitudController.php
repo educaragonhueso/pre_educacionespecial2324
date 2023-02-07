@@ -39,10 +39,77 @@ class SolicitudController{
     {
       return $this->showFormSolicitud($id,$id_centro=0,$this->rol,$collapsed=0,$imprimir=1,0,$this->conectar,'dirbase',$this->log,0);
 	 }
+    public function aplicarComprobaciones($id,$dsolicitud,$log)
+    {
+      $acom=$this->getComprobaciones($id);
+      $log->warning("COMPROBANDO");
+      $log->warning(print_r($acom,true));
+      //comprobamos el estado de la renta, 
+      if($dsolicitud['baremo_renta_inferior']==1)
+      {
+         $soriginal='<label id="msg_comprobacion_renta_inferior" class="botonform" style="display:none;color:red">Estado: PENDIENTE DE COMPROBAR</label>';
+         if($acom["comprobar_renta_inferior"]==0)
+            $sdestino='<label id="msg_comprobacion_renta_inferior" class="botonform" style="display:block;color:red">Estado: PENDIENTE DE COMPROBAR</label>';
+         elseif($acom["comprobar_renta_inferior"]==1)
+             $sdestino='<label id="msg_comprobacion_renta_inferior" class="botonform" style="color:red; display:block;">Estado: COMPROBACIÓN NEGATIVA</label>';
+         else
+            $sdestino='<label id="msg_comprobacion_renta_inferior" class="botonform" style="color:green;display: block;">Estado: COMPROBACIÓN POSITIVA</label>';
+         $this->formulario=str_replace($soriginal,$sdestino,$this->formulario);
+      }
+      if($dsolicitud['baremo_discapacidad_alumno']==1)
+      {
+         $soriginal='<label id="msg_comprobacion_discapacidad_alumno" class="botonform" style="display:none;color:red;width:16%">Estado: PENDIENTE DE COMPROBAR</label>';
+         if($acom["comprobar_discapacidad_alumno"]==0)
+            $sdestino='<label id="msg_comprobacion_discapacidad_alumno" class="botonform" style="display:block;color:red;width:16%">Estado: PENDIENTE DE COMPROBAR</label>';
+         elseif($acom["comprobar_discapacidad_alumno"]==1)
+            $sdestino='<label id="msg_comprobacion_discapacidad_alumno" class="botonform" style="color:red; display:block;width:16%">Estado: COMPROBACIÓN NEGATIVA</label>';
+         else
+            $sdestino='<label id="msg_comprobacion_discapacidad_alumno" class="botonform" style="color:green;display: block;width:16%">Estado: COMPROBACIÓN POSITIVA</label>';
+         $this->formulario=str_replace($soriginal,$sdestino,$this->formulario);
+      }
+      if($dsolicitud['baremo_discapacidad_hermanos']==1)
+      {
+         $soriginal='<label id="msg_comprobacion_discapacidad_hermanos" class="botonform" style="display:none;color:red;width:16%">Estado: PENDIENTE DE COMPROBAR</label>';
+         if($acom["comprobar_discapacidad_hermanos"]==0)
+            $sdestino='<label id="msg_comprobacion_discapacidad_hermanos" class="botonform" style="display:block;color:red;width:16%">Estado: PENDIENTE DE COMPROBAR</label>';
+         elseif($acom["comprobar_discapacidad_hermanos"]==1)
+            $sdestino='<label id="msg_comprobacion_discapacidad_hermanos" class="botonform" style="color:red; display:block;width:16%">Estado: COMPROBACIÓN NEGATIVA</label>';
+         else
+            $sdestino='<label id="msg_comprobacion_discapacidad_hermanos" class="botonform" style="color:green;display: block;width:16%">Estado: COMPROBACIÓN POSITIVA</label>';
+         $this->formulario=str_replace($soriginal,$sdestino,$this->formulario);
+      }
+      if($dsolicitud['baremo_marcado_numerosa']==1)
+      {
+         $soriginal='<label id="msg_comprobacion_familia_numerosa" class="botonform" style="display:none;color:red;width:50%">Estado: PENDIENTE DE COMPROBAR</label>';
+         if($acom["comprobar_familia_numerosa"]==0)
+            $sdestino='<label id="msg_comprobacion_familia_numerosa" class="botonform" style="display:block;color:red;width:50%">Estado: PENDIENTE DE COMPROBAR</label>';
+         elseif($acom["comprobar_familia_numerosa"]==1)
+            $sdestino='<label id="msg_comprobacion_familia_numerosa" class="botonform" style="color:red; display:block;width:50%">Estado: COMPROBACIÓN NEGATIVA</label>';
+         else
+            $sdestino='<label id="msg_comprobacion_familia_numerosa" class="botonform" style="color:green;display: block;width:50%">Estado: COMPROBACIÓN POSITIVA</label>';
+         $this->formulario=str_replace($soriginal,$sdestino,$this->formulario);
+      }
+      if($dsolicitud['baremo_marcado_monoparental']==1)
+      {
+         $soriginal='<label id="msg_comprobacion_familia_monoparental" class="botonform" style="display:none;color:red;width:55%">Estado: PENDIENTE DE COMPROBAR</label>';
+         if($acom["comprobar_familia_monoparental"]==0)
+            $sdestino='<label id="msg_comprobacion_familia_monoparental" class="botonform" style="display:block;color:red;width:55%">Estado: PENDIENTE DE COMPROBAR</label>';
+         elseif($acom["comprobar_familia_monoparental"]==1)
+            $sdestino='<label id="msg_comprobacion_familia_monoparental" class="botonform" style="color:red; display:block;width:55%">Estado: COMPROBACIÓN NEGATIVA</label>';
+         else
+            $sdestino='<label id="msg_comprobacion_familia_monoparental" class="botonform" style="color:green;display: block;width:55%">Estado: COMPROBACIÓN POSITIVA</label>';
+         $this->formulario=str_replace($soriginal,$sdestino,$this->formulario);
+      }
+      
+    }
     public function procesarFormularioExistente($id,$dsolicitud,$collapsed=1,$rol,$imprimir=0,$dirbase,$log,$solo_lectura)
 	 {
       $log->warning("DATOS SOLICITUD A MOSTRAR O IMPRIMIR: ROL: $rol:");
       $log->warning(print_r($dsolicitud,true));
+      //aplicamos comprobaciones para mostrar en el formulario, solo para centros y admin
+      if($rol!='alumno')
+         $this->aplicarComprobaciones($id,$dsolicitud,$log);
+
       //añadimo sidentificador al formulario completo
       $original='id="filasolicitud"';
       $destino='id="filasolicitud'.$id.'"';
@@ -56,8 +123,8 @@ class SolicitudController{
          $this->formulario=str_replace($original,$destino,$this->formulario);
          //deshabilitamos el bootn de duplicada para centros y alumnos 
          $original='<input type="radio" name="transporte"';
-         $destino='<input type="radio" name="transporte" disabled';
-         $this->formulario=str_replace($original,$destino,$this->formulario);
+         $destino='<input disabled type="radio" name="transporte" ';
+         //$this->formulario=str_replace($original,$destino,$this->formulario);
       }
       //si es para solo lectura desactivamos controles de entrada
       if($solo_lectura==1) 
@@ -193,7 +260,7 @@ class SolicitudController{
          if($skey=='modalidad_origen')
          {
             //$this->formulario=str_replace('id="'.$skey.'"','id="'.$skey.$id.'"',$this->formulario);
-            $this->formulario=str_replace('id="modalidad_origen" value="'.$sval.'"','id="modalidad_origen" value="'.$sval.'" selected',$this->formulario);
+            $this->formulario=str_replace('option value="'.$sval.'"','option value="'.$sval.'" selected',$this->formulario);
             continue;
          }
          //CAMPOS DE SOLICITA
@@ -220,14 +287,6 @@ class SolicitudController{
             continue;
          }
          if($skey=='hermanos_admision_reserva1' or $skey=='hermanos_admision_reserva2' or $skey=='hermanos_admision_reserva3' )
-         {
-            $indice=substr($skey, -1);
-            $origen='class="resh'.$indice.'" value="'.$sval.'"';
-            $destino='selected value="'.$sval.'"';
-            $this->formulario=str_replace($origen,$destino,$this->formulario);
-            continue;
-         }
-         if($skey=='hermanos_admision_dni_alumno1' or $skey=='hermanos_admision_dni_alumno2' or $skey=='hermanos_admision_dni_alumno3' )
          {
             $indice=substr($skey, -1);
             $origen='class="resh'.$indice.'" value="'.$sval.'"';
@@ -279,6 +338,12 @@ class SolicitudController{
                $destino='<div id="cajabaremo_monoparental" style="display:block"';
                $this->formulario=str_replace($origen,$destino,$this->formulario);
             }
+         }
+         if($skey=='transporte') 
+         {
+               $origen='name="transporte" value="'.$sval.'"';
+               $destino='name="transporte" value="'.$sval.'" checked ';
+               $this->formulario=str_replace($origen,$destino,$this->formulario);
          }
          //calculo puntos baremo
          if($skey=='baremo_puntos_totales' or $skey=='baremo_puntos_validados') 
@@ -342,6 +407,8 @@ class SolicitudController{
             if($skey=='reserva' and strrpos($dsolicitud['id_centro_estudios_origen'],'*')!==FALSE)	
             {
                $this->formulario=str_replace('class="row freserva" style="display:none"','class="row freserva"',$this->formulario);
+               $check="checked";
+               $this->formulario=str_replace('name="'.$skey.'" value="'.$sval.'"','name="'.$skey.'" value="'.$sval.'" '.$check,$this->formulario);
             }
             if($skey=='conjunta' and $sval=='si')
             {
@@ -671,6 +738,25 @@ class SolicitudController{
         }
         $this->redirect();
     }
+   public function getComprobaciones($id)
+	{
+      $comp=array();
+		$sql="SELECT * FROM baremo WHERE id_alumno=$id";
+ 		$query=$this->getConexion()->query($sql);
+		if($query)
+      {
+         while($r=$query->fetch_object())
+         {
+            $comp["comprobar_renta_inferior"]=$r->comprobar_renta_inferior;
+            $comp["comprobar_discapacidad_alumno"]=$r->comprobar_discapacidad_alumno;
+            $comp["comprobar_discapacidad_hermanos"]=$r->comprobar_discapacidad_hermanos;
+            $comp["comprobar_familia_numerosa"]=$r->comprobar_familia_numerosa;
+            $comp["comprobar_familia_monoparental"]=$r->comprobar_familia_monoparental;
+         }
+         return $comp;
+      }
+		else return 0;
+	}
      
 }
 ?>

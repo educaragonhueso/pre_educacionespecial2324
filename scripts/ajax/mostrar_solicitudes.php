@@ -34,9 +34,9 @@ $id_centro=$_POST['id_centro'];
 
 if($_POST['rol']=='admin' || $_POST['rol']=='sp') 
 {
-	$list=new ListadosController('alumnos');
+	$list=new ListadosController('alumnos',$conexion,$estado_convocatoria);
 	$log_mostrar_solicitudes->warning('IDCENTRO: '.$id_centro);
-	$solicitudes=$list->getSolicitudes($id_centro,$estado_convocatoria,'normal','normal',$solicitud,$log_mostrar_solicitudes,0,$rol,$provincia); 
+	$solicitudes=$list->getSolicitudes($id_centro,'normal','normal',$solicitud,$log_mostrar_solicitudes,0,$rol,$provincia); 
 	$log_mostrar_solicitudes->warning('MOSTRANDO SOLICITUDES');
 	print_r($list->showSolicitudes($solicitudes,'centro',$id_centro));
 }

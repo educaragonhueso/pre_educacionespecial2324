@@ -41,7 +41,7 @@ else
  $nombre_listado='LISTADO DEFINITIVO FASE II TVA';
 $filtro_datos='<input type="text" class="form-control" id="filtrosol"  placeholder="Introduce datos del alumno"><small id="emailHelp" class="form-text text-muted"></small>';
 $utils=new UtilidadesAdmision($conexion);
-$list=new ListadosController('matricula',$conexion);
+$list=new ListadosController('matricula',$conexion,$estado_convocatoria);
 $tsolicitud=new Solicitud($conexion);
 $tcentro=new Centro($conexion,1,'ajax');
 $nsolicitudes=$tcentro->getNumSolicitudes();

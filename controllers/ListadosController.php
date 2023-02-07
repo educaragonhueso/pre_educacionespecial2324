@@ -3,22 +3,23 @@ class ListadosController{
    public $conexion;
    public $allalumnos; 
    public $tabla; 
-   public function __construct($tabla="matricula", $conexion=1) 
+   public function __construct($tabla="matricula", $conexion=1,$estado_convocatoria) 
    {
       $this->tabla=$tabla;
       $this->conexion=$conexion;
+      $this->estado_convocatoria=$estado_convocatoria;
    }
-   public function showListadoSolicitudes($rol,$id_centro,$estado_convocatoria,$solicitud,$log,$id_alumno,$provincia)
+   public function showListadoSolicitudes($rol,$id_centro,$solicitud,$log,$id_alumno,$provincia)
    {
       $res='';
       $form_nuevasolicitud='<div class="input-group-append" id="cab_fnuevasolicitud"><button class="btn btn-outline-info" id="nuevasolicitud" type="button">Nueva solicitud</button></div>';
       $filtro_solicitudes='<input type="text" class="form-control" id="filtrosol"  placeholder="Introduce datos del alumno o centro"><small id="emailHelp" class="form-text text-muted"></small>';
       $log->warning("ENTRANDO EN SHOWLISTADOSOLICITUDES, rol: $rol, idcentro: $id_centro estado: $estado_convocatoria");
-	   $solicitudes=$this->getSolicitudes($id_centro,$estado_convocatoria,'normal','normal',$solicitud,$log,$id_alumno,$rol,$provincia); 
+	   $solicitudes=$this->getSolicitudes($id_centro,'normal','normal',$solicitud,$log,$id_alumno,$rol,$provincia); 
       
       if($rol!='alumno' and $rol!='anonimo')
 	   {
-        if($estado_convocatoria<=20)
+        if($this->estado_convocatoria<=20)
    	      $res.=$form_nuevasolicitud;
 		   $res.=$filtro_solicitudes;
       }
@@ -164,8 +165,9 @@ class ListadosController{
       $allmatriculas=$matricula->getMatriculados($id_centro);
 	return $allmatriculas;
 	}
-  public function getSolicitudes($id_centro,$estado_convocatoria,$modo,$subtipo_listado,$solicitud,$log,$id_alumno,$rol,$provincia)
+  public function getSolicitudes($id_centro,$modo,$subtipo_listado,$solicitud,$log,$id_alumno,$rol,$provincia)
   {
+      $estado_convocatoria=$this->estado_convocatoria;
       $log->warning("ENTRANDO EN GET SOLICITUDEs, subtipo: $subtipo_listado estado: $estado_convocatoria modo $modo rol $rol, Provincia: $provincia");
 		if($modo=='normal')// listados previos al sorteo
     	{
@@ -301,10 +303,14 @@ class ListadosController{
 	
 		$li="<tr class='filasol' id='filasol".$sol->id_alumno."' style='color:black'>";
       $li.="<td class='calumno dalumno prueba' data-token='".$sol->token."'  data-idal='".$sol->id_alumno."'>".$sol->id_alumno."-".strtoupper($sol->apellido1).",".strtoupper($sol->nombre)."</td>";
-      if($sol->tipo=='provisional')
-         $rec="Ver reclamación listado provisional";
-      else
-         $rec="No hay reclamación";
+     
+      if($this->estado_convocatoria>ESTADO_FININSCRIPCION)
+      { 
+         if($sol->tipo=='provisional')
+            $rec="Ver reclamación listado provisional";
+         else
+            $rec="No hay reclamación";
+      }
       $token=$sol->token;
       if(isset($sol->id_centro_destino))
          $id_centro=$sol->id_centro_destino;
@@ -1072,9 +1078,12 @@ class ListadosController{
          $vacantes_total['dos']=$vacantes_total['dos']+$amatcentros[$i]['vacantesdos'];
          
          $i++;
+         if($c->id_centro==22002338)
+         {
+            $log->warning("OBTENIENDO MATRICULA DE  CENTROS CONVOCATORIA: $estado_convocatoria");
+            $log->warning(print_r($matcentros,true));
+         }
       }
-    //  $log->warning("OBTENIENDO MATRICULA DE  CENTROS CONVOCATORIA: $estado_convocatoria");
-    //  $log->warning(print_r($amatcentros,true));
       if($rol=='admin') return $vacantes_total;
       return $amatcentros;
 	}

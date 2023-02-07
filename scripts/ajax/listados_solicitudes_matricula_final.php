@@ -24,7 +24,7 @@ $filtro_datos='<input type="text" class="form-control" id="filtrosol"  placehold
 $conectar=new Conectar('../../config/config_database.php');
 $conexion=$conectar->conexion();
 
-$list=new ListadosController('alumnos',$conexion);
+$list=new ListadosController('alumnos',$conexion,$estado_convocatoria);
 $tcentro=new Centro($conexion,$_POST['id_centro'],'ajax');
 $ccentros=new CentrosController($conexion);
 $tcentro->setNombre();
@@ -59,7 +59,7 @@ $log_listados_matricula_final->warning("OBTENIENDO LISTADOS MATRICULA FINAL, CEN
 //Esto solo puede hacerse en el momento q finalice el plazo de provisionales!!!!!!!!
 //$solicitudes=$solicitud->genSolDefinitivas($id_centro,$vacantes_ebo,$vacantes_tva,2); 
 //mostramos las solitudes completas sin incluir borrador
-$solicitudes=$list->getSolicitudes($id_centro,$estado_convocatoria,'matriculafinal',$subtipo_listado,$tsolicitud,$log_listados_matricula_final,$id_alumno,$rol); 
+$solicitudes=$list->getSolicitudes($id_centro,'matriculafinal',$subtipo_listado,$tsolicitud,$log_listados_matricula_final,$id_alumno,$rol); 
 $subtipo='ADMITIDOS MATRÍCULA FINAL';
 
 print("<button type='button' class='btn btn-info' onclick='window.open(\"".DIR_PROV_WEB.$subtipo_listado.".pdf\",\"_blank\");'>Descarga listado</button>");

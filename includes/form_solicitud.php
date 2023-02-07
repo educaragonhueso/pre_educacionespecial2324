@@ -93,7 +93,7 @@ $formsol.=
                     </div>
                     <div class="col-md-4">
                         <div class="md-form mb-0">
-                      	  Correo Electrónico
+                      	  Correo Electrónico (para recibir confirmación)
                             <input type="email" id="email" value="" name="email" placeholder="Correo alumno" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control" required>
                         </div>
                     </div>
@@ -203,7 +203,7 @@ $formsol.=
                     <div class="col-md-2">
                         <div class="md-form mb-0">
 			Localidad*
-			<input type="text" id="loc_dfamiliar" value="" name="loc_dfamiliar" placeholder="Localidad"   class="form-control">
+			<input type="text" id="loc_dfamiliar" value="" name="loc_dfamiliar" placeholder="Localidad" class="form-control" required>
                         </div>
                     </div>
                     <div class="col-md-5">
@@ -231,7 +231,7 @@ $formsol.=
  <div class="row">
    <div class="md-form mb-0">
       <div class="radio">
-         <label><input id="nuevaesc" type="radio" name="nuevaesc" value="1" data-reserva="1" class="nuevaesc">Nueva escolarización</label>
+         <label><input id="nuevaesc" type="radio" name="nuevaesc" value="1" data-reserva="1" class="nuevaesc">El alumno no está escolarizado en ningún centro en el curso '.$_SESSION["cursoanterior_largo"].' </label>
       </div>
       <div class="radio" data-target="tnuevaesc" >
          <label><input id="renesc" type="radio" name="nuevaesc" value="2" data-reserva="0">Alumno escolarizado curso '.$_SESSION["cursoanterior_largo"].'</label>
@@ -375,10 +375,10 @@ $formsol.=
             </div>
          </div>
       </div>
-     <div class="col-md-3">
+     <div class="col-md-2">
          <div class="md-form mb-0">
             <div class="form-group">
-               Solicita reserva de plaza?
+               Solicita reserva de plaza
                <select class="form-control" id="hermanos_admision_reserva1" value="" name="hermanos_admision_reserva1">
 					    <option class="resh1" value="0">NO SOLICITA RESERVA</option>
 					    <option class="resh1" value="1">SÍ SOLICITA RESERVA</i></option>
@@ -389,7 +389,13 @@ $formsol.=
      <div class="col-md-3">
          <div class="md-form mb-0">
              DNI/NIE Alumno <i>(solo si es mayor de 14 años)</i> 
-             <input type="text" id="hermanos_admision_dni_alumno1" value="" name="hermanos_admision_dni_alumno1" placeholder="DNI/NIE alumno" pattern="[a-zA-Z0-9]{9}" class="form-control" >
+             <input type="text" id="hermanos_admision_dni_alumno1" value="" name="hermanos_admision_dni_alumno1" placeholder="DNI/NIE hermano" pattern="[a-zA-Z0-9]{9}" class="form-control" >
+         </div>
+      </div>
+     <div class="col-md-4">
+         <div class="md-form mb-0">
+             Centro origen hermano 1
+             <input type="text" id="hermanos_admision_id_centro_destino1" value="" name="hermanos_admision_id_centro_destino1" placeholder="Centro solicitado (por defecto igual que su hermano)" class="form-control" >
          </div>
       </div>
    </div>
@@ -439,10 +445,10 @@ $formsol.=
             </div>
          </div>
      </div>
-     <div class="col-md-3">
+     <div class="col-md-2">
          <div class="md-form mb-0">
             <div class="form-group">
-               Solicita reserva de plaza?
+               Solicita reserva de plaza
                <select class="form-control" id="hermanos_admision_reserva2" value="" name="hermanos_admision_reserva2">
 					    <option class="resh2" value="0">NO SOLICITA RESERVA</option>
 					    <option class="resh2" value="1">SÍ SOLICITA RESERVA</i></option>
@@ -454,6 +460,12 @@ $formsol.=
          <div class="md-form mb-0">
              DNI/NIE Alumno <i>(solo si es mayor de 14 años)</i> 
              <input type="text" id="hermanos_admision_dni_alumno2" value="" name="hermanos_admision_dni_alumno2" placeholder="DNI/NIE alumno" pattern="[a-zA-Z0-9]{9}" class="form-control" >
+         </div>
+      </div>
+     <div class="col-md-4">
+         <div class="md-form mb-0">
+             Centro origen hermano 2
+             <input type="text" id="hermanos_admision_id_centro_destino2" value="" name="hermanos_admision_id_centro_destino2" placeholder="Centro solicitado (por defecto igual que su hermano)" class="form-control" >
          </div>
       </div>
    </div>
@@ -503,10 +515,10 @@ $formsol.=
             </div>
          </div>
      </div>
-     <div class="col-md-3">
+     <div class="col-md-2">
          <div class="md-form mb-0">
             <div class="form-group">
-               Solicita reserva de plaza?
+               Solicita reserva de plaza
                <select class="form-control" id="hermanos_admision_reserva3" value="" name="hermanos_admision_reserva3">
 					    <option class="resh3" value="0">NO SOLICITA RESERVA</option>
 					    <option class="resh3" value="1">SÍ SOLICITA RESERVA</i></option>
@@ -518,6 +530,12 @@ $formsol.=
          <div class="md-form mb-0">
              DNI/NIE Alumno <i>(solo si es mayor de 14 años)</i> 
              <input type="text" id="hermanos_admision_dni_alumno3" value="" name="hermanos_admision_dni_alumno3" placeholder="DNI/NIE alumno" pattern="[a-zA-Z0-9]{9}" class="form-control" >
+         </div>
+      </div>
+     <div class="col-md-4">
+         <div class="md-form mb-0">
+             Centro origen hermano 3
+             <input type="text" id="hermanos_admision_id_centro_destino3" value="" name="hermanos_admision_id_centro_destino3" placeholder="Centro solicitado (por defecto igual que su hermano)" class="form-control" >
          </div>
       </div>
    </div>
@@ -622,8 +640,8 @@ $formsol.=
       <div class="md-form mb-0">
          <input type="checkbox" id="baremo_marcado_proximidad_domicilio" name="baremo_marcado_proximidad_domicilio" value="1" data-baremo="1" >
          <label>Proximidad domicilio a efectos de baremo</label>
-         <span class="ttip" data-toggle="tooltip" title="Texto proximidad domicilio"></span>
-         <br><span class="ttip" data-toggle="tooltip" title="Texto proximidad domicilio"><i class="infobaremo">Ver información detallada</i></span>
+         <span class="ttip" data-toggle="tooltip" title=""></span>
+         <br><span class="ttip" data-toggle="tooltip" title=""><i class="infobaremo">Ver información del baremo</i></span>
          <div id="cajabaremo_domicilio" class="cajabaremo"> 
             <div class="radio">
             <label><input type="radio" name="baremo_proximidad_domicilio" value="dfamiliar" data-baremo="6" class="proxdomi">Domicilio familiar en zona de escolarización</label>
@@ -684,11 +702,10 @@ $formsol.=
       <div class="md-form mb-0">
          <input type="checkbox" id="baremo_renta_inferior" name="baremo_renta_inferior" value="1" data-baremo="5" >
          <label> Renta inferior IMV (Ingreso Mínimo vital)</label>
-         <br><span class="ttip" data-toggle="tooltip" title="Texto proximidad domicilio"><i class="infobaremo">Ver información detallada</i></span>
+         <label id="msg_comprobacion_renta_inferior" class="botonform" style="display:none;color:red">Estado: PENDIENTE DE COMPROBAR</label>
+         <br><span class="ttip" data-toggle="tooltip" title=""><i class="infobaremo">Ver información del baremo</i></span>
       </div>
       <input type="hidden" id="baremo_validar_renta_inferior" value="0" name="baremo_validar_renta_inferior">
-      <button name="boton_baremo_validar_renta_inferior" type="button" class="btn btn-outline-dark validar">Validar renta</button>
-      <button name="boton_baremo_comprobar_renta" type="button" class="btn btn-outline-dark comprobar" tipo="imv">Comprobar renta</button>
     </div>
    </div>
 <!--FIN FILA DATOS-->
@@ -699,7 +716,7 @@ $formsol.=
                <div class="md-form mb-0">
             	   <input type="checkbox" id="baremo_acogimiento" name="baremo_acogimiento" value="1" data-baremo="1"  >
       				<label>Situación de acogimiento</label>
-                  <br><span class="ttip" data-toggle="tooltip" title="Texto proximidad domicilio"><i class="infobaremo">Ver información detallada</i></span>
+                  <br><span class="ttip" data-toggle="tooltip" title=""><i class="infobaremo">Ver información del baremo</i></span>
                </div>
                <input type="hidden" id="baremo_validar_acogimiento" value="0" name="baremo_validar_acogimiento">
                <button name="boton_baremo_validar_acogimiento" type="button" class="btn btn-outline-dark validar">Validar situación de acogimiento</button>
@@ -708,7 +725,7 @@ $formsol.=
                <div class="md-form mb-0">
                   <input type="checkbox" id="baremo_genero" name="baremo_genero" value="1" data-baremo="1">
                   <label>Víctima de violencias de género</label>
-                  <br><span class="ttip" data-toggle="tooltip" title="Texto proximidad domicilio"><i class="infobaremo">Ver información detallada</i></span>
+                  <br><span class="ttip" data-toggle="tooltip" title=""><i class="infobaremo">Ver información del baremo</i></span>
                </div>
             <input type="hidden" id="baremo_validar_genero" value="0" name="baremo_validar_genero">
             <button name="boton_baremo_validar_genero" type="button" class="btn btn-outline-dark validar">Validar víctima de género</button>
@@ -717,7 +734,7 @@ $formsol.=
                <div class="md-form mb-0">
                   <input type="checkbox" id="baremo_terrorismo" name="baremo_terrorismo" value="1" data-baremo="1">
                   <label> Víctima de terrorismo</label>
-                  <br><span class="ttip" data-toggle="tooltip" title="Texto proximidad domicilio"><i class="infobaremo">Ver información detallada</i></span>
+                  <br><span class="ttip" data-toggle="tooltip" title=""><i class="infobaremo">Ver información del baremo</i></span>
                </div>
                <input type="hidden" id="baremo_validar_terrorismo" value="0" name="baremo_validar_terrorismo">
                <button name="boton_baremo_validar_terrorismo" type="button" class="btn btn-outline-dark validar">Validar víctima de terrorismo</button>
@@ -726,7 +743,7 @@ $formsol.=
                <div class="md-form mb-0">
                   <input type="checkbox" id="baremo_parto" name="baremo_parto" value="1" data-baremo="1">
                   <label> Parto múltiple</label>
-                  <br><span class="ttip" data-toggle="tooltip" title="Texto proximidad domicilio"><i class="infobaremo">Ver información detallada</i></span>
+                  <br><span class="ttip" data-toggle="tooltip" title=""><i class="infobaremo">Ver información del baremo</i></span>
                </div>
                <input type="hidden" id="baremo_validar_parto" value="0" name="baremo_validar_parto">
                <button name="boton_baremo_validar_parto" type="button" class="btn btn-outline-dark validar">Validar parto múltiple</button>
@@ -1004,13 +1021,14 @@ $formsol.=
    <div class="col-md-12">
       <input type="checkbox" id="baremo_marcado_discapacidad" name="baremo_marcado_discapacidad" value="1" data-baremo="1" >
       <label>Discapacidad a efectos de baremo:</label>
-      <br><span class="ttip" data-toggle="tooltip" title="Texto proximidad domicilio"><i class="infobaremo">Ver información detallada</i></span>
+      <br><span class="ttip" data-toggle="tooltip" title=""><i class="infobaremo">Ver información del baremo</i></span>
       <div id="cajabaremo_discapacidad" class="cajabaremo"> 
          <div class="radio">
             <label><b>DISCAPACIDAD</b></label>
          </div>
          <div class="radio">
             <label><input type="checkbox" name="baremo_discapacidad_alumno" value="1" data-baremo="1">Del alumno</label>
+            <label id="msg_comprobacion_discapacidad_alumno" class="botonform" style="display:none;color:red;width:16%">Estado: PENDIENTE DE COMPROBAR</label>
          </div>
          <div id="caja_fbaremo_discapacidad_alumno">            
                <input value="ficherodiscapacidad_alumno" type="file" name="baremo_file_discapacidad_alumno" campobaremo="discapacidad_alumno" id="fbaremo_discapacidad_alumno" style="display:none" class="fbaremo">
@@ -1019,10 +1037,9 @@ $formsol.=
          <a id="enlacefjdiscapacidad_alumno" style="display:none" class="enlacefbaremo" target="_blank">Ver fichero</a>
          <a id="borrardiscapacidad_alumno" class="enlacefbaremo enlaceborrarfichero" style="display:none" class="enlacefbaremo" target="_blank">Retirar fichero</a>
          <input type="hidden" id="baremo_validar_discapacidad_alumno" value="0" name="baremo_validar_discapacidad_alumno">
-         <button name="boton_baremo_validar_discapacidad_alumno" type="button" class="btn btn-outline-dark validar">Validar discapacidad alumno</button>
-         <button name="boton_baremo_comprobar_discapacidad_alumno" type="button" class="btn btn-outline-dark comprobar" tipo="discapacidad">Comprobar discapacidad alumno</button>
          <div class="radio">
             <label><input type="checkbox" name="baremo_discapacidad_hermanos" value="1" data-baremo="1">De progenitores/hermanos</label>
+            <label id="msg_comprobacion_discapacidad_hermanos" class="botonform" style="display:none;color:red;width:16%">Estado: PENDIENTE DE COMPROBAR</label>
          </div>
          <div id="cajadatosdiscapacidad" style="display:none">
             <div class="row">
@@ -1099,8 +1116,6 @@ $formsol.=
 <div class="row">
    <div class="col-md-4">
       <input type="hidden" id="baremo_validar_discapacidad_hermanos" value="0" name="baremo_validar_discapacidad_hermanos">
-      <button name="boton_baremo_validar_discapacidad_hermanos" type="button" class="btn btn-outline-dark validar">Validar discapacidad progenitores/hermanos</button>
-      <button name="boton_baremo_comprobar_discapacidad_hermanos" type="button" class="btn btn-outline-dark comprobar" tipo="discapacidad">Comprobar discapacidad progenitores/hermanos</button>
    </div>
 </div>
 <!--FIN FILA DATOS-->
@@ -1115,6 +1130,7 @@ $formsol.=
        <div class="col-md-4">
          <input type="checkbox" id="baremo_marcado_numerosa" name="baremo_marcado_numerosa" value="1" data-baremo="1" >
          <label>Familia numerosa a efectos de baremo:</label>
+         <label id="msg_comprobacion_familia_numerosa" class="botonform" style="display:none;color:red;width:50%">Estado: PENDIENTE DE COMPROBAR</label>
          <div id="cajabaremo_numerosa" class="cajabaremo"> 
             <div class="radio">
                <label><b> FAMILIA NUMEROSA</b></label>
@@ -1125,17 +1141,12 @@ $formsol.=
             <div class="radio">
                <label><input type="radio" name="baremo_tipo_familia_numerosa" value="2" data-baremo="2">Especial</label>
             </div>
-            <div id="caja_fbaremo_numerosa">            
-                  <input value="ficheronumerosa" type="file" name="baremo_file_numerosa" campobaremo="numerosa" id="fbaremo_numerosa" style="display:none" class="fbaremo">
-                  <label for="fbaremo_numerosa" id="fbaremonumerosa" class="botonform">Agrega fichero justificativo familia numerosa</label>
-            </div>
-            <a id="enlacefjnumerosa" style="display:none" class="enlacefbaremo" target="_blank">Ver fichero</a>
-            <a id="borrarnumerosa" class="enlacefbaremo enlaceborrarfichero" style="display:none" class="enlacefbaremo" target="_blank">Retirar fichero</a>
          </div>
       </div>
        <div class="col-md-4">
          <input type="checkbox" id="baremo_marcado_monoparental" name="baremo_marcado_monoparental" value="1" data-baremo="1" >
          <label>Familia monoparental a efectos de baremo:</label>
+         <label id="msg_comprobacion_familia_monoparental" class="botonform" style="display:none;color:red;width:55%">Estado: PENDIENTE DE COMPROBAR</label>
          <div id="cajabaremo_monoparental" class="cajabaremo"> 
             <div class="radio">
                <label><b> FAMILIA MONOPARENTAL</b></label>
@@ -1146,12 +1157,6 @@ $formsol.=
             <div class="radio">
                <label><input type="radio" name="baremo_tipo_familia_monoparental" value="2" data-baremo="2">Especial</label>
             </div>
-            <div id="caja_fbaremo_monoparental">            
-                  <input value="ficheromonoparental" type="file" name="baremo_file_monoparental" campobaremo="monoparental" id="fbaremo_monoparental" style="display:none" class="fbaremo">
-                  <label for="fbaremo_monoparental" id="fbaremomonoparental" class="botonform">Agrega fichero justificativo familia monoparental</label>
-            </div>
-            <a id="enlacefjmonoparental" style="display:none" class="enlacefbaremo" target="_blank">Ver fichero</a>
-            <a id="borrarmonoparental" class="enlacefbaremo enlaceborrarfichero" style="display:none" class="enlacefbaremo" target="_blank">Retirar fichero</a>
             <p>Los criterios de familia 1.6 y 1.7 no serán acumulables, siendo aplicable únicamente el concepto que otorgue mayor puntuación de acuerdo con lo previsto en el artículo 16 de la<a style="color:darkblue!important" href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwi_rLLotNLuAhXC8uAKHU5sDUwQFjABegQIBRAC&url=https%3A%2F%2Fwww.aragon.es%2Fdocuments%2F20127%2F16716070%2FBOA%2BORDEN%2BCDS-384-2019%2Bde%2B4%2Bde%2Babril%2Bfamilias%2Bmonoparentales%2Barag%25C3%25B3n.pdf%2F9cb6d8eb-b89c-171a-3c37-9c725fb53ef7%3Ft%3D1570188961989&usg=AOvVaw3CjtGi1we5poLb6wFfZxST" target="_blank"> Orden CDS/384/2019, de 4 de abril</a></p>
          </div>
       </div>
@@ -1162,26 +1167,28 @@ if($rol!='alumno' and $rol!='anonimo')
    if($rol=='centro')
       $disabled='disabled';
    else 
-$disabled='';
-
-   $formsol.='
-   <!--CRITERIOS-->
-   <div class="col-md-4">
-      <div class="md-form mb-0">
-         <div class="radio">
-            <label><b>CRITERIOS DE PRIORIDAD</b></label>
+      $disabled='';
+   if($rol=='admin' or $rol=='sp' or $rol=='centro')
+   {
+      $formsol.='
+      <!--CRITERIOS-->
+      <div class="col-md-4">
+         <div class="md-form mb-0">
+            <div class="radio">
+               <label><b>CRITERIOS DE PRIORIDAD</b></label>
+            </div>
          </div>
+            <div class="radio">
+               <label><input type="radio" name="transporte" value="1" '.$disabled.'>Con Ruta de Transporte</label>
+            </div>
+               <label><i style="font-size:14px">Nueva escolarización de localidades con ruta de transporte (art39) Decreto 51/2021 </i></label>
+            <div class="radio">
+               <label><input type="radio" name="transporte" value="2" '.$disabled.'>No prioridad</label>
+            </div>
       </div>
-         <div class="radio">
-            <label><input type="radio" name="transporte" value="1" '.$disabled.'>Con Ruta de Transporte</label>
-         </div>
-            <label><i style="font-size:14px">Nueva escolarización de localidades con ruta de transporte (art39) Decreto 51/2021 </i></label>
-         <div class="radio">
-            <label><input type="radio" name="transporte" value="2" '.$disabled.'>No prioridad</label>
-         </div>
-   </div>
-   <!--FIN CRITERIOS-->
-   ';
+      <!--FIN CRITERIOS-->
+      ';
+   }
 }
 $formsol.='
 </div>
@@ -1191,14 +1198,11 @@ $formsol.='
    <div class="col-md-4">
       <div class="md-form mb-0">
          <input type="hidden" id="baremo_validar_tipo_familia_numerosa" value="0" name="baremo_validar_tipo_familia_numerosa">
-         <button name="boton_baremo_validar_tipo_familia_numerosa" type="button" class="btn btn-outline-dark validar">Validar familia numerosa</button>
-         <button name="boton_baremo_comprobar_familianumerosa" type="button" class="btn btn-outline-dark comprobar" tipo="familianumerosa">Comprobar familia numerosa</button>
       </div>
    </div>
    <div class="col-md-4">
       <div class="md-form mb-0">
          <input type="hidden" id="baremo_validar_tipo_familia_monoparental" value="0" name="baremo_validar_tipo_familia_monoparental">
-         <button name="boton_baremo_validar_tipo_familia_monoparental" type="button" class="btn btn-outline-dark validar">Validar familia monoparental</button>
       </div>
    </div>
 </div>

@@ -25,6 +25,7 @@ $id_centro=$_POST['id_centro'];
 $tipo=$_POST['tipolistado'];
 $rol=$_POST['rol'];
 $provincia=$_POST['provincia'];
+$estado_convocatoria=$_POST['estado_convocatoria'];
 $subtipo_pdf=$_POST['tipolistado'];//dentro de cada tipo, el subtipo de listado
 $subtipo_listado='vacantes';
 
@@ -38,7 +39,7 @@ $tiposol=0;
 $fase_sorteo=0;
 $modo='pdf';
 
-$list=new ListadosController('alumnos',$conexion);
+$list=new ListadosController('alumnos',$conexion,$estado_convocatoria);
 $centros_cont=new CentrosController(0);
 
 ##################################################################################

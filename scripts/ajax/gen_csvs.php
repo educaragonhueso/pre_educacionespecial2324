@@ -37,7 +37,7 @@ $cabecera="campos_cabecera_csv_".$subtipo_csv;
 $camposdatos="campos_bbdd_csv_".$subtipo_csv;
 $modo='csv';
 
-$list=new ListadosController('alumnos',$conexion);
+$list=new ListadosController('alumnos',$conexion,$estado_convocatoria);
 $centros_cont=new CentrosController(0);
 $solicitud=new Solicitud($conexion);
 
@@ -49,7 +49,7 @@ $log_gencsvs->warning(print_r($_POST,true));
 //si es para datos de matricula, con rol de admin
 if($subtipo_original=='csv_sol')
 {
-   $solicitudes=$list->getSolicitudes($id_centro,$estado_convocatoria,$modo,$subtipo_listado,$solicitud,$log_gencsvs,0,$rol,$provincia); 
+   $solicitudes=$list->getSolicitudes($id_centro,$modo,$subtipo_listado,$solicitud,$log_gencsvs,0,$rol,$provincia); 
 }
 //si es para datos de matricula, con rol de admin
 if($subtipo_original=='csv_mat_admin' && $rol=='admin')

@@ -2,9 +2,10 @@
 class CentrosController{
    public $conexion;
 	
-   public function __construct($conexion=null) 
+   public function __construct($conexion=null,$estado_convocatoria) 
    {
      $this->conexion=$conexion;
+     $this->estado_convocatoria=$estado_convocatoria;
    }
 	public function index()
 	{
@@ -110,7 +111,7 @@ coordenadas!='nodata'");
    }
    public function showTabla($rol='centro',$id_centro='',$datos='matricula',$cabecera='si',$log)
    {
-      $list=new ListadosController($datos,0);
+      $list=new ListadosController($datos,0,$this->estado_convocatoria);
       //Creamos el objeto centro
       $centro=new Centro($this->conexion,$id_centro);
       $centro->setNombre();

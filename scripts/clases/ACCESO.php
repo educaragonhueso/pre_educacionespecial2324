@@ -14,8 +14,8 @@ class ACCESO
 		$this->c =$this->dbconnect($bd['host'],$bd['user'],$bd['pass']);
 		mysqli_select_db($this->c,$bd['database']);
 		$this->c->set_charset("utf8");
-		$q="SET NAMES 'UTF8'";
-		$this->c->query($q);
+		//$q="SET NAMES 'UTF8'";
+		//$this->c->query($q);
 		$this->csv_file=$f;
 	}
   public function generar_solicitudes($ns)
@@ -189,8 +189,8 @@ class ACCESO
  	fclose($gestor);
 	return $total_filas_insertadas;
 	} 
-  public function cargaMatriculaEspecial($fecha) 
-	{
+   public function cargaMatriculaEspecial($fecha,$curso) 
+   {
 	$edadtva=21;
 	$edadebo=18;
 	$total_filas=0;
@@ -225,7 +225,7 @@ class ACCESO
       $m_nombre_centro=str_replace('""','',$m_nombre_centro);	
 		$m_codigo_centro=$matricula[4];
       $m_codigo_centro=str_replace('"','',$m_codigo_centro);	
-		$m_tipo_alumno_futuro=$this->calcula_alumno($matricula[8]);	
+		$m_tipo_alumno_futuro=$this->calcula_alumno($matricula[8],$curso);	
 		$m_estado="continua";
 		
 		$edad=date_diff(date_create($m_fnac), date_create($fecha))->y;
@@ -273,10 +273,10 @@ class ACCESO
 	$res=array($total_filas_insertadas,$nedad,$total_filas);
 	return $res;
 	} 
-  public function calcula_alumno($s) 
+  public function calcula_alumno($s,$curso) 
 	{
 	$af=explode('/',$s);
-	$res=2022-$af[2];
+	$res=$curso-$af[2];
 	if($res==19) $t='ebo';
 	elseif($res==21 or $res==20) $t='tva';
 	else $t='out';
@@ -291,14 +291,12 @@ class ACCESO
       $fecha=date("Y-m-d", $timestamp);
 	return $fecha ;
 	} 
-
-  private function dbconnect() 
-	{
-	$conn =mysqli_connect($this->bd['host'],$this->bd['user'],$this->bd['pass']) or die ("<br/>No conexion servidor");
-    	#$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD) or die ("<br/>No conexion servidor");
-	$this->c=$conn;     
-	mysqli_select_db($conn,$this->bd['database']) or die ("<br/>No se puedo seleccionar la bases de datos");
-	return $conn;
+   private function dbconnect() 
+   {
+	   $conn =mysqli_connect($this->bd['host'],$this->bd['user'],$this->bd['pass']) or die ("<br/>No conexion servidor");
+	   $this->c=$conn;     
+	   mysqli_select_db($conn,$this->bd['database']) or die ("<br/>No se puedo seleccionar la bases de datos");
+	   return $conn;
   	}
  
   public function gen_csvs() 

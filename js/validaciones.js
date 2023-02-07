@@ -18,6 +18,7 @@ function validarFormulario(fd,id,est)
    var cpdf='0';
    var locdf='0';
    console.log("VALIDANDO FORMULARIO, DATOS:");
+   console.log(fd);
    //comp datos sección datos de EXPONE
    for (let i = 0; i < res.length; i++)
    {
@@ -41,6 +42,10 @@ function validarFormulario(fd,id,est)
           {
             if(edad<18 || edad>20) return 'notva';
           }
+          else if(est=='dos')
+          {
+            if(edad!=2) return 'nodos';
+          }
           if(edad>=14)
           {
                  if(campo_dnisol(fd)==0)
@@ -49,7 +54,6 @@ function validarFormulario(fd,id,est)
                      $('input[name=dni_alumno]').focus();	
                      return mensaje;
                  }
-
           }
       }
       //comp datos identificadores
@@ -93,8 +97,12 @@ function validarFormulario(fd,id,est)
       }
       if(d[0].indexOf('loc_dfamiliar')==0)
       {
-         if(d[1].length<2 | d[1]=='nodata')
+         console.log("comprobando localidad: "+d[1].length);
+         if(d[1].length<2 | d[1]=='nodata' | d[1]=='')
+         {
             locdf='1';
+            return 'Indica la localidad';
+         }
       }
       if(d[0].indexOf('nuevaesc')==-1)
       {
@@ -173,7 +181,10 @@ function validarFormulario(fd,id,est)
    }
    //si se marca la prox de domicilio debe haber datos
    if(marcadopd=='1' & (cadf=='1' | cpdf=='1' | locdf=='1') & mdpd=='1')
+   {
+      console.log("no hay localidad en proximidad de domicilio!!!!!!!!!!!!!!!!! ");
       return 'Completa la información del domicilio familiar, calle, cp y localidad';
+   }
    if(marcadofn=='1')
    {
       if(bfn=='0') return 'Debes completar la información de familia numerosa';
@@ -388,7 +399,7 @@ function validarHermanoAdmision(fd) {
 }
 function validarFecha(fnac,est,edad) {
    //comprobamos q sea ebo o tva
-   console.log("validando fecha");
+   console.log("validando fecha, edad: "+edad);
    if(est=='ebo')
    {
    console.log("validando fecha ebo");
@@ -398,6 +409,11 @@ function validarFecha(fnac,est,edad) {
    {
    console.log("validando fecha tva");
       if(edad<18 || edad>20) return 'notva';
+   }
+   else if(est=='dos')
+   {
+      console.log("validando fecha dos años");
+      if(edad!=2) return 'nodos';
    }
    return 1;
 }

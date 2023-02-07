@@ -71,7 +71,8 @@ class Centro{
    //OLD
     public function getSolicitudes($id_centro,$tipoestudios,$log,$estado_convocatoria=0)
 		{
-         if($estado_convocatoria>=50)
+         //if($estado_convocatoria>=50)
+         if($estado_convocatoria>=ESTADO_DEFINITIVOS)
 			   $sql="SELECT count(*) as nsol FROM alumnos_definitiva where id_centro_destino=$id_centro and tipoestudios='$tipoestudios' and fase_solicitud!='borrador' and est_desp_sorteo='admitida'";
 			else
             $sql="SELECT count(*) as nsol FROM alumnos where id_centro_destino=$id_centro and tipoestudios='$tipoestudios' and fase_solicitud!='borrador' and est_desp_sorteo='admitida'";

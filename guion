@@ -1,8 +1,41 @@
-
-
 ANTES DE EMPEZAR EN PRO
 
-   explicación número aleatorio
+FASE PREVIA
+
+   Borrar cuentas de usuarios de pruebas y de alumnos o solicitudes, baremo, etc...
+   Hacer una prueba de solicitud completa en PRO
+   Desmarcar la opción de enviar correos a los centros al modificar solicitudes
+   Imprimir docs de fases y estados de convocatoria
+
+FASE0 Matrícula
+
+   Cargamos datos de la matrícula de GIR
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SECUENCIA
+---------------------------------------------
+
+Fin inscripción
+Inicio comprobaciones
+
+   Ejecutar script para generar csv, dentro del directorio scripts/servidor
+      #php sc_compruebadatos_baremo_solicitudes.php > ../../documentacion/datos_comprobaciones.csv
+
 
 
 
@@ -16,6 +49,7 @@ bloquear barra de estado de solicitudes al finalizar el plazo de solicitudes
 
 
 GIT COMANDOS
+---------------------------------------------
 
 Crear un repo desde cero, en github
 
@@ -40,16 +74,22 @@ git reset --hard HEAD
 TOKEN edes
 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
 
-COMANDOS ÚTILES PARA GENERAR CONSULTAS MYSQL
+COMANDOS SQL ÚTILEs
 ---------------------------------------------------------
 
-lListados de fmilias numerosa o monoparental
+-Resetear puntos validados y comprobaciones
+
+   update alumnos set fase_solicitud='validada' where fase_solicitud='baremada';
+
+   update baremo set puntos_validados=0,comprobar_renta_inferior=0,comprobar_discapacidad_alumno=0,comprobar_discapacidad_hermanos=0,comprobar_familia_numerosa=0,comprobar_familia_monoparental=0;
+
+-Listados de fmilias numerosa o monoparental
 
    select nombre_centro, nombre,apellido1,apellido2,dni_alumno,datos_tutor1,dni_tutor1,datos_tutor2,dni_tutor2 into outfile '/var/lib/mysql-files/listadonumerosa1.csv' FIELDS TERMINATED BY ';' OPTIONALLY ENCLOSED BY '"' from centros ce, baremo b,alumnos a where ce.id_centro=a.id_centro_destino and a.id_alumno=b.id_alumno and marcado_numerosa=1 ;
 
    select nombre,apellido1,apellido2,dni_alumno,datos_tutor1,dni_tutor1,datos_tutor2,dni_tutor2 into outfile '/var/lib/mysql-files/listadonumerosa.csv' FIELDS TERMINATED BY ';' OPTIONALLY ENCLOSED BY '"' from baremo b,alumnos a where a.id_alumno=b.id_alumno and marcado_numerosa=1 ;
 
 
-Añadir centro de origen
+-Añadir centro de origen
 
 update alumnos a set id_centro_estudios_origen=(select id_centro_estudios_origen from PRE_EDUCACIONESPECIAL2223_TMP.alumnos b where a.id_alumno=b.id_alumno); 

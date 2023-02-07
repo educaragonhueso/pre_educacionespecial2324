@@ -1,60 +1,174 @@
-Error actualizando vacantes centros: 00Copiando tabla fase2....
+Array
+(
+    [id_alumno] => 1326
+    [id_usuario] => 50017369
+    [apellido1] => Zanahoria
+    [apellido2] => Pimienta
+    [nombre] => Jorge Miguel
+    [dni_alumno] => nodata
+    [nacionalidad] => España
+    [municipionac] => Zaragoza
+    [fnac] => 2020-01-01
+    [num_hbaremo] => 0
+    [conjunta] => no
+    [datos_tutor1] => Eva María Pimienta sal
+    [datos_tutor2] => Centro Privado Sagasta
+    [dni_tutor2] => nodata
+    [dni_tutor1] => 15444555d
+    [calle_dfamiliar] => Calle
+    [num_dfamiliar] => 1
+    [piso_dfamiliar] => 1
+    [loc_dfamiliar] => ZARAGOZA
+    [cp_dfamiliar] => 50012
+    [tel_dfamiliar1] => 0
+    [tel_dfamiliar2] => 0
+    [email] => bcostea@aragon.es
+    [nuevaesc] => 1
+    [id_centro_estudios_origen] => 0
+    [loc_centro_origen] => nodata
+    [modalidad_origen] => nodata
+    [id_centro_destino] => 50017369
+    [id_centro_final] => 0
+    [curso_solicitado] => nodata
+    [loc_centro_destino] => nodata
+    [prov_centro_destino] => zaragoza
+    [modalidad_destino] => nodata
+    [id_centro_destino1] => 50006128
+    [id_centro_destino2] => 
+    [id_centro_destino3] => 
+    [id_centro_destino4] => 
+    [id_centro_destino5] => 
+    [id_centro_destino6] => 
+    [fotocopia_resolucion] => 0
+    [reserva] => 0
+    [prematuridad] => 0
+    [acred_dom_familiar] => 0
+    [cer_rec_discapacidad] => 0
+    [fam_numerosa] => 0
+    [acred_dom_laboral] => 0
+    [permiten_renta] => 0
+    [cumplen_renta] => 0
+    [fase_solicitud] => validada
+    [transporte] => 2
+    [nasignado] => 0
+    [nordensorteo] => 0
+    [estado_solicitud] => apta
+    [oponenautorizar] => 0
+    [cumplen] => 0
+    [tipoestudios] => ebo
+    [est_desp_sorteo] => otro
+    [sol_plaza] => 0
+    [sol_vacantes] => 0
+    [hore] => 7:45
+    [hors] => 17:00
+    [importe_renta] => 0
+    [puntos_renta] => 0
+    [cuota] => 0
+    [tipoalumno] => nuevo
+    [nodatos] => 0
+    [anexo4] => no
+    [nmunidad] => 0
+    [validar_infotributaria] => 0
+    [solcalcbon] => 0
+    [token] => 90ae6a21a525
+    [firma] => 0
+    [fecha_inscripcion] => 2023-01-26 10:44:25
+    [hermanos_centro] => 0
+    [tutores_centro] => 0
+    [tipo_domicilio] => familiar
+    [renta_inferior] => 1
+    [iprem] => no
+    [acogimiento] => 1
+    [genero] => 1
+    [terrorismo] => 1
+    [parto] => 1
+    [discapacidad_alumno] => 0
+    [discapacidad_hermanos] => 1
+    [nombredisc1] => Eva María
+    [apellidodisc1] => Pimienta sal
+    [dnidisc1] => 12555888f
+    [fnacdisc1] => 1990-01-01
+    [nombredisc2] => nodata
+    [apellidodisc2] => nodata
+    [dnidisc2] => nodata
+    [fnacdisc2] => 2020-01-01
+    [nombredisc3] => nodata
+    [apellidodisc3] => nodata
+    [dnidisc3] => nodata
+    [fnacdisc3] => 2020-01-01
+    [tipo_familia_numerosa] => 0
+    [tipo_familia_monoparental] => 2
+    [monoparental] => 0
+    [zona_dfamiliar] => DESC
+    [zona_dtrabajo] => DESC
+    [zona_limitrofe] => DESC
+    [zona_trabajo_limitrofe] => DESC
+    [proximidad_domicilio] => dfamiliar
+    [situacion_sobrevenida] => 1
+    [validar_proximidad_domicilio] => 0
+    [validar_situacion_sobrevenida] => 0
+    [validar_tutores_centro] => 0
+    [validar_renta_inferior] => 0
+    [validar_acogimiento] => 0
+    [validar_genero] => 0
+    [validar_terrorismo] => 0
+    [validar_parto] => 0
+    [validar_hnos_centro] => 0
+    [validar_discapacidad_alumno] => 0
+    [validar_discapacidad_hermanos] => 0
+    [validar_tipo_familia_numerosa] => 0
+    [validar_tipo_familia_monoparental] => 0
+    [calle_dlaboral] => 
+    [puntos_validados] => 3
+    [puntos_totales] => 18
+    [calle_dllimitrofe] => 
+    [sitlaboral] => 0
+    [validar_sitlaboral] => 0
+    [marcado_proximidad_domicilio] => 1
+    [marcado_discapacidad] => 1
+    [marcado_numerosa] => 0
+    [marcado_monoparental] => 1
+    [comprobar_renta_inferior] => 1
+    [comprobar_discapacidad_alumno] => 0
+    [comprobar_discapacidad_hermanos] => 2
+    [comprobar_familia_numerosa] => 0
+    [comprobar_familia_monoparental] => 2
+    [localidad] => Zaragoza
+    [provincia] => Zaragoza
+    [coordenadas] => nodata
+    [direccion] => nodata
+    [nombre_centro] => ANGEL RIVIÈRE
+    [tipo_centro] => 
+    [id_centro] => 50017369
+    [zona] => DESC
+    [vuno] => 0
+    [vuno_original] => 0
+    [vuno_acneae] => 0
+    [vuno_acneae_original] => 0
+    [vdos] => 0
+    [vdos_original] => 0
+    [vdos_acneae] => 0
+    [vdos_acneae_original] => 0
+    [vtres] => 0
+    [vtres_original] => 0
+    [vtres_acneae] => 0
+    [vtres_acneae_original] => 0
+    [num_sorteo] => 66
+    [ndespuessorteo] => 0
+    [fase_sorteo] => 3
+    [primera_conexion] => no
+    [num_sorteo_fase2] => 0
+    [asignado_num_fase2] => 0
+    [clase_centro] => especial
+    [vacantes_ebo] => -1
+    [vacantes_ebo_original] => 1
+    [vacantes_tva] => 0
+    [vacantes_tva_original] => 0
+    [naturaleza] => Público
+    [correo] => ceeangelriviere@gmail.com
+)
+NDISC: 1Zanahoria-Pimienta-Jorge Miguel
 
-INSERT INTO alumnos_fase2 SELECT
-t1.id_alumno,t1.nombre,t1.apellido1,t1.apellido2,t1.localidad,t1.calle_dfamiliar,'nodata'
-as coordenadas,t1.nombre_centro,t1.tipoestudios,t1.fase_solicitud,t1.estado_solicitud,t1.transporte,t1.nordensorteo,t1.nasignado,t1.puntos_validados,t1.id_centro,t2.centro1,t2.id_centro1,t3.centro2,t3.id_centro2,t4.centro3,t4.id_centro3,t5.centro4,t5.id_centro4,t6.centro5,t6.id_centro5,t7.centro6,t7.id_centro6, 'nocentro' as centro_definitivo, '0' as id_centro_definitivo,t1.id_centro_estudios_origen as id_centro_origen,t8.centro_origen,t1.reserva,t1.reserva as reserva_original,'automatica' as tipo_modificacion,'0' as activado_fase3 FROM 
-	(SELECT a.id_alumno, a.nombre, a.apellido1, a.apellido2,a.loc_dfamiliar as localidad,a.calle_dfamiliar,c.nombre_centro,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado as nasignado,b.puntos_validados,a.id_centro_destino as id_centro,a.id_centro_estudios_origen,a.est_desp_sorteo,a.reserva FROM alumnos a left join baremo b on b.id_alumno=a.id_alumno 
-	left join centros c on a.id_centro_destino=c.id_centro  order by c.id_centro desc, a.tipoestudios asc,a.transporte desc, b.puntos_validados desc)
-	as t1 
-	left join 
-	(SELECT a.id_alumno,c.id_centro as id_centro1, c.nombre_centro as centro1 from alumnos a, centros c where c.id_centro=a.id_centro_destino1) 
-	as t2 on t1.id_alumno=t2.id_alumno
-left join 
-	(SELECT a.id_alumno,c.id_centro as id_centro2, c.nombre_centro as centro2 from alumnos a, centros c where c.id_centro=a.id_centro_destino2) 
-	as t3 on t1.id_alumno=t3.id_alumno
-left join 
-	(SELECT a.id_alumno,c.id_centro as id_centro3, c.nombre_centro as centro3 from alumnos a, centros c where c.id_centro=a.id_centro_destino3) 
-	as t4 on t1.id_alumno=t4.id_alumno
-left join 
-	(SELECT a.id_alumno,c.id_centro as id_centro4, c.nombre_centro as centro4 from alumnos a, centros c where c.id_centro=a.id_centro_destino4) 
-	as t5 on t1.id_alumno=t5.id_alumno
-left join 
-	(SELECT a.id_alumno,c.id_centro as id_centro5, c.nombre_centro as centro5 from alumnos a, centros c where c.id_centro=a.id_centro_destino5) 
-	as t6 on t1.id_alumno=t6.id_alumno
-left join 
-	(SELECT a.id_alumno,c.id_centro as id_centro6, c.nombre_centro as centro6 from alumnos a, centros c where c.id_centro=a.id_centro_destino6) 
-	as t7 on t1.id_alumno=t7.id_alumno
-left join 
-	(SELECT a.id_alumno,c.id_centro as id_centro_origen, c.nombre_centro as centro_origen from alumnos a, centros c where c.id_centro=a.id_centro_estudios_origen) 
-	as t8 on t1.id_alumno=t8.id_alumno WHERE t1.fase_solicitud!='borrador' and t1.est_desp_sorteo='noadmitida'
-
-
-INSERT INTO alumnos_fase2_tmp SELECT
-t1.id_alumno,t1.nombre,t1.apellido1,t1.apellido2,t1.localidad,t1.calle_dfamiliar,'nodata'
-as coordenadas,t1.nombre_centro,t1.tipoestudios,t1.fase_solicitud,t1.estado_solicitud,t1.transporte,t1.nordensorteo,t1.nasignado,t1.puntos_validados,t1.id_centro,t2.centro1,t2.id_centro1,t3.centro2,t3.id_centro2,t4.centro3,t4.id_centro3,t5.centro4,t5.id_centro4,t6.centro5,t6.id_centro5,t7.centro6,t7.id_centro6, 'nocentro' as centro_definitivo, '0' as id_centro_definitivo,t1.id_centro_estudios_origen as id_centro_origen,t8.centro_origen,t1.reserva,t1.reserva as reserva_original,'automatica' as tipo_modificacion,'0' as activado_fase3 FROM 
-	(SELECT a.id_alumno, a.nombre, a.apellido1, a.apellido2,a.loc_dfamiliar as localidad,a.calle_dfamiliar,c.nombre_centro,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado as nasignado,b.puntos_validados,a.id_centro_destino as id_centro,a.id_centro_estudios_origen,a.est_desp_sorteo,a.reserva FROM alumnos a left join baremo b on b.id_alumno=a.id_alumno 
-	left join centros c on a.id_centro_destino=c.id_centro  order by c.id_centro desc, a.tipoestudios asc,a.transporte desc, b.puntos_validados desc)
-	as t1 
-	left join 
-	(SELECT a.id_alumno,c.id_centro as id_centro1, c.nombre_centro as centro1 from alumnos a, centros c where c.id_centro=a.id_centro_destino1) 
-	as t2 on t1.id_alumno=t2.id_alumno
-left join 
-	(SELECT a.id_alumno,c.id_centro as id_centro2, c.nombre_centro as centro2 from alumnos a, centros c where c.id_centro=a.id_centro_destino2) 
-	as t3 on t1.id_alumno=t3.id_alumno
-left join 
-	(SELECT a.id_alumno,c.id_centro as id_centro3, c.nombre_centro as centro3 from alumnos a, centros c where c.id_centro=a.id_centro_destino3) 
-	as t4 on t1.id_alumno=t4.id_alumno
-left join 
-	(SELECT a.id_alumno,c.id_centro as id_centro4, c.nombre_centro as centro4 from alumnos a, centros c where c.id_centro=a.id_centro_destino4) 
-	as t5 on t1.id_alumno=t5.id_alumno
-left join 
-	(SELECT a.id_alumno,c.id_centro as id_centro5, c.nombre_centro as centro5 from alumnos a, centros c where c.id_centro=a.id_centro_destino5) 
-	as t6 on t1.id_alumno=t6.id_alumno
-left join 
-	(SELECT a.id_alumno,c.id_centro as id_centro6, c.nombre_centro as centro6 from alumnos a, centros c where c.id_centro=a.id_centro_destino6) 
-	as t7 on t1.id_alumno=t7.id_alumno
-left join 
-	(SELECT a.id_alumno,c.id_centro as id_centro_origen, c.nombre_centro as centro_origen from alumnos a, centros c where c.id_centro=a.id_centro_estudios_origen) 
-	as t8 on t1.id_alumno=t8.id_alumno WHERE t1.fase_solicitud!='borrador' and t1.est_desp_sorteo='noadmitida'
-
-Copia tabla solicitudesfase2 realizada corectamente a las 13:05 del dia 10-May-2022
+PUNTOS BAREMO: 18
+PUNTOS BAREMO VALIDADOS: 3
+=======================

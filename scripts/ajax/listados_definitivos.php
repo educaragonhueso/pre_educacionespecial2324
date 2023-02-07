@@ -30,7 +30,7 @@ $filtro_datos='<input type="text" class="form-control" id="filtrosol"  placehold
 $conectar=new Conectar('../../config/config_database.php');
 $conexion=$conectar->conexion();
 
-$list=new ListadosController('alumnos',$conexion);
+$list=new ListadosController('alumnos',$conexion,$estado_convocatoria);
 $tcentro=new Centro($conexion,$_POST['id_centro'],'ajax');
 $ccentros=new CentrosController($conexion);
 $tcentro->setNombre();
@@ -121,7 +121,7 @@ $log_listados_definitivos->warning("OBTENIENDO LISTADOS DEFINITIVOSS, CENTRO: ".
 //Esto solo puede hacerse en el momento q finalice el plazo de provisionales!!!!!!!!
 //$solicitudes=$solicitud->genSolDefinitivas($id_centro,$vacantes_ebo,$vacantes_tva,2); 
 //mostramos las solitudes completas sin incluir borrador
-$solicitudes=$list->getSolicitudes($id_centro,$estado_convocatoria,'definitivos',$subtipo_listado,$tsolicitud,$log_listados_definitivos,0,$rol,$provincia); 
+$solicitudes=$list->getSolicitudes($id_centro,'definitivos',$subtipo_listado,$tsolicitud,$log_listados_definitivos,0,$rol,$provincia); 
 
 $formato='definitivos'; //formato listado en el pdf
 $anchuracelda=10;

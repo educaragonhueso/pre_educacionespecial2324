@@ -117,6 +117,16 @@ $('body').on('click', '.send', function(e)
 			$('input[name=tipoestudios]').focus();	
    return;
   }
+  if(valid.indexOf('nodos')!=-1)
+  {
+			mensaje="El alumno no tiene dos años ";
+    		$.alert({
+        		title: 'FORMULARIO INCOMPLETO',
+        		content: mensaje
+    			});
+			$('input[name=tipoestudios]').focus();	
+   return;
+  }
   if(valid.indexOf('Fecha nacimiento-fnac')!=-1)
   {
 		mensaje=mensaje+valid.split('-')[0];
@@ -584,7 +594,7 @@ function recalcular_baremo(){
 	var baremo2_validado=$('#baremo_validar_tutores_centro').val();
 
 	var baremo3=$('input[id=baremo_renta_inferior]:checked').attr("data-baremo");
-	var baremo3_validado=$('#baremo_validar_renta_inferior').val();
+	var baremo3_validado=$('#msg_comprobacion_renta_inferior').text();
 
 	var baremo4=$('input[name=baremo_tipo_familia]:checked').attr("data-baremo");
 	var baremo4_validado=$('#baremo_validar_tipo_familia').val();
@@ -600,19 +610,19 @@ function recalcular_baremo(){
 	var baremo7_validado=$('#baremo_validar_terrorismo').val();
 
 	var baremo8=$('input[name=baremo_discapacidad_alumno]:checked').attr("data-baremo");
-	var baremo8_validado=$('#baremo_validar_discapacidad_alumno').val();
+	var baremo8_validado=$('#msg_comprobacion_discapacidad_alumno').text();
 	
    var baremo9=$('input[name=baremo_discapacidad_hermanos]:checked').attr("data-baremo");
-	var baremo9_validado=$('#baremo_validar_discapacidad_hermanos').val();
+	var baremo9_validado=$('#msg_comprobacion_discapacidad_hermanos').text();
 	
    var baremo10=$('input[id=baremo_parto]:checked').attr("data-baremo");
 	var baremo10_validado=$('#baremo_validar_parto').val();
    
 	var baremo11=$('input[name=baremo_tipo_familia_numerosa]:checked').attr("data-baremo");
-	var baremo11_validado=$('#baremo_validar_tipo_familia_numerosa').val();
+	var baremo11_validado=$('#msg_comprobacion_familia_numerosa').val();
 
-	var baremo12=$('input[name=baremo_tipo_familia_monoparental]:checked').attr("data-baremo");
-	var baremo12_validado=$('#baremo_validar_tipo_familia_monoparental').val();
+	var baremo12=$('input[name=baremo_tipa_familia_monoparental]:checked').attr("data-baremo");
+	var baremo12_validado=$('#msg_comprobacion_familia_monoparental').val();
 
 //   var baremo10=$('input[name=transporte'+id+']:checked').attr("value");
    var baremo_h1=$('#hermanos_nombre_baremo1').val();
@@ -628,12 +638,13 @@ function recalcular_baremo(){
 	if(baremo2)
 	{
 		totalbaremo=totalbaremo+parseInt(baremo2);
-		if(baremo2_validado==1) 	total_baremo_validado=total_baremo_validado+parseInt(baremo2);
+		if(baremo2_validado==1) {console.log("COMP TUT CENTRO POSTIVA "+baremo2); total_baremo_validado=total_baremo_validado+parseInt(baremo2);}
+		else {console.log("COMP TUT CENTRO NEGATIVA "+baremo2);}
 	}
 	if(baremo3)
 	{
 		totalbaremo=totalbaremo+parseInt(baremo3);
-		if(baremo3_validado==1) 	total_baremo_validado=total_baremo_validado+parseInt(baremo3);
+		if(baremo3_validado.indexOf("POSITIVA")!=-1) {console.log("COMP POSITIVA "+baremo3);total_baremo_validado=total_baremo_validado+parseInt(baremo3);}
 	}
 	if(baremo4)
 	{
@@ -658,12 +669,12 @@ function recalcular_baremo(){
 	if(baremo8)
 	{
 		totalbaremo=totalbaremo+parseFloat(baremo8);
-		if(baremo8_validado==1) total_baremo_validado=total_baremo_validado+parseFloat(baremo8);
+		if(baremo8_validado.indexOf("POSITIVA")!=-1) total_baremo_validado=total_baremo_validado+parseFloat(baremo8);
 	}
 	if(baremo9)
 	{
 		totalbaremo=totalbaremo+parseFloat(baremo9);
-		if(baremo9_validado==1) total_baremo_validado=total_baremo_validado+parseFloat(baremo9);
+		if(baremo9_validado.indexOf("POSITIVA")!=-1) total_baremo_validado=total_baremo_validado+parseFloat(baremo9);
 	}
 	if(baremo10)
 	{
@@ -673,12 +684,12 @@ function recalcular_baremo(){
 	if(baremo11)
 	{
 		totalbaremo=totalbaremo+parseFloat(baremo11);
-		if(baremo11_validado==1) total_baremo_validado=total_baremo_validado+parseFloat(baremo11);
+		if(baremo11_validado.indexOf("POSITIVA")!=-1) total_baremo_validado=total_baremo_validado+parseFloat(baremo11);
 	}
 	if(baremo12)
 	{
 		totalbaremo=totalbaremo+parseFloat(baremo12);
-		if(baremo12_validado==1) total_baremo_validado=total_baremo_validado+parseFloat(baremo12);
+		if(baremo12_validado.indexOf("POSITIVA")!=-1) total_baremo_validado=total_baremo_validado+parseFloat(baremo12);
 	}
 	//calculo baremo de hermanos en el centro
 	if($('#num_hbaremo').is(':checked'))
@@ -1419,6 +1430,18 @@ $('body').on('change', '#nuevaesc', function(e)
    $(".filarenesc").hide('slow');
 });
 
+$('body').on('change', '#reserva_pend', function(e)
+{
+   var val=$(this).attr("value");
+   var id=$(this).attr("data-reserva");
+   var vid=id.replace('nuevaesc','');
+   var tabla=".fila"+id;
+   console.log("IDRADIO: "+vid);	
+   console.log("Ocultando reserva");	
+//	$(this).attr('value','1');
+	$(".filarenesc").show('slow');
+});
+
 $('body').on('change', '#renesc', function(e)
 {
    var val=$(this).attr("value");
@@ -1443,6 +1466,7 @@ $('body').on('change', '[id=conjunta]', function(e)
 });
 $('body').on('change', '[id=individual]', function(e)
 {
+   var r=recalcular_baremo();
    var id=$(this).attr("id");
    var vid=id.replace('individual','');
    console.log("Mostrando hermanos");	
@@ -1720,12 +1744,13 @@ $('body').on('click', '.show_matricula', function(e){
   var vid_centro=$('#id_centro').text();
   var vrol=$('#rol').attr("value");
   var vprovincia=$('#provincia').attr("value");
+  var vestado_convocatoria=$('#estado_convocatoria').attr("value");
 $.ajax({
   method: "POST",
   url: "../"+directoriobase+"/scripts/ajax/listados_matriculas.php",
-  data: {id_centro:vid_centro,rol:vrol,provincia:vprovincia},
+  data: {id_centro:vid_centro,rol:vrol,provincia:vprovincia,estado_convocatoria:vestado_convocatoria},
       success: function(data) 
-			{
+		{
          console.log("mat");
 			if(vrol=='admin') 
 			{
@@ -1750,7 +1775,7 @@ $.ajax({
 				$("#l_matricula").html(data);
 				$(".tresumenmat").show();
 			}
-      			},
+      },
       error: function() {
         alert('Erorr LISTADO matricula');
       }
@@ -2118,6 +2143,9 @@ var cen_options =
 		}
 	};
 $("#id_centro_destino").easyAutocomplete(cen_options);
+$("#hermanos_admision_id_centro_destino1").easyAutocomplete(cen_options);
+$("#hermanos_admision_id_centro_destino2").easyAutocomplete(cen_options);
+$("#hermanos_admision_id_centro_destino3").easyAutocomplete(cen_options);
 $("#id_centro_destino1").easyAutocomplete(cen_options);
 $("#id_centro_destino2").easyAutocomplete(cen_options);
 $("#id_centro_destino3").easyAutocomplete(cen_options);
@@ -2225,6 +2253,7 @@ $('body').on('click', '.exportpdf', function(e)
   	var vprovincia=$('#provincia').attr("value");
 	var vid=$(this).attr("id");
 	var vidcentro=$('#id_centro').text();
+   var vestado_convocatoria=$('#estado_convocatoria').attr("value");
   var vsubtipo=$(this).attr("data-subtipo");
 	$.ajax({
 	  method: "POST",

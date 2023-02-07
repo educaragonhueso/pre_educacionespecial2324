@@ -84,7 +84,7 @@ else echo '<h4>PAGINA EN MANTENIMIENTO</h4>';
             </div> 
          </form>
       <div class="form-group">
-         <button id="verprocesocompleto" class="btn btn-primary" value="proceso completo">Ver insecuencia del proceso completo</button>
+         <button id="verprocesocompleto" class="btn btn-primary" value="proceso completo">Ver secuencia del proceso completo</button>
          <div id="tabla_pc" style="display:none"><?php echo PC;?></div>
       </div>
       </div> <!--finn del wrapper-->   

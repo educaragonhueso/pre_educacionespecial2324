@@ -17,6 +17,7 @@ require_once DIR_BASE.'/controllers/SolicitudController.php';
 require_once DIR_CLASES.'LOGGER.php';
 require_once DIR_BASE.'/clases/core/Notificacion.php';
 require_once DIR_BASE.'/clases/core/Comprobaciones.php';
+require_once DIR_BASE.'/scripts/servidor/UtilidadesAdmision.php';
 require_once DIR_APP.'parametros.php';
 
 ######################################################################################
@@ -49,6 +50,7 @@ $ressms="Fase de pruebas";
 
 require_once DIR_BASE.'/includes/form_solicitud.php';
 $sc=new SolicitudController($rol,$conexion,$formsol,$log_nueva);
+$utils=new UtilidadesAdmision($conexion,'','');
 ######################################################################################
 if($modo=='GRABAR SOLICITUD')
 {
@@ -86,17 +88,8 @@ if($rol=='anonimo' or $rol=='alumno')
 }
 else
 {
-   if($rol=='centro')
+  // if($rol=='centro')
 	   $id_centro_destino=$_POST['id_centro'];
-	if($rol=='admin' or $rol=='sp')
-	{
-	   parse_str($fsol_entrada, $fsol_tmp);
-      if($modo=='ACTUALIZAR SOLICITUD')
-		   $id_centro_destino=$solicitud->getCentroId($fsol_tmp['id_centro_destino'],$log_actualizar);
-      else
-		   $id_centro_destino=$solicitud->getCentroId($fsol_tmp['id_centro_destino'],$log_nueva);
-   
-	}
 }
 
 $fsol_salida['id_centro_destino']=$id_centro_destino;
@@ -113,14 +106,14 @@ $fsol_salida['id_centro_estudios_origen']=$solicitud->getCentroOrigenId($fsol_sa
 
 //procesmoas los centros adicionales
 for($i=1;$i<7;$i++)
-	{
+{
 	$indice="id_centro_destino".$i;
 	if($fsol_salida[$indice]!='') 
-		{
+	{
 		$valor=$solicitud->getCentroId(trim($fsol_salida[$indice],'*'),$log_nueva);
 		if($valor!=0) $fsol_salida[$indice]=$valor;
-		}
 	}
+}
 
 $log_actualizar->warning("POST ACTUALIZAR");
 if($modo=='GRABAR SOLICITUD')
@@ -182,7 +175,16 @@ if($modo=='GRABAR SOLICITUD')
       $log_nueva->warning("CORREO: ".$correo);
       $log_nueva->warning("TOKEN: ".$token);
       ######################################################################################
-      
+      /* 
+      //recalcuamos el baremo 
+      $aldata=$utils->getSolicitudesComprobarBaremo($token);
+      $log_actualizar->warning("ACT BAREMO: ");
+      $log_actualizar->warning(print_r($aldata,true));
+      $dbaremo=$utils->recalcularBaremo($aldata[0]);
+      $log_actualizar->warning("RES ACT BAREMO: ");
+      $log_actualizar->warning(print_r($dbaremo,true));
+      $utils->actualizarBaremo($dbaremo,$id_alumno,$log_actualizar);
+      */
       //si es nueva y anonima se devuelve la clave para acceder despues y se cambia el directorio de documentos
       if (!$conexion->commit()) 
       {
@@ -211,7 +213,7 @@ else //MODIFICACION SOLICITUD
    $log_actualizar->warning(print_r($fsol_salida,true));
    ######################################################################################
    //modificamos solicitud teniendo en cuenta la fase en la q esta el centro y el estado de la convocatoria
-   $res=$solicitud->update($fsol_salida,$id_alumno,$token,$rol,$log_actualizar);
+   $res=$solicitud->update($fsol_salida,$id_alumno,$token,$rol,$estado_convocatoria,$log_actualizar);
    //si la modifica el alumno se marca validada y se envia correo al centro
    if($rol=='alumno' or $rol=='anonimo')
    {
@@ -240,6 +242,10 @@ else //MODIFICACION SOLICITUD
       $tipo_correo='Modificación solicitud Educación Especial curso 22/23';   
       //$contenido="Soliciutd modificada, pulsa en este $enlace_solicitud_centro para acceder";
       #$rescorreo=$notificacion->enviarCorreo('Solicitud modificada',$correo,$contenido_correo_alumno,$tipo_correo);          
+      //actualizamos el baremo para reflejar el valor final correcto
+      //$aldata=$utils->getSolicitudesComprobarBaremo($token);
+      //$dbaremo=$utils->recalcularBaremo($aldata[0]);
+      //$utils->actualizarBaremo($dbaremo,$token,$log_actualizar);
    }
    //al haberse actualizado debe firmarse de nuevo, pero solo si lo hace el ciudadano, no la administracion
    if($rol!='admin' and $rol!='centro' and $rol!='sp')
@@ -257,6 +263,16 @@ else //MODIFICACION SOLICITUD
       $log_actualizar->warning("TOKEN: ".$token);
       #######################################################################################################
    }
+   /*
+   //modificamoss el baremo total y validado, tb para los hermanos
+   //$aldata=$utils->getSolicitudesComprobarBaremo($token);
+   //$log_actualizar->warning("ACT BAREMO: ");
+   //$log_actualizar->warning(print_r($aldata,true));
+   $dbaremo=$utils->recalcularBaremo($aldata[0]);
+   $log_actualizar->warning("RES ACT BAREMO: ");
+   $log_actualizar->warning(print_r($dbaremo,true));
+   $utils->actualizarBaremo($dbaremo,$id_alumno,$log_actualizar);
+   */
    if (!$conexion->commit()) 
    {
       echo "Commit transaction failed";

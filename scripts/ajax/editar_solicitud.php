@@ -35,7 +35,7 @@ require_once DIR_BASE.'/includes/form_solicitud.php';
 
 
 ######################################################################################
-$log_editar_solicitud->warning("EDITANDO ALUMNO");
+$log_editar_solicitud->warning("::::INICIO EDITAR ALUMNO");
 ######################################################################################
 $scontroller=new SolicitudController($rol,$conexion,$formsol,$log_editar_solicitud);
 $tsol=new Solicitud($conexion);
@@ -43,7 +43,7 @@ $tsol=new Solicitud($conexion);
 if($rol=='alumno')
 {
 	$fase_sol=$tsol->getEstadoSol($id_alumno);
-	if($fase_sol=='validada' or $estado_convocatoria>=20) $solo_lectura=1;
+	if($fase_sol=='validada' or $estado_convocatoria>=ESTADO_FININSCRIPCION) $solo_lectura=1;
 }
 //obtenemos formulario con los datos
 $sform=$scontroller->showFormSolicitud($id_alumno,$id_centro,$rol,1,$solo_lectura,$estado_convocatoria,$conexion,$log_editar_solicitud,0);
@@ -62,11 +62,6 @@ $script=str_replace('.nacionalidad',$repjs,$script);
 $dochtml=$tsol->getDocHtml($id_alumno,$diruploads,$rol,'solicitud');
 
 if($estado_sol=='apta') print("SOLICITUDAPTA");
-
-######################################################################################
-$log_editar_solicitud->warning("EDITANDO ALUMNO, DATOS DOCUMENTACION.$estado_sol");
-$log_editar_solicitud->warning(print_r($dochtml,true));
-######################################################################################
 
 #SALIDA DE DATOS
 ######################################################################################
