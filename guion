@@ -83,6 +83,10 @@ COMANDOS SQL ÚTILEs
 
    update baremo set puntos_validados=0,comprobar_renta_inferior=0,comprobar_discapacidad_alumno=0,comprobar_discapacidad_hermanos=0,comprobar_familia_numerosa=0,comprobar_familia_monoparental=0;
 
+   update baremo set puntos_validados=4 where id_alumno in(select id_alumno from alumnos where conjunta='si');
+   
+   update baremo set validar_proximidad_domicilio=0,validar_situacion_sobrevenida=0,validar_tutores_centro=0,validar_renta_inferior=0,validar_acogimiento=0,validar_genero=0,validar_terrorismo=0,validar_parto=0,validar_hnos_centro=0,validar_discapacidad_alumno=0,validar_discapacidad_hermanos=0,validar_tipo_familia_numerosa=0,validar_tipo_familia_monoparental=0;
+
 -Listados de fmilias numerosa o monoparental
 
    select nombre_centro, nombre,apellido1,apellido2,dni_alumno,datos_tutor1,dni_tutor1,datos_tutor2,dni_tutor2 into outfile '/var/lib/mysql-files/listadonumerosa1.csv' FIELDS TERMINATED BY ';' OPTIONALLY ENCLOSED BY '"' from centros ce, baremo b,alumnos a where ce.id_centro=a.id_centro_destino and a.id_alumno=b.id_alumno and marcado_numerosa=1 ;

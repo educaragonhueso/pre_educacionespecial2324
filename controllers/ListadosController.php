@@ -487,7 +487,7 @@ class ListadosController{
 	$html.="<thead>
       <tr>";
 	foreach($cabecera as $cab)
-		$html.="<th>".$cab."</th>";
+		$html.="<th style='color:black'>".$cab."</th>";
 
    $html.="</tr></thead><tbody>";
 	$cabadmin=0;
@@ -514,6 +514,10 @@ class ListadosController{
 			{
 	         $cab=0;
 				$html.="<tr class='filasol' id='filasol".$sol->id_alumno."' style='color:white;background-color:#141259;'><td colspan='".$ncolumnas."'><b>".$sol->nombre_centro."</b></td></tr>";
+            $html.="<tr>";
+	foreach($cabecera as $cab)
+		$html.="<th style='color:black'>".$cab."</th>";
+            $html.="</tr>";
             $html.="<tr class='filasol' id='filasol".$sol->id_alumno."' style='color:white;background-color: #84839e;'><td colspan='".$ncolumnas."'><b>".strtoupper($sol->tipoestudios)."</b></td></tr>";
 			}
 			if($centroactual==$centroanterior and $tipoestudios_actual!=$tipoestudios_anterior)

@@ -104,7 +104,7 @@ if($_POST['pdf']==1)
 	$pdf->SetFont('Arial','I',8);
 	  // Page number
 	$pdf->Cell(40,10,'SELLO CENTRO',1,0,'C');
-	$pdf->Cell(140,10,'En ______________________ a ____de________ de 2022',0,0,'C');
+	$pdf->Cell(140,10,'En ______________________ a ____de________ de ".CURSO."',0,0,'C');
 	$pdf->Cell(0,10,'Firmado:',0,0);
 	$pdf->Ln();
 	$pdf->Cell(220,10,'El Director/a',0,0,'R');

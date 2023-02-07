@@ -215,22 +215,22 @@ $('body').on('click', '.send', function(e)
                      var token_hermano3=data.split(":")[11];
 
                      var enlace_solicitud=urlbasesol+"/index.php?token="+token_alumno;
-                     var mensaje='Solicitud creada correctamente. Recibirás un correo con un enlace para poder modificarla. <br> Este es el enlace: <br><br><b> '+enlace_solicitud+'</b>';
-                     
+                     var mensaje='Solicitud creada correctamente. Recibirás un correo con un enlace para poder modificarla. ';
+                     var textoenlace='<br> Este es el enlace: <br><br><b><a href="'+enlace_solicitud+'">Enlace solicitud</a></b>'; 
                      if(token_hermano1!==undefined)
                      {
                         var enlace_solicitud_h1=urlbasesol+"/index.php?token="+token_hermano1;
-                        mensaje+='<br>Enlace para el primer hermano: <br><b> '+enlace_solicitud_h1+'</b>';
+                        textoenlace+='<br>Enlace para el primer hermano: <br><b> '+enlace_solicitud_h1+'</b>';
                      }
                      if(token_hermano2!==undefined)
                      {
                         var enlace_solicitud_h2=urlbasesol+"/index.php?token="+token_hermano2;
-                        mensaje+='<br>Enlace para el segundo hermano: <br><b> '+enlace_solicitud_h2+'</b>';
+                        textoenlace+='<br>Enlace para el segundo hermano: <br><b> '+enlace_solicitud_h2+'</b>';
                      }
                      if(token_hermano3!==undefined)
                      {
                         var enlace_solicitud_h3=urlbasesol+"/index.php?token="+token_hermano3;
-                        mensaje+='<br>Enlace para el tercer hermano: <br><b> '+enlace_solicitud_h3+'</b>';
+                        textoenlace+='<br>Enlace para el tercer hermano: <br><b> '+enlace_solicitud_h3+'</b>';
                      }
                      $.alert({
                      title: 'SOLICITUD GUARDADA CORRECTAMENTE.',
@@ -241,6 +241,7 @@ $('body').on('click', '.send', function(e)
                      //id de alumno nuevo
                      $('#id_alumnonuevo').attr("value",id_alumno);
                      $('.send').text("ACTUALIZAR SOLICITUD");
+                     $('.send').after(textoenlace);
                      $('.send').after(bimp);
                      $('#hermanos_admision_token1').val(token_hermano1);
                   }
