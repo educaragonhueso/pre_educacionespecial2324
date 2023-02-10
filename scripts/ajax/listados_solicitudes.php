@@ -30,7 +30,6 @@ $rol=$_POST['rol'];
 $estado_convocatoria=$_POST['estado_convocatoria'];
 
 $hoy = date("Y/m/d");
-$form_nuevasolicitud='<div class="input-group-append" id="cab_fnuevasolicitud"><button class="btn btn-outline-info" id="nuevasolicitud" type="button">Nueva solicitud</button></div>';
 $filtro_solicitudes='<input type="text" class="form-control" id="filtrosol"  placeholder="Introduce datos del alumno o centro"><small id="emailHelp" class="form-text text-muted"></small>';
 $conectar=new Conectar('../../config/config_database.php');
 $conexion=$conectar->conexion();
@@ -58,15 +57,17 @@ if($rol=='admin' or $rol=='sp')
    ########################################################################################
   if($rol=='admin')
   { 
-      $nsolicitudes=$solicitud->getNumSolicitudes($id_centro,$estado_convocatoria);
+     // $nsolicitudes=$solicitud->getNumSolicitudes($id_centro,$estado_convocatoria);
+      $maximoasignado=$tsolicitud->getMaximoAleatorio();
+      $log_listados_solicitudes->warning("OBTENIENDO SOLICITUDES MAX ASIGNADO: ".$maximoasignado);
       $form_sorteo_parcial='<div id="form_sorteo_parcial" class="input-group mb-3">
          <div class="input-group-append">
          </div>
          <div class="input-group-append">
             <button class="btn" type="submit" id="boton_realizar_sorteo">Realizar sorteo</button>
          </div>
-         <input type="text" id="num_sorteo" name="num_sorteo" value="" style="width:400px;" placeholder="NUMERO OBTENIDO, DEBE ESTAR ENTRE 1 y '.$nsolicitudes.'" '.$disabled.'>
-         <input type="hidden" id="num_solicitudes" name="num_solicitudes" value="'.$nsolicitudes.'" placeholder="NUMERO OBTENIDO" '.$disabled.'>
+         <input type="text" id="num_sorteo" name="num_sorteo" value="" style="width:400px;" placeholder="NUMERO OBTENIDO, DEBE ESTAR ENTRE 1 y '.$maximoasignado.'" '.$disabled.'>
+         <input type="hidden" id="num_solicitudes" name="num_solicitudes" value="'.$maximoasignado.'" placeholder="NUMERO OBTENIDO" '.$disabled.'>
       </div>';
       $form_sorteo_completo='<div id="form_sorteo" class="input-group mb-3">
          <div class="input-group-append">
@@ -76,13 +77,12 @@ if($rol=='admin' or $rol=='sp')
             <button class="btn btn-success" type="submit" id="boton_realizar_sorteo">Realizar sorteo</button>
          </div>
          <input type="text" id="num_sorteo" name="num_sorteo" value="" placeholder="NUMERO OBTENIDO">
-         <input type="hidden" id="num_solicitudes" name="num_solicitudes" value="'.$nsolicitudes.'" placeholder="NUMERO OBTENIDO">
+         <input type="hidden" id="num_solicitudes" name="num_solicitudes" value="'.$maximoasignado.'" placeholder="NUMERO OBTENIDO">
       </div>';
 	   print($form_sorteo_completo);
    if($estado_convocatoria==ESTADO_INICIO_FASE_SORTEO)
 	   print($form_sorteo_completo);
 	}
-   if($estado_convocatoria>=ESTADO_INSCRIPCION) print($form_nuevasolicitud);
    $centros=$list->getCentrosIds($rol,$provincia,$log_listados_solicitudes);	
       $log_listados_solicitudes->warning(print_r($centros,true));
 	foreach($centros as $centro)
@@ -116,26 +116,8 @@ else//accedemos como centro
 	$nombre_centro=$tcentro->getNombre();
 	//SECCION MOSTAR DATOS
 	#Mostramos formulario para el sorteo si es el dia correcto
-   /*
-	if($estado_convocatoria<ESTADO_INSCRIPCION)
-	{
-      print($list->showTablaResumenSolicitudes($tablaresumen,$nombre_centro,$id_centro));
-      if($estado_convocatoria<=ESTADO_INSCRIPCION) print($form_nuevasolicitud);
-      print('<br>');
-      print($filtro_solicitudes);
-      print($list->showSolicitudes($solicitudes,'centro'));
-	}
-	elseif($estado_convocatoria>=ESTADO_INSCRIPCION)
-	{
-      //print($menu_provisionales);
-      if($_POST['id_centro']>='1') print($list->showTablaResumenSolicitudes($tablaresumen,$nombre_centro,$id_centro));
-      print($form_nuevasolicitud);
-      print($list->showSolicitudes($solicitudes,$_POST['rol']));
-	}
-   */
-      print($list->showTablaResumenSolicitudes($tablaresumen,$nombre_centro,$id_centro));
-      print($form_nuevasolicitud);
-      print($list->showSolicitudes($solicitudes,$_POST['rol']));
+   print($list->showTablaResumenSolicitudes($tablaresumen,$nombre_centro,$id_centro));
+   print($list->showSolicitudes($solicitudes,$_POST['rol']));
 }
 
 

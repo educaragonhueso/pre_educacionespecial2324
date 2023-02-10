@@ -64,7 +64,7 @@ if($estado_convocatoria>=ESTADO_PUBLICACION_PROVISIONAL and $estado_convocatoria
       //$vacantes_ebo=$dsorteo[0]->vacantes;
       //$vacantes_tva=$dsorteo[1]->vacantes;
 
-      if($tsolicitud->setSolicitudesSorteo($id_centro,$nsolicitudes,$vacantes_ebo,$vacantes_tva,$log_listados_definitivos)==0) 
+      if($tsolicitud->setSolicitudesSorteo($id_centro,$nsolicitudes,$vacantes_ebo,$vacantes_tva,'definitivos',$log_listados_definitivos)==0) 
 		########################################################################################
 		$log_listados_definitivos->warning("NO HAY VACANTES CENTRO: ".$id_centro);
 		########################################################################################
@@ -99,7 +99,7 @@ if($estado_convocatoria>=ESTADO_PUBLICACION_PROVISIONAL and $estado_convocatoria
          $vacantes_ebo=$dsorteo['ebo'];
          $vacantes_tva=$dsorteo['tva'];
       
-			if($tsolicitud->setSolicitudesSorteo($id_centrotmp,$nsolicitudescentro,$vacantes_ebo,$vacantes_tva,$log_listados_definitivos)==0) 
+			if($tsolicitud->setSolicitudesSorteo($id_centrotmp,$nsolicitudescentro,$vacantes_ebo,$vacantes_tva,'definitivos',$log_listados_definitivos)==0) 
 			   $log_listados_definitivos->warning("NO HAY VACANTES CENTRO: ".$id_centrotmp);
 		}
 		//copiamos todos los datos a tabla de provisionales	

@@ -115,7 +115,7 @@ if($_POST['rol']=='admin')
 			$vacantes_tva=$dsorteo['tva'];
 		   $log_sorteo->warning(print_r($dsorteo,true));
          
-			if($tsolicitud->setSolicitudesSorteo($id_centro,$nsolicitudescentro,$vacantes_ebo,$vacantes_tva,$log_sorteo)==0) 
+			if($tsolicitud->setSolicitudesSorteo($id_centro,$nsolicitudescentro,$vacantes_ebo,$vacantes_tva,'provisional',$log_sorteo)==0) 
 		      $log_sorteo->warning("NO HAY VACANTES EN EL CENTRO ");
 		}	
 		//copiamos todos los datos a tabla de provisionales	

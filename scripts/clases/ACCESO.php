@@ -197,6 +197,8 @@ class ACCESO
 	$nedad=0;
 	$total_filas_insertadas=0;
 	$total_filas_fallidas=0;
+   $sql="DELETE FROM matricula";
+   if(!$result = mysqli_query($this->c, $sql)) return 0;
 	if (($gestor = fopen($this->csv_file, "r")) !== FALSE) 
 	{
 		while (($datos = fgetcsv($gestor, 0, "\n")) !== FALSE) 

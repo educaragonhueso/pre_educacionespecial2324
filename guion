@@ -4,13 +4,15 @@ FASE PREVIA
 
    Borrar cuentas de usuarios de pruebas y de alumnos o solicitudes, baremo, etc...
    Hacer una prueba de solicitud completa en PRO
-   Desmarcar la opción de enviar correos a los centros al modificar solicitudes
+   Desmarcar la opción de enviar correos a los centros al modificar solicitudes y reclamaciones d ebarmeo y provisional
    Imprimir docs de fases y estados de convocatoria
    Programar copia seguridad bases de datos
 
 FASE0 Matrícula
 
    Cargamos datos de la matrícula de GIR
+   
+      #php carga_csv_girmatricula.php
    
 FASE Inscripción
 

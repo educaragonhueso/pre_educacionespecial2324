@@ -121,7 +121,7 @@ if(isset($_GET['token']))
              <a class="show_provisionales nav-link dropdown-toggle desplegable2" id="navbardrop" data-toggle="dropdown" href="#">Lista baremo</a>
              <div class="dropdown-menu">
 
-            <?php if($_SESSION['estado_convocatoria']>=ESTADO_ALEATORIO AND $_SESSION['rol']!='alumno' AND $_SESSION['rol']!='anonimo'){?>
+            <?php if(($_SESSION['estado_convocatoria']>=ESTADO_PREALEATORIO AND $_SESSION['rol']!='alumno' AND $_SESSION['rol']!='anonimo') OR ($_SESSION['estado_convocatoria']>=ESTADO_ALEATORIO )){?>
                <a class="lbaremadas dropdown-item" href="#" id="sor_ale" data-subtipo="sor_ale" data-tipo="sorteo">Numero aleatorio </a>;
              <?php }?>
              

@@ -12,19 +12,13 @@ class ListadosController{
    public function showListadoSolicitudes($rol,$id_centro,$solicitud,$log,$id_alumno,$provincia)
    {
       $res='';
-      $form_nuevasolicitud='<div class="input-group-append" id="cab_fnuevasolicitud"><button class="btn btn-outline-info" id="nuevasolicitud" type="button">Nueva solicitud</button></div>';
       $filtro_solicitudes='<input type="text" class="form-control" id="filtrosol"  placeholder="Introduce datos del alumno o centro"><small id="emailHelp" class="form-text text-muted"></small>';
       $log->warning("ENTRANDO EN SHOWLISTADOSOLICITUDES, rol: $rol, idcentro: $id_centro estado: $estado_convocatoria");
 	   $solicitudes=$this->getSolicitudes($id_centro,'normal','normal',$solicitud,$log,$id_alumno,$rol,$provincia); 
       
       if($rol!='alumno' and $rol!='anonimo')
-	   {
-        if($this->estado_convocatoria<=20)
-   	      $res.=$form_nuevasolicitud;
 		   $res.=$filtro_solicitudes;
-      }
 	   $res.=$this->showSolicitudes($solicitudes,$rol);
-
       return $res;
    }
   	public function getMatriculadosCentro($centro,$conexion,$rol=1)
@@ -565,8 +559,8 @@ class ListadosController{
 	         $cab=0;
 				$html.="<tr class='filasol' id='filasol".$sol->id_alumno."' style='color:white;background-color:#141259;'><td colspan='".$ncolumnas."'><b>".$sol->nombre_centro."</b></td></tr>";
             $html.="<tr>";
-	foreach($cabecera as $cab)
-		$html.="<th style='color:black'>".$cab."</th>";
+	         foreach($cabecera as $cab)
+		         $html.="<th style='color:black'>".$cab."</th>";
             $html.="</tr>";
             $html.="<tr class='filasol' id='filasol".$sol->id_alumno."' style='color:white;background-color: #84839e;'><td colspan='".$ncolumnas."'><b>".strtoupper($sol->tipoestudios)."</b></td></tr>";
 			}

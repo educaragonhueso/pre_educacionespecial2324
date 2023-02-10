@@ -1673,11 +1673,12 @@ $(".lbaremadas").click(function () {
          }
    });
 });
-$('body').on('click', '#versolicitud', function(e){
-   $(".titulolistado").hide();
-   $(".descargalistado").hide();
-               $(".container").show();
-               $('#sol_table').hide();
+$('body').on('click', '#versolicitud', function(e)
+{
+   $(".titulolistado").toggle();
+   $(".descargalistado").toggle();
+   $(".container").toggle();
+   $('#sol_table').toggle();
 });
 //LOS  TADO SOLICITUDES PROVISIONALES ACTUALIZADO
 $('body').on('click', '.lprovisionales', function(e){

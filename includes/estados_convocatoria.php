@@ -26,6 +26,7 @@ define("M30","<p class='cajainfo' style='text-align:center'>Se ha publicado la l
 define("M31","<p class='cajainfo' style='text-align:center'>Se ha iniciado el plazo para reclamaciones hasta el día ".convertirFecha(DIA_FIN_RECLAMACIONES_BAREMADAS)."</p>");
 define("M40","<p class='cajainfo' style='text-align:center'>Se estan gestionando las reclamaciones, se publicará el listado con el número aleatorio el día ".convertirFecha(DIA_ALEATORIO)."</p>");
 define("M41","<p class='cajainfo' style='text-align:center'>Se han gestionando las reclamaciones, se publicará el listado con el número aleatorio el día ".convertirFecha(DIA_ALEATORIO)."</p>");
+define("M42","<p class='cajainfo' style='text-align:center'>Se ha realizado el sorteo, las istas provisionales se publicarán el día ".convertirFecha(DIA_PUBLICACION_PROVISIONAL)."</p>");
 
 $dirb=substr(DIA_INICIO_RECLAMACIONES_BAREMADAS,0,-9);
 $hirb=substr(DIA_INICIO_RECLAMACIONES_BAREMADAS,10);

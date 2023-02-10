@@ -1,51 +1,51 @@
 Centro;"Primer apellido";"Segundo apellido";Nombre;EnseÃ±anza;"Criterios prioritarios";"Localidad domicilio familiar";Fase;Estado;"Puntos validados";"Numero sorteo asignado";"Centro Origen";"Reserva de Plaza";Conjunta
-"ANGEL RIVIÈRE";Cebolla;Pimiento;"Jorge Miguel";ebo;2;ZARAGOZA;baremada;apta;20;24;NOCENTRO;0;no
-"ANGEL RIVIÈRE";Patata;Arroz;"Jorge Miguel";ebo;2;Zaragoza;baremada;apta;18;40;NOCENTRO;0;no
-"ANGEL RIVIÈRE";lapiz;goma;"Jorge luis";ebo;2;ZARAGOZA;baremada;apta;18;10;NOCENTRO;0;si
-"ANGEL RIVIÈRE";PORTUGAL;OPORTO;TERESA;ebo;2;Barbastro;baremada;apta;17;8;NOCENTRO;0;si
-"ANGEL RIVIÈRE";enero;nodata;enero;ebo;2;Zaragoza;baremada;apta;17;30;NOCENTRO;0;no
-"ANGEL RIVIÈRE";Rosa;" amarillo";Raul;ebo;2;ZARAGOZA;baremada;apta;17;3;NOCENTRO;1;si
-"ANGEL RIVIÈRE";PORTUGAL;OPORTO;GREGORIO;ebo;2;Barbastro;baremada;apta;17;8;NOCENTRO;1;si
-"ANGEL RIVIÈRE";lapiz;goma;Sara;ebo;2;ZARAGOZA;baremada;apta;16;10;NOCENTRO;0;si
-"ANGEL RIVIÈRE";"Rosa ";amarillo;Sara;ebo;2;ZARAGOZA;baremada;apta;13;18;NOCENTRO;0;si
-"ANGEL RIVIÈRE";rosa;amarillo;"Jorge Luis";ebo;2;ZARAGOZA;baremada;apta;13;3;NOCENTRO;0;si
-"ANGEL RIVIÈRE";PORTUGAL;OPORTO;AMAYA;ebo;2;Barbastro;baremada;apta;12;8;NOCENTRO;1;si
-"ANGEL RIVIÈRE";pollo;piña;"Jorge Miguel";ebo;2;Zaragoza;baremada;apta;12;21;NOCENTRO;0;no
-"ANGEL RIVIÈRE";Zanahoria;Pimienta;"Jorge Miguel";ebo;2;ZARAGOZA;baremada;apta;11;18;NOCENTRO;0;no
-"ANGEL RIVIÈRE";ISLANDIA;MONACO;OLIVIA;ebo;2;Alcañiz;baremada;apta;1;25;NOCENTRO;0;no
-"ANGEL RIVIÈRE";ISLANDIA;nodata;SERGIO;ebo;2;Barbastro;baremada;apta;0;9;NOCENTRO;0;no
-"ANGEL RIVIÈRE";ISLANDIA;MONACO;ANTONIO;ebo;2;Alcañiz;baremada;apta;0;14;NOCENTRO;0;no
-"ANGEL RIVIÈRE";SIDNEY;AUSTRALIA;PATRICIA;ebo;2;Zaragoza;baremada;apta;0;32;NOCENTRO;0;no
-"ANGEL RIVIÈRE";PARIS;XXX;TERESA;ebo;1;"Alcolea de Cinca";baremada;apta;0;39;NOCENTRO;0;no
-"ANGEL RIVIÈRE";NORUEGA;nodata;CLAUDIA;tva;2;Barbastro;baremada;apta;23;13;NOCENTRO;0;no
-"ANGEL RIVIÈRE";PORTUGAL;OPORTO;JUAN;tva;2;Barbastro;baremada;apta;12;8;NOCENTRO;1;si
-"ANGEL RIVIÈRE";PARIS;nodata;VANESA;tva;2;"Alcolea de Cinca";baremada;apta;0;7;NOCENTRO;0;no
-"ANGEL RIVIÈRE";SUECIA;VENECIA;VERA;tva;2;Aínsa;baremada;apta;0;31;NOCENTRO;0;no
-"ANGEL RIVIÈRE";AUSTRIA;nodata;PATRICIA;tva;2;Alcañiz;baremada;irregular;0;33;NOCENTRO;0;no
-"ANGEL RIVIÈRE";asasa;nodata;asas;dos;2;Aínsa;validada;apta;6;17;NOCENTRO;1;no
-"ANGEL RIVIÈRE";ALASKA;nodata;NURIA;dos;2;Zaragoza;baremada;apta;0;27;NOCENTRO;0;no
-"SAN JORGE";pa34;sa34;n34;ebo;2;"Alcolea de Cinca";validada;apta;4;28;NOCENTRO;0;si
-"SAN JORGE";pah32;sa32;nh32;ebo;2;Adahuesca;validada;apta;4;11;NOCENTRO;0;si
-"SAN JORGE";ap32;nodata;n32;ebo;2;Adahuesca;validada;apta;4;11;NOCENTRO;0;si
-"LA ALEGRÍA";pah33;sah33;nh33;ebo;2;"Alcolea de Cinca";validada;apta;4;4;NOCENTRO;0;si
-"LA ALEGRÍA";pa33;nodata;na33;ebo;2;"Alcolea de Cinca";validada;apta;4;4;NOCENTRO;0;si
-"LA ALEGRÍA";pher34;sa34;nh134;ebo;2;Adahuesca;validada;apta;4;20;NOCENTRO;0;si
-"BIELLO ARAGÓN";pa34;sa34;n34;ebo;2;Adahuesca;validada;apta;4;25;NOCENTRO;0;si
+"ANGEL RIVIÈRE";Cebolla;Pimiento;"Jorge Miguel";ebo;2;ZARAGOZA;baremada;apta;20;28;NOCENTRO;0;no
+"ANGEL RIVIÈRE";Patata;Arroz;"Jorge Miguel";ebo;2;Zaragoza;baremada;apta;18;4;NOCENTRO;0;no
+"ANGEL RIVIÈRE";lapiz;goma;"Jorge luis";ebo;2;ZARAGOZA;baremada;apta;18;3;NOCENTRO;0;si
+"ANGEL RIVIÈRE";PORTUGAL;OPORTO;GREGORIO;ebo;2;Barbastro;baremada;apta;17;12;NOCENTRO;1;si
+"ANGEL RIVIÈRE";PORTUGAL;OPORTO;TERESA;ebo;2;Barbastro;baremada;apta;17;12;NOCENTRO;0;si
+"ANGEL RIVIÈRE";enero;nodata;enero;ebo;2;Zaragoza;baremada;apta;17;31;NOCENTRO;0;no
+"ANGEL RIVIÈRE";Rosa;" amarillo";Raul;ebo;2;ZARAGOZA;baremada;apta;17;29;NOCENTRO;1;si
+"ANGEL RIVIÈRE";lapiz;goma;Sara;ebo;2;ZARAGOZA;baremada;apta;16;3;NOCENTRO;0;si
+"ANGEL RIVIÈRE";"Rosa ";amarillo;Sara;ebo;2;ZARAGOZA;baremada;apta;13;29;NOCENTRO;0;si
+"ANGEL RIVIÈRE";rosa;amarillo;"Jorge Luis";ebo;2;ZARAGOZA;baremada;apta;13;29;NOCENTRO;0;si
+"ANGEL RIVIÈRE";PORTUGAL;OPORTO;AMAYA;ebo;2;Barbastro;baremada;apta;12;12;NOCENTRO;1;si
+"ANGEL RIVIÈRE";pollo;piña;"Jorge Miguel";ebo;2;Zaragoza;baremada;apta;12;2;NOCENTRO;0;no
+"ANGEL RIVIÈRE";Zanahoria;Pimienta;"Jorge Miguel";ebo;2;ZARAGOZA;baremada;apta;11;27;NOCENTRO;0;no
+"ANGEL RIVIÈRE";ISLANDIA;MONACO;OLIVIA;ebo;2;Alcañiz;baremada;apta;1;18;NOCENTRO;0;no
+"ANGEL RIVIÈRE";ISLANDIA;MONACO;ANTONIO;ebo;2;Alcañiz;baremada;apta;0;30;NOCENTRO;0;no
+"ANGEL RIVIÈRE";SIDNEY;AUSTRALIA;PATRICIA;ebo;2;Zaragoza;baremada;apta;0;16;NOCENTRO;0;no
+"ANGEL RIVIÈRE";PARIS;XXX;TERESA;ebo;1;"Alcolea de Cinca";baremada;apta;0;25;NOCENTRO;0;no
+"ANGEL RIVIÈRE";ISLANDIA;nodata;SERGIO;ebo;2;Barbastro;baremada;apta;0;33;NOCENTRO;0;no
+"ANGEL RIVIÈRE";NORUEGA;nodata;CLAUDIA;tva;2;Barbastro;baremada;apta;23;11;NOCENTRO;0;no
+"ANGEL RIVIÈRE";PORTUGAL;OPORTO;JUAN;tva;2;Barbastro;baremada;apta;12;12;NOCENTRO;1;si
+"ANGEL RIVIÈRE";AUSTRIA;nodata;PATRICIA;tva;2;Alcañiz;baremada;irregular;0;35;NOCENTRO;0;no
+"ANGEL RIVIÈRE";PARIS;nodata;VANESA;tva;2;"Alcolea de Cinca";baremada;apta;0;19;NOCENTRO;0;no
+"ANGEL RIVIÈRE";SUECIA;VENECIA;VERA;tva;2;Aínsa;baremada;apta;0;24;NOCENTRO;0;no
+"ANGEL RIVIÈRE";asasa;nodata;asas;dos;2;Aínsa;validada;apta;6;1;NOCENTRO;1;no
+"ANGEL RIVIÈRE";ALASKA;nodata;NURIA;dos;2;Zaragoza;baremada;apta;0;37;NOCENTRO;0;no
+"SAN JORGE";ap32;nodata;n32;ebo;2;Adahuesca;validada;apta;4;14;NOCENTRO;0;si
+"SAN JORGE";pa34;sa34;n34;ebo;2;"Alcolea de Cinca";validada;apta;4;22;NOCENTRO;0;si
+"SAN JORGE";pah32;sa32;nh32;ebo;2;Adahuesca;validada;apta;4;14;NOCENTRO;0;si
+"LA ALEGRÍA";pher34;sa34;nh134;ebo;2;Adahuesca;validada;apta;4;8;NOCENTRO;0;si
+"LA ALEGRÍA";pah33;sah33;nh33;ebo;2;"Alcolea de Cinca";validada;apta;4;6;NOCENTRO;0;si
+"LA ALEGRÍA";pa33;nodata;na33;ebo;2;"Alcolea de Cinca";validada;apta;4;6;NOCENTRO;0;si
+"BIELLO ARAGÓN";pa34;sa34;n34;ebo;2;Adahuesca;validada;apta;4;8;NOCENTRO;0;si
+"BIELLO ARAGÓN";ap5mod;nodata;luis1;ebo;2;nodata;validada;apta;0;13;NOCENTRO;0;no
 "BIELLO ARAGÓN";ap40;sa40;l40;ebo;2;Adahuesca;borrador;apta;0;0;NOCENTRO;0;no
-"BIELLO ARAGÓN";ap5mod;nodata;luis1;ebo;2;nodata;validada;apta;0;36;NOCENTRO;0;no
-MONTECORONA;pahh3;sah3;nhh3;ebo;2;Aínsa;validada;apta;4;2;NOCENTRO;0;si
-MONTECORONA;pah3;sah3;nh3;ebo;2;Aínsa;validada;apta;4;2;NOCENTRO;0;si
-MONTECORONA;pah31;sah31;hn31;ebo;2;Adahuesca;validada;apta;4;17;NOCENTRO;0;si
-MONTECORONA;aph31;nodata;luis31;ebo;2;Adahuesca;validada;apta;4;20;NOCENTRO;0;si
-MONTECORONA;asas;nodata;asasas;ebo;2;Adahuesca;validada;apta;0;18;NOCENTRO;0;no
-MONTECORONA;asas;nodata;asas;ebo;2;nodata;validada;apta;0;26;NOCENTRO;0;no
-MONTECORONA;pahl2;sahl2;nhl2;ebo;2;"Alcolea de Cinca";validada;apta;0;5;NOCENTRO;0;no
-MONTECORONA;ap1;nodata;luis1;ebo;2;nodata;validada;apta;0;29;NOCENTRO;0;no
-MONTECORONA;hpluis1;hsluis1;hluis11;ebo;2;nodata;validada;apta;0;19;NOCENTRO;0;no
-MONTECORONA;ap1;nodata;nom2;ebo;2;nodata;validada;apta;0;1;NOCENTRO;0;no
-MONTECORONA;pac1;sac1;nhc1;ebo;2;Adahuesca;validada;apta;0;37;NOCENTRO;0;no
-MONTECORONA;hues1;nodata;luis1;dos;2;Adahuesca;validada;apta;0;39;NOCENTRO;0;no
-PIRÁMIDE;asasa;nodata;sdsdsd;ebo;2;nodata;validada;apta;0;6;NOCENTRO;0;no
-NOCENTRO;pah34;sah34;nh34;ebo;2;"Alcolea de Cinca";validada;apta;4;23;NOCENTRO;0;si
-NOCENTRO;ap2modificado;nodata;luis1;ebo;2;nodata;validada;apta;0;34;NOCENTRO;0;no
-NOCENTRO;ap1;nodata;nom3;ebo;2;nodata;validada;apta;0;16;NOCENTRO;0;no
+MONTECORONA;pah31;sah31;hn31;ebo;2;Adahuesca;validada;apta;4;21;NOCENTRO;0;si
+MONTECORONA;aph31;nodata;luis31;ebo;2;Adahuesca;validada;apta;4;21;NOCENTRO;0;si
+MONTECORONA;pahh3;sah3;nhh3;ebo;2;Aínsa;validada;apta;4;7;NOCENTRO;0;si
+MONTECORONA;pah3;sah3;nh3;ebo;2;Aínsa;validada;apta;4;7;NOCENTRO;0;si
+MONTECORONA;hpluis1;hsluis1;hluis11;ebo;2;nodata;validada;apta;0;32;NOCENTRO;0;no
+MONTECORONA;ap1;nodata;nom2;ebo;2;nodata;validada;apta;0;26;NOCENTRO;0;no
+MONTECORONA;pac1;sac1;nhc1;ebo;2;Adahuesca;validada;apta;0;17;NOCENTRO;0;no
+MONTECORONA;asas;nodata;asasas;ebo;2;Adahuesca;validada;apta;0;10;NOCENTRO;0;no
+MONTECORONA;asas;nodata;asas;ebo;2;nodata;validada;apta;0;15;NOCENTRO;0;no
+MONTECORONA;pahl2;sahl2;nhl2;ebo;2;"Alcolea de Cinca";validada;apta;0;36;NOCENTRO;0;no
+MONTECORONA;ap1;nodata;luis1;ebo;2;nodata;validada;apta;0;5;NOCENTRO;0;no
+MONTECORONA;hues1;nodata;luis1;dos;2;Adahuesca;validada;apta;0;34;NOCENTRO;0;no
+PIRÁMIDE;asasa;nodata;sdsdsd;ebo;2;nodata;validada;apta;0;20;NOCENTRO;0;no
+NOCENTRO;pah34;sah34;nh34;ebo;2;"Alcolea de Cinca";validada;apta;4;22;NOCENTRO;0;si
+NOCENTRO;ap1;nodata;nom3;ebo;2;nodata;validada;apta;0;9;NOCENTRO;0;no
+NOCENTRO;ap2modificado;nodata;luis1;ebo;2;nodata;validada;apta;0;23;NOCENTRO;0;no

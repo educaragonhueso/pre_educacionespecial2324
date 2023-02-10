@@ -53,7 +53,7 @@ $log_listados_provisionales->warning("OBTENIENDO SOLICITUDES PROVISIONALES, CENT
 $log_listados_provisionales->warning("OBTENIENDO SOLICITUDES PROVISIONALES, ESTADO CONVOCATORIA:  ".$estado_convocatoria);
 ######################################################################################
 
-if($estado_convocatoria<ESTADO_PUBLICACION_PROVISIONAL)
+if($estado_convocatoria<ESTADO_SORTEO)
    $solicitudes=$list->getSolicitudes($id_centro,'normal',$subtipo_listado,$tsolicitud,$log_listados_provisionales,0,$rol,$provincia); 
 else
    $solicitudes=$list->getSolicitudes($id_centro,'provisionales',$subtipo_listado,$tsolicitud,$log_listados_provisionales,0,$rol,$provincia); 
@@ -90,7 +90,7 @@ if($_POST['pdf']==1)
 	  // Page number
 	$pdf->Cell(30);
 	$pdf->Cell(40,10,'SELLO CENTRO',1,0,'C');
-	$pdf->Cell(140,10,'En ______________________ a ____de_________de 2022',0,0,'C');
+	$pdf->Cell(140,10,'En ______________________ a ____de_________de 2023',0,0,'C');
 	$pdf->Cell(0,10,'Firmado:',0,0);
 	$pdf->Ln();
 	$pdf->Cell(220,10,'El Director/a',0,0,'R');
