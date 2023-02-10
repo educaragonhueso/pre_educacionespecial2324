@@ -42,19 +42,21 @@ $nombre_centro=$tcentro->getNombre();
 $cabecera="campos_cabecera_".$subtipo_listado;
 $camposdatos="campos_bbdd_".$subtipo_listado;
 
-$formato=''; //formato listado en el pdf
+$tipoinforme=''; //tipo de informe listado en el pdf
 $anchuracelda=10;
 $primera_celda=20;
-if($subtipo_listado=='sor_ale') {$nombre_listado='LISTADO ALUMNOS SEGUN NUMERO ALEATORIO PARA SORTEO';$formato='numero_aleatorio';}
-if($subtipo_listado=='sor_bar') {$nombre_listado='LISTADO SOLICITUDES BAREMADAS';$formato='numero_aleatorio';}
-if($subtipo_listado=='sor_det') {$nombre_listado='LISTADO DETALLE BAREMO';$formato='detalle_baremo';}
+if($subtipo_listado=='sor_ale') {$nombre_listado='LISTADO ALUMNOS SEGUN NUMERO ALEATORIO PARA SORTEO';$tipoinforme='numero_aleatorio';}
+if($subtipo_listado=='sor_bar') {$nombre_listado='LISTADO SOLICITUDES BAREMADAS';$tipoinforme='solicitudes_baremadas';}
+if($subtipo_listado=='sor_det') {$nombre_listado='LISTADO DETALLE BAREMO';$tipoinforme='detalle_baremo';}
 
 
 #SI ES ANTES DEL SORTEO
-$log_listados_baremados->warning("LOGINICIO: OBTENIENDO SOLICITUDES BAREMADAS SUBTIPO: $subtipo_listado ESTADO CONVOCATORIA: $estado_convocatoria, ID CENTRO: $id_centro formato: $formato, provincia: $provincia");
+$log_listados_baremados->warning("LOGINICIO: OBTENIENDO SOLICITUDES BAREMADAS SUBTIPO: $subtipo_listado ESTADO CONVOCATORIA: $estado_convocatoria, ID CENTRO: $id_centro formato: $tipoinforme, provincia: $provincia");
 
-if($estado_convocatoria<ESTADO_PUBLICACION_BAREMADAS or $subtipo_listado=='sor_ale' or $subtipo_listado=='sor_det')
+//si queremos mostrar las baremadas en tiempo real o el número aleatorio, obtneemos los datos de la tabla original
+if($estado_convocatoria<ESTADO_PUBLICACION_BAREMADAS or $subtipo_listado=='sor_ale')
    $solicitudes=$list->getSolicitudes($id_centro,'normal',$subtipo_listado,$solicitud,$log_listados_baremados,0,$rol,$provincia); 
+//si queremos mostrar las baremadas después de la fase de baremación, obtneemos los datos de la tabla baremada final con los datos bloqueados
 else
    $solicitudes=$list->getSolicitudes($id_centro,'baremadas',$subtipo_listado,$solicitud,$log_listados_baremados,0,$rol,$provincia); 
    
@@ -98,13 +100,14 @@ if($_POST['pdf']==1)
 	$cab=$$cabecera;
 	$pdf->SetFont('Helvetica','',8);
 	$pdf->AddPage('L','',0,$nombre_listado);
-	$pdf->BasicTable($cab,$datos,0,$anchuracelda,$$formato,$primera_celda);
+	$pdf->BasicTable($cab,$datos,0,$anchuracelda,$tipoinforme,$primera_celda);
 	$pdf->Ln(20);
 	 // Arial italic 8
 	$pdf->SetFont('Arial','I',8);
 	  // Page number
 	$pdf->Cell(40,10,'SELLO CENTRO',1,0,'C');
-	$pdf->Cell(140,10,'En ______________________ a ____de________ de ".CURSO."',0,0,'C');
+   $firma='En__________________ a ____de________ de '.CURSO;
+	$pdf->Cell(140,10,$firma,0,0,'C');
 	$pdf->Cell(0,10,'Firmado:',0,0);
 	$pdf->Ln();
 	$pdf->Cell(220,10,'El Director/a',0,0,'R');

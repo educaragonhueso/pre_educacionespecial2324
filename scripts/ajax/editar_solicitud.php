@@ -37,7 +37,7 @@ require_once DIR_BASE.'/includes/form_solicitud.php';
 ######################################################################################
 $log_editar_solicitud->warning("::::INICIO EDITAR ALUMNO");
 ######################################################################################
-$scontroller=new SolicitudController($rol,$conexion,$formsol,$log_editar_solicitud);
+$scontroller=new SolicitudController($rol,$conexion,$formsol,$estado_convocatoria,$log_editar_solicitud);
 $tsol=new Solicitud($conexion);
 
 if($rol=='alumno')
@@ -46,7 +46,7 @@ if($rol=='alumno')
 	if($fase_sol=='validada' or $estado_convocatoria>=ESTADO_FININSCRIPCION) $solo_lectura=1;
 }
 //obtenemos formulario con los datos
-$sform=$scontroller->showFormSolicitud($id_alumno,$id_centro,$rol,1,$solo_lectura,$estado_convocatoria,$conexion,$log_editar_solicitud,0);
+$sform=$scontroller->showFormSolicitud($id_alumno,$id_centro,$rol,1,$solo_lectura,$conexion,$log_editar_solicitud,0);
 $botonimp='<a href="imprimirsolicitud.php?id='.$id_alumno.'" target="_blank"><input class="btn btn-primary imprimirsolicitud"  type="button" value="Vista Previa Impresion Documento"/></a>';
 
 //Si el id es cero obentemos el nuevo id

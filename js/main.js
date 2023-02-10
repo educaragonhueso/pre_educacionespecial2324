@@ -620,10 +620,12 @@ function recalcular_baremo(){
 	var baremo10_validado=$('#baremo_validar_parto').val();
    
 	var baremo11=$('input[name=baremo_tipo_familia_numerosa]:checked').attr("data-baremo");
-	var baremo11_validado=$('#msg_comprobacion_familia_numerosa').val();
+	var baremo11_validado=$('#msg_comprobacion_familia_numerosa').text();
 
-	var baremo12=$('input[name=baremo_tipa_familia_monoparental]:checked').attr("data-baremo");
-	var baremo12_validado=$('#msg_comprobacion_familia_monoparental').val();
+	var baremo12=$('input[name=baremo_tipo_familia_monoparental]:checked').attr("data-baremo");
+	var baremo12_validado=$('#msg_comprobacion_familia_monoparental').text();
+      console.log("BAREMO 12 NUMEROSA marcado para el baremo"+baremo12_validado);
+      console.log("BAREMO 12 NUMEROSA marcado para el baremo"+baremo12);
 
 //   var baremo10=$('input[name=transporte'+id+']:checked').attr("value");
    var baremo_h1=$('#hermanos_nombre_baremo1').val();
@@ -634,7 +636,7 @@ function recalcular_baremo(){
 	if(baremo1)
 	{
 		totalbaremo=totalbaremo+parseInt(baremo1);
-		if(baremo1_validado==1) 	total_baremo_validado=total_baremo_validado+parseInt(baremo1);
+		if(baremo1_validado==1) total_baremo_validado=total_baremo_validado+parseInt(baremo1);
 	}
 	if(baremo2)
 	{
@@ -686,6 +688,7 @@ function recalcular_baremo(){
 	{
 		totalbaremo=totalbaremo+parseFloat(baremo11);
 		if(baremo11_validado.indexOf("POSITIVA")!=-1) total_baremo_validado=total_baremo_validado+parseFloat(baremo11);
+      console.log("NUMEROSA marcado para el baremo");
 	}
 	if(baremo12)
 	{
@@ -706,7 +709,7 @@ function recalcular_baremo(){
 	else
 		total_hbaremo=0;
 	totalbaremo=totalbaremo+total_hbaremo+puntos_conjunta;
-	total_baremo_validado=total_baremo_validado;
+	total_baremo_validado=total_baremo_validado+puntos_conjunta;
 
 	$("#id_puntos_baremo_totales").text(totalbaremo);
 	$("#id_puntos_baremo_validados").text(total_baremo_validado);
@@ -1597,6 +1600,7 @@ $(".show_solicitudes").click(function () {
                   $(".tresumensol").remove();
                   $(".tresumenmat").remove();
                   $("#l_matricula").html(data);
+                  $(".wrapper").html(data);
                   $("#filasolicitud").remove();
                   //$("#navgir").after(data);
                }

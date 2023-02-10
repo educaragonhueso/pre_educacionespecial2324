@@ -16,9 +16,17 @@ require_once DIR_CLASES.'LOGGER.php';
 require_once DIR_APP.'parametros.php';
 ######################################################################################
 $id_alumno=$_POST['id_alumno'];
+$token=$_POST['token'];
 $fichero=$_POST['fichero'];
 $rol=$_POST['rol'];
 $tiporec=$_POST['tiporec'];
+
+$conectar=new Conectar('../../config/config_database.php');
+$conexion=$conectar->conexion();
+
+$solicitud=new Solicitud($conexion);
+if($id_alumno==0)
+   $id_alumno=$solicitud->getIdFromToken($token,'');
 
 $ruta="../fetch/reclamaciones$tiporec/$id_alumno/$fichero";
 

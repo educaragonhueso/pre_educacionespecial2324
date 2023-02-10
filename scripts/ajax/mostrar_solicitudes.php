@@ -18,7 +18,6 @@ require_once DIR_CLASES.'LOGGER.php';
 require_once DIR_BASE.'/clases/core/Notificacion.php';
 require_once DIR_APP.'parametros.php';
 require_once DIR_BASE.'/controllers/ListadosController.php';
-require_once DIR_BASE.'/controllers/CentrosController.php';
 require_once DIR_BASE.'/clases/models/Centro.php';
 
 $conectar=new Conectar('../../config/config_database.php');

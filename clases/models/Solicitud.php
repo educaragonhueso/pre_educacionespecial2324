@@ -89,7 +89,7 @@ class Solicitud {
    $ndir=$dir.$id_alumno;
    //return $ndir;
    $htmldoc='';
-    if(file_exists($ndir)==0) return "NO HAY FICHEROS $ndir";
+    if(file_exists($ndir)==0) return "NO HAY FICHEROS";
     if ($handle = opendir($ndir)) 
     {
        while (false !== ($fichero = readdir($handle))) {
@@ -1548,9 +1548,9 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
 		//MOSTRAMOS DATOS VALIDADOS
 		if($rol=='centro' or $rol=='alumno') //para centros o alumnos del centro
       {
-         $log->warning("CONSULTA ROL $rol:");
          //si ya hemos llegado a provionales baremadas vamos directos a la tabla 
-         $sql="SELECT * FROM alumnos_baremada_final WHERE $centro=$id_centro ORDER BY apellido1,nombre";
+         $sql="SELECT * FROM alumnos_baremada_final WHERE $centro=$id_centro ORDER BY tipoestudios,apellido1,nombre";
+         $log->warning("CONSULTA ROL $rol: $sql");
       }
 	   elseif($rol=='admin') //para administradorn
       {
@@ -1603,7 +1603,7 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
             $sql="SELECT * FROM alumnos_baremada_provisional WHERE $centro=$id_centro";
          else
          {
-		      $sql="SELECT a.conjunta, a.id_alumno as id_alumno,a.nombre,a.apellido1,a.apellido2,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.tipoestudios,nasignado,IFNULL(b.puntos_validados,0) as puntos_validados,a.token,b.*,rec.tipo FROM $tabla_alumnos a left join baremo b on a.id_alumno=b.id_alumno left join reclamaciones rec on rec.id_alumno=a.id_alumno where $centro=".$id_centro." $noborradorc $filtrorec  order by a.tipoestudios, a.apellido1,a.nombre,a.transporte asc,b.puntos_validados desc,b.hermanos_centro desc,b.proximidad_domicilio,b.renta_inferior,b.discapacidad_alumno,b.discapacidad_hermanos,b.tipo_familia_numerosa,b.tipo_familia_monoparental,a.nordensorteo asc,a.nasignado desc";
+		      $sql="SELECT a.conjunta, a.id_alumno as id_alumno,a.nombre,a.apellido1,a.apellido2,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.tipoestudios,nasignado,IFNULL(b.puntos_validados,0) as puntos_validados,a.token,b.*,rec.tipo,a.id_centro_destino FROM $tabla_alumnos a left join baremo b on a.id_alumno=b.id_alumno left join reclamaciones rec on rec.id_alumno=a.id_alumno where $centro=".$id_centro." $noborradorc $filtrorec  order by a.tipoestudios, a.apellido1,a.nombre,a.transporte asc,b.puntos_validados desc,b.hermanos_centro desc,b.proximidad_domicilio,b.renta_inferior,b.discapacidad_alumno,b.discapacidad_hermanos,b.tipo_familia_numerosa,b.tipo_familia_monoparental,a.nordensorteo asc,a.nasignado desc";
          }
       }
 	   elseif($rol=='admin') //para administradorn
@@ -2362,7 +2362,6 @@ as nasignado,c.nombre_centro, a.puntos_validados,a.id_centro_destino as id_centr
     }
     public function getIdFromToken($t,$log) {
 		$query="SELECT id_alumno FROM alumnos WHERE token='$t'";
-      $log->warning("CONSULTA ID ALUMNO FROM TOKEN: ".$query);
 		$res=$this->conexion->query($query);
       if($res->num_rows==0) 
          return 0;

@@ -3,7 +3,6 @@ require_once $_SERVER['CONTEXT_DOCUMENT_ROOT']."/educacionespecial/config/config
 require_once DIR_BASE.'/clases/core/Conectar.php';
 require_once DIR_BASE.'/controllers/ListadosController.php';
 require_once DIR_BASE.'/clases/models/Centro.php';
-require_once DIR_BASE.'/controllers/CentrosController.php';
 require_once DIR_CLASES.'LOGGER.php';
 
 ######################################################################################

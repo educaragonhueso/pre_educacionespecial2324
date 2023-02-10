@@ -40,7 +40,7 @@ $fase_sorteo=0;
 $modo='pdf';
 
 $list=new ListadosController('alumnos',$conexion,$estado_convocatoria);
-$centros_cont=new CentrosController(0);
+$centros_cont=new CentrosController(0,$estado_convocatortia);
 
 ##################################################################################
 $log_genpdfs=new logWriter('log_genpdfs',DIR_LOGS);
@@ -88,7 +88,8 @@ $pdf->SetFont('Arial','I',8);
 // Page number
 $pdf->Cell(0,10,'                         SELLO DEL CENTRO',0,1);
 $pdf->Cell(0,10,'EL/LA DIRECTORA                        ',0,1,'R');
-$pdf->Cell(0,10,'En Zaragoza______________________a____de____2022',0,0,'C');
+$firma='En Zaragoza______________________a____de____'.CURSO;
+$pdf->Cell(0,10,$firma,0,0,'C');
 $pdf->Ln(20);
 $pdf->Cell(0,10,'Fdo                        ',0,1,'R');
 

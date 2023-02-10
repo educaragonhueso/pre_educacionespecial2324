@@ -64,9 +64,11 @@ class ListadosController{
       //ponemos todas a cero para evitar inconsistencias
       $sql1="UPDATE  alumnos SET nasignado =0";
       $sql2="UPDATE  alumnos SET nasignado = (@r := @r + 1) where fase_solicitud!='borrador' ORDER BY  RAND()";
+      $sqltmp="CREATE table  alumnos_nasignado SELECT id_alumno,nasignado,conjunta FROM alumnos WHERE fase_solicitud!='borrador'";
 
       if($this->conexion->query($sql1) and $this->conexion->query($sql2))
       {
+         $this->conexion->query($sqltmp);
          $r=$this->asignarNumConjuntas($log);
          return $r;
       }
@@ -76,45 +78,64 @@ class ListadosController{
    }
    public function asignarNumConjuntas($log)
    {
+      $nhermanos_modificados=0;
       $idsalumnos=array();
       $sql="SELECT id_alumno,nasignado FROM alumnos where fase_solicitud!='borrador' ORDER BY nasignado asc";
       $i=0;
-      $log->warning("ASIGNANDO CONJUNTAS $sql");
       $r=$this->conexion->query($sql);
       while ($obj = $r->fetch_object())
       {
          $id_alumno_actual=$obj->id_alumno;
          $nasignado_actual=$obj->nasignado;
+         $nasignado_actual=$this->getNasignado($id_alumno_actual);
          $hermanos_actual=$this->getHermanos($id_alumno_actual,$log);
-         //$log->warning(print_r($hermanos_actual,true));
+         $log->warning("COMENZANDO, HERMANO DE: $id_alumno_actual\n");
+         $log->warning(print_r($hermanos_actual,true));
          if(sizeof($hermanos_actual)>=1)
          {
             $log->warning("HAY HERMANOS\n");
             $log->warning("NASIGNADO $nasignado_actual\n");
             $log->warning("COMPROBANDO HERMANOS DE $id_alumno_actual\n");
             $data_hermano=$this->checkHermanos($hermanos_actual,$idsalumnos,$log);
+            $log->warning("DATOS DE HERMANOS DE $id_alumno_actual\n");
+            $log->warning(print_r($data_hermano,true));
             $id_hermano=$data_hermano['id_alumno'];
-            $n_hermano=$data_hermano['nasignado'];
+            $n_hermano=$this->getNasignado($id_hermano);
             $log->warning("id hermano: $id_hermano\n");
             if($id_hermano!=0)
             {
+               $nhermanos_modificados++;
                $log->warning("HAY HERMANOS ANTERIORES\n");
 
                $sql="UPDATE alumnos SET nasignado=$n_hermano WHERE id_alumno=$id_alumno_actual and fase_solicitud!='borrador'";
-               $log->warning("SET NUMERO HERMANO: $sql\n");
+               $log->warning("MODIFICANDO NUMERO A HERMANO:\n");
+               $log->warning($sql);
                $res=$this->conexion->query($sql);
 
+               $nnasignado=$nasignado_actual-$nhermanos_modificados; 
                $sql="UPDATE alumnos SET nasignado=nasignado-1 WHERE nasignado>$nasignado_actual and fase_solicitud!='borrador'";
-               $log->warning("SET NUMERO NUMEROS MAYORES: $sql\n");
+               $log->warning("MODIFICANDO NUMERO AL RESTO DE NUMEROS MAYORES:\n");
+               $log->warning($sql);
                $res=$this->conexion->query($sql);
             }
          }
+         else
+            $log->warning("NO HAY HERMANOS DE: $id_alumno_actual\n");
          $idsalumnos[$i]['id_alumno']=$id_alumno_actual;
          $idsalumnos[$i]['nasignado']=$nasignado_actual;
          $i++;
       }
       return 1;
    }
+    public function getNasignado($id_alumno)
+    {
+      if($id_alumno==0) return 0;
+      $sql="SELECT nasignado FROM alumnos WHERE id_alumno=$id_alumno";
+      $r=$this->conexion->query($sql);
+      if($obj = $r->fetch_object())
+         return $obj->nasignado;
+      else return 0;
+  }
     public function getHermanos($id_alumno,$log)
    {
       $hermanos=array();
@@ -126,6 +147,7 @@ class ListadosController{
   }
    public function checkHermanos($h,$ids,$log)
    {
+     //comprobamos si se ha procesado el hermano
     //  $log->warning("COMPROBANDO HERMANOS");
     //  $log->warning(print_r($h,true));
     //  $log->warning(print_r($ids,true));
@@ -303,21 +325,29 @@ class ListadosController{
 	
 		$li="<tr class='filasol' id='filasol".$sol->id_alumno."' style='color:black'>";
       $li.="<td class='calumno dalumno prueba' data-token='".$sol->token."'  data-idal='".$sol->id_alumno."'>".$sol->id_alumno."-".strtoupper($sol->apellido1).",".strtoupper($sol->nombre)."</td>";
-     
-      if($this->estado_convocatoria>ESTADO_FININSCRIPCION)
-      { 
-         if($sol->tipo=='provisional')
-            $rec="Ver reclamación listado provisional";
-         else
-            $rec="No hay reclamación";
-      }
       $token=$sol->token;
       if(isset($sol->id_centro_destino))
          $id_centro=$sol->id_centro_destino;
       else
          $id_centro=$sol->id_centro;
+     
+      if($this->estado_convocatoria>=ESTADO_RECLAMACIONES_BAREMADAS AND $this->estado_convocatoria<ESTADO_RECLAMACIONES_PROVISIONAL)
+      { 
+         if($sol->tipo=='baremo')
+            $rec="Ver reclamación listado baremado";
+         else
+            $rec="No hay reclamación baremada";
+         $enlacerec="reclamaciones_baremo.php?id_centro=$id_centro&token=$token";
+      }
+      if($this->estado_convocatoria==ESTADO_RECLAMACIONES_PROVISIONAL)
+      { 
+         if($sol->tipo=='provisional')
+            $rec="Ver reclamación listado provisional";
+         else
+            $rec="No hay reclamación provisional";
+         $enlacerec="reclamaciones_provisional.php?id_centro=$id_centro&token=$token";
+      }
          
-      $enlacerec="reclamaciones_provisional.php?id_centro=$id_centro&token=$token";
 		$li.="<td id='$token' class='reclamacion'><a href='$enlacerec'>$rec</a></td>";
 		$li.="<td id='print".$sol->id_alumno."' class='fase printsol'><i class='fa fa-print psol' aria-hidden='true'></i></td>";
 		$li.="<td id='fase".$sol->id_alumno."' class='fase'>".$sol->fase_solicitud."</td>";
@@ -384,13 +414,19 @@ class ListadosController{
 		else $class='';
 
       //tratamos cada campo por separado, solo mostramos los q están validados
-      $valorfamilia=0;
-      if($sol->validar_tipo_familia_numerosa==1) $valorfamilia=$sol->tipo_familia_numerosa;
-      if($sol->validar_tipo_familia_monoparental==1) $valorfamilia=$sol->tipo_familia_monoparental;
+      $valorfamilia_numerosa=0;
+      if($sol->comprobar_familia_numerosa==2)
+         $valorfamilia_numerosa=$sol->tipo_familia_numerosa;
+      $valorfamilia_monoparental=0;
+      if($sol->comprobar_familia_monoparental==2)
+         $valorfamilia_monoparental=$sol->tipo_familia_monoparental;
       
-      $valordiscapacidad=0;
-      if($sol->validar_discapacidad_alumno==1) $valordiscapacidad=$valordiscapacidad+$sol->discapacidad_alumno;
-      if($sol->validar_discapacidad_hermanos==1) $valordiscapacidad=$valordiscapacidad+$sol->discapacidad_hermanos;
+      $valorrenta_inferior=0;
+      if($sol->comprobar_renta_inferior==2) $valorrenta_inferior=1;
+      $valordiscapacidad_alumno=0;
+      if($sol->comprobar_discapacidad_alumno==2) $valordiscapacidad_alumno=1;
+      $valordiscapacidad_hermanos=0;
+      if($sol->comprobar_discapacidad_hermanos==2) $valordiscapacidad_hermanos=1;
       if($sol->proximidad_domicilio=='') $proximidad_domicilio='sindomicilio';
       else $proximidad_domicilio=$sol->proximidad_domicilio;
 		$li="<tr class='filasol' id='filasol".$sol->id_alumno."' style='color:black'>";
@@ -436,12 +472,27 @@ class ListadosController{
 				{
 					$li.="<td id='".$d.$sol->id_alumno."' data-reserva='reserva".$sol->reserva."' data-idcorigen='idcorigen".$sol->id_centro_origen."'>".$sol->$d."</td>";
 				}
+				elseif($d=='comprobar_renta_inferior')
+					$li.="<td id='".$d.$sol->id_alumno."' class='".$d."'>".$valorrenta_inferior."</td>";
+				elseif($d=='comprobar_discapacidad_alumno')
+					$li.="<td id='".$d.$sol->id_alumno."' class='".$d."'>".$valordiscapacidad_alumno."</td>";
+				elseif($d=='comprobar_discapacidad_hermanos')
+					$li.="<td id='".$d.$sol->id_alumno."' class='".$d."'>".$valordiscapacidad_hermanos."</td>";
+				elseif($d=='comprobar_familia_numerosa')
+					$li.="<td id='".$d.$sol->id_alumno."' class='".$d."'>".$valorfamilia_numerosa."</td>";
+				elseif($d=='comprobar_familia_monoparental')
+					$li.="<td id='".$d.$sol->id_alumno."' class='".$d."'>".$valorfamilia_monoparental."</td>";
 				elseif($d=='validar_tipo_familia')
 					$li.="<td id='".$d.$sol->id_alumno."' class='".$d."'>".$valorfamilia."</td>";
 				elseif($d=='validar_discapacidad')
 					$li.="<td id='".$d.$sol->id_alumno."' class='".$d."'>".$valordiscapacidad."</td>";
 				elseif($d=='proximidad_domicilio')
-					$li.="<td id='".$d.$sol->id_alumno."' class='".$d."'>".$proximidad_domicilio."</td>";
+            {
+               if($sol->validar_proximidad_domicilio==0)
+					   $li.="<td id='".$d.$sol->id_alumno."' class='".$d."'>0</td>";
+               else
+					   $li.="<td id='".$d.$sol->id_alumno."' class='".$d."'>".$proximidad_domicilio."</td>";
+            }
             else
 					$li.="<td id='".$d.$sol->id_alumno."' class='".$d."'>".$sol->$d."</td>";
 			$i++;
@@ -499,7 +550,6 @@ class ListadosController{
 		{
 			$centroanterior=$centroactual;
 			$tipoestudios_anterior=$tipoestudios_actual;
-         
          $tipoestudios_actual=$sol->tipoestudios;
          if(isset($sol->id_centro_destino))
             $centroactual=$sol->id_centro_destino;
@@ -525,14 +575,11 @@ class ListadosController{
 		       $html.="<tr class='filasol' id='filasol".$sol->id_alumno."' style='color:white;background-color: #84839e;'><td colspan='".$ncolumnas."'><b>".strtoupper($sol->tipoestudios)."</b></td></tr>";
          }
 		}
-		else if($rol=='centro')
+		else
       {
-         if($sol->tipoestudios=='tva' and $cab==0)
-         {
-            $html.="<tr class='filasol' id='filasol".$sol->id_alumno."' style='color:white;background-color: #84839e;'><td colspan='".$ncolumnas."'><b>".strtoupper($sol->tipoestudios)."</b></td></tr>";
-            $cab=1;
-         }
-         else if($sol->tipoestudios=='ebo' and $cab==0)
+			$tipoestudios_anterior=$tipoestudios_actual;
+         $tipoestudios_actual=$sol->tipoestudios;
+			if($tipoestudios_actual!=$tipoestudios_anterior)
          {
             $html.="<tr class='filasol' id='filasol".$sol->id_alumno."' style='color:white;background-color: #84839e;'><td colspan='".$ncolumnas."'><b>".strtoupper($sol->tipoestudios)."</b></td></tr>";
             $cab=1;

@@ -4,11 +4,12 @@ class SolicitudController{
     public $lastid;
     public $datos_solicitud;
  
-    public function __construct($rol='centro',$conexion,$formulario,$log) 
+    public function __construct($rol='centro',$conexion,$formulario,$estado_convocatoria,$log) 
 	 {
         $this->conectar=$conexion;
         $this->formulario=$formulario;
         $this->rol=$rol;
+        $this->estado_convocatoria=$estado_convocatoria;
         $this->log=$log;
     }
  
@@ -206,10 +207,10 @@ class SolicitudController{
          $this->formulario=str_replace('class="btn btn-primary bform crojo"','class="btn btn-primary bform cverde"',$this->formulario);
       }		
      
-      if($rol=='alumno' and $estado_convocatoria>=10) 
+      if($rol=='alumno' and $this->estado_convocatoria>=ESTADO_INSCRIPCION) 
       {  
          $origen='<a class="btn btn-primary send" >GRABAR SOLICITUD</a>';
-         if($estado_convocatoria==10)
+         if($this->estado_convocatoria==ESTADO_INSCRIPCION)
             $destino='<a class="btn btn-primary send" >ACTUALIZAR SOLICITUD</a>';
          else
             $destino='';
@@ -429,13 +430,6 @@ class SolicitudController{
                $soriginal='<input type="hidden" id="'.$skey.'" value="0" name="'.$skey.'">';
                $sdestino='<input type="hidden" id="'.$skey.'" value="'.$sval.'" name="'.$skey.'">';
                $this->formulario=str_replace($soriginal,$sdestino,$this->formulario);
-               /*
-               //botones de validacion de baremo
-               $origen='<button name="boton_'.$skey.'" type="button" class="btn btn-outline-dark validar">';
-               $destino='<button name="boton_'.$skey.'" type="button" class="btn btn-outline-dark validar">';
-
-               $this->formulario=str_replace($origen,$destino,$this->formulario);
-               */
             if($sval==1)
             {
                   $tval=end(explode('_',$skey));
@@ -671,7 +665,7 @@ class SolicitudController{
 		return 1;
 		}
 
-    public function showFormSolicitud($id=0,$id_centro=0,$rol,$collapsed=1,$imprimir=0,$estado_convocatoria=0,$conexion,$dirbase,$log,$solo_lectura=0)
+    public function showFormSolicitud($id=0,$id_centro=0,$rol,$collapsed=1,$imprimir=0,$conexion,$dirbase,$log,$solo_lectura=0)
 	 {
       //Creamos una nueva solicitud
       $solicitud=new Solicitud($conexion);

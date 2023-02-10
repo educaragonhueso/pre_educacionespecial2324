@@ -17,7 +17,7 @@ function Header($title='')
     $this->Cell(80,10,'PROCESO DE ESCOLARIZACION DE ALUMNOS EN CENTROS SOSTENIDOS CON FONDOS PUBLICOS',0,1,'C');
     
 		$this->Cell(80);
-		$this->Cell(80,10,'CURSO 2022/2023',0,1,'C');
+		$this->Cell(80,10,CURSO_LARGO,0,1,'C');
 		$this->Cell(80);
 		$this->Cell(80,10,trim($title),0,1,'C');
     // Line break
@@ -36,7 +36,7 @@ function HeaderListados($titulo)
     $this->Cell(80,10,'ROCESO DE ESCOLARIZACION DE ALUMNOS EN CENTROS SOSTENIDOS CON FONDOS PUBLICOS',0,1);
     
 		$this->Cell(80);
-		$this->Cell(50,10,'CURSO 2021/2022',0,1,'C');
+		$this->Cell(50,10,CURSO_LARGO,0,1,'C');
 		$this->Cell(80);
 		$this->Cell(50,10,$titulo,0,1,'C');
     // Line break
@@ -81,9 +81,17 @@ function BasicTable($header,$data,$comp,$tam,$tipoinforme,$primera_celda)
    {
       $primera_celda=30;
       //celdas con datos 'largos'
-      $celdadatos=30;
-      $margen=5;
+      $celdadatos=22;
+      $margen=1;
       $celdavalores=13; 
+   }
+   else if(strcmp('solicitudes_baremadas',$tipoinforme)==0)
+   {
+      $primera_celda=30;
+      //celdas con datos 'largos'
+      $celdadatos=30;
+      $margen=40;
+      $celdavalores=18; 
    }
    else if(strcmp('numero_aleatorio',$tipoinforme)==0)
    {

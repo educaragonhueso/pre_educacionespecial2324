@@ -12,12 +12,12 @@ $campos_cabecera_sor_ale=array('Primer apellido','Segundo apellido','Nombre','Ti
 $campos_bbdd_sor_ale=array('apellido1','apellido2','nombre','tipoestudios','nasignado');
 
 //SOLICITUDES BAREMADAS
-$campos_cabecera_sor_bar=array('Primer apellido','Segundo apellido','Nombre','Enseñanza','Total baremo');
-$campos_bbdd_sor_bar=array('apellido1','apellido2','nombre','tipoestudios','puntos_validados');
+$campos_cabecera_sor_bar=array('Primer apellido','Segundo apellido','Nombre','Enseñanza','Prioridad','Total baremo');
+$campos_bbdd_sor_bar=array('apellido1','apellido2','nombre','tipoestudios','transporte','puntos_validados');
 
 //DETALLE BAREMO
-$campos_cabecera_sor_det=array('Primer apellido','Segundo apellido','Nombre','Prox. dom.','Tut. centro','Renta','Disc.','Familia','Hermanos','Acog.','Género','Terr.','Parto','Sobrev.','Conjunta');
-$campos_bbdd_sor_det=array('apellido1','apellido2','nombre','proximidad_domicilio','validar_tutores_centro','validar_renta_inferior','validar_discapacidad','validar_tipo_familia','validar_hnos_centro','validar_acogimiento','validar_genero','validar_terrorismo','validar_parto','validar_situacion_sobrevenida','conjunta');
+$campos_cabecera_sor_det=array('Primer apellido','Segundo apellido','Nombre','Prox. dom.','Tut. centro','Renta','Disc.Al','Disc. Her','FN','FM','Hermanos','Acog.','Género','Terr.','Parto','Sobrev.','Conjunta');
+$campos_bbdd_sor_det=array('apellido1','apellido2','nombre','proximidad_domicilio','validar_tutores_centro','comprobar_renta_inferior','comprobar_discapacidad_alumno','comprobar_discapacidad_hermanos','comprobar_familia_numerosa','comprobar_familia_monoparental','validar_hnos_centro','validar_acogimiento','validar_genero','validar_terrorismo','validar_parto','validar_situacion_sobrevenida','conjunta');
 
 //DATOS PARA EXPORTAR DATOS CSVS
 $campos_cabecera_csv_fase2=array('Tipo','Ap1','Ap2','Nombre','Loc','Calle','Reserva','Reserva Original','Centro origen','Cen.Pref','Cen.Alt1','Cen.Alt2','Cen.Alt3','Cen.Alt4','Cen.Alt5','Cen.Alt6','Baremo','Prioridad','Estado','Centro definitivo','Numero de sorteo asignado','Modificacion');

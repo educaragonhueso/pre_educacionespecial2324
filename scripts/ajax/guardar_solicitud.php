@@ -49,7 +49,7 @@ $dirbasedoc="../fetch/uploads/";
 $ressms="Fase de pruebas";
 
 require_once DIR_BASE.'/includes/form_solicitud.php';
-$sc=new SolicitudController($rol,$conexion,$formsol,$log_nueva);
+$sc=new SolicitudController($rol,$conexion,$formsol,$estado_convocatoria,$log_nueva);
 $utils=new UtilidadesAdmision($conexion,'','');
 ######################################################################################
 if($modo=='GRABAR SOLICITUD')

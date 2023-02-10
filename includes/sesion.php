@@ -34,9 +34,13 @@ else if($_SESSION['fecha_actual']>=DIA_PUBLICACION_BAREMADAS and $_SESSION['fech
       $_SESSION['estado_convocatoria'] =ESTADO_PUBLICACION_BAREMADAS;
 else if($_SESSION['fecha_actual']>=DIA_INICIO_RECLAMACIONES_BAREMADAS and $_SESSION['fecha_actual']<=DIA_FIN_RECLAMACIONES_BAREMADAS)
       $_SESSION['estado_convocatoria'] =ESTADO_RECLAMACIONES_BAREMADAS;
-else if($_SESSION['fecha_actual']>DIA_FIN_RECLAMACIONES_BAREMADAS and $_SESSION['fecha_actual']<DIA_INICIO_RECLAMACIONES_PROVISIONAL)       
- 		$_SESSION['estado_convocatoria'] =ESTADO_PUBLICACION_PROVISIONAL;//valor 60
-else if($_SESSION['fecha_actual']>=DIA_INICIO_RECLAMACIONES_PROVISIONAL and $_SESSION['fecha_actual']<=DIA_FIN_RECLAMACIONES_PROVISIONAL)
+else if($_SESSION['fecha_actual']>DIA_FIN_RECLAMACIONES_BAREMADAS and $_SESSION['fecha_actual']<DIA_ALEATORIO)       
+ 		$_SESSION['estado_convocatoria'] =ESTADO_PREALEATORIO;
+else if($_SESSION['fecha_actual']>DIA_ALEATORIO and $_SESSION['fecha_actual']<DIA_SORTEO)       
+ 		$_SESSION['estado_convocatoria'] =ESTADO_ALEATORIO;
+else if($_SESSION['fecha_actual']>=DIA_SORTEO and $_SESSION['fecha_actual']<DIA_INICIO_RECLAMACIONES_PROVISIONAL)
+      $_SESSION['estado_convocatoria'] =ESTADO_SORTEO;
+else if($_SESSION['fecha_actual']>DIA_INICIO_RECLAMACIONES_PROVISIONAL and $_SESSION['fecha_actual']<=DIA_FIN_RECLAMACIONES_PROVISIONAL)
       $_SESSION['estado_convocatoria'] =ESTADO_RECLAMACIONES_PROVISIONAL;
 else if($_SESSION['fecha_actual']>=DIA_PUBLICACION_DEFINITIVOS and $_SESSION['fecha_actual']<DIA_FASE3)       
  		$_SESSION['estado_convocatoria'] =ESTADO_DEFINITIVOS;

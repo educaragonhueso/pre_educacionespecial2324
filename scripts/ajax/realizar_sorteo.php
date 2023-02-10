@@ -37,7 +37,7 @@ $tcentro=new Centro($conexion,1,'ajax');
 $tsolicitud=new Solicitud($conexion);
 $fase_sorteo=$tcentro->getFaseSorteo();// FASE0: no realizado, 1, dia sorteo pero asignaciones no realizadas, 2 numero asignado, 3 sorteo realizado
 $nsolicitudes=$tcentro->getNumSolicitudes(1,$estado_convocatoria);
-$ccentros=new CentrosController($conexion);
+$ccentros=new CentrosController($conexion,$estado_convocatoria);
 
 $log_sorteo->warning("SORTEO");
 $log_sorteo->warning(print_r($_POST,true));
@@ -47,6 +47,7 @@ if($_POST['rol']=='admin')
 	//si se ha pulsado en el boton de asignar numero de sorteo
 	if(isset($_POST['asignar'])) 
 	{
+      $log_sorteo->warning("INICIOLOG: ASIGNACION ALEATORIO");
 		########################################################################################
 		########################################################################################
 		if($list->asignarNumSol($log_sorteo)!=1){ print("Error asignando numero para el sorteo");exit();}
@@ -55,7 +56,7 @@ if($_POST['rol']=='admin')
 		$tcentro->setFaseSorteo(2);
 
 		print("ASIGNACION REALIZADA");
-		$log_sorteo->warning("NUMERO DE SORTEO ASIGNADO");
+		$log_sorteo->warning("NUMERO ALEATORIO ASIGNADO");
 	}
 	//si se ha enviado el numero de sorteo
 	if(isset($_POST['nsorteo']))

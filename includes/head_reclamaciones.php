@@ -41,8 +41,9 @@
 <?php 
    	echo  '<script src="../js/fase2.js"></script>';
    	echo  '<script src="../js/fase3.js"></script>';
+   	echo  '<script src="js/js_carga_reclamaciones.js"></script>';
 ?>
-    <script src="../educacionespecial2223/js/main.js"></script>
+    <script src="../educacionespecial2324/js/main.js"></script>
   <!--  <script src="../educacionespecial2223/js/js_carga_reclamaciones.js"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
 </head>

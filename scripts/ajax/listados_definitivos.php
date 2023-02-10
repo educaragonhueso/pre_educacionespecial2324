@@ -32,7 +32,7 @@ $conexion=$conectar->conexion();
 
 $list=new ListadosController('alumnos',$conexion,$estado_convocatoria);
 $tcentro=new Centro($conexion,$_POST['id_centro'],'ajax');
-$ccentros=new CentrosController($conexion);
+$ccentros=new CentrosController($conexion,$estado_convocatoria);
 $tcentro->setNombre();
 $tsolicitud=new Solicitud($conexion);
 $dvacantes=$tcentro->getVacantes($id_centro,$log_listados_definitivos);

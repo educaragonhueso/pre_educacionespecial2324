@@ -11,9 +11,8 @@ require_once 'UtilidadesAdmision.php';
 
 $conectar=new Conectar('../../config/config_database.php');
 $conexion=$conectar->conexion();
-$ccentros=new CentrosController($conexion);
 $centro=new Centro($conexion,'','no',0);
-$utils=new UtilidadesAdmision($conexion,$ccentros,$centro);
+$utils=new UtilidadesAdmision($conexion,'',$centro);
 
 //falta termanira//consulta:
 //consulta:
@@ -22,6 +21,9 @@ $utils=new UtilidadesAdmision($conexion,$ccentros,$centro);
 //actualizar vacantes de centros
 $res=$utils->genBaremadas();
 
+print("\n");
+print($res);
+print("\n");
 if($res==1) echo "Generada tabla baremadas final a las ".date('H:m')." del dia ".date('d-M-Y').PHP_EOL;	
 else "Error generando provisionales: $res";
 ?>

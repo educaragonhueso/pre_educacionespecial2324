@@ -48,6 +48,7 @@ else if(isset($_GET['token']))
 if($_SESSION['mantenimiento']=='SI') print_r($_SESSION);
 
 include('includes/head.php');
+include('includes/head_reclamaciones.php');
 include('includes/menusuperior.php');
 $motivoreclamacion=$solicitud->getReclamacion($id_alumno,'baremo');
 $dochtml=$solicitud->getDocHtml($id_alumno,'scripts/fetch/reclamacionesbaremo/','alumno','baremo');
@@ -58,15 +59,18 @@ $dochtml=$solicitud->getDocHtml($id_alumno,'scripts/fetch/reclamacionesbaremo/',
          include('includes/form_reclamacionbaremo.php');
 	      $form_reclamaciones=str_replace("collapse","".$motivoreclamacion."'",$form_reclamaciones);
          $form_reclamaciones=str_replace("value","value='".$motivoreclamacion."'",$form_reclamaciones);
-         if($rol!='alumno' or $estado_convocatoria>=60)
-         {
-             $form_reclamaciones=str_replace("input","input disabled",$form_reclamaciones);
-             $form_reclamaciones=str_replace("textarea","textarea disabled",$form_reclamaciones);
-             $form_reclamaciones=preg_replace("/<button.*<\/button>/","",$form_reclamaciones);
-         }
          $form_reclamaciones=str_replace("</textarea>",$motivoreclamacion."</textarea>",$form_reclamaciones);
          $fr=str_replace("+idalumno","$id_alumno",$form_reclamaciones);
-      
+         if($rol!='alumno' or $estado_convocatoria>ESTADO_RECLAMACIONES_BAREMADAS)
+         {
+            print($rol);
+             $fr=str_replace("input","input disabled",$fr);
+             $fr=str_replace("textarea","textarea disabled",$fr);
+             $fr=preg_replace("/<button.*<\/button>/","",$fr);
+             $fr= preg_replace('/<form[^>]*>(.*?)<\/form>/', '$1', $fr);;
+         
+         }
+         print('<input type="hidden" id="tiporeclamacion" value="baremo">');
          print($fr); 
          if($dochtml!='')
          {
@@ -98,7 +102,7 @@ $('body').on('click', '.breclamaciones', function() {
             if(data.indexOf('1')!=-1)
 				$.alert({
 					title: "RECLAMACIÓN GUARDADA",
-               content: "Continuar"
+               content: ""
 					});
 		},error: function (request, status, error) {
         alert(error);

@@ -6,6 +6,7 @@ let progressBar = document.getElementById('progress-bar')
 let token = $('#token').attr("value")
 let id_alumno = $('#id_alumno').attr('value')
 let tiporec = $('#tiporeclamacion').attr('value')
+console.log("TIPO RECLAMACION: "+tiporec);
 let dropArea = document.getElementById('drop-area');
 
 var form_data=new FormData();
@@ -14,7 +15,7 @@ form_data.append("token",token);
 form_data.append("id_alumno",id_alumno);
 
 $('body').on('change', '#freclamaciones', function(e){
-console.log("CARGANDO REC, CONVOCATORIA: "+convocatoria);
+console.log("CARGANDO REC, CONVOCATORIA: "+edicion);
    var ficheros=[];
    console.log("En rec, añadiendo ficheros baremo")
    previewFilesRec(this.files);
@@ -46,21 +47,20 @@ $('body').on('click', '.bdoc,.bdocfile', function(e){
    }
    $(this).parent('div').remove();
    $(this).find('div').remove();
-   if(rol=='centro')
-      var id_alumno=$("#id_alumno").attr("value");
 
    var id_alumno=$("#id_alumno").attr("value");
-   eliminarFichero(fichero_original,id_alumno);   
+   var token=$("#token").attr("value");
+   eliminarFichero(fichero_original,id_alumno,token);   
 });
 
-function eliminarFichero (f,id) 
+function eliminarFichero (f,id,token) 
 {
    var vrol=$("#rol").attr("value");
    console.log("eliminando doc de idalumno "+id_alumno);
 	$.ajax({
 	  method: "POST",
-	  data: {id_alumno:id,fichero:f,rol:vrol,tiporec:'provisional'},
-	  url:'../'+convocatoria+'/scripts/ajax/borrar_reclamaciones.php',
+	  data: {id_alumno:id,fichero:f,rol:vrol,tiporec:tiporec,token:token},
+	  url:'../'+edicion+'/scripts/ajax/borrar_reclamaciones.php',
 	      success: function(data) {
 				$.alert({
 					title: data,
@@ -146,8 +146,8 @@ function handleDrop(e) {
 function uploadFileRecBaremo(file) {
 let id_alumno = $('[name=breclamaciones]').attr('id')
 id_alumno=id_alumno.replace('reclamacion','');
-console.log("subiendo iiid_alumno: "+id_alumno);
-console.log("subiendo tiporec: "+tiporec);
+console.log("subiendo id_alumno: "+id_alumno);
+console.log("subiendo tiporeclmacion: "+tiporec);
 form_data.append('id_alumno',id_alumno);
 console.log(form_data);
 $.ajax({

@@ -6,24 +6,104 @@ FASE PREVIA
    Hacer una prueba de solicitud completa en PRO
    Desmarcar la opción de enviar correos a los centros al modificar solicitudes
    Imprimir docs de fases y estados de convocatoria
+   Programar copia seguridad bases de datos
 
 FASE0 Matrícula
 
    Cargamos datos de la matrícula de GIR
    
+FASE Inscripción
+
+   Genración de inscripciones
+
+FASE baremación
+
+   ESTADO: ESTADO_FIN_INSCRIPCION 20
+
+   Se validan y comprueban las solicitudes
+
+   #php sc_compruebadatos_baremo_solicitudes.php 
+   #php sc_actualizar_baremo_solicitudes.php > salida/sc_actbaremo
+   #php sc_generar_csv_comprobaciones.php >>  ../../documentacion/csv_comprobaciones.csv 
+
+   ESTADO: ESTADO_PUBLICACION_BAREMADAS 30
+
+   Se publican los listados (estado 30 publicaicón baremadas)
+      Se genera la tabla  alumnos_baremada_final para conulta de los alumnos
+      #php sc_gentabla_baremadas_final.php 
+
+   Se inicia, al día siguiente, la reclamaciones
 
 
 
 
 
 
+COMPROBACIONES
+---------------------------------------------
 
+Los datos de familia numerosa y monoparental se envian a Pialr Mora para q obtenga las respuestas
+Los datos de renta se consultan desde l abase de datos
 
+         DATOS DE IMV ingreso mínimo vital y servicios de intermediación
+         ################################################################
+         
+            Los compañeros del IASS nos han preparado una vista para poder acceder a ella, la BBDD la tienen en un ORACLE.
 
+            Informático del IAS: Jorge jhdiez@araon.es 813466
+            
+            Te paso la cadena de conexión y el usuario en el entorno de DES.    En cuanto tenga el de PRO te lo paso tambien.
+            Usuario EDU_USR y la palabra de paso en Desarrollo es nq39yZW$
 
+            La conexion en el TNSNAMES a desarrollo es la siguiente:
 
+            DESSOCSAN =
+              (DESCRIPTION =
+               (ADDRESS =
+                 (PROTOCOL = TCP)
+                 (HOST = biz-desast11-01.aragon.local)
+                 (PORT = 1534)
+               )
+               (CONNECT_DATA =
+                 (SERVER = DEDICATED)
+                 (SERVICE_NAME = dessocsansrv.aragon.local)
+               )
+              ) 
+              
+             Hay q instalar el paqueta yum install php-oci8
+              
+             
+            Te paso el nombre de la vista que se me ha pasado antes PCSS_OWN.IMVSS_V_IMV_ACTIVOS_MIEMBROS
 
+            Te paso  tambien la cadena de conexión y usuario de PRO, cuando intentes acceder te dará error y me tendrás que enviar la captura para que te habiliten el acceso a PRO. 
 
+            Necesitaré la ventana con el error que te de,  la IP desde donde lo vas a lanzar y la herramienta (ejecutable o aplicación) desde la que lo vas a invocar.
+
+            Los datos para que puedas intentar acceder son los siguientes:
+
+            El usuario en Produccion es EDU_USR con palabra de paso vKW3XoRZ9$
+
+            La cadena de conexion en Produccion es:
+
+            PROSOCSAN =
+              (DESCRIPTION =
+               (ADDRESS_LIST =
+                 (ADDRESS =
+                  (PROTOCOL = TCP)
+                  (HOST = pro01-scan.aragon.local)
+                  (PORT = 47017)
+                 )
+               )
+               (CONNECT_DATA =
+                 (SERVER = DEDICATED)
+                 (SERVICE_NAME = SOCSADM_GES.ARAGON.LOCAL)
+               )
+              )
+                       
+            
+            Consultas
+            
+               SELECT * FROM PCSS_OWN.IMVSS_V_IMV_ACTIVOS_MIEMBROS
 
 
 
@@ -76,6 +156,16 @@ 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
 
 COMANDOS SQL ÚTILEs
 ---------------------------------------------------------
+
+-Comprobar datos de número aleatorio asignado
+
+   A hermanos
+
+    select id_alumno,conjunta,nasignado,apellido1,apellido2,nombre from alumnos where fase_solicitud!='borrador' and conjunta='si' order by nasignado
+
+   A todos
+
+    select id_alumno,conjunta,nasignado,apellido1,apellido2,nombre from alumnos where fase_solicitud!='borrador' order by nasignado
 
 -Resetear puntos validados y comprobaciones
 

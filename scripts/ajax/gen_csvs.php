@@ -38,7 +38,7 @@ $camposdatos="campos_bbdd_csv_".$subtipo_csv;
 $modo='csv';
 
 $list=new ListadosController('alumnos',$conexion,$estado_convocatoria);
-$centros_cont=new CentrosController(0);
+$centros_cont=new CentrosController(0,$estado_convocatoria);
 $solicitud=new Solicitud($conexion);
 
 ##################################################################################

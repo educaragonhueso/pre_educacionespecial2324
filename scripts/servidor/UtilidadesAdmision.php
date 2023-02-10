@@ -63,7 +63,12 @@ class UtilidadesAdmision{
    $dni=$aldata['dni_alumno'];
    $dni1=$aldata['dni_tutor1'];
    $dni2=$aldata['dni_tutor2'];
-   
+   $conjunta=$aldata['conjunta'];
+   if($conjunta=='si')
+   {
+      $puntos_baremo=$puntos_barmeo+4;
+      $puntos_baremo_validados=$puntos_baremo_validados+4;
+   }
    $sri=$aldata['renta_inferior'];
    $rri=$aldata['comprobar_renta_inferior'];
 
@@ -82,7 +87,6 @@ class UtilidadesAdmision{
    if($dnidisc3!='nodata' and $dnidisc3!='')
       $nhdisc++;
    
-   print("NDISC: ".$nhdisc);
    $sfn=$aldata['marcado_numerosa'];
    $rfn=$aldata['comprobar_familia_numerosa'];
    $tfn=$aldata['tipo_familia_numerosa'];
@@ -752,9 +756,8 @@ id_centro=$idcentro";
    
    public function genBaremadas()
    {
-      $sql="DROP TABLE alumnos_baremada_tmp";
-		if(!$this->conexion->query($sql)) return 0;
-      
+      $sql="DROP TABLE IF EXISTS alumnos_baremada_tmp";
+		if(!$this->conexion->query($sql)) return $this->conexion->error;
       //creamos tabla temportal de alumnos
       $sql="CREATE TABLE alumnos_baremada_tmp SELECT * FROM alumnos";
 		print(PHP_EOL);

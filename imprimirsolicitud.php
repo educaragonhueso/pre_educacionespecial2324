@@ -23,8 +23,8 @@ $log_imprimir_solicitud=new logWriter('log_imprimir_solicitud',DIR_LOGS);
 $conectar=new Conectar('config/config_database.php');
 $conexion=$conectar->conexion();
 $solicitud=new Solicitud($conexion);
-
-$sc=new SolicitudController('alumno',$conexion,$formsol,$log_imprimir_solicitud);
+$estado_convocatoria=$_SESSION['estado_convocatoria'];
+$sc=new SolicitudController('alumno',$conexion,$formsol,$estado_convocatoria,$log_imprimir_solicitud);
 $conexion=$sc->getConexion();
 include('includes/head.php');
 ?>

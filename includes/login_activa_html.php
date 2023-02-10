@@ -46,7 +46,10 @@
          if($_SESSION['estado_convocatoria']==20) echo M20;
          if($_SESSION['estado_convocatoria']==21) echo M21;
          if($_SESSION['estado_convocatoria']==30) echo M30;
+         if($_SESSION['estado_convocatoria']==31) echo M31;
          if($_SESSION['estado_convocatoria']==40) echo M40;
+         if($_SESSION['estado_convocatoria']==41) echo M41;
+         if($_SESSION['estado_convocatoria']==42) echo M42;
       ?>
       <div class="wrapper">
 

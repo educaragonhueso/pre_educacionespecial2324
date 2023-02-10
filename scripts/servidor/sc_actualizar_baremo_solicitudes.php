@@ -18,8 +18,7 @@ foreach($res as $aldata)
    $puntos_baremo=0;
    $puntos_baremo_validados=0;
    $nhdisc=0;
-   if($aldata['id_alumno']!=1326) continue;
-   print_r($aldata);
+   //if($aldata['id_alumno']!=1326) continue;
 
    $resbaremo=$utils->recalcularBaremo($aldata);
    $res=$utils->actualizarBaremo($resbaremo,$aldata['id_alumno']);

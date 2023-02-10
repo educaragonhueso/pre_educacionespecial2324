@@ -10,6 +10,16 @@ if(isset($_SESSION['dir_base']))
 else
    $dir_base='./';
 
+#CLASES
+require_once $dir_base.'/controllers/SolicitudController.php';
+require_once $dir_base.'/controllers/ListadosController.php';
+require_once $dir_base.'/clases/core/Conectar.php';
+require_once $dir_base.'/clases/models/Centro.php';
+require_once $dir_base.'/clases/models/Solicitud.php';
+require_once $dir_base.'/scripts/clases/LOGGER.php';
+require_once 'config/config_global.php';
+if(!isset($_SESSION))
+   include('includes/sesion.php');
 if(isset($_GET['tokencentro']))
    $rol='centro';
 
@@ -20,9 +30,6 @@ else
    $rol='anonimo';
    $_SESSION['rol']=$rol;
 }
-if(isset($_SESSION['convocatoria'])) 
-   $convocatoria=$_SESSION['convocatoria'];
-
 if(isset($_SESSION['id_centro']))
    $id_centro=$_SESSION['id_centro'];
 else
@@ -43,14 +50,6 @@ if($_SESSION['estado_convocatoria']<10 and $_SESSION['mantenimiento']=='NO' and 
 //   header("location: login_activa.php");
 print("ROL: ".$rol);    
 $estado_convocatoria=$_SESSION['estado_convocatoria'];
-#CLASES
-require_once $dir_base.'/controllers/SolicitudController.php';
-require_once $dir_base.'/controllers/ListadosController.php';
-require_once $dir_base.'/clases/core/Conectar.php';
-require_once $dir_base.'/clases/models/Centro.php';
-require_once $dir_base.'/clases/models/Solicitud.php';
-require_once $dir_base.'/scripts/clases/LOGGER.php';
-require_once 'config/config_global.php';
 #LOGS
 $DIR_LOGS=$dir_base.'/logs/';
 $log_listados_solicitudes=new logWriter('log_listados_solicitudes',$DIR_LOGS);
@@ -113,7 +112,7 @@ if(isset($_GET['token']) or $rol=='alumno')
    
    //añadimos htmlk para despues poder agregar datos de solicitudes y matriucla desde el rol de admin
    $cablistados='<div id="l_matricula" style="width:100%">';
-   $scontroller=new SolicitudController($rol,$conexion,$formsol,$log_editar_solicitud);
+   $scontroller=new SolicitudController($rol,$conexion,$formsol,$estado_convocatoria,$log_editar_solicitud);
  
    if(isset($_GET['token']))
    {
@@ -125,12 +124,12 @@ if(isset($_GET['token']) or $rol=='alumno')
    }
    $log_editar_solicitud->warning(" LOGINICIO: EDITANTO SOLICITUD, id_alumno: ".$id_alumno." id centro:".$id_centro);   
 
-   if(($rol=='alumno' or $rol=='anonimo') and $estado_convocatoria==10)
+   if(($rol=='alumno' or $rol=='anonimo') and $estado_convocatoria==ESTADO_INSCRIPCION)
       $solo_lectura=0;
    else
       $solo_lectura=1;
       
-   $sform=$scontroller->showFormSolicitud($id_alumno,$id_centro,$rol,1,0,$estado_convocatoria,$conexion,$convocatoria,$log_editar_solicitud,$solo_lectura);
+   $sform=$scontroller->showFormSolicitud($id_alumno,$id_centro,$rol,1,0,$conexion,'',$log_editar_solicitud,$solo_lectura);
    $botonimp='<a href="imprimirsolicitud.php?id='.$id_alumno.'" target="_blank"><input class="btn btn-primary imprimirsolicitud"  type="button" value="Vista Previa Impresion Documento"/></a>';
    $tokenhtml='<input type="hidden" id="token" name="ntoken" value="'.$token.'">';
    if($rol!='alumno' and $rol!='anonimo')
@@ -140,6 +139,10 @@ if(isset($_GET['token']) or $rol=='alumno')
    }
    else if($rol=='alumno' or $rol=='anonimo')
    {
+      if($estado_convocatoria==ESTADO_PUBLICACION_BAREMADAS)
+         print("<div class='cajainfo'>PUBLICADAS LISTADAS BAREMADAS, CONSÚLTALAS EN EL ENLACE SUPERIOR DERECHO O <a class='lbaremadas' data-subtipo='sor_bar' style='color:darkblue;background-color:black;padding:6px'>EN ESTE ENLACE</a></div>");
+      if($estado_convocatoria==ESTADO_RECLAMACIONES_BAREMADAS)
+         print("<div class='cajainfo'>PUEDES HACER TU RECLAMACIÓN DESDE EL ENLACE SUPERIOR DERECHO O <a href='https://preadmespecial.aragon.es/educacionespecial2324/reclamaciones_baremo.php?token=$token' style='color:darkblue;background-color:black;padding:6px'> DESDE ESTE ENLACE</a></div>");
       $sform=preg_replace('/<span>PUNTOS BAREMO VALIDADOS:<span id="id_puntos_baremo_validados">.*<\/span>/','',$sform);
       print_r($tokenhtml);
       print_r($cablistados);

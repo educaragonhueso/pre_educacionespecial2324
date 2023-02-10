@@ -3,7 +3,7 @@ console.log("CARGANDO FUNC BAREMO");
 var urlbase=edicion;
 var fbaremohtml='<form enctype="multipart/form-data" action="/scripts/ajax/subirfichero.php"  method="post" id="fpruebas"><input type="file" name="baremo_file_domicilio" id="fbaremo_domicilio"></form>';
 
-$('body').on('change', '.fbaremo', function(e)
+$('body').on('change', '.fbaremo_old', function(e)
 {
    var form_data=new FormData();
    alert("Solo puedes subir un fichero, si ya hay alguno será sustituido por el que agregues a continuación");
