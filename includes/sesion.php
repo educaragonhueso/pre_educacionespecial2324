@@ -41,8 +41,8 @@ else if($_SESSION['fecha_actual']>DIA_ALEATORIO and $_SESSION['fecha_actual']<DI
 else if($_SESSION['fecha_actual']>=DIA_SORTEO and $_SESSION['fecha_actual']<DIA_PUBLICACION_PROVISIONAL)
       $_SESSION['estado_convocatoria'] =ESTADO_SORTEO;
 else if($_SESSION['fecha_actual']>=DIA_PUBLICACION_PROVISIONAL and $_SESSION['fecha_actual']<DIA_INICIO_RECLAMACIONES_PROVISIONAL)
-      $_SESSION['estado_convocatoria'] =ESTADO_SORTEO;
-else if($_SESSION['fecha_actual']>DIA_INICIO_RECLAMACIONES_PROVISIONAL and $_SESSION['fecha_actual']<=DIA_FIN_RECLAMACIONES_PROVISIONAL)
+      $_SESSION['estado_convocatoria'] =ESTADO_PUBLICACION_PROVISIONAL;
+else if($_SESSION['fecha_actual']>=DIA_INICIO_RECLAMACIONES_PROVISIONAL and $_SESSION['fecha_actual']<=DIA_FIN_RECLAMACIONES_PROVISIONAL)
       $_SESSION['estado_convocatoria'] =ESTADO_RECLAMACIONES_PROVISIONAL;
 else if($_SESSION['fecha_actual']>=DIA_PUBLICACION_DEFINITIVOS and $_SESSION['fecha_actual']<DIA_FASE3)       
  		$_SESSION['estado_convocatoria'] =ESTADO_DEFINITIVOS;

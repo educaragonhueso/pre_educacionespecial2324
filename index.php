@@ -139,13 +139,11 @@ if(isset($_GET['token']) or $rol=='alumno')
    }
    else if($rol=='alumno' or $rol=='anonimo')
    {
-      if($estado_convocatoria==ESTADO_PUBLICACION_BAREMADAS)
-         print("<div class='cajainfo'>PUBLICADAS LISTADAS BAREMADAS, CONSÚLTALAS EN EL ENLACE SUPERIOR DERECHO O <a class='lbaremadas' data-subtipo='sor_bar' style='color:darkblue;background-color:black;padding:6px'>EN ESTE ENLACE</a></div>");
-      if($estado_convocatoria==ESTADO_RECLAMACIONES_BAREMADAS)
-         print("<div class='cajainfo'>PUEDES HACER TU RECLAMACIÓN DESDE EL ENLACE SUPERIOR DERECHO O <a href='https://preadmespecial.aragon.es/educacionespecial2324/reclamaciones_baremo.php?token=$token' style='color:darkblue;background-color:black;padding:6px'> DESDE ESTE ENLACE</a></div>");
+      $mensaje_estado_alumno=$scontroller->getEstadoAlumno($token);
       $sform=preg_replace('/<span>PUNTOS BAREMO VALIDADOS:<span id="id_puntos_baremo_validados">.*<\/span>/','',$sform);
       print_r($tokenhtml);
       print_r($cablistados);
+      print($mensaje_estado_alumno); 
       print_r($sform.$botonimp);
       print_r('</div>');
       print($infobaremo); 
@@ -159,6 +157,7 @@ if(isset($_GET['token']) or $rol=='alumno')
 }
 else
 {
+   $id_alumno=0;
    $lcontroller=new ListadosController('alumnos',$conexion,$estado_convocatoria);
    //mostramos las solicitudes según el rol
    $listado_solicitudes=$lcontroller->showListadoSolicitudes($rol,$id_centro,$solicitud,$log_listados_solicitudes,$id_alumno,$provincia);

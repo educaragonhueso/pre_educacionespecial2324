@@ -13,6 +13,29 @@ class SolicitudController{
         $this->log=$log;
     }
  
+   function convertirFecha($f)
+   {
+      $fecha=explode(' ',$f)[0];
+      $año=explode('/',$fecha)[0];
+      $mes=explode('/',$fecha)[1];
+      $dia=explode('/',$fecha)[2];
+     
+      $hora=explode(' ',$f)[1];
+
+      $sf=$dia." del ".$mes." a las ".$hora." h";
+      return $sf;
+   }
+   public function getEstadoAlumno($token)
+	{
+         if($this->estado_convocatoria==ESTADO_PUBLICACION_BAREMADAS)
+            return "<div class='cajainfo'>PUBLICADAS LISTADAS BAREMADAS, CONSÚLTALAS EN EL ENLACE SUPERIOR DERECHO O <a class='lbaremadas' data-subtipo='sor_bar' style='color:darkblue;background-color:black;padding:6px'>EN ESTE ENLACE</a></div>";
+         if($this->estado_convocatoria==ESTADO_RECLAMACIONES_BAREMADAS)
+            return "<div class='cajainfo'>PUEDES HACER TU RECLAMACIÓN DESDE EL ENLACE SUPERIOR DERECHO O <a href='https://preadmespecial.aragon.es/educacionespecial2324/reclamaciones_baremo.php?token=$token' style='color:darkblue;background-color:black;padding:6px'> DESDE ESTE ENLACE</a></div>";
+         if($this->estado_convocatoria==ESTADO_SORTEO)
+            return "<div class='cajainfo'>SE HA REALIZADO EL SORTEO, LOS LISTADOS PROVISIONALES SE PUBLICARÁN EL ".$this->convertirFecha(DIA_PUBLICACION_PROVISIONAL)."</div>";
+         if($this->estado_convocatoria>=ESTADO_PUBLICACION_PROVISIONAL)
+            return "<div class='cajainfo'>PUBLICADAS LISTAS PROVISIONALES, PUEDES CONSULTARLAS DESDE EL ENLACE SUPERIOR DERECHO. EL PERIODO DE RECLAMACIONES ES DESDE EL ".$this->convertirFecha(DIA_INICIO_RECLAMACIONES_PROVISIONAL)." HASTA EL ".$this->convertirFecha(DIA_FIN_RECLAMACIONES_PROVISIONAL)."<br></div><div style='padding:10px;margin-left:40%'> PUEDES RECLAMAR DESDE ESTE ENLACE <a href='https://preadmespecial.aragon.es/educacionespecial2324/reclamaciones_provisional.php?token=$token' style='color:darkblue;background-color:black;padding:6px'> DESDE ESTE ENLACE</a></div>";
+	}
     public function getIdAlumnoPin($pin)
 		{
 			$sql="select a.id_alumno from usuarios u, alumnos a where a.id_usuario=u.id_usuario and u.clave_original=$pin";

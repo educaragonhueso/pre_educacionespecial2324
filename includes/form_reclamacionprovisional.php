@@ -14,8 +14,7 @@ $form_reclamaciones='
          <div id="drop-area" style="margin:25px">
             <form id="idformfiledata" class="my-form">
                <p>Añade los documentos necesarios</p>
-               <input type="file" id="freclamaciones" name="files[]" multiple accept="pdf,image/*">
-               <label class="button" for="fileRec">Selecciona documentos</label>
+               <input type="file" id="freclamaciones" name="files[]" multiple accept="*">
             </form>
             <progress id="progress-bar" max=100 value=0></progress>
             <div id="gallery"></div>

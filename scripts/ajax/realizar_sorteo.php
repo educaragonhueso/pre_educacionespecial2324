@@ -39,7 +39,7 @@ $fase_sorteo=$tcentro->getFaseSorteo();// FASE0: no realizado, 1, dia sorteo per
 $nsolicitudes=$tcentro->getNumSolicitudes(1,$estado_convocatoria);
 $ccentros=new CentrosController($conexion,$estado_convocatoria);
 
-$log_sorteo->warning("SORTEO");
+$log_sorteo->warning("INICIOLOG SORTEO");
 $log_sorteo->warning(print_r($_POST,true));
 //Para el caso de acceso del administrador o servicios provinciales
 if($_POST['rol']=='admin')
@@ -113,7 +113,9 @@ if($_POST['rol']=='admin')
 			$dsorteo=$centrotmp->getVacantesCentro($log_sorteo);
 			$vacantes_ebo=$dsorteo['ebo'];
 			$vacantes_tva=$dsorteo['tva'];
-		   $log_sorteo->warning(print_r($dsorteo,true));
+         $log_sorteo->warning("VACANTES CENTRO: ".$id_centro);
+		   $log_sorteo->warning("EBO: $vacantes_ebo");
+		   $log_sorteo->warning("TVA: $vacantes_tva");
          
 			if($tsolicitud->setSolicitudesSorteo($id_centro,$nsolicitudescentro,$vacantes_ebo,$vacantes_tva,'provisional',$log_sorteo)==0) 
 		      $log_sorteo->warning("NO HAY VACANTES EN EL CENTRO ");

@@ -27,6 +27,7 @@ define("M31","<p class='cajainfo' style='text-align:center'>Se ha iniciado el pl
 define("M40","<p class='cajainfo' style='text-align:center'>Se estan gestionando las reclamaciones, se publicará el listado con el número aleatorio el día ".convertirFecha(DIA_ALEATORIO)."</p>");
 define("M41","<p class='cajainfo' style='text-align:center'>Se han gestionando las reclamaciones, se publicará el listado con el número aleatorio el día ".convertirFecha(DIA_ALEATORIO)."</p>");
 define("M42","<p class='cajainfo' style='text-align:center'>Se ha realizado el sorteo, las istas provisionales se publicarán el día ".convertirFecha(DIA_PUBLICACION_PROVISIONAL)."</p>");
+define("M50","<p class='cajainfo' style='text-align:center'>Se han publicado los listados provisionales</p>");
 
 $dirb=substr(DIA_INICIO_RECLAMACIONES_BAREMADAS,0,-9);
 $hirb=substr(DIA_INICIO_RECLAMACIONES_BAREMADAS,10);
@@ -85,7 +86,7 @@ $procesocompleto="
       <tr>
         <td>FASE2</td>
         <td>Asignación plazas restantes</td>
-        <td>Inicio en : ".DIA_IN."</td>
+        <td>Inicio en : ".DIA_INICIO_FASE2."</td>
       </tr>
     </tbody>
   </table>

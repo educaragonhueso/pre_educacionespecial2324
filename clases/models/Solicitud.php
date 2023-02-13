@@ -1393,26 +1393,25 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
          $id=$soli->id;    
          $insert="INSERT INTO alumnos_orden_$tipo VALUES($c,'$tipoestudios',$id,$tra,$pv,$vhtc,$conjunta,$vpdo,$vri,$vss,$vdisc,$vfam,$norden)"; 
 		   $qd=$this->conexion->query($insert);
-         $log->warning("Insertando en orden $insert");
          
       }
 
       $log->warning("Consulta generación solicitudes admitidas centro $c");
 	   return 1;
    }
-	public function getSolAdmitidas($nvebo=0,$nvtva=0,$c=0,$log) 
+	public function getSolAdmitidas($nvebo=0,$nvtva=0,$c=0,$tipo,$log) 
 	{
-      $orden=" ORDER BY id_centro,tipoestudios, transporte asc,puntos_validados desc,hermanos_tutores desc,conjunta desc,proximidad desc,renta desc,sobrevenida desc,discapacidad desc,familia desc,orden asc ";
+      $orden=" ORDER BY id_centro,ao.tipoestudios, ao.transporte asc,puntos_validados desc,hermanos_tutores desc,ao.conjunta desc,proximidad desc,renta desc,sobrevenida desc,discapacidad desc,familia desc,orden asc ";
 
-      $qebo="SELECT id_alumno FROM alumnos_orden WHERE id_centro=$c AND tipoestudios='ebo' $orden LIMIT $nvebo"; 
+      $qebo="SELECT ao.id_alumno FROM alumnos_orden_$tipo ao,alumnos a WHERE a.id_alumno=ao.id_alumno AND estado_solicitud='apta' AND id_centro=$c AND a.tipoestudios='ebo' $orden LIMIT $nvebo"; 
 		$rqebo=$this->conexion->query($qebo);
 
-      $log->warning("Consulta solicitudes admitidas centro $qebo");
+      $log->warning("\nConsulta solicitudes admitidas centro  $c: $qebo");
       
-      $qtva="SELECT id_alumno FROM alumnos_orden WHERE id_centro=$c AND tipoestudios='tva' $orden LIMIT $nvtva"; 
+      $qtva="SELECT ao.id_alumno FROM alumnos_orden_$tipo ao, alumnos a WHERE a.id_alumno=ao.id_alumno AND estado_solicitud='apta' AND id_centro=$c AND a.tipoestudios='tva' $orden LIMIT $nvtva"; 
 		$rqtva=$this->conexion->query($qtva);
 
-      $log->warning("Consulta solicitudes admitidas centro $qtva");
+      $log->warning("Consulta solicitudes admitidas centro $c: $qtva");
       if($qebo and $qtva)
 		{
 		   if($rqebo->num_rows>0)
@@ -1435,10 +1434,10 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
 		else $sql_excluida="UPDATE $tabla SET est_desp_sorteo='noadmitida'";
 		//obtenemos los ids de solicitudes admitidas según ls criterios del baremo
 		$resg=$this->genOrdenSolicitudesAdmitidas($c,$tipo,$log);
-		$ids=$this->getSolAdmitidas($nvebo,$nvtva,$c,$log);
+		$ids=$this->getSolAdmitidas($nvebo,$nvtva,$c,$tipo,$log);
 		if($ids==0) return 0;
      
-      $log->warning("Solicitudes admitidas:");
+      $log->warning("SOLICITUDES ADMITIDAS CENTROADM:".$c);
       $log->warning(print_r($ids,true));
 		
 		$idsebo='';
@@ -1510,7 +1509,7 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
 	public function genSolDefinitivas($c=1,$nvebo=0,$nvtva=0,$fasecentro=1) 
 	{
 		//obtenemos la consulta q nos devuelve el listado ordenado de solicitudes admitidas teniendo en cuenta la fase, si es 2 usaremos como fuene la tabla provisioalm sino la de alumnos normal
-		$ids=$this->getSolAdmitidas($nvebo,$nvtva,$c);
+		$ids=$this->getSolAdmitidas($nvebo,$nvtva,$c,$tipo,'');
 
 		$idsebo='';
 		foreach($ids['ebo'] as $id)

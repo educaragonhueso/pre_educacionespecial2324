@@ -17,7 +17,7 @@ require_once DIR_BASE.'/clases/models/Solicitud.php';
 
 ######################################################################################
 $log_listados_definitivos=new logWriter('log_listados_definitivos',DIR_LOGS);
-$log_listados_definitivos->warning("OBTENIENDO DATOS DEFINITIVOS POST:");
+$log_listados_definitivos->warning("INICIOLOG OBTENIENDO DATOS DEFINITIVOS POST:");
 $log_listados_definitivos->warning(print_r($_POST,true));
 ######################################################################################
 //VARIABLES
@@ -53,6 +53,7 @@ if($estado_convocatoria>=ESTADO_PUBLICACION_PROVISIONAL and $estado_convocatoria
 {
 	if($_POST['rol']=='centro')
 	{
+		$log_listados_definitivos->warning("GENERANDO DEFINITIVOS EN CENTRO: ".$id_centro);
       $nsolicitudes=$tcentro->getNumSolicitudes($id_centro);
       $nsorteo=$tcentro->getNumeroSorteo();
       //$dsorteo=$tcentro->getVacantes('centro');

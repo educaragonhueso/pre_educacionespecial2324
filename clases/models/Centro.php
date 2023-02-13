@@ -189,7 +189,7 @@ class Centro{
       $vacantes_total['ebo']=$vacantesebo-$solicitudesebo;
       $vacantes_total['tva']=$vacantestva-$solicitudestva;
 
-      $log->warning("VACANTES CENTRO: ");
+      $log->warning("VACANTES CENTRO: ".$this->id_centro);
       $log->warning(print_r($vacantes_total,true));
       return $vacantes_total;
    } 

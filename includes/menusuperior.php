@@ -3,7 +3,10 @@ if(isset($_SESSION['provincia'])) {$provincia=$_SESSION['provincia'];} else $pro
 $listado='disponible';
 $directoriobase=$_SESSION['edicion'];
 $ficheroebo='scripts/datossalida/pdflistados/sorteo/lfase2_sol_ebo_admin.pdf';
-$token=$_SESSION['token'];
+if(isset($_SESSION))
+   $token=$_SESSION['token'];
+else
+   $token='';
 if($_SESSION['version']=='PRE')
    print_r($_SESSION);
 if (!file_exists($ficheroebo))
@@ -17,7 +20,7 @@ if(isset($_GET['token']))
 <p hidden id='estado_convocatoria' value='<?php echo $_SESSION['estado_convocatoria'];?>'></p> 
 <p hidden id='rol' value='<?php echo $_SESSION['rol'];?>'></p> 
 <p hidden id='id_alumno' value='<?php echo $_SESSION['id_alumno'];?>'></p> 
-<p hidden id='token' value='<?php echo $_SESSION['token'];?>'></p> 
+<p hidden id='token' value='<?php echo $token;?>'></p> 
 <p hidden id='numero_sorteo' value='<?php echo $_SESSION['numero_sorteo'];?>'></p> 
 <p hidden id='provincia' value='<?php echo $_SESSION['provincia'];?>'></p> 
 <p hidden id='id_alumnonuevo' value='-1'></p> 
@@ -66,7 +69,7 @@ if(isset($_GET['token']))
    if($_SESSION['usuario_autenticado']==1)
    {
 
-      if(($_SESSION['rol']=='alumno' and $_SESSION['estado_convocatoria']==ESTADO_RECLAMACIONES_BAREMADAS) or $_SESSION['rol']=='admin')
+      if($_SESSION['rol']=='alumno' and ($_SESSION['estado_convocatoria']==ESTADO_RECLAMACIONES_BAREMADAS OR $_SESSION['estado_convocatoria']==ESTADO_RECLAMACIONES_PROVISIONAL) or $_SESSION['rol']=='admin')
       {
       echo '<li class="nav-item msuperior dropdown">';
             if($_SESSION['estado_convocatoria']==ESTADO_RECLAMACIONES_BAREMADAS or $_SESSION['estado_convocatoria']==ESTADO_RECLAMACIONES_PROVISIONAL )
@@ -136,7 +139,7 @@ if(isset($_GET['token']))
          </li>
       <?php }?>
       
-		<?php if($_SESSION['estado_convocatoria']>=DIA_PUBLICACION_BAREMADAS AND $_SESSION['rol']!='alumno') {?>
+		<?php if(($_SESSION['estado_convocatoria']>=ESTADO_PUBLICACION_BAREMADAS AND $_SESSION['rol']!='alumno') OR $_SESSION['estado_convocatoria']>=ESTADO_PUBLICACION_PROVISIONAL) {?>
             <li class="nav-item active msuperior dropdown" id="mprovisional">
                <a class="show_provisionales nav-link dropdown-toggle desplegable2" id="navbardrop" data-toggle="dropdown" href="#">Provisional</a>
                <div class="dropdown-menu">

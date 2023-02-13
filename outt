@@ -1,0 +1,3 @@
+
+      $log_editar_solicitud->warning("TABLA RESUMEN");   
+      $log_editar_solicitud->warning(print_r($tablaresumen,true));   

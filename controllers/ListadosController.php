@@ -13,7 +13,7 @@ class ListadosController{
    {
       $res='';
       $filtro_solicitudes='<input type="text" class="form-control" id="filtrosol"  placeholder="Introduce datos del alumno o centro"><small id="emailHelp" class="form-text text-muted"></small>';
-      $log->warning("ENTRANDO EN SHOWLISTADOSOLICITUDES, rol: $rol, idcentro: $id_centro estado: $estado_convocatoria");
+      $log->warning("ENTRANDO EN SHOWLISTADOSOLICITUDES, rol: $rol, idcentro: $id_centro estado: $this->estado_convocatoria");
 	   $solicitudes=$this->getSolicitudes($id_centro,'normal','normal',$solicitud,$log,$id_alumno,$rol,$provincia); 
       
       if($rol!='alumno' and $rol!='anonimo')

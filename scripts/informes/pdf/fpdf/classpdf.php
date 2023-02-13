@@ -106,7 +106,6 @@ function BasicTable($header,$data,$comp,$tam,$tipoinforme,$primera_celda)
       $margen=20;
    }
 	$cc=0;
-   $rco=strcmp($tipoinfome,'numero_aleatorio');
 	// Header. CABECERA DE LA TABLA, $tam indica la anchura de la celda
 	foreach($header as $col)
    {

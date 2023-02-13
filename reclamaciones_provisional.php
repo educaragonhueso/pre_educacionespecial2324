@@ -52,6 +52,7 @@ else if($_SESSION['token'])
 if($_SESSION['mantenimiento']=='SI') print_r($_SESSION);
 
 include('includes/head.php');
+include('includes/head_reclamaciones.php');
 include('includes/menusuperior.php');
 $motivoreclamacion=$solicitud->getReclamacion($id_alumno,'provisional');
 $dochtml=$solicitud->getDocHtml($id_alumno,'scripts/fetch/reclamacionesprovisional/','alumno','provisional');
@@ -70,7 +71,6 @@ $dochtml=$solicitud->getDocHtml($id_alumno,'scripts/fetch/reclamacionesprovision
          }
          $form_reclamaciones=str_replace("</textarea>",$motivoreclamacion."</textarea>",$form_reclamaciones);
          $fr=str_replace("+idalumno","$id_alumno",$form_reclamaciones);
-print("MOTIVO: $motivoreclamacion");
          print($fr); 
          if($dochtml)
          {
@@ -96,7 +96,7 @@ $('body').on('click', '.breclamaciones', function() {
             if(data.indexOf('1')!=-1)
 				$.alert({
 					title: "RECLAMACIÓN GUARDADA",
-               content: "Continuar"
+               content: "Recibirás un correo confirmatorio"
 					});
 		},error: function (request, status, error) {
         alert(error);
