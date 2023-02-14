@@ -1,4 +1,4 @@
-ANTES DE EMPEZAR EN PRO
+DESCRIPCION PROCESO ADMISION EDUCACION ESPECIAL 2324
 
 FASE PREVIA
 
@@ -14,29 +14,63 @@ FASE0 Matrícula
    
       #php carga_csv_girmatricula.php
    
-FASE Inscripción
+FASE1 
+   
+   Inscripción
 
-   Genración de inscripciones
+      Genración de inscripciones
 
-FASE baremación
+    baremación
 
-   ESTADO: ESTADO_FIN_INSCRIPCION 20
+      Se validan y comprueban las solicitudes
+      El listado baremado se genera para los centros hasta su publicación
 
-   Se validan y comprueban las solicitudes
+      COMPROBACIONES
 
-   #php sc_compruebadatos_baremo_solicitudes.php 
-   #php sc_actualizar_baremo_solicitudes.php > salida/sc_actbaremo
-   #php sc_generar_csv_comprobaciones.php >>  ../../documentacion/csv_comprobaciones.csv 
+         Para ello obtenemos los datos de cada una
 
-   ESTADO: ESTADO_PUBLICACION_BAREMADAS 30
+            IMV: a partir de la base de datos usando la consulta
 
-   Se publican los listados (estado 30 publicaicón baremadas)
-      Se genera la tabla  alumnos_baremada_final para conulta de los alumnos
-      #php sc_gentabla_baremadas_final.php 
+               SELECT * FROM PCSS_OWN.IMVSS_V_IMV_ACTIVOS_MIEMBROS
+            
+            Obtenemos un csv q cargamos con el script
+      
+               #carga_datos_imv.php
+            
 
-   Se inicia, al día siguiente, la reclamaciones
+      Mediante estos 3 scripts gestionamos los datos de comprobación de familia numerosa, imv y discapacidad
+         
+         Script para consultar los datos
+
+            #php sc_compruebadatos_baremo_solicitudes.php 
+      
+         Script para modificar el baremo según los valores
+            
+            #php sc_actualizar_baremo_solicitudes.php > salida/sc_actbaremo
+         
+         Script para generar csv con los datos      
+   
+            #php sc_generar_csv_comprobaciones.php >>  ../../documentacion/csv_comprobaciones.csv 
 
 
+   Provisionales
+
+      Una vez realizada la asignación del número aleatorio y realizado el sorte se generan los listados provisionales
+      Se publican y se abre el plazo de reclamación
+
+   Definiitovs
+
+      Finalziado el plazo de reclamación se genran listaods definitivos
+
+FASE2 Asignación plazas restantes
+
+      Generamos la tabla alumnos_fase2 para la gestión de alumnos sin plaza
+
+          servidor#php sc_copia_tabla_fase2.php
+
+      Primero se hace la asignación manual de plazas
+      Después se hace la automática
+      Finalmente se procede a una nueva asignación manual con lo que queda.
 
 
 

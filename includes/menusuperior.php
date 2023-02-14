@@ -54,10 +54,12 @@ if(isset($_GET['token']))
            <li class="nav-item active msuperior dropdown">
              <a class="nav-link dropdown-toggle desplegable" id="navbardrop" data-toggle="dropdown">Documentación</a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="documentacion/a3a_domlaboralcajena_2223.pdf" id="doca4" target="_blank">Anexo IV A Certificado Domicilio Laborali Cuenta Ajena</a>
-                <a class="dropdown-item" href="documentacion/a3a_domlaboralcpropia_2223.pdf" id="doca4" target="_blank">Anexo IV B Responsable Domicilio Laboral Cuenta Propia</a>
-                <a class="dropdown-item" href="documentacion/a4_reaghermanos_2223.pdf" id="doca4" target="_blank">Anexo IV Solicitud Reagrupamiento de Hermanos</a>
-                <a class="dropdown-item" href="documentacion/a1a_calendario_2223.pdf" target="_blank">Calendario Admisión Educación Especial</a>;
+                <a class="dropdown-item" href="documentacion/orden_escolarizacion_2324.pdf" id="doca4" target="_blank">Orden Escolarización 23/24</a>
+                <a class="dropdown-item" href="documentacion/res_unificacion_eespecial.pdf" id="doca4" target="_blank">Resolución unificación centros Especial</a>
+                <a class="dropdown-item" href="documentacion/a3a_domlaboralcajena_2324.pdf" id="doca4" target="_blank">Anexo III A Certificado Domicilio Laborali Cuenta Ajena</a>
+                <a class="dropdown-item" href="documentacion/a3a_domlaboralcpropia_2324.pdf" id="doca4" target="_blank">Anexo III B Responsable Domicilio Laboral Cuenta Propia</a>
+                <a class="dropdown-item" href="documentacion/a7_suspension_matricula_2324.pdf" id="doca4" target="_blank">Anexo VII suspensión temporal matrícula</a>
+                <a class="dropdown-item" href="documentacion/a1a_calendario_2324.pdf" target="_blank">Calendario Admisión Educación Especial</a>;
                 <?php if($_SESSION['rol']=='admin'){?>
                   <a class="dropdown-item" href="documentacion/doc_pruebas.html" id="ccen" target="_blank">Claves centros</a>;
                   <a class="dropdown-item" href="documentacion/csv_comprobaciones.csv" id="csvc" target="_blank">CSV Comprobaciones</a>;
@@ -69,15 +71,15 @@ if(isset($_GET['token']))
    if($_SESSION['usuario_autenticado']==1)
    {
 
-      if($_SESSION['rol']=='alumno' and ($_SESSION['estado_convocatoria']==ESTADO_RECLAMACIONES_BAREMADAS OR $_SESSION['estado_convocatoria']==ESTADO_RECLAMACIONES_PROVISIONAL) or $_SESSION['rol']=='admin')
+      if(($_SESSION['rol']=='alumno' and ($_SESSION['estado_convocatoria']>=ESTADO_RECLAMACIONES_BAREMADAS)) or $_SESSION['rol']=='admin')
       {
       echo '<li class="nav-item msuperior dropdown">';
-            if($_SESSION['estado_convocatoria']==ESTADO_RECLAMACIONES_BAREMADAS or $_SESSION['estado_convocatoria']==ESTADO_RECLAMACIONES_PROVISIONAL )
+            if($_SESSION['estado_convocatoria']>=ESTADO_RECLAMACIONES_BAREMADAS)
          echo '<a class="show_provisionales nav-link dropdown-toggle desplegable" id="navbardrop" data-toggle="dropdown" href="#">Formulario reclamaciones</a>';
          echo '<div class="dropdown-menu">';
-            if($_SESSION['estado_convocatoria']==ESTADO_RECLAMACIONES_BAREMADAS)
+            if($_SESSION['estado_convocatoria']>=ESTADO_RECLAMACIONES_BAREMADAS)
                echo "<a id='reclamacion_baremo'  class='reclamacion dropdown-item' href='reclamaciones_baremo.php?token=$token' target='_blank'>Reclamación baremo </a>";
-            if($_SESSION['estado_convocatoria']==ESTADO_RECLAMACIONES_PROVISIONAL)
+            if($_SESSION['estado_convocatoria']>=ESTADO_RECLAMACIONES_PROVISIONAL)
                echo '<a id="reclamacion_listaprovisional" class="reclamacion dropdown-item" href="reclamaciones_provisional.php" target="_blank">Reclamación listado provisional </a>';
          echo '</div>';
       echo '</li>';
@@ -149,8 +151,8 @@ if(isset($_GET['token']))
                </div>
             </li>
 			<?php }?>
-		<?php if(($_SESSION['estado_convocatoria']>=ESTADO_RECLAMACIONES_PROVISIONAL and $_SESSION['rol']!='alumno' and $_SESSION['rol']!='anonimo')){?>
-		   <?php if(($_SESSION['estado_convocatoria']>=40 and $_SESSION['rol']=='alumno') or $_SESSION['rol']!='alumno'){?>
+		<?php if($_SESSION['estado_convocatoria']>=ESTADO_RECLAMACIONES_PROVISIONAL){?>
+		   <?php if(($_SESSION['estado_convocatoria']>=ESTADO_PUBLICACION_DEFINITIVOS and $_SESSION['rol']=='alumno') or $_SESSION['rol']!='alumno'){?>
                             <li class="nav-item active msuperior dropdown" id="mdefinitivo">
                                  <a class="show_definitivos nav-link dropdown-toggle desplegable2" id="navbardrop" data-toggle="dropdown" href="#">Definitivos</a>
 		                 <div class="dropdown-menu">
@@ -161,10 +163,10 @@ if(isset($_GET['token']))
                             </li>
 		   <?php }?>
 		<?php }?>
-		<?php if(($_SESSION['rol']=='admin' or $_SESSION['rol']=='sp') and ($_SESSION['estado_convocatoria']>=ESTADO_ASIGNACION_AUTOMATICA)) 
+		<?php if(($_SESSION['rol']=='admin' or $_SESSION['rol']=='sp') and ($_SESSION['estado_convocatoria']>=ESTADO_ASIGNACIONES)) 
             {
              echo '<li class="nav-item active msuperior dropdown" id="mdefinitivo">';
-             echo '<a class="nav-link dropdown-toggle desplegable2" id="navbardrop" data-toggle="dropdown" href="#">FASE II</a>';
+             echo '<a class="nav-link dropdown-toggle desplegable2" id="navbardrop" data-toggle="dropdown" href="#">Asignaciones</a>';
 		       echo '<div class="dropdown-menu">';
                if($_SESSION['estado_convocatoria']<40)
                {

@@ -44,9 +44,13 @@ else if($_SESSION['fecha_actual']>=DIA_PUBLICACION_PROVISIONAL and $_SESSION['fe
       $_SESSION['estado_convocatoria'] =ESTADO_PUBLICACION_PROVISIONAL;
 else if($_SESSION['fecha_actual']>=DIA_INICIO_RECLAMACIONES_PROVISIONAL and $_SESSION['fecha_actual']<=DIA_FIN_RECLAMACIONES_PROVISIONAL)
       $_SESSION['estado_convocatoria'] =ESTADO_RECLAMACIONES_PROVISIONAL;
-else if($_SESSION['fecha_actual']>=DIA_PUBLICACION_DEFINITIVOS and $_SESSION['fecha_actual']<DIA_FASE3)       
+else if($_SESSION['fecha_actual']>DIA_FIN_RECLAMACIONES_PROVISIONAL and $_SESSION['fecha_actual']<DIA_PUBLICACION_DEFINITIVOS)       
  		$_SESSION['estado_convocatoria'] =ESTADO_DEFINITIVOS;
+else if($_SESSION['fecha_actual']>=DIA_PUBLICACION_DEFINITIVOS and $_SESSION['fecha_actual']<DIA_INICIO_ASIGNACIONES)       
+ 		$_SESSION['estado_convocatoria'] =ESTADO_PUBLICACION_DEFINITIVOS;
+else if($_SESSION['fecha_actual']>=DIA_INICIO_ASIGNACIONES and $_SESSION['fecha_actual']<DIA_PUBLICACION_ASIGNACIONES)       
+ 		$_SESSION['estado_convocatoria'] =ESTADO_ASIGNACIONES;
 else
- 		$_SESSION['estado_convocatoria'] =ESTADO_ASIGNACION_AUTOMATICA;
+ 		$_SESSION['estado_convocatoria'] =ESTADO_FIN;
 
       

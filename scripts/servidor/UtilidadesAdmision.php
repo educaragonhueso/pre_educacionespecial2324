@@ -199,11 +199,43 @@ class UtilidadesAdmision{
    $r['pbv']=$puntos_baremo_validados;   
    return $r;   
   }
-  public function comprobarBaremo($tipo,$dni,$dni1,$dni2)
+  public function comprobarBaremo($tipo,$dni,$dni1,$dni2,$csvfile)
   {
-      //0 no comprobado, 1 comp negativa, 2 comp positiva
-      $r=rand(1,2);
-      return $r;
+      if($csvfile=='') return rand(0,1);
+	   if (($gestor = fopen($csvfile, "r")) !== FALSE) 
+	   {
+   		while (($datos = fgetcsv($gestor, 0, "\n")) !== FALSE) 
+         {
+		      $reg = explode(";",$datos[0]);
+
+            if($tipo=='imv')
+            {
+               $fdni=$reg[0];      
+               if($fdni==$dni1 or $fdni==$dni2)     
+                  return 2;
+            }
+            if($tipo=='familia_numerosa')
+            {
+               $fdni=$reg[1];      
+               $fdni1=$reg[4];      
+               $fdni2=$reg[7];      
+               $estado_numerosa=trim($reg[17]);      
+               if(($fdni==$dni or $fdni1==$dni1 or $fdni2==$dni2) and $estado_numerosa=='EN VIGOR')     
+                  return 2;
+            }
+            if($tipo=='familia_monoparental')
+            {
+               $fdni=$reg[1];      
+               $fdni1=$reg[4];      
+               $fdni2=$reg[7];      
+               $estado_monoparental=trim($reg[21]);      
+               if(($fdni==$dni or $fdni1==$dni1 or $fdni2==$dni2) and $estado_monoparental=='EN VIGOR')     
+                  return 2;
+            }
+         }
+         
+      }
+      return 1;
   }
   public function actualizarBaremo($dbaremo,$id_alumno,$log='')
   {

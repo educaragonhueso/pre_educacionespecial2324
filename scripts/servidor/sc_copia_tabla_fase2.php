@@ -16,7 +16,7 @@ $log_fase_final=new logWriter('log_fase_final',DIR_LOGS);
 
 $tipo='final';
 
-$ccentros=new CentrosController($conexion);
+$ccentros=new CentrosController($conexion,ESTADO_ASIGNACIONES);
 $centro=new Centro($conexion,'','no',0);
 $utils=new UtilidadesAdmision($conexion,$ccentros,$centro);
 $tsolicitud=new Solicitud($conexion);
@@ -28,7 +28,7 @@ $ccentros=new CentrosController(0,$conexion);
 while($row = $centros->fetch_assoc()) { $acentros[]=$row;}
 
 //copiamos todos los datos a tabla de provisionales	
-$ct=$tsolicitud->copiaTablaFase2();	
+$ct=$utils->copiaTablaFase2('fase2',0);	
 $ct=$tsolicitud->copiaCentrosFinal();	
 $log_fase_final->warning("RESULTADO COPIAR TABLA FINAL $ct ");
 

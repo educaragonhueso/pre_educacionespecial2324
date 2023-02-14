@@ -70,6 +70,7 @@ function LoadData($file)
 function BasicTable($header,$data,$comp,$tam,$tipoinforme,$primera_celda)
 {
    $celdadatos=30;
+   $celdavalores=13; 
 	if($tipoinforme=='provisional' or $tipoinforme=='definitivos')
    {
       $primera_celda=35;

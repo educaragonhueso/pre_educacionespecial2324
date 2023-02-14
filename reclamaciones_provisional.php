@@ -63,7 +63,7 @@ $dochtml=$solicitud->getDocHtml($id_alumno,'scripts/fetch/reclamacionesprovision
          include('includes/form_reclamacionprovisional.php');
 	      $form_reclamaciones=str_replace("collapse","".$motivoreclamacion."'",$form_reclamaciones);
          $form_reclamaciones=str_replace("inputtype='tarea' value=''","inputtype='tarea' value='".$motivoreclamacion."'",$form_reclamaciones);
-         if($rol!='alumno' or $estado_convocatoria>61)
+         if($rol!='alumno' or $estado_convocatoria>=ESTADO_DEFINITIVOS)
          {
              $form_reclamaciones=str_replace("input type=\"file\"","input type=\"file\" disabled ",$form_reclamaciones);
              $form_reclamaciones=str_replace("<textarea","<textarea disabled ",$form_reclamaciones);
@@ -72,12 +72,6 @@ $dochtml=$solicitud->getDocHtml($id_alumno,'scripts/fetch/reclamacionesprovision
          $form_reclamaciones=str_replace("</textarea>",$motivoreclamacion."</textarea>",$form_reclamaciones);
          $fr=str_replace("+idalumno","$id_alumno",$form_reclamaciones);
          print($fr); 
-         if($dochtml)
-         {
-            print("<hr>");
-            print("<h4>DOCUMENTOS GUARDADOS: </h4>");
-            print_r($dochtml);
-         }
       ?>
 </div>
 <script>

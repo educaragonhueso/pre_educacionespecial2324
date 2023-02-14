@@ -1,0 +1,59 @@
+LEYENDO CSVprobando fnLEYENDO CSVLEYENDO CSV PARA FAMILIAArray
+(
+    [0] => Codigo solicitud
+    [1] => NIF Alumno
+    [2] => Apellidos Alumno
+    [3] => Nombre Alumno
+    [4] => NIF Tutor1
+    [5] => Apellidos Tutor1
+    [6] => Nombre Tutor1
+    [7] => NIF Tutor2
+    [8] => Apellidos Tutor2
+    [9] => Nombre Tutor2
+    [10] => SolicitaFamiliaNumerosa
+    [11] => SolicitaFamiliaMonoparental
+    [12] => 
+    [13] => 
+    [14] => Titulo
+    [15] => Categoria
+    [16] => FechaCaducidad
+    [17] => Situacion
+    [18] => Titulo
+    [19] => Categoria
+    [20] => Caducidad
+    [21] => Situacion
+    [22] => 
+    [23] => 
+    [24] => 
+    [25] => 
+)
+LEYENDO CSV PARA FAMILIAArray
+(
+    [0] => A-0889-20220407-0000155081
+    [1] => 
+    [2] => BARDAJI BUENO
+    [3] => JARA
+    [4] => 51452021D
+    [5] => BARDAJI CRUZ
+    [6] => ENRIQUE
+    [7] => 05290564N
+    [8] => BUENO GONZALEZ
+    [9] => MARIA
+    [10] => 1
+    [11] => 0
+    [12] => 
+    [13] => 
+    [14] => 22/0278/20
+    [15] => General
+    [16] => 23/12/2030
+    [17] => EN VIGOR
+    [18] => 
+    [19] => 
+    [20] => 
+    [21] => 
+    [22] => 
+    [23] => 
+    [24] => 
+    [25] => 
+)
+COINCIDENCIA

@@ -10,16 +10,6 @@ $form_reclamaciones='
             </div>
         </div>
       </div>
-      <div class="row">
-         <div id="drop-area" style="margin:25px">
-            <form id="idformfiledata" class="my-form">
-               <p>Añade los documentos necesarios</p>
-               <input type="file" id="freclamaciones" name="files[]" multiple accept="*">
-            </form>
-            <progress id="progress-bar" max=100 value=0></progress>
-            <div id="gallery"></div>
-         </div>
-      </div>
       <button id="reclamacion+idalumno" name="breclamaciones" type="button" class="btn btn-outline-dark breclamaciones">Guardar datos</button>
 </div>
 ';

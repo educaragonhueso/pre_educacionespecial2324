@@ -33,8 +33,10 @@ class SolicitudController{
             return "<div class='cajainfo'>PUEDES HACER TU RECLAMACIÓN DESDE EL ENLACE SUPERIOR DERECHO O <a href='https://preadmespecial.aragon.es/educacionespecial2324/reclamaciones_baremo.php?token=$token' style='color:darkblue;background-color:black;padding:6px'> DESDE ESTE ENLACE</a></div>";
          if($this->estado_convocatoria==ESTADO_SORTEO)
             return "<div class='cajainfo'>SE HA REALIZADO EL SORTEO, LOS LISTADOS PROVISIONALES SE PUBLICARÁN EL ".$this->convertirFecha(DIA_PUBLICACION_PROVISIONAL)."</div>";
-         if($this->estado_convocatoria>=ESTADO_PUBLICACION_PROVISIONAL)
+         if($this->estado_convocatoria==ESTADO_PUBLICACION_PROVISIONAL)
             return "<div class='cajainfo'>PUBLICADAS LISTAS PROVISIONALES, PUEDES CONSULTARLAS DESDE EL ENLACE SUPERIOR DERECHO. EL PERIODO DE RECLAMACIONES ES DESDE EL ".$this->convertirFecha(DIA_INICIO_RECLAMACIONES_PROVISIONAL)." HASTA EL ".$this->convertirFecha(DIA_FIN_RECLAMACIONES_PROVISIONAL)."<br></div><div style='padding:10px;margin-left:40%'> PUEDES RECLAMAR DESDE ESTE ENLACE <a href='https://preadmespecial.aragon.es/educacionespecial2324/reclamaciones_provisional.php?token=$token' style='color:darkblue;background-color:black;padding:6px'> DESDE ESTE ENLACE</a></div>";
+         if($this->estado_convocatoria>=ESTADO_PUBLICACION_DEFINITIVOS)
+            return "<div class='cajainfo'>PUBLICADOS LISTADOS DEFINITIVOS, PUEDES CONSULTARLAS DESDE EL ENLACE SUPERIOR DERECHO.</div>";
 	}
     public function getIdAlumnoPin($pin)
 		{

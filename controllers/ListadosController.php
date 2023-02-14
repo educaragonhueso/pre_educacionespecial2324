@@ -121,6 +121,12 @@ class ListadosController{
       }
       return 1;
    }
+    public function getReclamacion($token,$tipo)
+    {
+      $sql="SELECT id_alumno FROM reclamaciones WHERE tipo='$tipo' AND id_alumno IN(SELECT id_alumno FROM alumnos WHERE token='$token')";
+      $r=$this->conexion->query($sql);
+      return $r->num_rows;
+    }
     public function getNasignado($id_alumno)
     {
       if($id_alumno==0) return 0;
@@ -325,24 +331,22 @@ class ListadosController{
       else
          $id_centro=$sol->id_centro;
      
-      if($this->estado_convocatoria>=ESTADO_RECLAMACIONES_BAREMADAS AND $this->estado_convocatoria<ESTADO_RECLAMACIONES_PROVISIONAL)
-      { 
-         if($sol->tipo=='baremo')
-            $rec="Ver reclamación listado baremado";
-         else
-            $rec="No hay reclamación baremada";
-         $enlacerec="reclamaciones_baremo.php?id_centro=$id_centro&token=$token";
-      }
-      if($this->estado_convocatoria==ESTADO_RECLAMACIONES_PROVISIONAL)
-      { 
-         if($sol->tipo=='provisional')
-            $rec="Ver reclamación listado provisional";
-         else
-            $rec="No hay reclamación provisional";
-         $enlacerec="reclamaciones_provisional.php?id_centro=$id_centro&token=$token";
-      }
+      $crecb=$this->getReclamacion($token,'baremo');
+      if($crecb==1)
+         $recb="Ver reclamación listado baremado";
+      else
+         $recb="No hay reclamación baremada";
+      $enlacerecbaremo="reclamaciones_baremo.php?id_centro=$id_centro&token=$token";
+
+      $crecp=$this->getReclamacion($token,'provisional');
+      if($crecp==1)
+         $recp="Ver reclamación listado provisional";
+      else
+         $recp="No hay reclamación listado provisional";
+      $enlacerecprovisional="reclamaciones_provisional.php?id_centro=$id_centro&token=$token";
          
-		$li.="<td id='$token' class='reclamacion'><a href='$enlacerec'>$rec</a></td>";
+		$li.="<td id='$token' class='reclamacion'><a href='$enlacerecbaremo' target='_blank'>$recb</a></td>";
+		$li.="<td id='$token' class='reclamacion'><a href='$enlacerecprovisional' target='_blank'>$recp</a></td>";
 		$li.="<td id='print".$sol->id_alumno."' class='fase printsol'><i class='fa fa-print psol' aria-hidden='true'></i></td>";
 		$li.="<td id='fase".$sol->id_alumno."' class='fase'>".$sol->fase_solicitud."</td>";
 		$li.="<td id='estado".$sol->id_alumno."' class='estado'>".$sol->estado_solicitud."</td>";
@@ -602,9 +606,9 @@ class ListadosController{
 		{
          foreach($centros as $centro)
          {
-               $cdata_parcial=substr($centro['nombre_centro'],0,10).":".$centro['vacantes_ebo'];
-               $cdata_completo=$centro['nombre_centro'].":".$centro['vacantes_ebo'];
-               $htmlcentros.="<option class='vacantesebo".$centro['id_centro']."' value='$cdata_completo'>".$cdata_parcial."</option>";
+            $cdata_parcial=substr($centro['nombre_centro'],0,10).":".$centro['vacantes_ebo'];
+            $cdata_completo=$centro['nombre_centro'].":".$centro['vacantes_ebo'];
+            $htmlcentros.="<option class='vacantesebo".$centro['id_centro']."' value='$cdata_completo'>".$cdata_parcial."</option>";
          }
       }
 		elseif($subtipo=='lfase2_sol_tva')
@@ -645,23 +649,22 @@ class ListadosController{
 				$cabadmin=1;
 			}
 			if($centroactual!=$centroanterior)
-				{
+			{
+            
 	         $cab=0;
 				$html.="<tr class='filasol' id='filasol".$sol->id_alumno."' style='color:white;background-color:#141259;'><td colspan='".$ncolumnas."'><b>".$sol->nombre_centro."</b></td></tr>";
-				$html.="<tr class='filasol' id='filasol".$sol->id_alumno."' style='color:white;background-color: #84839e;'><td colspan='".$ncolumnas."'><b>".strtoupper($sol->tipoestudios)."</b></td></tr>";
-				//$cabadmin=0;
-				}
+            $html.="<tr>";
+	         foreach($cabecera as $cab)
+		         $html.="<th style='color:black'>".$cab."</th>";
+            $html.="</tr>";
+            $html.="<tr class='filasol' id='filasol".$sol->id_alumno."' style='color:white;background-color: #84839e;'><td colspan='".$ncolumnas."'><b>".strtoupper($sol->tipoestudios)."</b></td></tr>";
+
+			}
 		}
-		if($sol->tipoestudios=='tva' and $cab==0)
-		{
-			$html.="<tr class='filasol' id='filasol".$sol->id_alumno."' style='color:white;background-color: #84839e;'><td colspan='".$ncolumnas."'><b>".strtoupper($sol->tipoestudios)."</b></td></tr>";
-			$cab=1;
-		}
-		else if($sol->tipoestudios=='ebo' and $cab==0)
-		{
-			$html.="<tr class='filasol' id='filasol".$sol->id_alumno."' style='color:white;background-color: #84839e;'><td colspan='".$ncolumnas."'><b>".strtoupper($sol->tipoestudios)."</b></td></tr>";
-			$cab=1;
-		}
+      if($centroactual==$centroanterior and $tipoestudios_actual!=$tipoestudios_anterior)
+      {
+          $html.="<tr class='filasol' id='filasol".$sol->id_alumno."' style='color:white;background-color: #84839e;'><td colspan='".$ncolumnas."'><b>".strtoupper($sol->tipoestudios)."</b></td></tr>";
+      }
 		$html.=$this->showSolicitudListado($sol,$camposdatos,$provisional,$htmlcentros,$fase);	
 	}
 	$html.="</tbody>";

@@ -49,7 +49,7 @@ $log_listados_definitivos->warning("ACTUALIZANDO DEFINITIVOS, $estado_convocator
 //La convocatoria esta en definitivo según el dia programado
 //si la convocatoria esta en definitivo, entramos una vez para copiar la tabla con los datos del centro
 //si estamos en el periodo de provisionales actualizamos tablas de definitivos
-if($estado_convocatoria>=ESTADO_PUBLICACION_PROVISIONAL and $estado_convocatoria<ESTADO_DEFINITIVOS)
+if($estado_convocatoria>=ESTADO_PUBLICACION_PROVISIONAL and $estado_convocatoria<ESTADO_PUBLICACION_DEFINITIVOS)
 {
 	if($_POST['rol']=='centro')
 	{
@@ -153,7 +153,8 @@ if($_POST['pdf']==1)
 	  // Page number
 	$pdf->Cell(30);
 	$pdf->Cell(40,10,'SELLO CENTRO',1,0,'C');
-	$pdf->Cell(140,10,'En ______________________ a ____de________ de 2021',0,0,'C');
+   $firma='En ______________________ a ____de________ de '.CURSO;
+	$pdf->Cell(140,10,$firma,0,0,'C');
 	$pdf->Cell(0,10,'Firmado:',0,0);
 	$pdf->Ln();
 	$pdf->Cell(220,10,'El Director/a',0,0,'R');

@@ -47,7 +47,7 @@ $nombre_centro_destino=$centro_destino->getNombre();
 //SI EL CENTRO ORIGEN Y DEF ES EL MISMO Y HAY RESERVA NO HACEMOS NADA
 if($id_centro_origen==$id_centroelegido and $id_centro_origen!=0 and $reserva=='reserva1')
 {
-   $sql="update alumnos_fase2 set centro_definitivo='".$nombre_centro_destino."',id_centro_definitivo=$id_centroelegido,tipo_modificacion='manual' where id_alumno=".$_POST['id_alumno'];
+   $sql="UPDATE alumnos_fase2 SET centro_definitivo='".$nombre_centro_destino."',id_centro_definitivo=$id_centroelegido,tipo_modificacion='manual' where id_alumno=".$_POST['id_alumno'];
    $result=$conexion->query($sql);
    $conexion->close();
 	print("OK");
@@ -78,7 +78,7 @@ if(strtoupper($_POST['centroactual'])!='NOCENTRO')
 //incrementamos vacantes en centro original
 $vacanteso=$centro_origen->actualizaVacantes(0,0,$tipo,'+');
 }
-$sql="update alumnos_fase2 set centro_definitivo='".$nombre_centro_destino."',id_centro_definitivo=$id_centroelegido,tipo_modificacion='manual' where id_alumno=".$_POST['id_alumno'];
+$sql="UPDATE alumnos_fase2 SET centro_definitivo='".$nombre_centro_destino."',id_centro_definitivo=$id_centroelegido,tipo_modificacion='manual' where id_alumno=".$_POST['id_alumno'];
 $result=$conexion->query($sql);
 $conexion->close();
 

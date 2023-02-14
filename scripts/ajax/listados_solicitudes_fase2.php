@@ -49,17 +49,10 @@ $nsolicitudes=$tcentro->getNumSolicitudes();
 $cabecera="campos_cabecera_".$subtipo_listado;
 $camposdatos="campos_bbdd_".$subtipo_listado;
 
-$boton_asignar_automatica='<div id="form_asignarfase2" class="input-group mb-3"
-style="margin-top:5px">
-				<div class="input-group-append">
-				<button class="btn btn-success" type="submit" id="boton_asignar_plazas_fase2" data-subtipo="'.$subtipo_listado.'">Asignar Vacantes</button>
-				</div>
-		          </div>';
-
-//if($subtipo_listado!='lfase2_sol_sor') print($boton_asignar_automatica); //mostramos formulario sorteo solo si no se ha hecho ya
 //mostramos las solitudes completas sin incluir borrador
 $solicitudes=$tsolicitud->getSolicitudesFase2($subtipo_listado,$rol,$id_centro,$estado_convocatoria,$log_listados_solicitudes_fase2); 
 ######################################################################################
+$log_listados_solicitudes_fase2->warning("INICIOLOG SOLICITUDES FASE II:");
 $log_listados_solicitudes_fase2->warning("OBTENIDAS $nsolicitudes SOLICITUDES FASE II:");
 ######################################################################################
 $nombrefichero=$subtipo_listado.'_admin';
@@ -91,7 +84,8 @@ if($_POST['rol']=='admin' or $_POST['rol']=='sp' or $_POST['rol']=='centro')
       $pdf->SetFont('Arial','I',8);
         // Page number
       $pdf->Cell(40,10,'SELLO CENTRO',1,0,'C');
-      $pdf->Cell(140,10,'En ______________________ a ____de________ de 2022',0,0,'C');
+      $firma='En ______________________ a ____de________ de '.CURSO;
+      $pdf->Cell(140,10,$firma,0,0,'C');
       $pdf->Cell(0,10,'Firmado:',0,0);
       $pdf->Ln();
       $pdf->Cell(220,10,'El Director/a',0,0,'R');
