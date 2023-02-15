@@ -1,174 +1,738 @@
+ID CENTRO: 22002338Array
+(
+    [ebo] => 1
+    [tva] => 0
+)
+ID CENTRO: 22002511Array
+(
+    [ebo] => -3
+    [tva] => 12
+)
+ID CENTRO: 22003835Array
+(
+    [ebo] => 0
+    [tva] => 0
+)
+ID CENTRO: 22004891Array
+(
+    [ebo] => 0
+    [tva] => 12
+)
+ID CENTRO: 22005157Array
+(
+    [ebo] => 13
+    [tva] => 8
+)
+ID CENTRO: 22005200Array
+(
+    [ebo] => 2
+    [tva] => 0
+)
+ID CENTRO: 22010001Array
+(
+    [ebo] => 6
+    [tva] => 5
+)
+ID CENTRO: 44003259Array
+(
+    [ebo] => 19
+    [tva] => 19
+)
+ID CENTRO: 44004148Array
+(
+    [ebo] => -1
+    [tva] => 1
+)
+ID CENTRO: 50000850Array
+(
+    [ebo] => 0
+    [tva] => -2
+)
+ID CENTRO: 50004612Array
+(
+    [ebo] => 2
+    [tva] => 0
+)
+ID CENTRO: 50005666Array
+(
+    [ebo] => 0
+    [tva] => 0
+)
+ID CENTRO: 50006049Array
+(
+    [ebo] => 0
+    [tva] => 0
+)
+ID CENTRO: 50006128Array
+(
+    [ebo] => 3
+    [tva] => 0
+)
+ID CENTRO: 50006207Array
+(
+    [ebo] => 0
+    [tva] => 0
+)
+ID CENTRO: 50007376Array
+(
+    [ebo] => 5
+    [tva] => 0
+)
+ID CENTRO: 50007674Array
+(
+    [ebo] => 7
+    [tva] => 3
+)
+ID CENTRO: 50008630Array
+(
+    [ebo] => 7
+    [tva] => -5
+)
+ID CENTRO: 50008678Array
+(
+    [ebo] => 3
+    [tva] => -2
+)
+ID CENTRO: 50008915Array
+(
+    [ebo] => 2
+    [tva] => -1
+)
+ID CENTRO: 50009488Array
+(
+    [ebo] => 0
+    [tva] => 5
+)
+ID CENTRO: 50009646Array
+(
+    [ebo] => 2
+    [tva] => -4
+)
+ID CENTRO: 50010387Array
+(
+    [ebo] => 5
+    [tva] => 2
+)
+ID CENTRO: 50011537Array
+(
+    [ebo] => 0
+    [tva] => 5
+)
+ID CENTRO: 50017369Array
+(
+    [ebo] => -3
+    [tva] => 0
+)
+ID CENTRO: 50018131Array
+(
+    [ebo] => 17
+    [tva] => -17
+)
+ID CENTRO: 50019408Array
+(
+    [ebo] => 13
+    [tva] => 2
+)
 Array
 (
-    [id_alumno] => 1326
-    [id_usuario] => 50017369
-    [apellido1] => Zanahoria
-    [apellido2] => Pimienta
-    [nombre] => Jorge Miguel
-    [dni_alumno] => nodata
-    [nacionalidad] => España
-    [municipionac] => Zaragoza
-    [fnac] => 2020-01-01
-    [num_hbaremo] => 0
-    [conjunta] => no
-    [datos_tutor1] => Eva María Pimienta sal
-    [datos_tutor2] => Centro Privado Sagasta
-    [dni_tutor2] => nodata
-    [dni_tutor1] => 15444555d
-    [calle_dfamiliar] => Calle
-    [num_dfamiliar] => 1
-    [piso_dfamiliar] => 1
-    [loc_dfamiliar] => ZARAGOZA
-    [cp_dfamiliar] => 50012
-    [tel_dfamiliar1] => 0
-    [tel_dfamiliar2] => 0
-    [email] => bcostea@aragon.es
-    [nuevaesc] => 1
-    [id_centro_estudios_origen] => 0
-    [loc_centro_origen] => nodata
-    [modalidad_origen] => nodata
-    [id_centro_destino] => 50017369
-    [id_centro_final] => 0
-    [curso_solicitado] => nodata
-    [loc_centro_destino] => nodata
-    [prov_centro_destino] => zaragoza
-    [modalidad_destino] => nodata
-    [id_centro_destino1] => 50006128
-    [id_centro_destino2] => 
-    [id_centro_destino3] => 
-    [id_centro_destino4] => 
-    [id_centro_destino5] => 
-    [id_centro_destino6] => 
-    [fotocopia_resolucion] => 0
-    [reserva] => 0
-    [prematuridad] => 0
-    [acred_dom_familiar] => 0
-    [cer_rec_discapacidad] => 0
-    [fam_numerosa] => 0
-    [acred_dom_laboral] => 0
-    [permiten_renta] => 0
-    [cumplen_renta] => 0
-    [fase_solicitud] => validada
-    [transporte] => 2
-    [nasignado] => 0
-    [nordensorteo] => 0
-    [estado_solicitud] => apta
-    [oponenautorizar] => 0
-    [cumplen] => 0
-    [tipoestudios] => ebo
-    [est_desp_sorteo] => otro
-    [sol_plaza] => 0
-    [sol_vacantes] => 0
-    [hore] => 7:45
-    [hors] => 17:00
-    [importe_renta] => 0
-    [puntos_renta] => 0
-    [cuota] => 0
-    [tipoalumno] => nuevo
-    [nodatos] => 0
-    [anexo4] => no
-    [nmunidad] => 0
-    [validar_infotributaria] => 0
-    [solcalcbon] => 0
-    [token] => 90ae6a21a525
-    [firma] => 0
-    [fecha_inscripcion] => 2023-01-26 10:44:25
-    [hermanos_centro] => 0
-    [tutores_centro] => 0
-    [tipo_domicilio] => familiar
-    [renta_inferior] => 1
-    [iprem] => no
-    [acogimiento] => 1
-    [genero] => 1
-    [terrorismo] => 1
-    [parto] => 1
-    [discapacidad_alumno] => 0
-    [discapacidad_hermanos] => 1
-    [nombredisc1] => Eva María
-    [apellidodisc1] => Pimienta sal
-    [dnidisc1] => 12555888f
-    [fnacdisc1] => 1990-01-01
-    [nombredisc2] => nodata
-    [apellidodisc2] => nodata
-    [dnidisc2] => nodata
-    [fnacdisc2] => 2020-01-01
-    [nombredisc3] => nodata
-    [apellidodisc3] => nodata
-    [dnidisc3] => nodata
-    [fnacdisc3] => 2020-01-01
-    [tipo_familia_numerosa] => 0
-    [tipo_familia_monoparental] => 2
-    [monoparental] => 0
-    [zona_dfamiliar] => DESC
-    [zona_dtrabajo] => DESC
-    [zona_limitrofe] => DESC
-    [zona_trabajo_limitrofe] => DESC
-    [proximidad_domicilio] => dfamiliar
-    [situacion_sobrevenida] => 1
-    [validar_proximidad_domicilio] => 0
-    [validar_situacion_sobrevenida] => 0
-    [validar_tutores_centro] => 0
-    [validar_renta_inferior] => 0
-    [validar_acogimiento] => 0
-    [validar_genero] => 0
-    [validar_terrorismo] => 0
-    [validar_parto] => 0
-    [validar_hnos_centro] => 0
-    [validar_discapacidad_alumno] => 0
-    [validar_discapacidad_hermanos] => 0
-    [validar_tipo_familia_numerosa] => 0
-    [validar_tipo_familia_monoparental] => 0
-    [calle_dlaboral] => 
-    [puntos_validados] => 3
-    [puntos_totales] => 18
-    [calle_dllimitrofe] => 
-    [sitlaboral] => 0
-    [validar_sitlaboral] => 0
-    [marcado_proximidad_domicilio] => 1
-    [marcado_discapacidad] => 1
-    [marcado_numerosa] => 0
-    [marcado_monoparental] => 1
-    [comprobar_renta_inferior] => 1
-    [comprobar_discapacidad_alumno] => 0
-    [comprobar_discapacidad_hermanos] => 2
-    [comprobar_familia_numerosa] => 0
-    [comprobar_familia_monoparental] => 2
-    [localidad] => Zaragoza
-    [provincia] => Zaragoza
-    [coordenadas] => nodata
-    [direccion] => nodata
-    [nombre_centro] => ANGEL RIVIÈRE
-    [tipo_centro] => 
-    [id_centro] => 50017369
-    [zona] => DESC
-    [vuno] => 0
-    [vuno_original] => 0
-    [vuno_acneae] => 0
-    [vuno_acneae_original] => 0
-    [vdos] => 0
-    [vdos_original] => 0
-    [vdos_acneae] => 0
-    [vdos_acneae_original] => 0
-    [vtres] => 0
-    [vtres_original] => 0
-    [vtres_acneae] => 0
-    [vtres_acneae_original] => 0
-    [num_sorteo] => 66
-    [ndespuessorteo] => 0
-    [fase_sorteo] => 3
-    [primera_conexion] => no
-    [num_sorteo_fase2] => 0
-    [asignado_num_fase2] => 0
-    [clase_centro] => especial
-    [vacantes_ebo] => -1
-    [vacantes_ebo_original] => 1
-    [vacantes_tva] => 0
-    [vacantes_tva_original] => 0
-    [naturaleza] => Público
-    [correo] => ceeangelriviere@gmail.com
-)
-NDISC: 1Zanahoria-Pimienta-Jorge Miguel
+    [0] => stdClass Object
+        (
+            [id_centro_definitivo] => 50007674
+            [coordenadas] => nodata
+            [calle_dfamiliar] => goya
+            [localidad] => Zaragoza
+            [id_alumno] => 1315
+            [nombre] => enero
+            [id_centro1] => 50007674
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50017369
+            [nombre_centro] => ANGEL RIVIÈRE
+            [centro_definitivo] => ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 17
+            [nordensorteo] => 11
+        )
 
-PUNTOS BAREMO: 18
-PUNTOS BAREMO VALIDADOS: 3
-=======================
+    [1] => stdClass Object
+        (
+            [id_centro_definitivo] => 50008915
+            [coordenadas] => nodata
+            [calle_dfamiliar] => Calle
+            [localidad] => ZARAGOZA
+            [id_alumno] => 1361
+            [nombre] => Sara
+            [id_centro1] => 50008915
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50017369
+            [nombre_centro] => ANGEL RIVIÈRE
+            [centro_definitivo] => SAN GERMÁN
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 16
+            [nordensorteo] => 16
+        )
+
+    [2] => stdClass Object
+        (
+            [id_centro_definitivo] => 50008915
+            [coordenadas] => nodata
+            [calle_dfamiliar] => calle
+            [localidad] => ZARAGOZA
+            [id_alumno] => 1362
+            [nombre] => Jorge Luis
+            [id_centro1] => 50008915
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50017369
+            [nombre_centro] => ANGEL RIVIÈRE
+            [centro_definitivo] => SAN GERMÁN
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 13
+            [nordensorteo] => 8
+        )
+
+    [3] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => calle
+            [localidad] => ZARAGOZA
+            [id_alumno] => 1363
+            [nombre] => Sara
+            [id_centro1] => 50008915
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50017369
+            [nombre_centro] => ANGEL RIVIÈRE
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 13
+            [nordensorteo] => 8
+        )
+
+    [4] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => nodata
+            [localidad] => Barbastro
+            [id_alumno] => 1342
+            [nombre] => AMAYA
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50017369
+            [nombre_centro] => ANGEL RIVIÈRE
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 12
+            [nordensorteo] => 3
+        )
+
+    [5] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => calle
+            [localidad] => Zaragoza
+            [id_alumno] => 1327
+            [nombre] => Jorge Miguel
+            [id_centro1] => 50008915
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50017369
+            [nombre_centro] => ANGEL RIVIÈRE
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 12
+            [nordensorteo] => 45
+        )
+
+    [6] => stdClass Object
+        (
+            [id_centro_definitivo] => 50006128
+            [coordenadas] => nodata
+            [calle_dfamiliar] => Calle
+            [localidad] => ZARAGOZA
+            [id_alumno] => 1326
+            [nombre] => Jorge Miguel
+            [id_centro1] => 50006128
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50017369
+            [nombre_centro] => ANGEL RIVIÈRE
+            [centro_definitivo] => SAN BRAULIO
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 11
+            [nordensorteo] => 18
+        )
+
+    [7] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => caaaaa
+            [localidad] => Aínsa
+            [id_alumno] => 1316
+            [nombre] => asas
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50017369
+            [nombre_centro] => ANGEL RIVIÈRE
+            [centro_definitivo] => nocentro
+            [tipoestudios] => dos
+            [transporte] => 2
+            [puntos_validados] => 6
+            [nordensorteo] => 27
+        )
+
+    [8] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => nodata
+            [localidad] => Adahuesca
+            [id_alumno] => 1346
+            [nombre] => luis31
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 22003835
+            [nombre_centro] => MONTECORONA
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 4
+            [nordensorteo] => 41
+        )
+
+    [9] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => nodata
+            [localidad] => Alcañiz
+            [id_alumno] => 1336
+            [nombre] => OLIVIA
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50017369
+            [nombre_centro] => ANGEL RIVIÈRE
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 1
+            [nordensorteo] => 9
+        )
+
+    [10] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => nodata
+            [localidad] => nodata
+            [id_alumno] => 1314
+            [nombre] => luis1
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 22003835
+            [nombre_centro] => MONTECORONA
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 0
+            [nordensorteo] => 1
+        )
+
+    [11] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => nodata
+            [localidad] => nodata
+            [id_alumno] => 1317
+            [nombre] => sdsdsd
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 22002511
+            [nombre_centro] => PIRÁMIDE
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 0
+            [nordensorteo] => 2
+        )
+
+    [12] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => nodata
+            [localidad] => nodata
+            [id_alumno] => 1318
+            [nombre] => asas
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 22003835
+            [nombre_centro] => MONTECORONA
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 0
+            [nordensorteo] => 4
+        )
+
+    [13] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => nodata
+            [localidad] => Zaragoza
+            [id_alumno] => 1321
+            [nombre] => PATRICIA
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50017369
+            [nombre_centro] => ANGEL RIVIÈRE
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 0
+            [nordensorteo] => 6
+        )
+
+    [14] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => nodata
+            [localidad] => nodata
+            [id_alumno] => 1312
+            [nombre] => hluis11
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 22003835
+            [nombre_centro] => MONTECORONA
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 0
+            [nordensorteo] => 14
+        )
+
+    [15] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => nodata
+            [localidad] => Alcolea de Cinca
+            [id_alumno] => 1339
+            [nombre] => nhl2
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 22003835
+            [nombre_centro] => MONTECORONA
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 0
+            [nordensorteo] => 15
+        )
+
+    [16] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => nodata
+            [localidad] => Adahuesca
+            [id_alumno] => 1319
+            [nombre] => asasas
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 22003835
+            [nombre_centro] => MONTECORONA
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 0
+            [nordensorteo] => 20
+        )
+
+    [17] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => nodata
+            [localidad] => nodata
+            [id_alumno] => 1311
+            [nombre] => nom2
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 22003835
+            [nombre_centro] => MONTECORONA
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 0
+            [nordensorteo] => 21
+        )
+
+    [18] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => nodata
+            [localidad] => Aínsa
+            [id_alumno] => 1325
+            [nombre] => VERA
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50017369
+            [nombre_centro] => ANGEL RIVIÈRE
+            [centro_definitivo] => nocentro
+            [tipoestudios] => tva
+            [transporte] => 2
+            [puntos_validados] => 0
+            [nordensorteo] => 23
+        )
+
+    [19] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => nodata
+            [localidad] => Barbastro
+            [id_alumno] => 1328
+            [nombre] => SERGIO
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50017369
+            [nombre_centro] => ANGEL RIVIÈRE
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 0
+            [nordensorteo] => 24
+        )
+
+    [20] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => nodata
+            [localidad] => nodata
+            [id_alumno] => 1308
+            [nombre] => luis1
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 22004891
+            [nombre_centro] => BIELLO ARAGÓN
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 0
+            [nordensorteo] => 25
+        )
+
+    [21] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => nodata
+            [localidad] => Adahuesca
+            [id_alumno] => 1333
+            [nombre] => luis1
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 22003835
+            [nombre_centro] => MONTECORONA
+            [centro_definitivo] => nocentro
+            [tipoestudios] => dos
+            [transporte] => 2
+            [puntos_validados] => 0
+            [nordensorteo] => 38
+        )
+
+    [22] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => nodata
+            [localidad] => Alcolea de Cinca
+            [id_alumno] => 1331
+            [nombre] => VANESA
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50017369
+            [nombre_centro] => ANGEL RIVIÈRE
+            [centro_definitivo] => nocentro
+            [tipoestudios] => tva
+            [transporte] => 2
+            [puntos_validados] => 0
+            [nordensorteo] => 39
+        )
+
+    [23] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => nodata
+            [localidad] => Adahuesca
+            [id_alumno] => 1335
+            [nombre] => nhc1
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 22003835
+            [nombre_centro] => MONTECORONA
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 0
+            [nordensorteo] => 40
+        )
+
+    [24] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => nodata
+            [localidad] => Zaragoza
+            [id_alumno] => 1320
+            [nombre] => NURIA
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50017369
+            [nombre_centro] => ANGEL RIVIÈRE
+            [centro_definitivo] => nocentro
+            [tipoestudios] => dos
+            [transporte] => 2
+            [puntos_validados] => 0
+            [nordensorteo] => 42
+        )
+
+    [25] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => nodata
+            [localidad] => Alcañiz
+            [id_alumno] => 1337
+            [nombre] => ANTONIO
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50017369
+            [nombre_centro] => ANGEL RIVIÈRE
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 0
+            [nordensorteo] => 46
+        )
+
+)
+
+Asignadas vacantes centros para fase 2 a las 11:02 del dia 15-Feb-2023

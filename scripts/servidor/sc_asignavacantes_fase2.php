@@ -13,12 +13,10 @@ require_once 'UtilidadesAdmision.php';
 $conectar=new Conectar('../../config/config_database.php');
 $conexion=$conectar->conexion();
 $log_asigna_fase2=new logWriter('log_asigna_fase2',DIR_LOGS);
-
 $ccentros=new CentrosController(0,$conexion);
 $tcentros_fase2=new Centro($conexion,'','no',0);
-//$centros_fase2=$tcentros_fase2->getCentrosFase2();
-$post=0;
 $utils=new UtilidadesAdmision($conexion,'',$tcentros_fase2,1);
+$post=0;
 if(isset($_POST['subtipo']))
 	$tipoestudios=str_replace('lfase2_sol_','',$_POST['subtipo']);
 else{	$post=0;	$tipoestudios='ebo';}
@@ -33,20 +31,21 @@ foreach($centros_fase2 as $cf)
 {
    print("ID CENTRO: ".$cf['id_centro']);
    $tcentros_fase2->setId($cf['id_centro']);
-   $v=$tcentros_fase2->getVacantesCentro($log_asigna_fase2);
+   $v=$tcentros_fase2->getVacantesCentroFase2($log_asigna_fase2);
    print_r($v);
    $res=$tcentros_fase2->setVacantes($v);
 }
 //ANTES DE EMPEZAR REPLCIAMOS LA TABAL DE ALUMNOS A LA TABAL TEMPORAL QUE
 //USAREMOS EN EL RESETEO
-if(!$utils->copiaTablaTmpFase2()) {
-      $log_asigna_fase2->warning("ERROR COPIANDO TABAL TMP FASE2");
-      exit();
+if(!$utils->copiaTablaTmpFase2()) 
+{
+   $log_asigna_fase2->warning("ERROR COPIANDO TABAL TMP FASE2");
+   exit();
 }
 
 //asignar vacantetes de cada centro a centro elegido en primera opcion (oopcion 0)
 do{
-   $log_asigna_fase2->warning("INICIANDO PROCESO POR $j VECES");
+   $log_asigna_fase2->warning("INICIOLOG INICIANDO PROCESO POR $j VECES");
 	if(!$post) print("INICIANDO PROCESO POR $j VECES".PHP_EOL);
 	if($avac==0) break;
 	
@@ -61,14 +60,16 @@ do{
 		$avac=$utils->asignarVacantesCentros($centros_fase2,$alumnos_fase2,$i,$tipoestudios,$post);
 		
 		if($avac==0) break;
-		if($avac==-2){
+		if($avac==-2)//si se ha liberado reserva 
+      {
 			$reset=$utils->resetAlumnosFase2();//recargamos de nuevo la tabla de laumnos fase2 con los valores originales previamente almacenados en la alumnos_fase2_tmp
 			$j++; 
 			break;
-			}
+		}
 	}
 }while($avac==-2);//mientras se este liberando una reserva hay q volver a empezar
-
+//asignamos las vacantes a los alumnos en la tabla original
+$utils->asignaVacantesAlumnos();
 if($avac==1)
 {
    $log_asigna_fase2->warning("Asignadas vacantes centros para fase 2");

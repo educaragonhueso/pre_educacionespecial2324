@@ -35,7 +35,7 @@ $tcentro=new Centro($conexion,$_POST['id_centro'],'ajax');
 $ccentros=new CentrosController($conexion,$estado_convocatoria);
 $tcentro->setNombre();
 $tsolicitud=new Solicitud($conexion);
-$dvacantes=$tcentro->getVacantes($id_centro,$log_listados_definitivos);
+//$dvacantes=$tcentro->getVacantes($id_centro,$log_listados_definitivos);
 //$vacantes_ebo=$dvacantes[0]->vacantes;
 //$vacantes_tva=$dvacantes[1]->vacantes;
 

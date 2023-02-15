@@ -1,43 +1,28 @@
 Tipo;Ap1;Ap2;Nombre;Loc;Calle;Reserva;"Reserva Original";"Centro origen";Cen.Pref;Cen.Alt1;Cen.Alt2;Cen.Alt3;Cen.Alt4;Cen.Alt5;Cen.Alt6;Baremo;Prioridad;Estado;"Centro definitivo";"Numero de sorteo asignado";Modificacion
-;gabarre;cortes;anayeli;zaragoza;"calle nuestra señora de las aguas";0;0;NOCENTRO;"CALIXTO ARIÑO";;;;;;;0;2;irregular;nocentro;13;automatica
-ebo;Bernad;Giménez;"Alma Nayeli";Zaragoza;"Juan Ramón Jiménez";0;0;NOCENTRO;ALBORADA;"JEAN PIAGET";CEDES;;;;;7;2;apta;nocentro;118;automatica
-ebo;WANG;nodata;"LI XUAN";ZARAGOZA;"SAN JUAN DE  LA PEÑA";0;0;NOCENTRO;ALBORADA;"JEAN PIAGET";"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";CEDES;;;;7;2;apta;nocentro;25;automatica
-ebo;Cuadra;Reula;Jordán;Zaragoza;"Calle Peña Oroel";0;0;"TÍO JORGE";ALBORADA;"JEAN PIAGET";"RINCÓN DE GOYA";"ANGEL RIVIÈRE";;;;7;2;apta;nocentro;34;automatica
-ebo;RUEDA;ROLONG;"SARA SOFIA";ZARAGOZA;"CALLE CAÑO ANISCLO";0;0;NOCENTRO;ALBORADA;"JEAN PIAGET";"RINCÓN DE GOYA";"ANGEL RIVIÈRE";"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";;;6;2;apta;nocentro;98;automatica
-ebo;HERNAIZ;CORTES;JUAN;Garrapinillos;"CAMINO LA FRONDOSA";0;0;NOCENTRO;ALBORADA;"MARÍA SORIANO";"ANGEL RIVIÈRE";"RINCÓN DE GOYA";;;;6;2;apta;"MARÍA SORIANO";63;automatica
-ebo;"Rodríguez ";"Tomás ";"Marc ";Zaragoza;"Calle La Joya";0;0;NOCENTRO;ALBORADA;"RINCÓN DE GOYA";"ANGEL RIVIÈRE";;"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";"JEAN PIAGET";;1;2;apta;nocentro;68;automatica
-ebo;OUAHI;nodata;RAYANE;ZARAGOZA;"CALLE GABRIELA MISTRAL";0;0;NOCENTRO;ALBORADA;"RINCÓN DE GOYA";"ANGEL RIVIÈRE";"JEAN PIAGET";"SAN BRAULIO";"MARÍA SORIANO";"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";0;2;apta;"SAN BRAULIO";41;automatica
-ebo;BORJA;CLAVERÍA;ANTONIO;GALLUR;"Calle San Antonio";0;0;NOCENTRO;"RINCÓN DE GOYA";"JEAN PIAGET";ALBORADA;;;;;6;1;apta;"RINCÓN DE GOYA";70;manual
-ebo;JARAMILLO;ESPINALES;"JOSE MIGUEL";Zaragoza;"CALLE MADRE SACRAMENTO ";0;0;NOCENTRO;"RINCÓN DE GOYA";"ANGEL RIVIÈRE";"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";"LA PURÍSIMA PARA NIÑOS SORDOS";;;;10;2;apta;nocentro;44;automatica
-ebo;JARAMILLO;ESPINALES;"ANGEL LEONARDO";Zaragoza;"CALLE MADRE SACRAMENTO ";0;0;NOCENTRO;"RINCÓN DE GOYA";"ANGEL RIVIÈRE";"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";"LA PURÍSIMA PARA NIÑOS SORDOS";;;;10;2;apta;"LA PURÍSIMA PARA NIÑOS SORDOS";44;automatica
-ebo;ROMANO;ALFARO;TRIANA;Zaragoza;"CALLE BELGICA";0;0;NOCENTRO;"RINCÓN DE GOYA";"ANGEL RIVIÈRE";"LA PURÍSIMA PARA NIÑOS SORDOS";ALBORADA;;;;9;2;apta;"LA PURÍSIMA PARA NIÑOS SORDOS";56;automatica
-ebo;CUCU;nodata;"DAVID ANDREI";ZARAGOZA;"AVD. AMÉRICA";0;0;"SAN ANTONIO DE PADUA";"RINCÓN DE GOYA";"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";"JEAN PIAGET";"ANGEL RIVIÈRE";ALBORADA;;;8;2;apta;"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";97;automatica
-ebo;CASAS;ALCAZAR;"LUIS ANGEL";Zaragoza;"AVENIDA ALCALDE GOMEZ LAGUNA";0;0;NOCENTRO;"RINCÓN DE GOYA";CEDES;ALBORADA;"JEAN PIAGET";"ANGEL RIVIÈRE";"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";"JULIÁN SANZ IBÁÑEZ";8;2;apta;CEDES;115;automatica
-ebo;MARTINEZ;BUIL;SOFIA;Zaragoza;"C/ El septimo sello ";0;0;"SAN JORGE";"RINCÓN DE GOYA";"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";"ANGEL RIVIÈRE";"JEAN PIAGET";ALBORADA;;;8;2;apta;"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";39;automatica
-ebo;VILLA;ARTIGAS;"ISABEL ALEJANDRA";ZARAGOZA;"HILARION ESLAVA";0;0;"HIJAS DE SAN JOSÉ";"RINCÓN DE GOYA";"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";;;;;;8;2;apta;"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";42;automatica
-ebo;HERNANDEZ;GIMENEZ;ALICIA;Garrapinillos;"CAMINO PUENTE CLAVERIA";0;0;NOCENTRO;"RINCÓN DE GOYA";"MARÍA SORIANO";"JEAN PIAGET";;;;;8;2;apta;"MARÍA SORIANO";28;automatica
-ebo;"SALAZAR ";NUÑEZ;"JEFFREY JAEL";Zaragoza;"CALLE INGLATERRA";0;0;NOCENTRO;"RINCÓN DE GOYA";ALBORADA;"ANGEL RIVIÈRE";"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";"JEAN PIAGET";;;7;2;apta;nocentro;106;automatica
-ebo;Lorenz;Lahoz;Diego;Zaragoza;"Eduardo J. Taboada";1;1;"SAN GERMÁN";"RINCÓN DE GOYA";"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";;;;;;7;2;apta;nocentro;5;automatica
-ebo;ASARE;nodata;"KELVIN NANA";ZARAGOZA;"CALLE BARCELONA";0;0;NOCENTRO;"RINCÓN DE GOYA";ALBORADA;"ANGEL RIVIÈRE";"JEAN PIAGET";"LOS PUEYOS";"LOS PUEYOS";;7;2;apta;"LOS PUEYOS";55;automatica
-ebo;Monteiro-Tavares;Furtado;"Jenny Mª";Zaragoza;"Quimero del Oro";0;0;NOCENTRO;"RINCÓN DE GOYA";;;;;;;6;2;apta;nocentro;77;automatica
-ebo;Soufiane;Jimenez;Sara;Casetas;"Calle Goya ";0;0;NOCENTRO;"RINCÓN DE GOYA";"JEAN PIAGET";;;"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";;;3;2;apta;nocentro;66;automatica
-ebo;"Almansa ";"El fakih";Adán;Zaragoza;"Calle Desiderio Escosura ";0;0;NOCENTRO;"RINCÓN DE GOYA";"RINCÓN DE GOYA";ALBORADA;"JEAN PIAGET";"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";"LA PURÍSIMA PARA NIÑOS SORDOS";;0;2;apta;nocentro;2;automatica
-ebo;LECINA;PINA;MIGUEL;ZARAGOZA;"C/ CALAMOCHA";0;0;NOCENTRO;"RINCÓN DE GOYA";"LOS PUEYOS";;;;;;0;2;apta;"LOS PUEYOS";26;automatica
-ebo;YE;nodata;QIANFEI;Zaragoza;"San Roque";0;0;NOCENTRO;"RINCÓN DE GOYA";;;;;;;0;2;apta;nocentro;53;automatica
-ebo;GIMENEZ;NAVARLAZ;MARBELY;ZUERA;"AVENIDA CANDEVANIA";0;0;"ODÓN DE BUEN";"JEAN PIAGET";ALBORADA;;;;;;1;1;apta;"JEAN PIAGET";101;manual
-ebo;"WILSON ";COLAGIOVANNI;"DANIEL ALEJANDRO";Zuera;ZUFARIA;0;0;"ODÓN DE BUEN";"JEAN PIAGET";ALBORADA;;;;;;0;1;apta;"JEAN PIAGET";32;manual
-ebo;Tejero;Gabarre;Ramiro;Zaragoza;"Calle Eugenio Lucas ";0;0;NOCENTRO;"JEAN PIAGET";"JEAN PIAGET";ALBORADA;;;;;20;2;apta;nocentro;78;automatica
-ebo;VERICAD;NEGRAO;THEO;Zaragoza;"CONDE ARANDA";0;0;"SAN BRAULIO";"JEAN PIAGET";ALBORADA;"RINCÓN DE GOYA";"ANGEL RIVIÈRE";"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";"MARÍA SORIANO";;8;2;apta;"MARÍA SORIANO";112;automatica
-ebo;BARDAJI;LEHADUS;"MARIA IZARBE";Zaragoza;"AVENIDA LA JOTA";0;0;"LA JOTA";"JEAN PIAGET";"JEAN PIAGET";ALBORADA;"RINCÓN DE GOYA";"ANGEL RIVIÈRE";CEDES;"LOS PUEYOS";7;2;apta;"LOS PUEYOS";76;automatica
-ebo;DIESTRO;SERRANO;JORGE;Zaragoza;"Calle Volaverunt";0;0;"LUCIEN BRIET";"JEAN PIAGET";CEDES;ALBORADA;;;;;7;2;apta;CEDES;19;automatica
-ebo;Bordetas;Sánchez;Julia;Zaragoza;"Paseo Teruel";0;0;"EL SALVADOR";"JEAN PIAGET";"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";"ANGEL RIVIÈRE";CEDES;;;;3;2;apta;nocentro;38;automatica
-ebo;ESTRADA;OLIVARES;"CARLOS EDUARDO";Zaragoza;"CALLE CANTIN Y GAMBOA";0;0;"GASCÓN Y MARÍN";"JEAN PIAGET";"JEAN PIAGET";"RINCÓN DE GOYA";"ANGEL RIVIÈRE";"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";ALBORADA;;3;2;apta;nocentro;8;automatica
-ebo;CARRETERO;MARTINEZ;NICOLAS;ZUERA;"AVDA ZARAGOZA";0;0;"JULIÁN SANZ IBÁÑEZ";"JEAN PIAGET";;;;;;;2;2;apta;nocentro;12;automatica
-ebo;MENDES;BELLOC;"ADRIAN IGNACIO";UTEBO;"CAMINO SAN RAFAEL";1;1;"MARÍA SORIANO";"JEAN PIAGET";"RINCÓN DE GOYA";"ANGEL RIVIÈRE";ALBORADA;;;;1;2;apta;nocentro;16;automatica
-ebo;DIAZ;CAMPUZANO;IRIAN;ZARAGOZA;"CALLE DOCTOR RICARDO LOZANO MONZON";0;0;NOCENTRO;"JEAN PIAGET";"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";"MARÍA SORIANO";ALBORADA;CEDES;"RINCÓN DE GOYA";"ANGEL RIVIÈRE";0;2;apta;"MARÍA SORIANO";84;automatica
-ebo;VERGÉS;ALTADILL;ELOI;Zaragoza;"CALLE REINA FELICIA";0;0;"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";"JEAN PIAGET";"JEAN PIAGET";ALBORADA;"RINCÓN DE GOYA";"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";;;0;2;apta;nocentro;104;automatica
-ebo;FERNANDO;CHERNIAKOV;ALEX;ZARAGOZA;"AVENIDA BUENOS AIRES";0;0;NOCENTRO;"JEAN PIAGET";"RINCÓN DE GOYA";ALBORADA;;;;;0;2;apta;nocentro;23;automatica
-ebo;FERNÁNDEZ;ESTALLO;"ANA MARÍA";ZARAGOZA;"FRANCO Y LOPEZ ";1;1;"MARÍA SORIANO";"JEAN PIAGET";"JEAN PIAGET";"MARÍA SORIANO";;;;;0;2;apta;"MARÍA SORIANO";30;automatica
-ebo;SEFTA;nodata;MERIEM;ZARAGOZA;"CL Centro";0;0;NOCENTRO;"JEAN PIAGET";"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";;;;;;0;2;apta;nocentro;59;automatica
-tva;Sanz;Sancho;Paula;Peñaflor;"Gracias, Francisco PÑF";0;0;NOCENTRO;"JEAN PIAGET";"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";;;ALBORADA;;;6;2;apta;nocentro;75;automatica
-tva;GARCIA;PELAYO;MARIO;nodata;"C/JOSE GALIAY ";0;0;"MARÍA SORIANO";"JEAN PIAGET";CEDES;;;;;;1;2;irregular;nocentro;45;automatica
+ebo;enero;nodata;enero;Zaragoza;goya;0;0;NOCENTRO;"ANGEL RIVIÈRE";"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";;;;;;17;2;apta;"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";21;automatica
+ebo;lapiz;goma;Sara;ZARAGOZA;Calle;0;0;NOCENTRO;"ANGEL RIVIÈRE";"SAN GERMÁN";;;;;;16;2;apta;"SAN GERMÁN";26;automatica
+ebo;rosa;amarillo;"Jorge Luis";ZARAGOZA;calle;0;0;NOCENTRO;"ANGEL RIVIÈRE";"SAN GERMÁN";;;;;;13;2;apta;"SAN GERMÁN";18;automatica
+ebo;"Rosa ";amarillo;Sara;ZARAGOZA;calle;0;0;NOCENTRO;"ANGEL RIVIÈRE";"SAN GERMÁN";;;;;;13;2;apta;nocentro;18;automatica
+ebo;PORTUGAL;OPORTO;AMAYA;Barbastro;nodata;0;0;NOCENTRO;"ANGEL RIVIÈRE";;;;;;;12;2;apta;nocentro;13;automatica
+ebo;pollo;piña;"Jorge Miguel";Zaragoza;calle;0;0;NOCENTRO;"ANGEL RIVIÈRE";"SAN GERMÁN";;;;;;12;2;apta;nocentro;9;automatica
+ebo;Zanahoria;Pimienta;"Jorge Miguel";ZARAGOZA;Calle;0;0;NOCENTRO;"ANGEL RIVIÈRE";"SAN BRAULIO";;;;;;11;2;apta;"SAN BRAULIO";28;automatica
+ebo;ISLANDIA;MONACO;OLIVIA;Alcañiz;nodata;0;0;NOCENTRO;"ANGEL RIVIÈRE";;;;;;;1;2;apta;nocentro;19;automatica
+ebo;SIDNEY;AUSTRALIA;PATRICIA;Zaragoza;nodata;0;0;NOCENTRO;"ANGEL RIVIÈRE";;;;;;;0;2;apta;nocentro;16;automatica
+ebo;ISLANDIA;nodata;SERGIO;Barbastro;nodata;0;0;NOCENTRO;"ANGEL RIVIÈRE";;;;;;;0;2;apta;nocentro;34;automatica
+ebo;ISLANDIA;MONACO;ANTONIO;Alcañiz;nodata;0;0;NOCENTRO;"ANGEL RIVIÈRE";;;;;;;0;2;apta;nocentro;10;automatica
+tva;AUSTRIA;nodata;PATRICIA;Alcañiz;nodata;0;0;NOCENTRO;"ANGEL RIVIÈRE";;;;;;;0;2;irregular;nocentro;29;automatica
+tva;SUECIA;VENECIA;VERA;Aínsa;nodata;0;0;NOCENTRO;"ANGEL RIVIÈRE";;;;;;;0;2;apta;nocentro;33;automatica
+tva;PARIS;nodata;VANESA;"Alcolea de Cinca";nodata;0;0;NOCENTRO;"ANGEL RIVIÈRE";;;;;;;0;2;apta;nocentro;3;automatica
+dos;asasa;nodata;asas;Aínsa;caaaaa;0;0;NOCENTRO;"ANGEL RIVIÈRE";;;;;;;6;2;apta;nocentro;37;automatica
+dos;ALASKA;nodata;NURIA;Zaragoza;nodata;0;0;NOCENTRO;"ANGEL RIVIÈRE";;;;;;;0;2;apta;nocentro;6;automatica
+ebo;ap5mod;nodata;luis1;nodata;nodata;0;0;NOCENTRO;"BIELLO ARAGÓN";;;;;;;0;2;apta;nocentro;35;automatica
+ebo;aph31;nodata;luis31;Adahuesca;nodata;0;0;NOCENTRO;MONTECORONA;;;;;;;4;2;apta;nocentro;5;automatica
+ebo;ap1;nodata;luis1;nodata;nodata;0;0;NOCENTRO;MONTECORONA;;;;;;;0;2;apta;nocentro;11;automatica
+ebo;asas;nodata;asas;nodata;nodata;0;0;NOCENTRO;MONTECORONA;;;;;;;0;2;apta;nocentro;14;automatica
+ebo;hpluis1;hsluis1;hluis11;nodata;nodata;0;0;NOCENTRO;MONTECORONA;;;;;;;0;2;apta;nocentro;24;automatica
+ebo;pahl2;sahl2;nhl2;"Alcolea de Cinca";nodata;0;0;NOCENTRO;MONTECORONA;;;;;;;0;2;apta;nocentro;25;automatica
+ebo;asas;nodata;asasas;Adahuesca;nodata;0;0;NOCENTRO;MONTECORONA;;;;;;;0;2;apta;nocentro;30;automatica
+ebo;ap1;nodata;nom2;nodata;nodata;0;0;NOCENTRO;MONTECORONA;;;;;;;0;2;apta;nocentro;31;automatica
+ebo;pac1;sac1;nhc1;Adahuesca;nodata;0;0;NOCENTRO;MONTECORONA;;;;;;;0;2;apta;nocentro;4;automatica
+dos;hues1;nodata;luis1;Adahuesca;nodata;0;0;NOCENTRO;MONTECORONA;;;;;;;0;2;apta;nocentro;2;automatica
+ebo;asasa;nodata;sdsdsd;nodata;nodata;0;0;NOCENTRO;PIRÁMIDE;;;;;;;0;2;apta;nocentro;12;automatica

@@ -75,10 +75,14 @@ if($idcentro_estudios_origen!=0 and $reserva==1)
 $vacantesd=$centro_destino->actualizaVacantes(0,0,$tipo,'-');
 if(strtoupper($_POST['centroactual'])!='NOCENTRO')
 {
-//incrementamos vacantes en centro original
-$vacanteso=$centro_origen->actualizaVacantes(0,0,$tipo,'+');
+   //incrementamos vacantes en centro original
+   $vacanteso=$centro_origen->actualizaVacantes(0,0,$tipo,'+');
 }
+//modificamos alumno en tabla auxiliar de fase2
 $sql="UPDATE alumnos_fase2 SET centro_definitivo='".$nombre_centro_destino."',id_centro_definitivo=$id_centroelegido,tipo_modificacion='manual' where id_alumno=".$_POST['id_alumno'];
+$result=$conexion->query($sql);
+//modificamos alumno en tabla de alumnos original
+$sql="UPDATE alumnos SET id_centro_final=$id_centroelegido,est_desp_sorteo='admitidafase2' where id_alumno=".$_POST['id_alumno'];
 $result=$conexion->query($sql);
 $conexion->close();
 

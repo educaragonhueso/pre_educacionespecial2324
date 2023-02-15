@@ -89,20 +89,20 @@ if($_POST['rol']=='admin' or $_POST['rol']=='sp' or $_POST['rol']=='centro')
       $pdf->Cell(0,10,'Firmado:',0,0);
       $pdf->Ln();
       $pdf->Cell(220,10,'El Director/a',0,0,'R');
-#resumen=$tcentro->getResumenFase2($_POST['rol']);;
       $pdf->Output(DIR_SOR.$nombrefichero.'.pdf','F');
    }
 
-$tablaresumen=$tcentro->getResumenFase2($_POST['rol']);
-$vacantes_centros=$tcentro->getVacantesCentros($log_listados_solicitudes_fase2);
-$log_listados_solicitudes_fase2->warning("RESUMEN VACANTES TODOS CENTROS:");
-$log_listados_solicitudes_fase2->warning(print_r($vacantes_centros,true));
-print($list->showTablaResumenFase2($vacantes_centros,$ncol=1));
-#print($list->showFiltrosTipo());
-print($filtro_datos);
-print("<div id='listado_fase2' style='text-align:center'><h1>LISTADO LISTADO SOLICITUDES NO ADMITIDAS FASE 2</h1></div>");
-$boton_descarga="<button type='button' class='btn btn-info' onclick='window.open(\"".DIR_SOR_WEB.$nombrefichero.".pdf\",\"_blank\");'>Descarga listado</button>";
-if($subtipo_listado!='lfase2_sol_sor') print($boton_descarga.'<br>'); //
+   $tablaresumen=$tcentro->getResumenFase2($_POST['rol']);
+   $vacantes_centros=$tcentro->getVacantesCentros($log_listados_solicitudes_fase2);
+######################################################################################
+   $log_listados_solicitudes_fase2->warning("RESUMEN VACANTES TODOS CENTROS:");
+   $log_listados_solicitudes_fase2->warning(print_r($vacantes_centros,true));
+######################################################################################
+   print($list->showTablaResumenFase2($vacantes_centros,$ncol=1));
+   print($filtro_datos);
+   print("<div id='listado_fase2' style='text-align:center'><h1>LISTADO LISTADO SOLICITUDES NO ADMITIDAS FASE 2</h1></div>");
+   $boton_descarga="<button type='button' class='btn btn-info' onclick='window.open(\"".DIR_SOR_WEB.$nombrefichero.".pdf\",\"_blank\");'>Descarga listado</button>";
+   if($subtipo_listado!='lfase2_sol_sor') print($boton_descarga.'<br>'); //
 }
 print($list->showListadoFase2($solicitudes,$_POST['rol'],$$cabecera,$$camposdatos,$provisional=1,$subtipo_listado,$log_listados_solicitudes_fase2,$vacantes_centros));
 print($script);

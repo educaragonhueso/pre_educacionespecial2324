@@ -46,26 +46,32 @@ class Centro{
 		}
    public function getNumSolicitudesAdmitidas($id_centro,$tipoestudios,$log)
 	{
-      $sql="SELECT count(*) as nsol FROM alumnos where id_centro_destino=$id_centro and tipoestudios='$tipoestudios' and fase_solicitud!='borrador' and est_desp_sorteo='admitida' and estado_solicitud='apta'";
-      $log->warning("CONSULTA SOLICITUDES ADMITIDAS CENTRO: $sql");
+      $sql="SELECT count(*) as nsol FROM alumnos where id_centro_destino=$id_centro and tipoestudios='$tipoestudios' and fase_solicitud!='borrador' and (est_desp_sorteo='admitida' OR est_desp_sorteo='admitidafase2') and estado_solicitud='apta'";
       $query=$this->conexion->query($sql);
       if($row = $query->fetch_assoc())
-      {
-         $log->warning(print_r($row,true));
          return $row['nsol'];
-      }
       else return 0;
 	}
-   public function getNumSolicitudesAdmitidasFase2($id_centro,$tipoestudios,$log)
+   public function getNumReservasLiberadas($id_centro,$tipoestudios,$log)
 	{
-      $sql="SELECT ifnull(count(*),0) as nsol FROM alumnos_fase2 where id_centro_definitivo=$id_centro and tipoestudios='$tipoestudios' and fase_solicitud!='borrador' AND estado_solicitud='apta'";
-      $log->warning("CONSULTA SOLICITUDES ADMITIDAS FASE 2 CENTRO: $sql");
+      if($tipoestudios=='ebo')
+         $t='especial-1ebo';
+      else
+         $t='especial-1tva';
+         
+      $sql="SELECT count(*) as nsol FROM alumnos WHERE id_centro_estudios_origen=$id_centro AND fase_solicitud!='borrador' AND (est_desp_sorteo='admitida' OR est_desp_sorteo='admitidafase2') AND estado_solicitud='apta' AND id_centro_final!=$id_centro AND reserva=1 AND modalidad_origen='$t'";
+         $log->warning("SQL LIBERADAS: ".$sql);
       $query=$this->conexion->query($sql);
       if($row = $query->fetch_assoc())
-      {
-         $log->warning(print_r($row,true));
          return $row['nsol'];
-      }
+      else return 0;
+	}
+   public function getNumSolicitudesAdmitidasFase2_old($id_centro,$tipoestudios,$log)
+	{
+      $sql="SELECT ifnull(count(*),0) as nsol FROM alumnos_fase2 where id_centro_definitivo=$id_centro and tipoestudios='$tipoestudios' and fase_solicitud!='borrador' AND estado_solicitud='apta'";
+      $query=$this->conexion->query($sql);
+      if($row = $query->fetch_assoc())
+         return $row['nsol'];
       else return 0;
 	}
    //OLD
@@ -76,13 +82,9 @@ class Centro{
 			   $sql="SELECT count(*) as nsol FROM alumnos_definitiva where id_centro_destino=$id_centro and tipoestudios='$tipoestudios' and fase_solicitud!='borrador' and est_desp_sorteo='admitida'";
 			else
             $sql="SELECT count(*) as nsol FROM alumnos where id_centro_destino=$id_centro and tipoestudios='$tipoestudios' and fase_solicitud!='borrador' and est_desp_sorteo='admitida'";
-		   $log->warning("CONSULTA SOLICITUDES CENTROX: $estado_convocatoria $sql");
       	$query=$this->conexion->query($sql);
 			if($row = $query->fetch_assoc())
-         {
-		      $log->warning(print_r($row,true));
 			   return $row['nsol'];
-         }
 			else return 0;
 		}
    //devolvemos las vacantes en cada tpo de estudios 
@@ -121,17 +123,17 @@ class Centro{
 		if($res) return 1;
       else return 0;
 	}
-    public function getVacantesFase2($idcentro=1,$tipo='ebo'){
-			$tvacantes="vacantes_".$tipo;
-			if(!isset($id_centro)) $id_centro=$this->id_centro;
-			$sql="select $tvacantes from centros where id_centro=$id_centro";
+   public function getVacantesFase2_old($idcentro=1,$tipo='ebo')
+   {
+      $tvacantes="vacantes_".$tipo;
+      if(!isset($id_centro)) $id_centro=$this->id_centro;
+      $sql="SELECT $tvacantes FROM centros WHERE id_centro=$id_centro";
 
-
-			$query=$this->conexion->query($sql);
-			if($query)
-			return $query->fetch_object()->$tvacantes;
-			else return 0;
-		}
+      $query=$this->conexion->query($sql);
+      if($query)
+         return $query->fetch_object()->$tvacantes;
+      else return 0;
+   }
    public function setVacantes($v)
    {
       $vacantes_ebo=$v['ebo'];
@@ -174,6 +176,28 @@ class Centro{
 			}
       		return $resultSet;
 	} 
+   public function getVacantesCentroFase2($log)
+	{
+      //en este caso tomamos en cuenta las reservas que generan plazas
+      $vacantes_total=array('ebo'=>0,'tva'=>0);
+      
+      $matcentros=$this->getDatosMatriculaCentro($log);
+      
+      $vacantesebo=$matcentros['plazasebo']-$matcentros['matriculaactualebo'];
+      $solicitudesebo=$this->getNumSolicitudesAdmitidas($this->id_centro,'ebo',$log);
+      $reservaebo=$this->getNumReservasLiberadas($this->id_centro,'ebo',$log);
+      
+      $vacantestva=$matcentros['plazastva']-$matcentros['matriculaactualtva'];
+      $solicitudestva=$this->getNumSolicitudesAdmitidas($this->id_centro,'tva',$log);
+      $reservatva=$this->getNumReservasLiberadas($this->id_centro,'tva',$log);
+      
+      $vacantes_total['ebo']=$vacantesebo-$solicitudesebo+$reservaebo;
+      $vacantes_total['tva']=$vacantestva-$solicitudestva+$reservatva;
+
+      $log->warning("VACANTES ID CENTRO: ".$this->id_centro);
+      $log->warning(print_r($vacantes_total,true));
+      return $vacantes_total;
+   } 
    public function getVacantesCentro($log)
 	{
       $vacantes_total=array('ebo'=>0,'tva'=>0);
@@ -182,14 +206,16 @@ class Centro{
       
       $vacantesebo=$matcentros['plazasebo']-$matcentros['matriculaactualebo'];
       $solicitudesebo=$this->getNumSolicitudesAdmitidas($this->id_centro,'ebo',$log);
+      //$reservaebo=$this->getNumReservasLiberadas($this->id_centro,'ebo',$log);
       
       $vacantestva=$matcentros['plazastva']-$matcentros['matriculaactualtva'];
       $solicitudestva=$this->getNumSolicitudesAdmitidas($this->id_centro,'tva',$log);
+      //$reservatva=$this->getNumReservasLiberadas($this->id_centro,'tva',$log);
       
       $vacantes_total['ebo']=$vacantesebo-$solicitudesebo;
       $vacantes_total['tva']=$vacantestva-$solicitudestva;
 
-      $log->warning("VACANTES CENTRO: ".$this->id_centro);
+      $log->warning("VACANTES ID CENTRO: ".$this->id_centro);
       $log->warning(print_r($vacantes_total,true));
       return $vacantes_total;
    } 
@@ -211,17 +237,18 @@ class Centro{
          
          $vacantesebo=$matcentros['plazasebo']-$matcentros['matriculaactualebo'];
          $solicitudesebo=$this->getNumSolicitudesAdmitidas($this->id_centro,'ebo',$log);
-         $admitidas_fase2_ebo=$this->getNumSolicitudesAdmitidasFase2($this->id_centro,'ebo',$log);
+         //$admitidas_fase2_ebo=$this->getNumSolicitudesAdmitidasFase2($this->id_centro,'ebo',$log);
+         //$reservaebo=$this->getNumReservasLiberadas($this->id_centro,'ebo',$log);
          
          $vacantestva=$matcentros['plazastva']-$matcentros['matriculaactualtva'];
          $solicitudestva=$this->getNumSolicitudesAdmitidas($this->id_centro,'tva',$log);
-         $admitidas_fase2_tva=$this->getNumSolicitudesAdmitidasFase2($this->id_centro,'tva',$log);
+         //$reservatva=$this->getNumReservasLiberadas($this->id_centro,'tva',$log);
+         //$admitidas_fase2_tva=$this->getNumSolicitudesAdmitidasFase2($this->id_centro,'tva',$log);
          
-         $vacantes_total['ebo']=$vacantesebo-$solicitudesebo-$admitidas_fase2_ebo;
-         $vacantes_total['tva']=$vacantestva-$solicitudestva-$admitidas_fase2_tva;
+         $vacantes_total['ebo']=$vacantesebo-$solicitudesebo;
+         $vacantes_total['tva']=$vacantestva-$solicitudestva;
 
          $log->warning("VVACANTES CENTRO: ".$this->nombre_centro);
-         $log->warning("VACANTES INICIALES CENTRO: ".$this->nombre_centro." $vacantesebo");
          $log->warning(print_r($vacantes_total,true));
          $vacantes_totales[$k]['id_centro']=$id[0];
          $vacantes_totales[$k]['nombre_centro']=$this->nombre_centro;
@@ -231,7 +258,7 @@ class Centro{
       }
       return $vacantes_totales;
    } 
-   public function getVacantes($rol='centro',$log)
+   public function getVacantes_old($rol='centro',$log)
 	{
       $resultSet=array();
 		if($rol=='centro')
@@ -487,7 +514,7 @@ class Centro{
   public function getCentrosIds()
 	{
       $ares=array();
-      $sql="SELECT id_centro FROM centros where clase_centro='especial'";
+      $sql="SELECT id_centro FROM centros where clase_centro='especial' OR id_centro=0";
       $res=$this->conexion->query($sql);
       if(!$res) return $this->conexion->error;
       while($row=$res->fetch_row())
