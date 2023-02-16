@@ -46,6 +46,8 @@ $tsolicitud=new Solicitud($conexion);
 $tcentro=new Centro($conexion,1,'ajax');
 $nsolicitudes=$tcentro->getNumSolicitudes();
 
+
+
 $cabecera="campos_cabecera_".$subtipo_listado;
 $camposdatos="campos_bbdd_".$subtipo_listado;
 

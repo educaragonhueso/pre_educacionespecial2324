@@ -167,20 +167,21 @@ if(isset($_GET['token']))
             if(($_SESSION['rol']=='admin' or $_SESSION['rol']=='sp') and ($_SESSION['estado_convocatoria']>=ESTADO_ASIGNACIONES)) 
             {
              echo '<li class="nav-item active msuperior dropdown" id="mdefinitivo">';
-             echo '<a class="nav-link dropdown-toggle desplegable2" id="navbardrop" data-toggle="dropdown" href="#">Asignaciones</a>';
+             echo '<a class="nav-link dropdown-toggle desplegable2" id="navbardrop" data-toggle="dropdown" href="#">Adjudicación Servicio Provincial</a>';
 		       echo '<div class="dropdown-menu">';
                if($_SESSION['estado_convocatoria']<40)
                {
 				      echo '<a class="lfase2 dropdown-item" href="documentacion/vacantes_especial_fase2.JPG">VACANTES FASE2</a>';
 				      echo '<a class="lfase2 dropdown-item" href="#" data-subtipo="lfase2_sol_sor">Listado Numero aleatorio fase2</a>';
                }
-               if($_SESSION['rol']!='alumno')
-               {
-				      echo '<a class="lfase2 dropdown-item" href="#" data-subtipo="lfase2_sol_ebo">Listado Solicitudes fase2 EBO</a>';
-				      echo '<a class="lfase2 dropdown-item" href="#" data-subtipo="lfase2_sol_tva">Listado Solicitudes fase2 TVA</a>';
-				   }
-             echo '<a class="lfinales dropdown-item" href="#" data-subtipo="lfinal_sol_ebo">Listado Solicitudes finales EBO</a>';
-				 echo '<a class="lfinales dropdown-item" href="#" data-subtipo="lfinal_sol_tva">Listado Solicitudes finales TVA</a>';
+				 echo '<a class="lfase2 dropdown-item" href="#" data-subtipo="lfase2_sol_ebo">Listado Solicitudes fase2 EBO</a>';
+				 echo '<a class="lfase2 dropdown-item" href="#" data-subtipo="lfase2_sol_tva">Listado Solicitudes fase2 TVA</a>';
+             echo '<a class="lfinales dropdown-item" href="#" data-subtipo="lfinal_sol_ebo_adjudicadas">Listado Solicitudes adjudicadas EBO</a>';
+				 echo '<a class="lfinales dropdown-item" href="#" data-subtipo="lfinal_sol_tva">Listado Solicitudes adjudicadas TVA</a>';
+				 echo '<a class="lfinales dropdown-item" href="#" data-subtipo="lfinal_sol_ebo_desplazados">Listado Solicitudes desplazados fase2 EBO</a>';
+				 echo '<a class="lfinales dropdown-item" href="#" data-subtipo="lfinal_sol_tva_desplazados">Listado Solicitudes desplazados fase2 TVA</a>';
+				 echo '<a class="lfinales dropdown-item" href="#" data-subtipo="lfinal_sol_ebo_nomatricula">Listado Solicitudes no matrícula fase2 EBO</a>';
+				 echo '<a class="lfinales dropdown-item" href="#" data-subtipo="lfinal_sol_tva_nomatricula">Listado Solicitudes no matrícula fase2 TVA</a>';
 				 echo '</div>';
              echo '</li>';
              echo '<li class="nav-item active msuperior dropdown" id="mdefinitivo">';
@@ -190,7 +191,7 @@ if(isset($_GET['token']))
             if(($_SESSION['rol']=='centro' and $_SESSION['estado_convocatoria']>=ESTADO_PUBLICACION_ASIGNACIONES)) 
             {
                echo '<li class="nav-item active msuperior dropdown" id="mdefinitivo">';
-               echo '<a class="nav-link dropdown-toggle desplegable2" id="navbardrop" data-toggle="dropdown" href="#">Asignaciones</a>';
+               echo '<a class="nav-link dropdown-toggle desplegable2" id="navbardrop" data-toggle="dropdown" href="#">Adjudicación Servicio Provincial</a>';
                echo '<div class="dropdown-menu">';
                echo '<a class="lfinales dropdown-item" href="#" data-subtipo="lfinal_sol_ebo">Listado Solicitudes finales EBO</a>';
                echo '<a class="lfinales dropdown-item" href="#" data-subtipo="lfinal_sol_tva">Listado Solicitudes finales TVA</a>';

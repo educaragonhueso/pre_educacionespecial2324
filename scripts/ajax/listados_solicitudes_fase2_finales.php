@@ -18,7 +18,7 @@ require_once DIR_BASE.'/scripts/ajax/form_alumnofase2js.php';
 
 ######################################################################################
 $log_listados_solicitudes_fase2_finales=new logWriter('log_listados_solicitudes_fase2_finales',DIR_LOGS);
-$log_listados_solicitudes_fase2_finales->warning("OBTENIENDO DATOS SOLICITUDES FINALEs:");
+$log_listados_solicitudes_fase2_finales->warning("INICIOLOG OBTENIENDO DATOS SOLICITUDES FINALEs:");
 $log_listados_solicitudes_fase2_finales->warning(print_r($_POST,true));
 ######################################################################################
 
@@ -50,14 +50,53 @@ $tsolicitud=new Solicitud($conexion);
 $tcentro=new Centro($conexion,1,'ajax');
 $nsolicitudes=$tcentro->getNumSolicitudes();
 
+if($subtipo_listado=='lfinal_sol_ebo_adjudicadas')
+{
+   $subtipo_listado='lfinal_sol_ebo';
+   //mostramos las solitudes completas sin incluir borrador
+   $solicitudes=$tsolicitud->getSolicitudesFase2FinalesAdjudicadas($subtipo_listado,$rol,$id_centro,$estado_convocatoria,$log_listados_solicitudes_fase2_finales,$id_alumno);
+}
+else if($subtipo_listado=='lfinal_sol_tva_adjudicadas')
+{
+   $subtipo_listado='lfinal_sol_tva';
+   //mostramos las solitudes completas sin incluir borrador
+   $solicitudes=$tsolicitud->getSolicitudesFase2FinalesAdjudicadas($subtipo_listado,$rol,$id_centro,$estado_convocatoria,$log_listados_solicitudes_fase2_finales,$id_alumno);
+}
+else if($subtipo_listado=='lfinal_sol_ebo_desplazados')
+{
+   $subtipo_listado='lfinal_sol_ebo';
+   //mostramos las solitudes completas sin incluir borrador
+   $solicitudes=$tsolicitud->getSolicitudesFase2FinalesDesplazados($subtipo_listado,$rol,$id_centro,$estado_convocatoria,$log_listados_solicitudes_fase2_finales,$id_alumno);
+}
+else if($subtipo_listado=='lfinal_sol_ebo_desplazados')
+{
+   $subtipo_listado='lfinal_sol_ebo';
+   //mostramos las solitudes completas sin incluir borrador
+   $solicitudes=$tsolicitud->getSolicitudesFase2FinalesDesplazados($subtipo_listado,$rol,$id_centro,$estado_convocatoria,$log_listados_solicitudes_fase2_finales,$id_alumno);
+}
+else if($subtipo_listado=='lfinal_sol_ebo_nomatricula')
+{
+   $subtipo_listado='lfinal_sol_ebo';
+   //mostramos las solitudes completas sin incluir borrador
+   $solicitudes=$tsolicitud->getSolicitudesFase2FinalesNoMatricula($subtipo_listado,$rol,$id_centro,$estado_convocatoria,$log_listados_solicitudes_fase2_finales,$id_alumno);
+}
+else if($subtipo_listado=='lfinal_sol_tva_nomatricula')
+{
+   $subtipo_listado='lfinal_sol_tva';
+   //mostramos las solitudes completas sin incluir borrador
+   $solicitudes=$tsolicitud->getSolicitudesFase2FinalesNoMatricula($subtipo_listado,$rol,$id_centro,$estado_convocatoria,$log_listados_solicitudes_fase2_finales,$id_alumno);
+}
+else
+   $solicitudes=$tsolicitud->getSolicitudesFase2Finales($subtipo_listado,$rol,$id_centro,$estado_convocatoria,$log_listados_solicitudes_fase2_finales,$id_alumno);
+
 $cabecera="campos_cabecera_".$subtipo_listado;
 $camposdatos="campos_bbdd_".$subtipo_listado;
 
 //mostramos las solitudes completas sin incluir borrador
-$solicitudes=$tsolicitud->getSolicitudesFase2Finales($subtipo_listado,$rol,$id_centro,$estado_convocatoria,$log_listados_solicitudes_fase2_finales,$id_alumno); 
+//$solicitudes=$tsolicitud->getSolicitudesFase2Finales($subtipo_listado,$rol,$id_centro,$estado_convocatoria,$log_listados_solicitudes_fase2_finales,$id_alumno); 
 
 ######################################################################################
-$log_listados_solicitudes_fase2_finales->warning("INICIOLOG OBTENIDAS $nsolicitudes SOLICITUDES FINALES:");
+$log_listados_solicitudes_fase2_finales->warning("OBTENIDAS $nsolicitudes SOLICITUDES FINALES:");
 ######################################################################################
 
 $nombrefichero=$subtipo_listado.'_admin';
