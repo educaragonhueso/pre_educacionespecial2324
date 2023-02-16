@@ -177,7 +177,7 @@ if(isset($_GET['token']))
 				 echo '<a class="lfase2 dropdown-item" href="#" data-subtipo="lfase2_sol_ebo">Listado Solicitudes fase2 EBO</a>';
 				 echo '<a class="lfase2 dropdown-item" href="#" data-subtipo="lfase2_sol_tva">Listado Solicitudes fase2 TVA</a>';
              echo '<a class="lfinales dropdown-item" href="#" data-subtipo="lfinal_sol_ebo_adjudicadas">Listado Solicitudes adjudicadas EBO</a>';
-				 echo '<a class="lfinales dropdown-item" href="#" data-subtipo="lfinal_sol_tva">Listado Solicitudes adjudicadas TVA</a>';
+				 echo '<a class="lfinales dropdown-item" href="#" data-subtipo="lfinal_sol_tva_adjudicadas">Listado Solicitudes adjudicadas TVA</a>';
 				 echo '<a class="lfinales dropdown-item" href="#" data-subtipo="lfinal_sol_ebo_desplazados">Listado Solicitudes desplazados fase2 EBO</a>';
 				 echo '<a class="lfinales dropdown-item" href="#" data-subtipo="lfinal_sol_tva_desplazados">Listado Solicitudes desplazados fase2 TVA</a>';
 				 echo '<a class="lfinales dropdown-item" href="#" data-subtipo="lfinal_sol_ebo_nomatricula">Listado Solicitudes no matrícula fase2 EBO</a>';

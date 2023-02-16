@@ -68,9 +68,9 @@ else if($subtipo_listado=='lfinal_sol_ebo_desplazados')
    //mostramos las solitudes completas sin incluir borrador
    $solicitudes=$tsolicitud->getSolicitudesFase2FinalesDesplazados($subtipo_listado,$rol,$id_centro,$estado_convocatoria,$log_listados_solicitudes_fase2_finales,$id_alumno);
 }
-else if($subtipo_listado=='lfinal_sol_ebo_desplazados')
+else if($subtipo_listado=='lfinal_sol_tva_desplazados')
 {
-   $subtipo_listado='lfinal_sol_ebo';
+   $subtipo_listado='lfinal_sol_tva';
    //mostramos las solitudes completas sin incluir borrador
    $solicitudes=$tsolicitud->getSolicitudesFase2FinalesDesplazados($subtipo_listado,$rol,$id_centro,$estado_convocatoria,$log_listados_solicitudes_fase2_finales,$id_alumno);
 }
