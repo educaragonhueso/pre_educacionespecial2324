@@ -27,16 +27,31 @@ class SolicitudController{
    }
    public function getEstadoAlumno($token)
 	{
+         $centro_alumno=$this->getCentroAdmisionAlumno($token);
          if($this->estado_convocatoria==ESTADO_PUBLICACION_BAREMADAS)
-            return "<div class='cajainfo'>PUBLICADAS LISTADAS BAREMADAS, CONSÚLTALAS EN EL ENLACE SUPERIOR DERECHO O <a class='lbaremadas' data-subtipo='sor_bar' style='color:darkblue;background-color:black;padding:6px'>EN ESTE ENLACE</a></div>";
+            $msg= "<div class='cajainfo'>PUBLICADAS LISTADAS BAREMADAS, CONSÚLTALAS EN EL ENLACE SUPERIOR DERECHO O <a class='lbaremadas' data-subtipo='sor_bar' style='color:darkblue;background-color:black;padding:6px'>EN ESTE ENLACE</a></div>";
          if($this->estado_convocatoria==ESTADO_RECLAMACIONES_BAREMADAS)
-            return "<div class='cajainfo'>PUEDES HACER TU RECLAMACIÓN DESDE EL ENLACE SUPERIOR DERECHO O <a href='https://preadmespecial.aragon.es/educacionespecial2324/reclamaciones_baremo.php?token=$token' style='color:darkblue;background-color:black;padding:6px'> DESDE ESTE ENLACE</a></div>";
+            $msg= "<div class='cajainfo'>PUEDES HACER TU RECLAMACIÓN DESDE EL ENLACE SUPERIOR DERECHO O <a href='https://preadmespecial.aragon.es/educacionespecial2324/reclamaciones_baremo.php?token=$token' style='color:darkblue;background-color:black;padding:6px'> DESDE ESTE ENLACE</a></div>";
          if($this->estado_convocatoria==ESTADO_SORTEO)
-            return "<div class='cajainfo'>SE HA REALIZADO EL SORTEO, LOS LISTADOS PROVISIONALES SE PUBLICARÁN EL ".$this->convertirFecha(DIA_PUBLICACION_PROVISIONAL)."</div>";
+            $msg= "<div class='cajainfo'>SE HA REALIZADO EL SORTEO, LOS LISTADOS PROVISIONALES SE PUBLICARÁN EL ".$this->convertirFecha(DIA_PUBLICACION_PROVISIONAL)."</div>";
          if($this->estado_convocatoria==ESTADO_PUBLICACION_PROVISIONAL)
-            return "<div class='cajainfo'>PUBLICADAS LISTAS PROVISIONALES, PUEDES CONSULTARLAS DESDE EL ENLACE SUPERIOR DERECHO. EL PERIODO DE RECLAMACIONES ES DESDE EL ".$this->convertirFecha(DIA_INICIO_RECLAMACIONES_PROVISIONAL)." HASTA EL ".$this->convertirFecha(DIA_FIN_RECLAMACIONES_PROVISIONAL)."<br></div><div style='padding:10px;margin-left:40%'> PUEDES RECLAMAR DESDE ESTE ENLACE <a href='https://preadmespecial.aragon.es/educacionespecial2324/reclamaciones_provisional.php?token=$token' style='color:darkblue;background-color:black;padding:6px'> DESDE ESTE ENLACE</a></div>";
+            $msg= "<div class='cajainfo'>PUBLICADAS LISTAS PROVISIONALES, PUEDES CONSULTARLAS DESDE EL ENLACE SUPERIOR DERECHO. EL PERIODO DE RECLAMACIONES ES DESDE EL ".$this->convertirFecha(DIA_INICIO_RECLAMACIONES_PROVISIONAL)." HASTA EL ".$this->convertirFecha(DIA_FIN_RECLAMACIONES_PROVISIONAL)."<br></div><div style='padding:10px;margin-left:40%'> PUEDES RECLAMAR DESDE ESTE ENLACE <a href='https://preadmespecial.aragon.es/educacionespecial2324/reclamaciones_provisional.php?token=$token' style='color:darkblue;background-color:black;padding:6px'> DESDE ESTE ENLACE</a></div>";
          if($this->estado_convocatoria>=ESTADO_PUBLICACION_DEFINITIVOS)
-            return "<div class='cajainfo'>PUBLICADOS LISTADOS DEFINITIVOS, PUEDES CONSULTARLAS DESDE EL ENLACE SUPERIOR DERECHO.</div>";
+            $msg= "<div class='cajainfo'>PUBLICADOS LISTADOS DEFINITIVOS, PUEDES CONSULTARLOS DESDE EL ENLACE SUPERIOR DERECHO.</div>";
+         if($this->estado_convocatoria>=ESTADO_PUBLICACION_ASIGNACIONES)
+         {
+            $msg= "<div class='cajainfo'>";
+            $msg.= "TU SOLICITUD HA SIDO ADMITIDA EN EL CENTRO:<b> $centro_alumno</b> </div>";
+         }
+	   return $msg;
+   }
+   public function getCentroAdmisionAlumno($token)
+	{
+	   $sql="SELECT c.nombre_centro FROM alumnos a, centros c WHERE a.id_centro_final=c.id_centro AND a.token='$token'";
+ 		$query=$this->getConexion()->query($sql);
+		if($query)
+    	   return $query->fetch_object()->nombre_centro;
+		else return 0;
 	}
     public function getIdAlumnoPin($pin)
 		{
