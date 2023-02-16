@@ -85,11 +85,11 @@ $campos_cabecera_lfase2_sol_tva=array('Ap1','Ap2','Nombre','Loc','Calle','Cen.Pr
 $campos_bbdd_lfase2_sol_tva=array('apellido1','apellido2','nombre','localidad','calle_dfamiliar','nombre_centro','centro1','puntos_validados','transporte','estado_solicitud','centro_definitivo','nasignado','centrosdisponibles','centro_origen');
 
 //DATOS PARA LISTADOS SOLICITUDES FASE II FINAL
-$campos_cabecera_lfinal_sol_ebo=array('Primer Apellido','Segundo Apellido','Nombre','Centro Solicitado','Centro Definitivo','Teléfono');
-$campos_bbdd_lfinal_sol_ebo=array('apellido1','apellido2','nombre','centro_solicitado','centro_definitivo','telefono');
+$campos_cabecera_lfinal_sol_ebo=array('Primer Apellido','Segundo Apellido','Nombre','Centro Solicitado','Centro Definitivo','Teléfono','Correo');
+$campos_bbdd_lfinal_sol_ebo=array('apellido1','apellido2','nombre','centro_solicitado','centro_definitivo','telefono','correo');
 
-$campos_cabecera_lfinal_sol_tva=array('Primer Apellido','Segundo Apellido','Nombre','Centro Solicitado','Centro Definitivo','Telefono');
-$campos_bbdd_lfinal_sol_tva=array('apellido1','apellido2','nombre','cetro_solicitado','centro_definitivo','telefono');
+$campos_cabecera_lfinal_sol_tva=array('Primer Apellido','Segundo Apellido','Nombre','Centro Solicitado','Centro Definitivo','Telefono','Correo');
+$campos_bbdd_lfinal_sol_tva=array('apellido1','apellido2','nombre','cetro_solicitado','centro_definitivo','telefono','correo');
 
 //DATOS PARA LISTADOS DE MATRICULA FINAL
 $campos_cabecera_mat_final=array('Primer Apellido','Segundo apellido','Nombre','tel_dfamiliar1','email','Puntos Baremo','Matricular');
