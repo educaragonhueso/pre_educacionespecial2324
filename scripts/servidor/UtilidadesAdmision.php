@@ -412,6 +412,13 @@ class UtilidadesAdmision{
 !$this->conexion->query($sql3)) return $this->conexion->error;
 		else return 1;
 	}
+ 	public function iniReservasCentros()
+   {
+		$sql="UPDATE centros SET reservas_ebo=0,reservas_tva=0";
+		if($res=$this->conexion->query($sql))
+         return 1;
+      else return 0;
+	}
  	public function checkSorteoFase2(){
 		$sql="SELECT num_sorteo_fase2 as ns,asignado_num_fase2 as na FROM centros WHERE
 id_centro=1";
@@ -460,11 +467,17 @@ id_centro=1";
 	}
  	public function setVacantesCentroFase2($idc,$v,$t,$inc=0)
    {
+		$sql="UPDATE centros SET reservas_$t=reservas_$t+1 WHERE id_centro=$idc";
+		$this->log_asigna_fase2->warning("ACTUALIZANDO RESERVAS CENTROS ".$sql);
+		if(!$this->conexion->query($sql)) return $this->conexion->error;
+		else return 1;
+	}
+ 	public function setVacantesCentroFase2_old($idc,$v,$t,$inc=0)
+   {
 		if($inc==1) //si inc es 1 se incrementan/decrementan las vacantes
 		{
 			$voriginal="vacantes_$t"."_original";
 			$sql="UPDATE centros set vacantes_$t=vacantes_$t+1,$voriginal=$voriginal+1 where id_centro=$idc";
-			
 		}
 		else
 			$sql="UPDATE centros set vacantes_$t=$v where id_centro=$idc";
@@ -476,7 +489,7 @@ id_centro=1";
  	public function setAlumnoCentroFase2($ida,$idc,$nc){
 		//modificamos el centro en a tabla de alumnos_fase2
 		$sql="UPDATE alumnos_fase2 set id_centro_definitivo=$idc,centro_definitivo='$nc' where id_alumno=$ida";
-		if(!$this->post) print("CONSULTA ASIGNACION PLAZA: $sql");
+		$this->log_asigna_fase2->warning("CONSULTA ASIGNACION PLAZA: $sql");
 		if(!$this->conexion->query($sql)) return $this->conexion->error;
       return 1;
 	}
@@ -590,43 +603,46 @@ id_centro=$idcentro";
 			if(!$nombrecentro) return "NO HAY NOMBRE DE CENTRO";
 			if(strtoupper($nombrecentro)=='NOCENTRO') continue;
 
+         //obtiene las reservas liberadas en cada centro de cada en eeste proceso
 			$avacantes=$this->centro->getVacantesCentroFase2($this->log_asigna_fase2);
+         $this->log_asigna_fase2->warning("VACANTES FASE22 CENTRO: ".$nombrecentro);
+         $this->log_asigna_fase2->warning(print_r($avacantes,true));
          $indice=$tipoestudios;
          $vacantes=$avacantes[$indice]; 
 			if($vacantes<=0) continue;
 
 			$this->log_asigna_fase2->warning("ENTRANDO EN CENTRO $nombrecentro FASE2 $tipoestudios, plazas: $vacantes");
-			if(!$post) print(PHP_EOL."ENTRANDO CENTRO $nombrecentro, idcentro ".$centro['id_centro']." FASE2 $tipoestudios, plazas: $vacantes".PHP_EOL);
+			//if(!$post) print(PHP_EOL."ENTRANDO CENTRO $nombrecentro, idcentro ".$centro['id_centro']." FASE2 $tipoestudios, plazas: $vacantes".PHP_EOL);
 
 			$idcentro=$centro['id_centro'];
 			$vasignada=1;
 			while($vacantes>0 and $vasignada==1)
 			{
-				if(!$post) print("HAY VACANTES, COMPROBANDO ALUMNOS");
+				//if(!$post) print("HAY VACANTES, COMPROBANDO ALUMNOS");
 
 				$vasignada=0;
 				//revisar cada alumno (hay q considerar el orden de elección del alumno, el sorteo etc.) y si ha solicitado plaza en primera opción
 				foreach($alumnos_fase2 as $alumno)
 				{
-					if(!$post) print(PHP_EOL."ENTRANDO ALUMNO, centro: ".strtoupper($alumno->centro_definitivo)." ".$alumno->tipoestudios." ".$tipoestudios.PHP_EOL);
-					$this->log_asigna_fase2->warning("ENTRANDO ALUMNO, centro: ".strtoupper($alumno->centro_definitivo)." ".$alumno->tipoestudios." ".$tipoestudios);
+					//if(!$post) print(PHP_EOL."ENTRANDO ALUMNO, centro: ".strtoupper($alumno->centro_definitivo)." ".$alumno->tipoestudios." ".$tipoestudios.PHP_EOL);
+					//$this->log_asigna_fase2->warning("ENTRANDO ALUMNO, centro: ".strtoupper($alumno->centro_definitivo)." ".$alumno->tipoestudios." ".$tipoestudios);
 					
 					if($alumno->tipoestudios!=$tipoestudios)
 					{
-					   if(!$post) print(PHP_EOL."SALIENDO, centro alumno: ".strtoupper($alumno->centro_definitivo)." ".$alumno->tipoestudios." ".$tipoestudios);
-					   $this->log_asigna_fase2->warning("SALIENDO, centro alumno: ".strtoupper($alumno->centro_definitivo)." ".$alumno->tipoestudios." ".$tipoestudios);
+					   //if(!$post) print(PHP_EOL."SALIENDO, centro alumno: ".strtoupper($alumno->centro_definitivo)." ".$alumno->tipoestudios." ".$tipoestudios);
+					   //$this->log_asigna_fase2->warning("SALIENDO, centro alumno: ".strtoupper($alumno->centro_definitivo)." ".$alumno->tipoestudios." ".$tipoestudios);
 					   continue;
 					}
 				
 					$this->log_asigna_fase2->warning("ID ALUMNO EN PROCESO: ".$alumno->id_alumno." NOMBRE ALUMNO: ".$alumno->nombre." INDICE CENTRO ALTERNATIVO: ".$centro_alternativo);
-					if(!$post) print(PHP_EOL."ID ALUMNO EN PROCESO: ".$alumno->id_alumno." INDICE CENTRO ALTERNATIVO: ".$centro_alternativo.PHP_EOL);
+					//if(!$post) print(PHP_EOL."ID ALUMNO EN PROCESO: ".$alumno->id_alumno." INDICE CENTRO ALTERNATIVO: ".$centro_alternativo.PHP_EOL);
 
-					$this->log_asigna_fase2->warning("CENTRO ACTUAL EN PROCESO: $nombrecentro $idcentro CENTRO PEDIDO ALUMNO: ".$alumno->{$indicecentro}." NOMBRE ALUMNO: ".$alumno->nombre);
-					$this->log_asigna_fase2->warning("INDICE CENTRO: ".$idcentro);
-					$this->log_asigna_fase2->warning("INDICE CENTRO ALUMNO: ".$alumno->$indicecentro);
-					$this->log_asigna_fase2->warning(" CENTRO DEFINITIVO ALUMNO: ".$alumno->centro_definitivo);
+					//$this->log_asigna_fase2->warning("CENTRO ACTUAL EN PROCESO: $nombrecentro $idcentro CENTRO PEDIDO ALUMNO: ".$alumno->{$indicecentro}." NOMBRE ALUMNO: ".$alumno->nombre);
+					//$this->log_asigna_fase2->warning("INDICE CENTRO: ".$idcentro);
+					//$this->log_asigna_fase2->warning("INDICE CENTRO ALUMNO: ".$alumno->$indicecentro);
+					//$this->log_asigna_fase2->warning(" CENTRO DEFINITIVO ALUMNO: ".$alumno->centro_definitivo);
 			
-         		if(!$post) print("CENTRO ACTUAL: $nombrecentro $idcentro CENTRO PEDIDO ALUMNO: ".$alumno->{$indicecentro}." NOMBRE ALUMNO: ".$alumno->nombre." CENTRO DEFINITIVO ALUMNO: ".$alumno->centro_definitivo.PHP_EOL);
+         		//if(!$post) print("CENTRO ACTUAL: $nombrecentro $idcentro CENTRO PEDIDO ALUMNO: ".$alumno->{$indicecentro}." NOMBRE ALUMNO: ".$alumno->nombre." CENTRO DEFINITIVO ALUMNO: ".$alumno->centro_definitivo.PHP_EOL);
 					//solo asignamos plaza a alumnos sin centro definitivo	
 					if($alumno->$indicecentro==$idcentro and strtoupper($alumno->centro_definitivo)=='NOCENTRO')
 					{ 
@@ -635,14 +651,16 @@ id_centro=$idcentro";
 					
 						if($reserva[0]!=0 and $reserva[1]==1 and $alumno->$indicecentro!=$reserva[0])
 						{
+						   //si habia reserva de plaza tenemos que actualizar las vacantes para ese centro y volver a procesarlo,reserva[0] es el id centro y reserva[1] el q dice si se ha liberado ya o no
 							//se ha liberado vacante con lo q hay q restaurar las vacantes de nuevo incrementando una
 							//if($this->restaurarVacantesCentroFase2()!=1) return 0;
 							
 							$this->log_asigna_fase2->warning("REINICIANDO PROCESO, RESTAURADAS VACANTES");
 							if(!$post) print(PHP_EOL."REINICIANDO PROCESO, RESTAURADAS VACANTES");
 							
-							//añadimos la q se ha liberado y marcamos al alumno como q la ha liberado para no voolver a tenrla en cuenta
+							//añadimos la reserva al centro para llevar la cuenta de las q se liberan en este proceso
 							if($this->setVacantesCentroFase2($reserva[0],0,$tipoestudios,1)!=1) return 0;
+							$this->log_asigna_fase2->warning("AÑADIENDO RESERVA FASE2 IDCENTRO: ".$idcentro);
 						
 							//marcamos la reserva q deja el alumno en las tabal //temporal y actual, como reserva liberada, en las dos tablas de alumnos	
 							if($this->liberaReserva($alumno->id_alumno)!=1) return 0;
@@ -654,13 +672,8 @@ id_centro=$idcentro";
 						}
 						if(!$post) print(PHP_EOL."COINCIDENCIA: $alumno->id_alumno CENTRO: $nombrecentro".PHP_EOL);
 						$this->log_asigna_fase2->warning("COINCIDENCIA: $alumno->id_alumno CENTRO: $nombrecentro");
-						if(!$post) print(PHP_EOL."ENTREGADA PLAZA DEL CENTRO $nombrecentro A: ".$alumno->id_alumno.PHP_EOL);
-						$this->log_asigna_fase2->warning("ENTREGADA PLAZA DEL CENTRO $nombrecentro A: $alumno->id_alumno");
-						//si habia reserva de plaza tenemos que actualizar las vacantes para ese centro y volver a procesarlo,reserva[0] es el id centro y reserva[1] el q dice si se ha liberado ya o no
-						if(!$post) print(PHP_EOL."COMPROBANDO RESERVA DE PLAZA $reserva[0]".PHP_EOL);
-						$this->log_asigna_fase2->warning("COMPROBANDO RESERVA DE PLAZA $reserva[0]");
 					
-                  //si no hay reserva de plaza asignamos la vacante al alumno en la tabla alumnos_fase2 y alumnos
+                  //si no hay reserva de plaza asignamos la vacante al alumno en la tabla alumnos_fase2
 						$this->setAlumnoCentroFase2($alumno->id_alumno,$centro['id_centro'],$nombrecentro);
 						$vasignada=1;
 						$vacantes--;
@@ -669,14 +682,14 @@ id_centro=$idcentro";
 					if($vacantes==0)
 					{ 
 						$this->log_asigna_fase2->warning("TERMINADO CENTRO: $nombrecentro");
-						if($this->setVacantesCentroFase2($centro['id_centro'],$vacantes,$tipoestudios)!=1) return 0;
+						//if($this->setVacantesCentroFase2($centro['id_centro'],$vacantes,$tipoestudios)!=1) return 0;
 						if(!$post) print(PHP_EOL."Terminado centro: $nombrecentro".PHP_EOL);
 						break;
 					}
 				}
 			}
 			//actualizamos las vacantes en el centro cuyas plazas se han procesado
-			if($this->setVacantesCentroFase2($centro['id_centro'],$vacantes,$tipoestudios)!=1) return 0;
+			//if($this->setVacantesCentroFase2($centro['id_centro'],$vacantes,$tipoestudios)!=1) return 0;
 			}
 		//print("FIN asignaciones $tipoestudios".PHP_EOL);
 		return 1;

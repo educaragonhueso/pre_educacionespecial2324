@@ -46,7 +46,15 @@ class Centro{
 		}
    public function getNumSolicitudesAdmitidas($id_centro,$tipoestudios,$log)
 	{
-      $sql="SELECT count(*) as nsol FROM alumnos where id_centro_destino=$id_centro and tipoestudios='$tipoestudios' and fase_solicitud!='borrador' and (est_desp_sorteo='admitida' OR est_desp_sorteo='admitidafase2') and estado_solicitud='apta'";
+      $sql="SELECT count(*) as nsol FROM alumnos where id_centro_final=$id_centro and tipoestudios='$tipoestudios' and fase_solicitud!='borrador' and (est_desp_sorteo='admitida' OR est_desp_sorteo='admitidafase2') and estado_solicitud='apta'";
+      $query=$this->conexion->query($sql);
+      if($row = $query->fetch_assoc())
+         return $row['nsol'];
+      else return 0;
+	}
+   public function getNumReservasLiberadasFase2($id_centro,$tipoestudios,$log)
+	{
+      $sql="SELECT reservas_$tipoestudios as nsol FROM centros WHERE id_centro=$id_centro";
       $query=$this->conexion->query($sql);
       if($row = $query->fetch_assoc())
          return $row['nsol'];
@@ -59,14 +67,13 @@ class Centro{
       else
          $t='especial-1tva';
          
-      $sql="SELECT count(*) as nsol FROM alumnos WHERE id_centro_estudios_origen=$id_centro AND fase_solicitud!='borrador' AND (est_desp_sorteo='admitida' OR est_desp_sorteo='admitidafase2') AND estado_solicitud='apta' AND id_centro_final!=$id_centro AND reserva=1 AND modalidad_origen='$t'";
-         $log->warning("SQL LIBERADAS: ".$sql);
+      $sql="SELECT count(*) as nsol FROM alumnos WHERE id_centro_estudios_origen=$id_centro AND fase_solicitud!='borrador' AND (est_desp_sorteo='admitida' OR est_desp_sorteo='admitidafase2') AND estado_solicitud='apta' AND id_centro_final!=$id_centro AND id_centro_final!=0 AND reserva=1 AND modalidad_origen='$t'";
       $query=$this->conexion->query($sql);
       if($row = $query->fetch_assoc())
          return $row['nsol'];
       else return 0;
 	}
-   public function getNumSolicitudesAdmitidasFase2_old($id_centro,$tipoestudios,$log)
+   public function getNumSolicitudesAdmitidasFase2($id_centro,$tipoestudios,$log)
 	{
       $sql="SELECT ifnull(count(*),0) as nsol FROM alumnos_fase2 where id_centro_definitivo=$id_centro and tipoestudios='$tipoestudios' and fase_solicitud!='borrador' AND estado_solicitud='apta'";
       $query=$this->conexion->query($sql);
@@ -184,18 +191,30 @@ class Centro{
       $matcentros=$this->getDatosMatriculaCentro($log);
       
       $vacantesebo=$matcentros['plazasebo']-$matcentros['matriculaactualebo'];
-      $solicitudesebo=$this->getNumSolicitudesAdmitidas($this->id_centro,'ebo',$log);
-      $reservaebo=$this->getNumReservasLiberadas($this->id_centro,'ebo',$log);
+      $solicitudesebo_fase1=$this->getNumSolicitudesAdmitidas($this->id_centro,'ebo',$log);
+      if($this->id_centro=='50008915')
+         $log->warning("ADMITIDAS FASE1: $solicitudesebo_fase1");
+      $reservaebo_fase1=$this->getNumReservasLiberadas($this->id_centro,'ebo',$log);
+      if($this->id_centro=='50008915')
+         $log->warning("RESERVAS FASE1: $reservaebo_fase1");
+      $solicitudesebo_fase2=$this->getNumSolicitudesAdmitidasFase2($this->id_centro,'ebo',$log);
+      if($this->id_centro=='50008915')
+         $log->warning("ADMITIDAS FASE2: $solicitudesebo_fase2");
+      $reservaebo_fase2=$this->getNumReservasLiberadasFase2($this->id_centro,'ebo',$log);
+      if($this->id_centro=='50008915')
+         $log->warning("RESERVAS FASE2: $reservaebo_fase2");
       
       $vacantestva=$matcentros['plazastva']-$matcentros['matriculaactualtva'];
-      $solicitudestva=$this->getNumSolicitudesAdmitidas($this->id_centro,'tva',$log);
-      $reservatva=$this->getNumReservasLiberadas($this->id_centro,'tva',$log);
+      $solicitudestva_fase1=$this->getNumSolicitudesAdmitidas($this->id_centro,'tva',$log);
+      $reservatva_fase1=$this->getNumReservasLiberadas($this->id_centro,'tva',$log);
+      $solicitudestva_fase2=$this->getNumSolicitudesAdmitidasFase2($this->id_centro,'tva',$log);
+      $reservatva_fase2=$this->getNumReservasLiberadasFase2($this->id_centro,'tva',$log);
       
-      $vacantes_total['ebo']=$vacantesebo-$solicitudesebo+$reservaebo;
-      $vacantes_total['tva']=$vacantestva-$solicitudestva+$reservatva;
+      $vacantes_total['ebo']=$vacantesebo-$solicitudesebo_fase1+$reservaebo_fase1+$reservaebo_fase2-$solicitudesebo_fase2;
+      if($this->id_centro=='50008915')
+         $log->warning("VACANTES: ".$vacantes_total['ebo']);
+      $vacantes_total['tva']=$vacantestva-$solicitudestva_fase1+$reservatva_fase1+$reservatva_fase2-$solicitudestva_fase2;
 
-      $log->warning("VACANTES ID CENTRO: ".$this->id_centro);
-      $log->warning(print_r($vacantes_total,true));
       return $vacantes_total;
    } 
    public function getVacantesCentro($log)
@@ -206,17 +225,15 @@ class Centro{
       
       $vacantesebo=$matcentros['plazasebo']-$matcentros['matriculaactualebo'];
       $solicitudesebo=$this->getNumSolicitudesAdmitidas($this->id_centro,'ebo',$log);
-      //$reservaebo=$this->getNumReservasLiberadas($this->id_centro,'ebo',$log);
+      $reservaebo=$this->getNumReservasLiberadas($this->id_centro,'ebo',$log);
       
       $vacantestva=$matcentros['plazastva']-$matcentros['matriculaactualtva'];
       $solicitudestva=$this->getNumSolicitudesAdmitidas($this->id_centro,'tva',$log);
-      //$reservatva=$this->getNumReservasLiberadas($this->id_centro,'tva',$log);
+      $reservatva=$this->getNumReservasLiberadas($this->id_centro,'tva',$log);
       
-      $vacantes_total['ebo']=$vacantesebo-$solicitudesebo;
-      $vacantes_total['tva']=$vacantestva-$solicitudestva;
+      $vacantes_total['ebo']=$vacantesebo-$solicitudesebo+$reservaebo;
+      $vacantes_total['tva']=$vacantestva-$solicitudestva+$reservatva;
 
-      $log->warning("VACANTES ID CENTRO: ".$this->id_centro);
-      $log->warning(print_r($vacantes_total,true));
       return $vacantes_total;
    } 
    public function getVacantesCentros($log)
@@ -229,27 +246,23 @@ class Centro{
       {
          $this->id_centro=$id[0]; 
          $this->setNombre(); 
-         $log->warning("ID CENTRO"); 
-         $log->warning($id[0]); 
          $vacantes_total=array('ebo'=>0,'tva'=>0);
          
          $matcentros=$this->getDatosMatriculaCentro($log);
          
          $vacantesebo=$matcentros['plazasebo']-$matcentros['matriculaactualebo'];
          $solicitudesebo=$this->getNumSolicitudesAdmitidas($this->id_centro,'ebo',$log);
+         $reservaebo=$this->getNumReservasLiberadas($this->id_centro,'ebo',$log);
          //$admitidas_fase2_ebo=$this->getNumSolicitudesAdmitidasFase2($this->id_centro,'ebo',$log);
-         //$reservaebo=$this->getNumReservasLiberadas($this->id_centro,'ebo',$log);
          
          $vacantestva=$matcentros['plazastva']-$matcentros['matriculaactualtva'];
          $solicitudestva=$this->getNumSolicitudesAdmitidas($this->id_centro,'tva',$log);
-         //$reservatva=$this->getNumReservasLiberadas($this->id_centro,'tva',$log);
+         $reservatva=$this->getNumReservasLiberadas($this->id_centro,'tva',$log);
          //$admitidas_fase2_tva=$this->getNumSolicitudesAdmitidasFase2($this->id_centro,'tva',$log);
          
-         $vacantes_total['ebo']=$vacantesebo-$solicitudesebo;
-         $vacantes_total['tva']=$vacantestva-$solicitudestva;
+         $vacantes_total['ebo']=$vacantesebo-$solicitudesebo+$reservaebo;
+         $vacantes_total['tva']=$vacantestva-$solicitudestva+$reservatva;
 
-         $log->warning("VVACANTES CENTRO: ".$this->nombre_centro);
-         $log->warning(print_r($vacantes_total,true));
          $vacantes_totales[$k]['id_centro']=$id[0];
          $vacantes_totales[$k]['nombre_centro']=$this->nombre_centro;
          $vacantes_totales[$k]['vacantes_ebo']=$vacantes_total['ebo'];
@@ -281,9 +294,6 @@ class Centro{
 
       $dcg=$this->getDatosCentrosGrupos('ebo');  
          
-      $log->warning("OBTENIDOS DATOS CENTROS GRUPOS");
-		$log->warning(print_r($dcg,true));
-      
       $datosmatricula['gruposebo']=$dcg[0]->num_grupos;  
       $datosmatricula['plazasebo']=$dcg[0]->plazas;  
       $datosmatricula['matriculaactualebo']=$this->getMatricula('ebo');  
@@ -298,8 +308,6 @@ class Centro{
       $datosmatricula['plazasdos']=$dcg[0]->plazas;  
       $datosmatricula['matriculaactualdos']=$this->getMatricula('dos');  
 		
-      $log->warning("OBTENIDOS DATOS MATRICULA CENTRO");
-		$log->warning(print_r($datosmatricula,true));
       return $datosmatricula;
 	}
    public function getResumenFase2($rol) 

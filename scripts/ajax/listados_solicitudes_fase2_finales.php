@@ -57,8 +57,7 @@ $camposdatos="campos_bbdd_".$subtipo_listado;
 $solicitudes=$tsolicitud->getSolicitudesFase2Finales($subtipo_listado,$rol,$id_centro,$estado_convocatoria,$log_listados_solicitudes_fase2_finales,$id_alumno); 
 
 ######################################################################################
-$log_listados_solicitudes_fase2_finales->warning("OBTENIDAS $nsolicitudes SOLICITUDES FINALES:");
-$log_listados_solicitudes_fase2_finales->warning(print_r($solicitudes,true));
+$log_listados_solicitudes_fase2_finales->warning("INICIOLOG OBTENIDAS $nsolicitudes SOLICITUDES FINALES:");
 ######################################################################################
 
 $nombrefichero=$subtipo_listado.'_admin';
@@ -90,7 +89,8 @@ if($_POST['rol']=='admin' or $_POST['rol']=='sp' or $_POST['rol']=='centro')
       $pdf->SetFont('Arial','I',8);
         // Page number
       $pdf->Cell(40,10,'SELLO CENTRO',1,0,'C');
-      $pdf->Cell(140,10,'En ______________________ a ____de________ de 2021',0,0,'C');
+      $firma='En ______________________ a ____de________ de '.CURSO;
+      $pdf->Cell(140,10,$firma,0,0,'C');
       $pdf->Cell(0,10,'Firmado:',0,0);
       $pdf->Ln();
       $pdf->Cell(220,10,'El Director/a',0,0,'R');
@@ -107,6 +107,6 @@ if($_POST['rol']=='admin' or $_POST['rol']=='sp' or $_POST['rol']=='centro')
    print($boton_descarga.'<br>'); //
 }
 //print($list->showListadoFase2($solicitudes,$rol,$$cabecera,$$camposdatos,$provisional=1,$subtipo_listado));
-print($list->showListadoFase2($solicitudes,$rol,$$cabecera,$$camposdatos,$provisional=1,$subtipo_listado,$log_listados_solicitudes_fase2_finales,$vacantes_centros));
+print($list->showListadoFase2Final($solicitudes,$rol,$$cabecera,$$camposdatos,$provisional=1,$subtipo_listado,$log_listados_solicitudes_fase2_finales,$vacantes_centros));
 print($script);
 ?>

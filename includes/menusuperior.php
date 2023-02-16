@@ -163,7 +163,8 @@ if(isset($_GET['token']))
                             </li>
 		   <?php }?>
 		<?php }?>
-		<?php if(($_SESSION['rol']=='admin' or $_SESSION['rol']=='sp') and ($_SESSION['estado_convocatoria']>=ESTADO_ASIGNACIONES)) 
+		<?php 
+            if(($_SESSION['rol']=='admin' or $_SESSION['rol']=='sp') and ($_SESSION['estado_convocatoria']>=ESTADO_ASIGNACIONES)) 
             {
              echo '<li class="nav-item active msuperior dropdown" id="mdefinitivo">';
              echo '<a class="nav-link dropdown-toggle desplegable2" id="navbardrop" data-toggle="dropdown" href="#">Asignaciones</a>';
@@ -185,6 +186,16 @@ if(isset($_GET['token']))
              echo '<li class="nav-item active msuperior dropdown" id="mdefinitivo">';
              echo '</li>';
                
+		      }
+            if(($_SESSION['rol']=='centro' and $_SESSION['estado_convocatoria']>=ESTADO_PUBLICACION_ASIGNACIONES)) 
+            {
+               echo '<li class="nav-item active msuperior dropdown" id="mdefinitivo">';
+               echo '<a class="nav-link dropdown-toggle desplegable2" id="navbardrop" data-toggle="dropdown" href="#">Asignaciones</a>';
+               echo '<div class="dropdown-menu">';
+               echo '<a class="lfinales dropdown-item" href="#" data-subtipo="lfinal_sol_ebo">Listado Solicitudes finales EBO</a>';
+               echo '<a class="lfinales dropdown-item" href="#" data-subtipo="lfinal_sol_tva">Listado Solicitudes finales TVA</a>';
+               echo '</div>';
+               echo '</li>';
 		      }
 		      if($_SESSION['estado_convocatoria']>=100 and $_SESSION['rol']!='alumno' and $_SESSION['rol']!='anonimo')
             {

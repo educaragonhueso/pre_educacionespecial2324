@@ -30,7 +30,7 @@ ID CENTRO: 22005200Array
 )
 ID CENTRO: 22010001Array
 (
-    [ebo] => 6
+    [ebo] => 4
     [tva] => 5
 )
 ID CENTRO: 44003259Array
@@ -120,7 +120,7 @@ ID CENTRO: 50011537Array
 )
 ID CENTRO: 50017369Array
 (
-    [ebo] => -3
+    [ebo] => 0
     [tva] => 0
 )
 ID CENTRO: 50018131Array
@@ -321,7 +321,7 @@ Array
 
     [8] => stdClass Object
         (
-            [id_centro_definitivo] => 0
+            [id_centro_definitivo] => 22003835
             [coordenadas] => nodata
             [calle_dfamiliar] => nodata
             [localidad] => Adahuesca
@@ -335,7 +335,7 @@ Array
             [id_centro6] => 
             [id_centro] => 22003835
             [nombre_centro] => MONTECORONA
-            [centro_definitivo] => nocentro
+            [centro_definitivo] => MONTECORONA
             [tipoestudios] => ebo
             [transporte] => 2
             [puntos_validados] => 4
@@ -735,4 +735,4 @@ Array
 
 )
 
-Asignadas vacantes centros para fase 2 a las 11:02 del dia 15-Feb-2023
+Asignadas vacantes centros para fase 2 a las 10:02 del dia 16-Feb-2023

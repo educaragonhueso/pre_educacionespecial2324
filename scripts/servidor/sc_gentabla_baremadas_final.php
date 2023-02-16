@@ -1,4 +1,8 @@
 <?php
+##########################################################
+#GENRAMOS LA TABLA alumnos_baremada_final
+##########################################################
+
 require_once "../../config/config_global.php";
 require_once DIR_CLASES.'LOGGER.php';
 require_once DIR_APP.'parametros.php';
@@ -13,10 +17,6 @@ $conectar=new Conectar('../../config/config_database.php');
 $conexion=$conectar->conexion();
 $centro=new Centro($conexion,'','no',0);
 $utils=new UtilidadesAdmision($conexion,'',$centro);
-
-//falta termanira//consulta:
-//consulta:
-//create table alumnos_baremada_provisional SELECT a.nombre,a.apellido1,a.apellido2,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.tipoestudios,nasignado,b.* FROM alumnos a left join baremo b on b.id_alumno=a.id_alumno  WHERE fase_solicitud!='borrador'  order by a.tipoestudios, a.apellido1,a.nombre,a.transporte desc,b.puntos_validados desc,b.hermanos_centro desc,b.proximidad_domicilio,b.renta_inferior,b.discapacidad,b.tipo_familia,a.nordensorteo asc,a.nasignado desc;
 
 //actualizar vacantes de centros
 $res=$utils->genBaremadas();

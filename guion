@@ -1,9 +1,9 @@
 PUBLICOS
 
 DESCRIPCION PROCESO ADMISION EDUCACION ESPECIAL 2324
-
+=============================================================================================================
 FASE PREVIA
-
+--------------------------------------------------------------------------------------------------------------------------------
    Borrar cuentas de usuarios de pruebas y de alumnos o solicitudes, baremo, etc...
    Hacer una prueba de solicitud completa en PRO
    Desmarcar la opción de enviar correos a los centros al modificar solicitudes y reclamaciones d ebarmeo y provisional
@@ -11,12 +11,14 @@ FASE PREVIA
    Programar copia seguridad bases de datos
 
 FASE0 Matrícula
+--------------------------------------------------------------------------------------------------------------------------------
 
    Cargamos datos de la matrícula de GIR
    
       #php carga_csv_girmatricula.php
    
 FASE1 
+--------------------------------------------------------------------------------------------------------------------------------
    
    Inscripción
 
@@ -65,15 +67,28 @@ FASE1
       Finalziado el plazo de reclamación se genran listaods definitivos
 
 FASE2 Asignación plazas restantes
+--------------------------------------------------------------------------------------------------------------------------------
 
       Generamos la tabla alumnos_fase2 para la gestión de alumnos sin plaza
 
           servidor#php sc_copia_tabla_fase2.php
 
-      Primero se hace la asignación manual de plazas
-      Después se hace la automática
+      Primero se hace la asignación manual de plazas desde la pestaña de Asignaciones
+      Después se hace la automática usando script
 
-         servidor#
+         Generamos las tablas para la fase2
+
+         ...servidor#php sc_previo_fase2.php
+
+         Generamos la tabla alumnos_fase2 para procesar a los alumnos no admitidos
+
+         ...servidor#php sc_copia_tabla_fase2.php
+
+         Generamos la asignación automática
+
+         ...servidor#php sc_asignavacantes_fase2.php
+         
+
       Finalmente se procede a una nueva asignación manual con lo que queda.
 
 

@@ -597,8 +597,6 @@ class ListadosController{
    {
 		//$centros=$this->getCentrosNombreVacantesFase2();
 		$centros=$vacantes_centros;
-      $log->warning("CENTROS: ");
-      $log->warning(print_r($centros,true));
 		$htmlcentros="";
 		$fase=2;
 		//preparamos desplegable con centros y vacantes 
@@ -620,7 +618,6 @@ class ListadosController{
             $htmlcentros.="<option class='vacantestva".$centro['id_centro']."' value='$cdata_completo'>".$cdata_parcial."</option>";
          }
       }
-	
 	$centroanterior='';
 	$centroactual='';
 
@@ -665,6 +662,83 @@ class ListadosController{
       {
           $html.="<tr class='filasol' id='filasol".$sol->id_alumno."' style='color:white;background-color: #84839e;'><td colspan='".$ncolumnas."'><b>".strtoupper($sol->tipoestudios)."</b></td></tr>";
       }
+		$html.=$this->showSolicitudListado($sol,$camposdatos,$provisional,$htmlcentros,$fase);	
+	}
+	$html.="</tbody>";
+	$html.='</table>';
+
+	return $html;
+	}
+   public function showListadoFase2Final($a,$rol='centro',$cabecera=array(),$camposdatos=array(),$provisional=0,$subtipo='',$log,$vacantes_centros)
+   {
+		//$centros=$this->getCentrosNombreVacantesFase2();
+		$centros=$vacantes_centros;
+		$htmlcentros="";
+		$fase=2;
+		//preparamos desplegable con centros y vacantes 
+		if($subtipo=='lfase2_sol_ebo')
+		{
+         foreach($centros as $centro)
+         {
+            $cdata_parcial=substr($centro['nombre_centro'],0,10).":".$centro['vacantes_ebo'];
+            $cdata_completo=$centro['nombre_centro'].":".$centro['vacantes_ebo'];
+            $htmlcentros.="<option class='vacantesebo".$centro['id_centro']."' value='$cdata_completo'>".$cdata_parcial."</option>";
+         }
+      }
+		elseif($subtipo=='lfase2_sol_tva')
+      {
+         foreach($centros as $centro)
+         {
+            $cdata_parcial=substr($centro['nombre_centro'],0,10).":".$centro['vacantes_tva'];
+            $cdata_completo=$centro['nombre_centro'].":".$centro['vacantes_tva'];
+            $htmlcentros.="<option class='vacantestva".$centro['id_centro']."' value='$cdata_completo'>".$cdata_parcial."</option>";
+         }
+      }
+	$centroanterior='';
+	$centroactual='';
+
+	$ncolumnas=sizeof($cabecera);
+	$colspan=$ncolumnas-1;
+	$html='<table class="table table-striped" id="sol_table" cccd_centro style="color:white">';
+	$html.="<thead>
+      <tr>";
+	foreach($cabecera as $cab)
+		$html.="<th>".$cab."</th>";
+
+  $html.="</tr></thead><tbody>";
+	$cabadmin=0;
+	$cab=0;
+	if($rol=='centro' or $rol=='admin')
+			$html.="<tr class='filasol' style='color:white;background-color: #84839e;'><td colspan='".$ncolumnas."'><b>EBO</b></td></tr>";
+	if($rol=='centro')
+   {
+      foreach($cabecera as $cab)
+         $html.="<th style='color:black'>".$cab."</th>";
+      $html.="</tr>";
+   }
+	foreach($a as $sol) 
+	{
+		if($rol=='admin' || $rol=='sp')
+		{
+			$centroanterior=$centroactual;
+			$centroactual=$sol->id_centro_final;
+			if($centroactual!=$centroanterior)
+			{
+	         $cab=0;
+				$html.="<tr class='filasol' id='filasol".$sol->id_alumno."' style='color:white;background-color:#141259;'><td colspan='".$ncolumnas."'><b>".$sol->nombre_centro."</b></td></tr>";
+            $html.="<tr>";
+	         foreach($cabecera as $cab)
+		         $html.="<th style='color:black'>".$cab."</th>";
+            $html.="</tr>";
+
+			}
+		}
+      else
+      {
+	         $cab=0;
+				$html.="<tr class='filasol' id='filasol".$sol->id_alumno."' style='color:white;background-color:#141259;'><td colspan='".$ncolumnas."'><b>".$sol->nombre_centro."</b></td></tr>";
+            $html.="<tr>";
+      }  
 		$html.=$this->showSolicitudListado($sol,$camposdatos,$provisional,$htmlcentros,$fase);	
 	}
 	$html.="</tbody>";

@@ -25,6 +25,8 @@ $avac=10;
 $j=0;
 $post=1;
 
+//VACIAMOS EL CAMPO DE RESERVAS D ELOS CENTROS
+$utils->iniReservasCentros();
 //GENERAMOS LAS VACANTES DE LOS CENTROS
 $centros_fase2=$tcentros_fase2->getCentrosFase2();
 foreach($centros_fase2 as $cf)
@@ -56,13 +58,14 @@ do{
 		
 		$alumnos_fase2=$utils->getAlumnosFase2('actual');
 		$centros_fase2=$tcentros_fase2->getCentrosFase2();
-		
 		$avac=$utils->asignarVacantesCentros($centros_fase2,$alumnos_fase2,$i,$tipoestudios,$post);
 		
 		if($avac==0) break;
 		if($avac==-2)//si se ha liberado reserva 
       {
 			$reset=$utils->resetAlumnosFase2();//recargamos de nuevo la tabla de laumnos fase2 con los valores originales previamente almacenados en la alumnos_fase2_tmp
+         //VACIAMOS EL CAMPO DE RESERVAS D ELOS CENTROS
+         //$utils->iniReservasCentros();
 			$j++; 
 			break;
 		}

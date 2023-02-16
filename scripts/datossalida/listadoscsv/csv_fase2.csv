@@ -1,12 +1,12 @@
 Tipo;Ap1;Ap2;Nombre;Loc;Calle;Reserva;"Reserva Original";"Centro origen";Cen.Pref;Cen.Alt1;Cen.Alt2;Cen.Alt3;Cen.Alt4;Cen.Alt5;Cen.Alt6;Baremo;Prioridad;Estado;"Centro definitivo";"Numero de sorteo asignado";Modificacion
-ebo;enero;nodata;enero;Zaragoza;goya;0;0;NOCENTRO;"ANGEL RIVIÈRE";"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";;;;;;17;2;apta;"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";21;automatica
-ebo;lapiz;goma;Sara;ZARAGOZA;Calle;0;0;NOCENTRO;"ANGEL RIVIÈRE";"SAN GERMÁN";;;;;;16;2;apta;"SAN GERMÁN";26;automatica
+ebo;enero;nodata;enero;Zaragoza;goya;0;1;MONTECORONA;"ANGEL RIVIÈRE";"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";;;;;;17;2;apta;"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";21;automatica
+ebo;lapiz;goma;Sara;ZARAGOZA;Calle;0;0;NOCENTRO;"ANGEL RIVIÈRE";"SAN GERMÁN";;;;;;16;2;apta;"PEDRO J. RUBIO";26;manual
+ebo;"Rosa ";amarillo;Sara;ZARAGOZA;calle;0;0;NOCENTRO;"ANGEL RIVIÈRE";"SAN GERMÁN";;;;;;13;2;apta;"PEDRO J. RUBIO";18;manual
 ebo;rosa;amarillo;"Jorge Luis";ZARAGOZA;calle;0;0;NOCENTRO;"ANGEL RIVIÈRE";"SAN GERMÁN";;;;;;13;2;apta;"SAN GERMÁN";18;automatica
-ebo;"Rosa ";amarillo;Sara;ZARAGOZA;calle;0;0;NOCENTRO;"ANGEL RIVIÈRE";"SAN GERMÁN";;;;;;13;2;apta;nocentro;18;automatica
-ebo;PORTUGAL;OPORTO;AMAYA;Barbastro;nodata;0;0;NOCENTRO;"ANGEL RIVIÈRE";;;;;;;12;2;apta;nocentro;13;automatica
-ebo;pollo;piña;"Jorge Miguel";Zaragoza;calle;0;0;NOCENTRO;"ANGEL RIVIÈRE";"SAN GERMÁN";;;;;;12;2;apta;nocentro;9;automatica
-ebo;Zanahoria;Pimienta;"Jorge Miguel";ZARAGOZA;Calle;0;0;NOCENTRO;"ANGEL RIVIÈRE";"SAN BRAULIO";;;;;;11;2;apta;"SAN BRAULIO";28;automatica
-ebo;ISLANDIA;MONACO;OLIVIA;Alcañiz;nodata;0;0;NOCENTRO;"ANGEL RIVIÈRE";;;;;;;1;2;apta;nocentro;19;automatica
+ebo;PORTUGAL;OPORTO;AMAYA;Barbastro;nodata;0;0;NOCENTRO;"ANGEL RIVIÈRE";;;;;;;12;2;apta;CEDES;13;manual
+ebo;pollo;piña;"Jorge Miguel";Zaragoza;calle;0;0;NOCENTRO;"ANGEL RIVIÈRE";"SAN GERMÁN";;;;;;12;2;apta;CEDES;9;manual
+ebo;Zanahoria;Pimienta;"Jorge Miguel";ZARAGOZA;Calle;0;0;NOCENTRO;"ANGEL RIVIÈRE";"SAN BRAULIO";;;;;;11;2;apta;"LA PURÍSIMA PARA NIÑOS SORDOS";28;manual
+ebo;ISLANDIA;MONACO;OLIVIA;Alcañiz;nodata;0;0;NOCENTRO;"ANGEL RIVIÈRE";;;;;;;1;2;apta;"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";19;manual
 ebo;SIDNEY;AUSTRALIA;PATRICIA;Zaragoza;nodata;0;0;NOCENTRO;"ANGEL RIVIÈRE";;;;;;;0;2;apta;nocentro;16;automatica
 ebo;ISLANDIA;nodata;SERGIO;Barbastro;nodata;0;0;NOCENTRO;"ANGEL RIVIÈRE";;;;;;;0;2;apta;nocentro;34;automatica
 ebo;ISLANDIA;MONACO;ANTONIO;Alcañiz;nodata;0;0;NOCENTRO;"ANGEL RIVIÈRE";;;;;;;0;2;apta;nocentro;10;automatica
@@ -16,7 +16,7 @@ tva;PARIS;nodata;VANESA;"Alcolea de Cinca";nodata;0;0;NOCENTRO;"ANGEL RIVIÈRE";;
 dos;asasa;nodata;asas;Aínsa;caaaaa;0;0;NOCENTRO;"ANGEL RIVIÈRE";;;;;;;6;2;apta;nocentro;37;automatica
 dos;ALASKA;nodata;NURIA;Zaragoza;nodata;0;0;NOCENTRO;"ANGEL RIVIÈRE";;;;;;;0;2;apta;nocentro;6;automatica
 ebo;ap5mod;nodata;luis1;nodata;nodata;0;0;NOCENTRO;"BIELLO ARAGÓN";;;;;;;0;2;apta;nocentro;35;automatica
-ebo;aph31;nodata;luis31;Adahuesca;nodata;0;0;NOCENTRO;MONTECORONA;;;;;;;4;2;apta;nocentro;5;automatica
+ebo;aph31;nodata;luis31;Adahuesca;nodata;0;0;NOCENTRO;MONTECORONA;;;;;;;4;2;apta;MONTECORONA;5;automatica
 ebo;ap1;nodata;luis1;nodata;nodata;0;0;NOCENTRO;MONTECORONA;;;;;;;0;2;apta;nocentro;11;automatica
 ebo;asas;nodata;asas;nodata;nodata;0;0;NOCENTRO;MONTECORONA;;;;;;;0;2;apta;nocentro;14;automatica
 ebo;hpluis1;hsluis1;hluis11;nodata;nodata;0;0;NOCENTRO;MONTECORONA;;;;;;;0;2;apta;nocentro;24;automatica
