@@ -40,7 +40,7 @@
       <?php include("includes/estados_convocatoria.php");?>
       <?php 
          $rr=20;
-         if($_SESSION['estado_convocatoria']==0)  echo M0;
+         if($_SESSION['estado_convocatoria']==1)  echo M1;
          if($_SESSION['estado_convocatoria']==10) echo M10;
          if($_SESSION['estado_convocatoria']==19) echo M19;
          if($_SESSION['estado_convocatoria']==20) echo M20;
@@ -73,6 +73,11 @@ if(MANTENIMIENTO=='NO' OR IPREMOTA1==$_SERVER['HTTP_X_FORWARDED_FOR'] OR IPREMOT
 }
 else echo '<h4>PAGINA EN MANTENIMIENTO</h4>';
 ?>
+<?php if($estado_convocatoria<=ESTADO_PREMATRICULA)
+      {echo M1;}
+else
+{
+?>
          <div class="form-group">
             <button id="verfcredenciales" class="btn btn-primary" value="Acceder con credenciales">Acceder con credenciales <p style="font-size:10px"><i>(solo para personal de la administración)</i></p></button>
          </div>
@@ -99,12 +104,12 @@ else echo '<h4>PAGINA EN MANTENIMIENTO</h4>';
          <div id="tabla_pc" style="display:none"><?php echo PC;?></div>
       </div>
       </div> <!--finn del wrapper-->   
-      
+ <?php } ?>     
       <footer class="page-footer font-small stylish-color-dark pt-4 mt-4">
        <div class="container text-center text-md-left">
          <div class="row">
          <hr>
-         <div class="text-center py-3">
+         <div class="text-center py-3" style="margin-left:-750px;font-size:25px">
             <ul class="list-unstyled list-inline mb-0">
                <li class="list-inline-item">
                   <div class="footer-copyright py-3 text-center">

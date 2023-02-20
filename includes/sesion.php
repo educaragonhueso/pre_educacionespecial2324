@@ -24,7 +24,9 @@ $_SESSION['id_centro'] =-1;
 $_SESSION['fecha_actual'] = date("Y/m/d H:i:s");      
 $_SESSION['url_base'] =URL_BASE;    
 
-if($_SESSION['fecha_actual']<DIA_INICIO_INSCRIPCION)       
+if($_SESSION['fecha_actual']<DIA_INICIO_MATRICULA) 
+ 		$_SESSION['estado_convocatoria'] =ESTADO_PREMATRICULA;
+if($_SESSION['fecha_actual']>=DIA_INICIO_MATRICULA and $_SESSION['fecha_actual']<DIA_INICIO_INSCRIPCION)       
  		$_SESSION['estado_convocatoria'] =ESTADO_PREINSCRIPCION;
 else if($_SESSION['fecha_actual']>=DIA_INICIO_INSCRIPCION and $_SESSION['fecha_actual']<=DIA_FIN_INSCRIPCION)       
  		$_SESSION['estado_convocatoria'] =ESTADO_INSCRIPCION;

@@ -19,7 +19,7 @@ function convertirFecha($f)
    return $sf;
 }
 
-define("M0","<p class='cajainfo' style='text-align:center'>Convocatoria en periodo de preinscripción, en unos días se iniciará el proceso de inscripción</p>");
+define("M1","<p class='cajainfo' style='text-align:center'>En unos días se iniciará el proceso de inscripción y matrícula</p>");
 define("M10","<p class='cajainfo' style='text-align:center'>Convocatoria en periodo de inscripción.<br> Finaliza el $din de $min a las $hfi </p>");
 define("M20","<p class='cajainfo' style='text-align:center'>Estamos en baremación de solicitudes, el día ".convertirFecha(DIA_PUBLICACION_BAREMADAS)." se publicará el listado con el baremo provisional</p>");
 define("M30","<p class='cajainfo' style='text-align:center'>Se ha publicado la listas baremadas, a partir de mañana, el día ".convertirFecha(DIA_INICIO_RECLAMACIONES_BAREMADAS)." se podrán hacer reclamaciones</p>");
