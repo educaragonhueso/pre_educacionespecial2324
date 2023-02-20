@@ -11,9 +11,14 @@ if($_SESSION['version']=='PRE')
    print_r($_SESSION);
 if (!file_exists($ficheroebo))
    $listado='';
+if(isset($_SESSION))
+   $rol=$_SESSION['rol'];
+else
+   $rol='anonimo';
 if(isset($_GET['token']))
    $_SESSION['token']=$_GET['token'];
-   
+elseif((($rol=='anonimo' OR $rol=='alumno') and $estado_convocatoria<=ESTADO_FININSCRIPCION))
+   $token=bin2hex(random_bytes(8));;
 ?>            
 <h2 style='text-align:center;'>ADMISION ALUMNOS EDUCACION ESPECIAL CURSO <?php echo $_SESSION['curso_largo']; ?> </h2>
 <p hidden id='id_centro'><?php echo $_SESSION['id_centro'];?></p> 
@@ -47,7 +52,7 @@ if(isset($_GET['token']))
 </nav>
 <!--elementos a la izda del segundo menu-->
 <nav id='navgir' class="navbar navbar-expand-md navbar-dark bg-dark">
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav" style="margin-right:12%">
            <li class="nav-item  msuperior">
             <a style='color:white!important;float:left!important;padding-top:9px'  href='<?php echo $_SESSION['url_base'].'/'.$directoriobase.'';?>'>INICIO</a>
            </li>
@@ -73,7 +78,7 @@ if(isset($_GET['token']))
 
       if(($_SESSION['rol']=='alumno' and ($_SESSION['estado_convocatoria']>=ESTADO_RECLAMACIONES_BAREMADAS)) or $_SESSION['rol']=='admin')
       {
-      echo '<li class="nav-item msuperior dropdown">';
+      echo '<li class="nav-item msuperior dropdown itemderecho">';
             if($_SESSION['estado_convocatoria']>=ESTADO_RECLAMACIONES_BAREMADAS)
          echo '<a class="show_provisionales nav-link dropdown-toggle desplegable" id="navbardrop" data-toggle="dropdown" href="#">Formulario reclamaciones</a>';
          echo '<div class="dropdown-menu">';
@@ -86,7 +91,7 @@ if(isset($_GET['token']))
       }
       if($_SESSION['rol']!='alumno' and $_SESSION['estado_convocatoria']>=0)
       {
-      echo '<li class="nav-item msuperior dropdown">';
+      echo '<li class="nav-item msuperior dropdown itemderecho">';
          echo '<a class="show_provisionales nav-link dropdown-toggle desplegable" id="navbardrop" data-toggle="dropdown" href="#">Exportar datos</a>';
          echo '<div class="dropdown-menu">';
             echo '<a class="exportpdf dropdown-item" href="#" id="pdf_usu" data-tipo="pdf" data-subtipo="pdf_usu">Listado usuarios (pdf)  </a>';
@@ -111,17 +116,17 @@ if(isset($_GET['token']))
                }
          echo '</div>';
       echo '</li>';
-      echo '<li class="nav-item active msuperior">';
+      echo '<li class="nav-item active msuperior itemderecho">';
          echo '<a class="show_matricula nav-link" href="#">Matricula</a>';
       echo '</li>';
-      echo '<li class="nav-item active msuperior">';
+      echo '<li class="nav-item active msuperior itemderecho">';
          echo '<a class="show_solicitudes nav-link" href="#">Solicitudes</a>';
       echo '</li>';
       }
       if($_SESSION['estado_convocatoria']>=ESTADO_FININSCRIPCION or ($rol!='alumno' and $rol!='anonimo'))
       {
    ?>
-         <li class="nav-item active msuperior dropdown" id="msorteo">
+         <li class="nav-item active msuperior dropdown itemderecho" id="msorteo">
          <?php if($_SESSION['estado_convocatoria']>=ESTADO_FININSCRIPCION OR ($_SESSION['rol']=='alumno' AND $_SESSION['estado_convocatoria']>=ESTADO_PUBLICACION_BAREMADAS)){?>
              <a class="show_provisionales nav-link dropdown-toggle desplegable2" id="navbardrop" data-toggle="dropdown" href="#">Lista baremo</a>
              <div class="dropdown-menu">
@@ -142,7 +147,7 @@ if(isset($_GET['token']))
       <?php }?>
       
 		<?php if(($_SESSION['estado_convocatoria']>=ESTADO_PUBLICACION_BAREMADAS AND $_SESSION['rol']!='alumno') OR $_SESSION['estado_convocatoria']>=ESTADO_PUBLICACION_PROVISIONAL) {?>
-            <li class="nav-item active msuperior dropdown" id="mprovisional">
+            <li class="nav-item active msuperior dropdown itemderecho" id="mprovisional">
                <a class="show_provisionales nav-link dropdown-toggle desplegable2" id="navbardrop" data-toggle="dropdown" href="#">Provisional</a>
                <div class="dropdown-menu">
                   <a class="lprovisionales dropdown-item" href="#" data-subtipo="admitidos_prov">Admitidos provisional</a>
@@ -153,7 +158,7 @@ if(isset($_GET['token']))
 			<?php }?>
 		<?php if($_SESSION['estado_convocatoria']>=ESTADO_RECLAMACIONES_PROVISIONAL){?>
 		   <?php if(($_SESSION['estado_convocatoria']>=ESTADO_PUBLICACION_DEFINITIVOS and $_SESSION['rol']=='alumno') or $_SESSION['rol']!='alumno'){?>
-                            <li class="nav-item active msuperior dropdown" id="mdefinitivo">
+                            <li class="nav-item active msuperior dropdown itemderecho" id="mdefinitivo">
                                  <a class="show_definitivos nav-link dropdown-toggle desplegable2" id="navbardrop" data-toggle="dropdown" href="#">Definitivos</a>
 		                 <div class="dropdown-menu">
 				 <a class="ldefinitivos dropdown-item" href="#" data-subtipo="admitidos_def">Admitidos definitivo</a>
@@ -164,43 +169,32 @@ if(isset($_GET['token']))
 		   <?php }?>
 		<?php }?>
 		<?php 
-            if(($_SESSION['rol']=='admin' or $_SESSION['rol']=='sp') and ($_SESSION['estado_convocatoria']>=ESTADO_ASIGNACIONES)) 
+            if((($_SESSION['rol']=='admin' or $_SESSION['rol']=='sp') and ($_SESSION['estado_convocatoria']>=ESTADO_ASIGNACIONES)) OR ($_SESSION['rol']=='centro' and $_SESSION['estado_convocatoria']>=ESTADO_PUBLICACION_ASIGNACIONES)) 
             {
-             echo '<li class="nav-item active msuperior dropdown" id="mdefinitivo">';
-             echo '<a class="nav-link dropdown-toggle desplegable2" id="navbardrop" data-toggle="dropdown" href="#">Adjudicación Servicio Provincial</a>';
-		       echo '<div class="dropdown-menu">';
-               if($_SESSION['estado_convocatoria']<40)
-               {
-				      echo '<a class="lfase2 dropdown-item" href="documentacion/vacantes_especial_fase2.JPG">VACANTES FASE2</a>';
-				      echo '<a class="lfase2 dropdown-item" href="#" data-subtipo="lfase2_sol_sor">Listado Numero aleatorio fase2</a>';
-               }
-				 echo '<a class="lfase2 dropdown-item" href="#" data-subtipo="lfase2_sol_ebo">Listado Solicitudes fase2 EBO</a>';
-				 echo '<a class="lfase2 dropdown-item" href="#" data-subtipo="lfase2_sol_tva">Listado Solicitudes fase2 TVA</a>';
-             echo '<a class="lfinales dropdown-item" href="#" data-subtipo="lfinal_sol_ebo_adjudicadas">Listado Solicitudes adjudicadas EBO</a>';
-				 echo '<a class="lfinales dropdown-item" href="#" data-subtipo="lfinal_sol_tva_adjudicadas">Listado Solicitudes adjudicadas TVA</a>';
-				 echo '<a class="lfinales dropdown-item" href="#" data-subtipo="lfinal_sol_ebo_desplazados">Listado Solicitudes desplazados fase2 EBO</a>';
-				 echo '<a class="lfinales dropdown-item" href="#" data-subtipo="lfinal_sol_tva_desplazados">Listado Solicitudes desplazados fase2 TVA</a>';
-				 echo '<a class="lfinales dropdown-item" href="#" data-subtipo="lfinal_sol_ebo_nomatricula">Listado Solicitudes no matrícula fase2 EBO</a>';
-				 echo '<a class="lfinales dropdown-item" href="#" data-subtipo="lfinal_sol_tva_nomatricula">Listado Solicitudes no matrícula fase2 TVA</a>';
-				 echo '</div>';
-             echo '</li>';
-             echo '<li class="nav-item active msuperior dropdown" id="mdefinitivo">';
-             echo '</li>';
-               
+                echo '<li class="nav-item active msuperior dropdown itemderecho" id="mdefinitivo">';
+                echo '<a class="nav-link dropdown-toggle desplegable2" id="navbardrop" data-toggle="dropdown" href="#">Adjudicación Servicio Provincial</a>';
+                echo '<div class="dropdown-menu">';
+                  if($_SESSION['estado_convocatoria']<40)
+                  {
+                     echo '<a class="lfase2 dropdown-item" href="documentacion/vacantes_especial_fase2.JPG">VACANTES FASE2</a>';
+                     echo '<a class="lfase2 dropdown-item" href="#" data-subtipo="lfase2_sol_sor">Listado Numero aleatorio fase2</a>';
+                  }
+                echo '<a class="lfase2 dropdown-item" href="#" data-subtipo="lfase2_sol_ebo">Listado Solicitudes fase2 EBO</a>';
+                echo '<a class="lfase2 dropdown-item" href="#" data-subtipo="lfase2_sol_tva">Listado Solicitudes fase2 TVA</a>';
+                echo '<a class="lfinales dropdown-item" href="#" data-subtipo="lfinal_sol_ebo_adjudicadas">Listado Solicitudes adjudicadas EBO</a>';
+                echo '<a class="lfinales dropdown-item" href="#" data-subtipo="lfinal_sol_tva_adjudicadas">Listado Solicitudes adjudicadas TVA</a>';
+                echo '<a class="lfinales dropdown-item" href="#" data-subtipo="lfinal_sol_ebo_desplazados">Listado Solicitudes desplazados fase2 EBO</a>';
+                echo '<a class="lfinales dropdown-item" href="#" data-subtipo="lfinal_sol_tva_desplazados">Listado Solicitudes desplazados fase2 TVA</a>';
+                echo '<a class="lfinales dropdown-item" href="#" data-subtipo="lfinal_sol_ebo_nomatricula">Listado Solicitudes no matrícula fase2 EBO</a>';
+                echo '<a class="lfinales dropdown-item" href="#" data-subtipo="lfinal_sol_tva_nomatricula">Listado Solicitudes no matrícula fase2 TVA</a>';
+                echo '</div>';
+                echo '</li>';
+                echo '<li class="nav-item active msuperior dropdown" id="mdefinitivo">';
+                echo '</li>';
 		      }
-            if(($_SESSION['rol']=='centro' and $_SESSION['estado_convocatoria']>=ESTADO_PUBLICACION_ASIGNACIONES)) 
+		      if($_SESSION['estado_convocatoria']>=ESTADO_FIN and $_SESSION['rol']!='alumno' and $_SESSION['rol']!='anonimo')
             {
-               echo '<li class="nav-item active msuperior dropdown" id="mdefinitivo">';
-               echo '<a class="nav-link dropdown-toggle desplegable2" id="navbardrop" data-toggle="dropdown" href="#">Adjudicación Servicio Provincial</a>';
-               echo '<div class="dropdown-menu">';
-               echo '<a class="lfinales dropdown-item" href="#" data-subtipo="lfinal_sol_ebo">Listado Solicitudes finales EBO</a>';
-               echo '<a class="lfinales dropdown-item" href="#" data-subtipo="lfinal_sol_tva">Listado Solicitudes finales TVA</a>';
-               echo '</div>';
-               echo '</li>';
-		      }
-		      if($_SESSION['estado_convocatoria']>=100 and $_SESSION['rol']!='alumno' and $_SESSION['rol']!='anonimo')
-            {
-               echo '<li class="nav-item active msuperior" id="matriculafinal">';
+               echo '<li class="nav-item active msuperior itemderecho" id="matriculafinal">';
                   echo '<a class="show_matricula_final nav-link" data-subtipo="mat_final" href="#">Matrícula final</a>';
                echo '</li>';
 		      }

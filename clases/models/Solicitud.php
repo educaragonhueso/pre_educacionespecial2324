@@ -1817,7 +1817,7 @@ desc,a.tutores_centro desc,a.nordensorteo asc,a.nasignado desc";
       $where="";
       //mostramos los alumnos q eleigieron ese centro o q lo han obtenido en la fase final
       if($rol=='centro')
-         $where=" AND id_centro_final=$id_centro AND est_desp_sorteo IN('admitidafase2') ";
+         $where=" AND id_centro_destino=$id_centro AND est_desp_sorteo IN('admitidafase2') ";
       if($rol=='admin')
          $where=" AND est_desp_sorteo IN('admitidafase2') ";
       
@@ -1825,7 +1825,7 @@ desc,a.tutores_centro desc,a.nordensorteo asc,a.nasignado desc";
 		if($subtipo_listado=='lfinal_sol_ebo')
 		   $sql="SELECT a.email as correo,a.tel_dfamiliar1 as telefono,a.id_alumno,a.tipoestudios,a.id_centro_final, a.apellido1,a.apellido2,a.nombre,c.nombre_centro as centro_definitivo,cc.nombre_centro as centro_solicitado FROM alumnos a,centros c,centros cc WHERE c.id_centro=a.id_centro_final AND cc.id_centro=a.id_centro_destino AND a.tipoestudios='ebo' $where AND id_centro_destino!=id_centro_final ORDER by a.id_centro_final desc, a.tipoestudios asc,a.nordensorteo asc,a.transporte asc";
    	elseif($subtipo_listado=='lfinal_sol_tva')
-		   $sql="SELECT a.email as correo,a.tel_dfamiliar1 as telefono, 'centrosdisponibles' as centrosdisponibles,a.id_alumno,a.tipoestudios,a.id_centro_final, a.apellido1,a.apellido2,a.nombre,c.nombre_centro as centro_definitivo FROM alumnos a,centros c WHERE c.id_centro=a.id_centro_final AND a.tipoestudios='tva' $where AND id_centro_destino!=id_centro_final ORDER by a.id_centro_final desc, a.tipoestudios asc,a.nordensorteo asc,a.transporte asc";
+		   $sql="SELECT a.email as correo,a.tel_dfamiliar1 as telefono,a.id_alumno,a.tipoestudios,a.id_centro_final, a.apellido1,a.apellido2,a.nombre,c.nombre_centro as centro_definitivo,cc.nombre_centro as centro_solicitado FROM alumnos a,centros c,centros cc WHERE c.id_centro=a.id_centro_final AND cc.id_centro=a.id_centro_destino AND a.tipoestudios='tva' $where AND id_centro_destino!=id_centro_final ORDER by a.id_centro_final desc, a.tipoestudios asc,a.nordensorteo asc,a.transporte asc";
 		elseif($subtipo_listado=='csv_final') //para el csv 
       {
 		   $sql="SELECT 'centrosdisponibles' as centrosdisponibles, a.id_alumno,a.nombre,a.apellido1,a.apellido2,a.localidad,a.calle_dfamiliar,a.centro_origen,a.id_centro_origen, a.nombre_centro,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado as nasignado,a.puntos_validados,a.id_centro,a.centro1,a.centro2,a.centro3,a.centro4,a.centro5,a.centro6,a.centro_definitivo,a.id_centro_definitivo, a.tipo_modificacion,a.reserva,a.reserva_original  FROM alumnos_fase2_final a left join baremo b on b.id_alumno=a.id_alumno order by a.id_centro desc, a.tipoestudios asc,a.transporte asc, b.puntos_validados desc";
@@ -2018,23 +2018,17 @@ as nasignado,c.nombre_centro, a.puntos_validados,a.id_centro_destino as id_centr
 	}
 	public function getSolicitudesMatriculaFinal($c=1,$subtipo_listado,$estado_convocatoria,$log,$rol,$id_alumno) 
 	{
-		$log->warning("CCONSULTA SOLICITUDES MATRICULA FINAL");
-      $provincia=substr($rol,2);
-      //si el estado de la convocatoria es previo a provisioonales la tabla del
-      //baremo es la original
-      $tablabaremo='b';
-      $tabla_alumnos='alumnos_matricula_final';
-      $order=" order by id_centro,tipoestudios";
+      $order=" order by id_centro_final,a.tipoestudios";
 		
       $resultSet=array();
 		if($rol=='admin')
-         $sql="SELECT * FROM alumnos_matricula_final $order";
+         $sql="SELECT * FROM alumnos a,baremo b WHERE a.id_alumno=b.id_alumno $order";
 		else if($rol=='centro')
-		   $sql="SELECT a.tel_dfamiliar1,a.matricula,a.email,a.id_alumno,a.nombre,a.apellido1,a.apellido2,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado as nasignado,c.nombre_centro,b.puntos_validados FROM $tabla_alumnos a left join baremo b on b.id_alumno=a.id_alumno left join centros c on a.id_centro=c.id_centro where c.id_centro=$c order by tipoestudios";
+		   $sql="SELECT a.tel_dfamiliar1,a.matricula,a.email,a.id_alumno,a.nombre,a.apellido1,a.apellido2,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado as nasignado,c.nombre_centro,b.puntos_validados FROM alumnos a left join baremo b on b.id_alumno=a.id_alumno left join centros c on a.id_centro_final=c.id_centro where c.id_centro=$c order by tipoestudios";
 		else if($rol=='alumno')
-         $sql="SELECT * FROM alumnos_matricula_final WHERE id_alumno=$id_alumno";
+         $sql="SELECT * FROM alumnos a,baremo b WHERE a.id_alumno=b.id_alumno AND a.id_alumno=$id_alumno";
       else
-         $sql="SELECT * FROM alumnos_matricula_final af JOIN centros c ON af.id_centro=c.id_centro and provincia='$provincia' ";
+         $sql="SELECT * FROM alumnos af JOIN centros c ON af.id_centro=c.id_centro and provincia='$provincia' ";
 		$log->warning("CONSULTA SOLICITUDES MATRICULA FINAL SUBTIPO: ".$subtipo_listado);
 		$log->warning($sql);
 

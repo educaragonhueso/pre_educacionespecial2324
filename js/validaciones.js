@@ -17,12 +17,18 @@ function validarFormulario(fd,id,est)
    var cadf='0';
    var cpdf='0';
    var locdf='0';
+   var reservaplaza=0;
+   var marcado_escolarizacion=0;
+   var expone=0;
+   var modalidad_origen=0;
    console.log("VALIDANDO FORMULARIO, DATOS:");
    console.log(fd);
    //comp datos sección datos de EXPONE
    for (let i = 0; i < res.length; i++)
    {
       d=res[i].split("=");
+      if(d[0]==='reserva')
+       reservaplaza=1;  
       if(d[0]==='fnac')
       {
          console.log("Comprobando fecha alumno: "+d[1]);
@@ -104,21 +110,6 @@ function validarFormulario(fd,id,est)
             return 'Indica la localidad';
          }
       }
-      if(d[0].indexOf('nuevaesc')==-1)
-      {
-         var chn=$("input[id='nuevaesc']").is(':checked');
-         var chr=$("input[id='renesc']").is(':checked');
-         var centro_origen=$("input[id='id_centro_estudios_origen']").val();
-         
-         if(chn===false & chr===false)
-            return 'Indica si es una renovación o nueva escolarización';
-         //si se ha marcado la renovación debe indicarse un centro de estudios actual
-         if(chr)
-         {
-            if(centro_origen.length<=3)
-               return 'Centro de origen necesario';     
-         }
-      }
       if(d[0].indexOf('baremo_proximidad_domicilio')==0)
       {
          console.log("baremo proximidad : "+d[1]);
@@ -170,6 +161,39 @@ function validarFormulario(fd,id,est)
          if(d[1]=='1') marcadofn='1';
       if(d[0]=='baremo_marcado_monoparental')
          if(d[1]=='1') marcadofm='1';
+      if(d[0]=='nuevaesc' | d[0]=='renesc')
+         expone=1;
+      if(d[0]=='modalidad_origen')
+         if(d[1]=='nodata') modalidad_origen=0;
+         else modalidad_origen=1;
+   }
+   if(expone==1)
+   {
+      marcado_escolarizacion=1;
+      console.log("NUEVA ESC:"+reservaplaza);
+      var chn=$("input[id='nuevaesc']").is(':checked');
+      var chr=$("input[id='renesc']").is(':checked');
+      var centro_origen=$("input[id='id_centro_estudios_origen']").val();
+      
+      if(chn===false & chr===false)
+         return 'Indica si es una renovación o nueva escolarización';
+      //si se ha marcado la renovación debe indicarse un centro de estudios actual
+      if(chr)
+      {
+         if(centro_origen.length<=3)
+            return 'Centro de origen necesario';     
+      }
+      if(modalidad_origen==0)
+            return 'Indica la modalidad de estudios actual';     
+   }
+   else
+     return 'Indica si es renovación o nueva escolarización';     
+      
+   if(reservaplaza==0 & marcado_escolarizacion==1)
+   {
+      //comprobamos si el centro de origen incluye asterisco
+      if(centro_origen.indexOf('*')!==-1)
+         return 'Debes indicar si reservas plaza';
    }
    if(marcadodisc=='1')
    {

@@ -5,6 +5,11 @@
    margin-bottom:10px;
 }
 
+.itemderecho
+{
+   width:9%;
+
+}
 td,th
 {
    text-align:left!important;
@@ -426,14 +431,16 @@ margin-left:10px;
 transition: transform 0.5s ease-in-out;
 }
 #navgir{
-background-color:#051c33 !important
+background-color:#051c33 !important;
+width:98%;
+margin-left:10px
 }
 
 .msuperior{
-border-right: 1px solid #e4dcdc;
-    /* background-color: lightgrey; */
-    padding-left: 10px;
-    padding-right: 10px;
+   border-right: 1px solid #e4dcdc;
+   padding-left: 10px;
+   padding-right: 10px;
+   display:block;
 }
 .dalumno
 {

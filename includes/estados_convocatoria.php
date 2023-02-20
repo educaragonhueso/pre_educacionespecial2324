@@ -33,6 +33,11 @@ define("M51","<p class='cajainfo' style='text-align:center'>Estamos en proceso d
 define("M60","<p class='cajainfo' style='text-align:center'>En revisión de reclamaciones listados provisionales</p>");
 define("M61","<p class='cajainfo' style='text-align:center'>Publicados listados definitivos</p>");
 
+define("M70","<p class='cajainfo' style='text-align:center'>Publicados listados matrícula fase2</p>");
+define("M71","<p class='cajainfo' style='text-align:center'>Periodo de matriculación</p>");
+
+define("M100","<p class='cajainfo' style='text-align:center'>El proceso ha finalizado</p>a");
+
 $dirb=substr(DIA_INICIO_RECLAMACIONES_BAREMADAS,0,-9);
 $hirb=substr(DIA_INICIO_RECLAMACIONES_BAREMADAS,10);
 

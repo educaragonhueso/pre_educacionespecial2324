@@ -1,5 +1,11 @@
 <?php
-require_once $_SERVER['CONTEXT_DOCUMENT_ROOT']."/educacionespecial/config/config_global.php";
+######################
+# script para ver matriculas
+######################
+
+//CARGAMOS CONFIGURACION GENERAL SCRIPTS AJAX
+include('../../config/config_global.php');
+
 require_once DIR_CLASES.'LOGGER.php';
 require_once DIR_BASE.'/clases/core/Conectar.php';
 require_once DIR_APP.'/parametros.php';
@@ -31,9 +37,6 @@ $tcentro->setNombre();
 $id_alumno=$_POST['id_alumno'];
 $nombre_centro=$tcentro->getNombreAdjudicado($id_alumno);
 $tsolicitud=new Solicitud($conexion);
-$dvacantes=$tcentro->getVacantes($id_centro,$log_listados_matricula_final);
-$vacantes_ebo=$dvacantes[0]->vacantes;
-$vacantes_tva=$dvacantes[1]->vacantes;
 
 $titulo_listado="Listados definitivos";
 $tipo_listado="Listados definitivos";
@@ -59,7 +62,7 @@ $log_listados_matricula_final->warning("OBTENIENDO LISTADOS MATRICULA FINAL, CEN
 //Esto solo puede hacerse en el momento q finalice el plazo de provisionales!!!!!!!!
 //$solicitudes=$solicitud->genSolDefinitivas($id_centro,$vacantes_ebo,$vacantes_tva,2); 
 //mostramos las solitudes completas sin incluir borrador
-$solicitudes=$list->getSolicitudes($id_centro,'matriculafinal',$subtipo_listado,$tsolicitud,$log_listados_matricula_final,$id_alumno,$rol); 
+$solicitudes=$list->getSolicitudes($id_centro,'matriculafinal',$subtipo_listado,$tsolicitud,$log_listados_matricula_final,$id_alumno,$rol,$provincia); 
 $subtipo='ADMITIDOS MATRÍCULA FINAL';
 
 print("<button type='button' class='btn btn-info' onclick='window.open(\"".DIR_PROV_WEB.$subtipo_listado.".pdf\",\"_blank\");'>Descarga listado</button>");

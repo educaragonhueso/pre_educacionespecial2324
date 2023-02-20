@@ -1432,6 +1432,10 @@ $('body').on('change', '#nuevaesc', function(e)
    console.log("Ocultando reserva");	
    //$(this).attr('value','1');
    $(".filarenesc").hide('slow');
+   //desmarcamos los checks de reservaa
+   $("input[name='reserva']").prop('checked', false);
+   $("#modalidad_origen").val('nodata');
+   $("#id_centro_estudios_origen").val('');
 });
 
 $('body').on('change', '#reserva_pend', function(e)

@@ -388,10 +388,10 @@ class ListadosController{
 	return $html;
 	}
   public function showSolicitudListadoMatriculaFinal($sol,$datos,$htmldatoscentros='',$fase=2){
-		$i=0;	
+		$i=0;
 		//los listados provisionales no permiten acceder a los datos de la solicitud
 		$class='';
-      if($sol->matricula=='no') $matricular='Matricular'; else $matricular='Desmatricular';
+      if($sol->matricula==0) $matricular='Matricular'; else $matricular='Desmatricular';
 
 		$li="<tr class='filasol' id='filasol".$sol->id_alumno."' style='color:black'>";
 		foreach($datos as $d)
@@ -400,7 +400,7 @@ class ListadosController{
 			$i++;
 		}
       
-			//$li.='<td><button data-tipo="'.$sol->tipoestudios.'" data-idcentro="'.$sol->$d.'"  id="matricular'.$sol->id_alumno.'"  class="matriculafinal" value="matricularfinal">'.$matricular.'</button></td> ';
+			$li.='<td><button data-tipo="'.$sol->tipoestudios.'" data-idcentro="'.$sol->$d.'"  id="matricular'.$sol->id_alumno.'"  class="matriculafinal" value="matricularfinal">'.$matricular.'</button></td> ';
 		$li.="</tr>";
 	return $li;
 	}
@@ -573,7 +573,7 @@ class ListadosController{
 		       $html.="<tr class='filasol' id='filasol".$sol->id_alumno."' style='color:white;background-color: #84839e;'><td colspan='".$ncolumnas."'><b>".strtoupper($sol->tipoestudios)."</b></td></tr>";
          }
 		}
-		else
+		else if($rol=='centro')
       {
 			$tipoestudios_anterior=$tipoestudios_actual;
          $tipoestudios_actual=$sol->tipoestudios;

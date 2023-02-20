@@ -18,6 +18,7 @@ require_once $dir_base.'/clases/models/Centro.php';
 require_once $dir_base.'/clases/models/Solicitud.php';
 require_once $dir_base.'/scripts/clases/LOGGER.php';
 require_once 'config/config_global.php';
+require_once DIR_APP.'/parametros.php';
 if(!isset($_SESSION))
    include('includes/sesion.php');
 if(isset($_GET['tokencentro']))
@@ -53,6 +54,7 @@ $estado_convocatoria=$_SESSION['estado_convocatoria'];
 #LOGS
 $DIR_LOGS=$dir_base.'/logs/';
 $log_listados_solicitudes=new logWriter('log_listados_solicitudes',$DIR_LOGS);
+$log_listados_matricula_final=new logWriter('log_listados_matricula_final',$DIR_LOGS);
 $log_editar_solicitud=new logWriter('log_editar_solicitud',$DIR_LOGS);
 #VARIABLES
 $conectar=new Conectar();
@@ -139,6 +141,16 @@ if(isset($_GET['token']) or $rol=='alumno')
    }
    else if($rol=='alumno' or $rol=='anonimo')
    {
+      //si llegamos al final y hay matrícula pendiente añadmos formulario de matrícula
+      if($estado_convocatoria>=ESTADO_FIN)
+      {
+         $cabecera="campos_cabecera_mat_final";
+         $camposdatos="campos_bbdd_mat_final";
+         $tsolicitud=new Solicitud($conexion);
+         $list=new ListadosController('alumnos',$conexion,$estado_convocatoria);
+         $solicitudes=$list->getSolicitudes($id_centro,'matriculafinal','mat_final',$tsolicitud,$log_listados_matricula_final,$id_alumno,$rol,''); 
+         print_r($list->showListado($solicitudes,$_POST['rol'],$$cabecera,$$camposdatos,'matriculafinal'));
+      }
       $mensaje_estado_alumno=$scontroller->getEstadoAlumno($token);
       $sform=preg_replace('/<span>PUNTOS BAREMO VALIDADOS:<span id="id_puntos_baremo_validados">.*<\/span>/','',$sform);
       print_r($tokenhtml);
@@ -164,11 +176,12 @@ else
    $tablaresumen=$tcentro->getResumen($rol,'alumnos',$log_listados_solicitudes);
    $tablaresumen=$lcontroller->showTablaResumenSolicitudes($tablaresumen,$nombre_centro,$id_centro);
    ##FILTROS DE OPCIONES DE VALIDACION Y DE COMPROBACION 
-   if(($rol=='anonimo' and $estado_convocatoria<=ESTADO_FININSCRIPCION) or ($rol!='anonimo' and $solcentro==1))
+   if((($rol=='anonimo' OR $rol=='alumno') and $estado_convocatoria<=ESTADO_FININSCRIPCION) or ($rol!='anonimo' and $solcentro==1))
    {
       //si es un alumno nuevo o entramos si indicar el token, generamos uno nuevo
-      $token=bin2hex(random_bytes(8));;
-      $tokenhtml='<input type="hidden" id="token" name="custId" value="'.$token.'">';
+      //$token=bin2hex(random_bytes(8));;
+      //$tokenhtml_origen='<input type="hidden" id="token" name="custId" value="">';
+      //$tokenhtml_destino='<input type="hidden" id="token" name="custId" value="'.$token.'">';
       //$solicitud->getFormularioSolicitud()
       if($rol!='centro')
       {
@@ -178,18 +191,18 @@ else
          $formsol=preg_replace('/<button name="boton_comprobaridentidad" type="button" class="btn btn-outline-dark comprobar">Comprobar identidad<\/button>/','',$formsol);
          $formsol=preg_replace('/<button name="boton_baremo_comprobar_proximidad_domicilio" type="button" class="btn btn-outline-dark comprobar">Comprobar domicilio<\/button>/','',$formsol);
       }
-      print($formsol.$tokenhtml);
+      print($formsol);
    }
    else if($rol=='alumno' and $estado_convocatoria>ESTADO_FININSCRIPCION)
    {
-      if($estado_convocatoria>30)
+      if($estado_convocatoria>ESTADO_PUBLICACION_BAREMADAS)
          print("<h1>LA CONVOCATORIA HA FINALIZADO</h1>");  
       print("<div id='wrapper'>");
       print("<div id='content'>");
       echo '<div id="l_matricula" style="width:100%">';
          print($msg_validacion.$listado_solicitudes);
       echo '</div>';
-      if($estado_convocatoria<30)
+      if($estado_convocatoria<ESTADO_PUBLICACION_BAREMADAS)
          print("<h3>Pulsa en la pestaña 'Lista baremo' para ver el listado baremado</h3>");  
       print("</div>");
    }

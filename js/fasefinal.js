@@ -36,7 +36,7 @@ $(".show_matricula_final").click(function () {
   var vestado_convocatoria=$('#estado_convocatoria').val();
 	$.ajax({
 	  method: "POST",
-	  url: "../educacionespecial/scripts/ajax/listados_solicitudes_matricula_final.php",
+	  url: "../"+edicion+"/scripts/ajax/listados_solicitudes_matricula_final.php",
 	  data: {rol:vrol,subtipo:vsubtipo,estado_convocatoria:vestado_convocatoria,id_centro:vidcentro,id_alumno:vid_alumno},
 	  success: function(data) {
 				$("#mapcontrol").hide();
@@ -53,17 +53,18 @@ $(".show_matricula_final").click(function () {
 $('body').on('click', '.matriculafinal', function(e){
  console.log("en matricula fase final"); 
   var vrol=$('#rol').attr("value");
+  var vtoken=$('#token').attr("value");
   var vid_alumno=$(this).attr("id");
   vid_alumno=vid_alumno.replace("matricular","");
   var vestado=$(this).text();
 	$.ajax({
 	  method: "POST",
-	  url: "../educacionespecial/scripts/ajax/matricular_alumno_fasefinal.php",
-	  data: {rol:vrol,id_alumno:vid_alumno,estado:vestado},
+	  url: "../"+edicion+"/scripts/ajax/matricular_alumno_fasefinal.php",
+	  data: {rol:vrol,id_alumno:vid_alumno,estado:vestado,token:vtoken},
 	  success: function(data) {
             console.log(data);
             console.log(vid_alumno);
-	         alert("Alumno Matriculado/Desmatriculado correctamente");
+	         alert("Alumno Matriculado/Desmatriculado correctamente, recibirás un correo confirmatorio");
             if(vestado=='Matricular')
             $("#matricular"+vid_alumno).html("Desmatricular");
             else

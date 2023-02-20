@@ -4,6 +4,21 @@ DESCRIPCION PROCESO ADMISION EDUCACION ESPECIAL 2324
 FASE PREVIA
 --------------------------------------------------------------------------------------------------------------------------------
    Borrar cuentas de usuarios de pruebas y de alumnos o solicitudes, baremo, etc...
+   
+      Tablas
+         alumnos
+         baremo
+         alumnos_baremada_final
+         alumnos_provisional
+         alumnos_definitiva
+         alumnos_fase2
+         alumnos_fase2_tmp
+         alumnos_hermanos_admision
+         alumnos_orden
+         alumnos_orden_provisional
+         alumnos_orden_definitivo
+         
+      
    Hacer una prueba de solicitud completa en PRO
    Desmarcar la opción de enviar correos a los centros al modificar solicitudes y reclamaciones d ebarmeo y provisional
    Imprimir docs de fases y estados de convocatoria
