@@ -26,7 +26,7 @@ $_SESSION['url_base'] =URL_BASE;
 
 if($_SESSION['fecha_actual']<DIA_INICIO_MATRICULA) 
  		$_SESSION['estado_convocatoria'] =ESTADO_PREMATRICULA;
-if($_SESSION['fecha_actual']>=DIA_INICIO_MATRICULA and $_SESSION['fecha_actual']<DIA_INICIO_INSCRIPCION)       
+else if($_SESSION['fecha_actual']>=DIA_INICIO_MATRICULA and $_SESSION['fecha_actual']<DIA_INICIO_INSCRIPCION)       
  		$_SESSION['estado_convocatoria'] =ESTADO_PREINSCRIPCION;
 else if($_SESSION['fecha_actual']>=DIA_INICIO_INSCRIPCION and $_SESSION['fecha_actual']<=DIA_FIN_INSCRIPCION)       
  		$_SESSION['estado_convocatoria'] =ESTADO_INSCRIPCION;
