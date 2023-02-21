@@ -62,6 +62,7 @@
       <div class="wrapper">
 
 <?php  
+echo "ESTADO CONVOCATORIA: ".$_SESSION['estado_convocatoria'];
 if(MANTENIMIENTO=='NO' OR IPREMOTA1==$_SERVER['HTTP_X_FORWARDED_FOR'] OR IPREMOTA2==$_SERVER['HTTP_X_FORWARDED_FOR'])
 {
    if($_SESSION['estado_convocatoria']==10)
