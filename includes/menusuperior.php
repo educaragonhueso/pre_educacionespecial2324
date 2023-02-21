@@ -7,7 +7,7 @@ if(isset($_SESSION))
    $token=$_SESSION['token'];
 else
    $token='';
-if($_SESSION['version']=='PRE')
+if($_SESSION['version']=='PRE' or $_SESSION['mantenimiento']=='SI')
    print_r($_SESSION);
 if (!file_exists($ficheroebo))
    $listado='';
