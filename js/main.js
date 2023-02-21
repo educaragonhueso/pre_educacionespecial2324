@@ -3,8 +3,8 @@
 var vficheros=[];
 var form_data = new FormData();
 var directoriobase=edicion;
-var urlbase='https://preadmespecial.aragon.es/'+edicion;
-var urlbasesol='https://preadmespecial.aragon.es/'+edicion;
+var urlbase=url_base+edicion;
+var urlbasesol=url_base+edicion;
 /////////////////////////////////////////////////////////////////////////////////
 //FUNCIN DE PRUEBA PARA SUBIR ARCHIVOS, DE MOMENTO SIN USAR
 $('body').on('click', '#subirdoc', function(e){
