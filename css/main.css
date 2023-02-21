@@ -5,6 +5,33 @@
    margin-bottom:10px;
 }
 
+.btn_enlace
+{
+  border: none;
+  background-color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  color: darkblue;
+}
+.btn_enlace_baremo
+{
+  border: none;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  color: darkblue;
+   margin-left: 26%;
+   width: 49%;
+   margin-left: 26%;
+   border: 2px solid black;
+}
+
+.btn_enlace:hover {background: #eee;}
+
 .itemderecho
 {
    width:9%;

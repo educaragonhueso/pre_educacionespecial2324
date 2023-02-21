@@ -216,21 +216,21 @@ $('body').on('click', '.send', function(e)
 
                      var enlace_solicitud=urlbasesol+"/index.php?token="+token_alumno;
                      var mensaje='Solicitud creada correctamente. Recibirás un correo con un enlace para poder modificarla. ';
-                     var textoenlace='<br> Este es el enlace: <b><a href="'+enlace_solicitud+'" style="color:darkblue;margin-left:10px">Enlace solicitud</a></b>'; 
+                     var textoenlace='<br> Este es el enlace: <b><a href="'+enlace_solicitud+'" class="btn_enlace">Enlace solicitud</a></b>'; 
                      if(token_hermano1!==undefined)
                      {
                         var enlace_solicitud_h1=urlbasesol+"/index.php?token="+token_hermano1;
-                        textoenlace+='<br>Enlace para el primer hermano: <br><b> '+enlace_solicitud_h1+'</b>';
+                        textoenlace+='<a class="btn_enlace" href="'+enlace_solicitud_h1+'"<br>Enlace para el primer hermano<br></b></a>';
                      }
                      if(token_hermano2!==undefined)
                      {
                         var enlace_solicitud_h2=urlbasesol+"/index.php?token="+token_hermano2;
-                        textoenlace+='<br>Enlace para el segundo hermano: <br><b> '+enlace_solicitud_h2+'</b>';
+                        textoenlace+='<a class="btn_enlace" href="'+enlace_solicitud_h2+'"<br>Enlace para el primer hermano<br></b></a>';
                      }
                      if(token_hermano3!==undefined)
                      {
                         var enlace_solicitud_h3=urlbasesol+"/index.php?token="+token_hermano3;
-                        textoenlace+='<br>Enlace para el tercer hermano: <br><b> '+enlace_solicitud_h3+'</b>';
+                        textoenlace+='<a class="btn_enlace" href="'+enlace_solicitud_h3+'"<br>Enlace para el primer hermano<br></b></a>';
                      }
                      $.alert({
                      title: 'SOLICITUD GUARDADA CORRECTAMENTE.',

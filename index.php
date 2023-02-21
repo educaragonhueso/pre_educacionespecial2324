@@ -193,6 +193,7 @@ else
       }
       print("<div class='cajainfo'>SOLICITUD NUEVA <p>Completa los datos de cada sección, asegúrate de que sean correctos y de que recibes un correo confirmatorio</div>");
       print($formsol);
+      print($infobaremo); 
    }
    else if($rol=='alumno' and $estado_convocatoria>ESTADO_FININSCRIPCION)
    {
@@ -223,6 +224,7 @@ else
                {
                   print("<div class='cajainfo'>SOLICITUD NUEVA</div>");
                   print($msg_validacion.$tablaresumen.$listado_solicitudes);
+                  print($infobaremo); 
                }
                echo '</div>';
                echo '</div>';

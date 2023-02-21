@@ -177,14 +177,14 @@ function validarFormulario(fd,id,est)
       
       if(chn===false & chr===false)
          return 'Indica si es una renovación o nueva escolarización';
-      //si se ha marcado la renovación debe indicarse un centro de estudios actual
+      //si se ha marcado la renovación debe indicarse un centro de estudios actual y modalidad origen
       if(chr)
       {
          if(centro_origen.length<=3)
             return 'Centro de origen necesario';     
-      }
-      if(modalidad_origen==0)
+         if(modalidad_origen==0)
             return 'Indica la modalidad de estudios actual';     
+      }
    }
    else
      return 'Indica si es renovación o nueva escolarización';     
