@@ -1221,9 +1221,9 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
            $resultSet['hermanos_'.$sufijo.'_id_centro_destino'.$i]=$this->getCentroNombre($row->id_centro_destino);
            $i++;
          }
-         $r1=array('hermanos_admision_nombre1'=>'','hermanos_admision_apellido11'=>'','hermanos_admision_apellido21'=>'','hermanos_admision_fnac1'=>'','hermanos_admision_tipoestudios1'=>'','hermanos_admision_reserva1'=>'','hermanos_admision_dni_alumno1'=>'','id_centro_destino1'=>'');
-         $r2=array('hermanos_admision_nombre2'=>'','hermanos_admision_apellido12'=>'','hermanos_admision_apellido22'=>'','hermanos_admision_fnac2'=>'','hermanos_admision_tipoestudios2'=>'','hermanos_admision_reserva2'=>'','hermanos_admision_dni_alumno2'=>'','id_centro_destino2'=>'');
-         $r3=array('hermanos_admision_nombre3'=>'','hermanos_admision_apellido13'=>'','hermanos_admision_apellido23'=>'','hermanos_admision_fnac3'=>'','hermanos_admision_tipoestudios3'=>'','hermanos_admision_reserva3'=>'','hermanos_admision_dni_alumno3'=>'','id_centro_destino3'=>'');
+         $r1=array('hermanos_admision_nombre1'=>'','hermanos_admision_apellido11'=>'','hermanos_admision_apellido21'=>'','hermanos_admision_fnac1'=>'','hermanos_admision_tipoestudios1'=>'','hermanos_admision_reserva1'=>'','hermanos_admision_dni_alumno1'=>'','hermanos_admision_id_centro_destino1'=>'');
+         $r2=array('hermanos_admision_nombre2'=>'','hermanos_admision_apellido12'=>'','hermanos_admision_apellido22'=>'','hermanos_admision_fnac2'=>'','hermanos_admision_tipoestudios2'=>'','hermanos_admision_reserva2'=>'','hermanos_admision_dni_alumno2'=>'','hermanos_admision_id_centro_destino2'=>'');
+         $r3=array('hermanos_admision_nombre3'=>'','hermanos_admision_apellido13'=>'','hermanos_admision_apellido23'=>'','hermanos_admision_fnac3'=>'','hermanos_admision_tipoestudios3'=>'','hermanos_admision_reserva3'=>'','hermanos_admision_dni_alumno3'=>'','hermanos_admision_id_centro_destino3'=>'');
        
          if($query->num_rows==0)		{	$resultSet=array_merge($r1,$r2,$r3);}
          if($query->num_rows==1)		{	$resultSet=array_merge($resultSet,$r2,$r3);}
@@ -1299,7 +1299,7 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
       if(sizeof($datos_baremo)!=0)	$sol_completa=array_merge($datos_alumno,$datos_baremo);
       if(sizeof($hermanos_admision)!=0)	$sol_completa=array_merge($sol_completa,$hermanos_admision);
       if(sizeof($hermanos_baremo)!=0)	$sol_completa=array_merge($sol_completa,$hermanos_baremo);
-      if(sizeof($tributantes)!=0)	$sol_completa=array_merge($sol_completa,$tributantes);
+      //if(sizeof($tributantes)!=0)	$sol_completa=array_merge($sol_completa,$tributantes);
            
       //vaciamos el array en caso de que sea una solicitud nueva
       if($tiposol=='nueva')

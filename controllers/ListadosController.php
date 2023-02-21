@@ -1228,7 +1228,8 @@ class ListadosController{
 						$ausuarioscentros[$i]['nombre_centro']=str_replace(',','',$centro->getNombre());
 						$ausuarioscentros[$i]['alumno']=$u->nombre;
 						//$ausuarioscentros[$i]['telefono']=$u->tel_dfamiliar1;
-						$ausuarioscentros[$i]['token']='https://preadmespecial.aragon.es/educacionespecial2223/index.php?token='.$u->token;
+						//$ausuarioscentros[$i]['token']='https://preadmespecial.aragon.es/educacionespecial2223/index.php?token='.$u->token;
+						$ausuarioscentros[$i]['token']=URL_BASE.'/'.EDICION.'/index.php?token='.$u->token;
 						$i++;
 					}
 				}

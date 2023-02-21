@@ -216,7 +216,7 @@ $('body').on('click', '.send', function(e)
 
                      var enlace_solicitud=urlbasesol+"/index.php?token="+token_alumno;
                      var mensaje='Solicitud creada correctamente. Recibirás un correo con un enlace para poder modificarla. ';
-                     var textoenlace='<br> Este es el enlace: <br><br><b><a href="'+enlace_solicitud+'">Enlace solicitud</a></b>'; 
+                     var textoenlace='<br> Este es el enlace: <b><a href="'+enlace_solicitud+'" style="color:darkblue;margin-left:10px">Enlace solicitud</a></b>'; 
                      if(token_hermano1!==undefined)
                      {
                         var enlace_solicitud_h1=urlbasesol+"/index.php?token="+token_hermano1;
@@ -2313,7 +2313,12 @@ vid=vid.replace("print",'');
 
 });
 
+$('body').on('click', '#descbaremo', function(e){
+   $("#imgbaremo").toggle();
 });
+
+});
+
 //////////////////////////////////////////////
 //FUCNIONES DE AYUDA
 function calcEdad(dstring) { // birthday is a date
