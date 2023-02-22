@@ -216,7 +216,7 @@ $('body').on('click', '.send', function(e)
 
                      var enlace_solicitud=urlbasesol+"/index.php?token="+token_alumno;
                      var mensaje='Solicitud creada correctamente. Recibirás un correo con un enlace para poder modificarla. ';
-                     var textoenlace='<br> Este es el enlace: <b><a href="'+enlace_solicitud+'" class="btn_enlace">Enlace solicitud</a></b>'; 
+                     var textoenlace='<br><b><a href="'+enlace_solicitud+'" class="btn_enlace">Enlace solicitud</a></b>'; 
                      if(token_hermano1!==undefined)
                      {
                         var enlace_solicitud_h1=urlbasesol+"/index.php?token="+token_hermano1;
