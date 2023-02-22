@@ -95,7 +95,7 @@ $procesocompleto="
       <tr>
         <td>FASE2</td>
         <td>Asignación plazas restantes</td>
-        <td>Inicio en : ".DIA_INICIO_FASE2."</td>
+        <td>Inicio en : ".DIA_INICIO_ASIGNACIONES."</td>
       </tr>
     </tbody>
   </table>

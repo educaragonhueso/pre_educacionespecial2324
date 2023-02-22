@@ -1374,6 +1374,8 @@ $('body').on('change', 'input[id=baremo_marcado_discapacidad],input[id=baremo_ma
    $(this).next().next().next().next(".cajabaremo").slideToggle('slow');
    $(this).next().next(".cajabaremo").slideToggle('slow');
    if(name=='baremo_marcado_numerosa')
+   {
+      $("#cajabaremo_numerosa").slideToggle('slow');
       if($(this).is(":checked")===false)
       {
          console.log("desmarcado"+name);
@@ -1391,7 +1393,10 @@ $('body').on('change', 'input[id=baremo_marcado_discapacidad],input[id=baremo_ma
              this.checked = false;
          });
       }
+   }
    if(name=='baremo_marcado_monoparental')
+   {
+      $("#cajabaremo_monoparental").slideToggle('slow');
       if($(this).is(":checked")===false)
       {
          console.log("desmarcado"+name);
@@ -1409,6 +1414,7 @@ $('body').on('change', 'input[id=baremo_marcado_discapacidad],input[id=baremo_ma
              this.checked = false;
          });
       }
+   }
    var bar_def=recalcular_baremo();
    $("#id_puntos_baremo").text(bar_def);
 
@@ -2282,9 +2288,10 @@ $('body').on('click', '.exportpdf', function(e)
 
 $('body').on('click', '.infobaremo', function(e)
 {
+   $("#descbaremo").trigger("click");
    $([document.documentElement, document.body]).animate({
         scrollTop: $("#descbaremo").offset().top
-    }, 2000);
+    }, 1000);
 });
 //////////////////////////////////////////////
 //FUNCIONES DE IMPRESION

@@ -75,7 +75,7 @@ if(MANTENIMIENTO=='NO' OR IPREMOTA1==$_SERVER['HTTP_X_FORWARDED_FOR'] OR IPREMOT
 else echo '<h4>PAGINA EN MANTENIMIENTO</h4>';
 ?>
 <?php 
-if($estado_convocatoria>=ESTADO_PREMATRICULA)
+if($_SESSION['estado_convocatoria']>=ESTADO_PREMATRICULA)
 {
 ?>
          <div class="form-group">
