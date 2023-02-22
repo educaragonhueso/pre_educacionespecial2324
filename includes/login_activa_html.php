@@ -109,7 +109,7 @@ if($_SESSION['estado_convocatoria']>=ESTADO_PREMATRICULA)
        <div class="container text-center text-md-left">
          <div class="row">
          <hr>
-         <div class="text-center py-3" style="margin-left:-750px;font-size:25px">
+         <div class="text-center py-3" style="font-size:25px">
             <ul class="list-unstyled list-inline mb-0">
                <li class="list-inline-item">
                   <div class="footer-copyright py-3 text-center">

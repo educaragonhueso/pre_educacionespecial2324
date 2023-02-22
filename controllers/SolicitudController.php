@@ -255,7 +255,7 @@ class SolicitudController{
             $destino='<a class="btn btn-primary send" >ACTUALIZAR SOLICITUD</a>';
          else
             $destino='';
-         $this->formulario=str_replace($origen,'',$this->formulario);
+         $this->formulario=str_replace($origen,$destino,$this->formulario);
       }
 		$this->formulario=str_replace('GRABAR','ACTUALIZAR',$this->formulario);
    

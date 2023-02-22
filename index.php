@@ -19,7 +19,7 @@ require_once $dir_base.'/clases/models/Solicitud.php';
 require_once $dir_base.'/scripts/clases/LOGGER.php';
 require_once 'config/config_global.php';
 require_once DIR_APP.'/parametros.php';
-if(!isset($_SESSION))
+if(!isset($_SESSIONi['estado_convocatoria']))
    include('includes/sesion.php');
 if(isset($_GET['tokencentro']))
    $rol='centro';
