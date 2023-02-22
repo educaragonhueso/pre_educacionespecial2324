@@ -37,13 +37,18 @@ FASE1
    Inscripción
 
       Genración de inscripciones
-
+      hacer copia de seguridad:
+   
+          mysqldump -uroot PRE_EDUCACIONESPECIAL2324 > /datos/backups/educacion_especial/pre_educacionespecial2324_inscripciones.sql
+      
     baremación
 
       Se validan y comprueban las solicitudes
       El listado baremado se genera para los centros hasta su publicación
 
       COMPROBACIONES
+
+         Desde el directorio del servidor scripts/servidor/
 
          Para ello obtenemos los datos de cada una
 
@@ -55,20 +60,28 @@ FASE1
       
                #php carga_datos_imv.php
             
-      Mediante estos 3 scripts gestionamos los datos de comprobación de familia numerosa, imv y discapacidad
+         Desde el directorio del servidor scripts/servidor/comprobaciones/
+
+         Mediante estos 3 scripts gestionamos los datos de comprobación de familia numerosa, imv y discapacidad
          
          Script para consultar los datos
 
-            #php sc_compruebadatos_baremo_solicitudes.php 
+            #php sc_actualizabaremo_solicitudes.php 
       
-         Script para modificar el baremo según los valores
-            
-            #php sc_actualizar_baremo_solicitudes.php > salida/sc_actbaremo
-         
-         Script para generar csv con los datos      
-   
-            #php sc_generar_csv_comprobaciones.php >>  ../../documentacion/csv_comprobaciones.csv 
+         Scripts opcionales
 
+            Script para modificar el baremo según los valores
+               
+               #php sc_actualizar_baremo_solicitudes.php > salida/sc_actbaremo
+            
+            Script para generar csv con los datos      
+      
+               #php sc_generar_csv_comprobaciones.php >>  ../../documentacion/csv_comprobaciones.csv 
+
+
+      Cargamos la tabla de baremados final para el ciudadano
+
+          #php sc_gentabla_baremadas_final.php
 
    Provisionales
 

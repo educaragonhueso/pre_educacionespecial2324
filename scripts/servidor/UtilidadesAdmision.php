@@ -201,7 +201,8 @@ class UtilidadesAdmision{
   }
   public function comprobarBaremo($tipo,$dni,$dni1,$dni2,$csvfile)
   {
-      if($csvfile=='') return rand(0,1);
+      return rand(0,2);
+      if($csvfile=='') return rand(0,2);
 	   if (($gestor = fopen($csvfile, "r")) !== FALSE) 
 	   {
    		while (($datos = fgetcsv($gestor, 0, "\n")) !== FALSE) 
@@ -812,7 +813,7 @@ id_centro=$idcentro";
       $sql="DROP TABLE IF EXISTS alumnos_baremada_tmp";
 		if(!$this->conexion->query($sql)) return $this->conexion->error;
       //creamos tabla temportal de alumnos
-      $sql="CREATE TABLE alumnos_baremada_tmp SELECT * FROM alumnos";
+      $sql="CREATE TABLE IF NOT EXISTS alumnos_baremada_tmp SELECT * FROM alumnos";
 		print(PHP_EOL);
       print($sql);
 		print(PHP_EOL);

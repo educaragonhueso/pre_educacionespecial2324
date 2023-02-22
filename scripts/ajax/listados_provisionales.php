@@ -50,7 +50,6 @@ $camposdatos="campos_bbdd_".$subtipo_listado;
 ######################################################################################
 $log_listados_provisionales->warning("OBTENIENDO SOLICITUDES PROVISIONALES, CABECERA: ".$cabecera);
 $log_listados_provisionales->warning("OBTENIENDO SOLICITUDES PROVISIONALES, CENTRO: ".$id_centro);
-$log_listados_provisionales->warning("OBTENIENDO SOLICITUDES PROVISIONALES, ESTADO CONVOCATORIA:  ".$estado_convocatoria);
 ######################################################################################
 
 if($estado_convocatoria<ESTADO_SORTEO)

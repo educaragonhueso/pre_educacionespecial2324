@@ -1087,6 +1087,7 @@ $formsol.=
                         <label for="fbaremo_discapacidadh2" id="fbaremodiscapacidadh2" class="botonform">Agrega fichero justificativo discapacidad del segundo hermano/progenitores</label>
                   </div>
                   <a id="enlacefjdiscapacidadh2" style="display:none" class="enlacefbaremo" target="_blank">Ver fichero</a>
+                  <a id="borrardiscapacidadh2" class="enlacefbaremo enlaceborrarfichero" style="display:none" class="enlacefbaremo" target="_blank">Retirar fichero</a>
                </div>
             </div>
             <div class="row">
@@ -1110,6 +1111,7 @@ $formsol.=
                         <label for="fbaremo_discapacidadh3" id="fbaremodiscapacidadh3" class="botonform">Agrega fichero justificativo discapacidad del tercer hermano/progenitor</label>
                   </div>
                   <a id="enlacefjdiscapacidadh3" style="display:none" class="enlacefbaremo" target="_blank">Ver fichero</a>
+                  <a id="borrardiscapacidadh3" class="enlacefbaremo enlaceborrarfichero" style="display:none" class="enlacefbaremo" target="_blank">Retirar fichero</a>
                </div>
             </div>
 <!--INICIO FILA DATOS-->

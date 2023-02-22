@@ -605,7 +605,6 @@ function recalcular_baremo(){
 	
    var baremo6=$('input[id=baremo_genero]:checked').attr("data-baremo");
 	var baremo6_validado=$('#baremo_validar_genero').val();
-   console.log("baremo6 comp genero: valor:"+baremo6_validado);	
 
    var baremo7=$('input[id=baremo_terrorismo]:checked').attr("data-baremo");
 	var baremo7_validado=$('#baremo_validar_terrorismo').val();
@@ -624,8 +623,6 @@ function recalcular_baremo(){
 
 	var baremo12=$('input[name=baremo_tipo_familia_monoparental]:checked').attr("data-baremo");
 	var baremo12_validado=$('#msg_comprobacion_familia_monoparental').text();
-      console.log("BAREMO 12 NUMEROSA marcado para el baremo"+baremo12_validado);
-      console.log("BAREMO 12 NUMEROSA marcado para el baremo"+baremo12);
 
 //   var baremo10=$('input[name=transporte'+id+']:checked').attr("value");
    var baremo_h1=$('#hermanos_nombre_baremo1').val();
@@ -918,7 +915,7 @@ else
 	$('#labelbaremo').removeClass('cverde');
 	$('#labelbaremo').addClass('crojo');
 }
-   var rb=recalcular_baremo();
+   var rb=recalcular_baremo(vid);
 });
 
 $('body').on('click', 'button[name=boton_baremo_validar_terrorismo]', function(e){
@@ -931,10 +928,10 @@ if(texto=='Validar víctima de terrorismo')
    var val_def=recalcular_validacion();
 
    if(val_def!=0)
-      {
+   {
       $('#labelbaremo').removeClass('crojo');
       $('#labelbaremo').addClass('cverde');
-      }
+   }
 
    if($("input[id=baremo_terrorismo]").val()=='1')
    {
@@ -1190,6 +1187,12 @@ function recalcular_validacion()
    if(vpd==0) return 0;
    var vtc=$('#baremo_validar_tutores_centro').val();
    if(vtc==0) return 0;
+   var vgen=$('#baremo_validar_genero').val();
+   if(vgen==0) return 0;
+   var vter=$('#baremo_validar_terrorismo').val();
+   if(vter==0) return 0;
+   var vpar=$('#baremo_validar_parto').val();
+   if(vpar==0) return 0;
    var vr=$('#baremo_validar_renta_inferior').val();
    if(vr==0) return 0;
    var vr=$('#baremo_validar_discapacidad_alumno').val();

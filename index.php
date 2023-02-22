@@ -191,7 +191,9 @@ else
          $formsol=preg_replace('/<button name="boton_comprobaridentidad" type="button" class="btn btn-outline-dark comprobar">Comprobar identidad<\/button>/','',$formsol);
          $formsol=preg_replace('/<button name="boton_baremo_comprobar_proximidad_domicilio" type="button" class="btn btn-outline-dark comprobar">Comprobar domicilio<\/button>/','',$formsol);
       }
-      print("<div class='cajainfo'>SOLICITUD NUEVA <p>Completa los datos de cada sección, asegúrate de que sean correctos y de que recibes un correo confirmatorio</div>");
+      //cuando es nueva solicitud
+      if($rol=='anonimo')
+         print("<div class='cajainfo'>SOLICITUD NUEVA <p>Completa los datos de cada sección, asegúrate de que sean correctos y de que recibes un correo confirmatorio</div>");
       print($formsol);
       print($infobaremo); 
    }
@@ -222,7 +224,6 @@ else
                }
                else
                {
-                  print("<div class='cajainfo'>SOLICITUD NUEVA</div>");
                   print($msg_validacion.$tablaresumen.$listado_solicitudes);
                   print($infobaremo); 
                }

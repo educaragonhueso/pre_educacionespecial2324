@@ -129,7 +129,7 @@ elseif((($rol=='anonimo' OR $rol=='alumno') and $estado_convocatoria<=ESTADO_FIN
       {
    ?>
          <li class="nav-item active msuperior dropdown itemderecho" id="msorteo">
-         <?php if($_SESSION['estado_convocatoria']>ESTADO_FININSCRIPCION OR ($_SESSION['rol']=='alumno' AND $_SESSION['estado_convocatoria']>=ESTADO_PUBLICACION_BAREMADAS)){?>
+         <?php if(($_SESSION['estado_convocatoria']>=ESTADO_FININSCRIPCION AND $rol!='alumno') OR ($_SESSION['rol']=='alumno' AND $_SESSION['estado_convocatoria']>=ESTADO_PUBLICACION_BAREMADAS)){?>
              <a class="show_provisionales nav-link dropdown-toggle desplegable2" id="navbardrop" data-toggle="dropdown" href="#">Lista baremo</a>
              <div class="dropdown-menu">
 

@@ -31,7 +31,7 @@ class SolicitudController{
          if($this->estado_convocatoria==ESTADO_PUBLICACION_BAREMADAS)
             $msg= "<div class='cajainfo'>PUBLICADAS LISTADAS BAREMADAS, CONSÚLTALAS EN EL ENLACE SUPERIOR DERECHO O <a class='lbaremadas' data-subtipo='sor_bar' style='color:darkblue;background-color:black;padding:6px'>EN ESTE ENLACE</a></div>";
          if($this->estado_convocatoria==ESTADO_RECLAMACIONES_BAREMADAS)
-            $msg= "<div class='cajainfo'>PUEDES HACER TU RECLAMACIÓN DESDE EL ENLACE SUPERIOR DERECHO O <a href='https://'".URL_BASE."'".EDICION."/reclamaciones_baremo.php?token=$token' style='color:darkblue;background-color:black;padding:6px'> DESDE ESTE ENLACE</a></div>";
+            $msg= "<div class='cajainfo'>PUEDES HACER TU RECLAMACIÓN DESDE EL ENLACE SUPERIOR DERECHO O <a href='".URL_BASE.EDICION."/reclamaciones_baremo.php?token=$token' style='color:darkblue;background-color:black;padding:6px'> DESDE ESTE ENLACE</a></div>";
          if($this->estado_convocatoria==ESTADO_SORTEO)
             $msg= "<div class='cajainfo'>SE HA REALIZADO EL SORTEO, LOS LISTADOS PROVISIONALES SE PUBLICARÁN EL ".$this->convertirFecha(DIA_PUBLICACION_PROVISIONAL)."</div>";
          if($this->estado_convocatoria==ESTADO_PUBLICACION_PROVISIONAL)
@@ -547,6 +547,13 @@ class SolicitudController{
             }
             else if($skey=='baremo_situacion_sobrevenida' or  $skey=='baremo_renta_inferior' or $skey=='baremo_acogimiento' or $skey=='baremo_genero' or $skey=='baremo_terrorismo' or $skey=='baremo_parto' or $skey=='baremo_discapacidad_alumno')
             {
+                  //añadimos Agegar fichero si está marcado
+                  if($sval==1)
+                  {
+                     $soriginal='id="af'.$skey.'" class="botonform" style="display:none"';
+                     $sdestino='id="af'.$skey.'" class="botonform" style="display:block"';
+                     $this->formulario=str_replace($soriginal,$sdestino,$this->formulario);
+                  }
                //procesamos los ficheros justificativos
                $ftipo=str_replace('baremo_','',$skey);
                $enlacefichero1="scripts/fetch/ficherosbaremo/".$token."/fbaremo_".$ftipo.".pdf";
@@ -632,6 +639,33 @@ class SolicitudController{
                   $sdestino='id="borrardiscapacidadh1" class="enlacefbaremo enlaceborrarfichero" data="'.$enlacefichero2.'" display:inline-block';
                   $this->formulario=str_replace($soriginal,$sdestino,$this->formulario);
                }
+
+
+               $enlacefichero1="scripts/fetch/ficherosbaremo/".$token."/fbaremo_discapacidadh2.pdf";
+               $enlacefichero2=$dirbase."/scripts/fetch/ficherosbaremo/".$token."/fbaremo_discapacidadh2.pdf";
+               if(file_exists($enlacefichero1))
+               {
+                  if($imprimir==1)
+                  {
+                     $soriginal='id="enlacefjdiscapacidadh2" style="display:none" class="enlacefbaremo" target="_blank">Ver fichero';
+                     $sdestino='id="enlacefjdiscapacidadh2" style="display:inline-block" href="'.$enlacefichero1.'" class="enlacefbaremo" target="_blank">Fichero justificativo subido en: '.$enlacefichero1;
+                     $this->formulario=str_replace($soriginal,$sdestino,$this->formulario);
+                  }
+                  else
+                  {
+                     $soriginal='id="enlacefjdiscapacidadh2" style="display:none"';
+                     $sdestino='id="enlacefjdiscapacidadh2" style="display:inline-block" href="'.$enlacefichero1.'"';
+                     $this->formulario=str_replace($soriginal,$sdestino,$this->formulario);
+                  }
+                  $soriginal='id="borrardiscapacidadh2" class="enlacefbaremo enlaceborrarfichero" style="display:none"';
+                  $sdestino='id="borrardiscapacidadh2" class="enlacefbaremo enlaceborrarfichero" data="'.$enlacefichero2.'" display:inline-block';
+                  $this->formulario=str_replace($soriginal,$sdestino,$this->formulario);
+               }
+
+
+
+
+
             }
             $this->formulario=str_replace('name="'.$skey.'" value="1"','name="'.$skey.'" value="1"'.$check,$this->formulario);
             continue;	

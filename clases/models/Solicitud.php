@@ -1648,7 +1648,7 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
 		//MOSTRAMOS DATOS VALIDADOS
 		if($rol=='centro' or $rol=='alumno') //para centros o alumnos del centro
       {
-         $log->warning("CONSULTA ROL $rol:");
+         $log->warning("CONSULTA PUBLICACION PROVISIONAL ROL $rol:");
          //si ya hemos llegado a provionales baremadas vamos directos a la tabla 
          if($estado_convocatoria>=ESTADO_PUBLICACION_PROVISIONAL and $subtipo=='sor_bar')
             $sql="SELECT * FROM alumnos_baremada_provisional WHERE $centro=$id_centro";
