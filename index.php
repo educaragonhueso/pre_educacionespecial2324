@@ -19,7 +19,7 @@ require_once $dir_base.'/clases/models/Solicitud.php';
 require_once $dir_base.'/scripts/clases/LOGGER.php';
 require_once 'config/config_global.php';
 require_once DIR_APP.'/parametros.php';
-if(!isset($_SESSIONi['estado_convocatoria']))
+if(!isset($_SESSION['estado_convocatoria']))
    include('includes/sesion.php');
 if(isset($_GET['tokencentro']))
    $rol='centro';
@@ -111,7 +111,6 @@ include('includes/infobaremo.php');
 //si el usuario ya existe, recogemos el token, si lo hay
 if(isset($_GET['token']) or $rol=='alumno')
 {
-   
    //añadimos htmlk para despues poder agregar datos de solicitudes y matriucla desde el rol de admin
    $cablistados='<div id="l_matricula" style="width:100%">';
    $scontroller=new SolicitudController($rol,$conexion,$formsol,$estado_convocatoria,$log_editar_solicitud);
@@ -169,6 +168,7 @@ if(isset($_GET['token']) or $rol=='alumno')
 }
 else
 {
+  
    $id_alumno=0;
    $lcontroller=new ListadosController('alumnos',$conexion,$estado_convocatoria);
    //mostramos las solicitudes según el rol

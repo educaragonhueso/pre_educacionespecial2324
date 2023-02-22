@@ -53,9 +53,8 @@ FASE1
             
             Obtenemos un csv q cargamos con el script
       
-               #carga_datos_imv.php
+               #php carga_datos_imv.php
             
-
       Mediante estos 3 scripts gestionamos los datos de comprobación de familia numerosa, imv y discapacidad
          
          Script para consultar los datos
@@ -73,10 +72,10 @@ FASE1
 
    Provisionales
 
-      Una vez realizada la asignación del número aleatorio y realizado el sorte se generan los listados provisionales
+      Una vez realizada la asignación del número aleatorio y realizado el sorteo se generan los listados provisionales
       Se publican y se abre el plazo de reclamación
 
-   Definiitovs
+   Definitivos
 
       Finalziado el plazo de reclamación se genran listaods definitivos
 

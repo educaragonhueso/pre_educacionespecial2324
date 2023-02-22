@@ -395,7 +395,7 @@ $formsol.=
      <div class="col-md-4">
          <div class="md-form mb-0">
              Centro origen hermano 1
-             <input type="text" id="hermanos_admision_id_centro_destino1" value="" name="hermanos_admision_id_centro_destino1" placeholder="Centro solicitado (por defecto igual que su hermano)" class="form-control" >
+             <input type="text" id="hermanos_admision_id_centro_estudios_origen1" value="" name="hermanos_admision_id_centro_estudios_origen1" placeholder="Centro solicitado (por defecto igual que su hermano)" class="form-control" >
          </div>
       </div>
    </div>
@@ -465,7 +465,7 @@ $formsol.=
      <div class="col-md-4">
          <div class="md-form mb-0">
              Centro origen hermano 2
-             <input type="text" id="hermanos_admision_id_centro_destino2" value="" name="hermanos_admision_id_centro_destino2" placeholder="Centro solicitado (por defecto igual que su hermano)" class="form-control" >
+             <input type="text" id="hermanos_admision_id_centro_estudios_origen2" value="" name="hermanos_admision_id_centro_estudios_origen2" placeholder="Centro solicitado (por defecto igual que su hermano)" class="form-control" >
          </div>
       </div>
    </div>
@@ -535,7 +535,7 @@ $formsol.=
      <div class="col-md-4">
          <div class="md-form mb-0">
              Centro origen hermano 3
-             <input type="text" id="hermanos_admision_id_centro_destino3" value="" name="hermanos_admision_id_centro_destino3" placeholder="Centro solicitado (por defecto igual que su hermano)" class="form-control" >
+             <input type="text" id="hermanos_admision_id_centro_estudios_origen3" value="" name="hermanos_admision_id_centro_estudios_origen3" placeholder="Centro solicitado (por defecto igual que su hermano)" class="form-control" >
          </div>
       </div>
    </div>

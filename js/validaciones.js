@@ -186,8 +186,6 @@ function validarFormulario(fd,id,est)
             return 'Indica la modalidad de estudios actual';     
       }
    }
-   else
-     return 'Indica si es renovación o nueva escolarización';     
       
    if(reservaplaza==0 & marcado_escolarizacion==1)
    {

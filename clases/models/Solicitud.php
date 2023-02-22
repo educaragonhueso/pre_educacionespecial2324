@@ -422,6 +422,7 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
       $log->warning($sql);
        
       $log->warning("DATOS ACTUALIZACION SOLICITUD HERMANOS ADMISION: ");
+      
       $log->warning(print_r($hermanos_admision,true));
       $log->warning("DATOS ACTUALIZACION SOLICITUD, DATOS HERMANOS BAREMO: ");
       $log->warning(print_r($hermanos_baremo,true));
@@ -468,10 +469,16 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
                }
                else
                {
-                  $id_centro_estudios_origen=$this->getIdCentro($hermano['id_centro_estudios_origen'],$log);
-                  $id_centro_destino=$this->getIdCentro($hermano['id_centro_destino'],$log);
-                  $sql=$query_hermanos_admision."apellido2='".$hermano['apellido2']."',apellido1='".$hermano['apellido1']."',nombre='".$hermano['nombre']."',fnac='".$hermano['fnac']."',tipoestudios='".$hermano['tipoestudios']."'".",reserva=".$hermano['reserva'].",dni_alumno=".$hermano['dni_alumno'].",id_centro_destino=".$id_centro_destino;	
+                  
+                  if($hermano['id_centro_estudios_origen']=='' or $hermano['id_centro_estudios_origen']=='nodata' or $hermano['id_centro_estudios_origen']=='nocentro' or $hermano['id_centro_estudios_origen']=='NOCENTRO')
+                     $id_centro_estudios_origen=$sol['id_centro_estudios_origen'];
+                  else
+                     $id_centro_estudios_origen=$this->getIdCentro($hermano['id_centro_estudios_origen'],$log);
+                  $id_centro_destino=$sol['id_centro_destino'];
+                  $sql=$query_hermanos_admision."apellido2='".$hermano['apellido2']."',apellido1='".$hermano['apellido1']."',nombre='".$hermano['nombre']."',fnac='".$hermano['fnac']."',tipoestudios='".$hermano['tipoestudios']."'".",reserva=".$hermano['reserva'].",dni_alumno='".$hermano['dni_alumno']."',id_centro_destino=".$id_centro_destino.",id_centro_estudios_origen=".$id_centro_estudios_origen;	
                   $sql=trim($sql,',')." WHERE token='".$hermano['token']."'";
+                  $log->warning("HERMANO ADMISION EXISTE, CONSULTA ACTUALIZACION IDCENTROOORIGEN HER:".$hermano['id_centro_estudios_origen']);
+                  $log->warning("HERMANO ADMISION EXISTE, CONSULTA ACTUALIZACION IDCENTROOORIGEN SOL:".$sol['id_centro_estudios_origen']);
                   $log->warning("HERMANO ADMISION EXISTE, CONSULTA ACTUALIZACION:");
                   $log->warning($sql);
                   $update=$this->conexion->query($sql);
@@ -685,9 +692,10 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
 	return 1;
 	}
    
-   public function save_baremo($data,$sh,$log)
+   public function save_baremo($data,$sh,$ids_hermanos,$log)
 	{
 		$query="INSERT INTO baremo("; 
+      $id_alumno=$data['id_alumno'];
 		foreach($data as $key=>$elto)
 	   {
          //Campos de tipo RADIO se llaman igual, hay q quitarles el codigo o id
@@ -715,8 +723,17 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
 		$log->warning("CONSULTA INSERCION BAREMO:");
 		$log->warning($query);
 
-		$log->warning("CONSULTA INSERCION BAREMO HERMANOS:");
-		$log->warning(print_r($sh,true));
+       
+      if(isset($ids_hermanos[0]))
+      {
+         $id_hermano=$ids_hermanos[0];
+         $origen="('".$id_alumno;
+         $destino="('".$id_hermano;
+         $query1=str_replace($origen,$destino,$query);
+		$log->warning("CONSULTA INSERCION BAREMO PRIMER HERMANO:");
+		$log->warning(print($query));
+		   $savebaremo=$this->conexion->query($query1);
+      }
 		if($savebaremo) return 1;
 		else return 0;
 	}
@@ -810,7 +827,7 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
             $log->warning("GENERADA RELACION HERMANOS");
             
             //if($this->generarBaremoHermanoAdmision($id_hermano,$log)!=1){$log->warning("error gen baremo hermano admisión"); return 0;}
-            $log->warning("GENERADO BARMEO HERMANOS ADMISIÓN");
+            $log->warning("GENERADO BAREMO HERMANOS ADMISIÓN");
          }
       }
       if(isset($datoshermanos[1]))
@@ -1045,7 +1062,14 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
 
 					$log_nueva->warning("RESULTADO GUARDAR HERMANOS CONJUNTA");
 					$log_nueva->warning($savehermanos_admision);
-
+               $idshermanos=array();
+               $aidshermanos=explode(":",$savehermanos_admision);
+               if(isset($aidshermanos[0]))
+                  $idshermanos[0]=$aidshermanos[0];
+               if(isset($aidshermanos[3]))
+                  $idshermanos[1]=$aidshermanos[3];
+               if(isset($aidshermanos[6]))
+                  $idshermanos[2]=$aidshermanos[6];
                if($savehermanos_admision==0) return -4;
                
             }
@@ -1056,7 +1080,7 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
 				else
                $savehermanos_baremo=$this->deleteHermanosBaremo($solhermanos_baremo,$log_nueva);
 				
-            if($this->save_baremo($sol_baremo,$solhermanos_admision,$log_nueva))
+            if($this->save_baremo($sol_baremo,$solhermanos_admision,$idshermanos,$log_nueva))
 				{
 
 					$log_nueva->warning("GUARDANDO BAREMO");
@@ -1202,7 +1226,7 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
 		else if($tipo=='admision')
 		{
          $log->warning("TIPO ADMISION");
-         $squery="SELECT nombre,apellido1,apellido2,fnac,tipoestudios,token,reserva,id_alumno,dni_alumno,id_centro_destino FROM alumnos where id_alumno IN(SELECT id_hermano FROM alumnos_hermanos_admision ah WHERE ah.id_alumno=$id)";
+         $squery="SELECT nombre,apellido1,apellido2,fnac,tipoestudios,token,reserva,id_alumno,dni_alumno,id_centro_estudios_origen FROM alumnos where id_alumno IN(SELECT id_hermano FROM alumnos_hermanos_admision ah WHERE ah.id_alumno=$id)";
          $log->warning("OBTENIENDO HERMANOS ADMISION:  $squery");
          $query=$this->conexion->query($squery);
          $i=1;
@@ -1218,7 +1242,7 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
            $resultSet['hermanos_'.$sufijo.'_tipoestudios'.$i]=$row->tipoestudios;
            $resultSet['hermanos_'.$sufijo.'_token'.$i]=$row->token;
            $resultSet['hermanos_'.$sufijo.'_reserva'.$i]=$row->reserva;
-           $resultSet['hermanos_'.$sufijo.'_id_centro_destino'.$i]=$this->getCentroNombre($row->id_centro_destino);
+           $resultSet['hermanos_'.$sufijo.'_id_centro_estudios_origen'.$i]=$this->getCentroNombre($row->id_centro_estudios_origen);
            $i++;
          }
          $r1=array('hermanos_admision_nombre1'=>'','hermanos_admision_apellido11'=>'','hermanos_admision_apellido21'=>'','hermanos_admision_fnac1'=>'','hermanos_admision_tipoestudios1'=>'','hermanos_admision_reserva1'=>'','hermanos_admision_dni_alumno1'=>'','hermanos_admision_id_centro_destino1'=>'');
@@ -2292,7 +2316,6 @@ as nasignado,c.nombre_centro, a.puntos_validados,a.id_centro_destino as id_centr
          //obtenenmos el centro de destino, si es q hay algún valor
          if($dh['8']!='')
             $sol['id_centro_destino']=$this->getCentroId($dh['8'],$log);
-            
       }
       $sol['id_centro_estudios_origen']=$this->getIdCentro($sol['reserva'],$log);
       $sol['id_usuario']=$id_usuario;
@@ -2355,7 +2378,7 @@ as nasignado,c.nombre_centro, a.puntos_validados,a.id_centro_destino as id_centr
 	public function getIdsHermanosAdmision_old($id_alumno) 
 	{
       $aher=array();
-		$query="select id_hermano from alumnos_hermanos_Admision where id_alumno=$id_alumno";
+		$query="select id_hermano from alumnos_hermanos_admision where id_alumno=$id_alumno";
 
 		$soldata=$this->conexion->query($query);
 	   if($soldata->num_rows==0) return $aher;
