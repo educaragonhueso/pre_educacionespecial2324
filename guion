@@ -21,6 +21,13 @@ FASE PREVIA
       
    Hacer una prueba de solicitud completa en PRO
    Desmarcar la opción de enviar correos a los centros al modificar solicitudes y reclamaciones d ebarmeo y provisional
+   Revisar envio de correos en:
+
+      Nueva solicitud:           al alumno
+      Modificación solicitud:    al alumno y centro
+      Reclamación baremo:        al alumno y centro
+      Reclamación provisional:   al alumno y centro
+
    Imprimir docs de fases y estados de convocatoria
    Programar copia seguridad bases de datos
 
@@ -39,7 +46,7 @@ FASE1
       Genración de inscripciones
       hacer copia de seguridad:
    
-          mysqldump -uroot PRE_EDUCACIONESPECIAL2324 > /datos/backups/educacion_especial/pre_educacionespecial2324_inscripciones.sql
+          #mysqldump -uroot PRE_EDUCACIONESPECIAL2324 > /datos/backups/educacion_especial/pre_educacionespecial2324_inscripciones.sql
       
     baremación
 
@@ -83,6 +90,21 @@ FASE1
 
           #php sc_gentabla_baremadas_final.php
 
+      Generamos copia baremados
+         #mysqldump -uroot PRE_EDUCACIONESPECIAL2324 > /datos/backups/educacion_especial/pre_educacionespecial2324_baremados.sql
+  
+   Aleatorio
+
+      Se generan números aleatorios para las solicitudes, los gemelos tienen los mismos 
+      
+      se hace copia 
+      
+         #mysqldump -uroot PRE_EDUCACIONESPECIAL2324 > /datos/backups/educacion_especial/pre_educacionespecial2324_presorteo.sql
+   
+   Sorteo
+
+      Se realiza el sorteo
+ 
    Provisionales
 
       Una vez realizada la asignación del número aleatorio y realizado el sorteo se generan los listados provisionales
@@ -232,8 +254,13 @@ Si modificamos el PRE para luego hacer otro merge o pull del pro hay q primero u
 git reset --hard HEAD
 
 
-TOKEN edes
-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
+Commit integrado
+
+   git add --all;git commit -m 'autocomit';git push
+
+
+TOKEN autenticación git
+   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
 
 COMANDOS SQL ÚTILEs
 ---------------------------------------------------------

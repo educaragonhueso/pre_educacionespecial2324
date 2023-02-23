@@ -18,15 +18,16 @@ $centro=new Centro($conexion,$_POST['id_centro'],'ajax');
 $nuevoestado='CONTINUA';
 $nuevoestado=$_POST['estado'];
 
-$vacantes=$centro->getVacantes('centro',$log_cambio_estado);
+#$vacantes=$centro->getVacantes('centro',$log_cambio_estado);
 $sql="update matricula set estado='".$nuevoestado."' where id_alumno=".$_POST['id_alumno'];
 $result=$conexion->query($sql);
 
-$vacantes=$centro->getVacantes('centro',$log_cambio_estado);
-$centro->setVacantes($vacantes);
+$vacantes=$centro->getVacantesCentro('centro',$log_cambio_estado);
+#$centro->setVacantes($vacantes);
 $conexion->close();
 if ($result)
-	print($vacantes[0]->vacantes.':'.$vacantes[1]->vacantes);
+	print($vacantes['ebo'].':'.$vacantes['tva']);
+	#print_r($vacantes);
 	else     
 	echo "ERROR OBTENIENDO VACANTES".$sql;
 

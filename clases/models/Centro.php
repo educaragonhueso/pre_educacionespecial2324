@@ -173,15 +173,12 @@ class Centro{
          $sql="SELECT vacantes_ebo,vacantes_tva  from centros";
       $query=$this->conexion->query($sql);
       $log->warning("CONSULTA VACANTES DEFINITIVOS: $sql");	
-      print($sql);
 		if($query)
-    		{
+    	{
 				while ($row = $query->fetch_object()) 
-				{
 					$resultSet[]=$row;
-				}
-			}
-      		return $resultSet;
+		}
+     return $resultSet;
 	} 
    public function getVacantesCentroFase2($log)
 	{

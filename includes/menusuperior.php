@@ -84,7 +84,7 @@ elseif((($rol=='anonimo' OR $rol=='alumno') and $estado_convocatoria<=ESTADO_FIN
             if($_SESSION['estado_convocatoria']>=ESTADO_RECLAMACIONES_BAREMADAS)
          echo '<a class="show_provisionales nav-link dropdown-toggle desplegable" id="navbardrop" data-toggle="dropdown" href="#">Formulario reclamaciones</a>';
          echo '<div class="dropdown-menu">';
-            if($_SESSION['estado_convocatoria']>=ESTADO_RECLAMACIONES_BAREMADAS)
+            if($_SESSION['estado_convocatoria']>=ESTADO_RECLAMACIONES_BAREMADAS AND $_SESSION['estado_convocatoria']<=ESTADO_ALEATORIO)
                echo "<a id='reclamacion_baremo'  class='reclamacion dropdown-item' href='reclamaciones_baremo.php?token=$token' target='_blank'>Reclamación baremo </a>";
             if($_SESSION['estado_convocatoria']>=ESTADO_RECLAMACIONES_PROVISIONAL)
                echo '<a id="reclamacion_listaprovisional" class="reclamacion dropdown-item" href="reclamaciones_provisional.php" target="_blank">Reclamación listado provisional </a>';
@@ -148,7 +148,7 @@ elseif((($rol=='anonimo' OR $rol=='alumno') and $estado_convocatoria<=ESTADO_FIN
          </li>
       <?php }?>
       
-		<?php if(($_SESSION['estado_convocatoria']>=ESTADO_PUBLICACION_BAREMADAS AND $_SESSION['rol']!='alumno') OR $_SESSION['estado_convocatoria']>=ESTADO_PUBLICACION_PROVISIONAL) {?>
+		<?php if(($_SESSION['estado_convocatoria']>=ESTADO_SORTEO AND $_SESSION['rol']!='alumno') OR $_SESSION['estado_convocatoria']>=ESTADO_PUBLICACION_PROVISIONAL) {?>
             <li class="nav-item active msuperior dropdown itemderecho" id="mprovisional">
                <a class="show_provisionales nav-link dropdown-toggle desplegable2" id="navbardrop" data-toggle="dropdown" href="#">Provisional</a>
                <div class="dropdown-menu">
