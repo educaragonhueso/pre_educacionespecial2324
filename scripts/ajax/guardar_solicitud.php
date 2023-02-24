@@ -65,10 +65,6 @@ else
    $id_alumno=$_POST['id_alumno'];
 }
 ######################################################################################
-//para el caso de alumnos que tienen centro de origen, este aparece con un asterisco
-if(isset($_POST['id_centro_estudios_origen']))
-	$_POST['id_centro_estudios_origen']=trim($_POST['id_centro_estudios_origen'],'*');
-else $_POST['id_centro_estudios_origen']='';
 
 $fsol_entrada=$_POST['fsol'];
 
@@ -76,6 +72,21 @@ $fsol_entrada=$_POST['fsol'];
 //$fsol_entrada.="&baremo_ptstotal=".$_POST['ptsbaremo'];
 parse_str($fsol_entrada, $fsol_salida);
 
+//para el caso de alumnos que tienen centro de origen, este aparece con un asterisco
+if(isset($fsol_salida['id_centro_estudios_origen']))
+	$fsol_salida['id_centro_estudios_origen']=trim($fsol_salida['id_centro_estudios_origen'],'*');
+else $fsol_salida['id_centro_estudios_origen']='';
+
+//comprobamos centro de origen, si hay reserva debe ser un centro válido
+if($fsol_salida['reserva']==1)
+{
+   $id_centro_estudios_origen=$solicitud->getIdCentro($fsol_salida['id_centro_estudios_origen'],$log_nueva);
+   if($id_centro_estudios_origen==0)
+   {
+      print("centroorigen".$fsol_salida['id_centro_estudios_origen']."_".$id_centro_estudios_origen);
+      exit();
+   }
+}
 //SECCION PROCESO ENTRADA DATOS
 ######################################################################################
 if($rol=='anonimo' or $rol=='alumno')

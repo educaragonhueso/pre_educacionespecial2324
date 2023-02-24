@@ -64,14 +64,17 @@ $('body').on('click', '.matriculafinal', function(e){
 	  success: function(data) {
             console.log(data);
             console.log(vid_alumno);
-	         alert("Alumno Matriculado/Desmatriculado correctamente, recibirás un correo confirmatorio");
+            if(vestado=='Matricular')
+	            alert("Alumno Desmatriculado correctamente, recibirás un correo confirmatorio");
+            else
+	            alert("Alumno Matriculado correctamente, recibirás un correo confirmatorio");
             if(vestado=='Matricular')
             $("#matricular"+vid_alumno).html("Desmatricular");
             else
             $("#matricular"+vid_alumno).html("Matricular");
          },
 	      error: function() {
-		alert('Error matriculando/desmatriculando alumno');
+		      alert('Error matriculando/desmatriculando alumno');
 	      }
 	});
 });

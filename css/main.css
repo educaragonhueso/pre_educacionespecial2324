@@ -1,8 +1,13 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
+
 .validar,.comprobar
 {
    margin-bottom:10px;
+}
+
+a:hover {
+  background-color: yellow;
 }
 
 .btn_enlace
@@ -144,9 +149,10 @@ a:focus {
     transition: all 0.3s;
 }
 
-a:hover{
+.dropdown-item>a:hover{
 background-color: grey;
 border-radius: 5px;
+width:100%;
  transition: all 0.3s;
 }
 

@@ -182,6 +182,15 @@ $('body').on('click', '.send', function(e)
                content: error
                });
          }
+         else if(data.indexOf('centroorigen')!=-1) 
+         {
+            error='Debes introducir un centro de origen válido';
+            $('input[name=id_centro_estudios_origen]').focus();	
+            $.alert({
+               title: 'ERROR CREANDO SOLICITUD',
+               content: error
+               });
+         }
          else{
             if(vmodo=='GRABAR SOLICITUD')
             {
@@ -1596,8 +1605,8 @@ $('body').on('click', '#nuevasolicitud', function(e)
 
 //LISTADO SOLICITUDES BRUTO
 $(".show_solicitudes").click(function () {  
-  console.log("solicitudes");
-  var vid_centro=$('#id_centro').text();
+  var vid_centro=$('#id_centro').html();
+  console.log("solicitudes id centro: "+vid_centro);
   var vrol=$('#rol').attr("value");
   var vprovincia=$('#provincia').attr("value");
   var vestado_convocatoria=$('#estado_convocatoria').attr("value");
@@ -2162,9 +2171,9 @@ var cen_options =
 		}
 	};
 $("#id_centro_destino").easyAutocomplete(cen_options);
-$("#hermanos_admision_id_centro_destino1").easyAutocomplete(cen_options);
-$("#hermanos_admision_id_centro_destino2").easyAutocomplete(cen_options);
-$("#hermanos_admision_id_centro_destino3").easyAutocomplete(cen_options);
+$("#hermanos_admision_id_centro_estudios_origen1").easyAutocomplete(cen_options);
+$("#hermanos_admision_id_centro_estudios_origen2").easyAutocomplete(cen_options);
+$("#hermanos_admision_id_centro_estudios_origen3").easyAutocomplete(cen_options);
 $("#id_centro_destino1").easyAutocomplete(cen_options);
 $("#id_centro_destino2").easyAutocomplete(cen_options);
 $("#id_centro_destino3").easyAutocomplete(cen_options);

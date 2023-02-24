@@ -82,6 +82,7 @@ if(isset($_GET['tokencentro']))
       $_SESSION['rol']='centro';
    }
 }
+$tcentro->setNombre();
 $nombre_centro=$tcentro->getNombre();
 $msg_validacion="";
 $solicitud=new Solicitud($conexion);
@@ -174,6 +175,7 @@ else
    //mostramos las solicitudes según el rol
    $listado_solicitudes=$lcontroller->showListadoSolicitudes($rol,$id_centro,$solicitud,$log_listados_solicitudes,$id_alumno,$provincia);
    $tablaresumen=$tcentro->getResumen($rol,'alumnos',$log_listados_solicitudes);
+   print("NOMBNRECENTRO: ".$id_centro);
    $tablaresumen=$lcontroller->showTablaResumenSolicitudes($tablaresumen,$nombre_centro,$id_centro);
    ##FILTROS DE OPCIONES DE VALIDACION Y DE COMPROBACION 
    if((($rol=='anonimo' OR $rol=='alumno') and $estado_convocatoria<=ESTADO_FININSCRIPCION) or ($rol!='anonimo' and $solcentro==1))

@@ -173,13 +173,13 @@ $formsol.=
                     <div class="col-md-5">
                         <div class="md-form mb-0">
 			    Calle/Plaza/Avenida domicilio familiar*
-                            <input type="text" id="calle_dfamiliar" value="" name="calle_dfamiliar" placeholder="Calle/Plaza/Avenida" class="form-control is-valid">
+                            <input type="text" id="calle_dfamiliar" value="" name="calle_dfamiliar" placeholder="Calle/Plaza/Avenida" class="form-control is-valid" required>
                         </div>
                     </div>
                     <div class="col-md-2">
                         <div class="md-form mb-0">
 			Número*
-			<input type="text" id="num_dfamiliar" value="" name="num_dfamiliar"  placeholder="Nº" pattern="[0-9]{1,3}"  class="form-control">
+			<input type="text" id="num_dfamiliar" value="" name="num_dfamiliar"  placeholder="Nº" pattern="[0-9]{1,3}"  class="form-control" required>
                         </div>
                     </div>
                     <div class="col-md-2">
@@ -191,7 +191,7 @@ $formsol.=
                     <div class="col-md-3">
                         <div class="md-form mb-0">
 			Codigo Postal*
-			<input type="text" id="cp_dfamiliar" value="" name="cp_dfamiliar" placeholder="CP" pattern="[0-9]{5}"  class="form-control">
+			<input type="text" id="cp_dfamiliar" value="" name="cp_dfamiliar" placeholder="CP" pattern="[0-9]{5}"  class="form-control" required>
                         </div>
                     </div>
 
@@ -635,6 +635,9 @@ $formsol.=
 	<input type="hidden" name="baremo_puntos_validados" value="0" id="bvalidados" class="bhiden">
 <div id="baremo" class="collapse">
 <!--INICIO FILA DATOS-->
+<div class="row">
+         <p><b>TODOS LOS FICHEROS QUE SE AGREGUEN DEBEN TENER FORMATO PDF O DE IMAGEN (jpg, png o jpeg) Y NO SUPERAR UN TAMAÑO DE 10MB</b></p>
+</div>
 <div class="row">
    <div class="col-md-3">
       <div class="md-form mb-0">

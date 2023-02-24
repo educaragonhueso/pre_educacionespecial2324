@@ -181,7 +181,7 @@ function validarFormulario(fd,id,est)
       if(chr)
       {
          if(centro_origen.length<=3)
-            return 'Centro de origen necesario';     
+            return 'El centro de origen no es correcto, introduce una letra para ver resultados propuestos';     
          if(modalidad_origen==0)
             return 'Indica la modalidad de estudios actual';     
       }

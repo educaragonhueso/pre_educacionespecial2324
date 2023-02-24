@@ -65,7 +65,13 @@ function subirfichero(fdata,token,tipo) {
         contentType: false,
         processData: false,
         success: function (response) {
+         if(response.indexOf("ERROR")!=-1)
+         {
+            alert(response);
+            return;
+         }
          var extension=response.substr(response.length - 4);
+         console.log("subiendo fichero respuesta: "+response);
          console.log("subiendo fichero de tipo: "+extension);
          console.log("subido urlbase: "+urlbase);
          stipo=tipo.replace("fbaremo_","");

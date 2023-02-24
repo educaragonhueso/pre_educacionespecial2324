@@ -823,6 +823,7 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
             if($id_hermano==0) return 0;
 
             $log->warning("GENERADA SOLICITUD HERMANO");
+            //creamos la relación entre hermanos en la tabla alumnos_hermanos_admision
             if($this->generarHermanoAdmision($id_hermano,$id_alumno,$log)!=1){$log->warning("error gen relacion"); return 0;}
             $log->warning("GENERADA RELACION HERMANOS");
             
@@ -2317,7 +2318,6 @@ as nasignado,c.nombre_centro, a.puntos_validados,a.id_centro_destino as id_centr
          if($dh['8']!='')
             $sol['id_centro_destino']=$this->getCentroId($dh['8'],$log);
       }
-      $sol['id_centro_estudios_origen']=$this->getIdCentro($sol['reserva'],$log);
       $sol['id_usuario']=$id_usuario;
       $log->warning("DATOS SOLICITUD HERMANO ADMISION CONJUNTA"); 
       $log->warning(print_r($sol,true)); 
