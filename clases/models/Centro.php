@@ -214,6 +214,20 @@ class Centro{
 
       return $vacantes_total;
    } 
+   public function getVacantesCentroFase0($log)
+	{
+      $vacantes_total=array('ebo'=>0,'tva'=>0);
+      
+      $matcentros=$this->getDatosMatriculaCentro($log);
+      
+      $vacantesebo=$matcentros['plazasebo']-$matcentros['matriculaactualebo'];
+      $vacantestva=$matcentros['plazastva']-$matcentros['matriculaactualtva'];
+      
+      $vacantes_total['ebo']=$vacantesebo;
+      $vacantes_total['tva']=$vacantestva;
+
+      return $vacantes_total;
+   } 
    public function getVacantesCentro($log)
 	{
       $vacantes_total=array('ebo'=>0,'tva'=>0);

@@ -22,7 +22,7 @@ $nuevoestado=$_POST['estado'];
 $sql="update matricula set estado='".$nuevoestado."' where id_alumno=".$_POST['id_alumno'];
 $result=$conexion->query($sql);
 
-$vacantes=$centro->getVacantesCentro('centro',$log_cambio_estado);
+$vacantes=$centro->getVacantesCentroFase0('centro',$log_cambio_estado);
 #$centro->setVacantes($vacantes);
 $conexion->close();
 if ($result)

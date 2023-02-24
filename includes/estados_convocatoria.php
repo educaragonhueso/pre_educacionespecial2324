@@ -77,7 +77,12 @@ $procesocompleto="
       </tr>
       <tr>
         <td></td>
-        <td>SORTEO</td>
+        <td>Número aleatorio</td>
+        <td>Fecha publicación: ".DIA_ALEATORIO."</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Sorteo</td>
         <td>Fecha sorteo: ".DIA_SORTEO."</td>
       </tr>
       <tr>
@@ -96,6 +101,11 @@ $procesocompleto="
         <td>FASE2</td>
         <td>Asignación plazas restantes</td>
         <td>Inicio en : ".DIA_INICIO_ASIGNACIONES."</td>
+      </tr>
+      <tr>
+        <td>MATRICULACIÓN</td>
+        <td>Realización de matrícula alumnos admitidos</td>
+        <td>Inicio en : ".DIA_MATRICULACION_ASIGNACIONES."</td>
       </tr>
     </tbody>
   </table>

@@ -225,12 +225,12 @@ $('body').on('click', '.send', function(e)
                      if(token_hermano2!==undefined)
                      {
                         var enlace_solicitud_h2=urlbasesol+"/index.php?token="+token_hermano2;
-                        textoenlace+='<a class="btn_enlace" href="'+enlace_solicitud_h2+'"<br>Enlace para el primer hermano<br></b></a>';
+                        textoenlace+='<a class="btn_enlace" href="'+enlace_solicitud_h2+'"<br>Enlace para el segundo hermano<br></b></a>';
                      }
                      if(token_hermano3!==undefined)
                      {
                         var enlace_solicitud_h3=urlbasesol+"/index.php?token="+token_hermano3;
-                        textoenlace+='<a class="btn_enlace" href="'+enlace_solicitud_h3+'"<br>Enlace para el primer hermano<br></b></a>';
+                        textoenlace+='<a class="btn_enlace" href="'+enlace_solicitud_h3+'"<br>Enlace para el segundo hermano<br></b></a>';
                      }
                      $.alert({
                      title: 'SOLICITUD GUARDADA CORRECTAMENTE.',
@@ -1909,7 +1909,7 @@ $.ajax({
   url:'../'+directoriobase+'/scripts/ajax/cambio_estado_solicitud.php',
       success: function(data) 
       {
-         console.log(data);
+         console.log("RESPUESTA: "+data);
          if(vcontinua.indexOf('NO')!=-1){ alert("El alumno no continua, no afecta plazas vacantes");return;}
          cambiar_tipo(ots,vestado_pulsado,vid);
          var vacantes_ebo =data.split(":")[0];
@@ -1964,12 +1964,12 @@ $.ajax({
       success: function(data) 
 			{
 	 if(data.indexOf('error')!=-1){ alert("No hay plazas vacantes");return;}
+    console.log("RESPUESTA:");
+    console.log(data);
 	 var vacantes_ebo =data.split(":")[0];
 	 var vacantes_tva =data.split(":")[1];
 	  //cambiarboton(ots);
 	  cambiarestado(id,est);
-		console.log(vidcentro);
-   	  console.log($('#vacantesmat_ebo_desk'+vidcentro).html());
 	  vtipoalumno=vtipoalumno.toLowerCase();
    	  $('#vacantesmat_ebo_desk'+vidcentro).html(vacantes_ebo);
    	  $('#vacantesmat_tva_desk'+vidcentro).html(vacantes_tva);
@@ -2230,6 +2230,7 @@ $("#id_centro_estudios_origen").easyAutocomplete(cen_estudios_options);
 $('.centro_estudios_origen').easyAutocomplete(cen_estudios_options);
 $('.id_centro_estudios_origen').easyAutocomplete(cen_estudios_options);
 $("#cen_estudios_origen").easyAutocomplete(cen_estudios_options);
+$('.hermanos_admision_id_centro_estudios_origen1').easyAutocomplete(cen_estudios_options);
 
 
 //////////////////////////////////////////////

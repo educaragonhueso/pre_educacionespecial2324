@@ -265,6 +265,10 @@ TOKEN autenticación git
 COMANDOS SQL ÚTILEs
 ---------------------------------------------------------
 
+-Resetear alumnos para las pruebas o simulaciones
+
+   # update alumnos set nasignado=0,nordensorteo=0,est_desp_sorteo='noadmitida';
+
 -Comprobar datos de número aleatorio asignado
 
    A hermanos

@@ -1,26 +1,21 @@
 Centro;"Primer apellido";"Segundo apellido";Nombre;EnseÃ±anza;"Criterios prioritarios";"Localidad domicilio familiar";Fase;Estado;"Puntos validados";"Numero sorteo asignado";"Centro Origen";"Reserva de Plaza";Conjunta
-"ANGEL RIVIÈRE";lapiz;goma;"Jorge luis";ebo;2;;baremada;apta;18;26;NOCENTRO;0;si
-"ANGEL RIVIÈRE";Patata;Arroz;"Jorge Miguel";ebo;2;;baremada;apta;18;32;"SAN BRAULIO";1;no
-"ANGEL RIVIÈRE";PORTUGAL;OPORTO;GREGORIO;ebo;2;;baremada;apta;17;13;NOCENTRO;0;si
-"ANGEL RIVIÈRE";enero;nodata;enero;ebo;2;;baremada;apta;17;21;MONTECORONA;1;no
-"ANGEL RIVIÈRE";Rosa;" amarillo";Raul;ebo;2;;baremada;apta;17;18;NOCENTRO;0;si
-"ANGEL RIVIÈRE";PORTUGAL;OPORTO;TERESA;ebo;2;;baremada;apta;17;13;NOCENTRO;0;si
-"ANGEL RIVIÈRE";lapiz;goma;Sara;ebo;2;;baremada;apta;16;26;NOCENTRO;0;si
-"ANGEL RIVIÈRE";"Rosa ";amarillo;Sara;ebo;2;;baremada;apta;13;18;NOCENTRO;0;si
-"ANGEL RIVIÈRE";rosa;amarillo;"Jorge Luis";ebo;2;;baremada;apta;13;18;NOCENTRO;0;si
-"ANGEL RIVIÈRE";PORTUGAL;OPORTO;AMAYA;ebo;2;;baremada;apta;12;13;NOCENTRO;0;si
-"ANGEL RIVIÈRE";pollo;piña;"Jorge Miguel";ebo;2;;baremada;apta;12;9;NOCENTRO;0;no
-"ANGEL RIVIÈRE";Zanahoria;Pimienta;"Jorge Miguel";ebo;2;;baremada;apta;11;28;NOCENTRO;0;no
-"ANGEL RIVIÈRE";Cebolla;Pimiento;"Jorge Miguel";ebo;2;;baremada;apta;8;17;NOCENTRO;0;no
-"ANGEL RIVIÈRE";ISLANDIA;MONACO;OLIVIA;ebo;2;;baremada;apta;1;19;NOCENTRO;0;no
-"ANGEL RIVIÈRE";SIDNEY;AUSTRALIA;PATRICIA;ebo;2;;baremada;apta;0;16;NOCENTRO;0;no
-"ANGEL RIVIÈRE";ISLANDIA;MONACO;ANTONIO;ebo;2;;baremada;apta;0;10;NOCENTRO;0;no
-"ANGEL RIVIÈRE";PARIS;XXX;TERESA;ebo;1;;baremada;apta;0;1;"SAN BRAULIO";1;no
-"ANGEL RIVIÈRE";ISLANDIA;nodata;SERGIO;ebo;2;;baremada;apta;0;34;NOCENTRO;0;no
-"ANGEL RIVIÈRE";NORUEGA;nodata;CLAUDIA;tva;2;;baremada;apta;23;27;"SAN BRAULIO";1;no
-"ANGEL RIVIÈRE";PORTUGAL;OPORTO;JUAN;tva;2;;baremada;apta;12;13;NOCENTRO;0;si
-"ANGEL RIVIÈRE";SUECIA;VENECIA;VERA;tva;2;;baremada;apta;0;33;NOCENTRO;0;no
-"ANGEL RIVIÈRE";PARIS;nodata;VANESA;tva;2;;baremada;apta;0;3;NOCENTRO;0;no
-"ANGEL RIVIÈRE";AUSTRIA;nodata;PATRICIA;tva;2;;baremada;irregular;0;29;NOCENTRO;0;no
-"ANGEL RIVIÈRE";asasa;nodata;asas;dos;2;;validada;apta;6;37;NOCENTRO;0;no
-"ANGEL RIVIÈRE";ALASKA;nodata;NURIA;dos;2;;baremada;apta;0;6;NOCENTRO;0;no
+"ANGEL RIVIÈRE";hueso4;nodata;luis4;ebo;2;Aínsa;baremada;apta;7;2;NOCENTRO;0;no
+"ANGEL RIVIÈRE";hueso17;nodata;luis17;ebo;2;Aínsa;baremada;apta;7;15;NOCENTRO;0;no
+"ANGEL RIVIÈRE";hueso11;nodata;luis11;ebo;2;"Alcolea de Cinca";baremada;apta;7;9;NOCENTRO;1;no
+"ANGEL RIVIÈRE";zaragoza;nodata;luna;ebo;2;Zaragoza;baremada;apta;6;17;NOCENTRO;1;no
+"ANGEL RIVIÈRE";hueso24;nodata;luis24;ebo;2;Lumpiaque;validada;apta;6;7;NOCENTRO;0;no
+"ANGEL RIVIÈRE";hueso16;nodata;luis16;ebo;2;Aínsa;baremada;apta;4;3;NOCENTRO;0;no
+"ANGEL RIVIÈRE";pah23;sah23;nh23;ebo;2;"Alcolea de Cinca";baremada;apta;4;11;NOCENTRO;0;si
+"ANGEL RIVIÈRE";hueso6;nodata;luis6;ebo;2;Adahuesca;baremada;apta;0;13;NOCENTRO;1;no
+"ANGEL RIVIÈRE";hueso5;nodata;luis5;ebo;1;Lumpiaque;baremada;apta;0;10;NOCENTRO;0;no
+"ANGEL RIVIÈRE";hueso1;nodata;luis1;ebo;2;Adahuesca;baremada;apta;0;4;NOCENTRO;0;no
+"ANGEL RIVIÈRE";hueso7;nodata;luis7;ebo;2;Ballobar;baremada;irregular;0;6;NOCENTRO;0;no
+"ANGEL RIVIÈRE";hueso23;nodata;luis23;tva;2;"Alcolea de Cinca";baremada;apta;4;11;NOCENTRO;0;si
+"ANGEL RIVIÈRE";hueso19;nodata;luis19;tva;2;Almudévar;baremada;apta;0;1;NOCENTRO;0;no
+"ANGEL RIVIÈRE";hueso3;nodata;luis3;tva;2;Adahuesca;baremada;apta;0;18;NOCENTRO;0;no
+"ANGEL RIVIÈRE";hueso2;nodata;luis2;tva;2;Aínsa;baremada;apta;0;8;NOCENTRO;0;no
+"SAN GERMÁN";goma;nodata;Jorgeangel;ebo;2;Zaragoza;validada;apta;0;12;"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";0;no
+"SAN GERMÁN";Boli;nodata;"Luis angel";ebo;2;ZARAGOZA;validada;apta;0;16;"ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES";0;no
+"SAN JORGE";hueso30;ibañez30;luis30;ebo;2;Aínsa;validada;apta;0;0;"SAN BRAULIO";1;no
+"BIELLO ARAGÓN";hueso15;nodata;luis15;ebo;2;"Tamarite de Litera";validada;apta;4;5;NOCENTRO;0;si
+MONTECORONA;hueso8qaa;nodata;luis8;ebo;2;Almudévar;validada;apta;0;14;"LA MERCED";0;no
