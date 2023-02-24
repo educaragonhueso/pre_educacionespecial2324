@@ -79,7 +79,7 @@ if($_SESSION['estado_convocatoria']>=ESTADO_PREMATRICULA)
 {
 ?>
          <div class="form-group">
-            <button id="verfcredenciales" class="btn btn-primary" value="Acceder con credenciales">Acceder con credenciales <p style="font-size:10px"><i>(solo para personal de la administración)</i></p></button>
+            <button id="verfcredenciales" class="btn btn-primary" value="Acceder con credenciales" style='display:none'>Acceder con credenciales <p style="font-size:10px"><i>(solo para personal de la administración)</i></p></button>
          </div>
          <form action="" method="post">
             <div id="concredenciales" style="display:none">
@@ -100,7 +100,7 @@ if($_SESSION['estado_convocatoria']>=ESTADO_PREMATRICULA)
             </div> 
          </form>
       <div class="form-group">
-         <button id="verprocesocompleto" class="btn btn-primary" value="proceso completo">Ver secuencia del proceso completo</button>
+         <button id="verprocesocompleto" class="btn btn-primary" value="proceso completo" style='display:none'>Ver secuencia del proceso completo</button>
          <div id="tabla_pc" style="display:none"><?php echo PC;?></div>
       </div>
       </div> <!--finn del wrapper-->   
