@@ -148,8 +148,6 @@ class SolicitudController{
     }
     public function procesarFormularioExistente($id,$dsolicitud,$collapsed=1,$rol,$imprimir=0,$dirbase,$log,$solo_lectura)
 	 {
-      $log->warning("DATOS SOLICITUD A MOSTRAR O IMPRIMIR: ROL: $rol:");
-      $log->warning(print_r($dsolicitud,true));
       //aplicamos comprobaciones para mostrar en el formulario, solo para centros y admin
       if($rol!='alumno')
          $this->aplicarComprobaciones($id,$dsolicitud,$log);
@@ -261,9 +259,6 @@ class SolicitudController{
       }
 		$this->formulario=str_replace('GRABAR','ACTUALIZAR',$this->formulario);
    
-      $log->warning("PROCESANDO SOL");	
-      $log->warning(print_r($dsolicitud,true));	
-      
       $token=$dsolicitud['token'];
       foreach($dsolicitud as $skey=>$sval)
       {
