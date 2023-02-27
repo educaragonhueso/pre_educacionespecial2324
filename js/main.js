@@ -273,7 +273,7 @@ $('body').on('click', '.send', function(e)
                console.log(data); 
                if(data.indexOf("OK")!=-1)
                {
-                  var mensaje="Ok";
+                  var mensaje="";
                   var aresp=data.split(":");
                   if(aresp.length>=2)
                   {      
@@ -292,17 +292,17 @@ $('body').on('click', '.send', function(e)
                      if(token_hermano1!==undefined)
                      {
                         var enlace_solicitud_h1=urlbasesol+"/index.php?token="+token_hermano1;
-                        mensaje+='<br>Enlace para el primer hermano: <br><b> '+enlace_solicitud_h1+'</b>';
+                        //mensaje+='<br>Enlace para el primer hermano: <br><b> '+enlace_solicitud_h1+'</b>';
                      }
                      if(token_hermano2!==undefined)
                      {
                         var enlace_solicitud_h2=urlbasesol+"/index.php?token="+token_hermano2;
-                        mensaje+='<br>Enlace para el segundo hermano: <br><b> '+enlace_solicitud_h2+'</b>';
+                        //mensaje='<br>Enlace para el segundo hermano: <br><b> '+enlace_solicitud_h2+'</b>';
                      }
                      if(token_hermano3!==undefined)
                      {
                         var enlace_solicitud_h3=urlbasesol+"/index.php?token="+token_hermano3;
-                        mensaje+='<br>Enlace para el tercer hermano: <br><b> '+enlace_solicitud_h3+'</b>';
+                        //mensaje+='<br>Enlace para el tercer hermano: <br><b> '+enlace_solicitud_h3+'</b>';
                      }
                   }
                   $.alert({

@@ -16,7 +16,7 @@ $conectar=new Conectar('../../config/config_database.php');
 $conexion=$conectar->conexion();
 $centro=new Centro($conexion,$_POST['id_centro'],'ajax');
 
-$vacantes=$centro->getVacantes('centro',$log_cambio_estado);
+$vacantes=$centro->getVacantesCentroFase0('centro',$log_cambio_estado);
 $nuevotipo=str_replace('CAMBIA A ','',$_POST['estado_pulsado']);
 $result=1;
 if($_POST['continua']=='CONTINUA')
@@ -25,10 +25,7 @@ if($_POST['continua']=='CONTINUA')
    $result=$conexion->query($sql);
 }
 if($result)
-{
-	$vacantes=$centro->getVacantes('centro',$log_cambio_estado);
-	print($vacantes[0]->vacantes.':'.$vacantes[1]->vacantes);
-}
+	print($vacantes['ebo'].':'.$vacantes['tva']);
 else     
 	echo "error";
 $conexion->close();

@@ -65,7 +65,7 @@
 echo "ESTADO CONVOCATORIA: ".$_SESSION['estado_convocatoria'];
 if(MANTENIMIENTO=='NO' OR IPREMOTA1==$_SERVER['HTTP_X_FORWARDED_FOR'] OR IPREMOTA2==$_SERVER['HTTP_X_FORWARDED_FOR'])
 {
-   if($_SESSION['estado_convocatoria']==10)
+   if($_SESSION['estado_convocatoria']==ESTADO_INSCRIPCION)
    {
        echo "<p>Pulsa en 'Crear Solicitud' para acceder al formulario de creación de solicitudes.</p><p> Cuando lo completes recibirás un enlace en tu correo electrónico.</p><p> Dicho enlace te servirá para seguir todo el proceso incluyendo posibles modificaciones de solicitud, listados de admitidos etc...</p>";
 
@@ -75,11 +75,11 @@ if(MANTENIMIENTO=='NO' OR IPREMOTA1==$_SERVER['HTTP_X_FORWARDED_FOR'] OR IPREMOT
 else echo '<h4>PAGINA EN MANTENIMIENTO</h4>';
 ?>
 <?php 
-if($_SESSION['estado_convocatoria']>=ESTADO_PREMATRICULA)
+if($_SESSION['estado_convocatoria']>ESTADO_PREMATRICULA OR (IPREMOTA1==$_SERVER['HTTP_X_FORWARDED_FOR'] OR IPREMOTA2==$_SERVER['HTTP_X_FORWARDED_FOR'] ))
 {
 ?>
          <div class="form-group">
-            <button id="verfcredenciales" class="btn btn-primary" value="Acceder con credenciales" style='display:none'>Acceder con credenciales <p style="font-size:10px"><i>(solo para personal de la administración)</i></p></button>
+            <button id="verfcredenciales" class="btn btn-primary" value="Acceder con credenciales">Acceder con credenciales <p style="font-size:10px"><i>(solo para personal de la administración)</i></p></button>
          </div>
          <form action="" method="post">
             <div id="concredenciales" style="display:none">
@@ -100,7 +100,7 @@ if($_SESSION['estado_convocatoria']>=ESTADO_PREMATRICULA)
             </div> 
          </form>
       <div class="form-group">
-         <button id="verprocesocompleto" class="btn btn-primary" value="proceso completo" style='display:none'>Ver secuencia del proceso completo</button>
+         <button id="verprocesocompleto" class="btn btn-primary" value="proceso completo">Ver secuencia del proceso completo</button>
          <div id="tabla_pc" style="display:none"><?php echo PC;?></div>
       </div>
       </div> <!--finn del wrapper-->   

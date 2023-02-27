@@ -475,7 +475,13 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
                   else
                      $id_centro_estudios_origen=$this->getIdCentro($hermano['id_centro_estudios_origen'],$log);
                   $id_centro_destino=$sol['id_centro_destino'];
-                  $sql=$query_hermanos_admision."apellido2='".$hermano['apellido2']."',apellido1='".$hermano['apellido1']."',nombre='".$hermano['nombre']."',fnac='".$hermano['fnac']."',tipoestudios='".$hermano['tipoestudios']."'".",reserva=".$hermano['reserva'].",dni_alumno='".$hermano['dni_alumno']."',id_centro_destino=".$id_centro_destino.",id_centro_estudios_origen=".$id_centro_estudios_origen;	
+                   
+			         if($sol['conjunta']=='no')
+                     $fase_solicitud_hermano='borrador';
+                  else
+                     $fase_solicitud_hermano='validada';
+                     
+                  $sql=$query_hermanos_admision."apellido2='".$hermano['apellido2']."',apellido1='".$hermano['apellido1']."',nombre='".$hermano['nombre']."',fnac='".$hermano['fnac']."',tipoestudios='".$hermano['tipoestudios']."'".",reserva=".$hermano['reserva'].",dni_alumno='".$hermano['dni_alumno']."',id_centro_destino=".$id_centro_destino.",id_centro_estudios_origen=".$id_centro_estudios_origen.",conjunta='".$sol['conjunta']."'".",fase_solicitud='".$fase_solicitud_hermano."'";	
                   $sql=trim($sql,',')." WHERE token='".$hermano['token']."'";
                   $log->warning("HERMANO ADMISION EXISTE, CONSULTA ACTUALIZACION IDCENTROOORIGEN HER:".$hermano['id_centro_estudios_origen']);
                   $log->warning("HERMANO ADMISION EXISTE, CONSULTA ACTUALIZACION IDCENTROOORIGEN SOL:".$sol['id_centro_estudios_origen']);
@@ -730,8 +736,8 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
          $origen="('".$id_alumno;
          $destino="('".$id_hermano;
          $query1=str_replace($origen,$destino,$query);
-		$log->warning("CONSULTA INSERCION BAREMO PRIMER HERMANO:");
-		$log->warning(print($query));
+		$log->warning("CONSULTA INSERCION TABLA BAREMO PRIMER HERMANO ADMISION:");
+		$log->warning(print($query1));
 		   $savebaremo=$this->conexion->query($query1);
       }
 		if($savebaremo) return 1;

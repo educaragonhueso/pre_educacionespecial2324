@@ -248,8 +248,8 @@ function validarHermanoBaremo(fd) {
          var fnac3=$('#hermanos_fnacimiento_baremo3').val();
          var mod3=$('#hermanos_modalidad_baremo3').val();
          var nivel3=$('#hermanos_nivel_baremo3').val();
-         
-         if((hn1=='' | hn1=='nodata') || (hpap1==''| hn1=='nodata') || (hsap1==''| hsap1=='nodata') ||(nivel1==''| nivel1=='nodata')) 
+        
+         if((hn1=='' | hn1=='nodata') || (hpap1==''| hn1=='nodata') || (hsap1==''| hsap1=='nodata') ||(nivel1==''| nivel1=='nodata') ||(fnac1==''| fnac1=='nodata')) 
          {
             return 'Debes incluir todos los datos de al menos un hermano de baremo';
          }
@@ -260,18 +260,12 @@ function validarHermanoBaremo(fd) {
                return 'Debes incluir una modalidad en el primer hermano de baremo';
          }
          //si el segundo hermano tienen escrito algo deben completarlo
-         if((hn2!='' & hn2!='nodata') || (hpap2!='' & hpap2!='nodata') || (hsap2!='' & hsap2!='nodata') || (nivel2!='' & nivel2!='nodata'))
-            if((hn2=='' | hn2=='nodata') || (hpap2==''| hn2=='nodata') || (hsap2==''| hsap2=='nodata') || nivel2=='nodata') 
-            {
-               console.log("hn2: "+hn2);
-               console.log("hpap2: "+hpap2);
-               console.log("hsap2: "+hsap2);
-               console.log("nivel2: "+nivel2);
+         if((hn2!='' & hn2!='nodata') || (hpap2!='' & hpap2!='nodata') || (hsap2!='' & hsap2!='nodata') || (nivel2!='' & nivel2!='nodata') ||(fnac2!='' & fnac2!='nodata'))
+            if((hn2=='' | hn2=='nodata') || (hpap2==''| hn2=='nodata') || (hsap2==''| hsap2=='nodata') || nivel2=='nodata' ||(fnac2==''| fnac2=='nodata')) 
                return 'Debes incluir todos los datos del segundo hermano de baremo';
-            }
          //si el tercer hermano tienen escrito algo deben completarlo
-         if((hn3!='' & hn3!='nodata') || (hpap3!='' & hpap3!='nodata') || (hsap3!='' & hsap3!='nodata') || (nivel3!='' & nivel3!='nodata'))
-            if((hn3=='' | hn3=='nodata') || (hpap3==''| hn3=='nodata') || (hsap3==''| hsap3=='nodata') || nivel3=='nodata') 
+         if((hn3!='' & hn3!='nodata') || (hpap3!='' & hpap3!='nodata') || (hsap3!='' & hsap3!='nodata') || (nivel3!='' & nivel3!='nodata') ||(fnac3!='' & fnac3!='nodata'))
+            if((hn3=='' | hn3=='nodata') || (hpap3==''| hn3=='nodata') || (hsap3==''| hsap3=='nodata') || nivel3=='nodata' || (fnac3=='' | fnac3=='nodata')) 
             {
                return 'Debes incluir todos los datos del tercer hermano de baremo';
             }
