@@ -5,19 +5,28 @@ FASE PREVIA
 --------------------------------------------------------------------------------------------------------------------------------
    Borrar cuentas de usuarios de pruebas y de alumnos o solicitudes, baremo, etc...
    
-      Tablas
-         alumnos
+   Tablas
          baremo
+            delete from baremo
+         alumnos
+            delete from alumnos
+         usuarios
+            delete from usuarios where rol='alumno'
          alumnos_baremada_final
+            delete from alumnos_baremada_final
          alumnos_provisional
+            delete from alumnos_provisional
          alumnos_definitiva
+            delete from alumnos_definitiva
          alumnos_fase2
+            delete from alumnos_fase2
          alumnos_fase2_tmp
+            delete from alumnos_fase2_tmp
          alumnos_hermanos_admision
+            delete from alumnos_hermanos_Admision
          alumnos_orden
          alumnos_orden_provisional
          alumnos_orden_definitivo
-         
       
    Hacer una prueba de solicitud completa en PRO
    Desmarcar la opción de enviar correos a los centros al modificar solicitudes y reclamaciones d ebarmeo y provisional
