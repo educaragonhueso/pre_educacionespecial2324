@@ -259,8 +259,8 @@ sincronizar con el remoto
          git pull
 
 
-Si modificamos el PRE para luego hacer otro merge o pull del pro hay q primero usar el comando:
-git reset --hard HEAD
+Si modificamos por error el PRO el pull dará error, debemos resetear el estado del commit:
+   git reset --hard HEAD
 
 
 Commit integrado
