@@ -1,10 +1,11 @@
 <?php
 session_start();
-
 date_default_timezone_set("Europe/Madrid");
 setlocale(LC_TIME, "spanish");
 if(!$_SESSION)
    header('login_activa.php');
+else
+   print_r($_SESSION);
 if(isset($_SESSION['dir_base']))
    $dir_base=$_SESSION['dir_base'];
 else
