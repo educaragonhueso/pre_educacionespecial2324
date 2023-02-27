@@ -48,6 +48,8 @@ if(isset($_GET['provincia']))
  
 if($_SESSION['estado_convocatoria']<ESTADO_INSCRIPCION and $_SESSION['mantenimiento']=='NO' and ($_SESSION['rol']=='alumno' or $_SESSION['rol']=='anonimo')) 
    header("location: login_activa.php");
+if($_SESSION['mantenimiento']=='SI' and IPREMOTA1!=$_SERVER['HTTP_X_FORWARDED_FOR']) 
+   header("location: login_activa.php");
 //if(($rol=='anonimo' or $rol=='alumno') and $_SESSION['acceso']!='restringido')
 //   header("location: login_activa.php");
 print("ROL: ".$rol);    
