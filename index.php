@@ -46,7 +46,7 @@ if(isset($_GET['token']) and $_SESSION['rol']=='anonimo')
 if(isset($_GET['provincia']))
    $provincia=$_SESSION['provincia'];
  
-if($_SESSION['estado_convocatoria']<10 and $_SESSION['mantenimiento']=='NO' and ($_SESSION['rol']=='alumno' or $_SESSION['rol']=='anonimo')) 
+if($_SESSION['estado_convocatoria']<ESTADO_INSCRIPCION and $_SESSION['mantenimiento']=='NO' and ($_SESSION['rol']=='alumno' or $_SESSION['rol']=='anonimo')) 
    header("location: login_activa.php");
 //if(($rol=='anonimo' or $rol=='alumno') and $_SESSION['acceso']!='restringido')
 //   header("location: login_activa.php");
