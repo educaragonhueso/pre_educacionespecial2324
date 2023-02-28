@@ -44,7 +44,7 @@ $hirb=substr(DIA_INICIO_RECLAMACIONES_BAREMADAS,10);
 $dfrb=substr(DIA_FIN_RECLAMACIONES_BAREMADAS,0,-9);
 $hfrb=substr(DIA_FIN_RECLAMACIONES_BAREMADAS,10);
 
-define("M20","<p class='cajainfo' style='text-align:center'>Publicado listado de solicitudes baremadas<br> A partir del día $dirb a las $hirb se inicia el periodo de reclamaciones hasta el día $dfrb a las $hfrb</p>");
+//define("M20","<p class='cajainfo' style='text-align:center'>Publicado listado de solicitudes baremadas<br> A partir del día $dirb a las $hirb se inicia el periodo de reclamaciones hasta el día $dfrb a las $hfrb</p>");
 
 
 $procesocompleto="
@@ -65,47 +65,47 @@ $procesocompleto="
       <tr>
         <td>FASE1</td>
         <td>Inscripción</td>
-        <td>Peridodo de inscripción, inicio: ".DIA_INICIO_INSCRIPCION."
-        fin: ".DIA_FIN_INSCRIPCION." </td>
+        <td>Peridodo de inscripción, inicio: ".convertirFecha(DIA_INICIO_INSCRIPCION)."
+        fin: ".convertirFecha(DIA_FIN_INSCRIPCION)." </td>
       </tr>
       <tr>
         <td></td>
         <td>Baremadas</td>
-        <td>Periodo, publicación: ".DIA_PUBLICACION_BAREMADAS."
-        <br>Periodo, inicio reclamaciones: ".DIA_INICIO_RECLAMACIONES_BAREMADAS."
-        <br>Periodo, fin reclamaciones: ".DIA_FIN_RECLAMACIONES_BAREMADAS." </td>
+        <td>Periodo, publicación: ".convertirFecha(DIA_PUBLICACION_BAREMADAS)."
+        <br>Periodo, inicio reclamaciones: ".convertirFecha(DIA_INICIO_RECLAMACIONES_BAREMADAS)."
+        <br>Periodo, fin reclamaciones: ".convertirFecha(DIA_FIN_RECLAMACIONES_BAREMADAS)." </td>
       </tr>
       <tr>
         <td></td>
         <td>Número aleatorio</td>
-        <td>Fecha publicación: ".DIA_ALEATORIO."</td>
+        <td>Fecha publicación: ".convertirFecha(DIA_ALEATORIO)."</td>
       </tr>
       <tr>
         <td></td>
         <td>Sorteo</td>
-        <td>Fecha sorteo: ".DIA_SORTEO."</td>
+        <td>Fecha sorteo: ".convertirFecha(DIA_SORTEO)."</td>
       </tr>
       <tr>
         <td></td>
         <td>Provisional</td>
-        <td>Periodo, publicación: ".DIA_PUBLICACION_PROVISIONAL."
-        <br>Periodo, inicio reclamaciones: ".DIA_INICIO_RECLAMACIONES_PROVISIONAL."
-        <br>Periodo, fin reclamaciones: ".DIA_FIN_RECLAMACIONES_PROVISIONAL." </td>
+        <td>Periodo, publicación: ".convertirFecha(DIA_PUBLICACION_PROVISIONAL)."
+        <br>Periodo, inicio reclamaciones: ".convertirFecha(DIA_INICIO_RECLAMACIONES_PROVISIONAL)."
+        <br>Periodo, fin reclamaciones: ".convertirFecha(DIA_FIN_RECLAMACIONES_PROVISIONAL)." </td>
       </tr>
       <tr>
         <td></td>
         <td>Definitivos</td>
-        <td>Fecha de publicación: ".DIA_PUBLICACION_DEFINITIVOS."</td>
+        <td>Fecha de publicación: ".convertirFecha(DIA_PUBLICACION_DEFINITIVOS)."</td>
       </tr>
       <tr>
         <td>FASE2</td>
         <td>Asignación plazas restantes</td>
-        <td>Inicio en : ".DIA_INICIO_ASIGNACIONES."</td>
+        <td>Inicio en : ".convertirFecha(DIA_INICIO_ASIGNACIONES)."</td>
       </tr>
       <tr>
         <td>MATRICULACIÓN</td>
         <td>Realización de matrícula alumnos admitidos</td>
-        <td>Inicio en : ".DIA_MATRICULACION_ASIGNACIONES."</td>
+        <td>Inicio en : ".convertirFecha(DIA_MATRICULACION_ASIGNACIONES)."</td>
       </tr>
     </tbody>
   </table>
