@@ -71,12 +71,8 @@ if(MANTENIMIENTO=='NO' OR IPREMOTA1==$_SERVER['HTTP_X_FORWARDED_FOR'] OR IPREMOT
 
        echo '<a href="index.php" class="btn btn-primary" value="Crear solicitud" style="margin-bottom:10px">Crear solicitud</a>';
    }
-}
-else echo '<h4>PAGINA EN MANTENIMIENTO</h4>';
-?>
-<?php 
-if($_SESSION['estado_convocatoria']>ESTADO_PREMATRICULA OR (IPREMOTA1==$_SERVER['HTTP_X_FORWARDED_FOR'] OR IPREMOTA2==$_SERVER['HTTP_X_FORWARDED_FOR'] ))
-{
+   if($_SESSION['estado_convocatoria']>ESTADO_PREMATRICULA)
+   {
 ?>
          <div class="form-group">
             <button id="verfcredenciales" class="btn btn-primary" value="Acceder con credenciales">Acceder con credenciales <p style="font-size:10px"><i>(solo para personal de la administración)</i></p></button>
@@ -104,22 +100,16 @@ if($_SESSION['estado_convocatoria']>ESTADO_PREMATRICULA OR (IPREMOTA1==$_SERVER[
          <div id="tabla_pc" style="display:none"><?php echo PC;?></div>
       </div>
       </div> <!--finn del wrapper-->   
- <?php } ?>     
+<?php }
+} 
+else echo '<h4>PAGINA EN MANTENIMIENTO</h4>';
+?>     
       <footer class="page-footer font-small stylish-color-dark pt-4 mt-4">
-       <div class="container text-center text-md-left">
-         <div class="row">
          <hr>
-         <div class="text-center py-3" style="font-size:25px">
-            <ul class="list-unstyled list-inline mb-0">
-               <li class="list-inline-item">
-                  <div class="footer-copyright py-3 text-center">
-                     Registro e incidencias:
-                   <a href="mailto:lhueso@aragon.es" style="color:black!important">lhueso@aragon.es </a>
-                  </div>
-               </li>
-           </ul>
-       </div>
-       <hr>
+            <div class="footer-copyright py-3 text-center" style="font-size:15px">
+               Registro e incidencias:
+               <a href="mailto:lhueso@aragon.es" style="color:black!important">lhueso@aragon.es </a>
+            </div>
       </footer>
    </body>
 </html>
