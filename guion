@@ -258,6 +258,17 @@ sincronizar con el remoto
          git remote add origin git@github.com:educaragonhueso/pro_educacionespecial2223.git
          git pull
 
+Sincronizar PRO con PRE, un solo fichero
+
+   Todo
+      #git pull
+
+   Un fichero
+
+      #git fetch --all
+      #git checkout origin/main -- rutafichero
+
+   
 
 Si modificamos por error el PRO el pull dará error, debemos resetear el estado del commit:
    git reset --hard HEAD

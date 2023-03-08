@@ -31,49 +31,35 @@ elseif((($rol=='anonimo' OR $rol=='alumno') and $estado_convocatoria<=ESTADO_FIN
 <p hidden id='numero_sorteo' value='<?php echo $_SESSION['numero_sorteo'];?>'></p> 
 <p hidden id='provincia' value='<?php echo $_SESSION['provincia'];?>'></p> 
 <p hidden id='id_alumnonuevo' value='-1'></p> 
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-<!--elementos a la izda-->
-   <ul class="navbar-nav">
-     <li class="nav-item  msuperior">
-      <a style='color:white!important;float:left!important;padding-top:9px'  href='<?php echo $_SESSION['url_base'].'/'.$directoriobase.'/';?>' target='_blank'>INICIO</a>
-     </li>
-     <li class="nav-item  msuperior">
-      <a style='color:white!important;float:left!important;padding-top:9px'  href='<?php echo $_SESSION['url_base'].'/'.$directoriobase.'/hitos.php';?>' target='_blank'>HITOS</a>
-     </li>
-     <li class="nav-item  msuperior">
-      <a style='color:white!important;float:left!important;padding-top:9px'  href='<?php echo $_SESSION['url_base'].'/'.$directoriobase.'/faq.php';?>' target='_blank'>FAQ</a>
-     </li>
-     <li class="nav-item  msuperior">
-      <a style='color:white!important;float:left!important;padding-top:9px'  href='https://t.me/edespecial2223' target='_blank'>TELEGRAM</a>
-     </li>
-     <li class="nav-item  msuperior">
-      <a style='color:white!important;float:left!important;padding-top:9px'  href='<?php echo $_SESSION['url_base'].'/'.$directoriobase.'/login_out.php';?>'>SALIR</a>
-     </li>
-   </ul>
-  </div>  
-</nav>
 <!--elementos a la izda del segundo menu-->
 <nav id='navgir' class="navbar navbar-expand-md navbar-dark bg-dark">
-        <ul class="navbar-nav" style="margin-right:12%">
-           <li class="nav-item  msuperior">
-            <a style='color:white!important;float:left!important;padding-top:9px'  href='<?php echo $_SESSION['url_base'].'/'.$directoriobase.'';?>'>INICIO</a>
-           </li>
-           <li class="nav-item active msuperior dropdown">
-             <a class="nav-link dropdown-toggle desplegable" id="navbardrop" data-toggle="dropdown">Documentación</a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="documentacion/orden_escolarizacion_2324.pdf" id="doca4" target="_blank">Orden Escolarización 23/24</a>
-                <a class="dropdown-item" href="documentacion/res_unificacion_eespecial.pdf" id="doca4" target="_blank">Resolución unificación centros Especial</a>
-                <a class="dropdown-item" href="documentacion/a3a_domlaboralcajena_2324.pdf" id="doca4" target="_blank">Anexo III A Certificado Domicilio Laborali Cuenta Ajena</a>
-                <a class="dropdown-item" href="documentacion/a3a_domlaboralcpropia_2324.pdf" id="doca4" target="_blank">Anexo III B Responsable Domicilio Laboral Cuenta Propia</a>
-                <a class="dropdown-item" href="documentacion/a7_suspension_matricula_2324.pdf" id="doca4" target="_blank">Anexo VII suspensión temporal matrícula</a>
-                <a class="dropdown-item" href="documentacion/a1a_calendario_2324.pdf" target="_blank">Calendario Admisión Educación Especial</a>;
-                <?php if($_SESSION['rol']=='admin'){?>
-                  <a class="dropdown-item" href="documentacion/doc_pruebas.html" id="ccen" target="_blank">Claves centros</a>;
-                  <a class="dropdown-item" href="documentacion/csv_comprobaciones.csv" id="csvc" target="_blank">CSV Comprobaciones</a>;
-               <?php } ?>
-			    </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+     <ul class="navbar-nav" style="margin-right:12%">
+        <li class="nav-item  msuperior">
+         <a style='color:white!important;float:left!important;padding-top:9px'  href='<?php echo $_SESSION['url_base'].'/'.$directoriobase.'';?>'>INICIO</a>
+        </li>
+        <li class="nav-item  msuperior">
+         <a style='color:white!important;float:left!important;padding-top:9px'  href='<?php echo $_SESSION['url_base'].'/'.$directoriobase.'/login_out.php';?>'>SALIR</a>
+        </li>
+        <li class="nav-item active msuperior dropdown">
+          <a class="nav-link dropdown-toggle desplegable" id="navbardrop" data-toggle="dropdown">Documentación</a>
+           <div class="dropdown-menu">
+             <a class="dropdown-item" href="documentacion/orden_escolarizacion_2324.pdf" id="doca4" target="_blank">Orden Escolarización 23/24</a>
+             <a class="dropdown-item" href="documentacion/res_unificacion_eespecial.pdf" id="doca4" target="_blank">Resolución unificación centros Especial</a>
+             <a class="dropdown-item" href="documentacion/a3a_domlaboralcajena_2324.pdf" id="doca4" target="_blank">Anexo III A Certificado Domicilio Laborali Cuenta Ajena</a>
+             <a class="dropdown-item" href="documentacion/a3a_domlaboralcpropia_2324.pdf" id="doca4" target="_blank">Anexo III B Responsable Domicilio Laboral Cuenta Propia</a>
+             <a class="dropdown-item" href="documentacion/a7_suspension_matricula_2324.pdf" id="doca4" target="_blank">Anexo VII suspensión temporal matrícula</a>
+             <a class="dropdown-item" href="documentacion/a1a_calendario_2324.pdf" target="_blank">Calendario Admisión Educación Especial</a>;
+             <?php if($_SESSION['rol']=='admin'){?>
+               <a class="dropdown-item" href="documentacion/doc_pruebas.html" id="ccen" target="_blank">Claves centros</a>;
+               <a class="dropdown-item" href="documentacion/csv_comprobaciones.csv" id="csvc" target="_blank">CSV Comprobaciones</a>;
+            <?php } ?>
+          </div>
          </li>
-       </ul>
+      </ul>
 <?php 
    if($_SESSION['usuario_autenticado']==1)
    {
@@ -201,3 +187,4 @@ elseif((($rol=='anonimo' OR $rol=='alumno') and $estado_convocatoria<=ESTADO_FIN
       }?>
         </ul>
 </nav>
+</div>

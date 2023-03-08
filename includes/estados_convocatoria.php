@@ -65,8 +65,8 @@ $procesocompleto="
       <tr>
         <td>FASE1</td>
         <td>Inscripción</td>
-        <td>Peridodo de inscripción, inicio: ".convertirFecha(DIA_INICIO_INSCRIPCION)."
-        fin: ".convertirFecha(DIA_FIN_INSCRIPCION)." </td>
+        <td>Inicio peridodo de inscripción:\t ".convertirFecha(DIA_INICIO_INSCRIPCION)."
+        <br>Fin periodo de inscripción:\t\t\t ".convertirFecha(DIA_FIN_INSCRIPCION)." </td>
       </tr>
       <tr>
         <td></td>

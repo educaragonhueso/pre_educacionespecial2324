@@ -1,0 +1,96 @@
+SoapFault Object
+(
+    [message:protected] => [PAU] - No se ha encontrado una relacion entre las dos aplicaciones.  Causa: AUTHORIZEAPPLICATION_05
+    [string:Exception:private] => 
+    [code:protected] => 0
+    [file:protected] => /datos/www/preadmespecial.aragon.es/public_admespecial/educacionespecial2324/scripts/soap/funciones_soap.php
+    [line:protected] => 366
+    [trace:Exception:private] => Array
+        (
+            [0] => Array
+                (
+                    [file] => /datos/www/preadmespecial.aragon.es/public_admespecial/educacionespecial2324/scripts/soap/funciones_soap.php
+                    [line] => 366
+                    [function] => __call
+                    [class] => SoapClient
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => identityVerification
+                            [1] => Array
+                                (
+                                    [0] => stdClass Object
+                                        (
+                                            [arg0] => stdClass Object
+                                                (
+                                                    [applicationId] => ADMEG
+                                                    [organismCode] => ORG17544
+                                                    [identityVerificationRequest] => stdClass Object
+                                                        (
+                                                            [identificationData] => stdClass Object
+                                                                (
+                                                                    [documentNumber] => 87654321X
+                                                                    [documentType] => NIF
+                                                                )
+
+                                                            [purposeData] => stdClass Object
+                                                                (
+                                                                    [consent] => Si
+                                                                    [fileNumber] => 001
+                                                                    [procedureNumber] => 9596
+                                                                    [purposeText] => Test
+                                                                )
+
+                                                            [identitySpecificDataVR] => stdClass Object
+                                                                (
+                                                                )
+
+                                                            [specificBirthDataVR] => stdClass Object
+                                                                (
+                                                                )
+
+                                                            [userSpecificDataVR] => stdClass Object
+                                                                (
+                                                                    [nationality] => Espanyol
+                                                                )
+
+                                                            [userData] => stdClass Object
+                                                                (
+                                                                )
+
+                                                        )
+
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [file] => /datos/www/preadmespecial.aragon.es/public_admespecial/educacionespecial2324/scripts/soap/zonapruebas/soap_comprobar_identidad.php
+                    [line] => 14
+                    [function] => comprobarIdentidad
+                    [args] => Array
+                        (
+                            [0] => 87654321X
+                            [1] => RAMONA
+                            [2] => MARTINEZ
+                            [3] => 1980-08-20
+                        )
+
+                )
+
+        )
+
+    [previous:Exception:private] => 
+    [faultstring] => [PAU] - No se ha encontrado una relacion entre las dos aplicaciones.  Causa: AUTHORIZEAPPLICATION_05
+    [faultcode] => soap:Server
+)
+
+COMPROBADO PRIMER NIF 87654321X:
+ Error en la consulta
