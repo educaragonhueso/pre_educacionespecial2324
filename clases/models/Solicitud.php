@@ -349,12 +349,7 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
          $sql_baremo=trim($query_baremo,',')." WHERE id_alumno=".$id;
          $hermanos=$this->getIdsHermanosAdmision($id,$log);
          foreach($hermanos as $h)
-         {
             $sql_baremo_hermano=trim($query_baremo,',')." WHERE id_alumno=".$h;
-            //$update_hermano=$this->conexion->query($sql_baremo_hermano);
-            //$log->warning("CONSULTA ACTUALIZACION HERMANOS BAREMO:");
-            //$log->warning($sql_baremo_hermano);
-         }
             
          $sql_baremo_hermano=trim($query_baremo,',')." WHERE id_alumno=";
          if($dbaremo==1) $update=$this->conexion->query($sql_baremo);
@@ -491,9 +486,6 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
                   $dbaremo="DELETE FROM baremo WHERE id_alumno IN (SELECT id_alumno FROM alumnos WHERE token='".$hermano['token']."')"; 
                   $log->warning("BORRAMOS BAREMO HERMANO ADMISON");
                   $log->warning($dbaremo);
-                  //$databaremo=$this->getDatosBaremo($id);
-                  //$res=$this->actualizaBaremo($hermano['token'],$databaremo);
-                  //$update=$this->conexion->query($dbaremo);
                   $ibaremo="INSERT INTO baremo SELECT * FROM baremo WHERE id_alumno='".$id."'"; 
                   $log->warning("AÑADIMOS DATOs BAREMO HERMANO ADMISON");
                   $log->warning($ibaremo);
@@ -545,7 +537,6 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
                if($this->actualizarHermanoAdmision($id_hermano,$id,$log)!=1){$log->warning("error gen relacion"); return 0;}
                $log->warning("GENERADA RELACION HERMANOS");
                
-               //if($this->generarBaremoHermanoAdmision($id_hermano,$log)!=1){$log->warning("error gen baremo hermano admisión"); return 0;}
                $log->warning("GENERADO BAREMO HERMANOS ADMISIÓN");
             }
          }
@@ -1644,14 +1635,6 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
           $noborradora='';
           $noborradorc='';
       }
-      /*
-      if($estado_convocatoria>=ESTADO_RECLAMACIONES_BAREMADAS AND $estado_convocatoria<ESTADO_RECLAMACIONES_PROVISIONAL)
-         $filtrorec=" AND (rec.tipo='baremo' OR rec.tipo IS NULL)";
-      else if($estado_convocatoria==ESTADO_RECLAMACIONES_PROVISIONAL)
-         $filtrorec=" AND (rec.tipo='provisional' OR rec.tipo IS NULL)";
-      else
-         $filtrorec=" AND (rec.tipo='provisional' OR rec.tipo='baremo' OR rec.tipo IS NULL)";
-      */ 
 		//MOSTRAMOS DATOS VALIDADOS
 		if($rol=='centro' or $rol=='alumno') //para centros o alumnos del centro
       {

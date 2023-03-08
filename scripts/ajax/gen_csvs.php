@@ -43,7 +43,7 @@ $solicitud=new Solicitud($conexion);
 
 ##################################################################################
 $log_gencsvs=new logWriter('log_gencsvs',DIR_LOGS);
-$log_gencsvs->warning("DATOS POST PARA CSV");
+$log_gencsvs->warning("INICIOLOG DATOS POST PARA CSV");
 $log_gencsvs->warning(print_r($_POST,true));
 ##################################################################################
 //si es para datos de matricula, con rol de admin
@@ -58,12 +58,7 @@ if($subtipo_original=='csv_mat_admin' && $rol=='admin')
 }
 //si es para matricula de alumnos que promocionan
 if($subtipo_original=='csv_pro')
-{
 	$solicitudes=$list->getMatriculas($id_centro); 
-	
-	$log_gencsvs->warning("DATOS CENTROS PARA CSV: ");
-	$log_gencsvs->warning(print_r($solicitudes,true));
-}
 //si es para datos de matricula y vacantes 
 if($subtipo_original=='csv_mat')
 {
@@ -83,11 +78,8 @@ if($subtipo_original=='csv_mat_final')
 $fcsv=$list->genCsv($solicitudes,$id_centro,$subtipo_original,$$cabecera,$$camposdatos,DIR_CSVS,$log_gencsvs);
 
 $log_gencsvs->warning("LISTADO CSV GENERADO, DATOS:");
-$log_gencsvs->warning(print_r($solicitudes,true));
 $log_gencsvs->warning("EN: ".DIR_CSVS);
 $log_gencsvs->warning("EN DIRECTORIO WEB: ".DIR_CSVS_WEB."FICHERO: $fcsv");
-$log_gencsvs->warning(print_r($$cabecera,true));
-$log_gencsvs->warning(print_r($$camposdatos,true));
 
 if($fcsv) 
 {

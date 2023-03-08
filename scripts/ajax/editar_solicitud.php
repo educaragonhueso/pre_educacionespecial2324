@@ -35,7 +35,7 @@ require_once DIR_BASE.'/includes/form_solicitud.php';
 
 
 ######################################################################################
-$log_editar_solicitud->warning("::::INICIOLOG EDITAR ALUMNO");
+$log_editar_solicitud->warning("INICIOLOG EDITAR ALUMNO");
 ######################################################################################
 $scontroller=new SolicitudController($rol,$conexion,$formsol,$estado_convocatoria,$log_editar_solicitud);
 $tsol=new Solicitud($conexion);

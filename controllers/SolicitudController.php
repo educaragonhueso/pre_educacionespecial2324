@@ -86,7 +86,7 @@ class SolicitudController{
     public function aplicarComprobaciones($id,$dsolicitud,$log)
     {
       $acom=$this->getComprobaciones($id);
-      $log->warning("COMPROBANDO");
+      $log->warning("COMPROBANDO COMPROBACIONES");
       $log->warning(print_r($acom,true));
       //comprobamos el estado de la renta, 
       if($dsolicitud['baremo_renta_inferior']==1)
