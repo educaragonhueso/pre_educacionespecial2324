@@ -302,7 +302,6 @@ class Centro{
    {
       $datosmatricula=array();
       $datosmatricula['nombre_centro']=$this->getNombre();  
-
       $dcg=$this->getDatosCentrosGrupos('ebo');  
          
       $datosmatricula['gruposebo']=$dcg[0]->num_grupos;  

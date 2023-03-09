@@ -1102,9 +1102,6 @@ class ListadosController{
  
    public function genCsv($solicitudes,$idcentro=1,$tipo,$cab=array(),$datos=array(),$dir,$log)
 	{
-         $log->warning("SOLICITUDES TOTALES");
-         $log->warning(print_r($solicitudes,true));
-      
       $linea=array();
       $nfichero=$dir.'/'.$tipo.'.csv';
       $fp = fopen($nfichero, 'w'); 
@@ -1118,8 +1115,6 @@ class ListadosController{
          {
             $linea[$k]=utf8_decode($sol[$k]);
          }
-         $log->warning("LINEA A ESCRIBIR: ");
-         $log->warning(print_r($linea,true));
          fputcsv($fp,$linea,';');
       }
       fclose($fp);
@@ -1168,10 +1163,13 @@ class ListadosController{
       $amatcentros=array();	
       $vacantes_total=array('ebo'=>0,'tva'=>0,'dos'=>0);
       $centros=$this->getCentrosIds($rol,$provincia,$log);
+      $log->warning("CENTROS CSVS");
+      $log->warning(print_r($centros,true));
       foreach($centros as $c)
       {
          $centro=new Centro($this->conexion,$c->id_centro,'no');
          $centro->setNombre();
+         
          $matcentros=$centro->getDatosMatriculaCentro($log);
          $amatcentros[$i]['nombre_centro']=str_replace(',','',$centro->getNombre());
          $amatcentros[$i]['gruposebo']=$matcentros['gruposebo'];
@@ -1200,11 +1198,6 @@ class ListadosController{
          $vacantes_total['dos']=$vacantes_total['dos']+$amatcentros[$i]['vacantesdos'];
          
          $i++;
-         if($c->id_centro==22002338)
-         {
-            $log->warning("OBTENIENDO MATRICULA DE  CENTROS CONVOCATORIA: $estado_convocatoria");
-            $log->warning(print_r($matcentros,true));
-         }
       }
       if($rol=='admin') return $vacantes_total;
       return $amatcentros;

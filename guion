@@ -1,9 +1,3 @@
-MODIFICAICONES CENTROS
-
-   dos años todo a cero
-   quitar miguel servet
-   
-
 DESCRIPCION PROCESO ADMISION EDUCACION ESPECIAL 2324
 =============================================================================================================
 FASE PREVIA
@@ -289,6 +283,10 @@ TOKEN autenticación git
 
 COMANDOS SQL ÚTILEs
 ---------------------------------------------------------
+
+-Generar copias de bases de datos para puntos críticos
+
+    #mysqldump -uroot PRO_EDUCACIONESPECIAL2324 > /datos/backups/educacionespecial2324/basesdatos_puntoscriticos/pro_educacionespecial2324_vacantes.sql
 
 -Resetear alumnos para las pruebas o simulaciones
 
