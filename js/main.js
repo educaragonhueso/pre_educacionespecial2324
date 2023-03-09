@@ -1918,15 +1918,14 @@ $.ajax({
   url:'../'+directoriobase+'/scripts/ajax/cambio_estado_solicitud.php',
       success: function(data) 
       {
-         console.log("RESPUESTA: "+data);
          if(vcontinua.indexOf('NO')!=-1){ alert("El alumno no continua, no afecta plazas vacantes");return;}
          cambiar_tipo(ots,vestado_pulsado,vid);
          var vacantes_ebo =data.split(":")[0];
          var vacantes_tva =data.split(":")[1];
-            $('#vacantesmat_ebo_desk'+vidcentro).html(vacantes_ebo);
-            $('#vacantesmat_tva_desk'+vidcentro).html(vacantes_tva);
-            var  npo_ebo=$('#vacantesmat_ebo_desk'+vidcentro).prev().text();
-            var  npo_tva=$('#vacantesmat_tva_desk'+vidcentro).prev().text();
+         $('#vacantesmat_ebo_desk'+vidcentro).html(vacantes_ebo);
+         $('#vacantesmat_tva_desk'+vidcentro).html(vacantes_tva);
+         var  npo_ebo=$('#vacantesmat_ebo_desk'+vidcentro).prev().text();
+         var  npo_tva=$('#vacantesmat_tva_desk'+vidcentro).prev().text();
          if(vestado_pulsado.indexOf('EBO')!=-1)
          {
             console.log("pulsado ebo");

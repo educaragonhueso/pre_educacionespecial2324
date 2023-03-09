@@ -16,14 +16,16 @@ $conectar=new Conectar('../../config/config_database.php');
 $conexion=$conectar->conexion();
 $centro=new Centro($conexion,$_POST['id_centro'],'ajax');
 
-$vacantes=$centro->getVacantesCentroFase0('centro',$log_cambio_estado);
 $nuevotipo=str_replace('CAMBIA A ','',$_POST['estado_pulsado']);
 $result=1;
+//print_r($_POST);
 if($_POST['continua']=='CONTINUA')
 {
    $sql="update matricula set tipo_alumno_actual='".trim($nuevotipo)."' where id_alumno=".$_POST['id_alumno'];
+//print_r($sql);
    $result=$conexion->query($sql);
 }
+$vacantes=$centro->getVacantesCentroFase0('centro',$log_cambio_estado);
 if($result)
 	print($vacantes['ebo'].':'.$vacantes['tva']);
 else     
