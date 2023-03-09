@@ -186,16 +186,6 @@ if($modo=='GRABAR SOLICITUD')
       $log_nueva->warning("CORREO: ".$correo);
       $log_nueva->warning("TOKEN: ".$token);
       ######################################################################################
-      /* 
-      //recalcuamos el baremo 
-      $aldata=$utils->getSolicitudesComprobarBaremo($token);
-      $log_actualizar->warning("ACT BAREMO: ");
-      $log_actualizar->warning(print_r($aldata,true));
-      $dbaremo=$utils->recalcularBaremo($aldata[0]);
-      $log_actualizar->warning("RES ACT BAREMO: ");
-      $log_actualizar->warning(print_r($dbaremo,true));
-      $utils->actualizarBaremo($dbaremo,$id_alumno,$log_actualizar);
-      */
       //si es nueva y anonima se devuelve la clave para acceder despues y se cambia el directorio de documentos
       if (!$conexion->commit()) 
       {
@@ -231,7 +221,7 @@ else //MODIFICACION SOLICITUD
       $rus=$solicitud->setValidada($token);
       $correo_centro=$solicitud->getCorreoCentro($id_centro_destino);
       #!!!!!!!!!!!!!SOLO PARA PRUEBAS!!!!!!!!!!!!!!!!
-      $correo_centro='educativosaragon@gmail.com'; 
+      //$correo_centro='educativosaragon@gmail.com'; 
       $token_centro=$solicitud->getTokenCentro($id_centro_destino);
 
       $log_actualizar->warning("DATOS CENTRO: correo: $correo_centro, token: $token_centro, id_centro: $id_centro_destino");
@@ -252,8 +242,8 @@ else //MODIFICACION SOLICITUD
       $contenido_correo_alumno="La solicitud se ha modificado, puedes acceder directamente desde este enlace: $enlace_solicitud_alumno";
       $tipo_correo='Modificación solicitud Educación Especial curso 22/23';   
       //$contenido="Soliciutd modificada, pulsa en este $enlace_solicitud_centro para acceder";
-      $correo_alumno='educativosaragon@gmail.com'; 
-      $rescorreo=$notificacion->enviarCorreo('Solicitud modificada',$correo_alumno,$contenido_correo_alumno,$tipo_correo);          
+      //$correo_alumno='educativosaragon@gmail.com'; 
+      $rescorreo=$notificacion->enviarCorreo('Solicitud modificada',$correo,$contenido_correo_alumno,$tipo_correo);          
       //actualizamos el baremo para reflejar el valor final correcto
       //$aldata=$utils->getSolicitudesComprobarBaremo($token);
       //$dbaremo=$utils->recalcularBaremo($aldata[0]);
