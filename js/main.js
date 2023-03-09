@@ -2139,7 +2139,7 @@ $("#fcentrosadminzgz").easyAutocomplete(cen_options_zaragoza);
 
 var cen_options = 
 	{
-   url:urlbase+"/datosweb/centros_especial_municipios0.json",
+   url:urlbase+"/datosweb/centros_especial_municipios.json",
 	getValue:"nc",
     template: {
         type: "description",

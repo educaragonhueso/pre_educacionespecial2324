@@ -370,7 +370,6 @@ $formsol.=
                <select class="form-control" id="hermanos_admision_tipoestudios1" value="" name="hermanos_admision_tipoestudios1">
 					    <option class="hamo1" value="ebo">INFANTIL-EBO <i>(Nacidos de '.$_SESSION["ainicio_ebo"].' a '.$_SESSION["afin_ebo"].' ambos inclusive)</i></option>
 					    <option class="hamo1" value="tva">TVA <i>(Nacidos de '.$_SESSION["ainicio_tva"].' a '.$_SESSION["afin_tva"].' ambos inclusive)</i></option>
-					    <option class="hamo1" value="dos">DOS AÑOS <i>Nacidos en '.$_SESSION["ados"].'</i></option>
                </select>
             </div>
          </div>
@@ -440,7 +439,6 @@ $formsol.=
                <select class="form-control" id="hermanos_admision_tipoestudios2" value="" name="hermanos_admision_tipoestudios2">
 					    <option class="hamo2" value="ebo">INFANTIL-EBO <i>(Nacidos de '.$_SESSION["ainicio_ebo"].' a '.$_SESSION["afin_ebo"].' ambos inclusive)</i></option>
 					    <option class="hamo2" value="tva">TVA <i>(Nacidos de '.$_SESSION["ainicio_tva"].' a '.$_SESSION["afin_tva"].' ambos inclusive)</i></option>
-					    <option class="hamo2" value="dos">DOS AÑOS <i>Nacidos en '.$_SESSION["ados"].'</i></option>
                </select>
             </div>
          </div>
@@ -510,7 +508,6 @@ $formsol.=
                <select class="form-control" id="hermanos_admision_tipoestudios3" value="" name="hermanos_admision_tipoestudios3">
 					    <option class="hamo3" value="ebo">INFANTIL-EBO <i>(Nacidos de '.$_SESSION["ainicio_ebo"].' a '.$_SESSION["afin_ebo"].' ambos inclusive)</i></option>
 					    <option class="hamo3" value="tva">TVA <i>(Nacidos de '.$_SESSION["ainicio_tva"].' a '.$_SESSION["afin_tva"].' ambos inclusive)</i></option>
-					    <option class="hamo3" value="dos">DOS AÑOS <i>Nacidos en '.$_SESSION["ados"].'</i></option>
                </select>
             </div>
          </div>
@@ -567,7 +564,6 @@ $formsol.=
 					<select class="form-control" name="tipoestudios" id="tipoestudios">
 					    <option class="hamo" value="ebo">INFANTIL-EBO <i>(Nacidos de '.$_SESSION["ainicio_ebo"].' a '.$_SESSION["afin_ebo"].' ambos inclusive)</i></option>
 					    <option class="hamo" value="tva">TVA <i>(Nacidos de '.$_SESSION["ainicio_tva"].' a '.$_SESSION["afin_tva"].' ambos inclusive)</i></option>
-					    <option class="hamo" value="dos">DOS AÑOS <i>Nacidos en '.$_SESSION["ados"].'</i></option>
 					</select>
 				</div>
                         </div>

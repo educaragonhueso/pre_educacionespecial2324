@@ -65,7 +65,7 @@
 echo "ESTADO CONVOCATORIA: ".$_SESSION['estado_convocatoria'];
 if(MANTENIMIENTO=='NO' OR IPREMOTA1==$_SERVER['HTTP_X_FORWARDED_FOR'] OR IPREMOTA2==$_SERVER['HTTP_X_FORWARDED_FOR'])
 {
-   if($_SESSION['estado_convocatoria']==ESTADO_INSCRIPCION)
+   if($_SESSION['estado_convocatoria']==ESTADO_INSCRIPCION OR (IPREMOTA1==$_SERVER['HTTP_X_FORWARDED_FOR'] OR IPREMOTA2==$_SERVER['HTTP_X_FORWARDED_FOR']))
    {
        echo "<p>Pulsa en 'Crear Solicitud' para acceder al formulario de creación de solicitudes.</p><p> Cuando lo completes recibirás un enlace en tu correo electrónico.</p><p> Dicho enlace te servirá para seguir todo el proceso incluyendo posibles modificaciones de solicitud, listados de admitidos etc...</p>";
 
