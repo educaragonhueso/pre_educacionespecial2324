@@ -8,7 +8,7 @@
       <style type="text/css">
          .wrapper
          { 
-            width:80%;
+            width:40%;
             padding: 28px;
             padding-top: 28px;
             margin: auto;

@@ -103,7 +103,7 @@ $procesocompleto="
         <td>Inicio en : ".convertirFecha(DIA_INICIO_ASIGNACIONES)."</td>
       </tr>
       <tr>
-        <td>MATRICULACIÓN</td>
+        <td></td>
         <td>Realización de matrícula alumnos admitidos</td>
         <td>Inicio en : ".convertirFecha(DIA_MATRICULACION_ASIGNACIONES)."</td>
       </tr>
