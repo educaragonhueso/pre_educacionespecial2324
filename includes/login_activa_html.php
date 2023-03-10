@@ -8,7 +8,7 @@
       <style type="text/css">
          .wrapper
          { 
-            width:450px;
+            width:80%;
             padding: 28px;
             padding-top: 28px;
             margin: auto;
@@ -67,7 +67,7 @@ if(MANTENIMIENTO=='NO' OR IPREMOTA1==$_SERVER['HTTP_X_FORWARDED_FOR'] OR IPREMOT
 {
    if($_SESSION['estado_convocatoria']==ESTADO_INSCRIPCION OR (IPREMOTA1==$_SERVER['HTTP_X_FORWARDED_FOR'] OR IPREMOTA2==$_SERVER['HTTP_X_FORWARDED_FOR']))
    {
-       echo "<p>Pulsa en 'Crear Solicitud' para acceder al formulario de creación de solicitudes.</p><p> Cuando lo completes recibirás un enlace en tu correo electrónico.</p><p> Dicho enlace te servirá para seguir todo el proceso incluyendo posibles modificaciones de solicitud, listados de admitidos etc...</p>";
+       echo "<div class='cajainfoppal'><p>Pulsa en 'Crear Solicitud' para acceder al formulario de creación de solicitudes.</p><p> Cuando lo completes recibirás un enlace en tu correo electrónico.</p><p> Dicho enlace te servirá para seguir todo el proceso incluyendo posibles modificaciones de solicitud, listados de admitidos etc...</p></div>";
 
        echo '<a href="index.php" class="btn btn-primary" value="Crear solicitud" style="margin-bottom:10px">Crear solicitud</a>';
    }
