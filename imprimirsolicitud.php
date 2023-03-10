@@ -3,7 +3,7 @@ session_start();
 if(isset($_SESSION['dir_base']))
    $dir_base=$_SESSION['dir_base'];
 else
-   $dir_base='/datos/www/admespecial.aragon.es/public_admespecial/educacionespecial2223';
+   $dir_base='/datos/www/admespecial.aragon.es/public_admespecial/educacionespecial2324';
    
 require_once $dir_base."/config/config_global.php";
 require_once $dir_base.'/clases/core/Conectar.php';
@@ -31,7 +31,7 @@ include('includes/head.php');
 <body>
    <div class="wrapper">
       <div id="content">
-			<a href="<?php echo URL_BASE.'/'.CONVOCATORIA ?>"><button class="btn btn-outline-info" id="inicio" type="button">INICIO</button></a>
+			<a href="<?php echo URL_BASE.'/'.EDICION ?>"><button class="btn btn-outline-info" id="inicio" type="button">INICIO</button></a>
 			<button class="btn btn-primary" id="bimprimir">IMPRIMIR</button>
 	  	<span type="hidden" id="estado_convocatoria" name="estado_convocatoria" value="<?php echo $_SESSION['estado_convocatoria']; ?>"></span>
 	  	<span type="hidden" id="rol" name="rol" value="<?php echo $_SESSION['rol']; ?>"></span> 

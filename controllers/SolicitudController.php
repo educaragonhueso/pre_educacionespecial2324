@@ -81,7 +81,7 @@ class SolicitudController{
 
     public function imprimirSolicitud($id)
     {
-      return $this->showFormSolicitud($id,$id_centro=0,$this->rol,$collapsed=0,$imprimir=1,0,$this->conectar,'dirbase',$this->log,0);
+      return $this->showFormSolicitud($id,$id_centro=0,$this->rol,$collapsed=0,$imprimir=1,$this->conectar,'dirbase',$this->log,0);
 	 }
     public function aplicarComprobaciones($id,$dsolicitud,$log)
     {

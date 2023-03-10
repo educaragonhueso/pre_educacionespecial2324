@@ -8,6 +8,6 @@ echo '<div class="row">';
 	echo '<div class="col text-center"><b>EDUCACION ESPECIAL</b></div>';
 echo '</div>';
 echo '<div class="row justify-content-center" style="padding-top:50px;padding-bottom:40px;">';
-	echo '<div class="col text-center"><b>SOLICITUD DE ESCOLARIZACIÓN EN CENTROS DOCENTES SOSTENIDOS CON FONDOS PÚBLICOS CURSO 2022-2023</b></div>';
+	echo '<div class="col text-center"><b>SOLICITUD DE ESCOLARIZACIÓN EN CENTROS DOCENTES SOSTENIDOS CON FONDOS PÚBLICOS CURSO 2023-2024</b></div>';
 echo '</div>';
 ?>
