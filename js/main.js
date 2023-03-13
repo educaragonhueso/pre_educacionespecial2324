@@ -733,6 +733,18 @@ $('body').on('focusout', 'input[name*=hermanos_nombre_baremo]', function(e)
 });
 //METODOS VALIDACION DE BAREMO
 /////////////////////////////////////////////////////////////////////////////////////////////////
+$('body').on('change', '#id_centro_estudios_origen', function(e){
+   var centro=$(this).val();
+   console.log("CENTRO: "+centro);
+   if(centro.indexOf('*')==-1)
+   {
+      console.log("DESMARCANDO RESERVA");
+      $("input[name='reserva']").prop('checked', false); 
+    }
+  return;
+});
+
+
 $('body').on('click', 'button[name=boton_baremo_validar_proximidad_domicilio]', function(e)
 {
    var vid=$(this).attr("name");

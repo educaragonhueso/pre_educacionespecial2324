@@ -50,18 +50,21 @@ FASE1
 --------------------------------------------------------------------------------------------------------------------------------
    
    Inscripción
+   ----------------------------------------------------------------------------
 
       Genración de inscripciones
       hacer copia de seguridad:
    
           #mysqldump -uroot PRE_EDUCACIONESPECIAL2324 > /datos/backups/educacion_especial/pre_educacionespecial2324_inscripciones.sql
       
-    baremación
+   baremación
+   ----------------------------------------------------------------------------
 
       Se validan y comprueban las solicitudes
       El listado baremado se genera para los centros hasta su publicación
 
-      COMPROBACIONES
+   COMPROBACIONES
+   ----------------------------------------------------------------------------
 
          Desde el directorio del servidor scripts/servidor/
 
@@ -102,7 +105,7 @@ FASE1
          #mysqldump -uroot PRE_EDUCACIONESPECIAL2324 > /datos/backups/educacion_especial/pre_educacionespecial2324_baremados.sql
   
    Aleatorio
-
+   ----------------------------------------------------------------------------
       Se generan números aleatorios para las solicitudes, los gemelos tienen los mismos 
       
       se hace copia 
@@ -110,6 +113,7 @@ FASE1
          #mysqldump -uroot PRE_EDUCACIONESPECIAL2324 > /datos/backups/educacion_especial/pre_educacionespecial2324_presorteo.sql
    
    Sorteo
+   ----------------------------------------------------------------------------
 
       Se realiza el sorteo
  

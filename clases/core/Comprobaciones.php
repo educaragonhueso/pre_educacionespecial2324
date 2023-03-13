@@ -40,6 +40,8 @@ function comprobarChecks($fsol_salida)
       $fsol_salida['cumplen']=0;
    if(!isset($fsol_salida['oponenautorizar']))
       $fsol_salida['oponenautorizar']=0;
+   if(!isset($fsol_salida['reserva']))
+      $fsol_salida['reserva']=0;
 
    return $fsol_salida;
 }

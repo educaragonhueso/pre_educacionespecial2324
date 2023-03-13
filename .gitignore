@@ -1,4 +1,6 @@
 logs/
 config/
 scripts/datossalida/
+scripts/fetch/ficherosbaremo/
+scripts/fetch/ficherosprovisional/
 salida/
