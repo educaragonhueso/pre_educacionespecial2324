@@ -53,6 +53,7 @@ elseif((($rol=='anonimo' OR $rol=='alumno') and $estado_convocatoria<=ESTADO_FIN
              <a class="dropdown-item" href="documentacion/a3a_domlaboralcpropia_2324.pdf" id="doca4" target="_blank">Anexo III B Responsable Domicilio Laboral Cuenta Propia</a>
              <a class="dropdown-item" href="documentacion/a7_suspension_matricula_2324.pdf" id="doca4" target="_blank">Anexo VII suspensión temporal matrícula</a>
              <a class="dropdown-item" href="documentacion/a1a_calendario_2324.pdf" target="_blank">Calendario Admisión Educación Especial</a>;
+             <a class="dropdown-item" href="documentacion/rel_centro_pref_localidad.pdf" target="_blank">Relación centro preferencia localidad</a>;
              <?php if($_SESSION['rol']=='admin'){?>
                <a class="dropdown-item" href="documentacion/doc_pruebas.html" id="ccen" target="_blank">Claves centros</a>;
                <a class="dropdown-item" href="documentacion/csv_comprobaciones.csv" id="csvc" target="_blank">CSV Comprobaciones</a>;
