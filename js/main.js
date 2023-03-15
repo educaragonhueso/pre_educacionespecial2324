@@ -2182,9 +2182,6 @@ var cen_options =
 		}
 	};
 $("#id_centro_destino").easyAutocomplete(cen_options);
-$("#hermanos_admision_id_centro_estudios_origen1").easyAutocomplete(cen_options);
-$("#hermanos_admision_id_centro_estudios_origen2").easyAutocomplete(cen_options);
-$("#hermanos_admision_id_centro_estudios_origen3").easyAutocomplete(cen_options);
 $("#id_centro_destino1").easyAutocomplete(cen_options);
 $("#id_centro_destino2").easyAutocomplete(cen_options);
 $("#id_centro_destino3").easyAutocomplete(cen_options);
@@ -2221,7 +2218,7 @@ $("#nacionalidad").easyAutocomplete(nac_options);
 
 var cen_estudios_options = 
 	{
-   url:urlbase+"/datosweb/centros_general_completo.json",
+   url:urlbase+"/datosweb/centros_estudios_origen.json",
 	getValue: "nc",
     template: {
         type: "description",
@@ -2247,6 +2244,9 @@ var cen_estudios_options =
 		}
 	};
 $("#id_centro_estudios_origen").easyAutocomplete(cen_estudios_options);
+$("#hermanos_admision_id_centro_estudios_origen1").easyAutocomplete(cen_estudios_options);
+$("#hermanos_admision_id_centro_estudios_origen2").easyAutocomplete(cen_estudios_options);
+$("#hermanos_admision_id_centro_estudios_origen3").easyAutocomplete(cen_estudios_options);
 $('.centro_estudios_origen').easyAutocomplete(cen_estudios_options);
 $('.id_centro_estudios_origen').easyAutocomplete(cen_estudios_options);
 $("#cen_estudios_origen").easyAutocomplete(cen_estudios_options);
