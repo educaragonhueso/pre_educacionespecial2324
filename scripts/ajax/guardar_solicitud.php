@@ -221,7 +221,8 @@ else //MODIFICACION SOLICITUD
       $rus=$solicitud->setValidada($token);
       $correo_centro=$solicitud->getCorreoCentro($id_centro_destino);
       #!!!!!!!!!!!!!SOLO PARA PRUEBAS!!!!!!!!!!!!!!!!
-      //$correo_centro='educativosaragon@gmail.com'; 
+      if(VERSION=='PRE')
+         $correo_centro='educativosaragon@gmail.com'; 
       $token_centro=$solicitud->getTokenCentro($id_centro_destino);
 
       $log_actualizar->warning("DATOS CENTRO: correo: $correo_centro, token: $token_centro, id_centro: $id_centro_destino");
@@ -243,7 +244,8 @@ else //MODIFICACION SOLICITUD
       $tipo_correo='Modificación solicitud Educación Especial curso 22/23';   
       //$contenido="Soliciutd modificada, pulsa en este $enlace_solicitud_centro para acceder";
       #!!!!!!!!!!!!!SOLO PARA PRUEBAS!!!!!!!!!!!!!!!!
-      //$correo_alumno='educativosaragon@gmail.com'; 
+      if(VERSION=='PRE')
+         $correo_alumno='educativosaragon@gmail.com'; 
       $rescorreo=$notificacion->enviarCorreo('Solicitud modificada',$correo,$contenido_correo_alumno,$tipo_correo);          
       //actualizamos el baremo para reflejar el valor final correcto
       //$aldata=$utils->getSolicitudesComprobarBaremo($token);

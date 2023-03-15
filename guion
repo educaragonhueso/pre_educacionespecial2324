@@ -285,8 +285,12 @@ Commit integrado
 TOKEN autenticación git
    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
 
-COMANDOS SQL ÚTILEs
+COMANDOS CONSULTAS SQL ÚTILES
 ---------------------------------------------------------
+
+-Comprobar alumnos con reserva q no tienen centros de origen en especial
+
+ select id_alumno,id_centro_estudios_origen from alumnos where reserva=1 and id_centro_estudios_origen in(select id_centro from centros where clase_centro!='especial');
 
 -Generar copias de bases de datos para puntos críticos
 

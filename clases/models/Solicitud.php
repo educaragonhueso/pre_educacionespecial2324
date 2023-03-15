@@ -545,7 +545,7 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
          {
             
             if($check_hermanosbaremo==0) break;
-            if($hermano['fnacimiento']=='') $hermano['fnacimiento']='2000-01-01';
+            if($hermano['nombre']=='' or $hermano['apellido1']=='' or $hermano['modalidad']=='' or $hermano['nivel']=='' or $hermano['fnacimiento']=='') continue;
             $sql="INSERT INTO alumnos_hermanos_baremo(id_alumno,nombre,apellido1,apellido2,modalidad,nivel,fnacimiento,tipo) VALUES($id,'".$hermano['nombre']."','".$hermano['apellido1']."','".$hermano['apellido2']."','".$hermano['modalidad']."','".$hermano['nivel']."','".$hermano['fnacimiento']."','baremo')";
             $update=$this->conexion->query($sql);
             $log->warning("CONSULTA ACTUALIZACION SOLICITUD HERMANOS BAREMO");
