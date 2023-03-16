@@ -235,7 +235,7 @@ else //MODIFICACION SOLICITUD
          $tipo_correo='Modificación solicitud Educación Especial curso 22/23';   
          $log_actualizar->warning("ENVIANDO CORREO CENTRO: contenido: $contenido_correo");
          $rescorreo=$notificacion->enviarCorreo('Solicitud modificada',$correo_centro,$contenido_correo,$tipo_correo);          
-         $log_actualizar->warning("ENVIADO CORREO: respuesta:: $rescorreo");
+         $log_actualizar->warning("ENVIADO CORREO AL CENTRO, RESPUESTA: $rescorreo");
       }
       //enviamos modificaicon al alumnno
       $url_solicitud_alumno=URL_BASE.EDICION."/index.php?token=".$token;
@@ -246,7 +246,9 @@ else //MODIFICACION SOLICITUD
       #!!!!!!!!!!!!!SOLO PARA PRUEBAS!!!!!!!!!!!!!!!!
       if(VERSION=='PRE')
          $correo_alumno='educativosaragon@gmail.com'; 
+      $log_actualizar->warning("ENVIANDO CORREO AL ALUMNO: $correo_alumno");
       $rescorreo=$notificacion->enviarCorreo('Solicitud modificada',$correo,$contenido_correo_alumno,$tipo_correo);          
+      $log_actualizar->warning("ENVIADO CORREO AL ALUMNO, RESPUESTA: $rescorreo");
       //actualizamos el baremo para reflejar el valor final correcto
       //$aldata=$utils->getSolicitudesComprobarBaremo($token);
       //$dbaremo=$utils->recalcularBaremo($aldata[0]);
