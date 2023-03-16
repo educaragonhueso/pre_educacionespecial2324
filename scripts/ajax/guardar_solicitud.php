@@ -245,8 +245,8 @@ else //MODIFICACION SOLICITUD
       //$contenido="Soliciutd modificada, pulsa en este $enlace_solicitud_centro para acceder";
       #!!!!!!!!!!!!!SOLO PARA PRUEBAS!!!!!!!!!!!!!!!!
       if(VERSION=='PRE')
-         $correo_alumno='educativosaragon@gmail.com'; 
-      $log_actualizar->warning("ENVIANDO CORREO AL ALUMNO: $correo_alumno");
+         $correo='educativosaragon@gmail.com'; 
+      $log_actualizar->warning("ENVIANDO CORREO AL ALUMNO: $correo");
       $rescorreo=$notificacion->enviarCorreo('Solicitud modificada',$correo,$contenido_correo_alumno,$tipo_correo);          
       $log_actualizar->warning("ENVIADO CORREO AL ALUMNO, RESPUESTA: $rescorreo");
       //actualizamos el baremo para reflejar el valor final correcto
