@@ -197,6 +197,11 @@ else
       //cuando es nueva solicitud
       if($rol=='anonimo')
          print("<div class='cajainfo'>SOLICITUD NUEVA <p>Completa los datos de cada sección, asegúrate de que sean correctos y de que recibes un correo confirmatorio</div>");
+      if(($rol=='anonimo' OR $rol=='alumno') AND $estado_convocatoria>=ESTADO_FININSCRIPCION)
+      {
+         $formsol=preg_replace('/GRABAR SOLICITUD/','',$formsol);
+         $formsol=preg_replace('/send/','',$formsol);
+      }
       print($formsol);
       print($infobaremo); 
    }
