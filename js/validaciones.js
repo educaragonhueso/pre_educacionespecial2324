@@ -253,12 +253,6 @@ function validarHermanoBaremo(fd) {
          {
             return 'Debes incluir todos los datos de al menos un hermano de baremo';
          }
-         else
-         {
-            var mod1=$('#hermanos_modalidad_baremo1').val();
-            if(mod1=='nodata')
-               return 'Debes incluir una modalidad en el primer hermano de baremo';
-         }
          //si el segundo hermano tienen escrito algo deben completarlo
          if((hn2!='' & hn2!='nodata') || (hpap2!='' & hpap2!='nodata') || (hsap2!='' & hsap2!='nodata') || (nivel2!='' & nivel2!='nodata') ||(fnac2!='' & fnac2!='nodata'))
             if((hn2=='' | hn2=='nodata') || (hpap2==''| hn2=='nodata') || (hsap2==''| hsap2=='nodata') || nivel2=='nodata' ||(fnac2==''| fnac2=='nodata')) 

@@ -104,9 +104,15 @@ FASE1
          ----------------------------------------------------------------------------------- 
 
 
-            Para familia numerosa y monoparental generamos los datos de la siguientes consulta
+            Para saber peticionarios de familia numerosa y monoparental generamos los datos de la siguientes consulta
          
-               myqsql>select a.id_alumno,dni_alumno,CONCAT(apellido1,' ',apellido2),dni_tutor1,datos_tutor1,dni_tutor2,datos_tutor2 into outfile '/var/lib/mysql-files/listadonumerosa1.csv' FIELDS TERMINATED BY ';' OPTIONALLY ENCLOSED BY '"' from centros ce, baremo b,alumnos a where ce.id_centro=a.id_centro_destino and a.id_alumno=b.id_alumno and marcado_numerosa=1 ;
+               myqsql>select a.id_alumno AS codigo_solicitud,dni_alumno 'NIF Alumno',CONCAT(apellido1,' ',apellido2) AS 'Apellidos Alumno',nombre AS 'Nombre Alumno,dni_tutor1 AS 'NIF Tutor1',datos_tutor1 'Datos Tutor1',dni_tutor2 AS 'NIF Tutor2',datos_tutor2 AS 'Datos Tutor2',marcado_numerosa AS SolicitaFamiliaNumerosa marcado_monoparental AS SolicitaFamiliaMonoperental into outfile '/var/lib/mysql-files/listadonumerosa1.csv' FIELDS TERMINATED BY ';' OPTIONALLY ENCLOSED BY '"' from centros ce, baremo b,alumnos a where ce.id_centro=a.id_centro_destino and a.id_alumno=b.id_alumno and marcado_numerosa=1 ;
+
+
+            Para saber los peticionarios de imv o renta_inferior
+               
+               select a.id_alumno AS codigo_solicitud,dni_alumno 'NIF Alumno',CONCAT(apellido1,' ',apellido2) AS 'Apellidos Alumno',nombre AS 'Nombre Alumno',dni_tutor1 AS 'NIF Tutor1',datos_tutor1 'Datos Tutor1',dni_tutor2 AS 'NIF Tutor2',datos_tutor2 AS 'Datos Tutor2',marcado_numerosa AS SolicitaFamiliaNumerosa, marcado_monoparental AS SolicitaFamiliaMonoperental into outfile '/var/lib/mysql-files/renta_inferior.csv' FIELDS TERMINATED BY ';' OPTIONALLY ENCLOSED BY '"' from centros ce, baremo b,alumnos a where ce.id_centro=a.id_centro_destino and a.id_alumno=b.id_alumno and renta_inferior=1;
+   
 
    Generación de tabla de baremados definitiva
    ----------------------------------------------------------------------------
