@@ -63,13 +63,34 @@ FASE1
       Se validan y comprueban las solicitudes
       El listado baremado se genera para los centros hasta su publicación
 
-   COMPROBACIONES
+   Comprobaciones
    ----------------------------------------------------------------------------
 
-         Desde el directorio del servidor scripts/servidor/
+      Desde el directorio del servidor scripts/servidor/
+      Para ello obtenemos los datos de cada una
+      Desde el directorio del servidor scripts/servidor/comprobaciones/
 
-         Para ello obtenemos los datos de cada una
+      Mediante estos 3 scripts gestionamos los datos de comprobación de familia numerosa, imv y discapacidad
+      
+      Script para consultar los datos
 
+         #php sc_actualizabaremo_solicitudes.php 
+   
+      Scripts opcionales
+
+         Script para modificar el baremo según los valores
+            
+            #php sc_actualizar_baremo_solicitudes.php > salida/sc_actbaremo
+         
+         Script para generar csv con los datos      
+   
+            #php sc_generar_csv_comprobaciones.php >>  ../../documentacion/csv_comprobaciones.csv 
+
+      Generamos copia baremados
+         #mysqldump -uroot PRE_EDUCACIONESPECIAL2324 > /datos/backups/educacion_especial/pre_educacionespecial2324_baremados.sql
+
+         IMV
+         ----------------------------------------------------------------------------------- 
             IMV: a partir de la base de datos usando la consulta
 
                SELECT * FROM PCSS_OWN.IMVSS_V_IMV_ACTIVOS_MIEMBROS
@@ -78,32 +99,20 @@ FASE1
       
                #php carga_datos_imv.php
             
-         Desde el directorio del servidor scripts/servidor/comprobaciones/
-
-         Mediante estos 3 scripts gestionamos los datos de comprobación de familia numerosa, imv y discapacidad
          
-         Script para consultar los datos
-
-            #php sc_actualizabaremo_solicitudes.php 
-      
-         Scripts opcionales
-
-            Script para modificar el baremo según los valores
-               
-               #php sc_actualizar_baremo_solicitudes.php > salida/sc_actbaremo
-            
-            Script para generar csv con los datos      
-      
-               #php sc_generar_csv_comprobaciones.php >>  ../../documentacion/csv_comprobaciones.csv 
+         Familias
+         ----------------------------------------------------------------------------------- 
 
 
-      Cargamos la tabla de baremados final para el ciudadano
+            Para familia numerosa y monoparental generamos los datos de la siguientes consulta
+         
+               myqsql>select a.id_alumno,dni_alumno,CONCAT(apellido1,' ',apellido2),dni_tutor1,datos_tutor1,dni_tutor2,datos_tutor2 into outfile '/var/lib/mysql-files/listadonumerosa1.csv' FIELDS TERMINATED BY ';' OPTIONALLY ENCLOSED BY '"' from centros ce, baremo b,alumnos a where ce.id_centro=a.id_centro_destino and a.id_alumno=b.id_alumno and marcado_numerosa=1 ;
 
+   Generación de tabla de baremados definitiva
+   ----------------------------------------------------------------------------
+   
           #php sc_gentabla_baremadas_final.php
 
-      Generamos copia baremados
-         #mysqldump -uroot PRE_EDUCACIONESPECIAL2324 > /datos/backups/educacion_especial/pre_educacionespecial2324_baremados.sql
-  
    Aleatorio
    ----------------------------------------------------------------------------
       Se generan números aleatorios para las solicitudes, los gemelos tienen los mismos 
@@ -320,7 +329,7 @@ COMANDOS CONSULTAS SQL ÚTILES
    
    update baremo set validar_proximidad_domicilio=0,validar_situacion_sobrevenida=0,validar_tutores_centro=0,validar_renta_inferior=0,validar_acogimiento=0,validar_genero=0,validar_terrorismo=0,validar_parto=0,validar_hnos_centro=0,validar_discapacidad_alumno=0,validar_discapacidad_hermanos=0,validar_tipo_familia_numerosa=0,validar_tipo_familia_monoparental=0;
 
--Listados de fmilias numerosa o monoparental
+-Listados de familias numerosa o monoparental
 
    select nombre_centro, nombre,apellido1,apellido2,dni_alumno,datos_tutor1,dni_tutor1,datos_tutor2,dni_tutor2 into outfile '/var/lib/mysql-files/listadonumerosa1.csv' FIELDS TERMINATED BY ';' OPTIONALLY ENCLOSED BY '"' from centros ce, baremo b,alumnos a where ce.id_centro=a.id_centro_destino and a.id_alumno=b.id_alumno and marcado_numerosa=1 ;
 

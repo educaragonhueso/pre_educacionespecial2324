@@ -1,5 +1,6 @@
 logs/
 config/
+scripts/datos/datos_comprobaciones/
 scripts/datossalida/
 scripts/fetch/ficherosbaremo/
 scripts/fetch/ficherosprovisional/

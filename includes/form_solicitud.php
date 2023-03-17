@@ -1218,7 +1218,7 @@ $formsol.='
 <!--FIN SECCION CARGA DOCUMENTACION-->
    <div class="row operacionesformulario">
 	    <div class="text-center text-md-left">
-         <!--<a class="btn btn-primary send" >GRABAR SOLICITUD</a>-->
+         <a class="btn btn-primary send" >GRABAR SOLICITUD</a>
        </div>';
 if($rol!='admin' or $rol=='alumno')
 {
