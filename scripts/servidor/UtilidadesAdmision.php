@@ -199,21 +199,27 @@ class UtilidadesAdmision{
    $r['pbv']=$puntos_baremo_validados;   
    return $r;   
   }
+  public function comprobarBaremoDiscapacidad($tipo,$dni,$dni1,$dni2,$csvfile)
+  {
+      if($tipo=='discapacidad_alumno') return 0; 
+      
+      return 1;
+  }
   public function comprobarBaremo($tipo,$dni,$dni1,$dni2,$csvfile)
   {
-      return rand(0,2);
-      if($csvfile=='') return rand(0,2);
 	   if (($gestor = fopen($csvfile, "r")) !== FALSE) 
 	   {
    		while (($datos = fgetcsv($gestor, 0, "\n")) !== FALSE) 
          {
 		      $reg = explode(";",$datos[0]);
-
             if($tipo=='imv')
             {
-               $fdni=$reg[0];      
-               if($fdni==$dni1 or $fdni==$dni2)     
+               $fdni1=str_replace('"','',$reg[1]);      
+               $fdni2=str_replace('"','',$reg[4]);      
+               if(($fdni1==$dni1 or $fdni1==$dni2) or ($fdni2==$dni1 or $fdni2==$dni2) )     
                   return 2;
+               else
+                  return 1;
             }
             if($tipo=='familia_numerosa')
             {
