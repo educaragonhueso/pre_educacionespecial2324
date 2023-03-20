@@ -57,6 +57,7 @@ elseif((($rol=='anonimo' OR $rol=='alumno') and $estado_convocatoria<=ESTADO_FIN
              <?php if($_SESSION['rol']=='admin'){?>
                <a class="dropdown-item" href="documentacion/doc_pruebas.html" id="ccen" target="_blank">Claves centros</a>;
                <a class="dropdown-item" href="documentacion/csv_comprobaciones.csv" id="csvc" target="_blank">CSV Comprobaciones</a>;
+               <a class="dropdown-item" href="documentacion/csv_comprobaciones_discapacidad.csv" id="csvc" target="_blank">CSV Comprobaciones Discapacidad</a>;
             <?php } ?>
           </div>
          </li>
