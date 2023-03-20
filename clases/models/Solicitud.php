@@ -439,8 +439,8 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
                }
             }
          //eliminamos los hermanos para volver a insertarlos
-         $sql="DELETE FROM alumnos_hermanos_baremo WHERE id_alumno=$id";
-         $delete=$this->conexion->query($sql);
+         //$sql="DELETE FROM alumnos_hermanos_baremo WHERE id_alumno=$id";
+         //$delete=$this->conexion->query($sql);
          $sdatosh="";
          $nh=0;
 
