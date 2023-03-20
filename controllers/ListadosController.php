@@ -1177,14 +1177,14 @@ class ListadosController{
          $amatcentros[$i]['matriculaactualebo']=$matcentros['matriculaactualebo'];
          $amatcentros[$i]['vacantesebo']=$matcentros['plazasebo']-$matcentros['matriculaactualebo'];
          
-         $amatcentros[$i]['solicitudesebo']=$centro->getSolicitudes($c->id_centro,'ebo',$log,$estado_convocatoria);
+         //$amatcentros[$i]['solicitudesebo']=$centro->getSolicitudes($c->id_centro,'ebo',$log,$estado_convocatoria);
          
          $amatcentros[$i]['grupostva']=$matcentros['grupostva'];
          $amatcentros[$i]['puestostva']=$matcentros['plazastva'];
          $amatcentros[$i]['matriculaactualtva']=$matcentros['matriculaactualtva'];
          $amatcentros[$i]['vacantestva']=$matcentros['plazastva']-$matcentros['matriculaactualtva'];
          
-         $amatcentros[$i]['solicitudestva']=$centro->getSolicitudes($c->id_centro,'tva',$log,$estado_convocatoria);
+         //$amatcentros[$i]['solicitudestva']=$centro->getSolicitudes($c->id_centro,'tva',$log,$estado_convocatoria);
          
          $amatcentros[$i]['gruposdos']=$matcentros['gruposdos'];
          $amatcentros[$i]['puestosdos']=$matcentros['plazasdos'];

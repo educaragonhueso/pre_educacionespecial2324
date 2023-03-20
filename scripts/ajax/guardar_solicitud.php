@@ -52,41 +52,41 @@ require_once DIR_BASE.'/includes/form_solicitud.php';
 $sc=new SolicitudController($rol,$conexion,$formsol,$estado_convocatoria,$log_nueva);
 $utils=new UtilidadesAdmision($conexion,'','');
 ######################################################################################
+
+$fsol_entrada=$_POST['fsol'];
+
+parse_str($fsol_entrada, $fsol_salida);
 if($modo=='GRABAR SOLICITUD')
 {
    $log_nueva->warning("INICIO POST RECIBIDO NUEVA SOLICITUD:");
    $log_nueva->warning(print_r($_POST,true));
+
+   //para el caso de alumnos que tienen centro de origen, este aparece con un asterisco
+   if(isset($fsol_salida['id_centro_estudios_origen']))
+      $fsol_salida['id_centro_estudios_origen']=trim($fsol_salida['id_centro_estudios_origen'],'*');
+   else $fsol_salida['id_centro_estudios_origen']='';
+
+   //comprobamos centro de origen, si hay reserva debe ser un centro válido
+   if($fsol_salida['reserva']==1)
+   {
+      $id_centro_estudios_origen=$solicitud->getIdCentro($fsol_salida['id_centro_estudios_origen'],$log_nueva);
+      if($id_centro_estudios_origen==0)
+      {
+         print("centroorigen".$fsol_salida['id_centro_estudios_origen']."_".$id_centro_estudios_origen);
+         exit();
+      }
+   }
+   //si el centro incluye un asterisco, para diferenciar ed especial del resto, lo quitamos
+   $fsol_salida['id_centro_estudios_origen']=trim($fsol_salida['id_centro_estudios_origen'],'*');
+   $fsol_salida['id_centro_estudios_origen']=$solicitud->getCentroOrigenId($fsol_salida['id_centro_estudios_origen'],$log_nueva);
 }
 else
 {
    $log_actualizar->warning("INICIO POST RECIBIDO ACTUALIZAR SOLICITUD:");
    $log_actualizar->warning(print_r($_POST,true));
-
    $id_alumno=$_POST['id_alumno'];
 }
 ######################################################################################
-
-$fsol_entrada=$_POST['fsol'];
-
-//el capo baremo pts total no está en el formulario asi q lo añadimos
-//$fsol_entrada.="&baremo_ptstotal=".$_POST['ptsbaremo'];
-parse_str($fsol_entrada, $fsol_salida);
-
-//para el caso de alumnos que tienen centro de origen, este aparece con un asterisco
-if(isset($fsol_salida['id_centro_estudios_origen']))
-	$fsol_salida['id_centro_estudios_origen']=trim($fsol_salida['id_centro_estudios_origen'],'*');
-else $fsol_salida['id_centro_estudios_origen']='';
-
-//comprobamos centro de origen, si hay reserva debe ser un centro válido
-if($fsol_salida['reserva']==1)
-{
-   $id_centro_estudios_origen=$solicitud->getIdCentro($fsol_salida['id_centro_estudios_origen'],$log_nueva);
-   if($id_centro_estudios_origen==0)
-   {
-      print("centroorigen".$fsol_salida['id_centro_estudios_origen']."_".$id_centro_estudios_origen);
-      exit();
-   }
-}
 //SECCION PROCESO ENTRADA DATOS
 ######################################################################################
 if($rol=='anonimo' or $rol=='alumno')
@@ -111,9 +111,6 @@ if($id_centro_destino==0)
    print('ERROR GUARDANDO DATOS: EL CENTRO SOLICITADO NO EXISTE O NO ES DE EDUCACIÓN ESPECIAL');
    exit();
 }
-//si el centro incluye un asterisco, para diferenciar ed especial del resto, lo quitamos
-$fsol_salida['id_centro_estudios_origen']=trim($fsol_salida['id_centro_estudios_origen'],'*');
-$fsol_salida['id_centro_estudios_origen']=$solicitud->getCentroOrigenId($fsol_salida['id_centro_estudios_origen'],$log_nueva);
 
 //procesmoas los centros adicionales
 for($i=1;$i<7;$i++)
