@@ -307,6 +307,11 @@ COMANDOS CONSULTAS SQL ÚTILES
 
  select id_alumno,id_centro_estudios_origen from alumnos where reserva=1 and id_centro_estudios_origen in(select id_centro from centros where clase_centro!='especial');
 
+-Datos de alumnos q tienen reserva y sus centros de origen y destino 
+
+    select nombre,apellido1,a.token,id_alumno,c.nombre_centro,c2.nombre_centro from alumnos a,centros c,centros c2 where c2.id_centro=a.id_centro_estudios_origen and c.id_centro=a.id_centro_destino and reserva=1 order by id_centro_destino desc;
+
+
 -Generar copias de bases de datos para puntos críticos
 
     #mysqldump -uroot PRO_EDUCACIONESPECIAL2324 > /datos/backups/educacionespecial2324/basesdatos_puntoscriticos/pro_educacionespecial2324_vacantes.sql

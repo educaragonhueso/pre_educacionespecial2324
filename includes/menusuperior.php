@@ -59,6 +59,7 @@ elseif((($rol=='anonimo' OR $rol=='alumno') and $estado_convocatoria<=ESTADO_FIN
                <a class="dropdown-item" href="documentacion/csv_comprobaciones.csv" id="csvc" target="_blank">CSV Comprobaciones</a>;
                <a class="dropdown-item" href="documentacion/csv_comprobaciones_discapacidad.csv" id="csvc" target="_blank">CSV Comprobaciones Discapacidad</a>;
                <a class="dropdown-item" href="documentacion/csv_comprobaciones_imv.csv" id="csvc" target="_blank">CSV Comprobaciones IMV</a>;
+               <a class="dropdown-item" href="documentacion/datos_baremo_totales.html" id="csvc" target="_blank">Datos baremo totales</a>;
             <?php } ?>
           </div>
          </li>
