@@ -12,8 +12,8 @@ $campos_cabecera_sor_ale=array('Primer apellido','Segundo apellido','Nombre','Ti
 $campos_bbdd_sor_ale=array('apellido1','apellido2','nombre','tipoestudios','nasignado');
 
 //SOLICITUDES BAREMADAS
-$campos_cabecera_sor_bar=array('Primer apellido','Segundo apellido','Nombre','Enseñanza','Prioridad','Total baremo');
-$campos_bbdd_sor_bar=array('apellido1','apellido2','nombre','tipoestudios','transporte','puntos_validados');
+$campos_cabecera_sor_bar=array('Estado solicitud','Primer apellido','Segundo apellido','Nombre','Enseñanza','Prioridad','Total baremo');
+$campos_bbdd_sor_bar=array('estado_solicitud','apellido1','apellido2','nombre','tipoestudios','transporte','puntos_validados');
 
 //DETALLE BAREMO
 $campos_cabecera_sor_det=array('Primer apellido','Segundo apellido','Nombre','Prox. dom.','Tut. centro','Renta','Disc.Al','Disc. Her','FN','FM','Hermanos','Acog.','Género','Terr.','Parto','Sobrev.','Conjunta');
