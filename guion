@@ -39,6 +39,7 @@ FASE PREVIA
    Imprimir docs de fases y estados de convocatoria
    Programar copia seguridad bases de datos
 
+   Dar permisos a directorios de datos scripts/fetch/ scripts/datossalida/
 FASE0 Matrícula
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -117,7 +118,8 @@ FASE1
    Generación de tabla de baremados definitiva
    ----------------------------------------------------------------------------
    
-          #php sc_gentabla_baremadas_final.php
+         #mysqldump -uroot PRE_EDUCACIONESPECIAL2324 > /datos/backups/educacion_especial/pre_educacionespecial2324_baremados.sqal
+         #php sc_gentabla_baremadas_final.php
 
    Aleatorio
    ----------------------------------------------------------------------------
@@ -125,12 +127,14 @@ FASE1
       
       se hace copia 
       
-         #mysqldump -uroot PRE_EDUCACIONESPECIAL2324 > /datos/backups/educacion_especial/pre_educacionespecial2324_presorteo.sql
+         #mysqldump -uroot PRE_EDUCACIONESPECIAL2324 > /datos/backups/educacion_especial/pre_educacionespecial2324_presaleatorio.sql
    
    Sorteo
    ----------------------------------------------------------------------------
 
-      Se realiza el sorteo
+      Se realiza el sorteo previa copia de seguridad
+         
+      #mysqldump -uroot PRE_EDUCACIONESPECIAL2324 > /datos/backups/educacion_especial/pre_educacionespecial2324_presorteo.sql
  
    Provisionales
 

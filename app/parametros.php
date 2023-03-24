@@ -49,14 +49,14 @@ $campos_cabecera_pdf_mat=array('Centro','Grupos EBO','Puestos EBO','Plazas Ocupa
 $campos_bbdd_pdf_mat=array('nombre_centro','gruposebo','puestosebo','plazasactualesebo','vacantesebo','grupostva','puestostva','plazasactualestva','vacantestva');
 
 //DATOS PARA LISTADOS PROVISIONALES
-$campos_cabecera_admitidos_prov=array('Nombre centro','Tipo','Nº Orden','NºAleatorio','Primer Apellido','Segundo apellido','Nombre','Criterios prioritarios','Puntos Baremo');
-$campos_bbdd_admitidos_prov=array('nombre_centro','tipoestudios','nordensorteo','nasignado','apellido1','apellido2','nombre','transporte','puntos_validados');
+$campos_cabecera_admitidos_prov=array('Nombre centro','Tipo','Nº Orden','NºAleatorio','Primer Apellido','Segundo apellido','Nombre','Criterios prioritarios','Puntos Baremo','Número aleatorio');
+$campos_bbdd_admitidos_prov=array('nombre_centro','tipoestudios','nordensorteo','nasignado','apellido1','apellido2','nombre','transporte','puntos_validados','nasignado');
 
-$campos_cabecera_noadmitidos_prov=array('Nombre centro','Tipo','Nº Orden','NºAleatorio','Primer Apellido','Segundo apellido','Nombre','Criterios prioritarios','Puntos Baremo');
-$campos_bbdd_noadmitidos_prov=array('nombre_centro','tipoestudios','nordensorteo','nasignado','apellido1','apellido2','nombre','transporte','puntos_validados');
+$campos_cabecera_noadmitidos_prov=array('Nombre centro','Tipo','Nº Orden','NºAleatorio','Primer Apellido','Segundo apellido','Nombre','Criterios prioritarios','Puntos Baremo','Número aleatorio');
+$campos_bbdd_noadmitidos_prov=array('nombre_centro','tipoestudios','nordensorteo','nasignado','apellido1','apellido2','nombre','transporte','puntos_validados','nasignado');
 
-$campos_cabecera_excluidos_prov=array('Nombre centro','Tipo','Nº Orden','NºAleatorio','Primer Apellido','Segundo apellido','Nombre','Criterios prioritarios','Puntos Baremo');
-$campos_bbdd_excluidos_prov=array('nombre_centro','tipoestudios','nordensorteo','nasignado','apellido1','apellido2','nombre','transporte','puntos_validados');
+$campos_cabecera_excluidos_prov=array('Nombre centro','Tipo','Nº Orden','NºAleatorio','Primer Apellido','Segundo apellido','Nombre','Criterios prioritarios','Puntos Baremo','Número aleatorio');
+$campos_bbdd_excluidos_prov=array('nombre_centro','tipoestudios','nordensorteo','nasignado','apellido1','apellido2','nombre','transporte','puntos_validados','nasignado');
 
 
 //DATOS PARA LISTADOS DEFINITIVOS
