@@ -1731,11 +1731,21 @@ $.ajax({
       success: function(data) {
          if(vrol=='centro')
          {
+            $(".tresumensol").remove();
+            $(".tresumenmat").remove();
+            $("#l_matricula").html(data);
+            $(".wrapper").html(data);
+            $("#filasolicitud").remove();
             $("#l_matricula").html(data);
             $("#tresumen").hide();
          }
          else
          {
+            $(".tresumensol").remove();
+            $(".tresumenmat").remove();
+            $("#l_matricula").html(data);
+            $(".wrapper").html(data);
+            $("#filasolicitud").remove();
             $("#l_matricula").html(data);
             $(".container").hide();
          }
@@ -1794,18 +1804,11 @@ $.ajax({
          console.log("mat");
 			if(vrol=='admin') 
 			{
-				$(".tresumensol").remove();
-            console.log("admin");
-				$("#mapcontrol").hide();
-				$("#map-canvas").hide();
-            if($("#l_matricula").length)
-				   $("#l_matricula").html(data);
-            else
-            {
-               console.log("borrando tresumensol");
-				   $(".tresumensol").remove();
-				   $("#cab_fnuevasolicitud").after(data);
-            }
+            $(".tresumensol").remove();
+            $(".tresumenmat").remove();
+            $("#l_matricula").html(data);
+            $(".wrapper").html(data);
+            $("#filasolicitud").remove();
 			}
 			else
 			{

@@ -1389,13 +1389,17 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
          else
             $vpdo=0;
 
-         $vri=$soli->validar_renta_inferior;
+         if($soli->comprobar_renta_inferior=='2')
+            $vri=1;
+         else
+            $vri=0;
+         //$vri=$soli->validar_renta_inferior;
          $vss=$soli->validar_situacion_sobrevenida;
 
          $vdisc=0;
-         if($soli->validar_discapacidad_alumno=='1')
+         if($soli->comprobar_discapacidad_alumno=='2')
             $vdisc=$vdisc+1;
-         if($soli->validar_discapacidad_hermanos=='1')
+         if($soli->comprobar_discapacidad_hermanos=='2')
          {
             //CALCULAR HERMNOS EN DISCAPCIDAD
             if($soli->nombredisc1!='nodata' and $soli->nombredisc1!='')
@@ -1407,9 +1411,9 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
          }
          
          $vfam=0;
-         if($soli->validar_tipo_familia_numerosa=='1')
+         if($soli->comprobar_tipo_familia_numerosa=='2')
             $vfam=$vfam+$soli->tipo_familia_numerosa;
-         if($soli->validar_tipo_familia_monoparental=='1')
+         if($soli->comprobar_tipo_familia_monoparental=='2')
             $vfam=$vfam+$soli->tipo_familia_monoparental;
 
          $norden=$soli->nordensorteo;    
