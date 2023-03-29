@@ -137,11 +137,14 @@ FASE1
       #mysqldump -uroot PRE_EDUCACIONESPECIAL2324 > /datos/backups/educacion_especial/pre_educacionespecial2324_presorteo.sql
  
    Provisionales
+   ----------------------------------------------------------------------------
 
       Una vez realizada la asignación del número aleatorio y realizado el sorteo se generan los listados provisionales
+      Hasta su publicación puede haber algún cambio para lo que debe reptirse la generaicón de provisionales indicando de nuevo el número d esorteo (esto se puede programar mejor en la siguiente edición)
       Se publican y se abre el plazo de reclamación
 
    Definitivos
+   ----------------------------------------------------------------------------
 
       Finalziado el plazo de reclamación se genran listaods definitivos
 
