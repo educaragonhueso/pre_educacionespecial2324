@@ -199,6 +199,41 @@ class UtilidadesAdmision{
    $r['pbv']=$puntos_baremo_validados;   
    return $r;   
   }
+  public function comprobarBaremoFamilia($tipo,$csvfile,$id_alumno,$tfn,$tfm)
+  {
+      if (($gestor = fopen($csvfile, "r")) !== FALSE)
+      {
+         while (($datos = fgetcsv($gestor, 0, "\n")) !== FALSE)
+         {
+            $reg = explode(";",$datos[0]);
+            if($tipo=='familia_numerosa')
+            {
+               $fid_alumno=$reg[0];
+               $fsfn=$reg[10];
+               $ffechacaducidad=trim($reg[14]);
+               $festado_numerosa=trim($reg[15]);
+               $fsolicita_numerosa=trim($reg[10]);
+               $ftipo_familia=trim($reg[13]);
+               if($fid_alumno==$id_alumno and $festado_numerosa=='EN VIGOR' and $fsolicita_numerosa==1 and $ftipo_familia==$tfn)
+                  return "2:$ffechacaducidad";
+            }
+            if($tipo=='familia_monoparental')
+            {
+               $fid_alumno=$reg[0];
+               $fsfn=$reg[10];
+               $ffechacaducidad=trim($reg[14]);
+               $festado_monoparental=trim($reg[15]);
+               $fsolicita_monoparental=trim($reg[11]);
+               $ftipo_familia=trim($reg[13]);
+               if($fid_alumno==$id_alumno and $festado_monoparental=='EN VIGOR' and $fsolicita_monoparental==1 and $ftipo_familia==$tfm)
+                  return "2:$ffechacaducidad";
+            }
+         }
+
+      }
+      return '1:0';
+  }
+
   public function comprobarBaremoDiscapacidad($tipo,$dni,$dni1,$dni2,$csvfile)
   {
       if($tipo=='discapacidad_alumno') return 0; 

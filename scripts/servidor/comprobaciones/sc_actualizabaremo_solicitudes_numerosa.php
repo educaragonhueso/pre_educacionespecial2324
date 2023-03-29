@@ -71,7 +71,7 @@ foreach($res as $aldata)
    $rfn=0;
    if($sfn==1)
    {
-      $rfn=$utils->comprobarBaremo('familia_numerosa',$dni,$dni1,$dni2,$csvfam,$csv);
+      $rfn=$utils->comprobarBaremoFamilia('familia_numerosa',$dni,$dni1,$dni2,$csvfam,$csv);
       $resdh=$utils->actualizaComprobaciones('comprobar_familia_numerosa',$idal,$rfn);
    }
    else

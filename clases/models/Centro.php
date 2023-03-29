@@ -228,6 +228,29 @@ class Centro{
 
       return $vacantes_total;
    } 
+   public function getVacantesCentroParaProvisionales($log)
+	{
+      $vacantes_total=array('ebo'=>0,'tva'=>0);
+      
+      $matcentros=$this->getDatosMatriculaCentro($log);
+      
+      $vacantesebo=$matcentros['plazasebo']-$matcentros['matriculaactualebo'];
+      $solicitudesebo=$this->getNumSolicitudesAdmitidas($this->id_centro,'ebo',$log);
+      
+      $vacantestva=$matcentros['plazastva']-$matcentros['matriculaactualtva'];
+      $solicitudestva=$this->getNumSolicitudesAdmitidas($this->id_centro,'tva',$log);
+      if($this->id_centro==50010387)
+      {
+         $log->warning("VACANTES EBO ALBORADA: ".$vacantesebo);
+         $log->warning("SOL EBO ALBORADA: ".$solicitudesebo);
+
+      }
+      
+      $vacantes_total['ebo']=$vacantesebo-$solicitudesebo;
+      $vacantes_total['tva']=$vacantestva-$solicitudestva;
+
+      return $vacantes_total;
+   } 
    public function getVacantesCentro($log)
 	{
       $vacantes_total=array('ebo'=>0,'tva'=>0);
@@ -241,6 +264,13 @@ class Centro{
       $vacantestva=$matcentros['plazastva']-$matcentros['matriculaactualtva'];
       $solicitudestva=$this->getNumSolicitudesAdmitidas($this->id_centro,'tva',$log);
       $reservatva=$this->getNumReservasLiberadas($this->id_centro,'tva',$log);
+      if($this->id_centro==50010387)
+      {
+         $log->warning("VACANTES EBO ALBORADA: ".$vacantesebo);
+         $log->warning("SOL EBO ALBORADA: ".$solicitudesebo);
+         $log->warning("LIB RESERVA EBO ALBORADA: ".$reservaebo);
+
+      }
       
       $vacantes_total['ebo']=$vacantesebo-$solicitudesebo+$reservaebo;
       $vacantes_total['tva']=$vacantestva-$solicitudestva+$reservatva;

@@ -186,6 +186,48 @@ function comprobarDiscapacidad($nif,$tipo,$nombre,$apellido1,$fnac,$fecha)
     
    return $client->__getLastResponse();
 }
+function procesarRespuestaDiscapacidadConNumero($respuesta)
+{
+   $msgresp='';
+   preg_match('/<errorMsg>(.*?)<\/errorMsg>/s', $respuesta, $match);
+   if(sizeof($match)>=2)
+   {
+      $literal=$match[1];
+      $msgresp.=$literal."\n";
+      if(strpos('El parámetro numDocumento no contiene un',$literal)==0)
+         return "2:0:0:N";
+   }
+   //no existe certificado
+   preg_match('/<literalError>(.*?)<\/literalError>/s', $respuesta, $match);
+   if(sizeof($match)>=2)
+   {
+      $literal=$match[1];
+      $msgresp.=$literal."\n";
+      if(strpos('NO EXISTE EL CERTIFICADO',$literal)==0)
+         return "2:0:0:N";
+   }
+   preg_match('/<disabilityGrade>(.*?)<\/disabilityGrade>/s', $respuesta, $match);
+   if(sizeof($match)>=2)
+      $gradodisc=$match[1];
+   preg_match('/<indefiniteValidity>(.*?)<\/indefiniteValidity>/s', $respuesta, $match);
+   $indefinida='N';
+   if(sizeof($match)>=2)
+      $indefinida=$match[1];
+   preg_match('/<checkUpDate>(.*?)<\/checkUpDate>/s', $respuesta, $match);
+   $fechalimite="0";
+   if(sizeof($match)>=2)
+      $fechalimite=$match[1];
+   preg_match('/<description>(.*?)<\/description>/s', $respuesta, $match);
+   if(sizeof($match)>=2)
+   {
+      $literal=$match[1];
+      $msgresp.=$literal."\n";
+      if(strpos('EXISTE EL CERTIFICADO',$literal)==0)
+         return "3:$gradodisc:$fechalimite:$indefinida";
+   }
+return "2:0:0:N";
+}
+
 function procesarRespuestaDiscapacidad($respuesta)
 {
    $msgresp='';

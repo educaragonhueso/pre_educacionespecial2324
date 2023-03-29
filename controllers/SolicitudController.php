@@ -32,6 +32,8 @@ class SolicitudController{
             $msg= "<div class='cajainfo'>PUBLICADAS LISTADAS BAREMADAS, CONSÚLTALAS EN EL ENLACE SUPERIOR DERECHO O <a class='lbaremadas' data-subtipo='sor_bar' style='color:darkblue;background-color:black;padding:6px'>EN ESTE ENLACE</a></div>";
          if($this->estado_convocatoria==ESTADO_RECLAMACIONES_BAREMADAS)
             $msg= "<div class='cajainfo'>PUEDES HACER TU RECLAMACIÓN DESDE EL ENLACE SUPERIOR DERECHO O <a href='".URL_BASE.EDICION."/reclamaciones_baremo.php?token=$token' style='color:darkblue;background-color:black;padding:6px'> DESDE ESTE ENLACE</a></div>";
+         if($this->estado_convocatoria==ESTADO_ALEATORIO)
+            $msg= "<div class='cajainfo'>PUBLICADOS LISTADOS DE NÚMERO ALEATORIO, CONSÚLTALO EN EL ENLACE SUPERIOR DERECHO O <a class='lbaremadas' data-subtipo='sor_ale' style='color:darkblue;background-color:black;padding:6px'>EN ESTE ENLACE</a><p><i style='font-size:15px'>Este número junto con el número de sorteo permite generar un orden de solicitudes en caso de empate</i></p></div>";
          if($this->estado_convocatoria==ESTADO_SORTEO)
             $msg= "<div class='cajainfo'>SE HA REALIZADO EL SORTEO, LOS LISTADOS PROVISIONALES SE PUBLICARÁN EL ".$this->convertirFecha(DIA_PUBLICACION_PROVISIONAL)."</div>";
          if($this->estado_convocatoria==ESTADO_PUBLICACION_PROVISIONAL)

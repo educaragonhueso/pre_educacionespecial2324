@@ -110,7 +110,7 @@ if($_POST['rol']=='admin')
 			   $log_sorteo->warning("ERROR ACT FASE: $nombrecentro");
 			   return 0;
 			}
-			$dsorteo=$centrotmp->getVacantesCentro($log_sorteo);
+			$dsorteo=$centrotmp->getVacantesCentroParaProvisionales($log_sorteo);
 			$vacantes_ebo=$dsorteo['ebo'];
 			$vacantes_tva=$dsorteo['tva'];
          $log_sorteo->warning("VACANTES CENTRO: ".$id_centro);
