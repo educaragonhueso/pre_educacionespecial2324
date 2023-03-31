@@ -148,8 +148,8 @@ elseif((($rol=='anonimo' OR $rol=='alumno') and $estado_convocatoria<=ESTADO_FIN
                </div>
             </li>
 			<?php }?>
-		<?php if($_SESSION['estado_convocatoria']>=ESTADO_RECLAMACIONES_PROVISIONAL){?>
-		   <?php if(($_SESSION['estado_convocatoria']>=ESTADO_PUBLICACION_DEFINITIVOS and $_SESSION['rol']=='alumno') or $_SESSION['rol']!='alumno'){?>
+		<?php if($_SESSION['estado_convocatoria']>=ESTADO_PUBLICACION_PROVISIONAL){?>
+		   <?php if(($_SESSION['estado_convocatoria']>=ESTADO_PUBLICACION_DEFINITIVOS and $_SESSION['rol']=='alumno') or ($_SESSION['rol']!='alumno') and $_SESSION['rol']!='anonimo'){?>
                             <li class="nav-item active msuperior dropdown itemderecho" id="mdefinitivo">
                                  <a class="show_definitivos nav-link dropdown-toggle desplegable2" id="navbardrop" data-toggle="dropdown" href="#">Definitivos</a>
 		                 <div class="dropdown-menu">
