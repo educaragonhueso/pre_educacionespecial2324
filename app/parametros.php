@@ -29,8 +29,8 @@ $campos_bbdd_csv_fase3=array('tipoestudios','apellido1','apellido2','nombre','ce
 $campos_cabecera_csv_mat=array('Centro','Grupos EBO','Puestos EBO','Plazas Ocupadas EBO','Solicitudes EBO','Vacantes_EBO','Grupos TVA','Puestos TVA','Plazas Ocupadas TVA','Solicitudes TVA','Vacantes_TVA');
 $campos_bbdd_csv_mat=array('nombre_centro','gruposebo','puestosebo','matriculaactualebo','solicitudesebo','vacantesebo','grupostva','puestostva','matriculaactualtva','solicitudestva','vacantestva');
 
-$campos_cabecera_csv_sol=array('Centro','Primer apellido','Segundo apellido','Nombre','Enseñanza','Criterios prioritarios','Localidad domicilio familiar','Fase','Estado','Puntos validados','Numero sorteo asignado','Centro Origen','Reserva de Plaza','Conjunta');
-$campos_bbdd_csv_sol=array('nombre_centro','apellido1','apellido2','nombre','tipoestudios','transporte','loc_dfamiliar','fase_solicitud','estado_solicitud','puntos_validados','nasignado','nombre_centro_origen','reserva','conjunta');
+$campos_cabecera_csv_sol=array('Centro','Primer apellido','Segundo apellido','Nombre','Enseñanza','Criterios prioritarios','Localidad domicilio familiar','Fase','Estado','Puntos validados','Numero sorteo asignado','Centro Origen','Reserva de Plaza','Conjunta','Admitida');
+$campos_bbdd_csv_sol=array('nombre_centro','apellido1','apellido2','nombre','tipoestudios','transporte','loc_dfamiliar','fase_solicitud','estado_solicitud','puntos_validados','nasignado','nombre_centro_origen','reserva','conjunta','est_desp_sorteo');
 
 //listado de tributantes
 $campos_cabecera_csv_tri=array('Primer apellido','Segundo
