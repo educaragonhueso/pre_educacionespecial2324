@@ -40,6 +40,7 @@ FASE PREVIA
    Programar copia seguridad bases de datos
 
    Dar permisos a directorios de datos scripts/fetch/ scripts/datossalida/
+
 FASE0 Matrícula
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -107,7 +108,7 @@ FASE1
 
             Para saber peticionarios de familia numerosa y monoparental generamos los datos de la siguientes consulta
          
-               myqsql>select a.id_alumno AS codigo_solicitud,dni_alumno 'NIF Alumno',CONCAT(apellido1,' ',apellido2) AS 'Apellidos Alumno',nombre AS 'Nombre Alumno,dni_tutor1 AS 'NIF Tutor1',datos_tutor1 'Datos Tutor1',dni_tutor2 AS 'NIF Tutor2',datos_tutor2 AS 'Datos Tutor2',marcado_numerosa AS SolicitaFamiliaNumerosa marcado_monoparental AS SolicitaFamiliaMonoperental into outfile '/var/lib/mysql-files/listadonumerosa1.csv' FIELDS TERMINATED BY ';' OPTIONALLY ENCLOSED BY '"' from centros ce, baremo b,alumnos a where ce.id_centro=a.id_centro_destino and a.id_alumno=b.id_alumno and marcado_numerosa=1 ;
+                myqsql>select a.id_alumno AS codigo_solicitud,dni_alumno 'NIF Alumno',CONCAT(apellido1,' ',apellido2) AS 'Apellidos Alumno',nombre AS 'Nombre Alumno,dni_tutor1 AS 'NIF Tutor1',datos_tutor1 'Datos Tutor1',dni_tutor2 AS 'NIF Tutor2',datos_tutor2 AS 'Datos Tutor2',marcado_numerosa AS SolicitaFamiliaNumerosa marcado_monoparental AS SolicitaFamiliaMonoperental into outfile '/var/lib/mysql-files/listadonumerosa1.csv' FIELDS TERMINATED BY ';' OPTIONALLY ENCLOSED BY '"' from centros ce, baremo b,alumnos a where ce.id_centro=a.id_centro_destino and a.id_alumno=b.id_alumno and marcado_numerosa=1 ;
 
 
             Para saber los peticionarios de imv o renta_inferior
@@ -146,7 +147,7 @@ FASE1
    Definitivos
    ----------------------------------------------------------------------------
 
-      Finalziado el plazo de reclamación se genran listaods definitivos
+      Finalziado el plazo de reclamación se generan listaods definitivos
 
 FASE2 Asignación plazas restantes
 --------------------------------------------------------------------------------------------------------------------------------

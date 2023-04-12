@@ -58,7 +58,7 @@ if($estado_convocatoria>=ESTADO_PUBLICACION_PROVISIONAL and $estado_convocatoria
       $nsorteo=$tcentro->getNumeroSorteo();
       //$dsorteo=$tcentro->getVacantes('centro');
       $tcentro->setNoAdmitidas($id_centro,$log_listados_definitivos);//ponemos las de ese centro a no admitidas
-		$dsorteo=$tcentro->getVacantesCentro($log_listados_definitivos);
+		$dsorteo=$tcentro->getVacantesCentroParaDefinitivos($log_listados_definitivos);
 		$vacantes_ebo=$dsorteo['ebo'];
 		$vacantes_tva=$dsorteo['tva'];
       
@@ -96,7 +96,7 @@ if($estado_convocatoria>=ESTADO_PUBLICACION_PROVISIONAL and $estado_convocatoria
 			if($nsolicitudescentro==0) continue;
 			$nombrecentro=$centrotmp->getNombre();
 		
-         $dsorteo=$centrotmp->getVacantesCentro($log_listados_definitivos);
+         $dsorteo=$centrotmp->getVacantesCentroParaDefinitivos($log_listados_definitivos);
          $vacantes_ebo=$dsorteo['ebo'];
          $vacantes_tva=$dsorteo['tva'];
       
