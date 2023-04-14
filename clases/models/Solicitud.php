@@ -1411,13 +1411,18 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
          }
          
          $vfam=0;
-         if($soli->comprobar_tipo_familia_numerosa=='2')
+         $id=$soli->id;    
+         if($id==1474)
+         {
+            $log->warning("ALUMNO ORDEN");
+            $log->warning(print_r($soli,true));
+         }
+         if($soli->comprobar_familia_numerosa=='2')
             $vfam=$vfam+$soli->tipo_familia_numerosa;
-         if($soli->comprobar_tipo_familia_monoparental=='2')
+         if($soli->comprobar_familia_monoparental=='2')
             $vfam=$vfam+$soli->tipo_familia_monoparental;
 
          $norden=$soli->nordensorteo;    
-         $id=$soli->id;    
          $insert="INSERT INTO alumnos_orden_$tipo VALUES($c,'$tipoestudios',$id,$tra,$pv,$vhtc,$conjunta,$vpdo,$vri,$vss,$vdisc,$vfam,$norden)"; 
 		   $qd=$this->conexion->query($insert);
          
