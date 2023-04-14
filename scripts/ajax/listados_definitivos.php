@@ -49,7 +49,7 @@ $log_listados_definitivos->warning("ACTUALIZANDO DEFINITIVOS, $estado_convocator
 //La convocatoria esta en definitivo según el dia programado
 //si la convocatoria esta en definitivo, entramos una vez para copiar la tabla con los datos del centro
 //si estamos en el periodo de provisionales actualizamos tablas de definitivos
-if($estado_convocatoria>=ESTADO_PUBLICACION_PROVISIONAL and $estado_convocatoria<ESTADO_PUBLICACION_DEFINITIVOS)
+if($estado_convocatoria>=ESTADO_RECLAMACIONES_PROVISIONAL and $estado_convocatoria<=ESTADO_DEFINITIVOS)
 {
 	if($_POST['rol']=='centro')
 	{
@@ -108,7 +108,7 @@ if($estado_convocatoria>=ESTADO_PUBLICACION_PROVISIONAL and $estado_convocatoria
 		$ct=$tsolicitud->copiaTablaCentro(1,'alumnos_definitiva',$log_listados_definitivos);	
    }
 //actualizamos la tabla para poner los valores del baremo a mínimos, por ejemplo si validar está puesto a 0 tb el campo de validación sera el minimo
-$updatebaremo=$tsolicitud->resetBaremoDefinitivo();	
+//$updatebaremo=$tsolicitud->resetBaremoDefinitivo();	
 }
 
 $cabecera="campos_cabecera_".$subtipo_listado;

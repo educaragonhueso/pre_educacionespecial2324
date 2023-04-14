@@ -1464,7 +1464,7 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
 		$ids=$this->getSolAdmitidas($nvebo,$nvtva,$c,$tipo,$log);
 		if($ids==0) return 0;
      
-      $log->warning("SOLICITUDES ADMITIDAS CENTROADM:".$c);
+      $log->warning("SOLICITUDES ADMITIDAS CENTRO:".$c);
       $log->warning(print_r($ids,true));
 		
 		$idsebo='';
@@ -1487,6 +1487,7 @@ We can now print a cell with Cell(). A cell is a rectangular area, possibly fram
             $sql_actestebo="UPDATE $tabla SET est_desp_sorteo='admitida',id_centro_final=$c WHERE tipoestudios='ebo' and id_centro_destino=$c and fase_solicitud!='borrador' and id_alumno in(".$idsebo.")";
          if(strlen($idstva)>0)
             $sql_actesttva="UPDATE $tabla SET est_desp_sorteo='admitida',id_centro_final=$c WHERE tipoestudios='tva' and id_centro_destino=$c and fase_solicitud!='borrador' and id_alumno in(".$idstva.")";
+         $log->warning("SQL ADMITIDAS EBO:".$sql_actestebo);
 		}
 		else
 		{

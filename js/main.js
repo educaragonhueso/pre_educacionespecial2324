@@ -1769,19 +1769,27 @@ $(".ldefinitivos").click(function () {
      url: "../"+directoriobase+"/scripts/ajax/listados_definitivos.php",
      data: {id_centro:vid_centro,rol:vrol,tipo:vtipo,subtipo:vsubtipo,pdf:vpdf,estado_convocatoria:vestado_convocatoria,provincia:vprovincia},
          success: function(data) {
+         if(vrol=='centro')
+         {
+            $(".tresumensol").remove();
+            $(".tresumenmat").remove();
+            $("#l_matricula").html(data);
+            $(".wrapper").html(data);
+            $("#filasolicitud").remove();
+            $("#l_matricula").html(data);
+            $("#tresumen").hide();
+         }
+         else
+         {
+            $(".tresumensol").remove();
+            $(".tresumenmat").remove();
+            $("#l_matricula").html(data);
+            $(".wrapper").html(data);
+            $("#filasolicitud").remove();
+            $("#l_matricula").html(data);
+            $(".container").hide();
+         }
 
-               if(vrol=='centro')
-               {
-               $("#l_matricula").html(data);
-               $("#tresumen").hide();
-               }
-               else
-               {
-               $("#mapcontrol").hide();
-               $("#map-canvas").hide();
-               $("#l_matricula").html(data);
-               $(".container").hide();
-               }
          },
          error: function() {
            alert('Error LISTANDO solicitudes: '+vsubtipo);
