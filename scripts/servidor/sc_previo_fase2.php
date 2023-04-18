@@ -31,7 +31,7 @@ $utils=new UtilidadesAdmision($conexion,$ccentros,$centro);
 //actualizar vacantes de centros
 #$res1=$utils->actualizaVacantesCentros();
 //revisamos solicitudes para incluir vacantes de alumnos q teniendo plaza definitiva liberan plazas de reserva
-#$res2=$utils->liberaVacantesAlumnos();
+$res2=$utils->liberaVacantesAlumnos();
 
 if($res1==1 or $res2==2)
 {

@@ -660,31 +660,14 @@ id_centro=$idcentro";
 			$vasignada=1;
 			while($vacantes>0 and $vasignada==1)
 			{
-				//if(!$post) print("HAY VACANTES, COMPROBANDO ALUMNOS");
-
 				$vasignada=0;
 				//revisar cada alumno (hay q considerar el orden de elección del alumno, el sorteo etc.) y si ha solicitado plaza en primera opción
 				foreach($alumnos_fase2 as $alumno)
 				{
-					//if(!$post) print(PHP_EOL."ENTRANDO ALUMNO, centro: ".strtoupper($alumno->centro_definitivo)." ".$alumno->tipoestudios." ".$tipoestudios.PHP_EOL);
-					//$this->log_asigna_fase2->warning("ENTRANDO ALUMNO, centro: ".strtoupper($alumno->centro_definitivo)." ".$alumno->tipoestudios." ".$tipoestudios);
-					
 					if($alumno->tipoestudios!=$tipoestudios)
-					{
-					   //if(!$post) print(PHP_EOL."SALIENDO, centro alumno: ".strtoupper($alumno->centro_definitivo)." ".$alumno->tipoestudios." ".$tipoestudios);
-					   //$this->log_asigna_fase2->warning("SALIENDO, centro alumno: ".strtoupper($alumno->centro_definitivo)." ".$alumno->tipoestudios." ".$tipoestudios);
 					   continue;
-					}
 				
 					$this->log_asigna_fase2->warning("ID ALUMNO EN PROCESO: ".$alumno->id_alumno." NOMBRE ALUMNO: ".$alumno->nombre." INDICE CENTRO ALTERNATIVO: ".$centro_alternativo);
-					//if(!$post) print(PHP_EOL."ID ALUMNO EN PROCESO: ".$alumno->id_alumno." INDICE CENTRO ALTERNATIVO: ".$centro_alternativo.PHP_EOL);
-
-					//$this->log_asigna_fase2->warning("CENTRO ACTUAL EN PROCESO: $nombrecentro $idcentro CENTRO PEDIDO ALUMNO: ".$alumno->{$indicecentro}." NOMBRE ALUMNO: ".$alumno->nombre);
-					//$this->log_asigna_fase2->warning("INDICE CENTRO: ".$idcentro);
-					//$this->log_asigna_fase2->warning("INDICE CENTRO ALUMNO: ".$alumno->$indicecentro);
-					//$this->log_asigna_fase2->warning(" CENTRO DEFINITIVO ALUMNO: ".$alumno->centro_definitivo);
-			
-         		//if(!$post) print("CENTRO ACTUAL: $nombrecentro $idcentro CENTRO PEDIDO ALUMNO: ".$alumno->{$indicecentro}." NOMBRE ALUMNO: ".$alumno->nombre." CENTRO DEFINITIVO ALUMNO: ".$alumno->centro_definitivo.PHP_EOL);
 					//solo asignamos plaza a alumnos sin centro definitivo	
 					if($alumno->$indicecentro==$idcentro and strtoupper($alumno->centro_definitivo)=='NOCENTRO')
 					{ 
@@ -695,8 +678,6 @@ id_centro=$idcentro";
 						{
 						   //si habia reserva de plaza tenemos que actualizar las vacantes para ese centro y volver a procesarlo,reserva[0] es el id centro y reserva[1] el q dice si se ha liberado ya o no
 							//se ha liberado vacante con lo q hay q restaurar las vacantes de nuevo incrementando una
-							//if($this->restaurarVacantesCentroFase2()!=1) return 0;
-							
 							$this->log_asigna_fase2->warning("REINICIANDO PROCESO, RESTAURADAS VACANTES");
 							if(!$post) print(PHP_EOL."REINICIANDO PROCESO, RESTAURADAS VACANTES");
 							
@@ -707,7 +688,6 @@ id_centro=$idcentro";
 							//marcamos la reserva q deja el alumno en las tabal //temporal y actual, como reserva liberada, en las dos tablas de alumnos	
 							if($this->liberaReserva($alumno->id_alumno)!=1) return 0;
 
-							if(!$post) print(PHP_EOL."LIBERADA RESERVA CENTRO $reserva[0] ALUMNO: ".$alumno->id_alumno);
 							$this->log_asigna_fase2->warning("LIBERADA RESERVA CENTRO $reserva[0] ALUMNO: ".$alumno->id_alumno);
 	
 							return -2;
@@ -730,10 +710,7 @@ id_centro=$idcentro";
 					}
 				}
 			}
-			//actualizamos las vacantes en el centro cuyas plazas se han procesado
-			//if($this->setVacantesCentroFase2($centro['id_centro'],$vacantes,$tipoestudios)!=1) return 0;
-			}
-		//print("FIN asignaciones $tipoestudios".PHP_EOL);
+		}
 		return 1;
 	}
    public function getDatosBaremoAlumno($id_alumno)
@@ -798,7 +775,7 @@ id_centro=$idcentro";
             if($this->setVacantesCentroFase2($corigen,0,$tipoestudios,1)!=1) return 0;
 			}
 		}
-	return 1;
+	   return 1;
 	}
    public function getPlazasDefinitiva($idcentro)
 	{
@@ -911,7 +888,7 @@ id_centro=$idcentro";
 		else return $this->conexion->error;
 
 	}
-  public function copiaTablaFase2($tipo,$centro=0)
+   public function copiaTablaFase2($tipo,$centro=0)
 	{
 		$tabla="alumnos_".$tipo;
 		$sql='DELETE from '.$tabla;

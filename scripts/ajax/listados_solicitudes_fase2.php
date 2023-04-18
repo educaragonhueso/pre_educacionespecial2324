@@ -46,8 +46,6 @@ $tsolicitud=new Solicitud($conexion);
 $tcentro=new Centro($conexion,1,'ajax');
 $nsolicitudes=$tcentro->getNumSolicitudes();
 
-
-
 $cabecera="campos_cabecera_".$subtipo_listado;
 $camposdatos="campos_bbdd_".$subtipo_listado;
 
@@ -71,10 +69,8 @@ if($_POST['rol']=='admin' or $_POST['rol']=='sp' or $_POST['rol']=='centro')
       {
          $datos[$i] = new stdClass;
          foreach($$camposdatos as $d)
-         {
             $datos[$i]->$d=$sol->$d;
-         }
-      $i++;
+         $i++;
       }
       $pdf = new PDF();
       $cab=$$cabecera;
@@ -94,12 +90,12 @@ if($_POST['rol']=='admin' or $_POST['rol']=='sp' or $_POST['rol']=='centro')
       $pdf->Output(DIR_SOR.$nombrefichero.'.pdf','F');
    }
 
-   $tablaresumen=$tcentro->getResumenFase2($_POST['rol']);
-   $vacantes_centros=$tcentro->getVacantesCentros($log_listados_solicitudes_fase2);
-######################################################################################
+   $vacantes_centros=$tcentro->getVacantesCentrosFase2($log_listados_solicitudes_fase2);
+   ######################################################################################
    $log_listados_solicitudes_fase2->warning("RESUMEN VACANTES TODOS CENTROS:");
    $log_listados_solicitudes_fase2->warning(print_r($vacantes_centros,true));
-######################################################################################
+   ######################################################################################
+
    print($list->showTablaResumenFase2($vacantes_centros,$ncol=1));
    print($filtro_datos);
    print("<div id='listado_fase2' style='text-align:center'><h1>LISTADO LISTADO SOLICITUDES NO ADMITIDAS FASE 2</h1></div>");

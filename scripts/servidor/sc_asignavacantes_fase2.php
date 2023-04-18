@@ -25,13 +25,14 @@ $avac=10;
 $j=0;
 $post=1;
 
-//VACIAMOS EL CAMPO DE RESERVAS D ELOS CENTROS
+//VACIAMOS EL CAMPO DE RESERVAS D ELOS CENTROS PARA COMPUTAR LAS RESERVAS Q SE VAYAN GENERANDO
 $utils->iniReservasCentros();
-//GENERAMOS LAS VACANTES DE LOS CENTROS
+//OBTENEMOS DATOS DE LOS CENTROS DE ESPECIAL
 $centros_fase2=$tcentros_fase2->getCentrosFase2();
 foreach($centros_fase2 as $cf)
 {
    print("ID CENTRO: ".$cf['id_centro']);
+   print("NOMBRE CENTRO: ".$cf['nombre_centro']);
    $tcentros_fase2->setId($cf['id_centro']);
    $v=$tcentros_fase2->getVacantesCentroFase2($log_asigna_fase2);
    print_r($v);
@@ -44,7 +45,6 @@ if(!$utils->copiaTablaTmpFase2())
    $log_asigna_fase2->warning("ERROR COPIANDO TABAL TMP FASE2");
    exit();
 }
-
 //asignar vacantetes de cada centro a centro elegido en primera opcion (oopcion 0)
 do{
    $log_asigna_fase2->warning("INICIOLOG INICIANDO PROCESO POR $j VECES");

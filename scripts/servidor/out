@@ -1,219 +1,160 @@
-ID CENTRO: 22002338Array
+ID CENTRO: 22001887NOMBRE CENTRO: SAN JOSÉ DE CALASANZArray
+(
+    [ebo] => 2
+    [tva] => 0
+)
+ID CENTRO: 22002338NOMBRE CENTRO: PÍO XIIArray
+(
+    [ebo] => 3
+    [tva] => 0
+)
+ID CENTRO: 22002511NOMBRE CENTRO: PIRÁMIDEArray
+(
+    [ebo] => -2
+    [tva] => 12
+)
+ID CENTRO: 22003835NOMBRE CENTRO: MONTECORONAArray
+(
+    [ebo] => 3
+    [tva] => 0
+)
+ID CENTRO: 22004891NOMBRE CENTRO: BIELLO ARAGÓNArray
 (
     [ebo] => 1
-    [tva] => 0
-)
-ID CENTRO: 22002511Array
-(
-    [ebo] => -3
     [tva] => 12
 )
-ID CENTRO: 22003835Array
-(
-    [ebo] => 0
-    [tva] => 0
-)
-ID CENTRO: 22004891Array
-(
-    [ebo] => 0
-    [tva] => 12
-)
-ID CENTRO: 22005157Array
+ID CENTRO: 22005157NOMBRE CENTRO: LA ALEGRÍAArray
 (
     [ebo] => 13
     [tva] => 8
 )
-ID CENTRO: 22005200Array
+ID CENTRO: 22005200NOMBRE CENTRO: PEDRO J. RUBIOArray
 (
     [ebo] => 2
     [tva] => 0
 )
-ID CENTRO: 22010001Array
-(
-    [ebo] => 4
-    [tva] => 5
-)
-ID CENTRO: 44003259Array
-(
-    [ebo] => 19
-    [tva] => 19
-)
-ID CENTRO: 44004148Array
-(
-    [ebo] => -1
-    [tva] => 1
-)
-ID CENTRO: 50000850Array
-(
-    [ebo] => 0
-    [tva] => -2
-)
-ID CENTRO: 50004612Array
-(
-    [ebo] => 2
-    [tva] => 0
-)
-ID CENTRO: 50005666Array
-(
-    [ebo] => 0
-    [tva] => 0
-)
-ID CENTRO: 50006049Array
-(
-    [ebo] => 0
-    [tva] => 0
-)
-ID CENTRO: 50006128Array
-(
-    [ebo] => 3
-    [tva] => 0
-)
-ID CENTRO: 50006207Array
-(
-    [ebo] => 0
-    [tva] => 0
-)
-ID CENTRO: 50007376Array
-(
-    [ebo] => 5
-    [tva] => 0
-)
-ID CENTRO: 50007674Array
+ID CENTRO: 22010001NOMBRE CENTRO: SAN JORGEArray
 (
     [ebo] => 7
-    [tva] => 3
-)
-ID CENTRO: 50008630Array
-(
-    [ebo] => 7
-    [tva] => -5
-)
-ID CENTRO: 50008678Array
-(
-    [ebo] => 3
-    [tva] => -2
-)
-ID CENTRO: 50008915Array
-(
-    [ebo] => 2
-    [tva] => -1
-)
-ID CENTRO: 50009488Array
-(
-    [ebo] => 0
     [tva] => 5
 )
-ID CENTRO: 50009646Array
-(
-    [ebo] => 2
-    [tva] => -4
-)
-ID CENTRO: 50010387Array
-(
-    [ebo] => 5
-    [tva] => 2
-)
-ID CENTRO: 50011537Array
-(
-    [ebo] => 0
-    [tva] => 5
-)
-ID CENTRO: 50017369Array
-(
-    [ebo] => 0
-    [tva] => 0
-)
-ID CENTRO: 50018131Array
+ID CENTRO: 44003259NOMBRE CENTRO: ARBOLEDAArray
 (
     [ebo] => 17
-    [tva] => -17
+    [tva] => 19
 )
-ID CENTRO: 50019408Array
+ID CENTRO: 44004148NOMBRE CENTRO: GLORIA FUERTESArray
 (
-    [ebo] => 13
+    [ebo] => 1
+    [tva] => 1
+)
+ID CENTRO: 50000850NOMBRE CENTRO: CAMPO DE BORJAArray
+(
+    [ebo] => 0
+    [tva] => -2
+)
+ID CENTRO: 50002275NOMBRE CENTRO: LUIS GARCÍA SÁINZArray
+(
+    [ebo] => 4
+    [tva] => 0
+)
+ID CENTRO: 50002457NOMBRE CENTRO: BENEDICTO XIIIArray
+(
+    [ebo] => 2
+    [tva] => 0
+)
+ID CENTRO: 50004430NOMBRE CENTRO: SUBPRADELArray
+(
+    [ebo] => 4
+    [tva] => 0
+)
+ID CENTRO: 50004612NOMBRE CENTRO: MONCAYOArray
+(
+    [ebo] => 0
+    [tva] => 0
+)
+ID CENTRO: 50006049NOMBRE CENTRO: JULIÁN SANZ IBÁÑEZArray
+(
+    [ebo] => -1
+    [tva] => 0
+)
+ID CENTRO: 50006128NOMBRE CENTRO: SAN BRAULIOArray
+(
+    [ebo] => 7
+    [tva] => 0
+)
+ID CENTRO: 50007376NOMBRE CENTRO: LA PURÍSIMA PARA NIÑOS SORDOSArray
+(
+    [ebo] => 5
+    [tva] => 0
+)
+ID CENTRO: 50007674NOMBRE CENTRO: ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRESArray
+(
+    [ebo] => 1
+    [tva] => 2
+)
+ID CENTRO: 50008630NOMBRE CENTRO: CEDESArray
+(
+    [ebo] => 1
+    [tva] => 0
+)
+ID CENTRO: 50008678NOMBRE CENTRO: RECTOR MAMÉS ESPERABÉArray
+(
+    [ebo] => 1
+    [tva] => 0
+)
+ID CENTRO: 50008915NOMBRE CENTRO: SAN GERMÁNArray
+(
+    [ebo] => 2
+    [tva] => 0
+)
+ID CENTRO: 50009488NOMBRE CENTRO: LOS PUEYOSArray
+(
+    [ebo] => 1
+    [tva] => 6
+)
+ID CENTRO: 50009646NOMBRE CENTRO: MARÍA SORIANOArray
+(
+    [ebo] => 12
+    [tva] => 0
+)
+ID CENTRO: 50010387NOMBRE CENTRO: ALBORADAArray
+(
+    [ebo] => 2
+    [tva] => 1
+)
+ID CENTRO: 50011537NOMBRE CENTRO: RINCÓN DE GOYAArray
+(
+    [ebo] => -1
+    [tva] => 8
+)
+ID CENTRO: 50017369NOMBRE CENTRO: ANGEL RIVIÈREArray
+(
+    [ebo] => 0
+    [tva] => 7
+)
+ID CENTRO: 50018131NOMBRE CENTRO: JEAN PIAGETArray
+(
+    [ebo] => 0
+    [tva] => 0
+)
+ID CENTRO: 50019408NOMBRE CENTRO: SEGEDAArray
+(
+    [ebo] => 11
     [tva] => 2
 )
 Array
 (
     [0] => stdClass Object
         (
-            [id_centro_definitivo] => 50007674
-            [coordenadas] => nodata
-            [calle_dfamiliar] => goya
-            [localidad] => Zaragoza
-            [id_alumno] => 1315
-            [nombre] => enero
-            [id_centro1] => 50007674
-            [id_centro2] => 
-            [id_centro3] => 
-            [id_centro4] => 
-            [id_centro5] => 
-            [id_centro6] => 
-            [id_centro] => 50017369
-            [nombre_centro] => ANGEL RIVIÈRE
-            [centro_definitivo] => ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES
-            [tipoestudios] => ebo
-            [transporte] => 2
-            [puntos_validados] => 17
-            [nordensorteo] => 11
-        )
-
-    [1] => stdClass Object
-        (
-            [id_centro_definitivo] => 50008915
-            [coordenadas] => nodata
-            [calle_dfamiliar] => Calle
-            [localidad] => ZARAGOZA
-            [id_alumno] => 1361
-            [nombre] => Sara
-            [id_centro1] => 50008915
-            [id_centro2] => 
-            [id_centro3] => 
-            [id_centro4] => 
-            [id_centro5] => 
-            [id_centro6] => 
-            [id_centro] => 50017369
-            [nombre_centro] => ANGEL RIVIÈRE
-            [centro_definitivo] => SAN GERMÁN
-            [tipoestudios] => ebo
-            [transporte] => 2
-            [puntos_validados] => 16
-            [nordensorteo] => 16
-        )
-
-    [2] => stdClass Object
-        (
-            [id_centro_definitivo] => 50008915
-            [coordenadas] => nodata
-            [calle_dfamiliar] => calle
-            [localidad] => ZARAGOZA
-            [id_alumno] => 1362
-            [nombre] => Jorge Luis
-            [id_centro1] => 50008915
-            [id_centro2] => 
-            [id_centro3] => 
-            [id_centro4] => 
-            [id_centro5] => 
-            [id_centro6] => 
-            [id_centro] => 50017369
-            [nombre_centro] => ANGEL RIVIÈRE
-            [centro_definitivo] => SAN GERMÁN
-            [tipoestudios] => ebo
-            [transporte] => 2
-            [puntos_validados] => 13
-            [nordensorteo] => 8
-        )
-
-    [3] => stdClass Object
-        (
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
-            [calle_dfamiliar] => calle
+            [calle_dfamiliar] => CALLE DOCE DE OCTUBRE
             [localidad] => ZARAGOZA
-            [id_alumno] => 1363
-            [nombre] => Sara
-            [id_centro1] => 50008915
-            [id_centro2] => 
+            [id_alumno] => 1576
+            [nombre] => YOUSSEF
+            [id_centro1] => 50007674
+            [id_centro2] => 50018131
             [id_centro3] => 
             [id_centro4] => 
             [id_centro5] => 
@@ -223,137 +164,206 @@ Array
             [centro_definitivo] => nocentro
             [tipoestudios] => ebo
             [transporte] => 2
-            [puntos_validados] => 13
-            [nordensorteo] => 8
+            [puntos_validados] => 17
+            [nordensorteo] => 51
+        )
+
+    [1] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => CALLE JULIÁN GALLEGO 
+            [localidad] => ZARAGOZA
+            [id_alumno] => 1556
+            [nombre] => JUAN DARÍO
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50006049
+            [nombre_centro] => JULIÁN SANZ IBÁÑEZ
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 16
+            [nordensorteo] => 10
+        )
+
+    [2] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => C/ ALARIFE MARIEN DE MARGUAN
+            [localidad] => Zaragoza
+            [id_alumno] => 1551
+            [nombre] => CRISTIAN
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50011537
+            [nombre_centro] => RINCÓN DE GOYA
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 16
+            [nordensorteo] => 33
+        )
+
+    [3] => stdClass Object
+        (
+            [id_centro_definitivo] => 50010387
+            [coordenadas] => nodata
+            [calle_dfamiliar] => Calle de Yolanda de Bar
+            [localidad] => Zaragoza
+            [id_alumno] => 1468
+            [nombre] => JULIA
+            [id_centro1] => 50010387
+            [id_centro2] => 50011537
+            [id_centro3] => 50018131
+            [id_centro4] => 50007674
+            [id_centro5] => 50008630
+            [id_centro6] => 50007376
+            [id_centro] => 50017369
+            [nombre_centro] => ANGEL RIVIÈRE
+            [centro_definitivo] => ALBORADA
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 16
+            [nordensorteo] => 69
         )
 
     [4] => stdClass Object
         (
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
-            [calle_dfamiliar] => nodata
-            [localidad] => Barbastro
-            [id_alumno] => 1342
-            [nombre] => AMAYA
+            [calle_dfamiliar] => Calle Portegado
+            [localidad] => Cunchillos
+            [id_alumno] => 1408
+            [nombre] => Nathan
             [id_centro1] => 
             [id_centro2] => 
             [id_centro3] => 
             [id_centro4] => 
             [id_centro5] => 
             [id_centro6] => 
-            [id_centro] => 50017369
-            [nombre_centro] => ANGEL RIVIÈRE
+            [id_centro] => 50004612
+            [nombre_centro] => MONCAYO
             [centro_definitivo] => nocentro
             [tipoestudios] => ebo
             [transporte] => 2
-            [puntos_validados] => 12
-            [nordensorteo] => 3
+            [puntos_validados] => 14
+            [nordensorteo] => 16
         )
 
     [5] => stdClass Object
         (
+            [id_centro_definitivo] => 50010387
+            [coordenadas] => nodata
+            [calle_dfamiliar] => Desiderio Escosura 
+            [localidad] => Zaragoza
+            [id_alumno] => 1465
+            [nombre] => Rodrigo
+            [id_centro1] => 50010387
+            [id_centro2] => 50018131
+            [id_centro3] => 
+            [id_centro4] => 50011537
+            [id_centro5] => 50007674
+            [id_centro6] => 
+            [id_centro] => 50017369
+            [nombre_centro] => ANGEL RIVIÈRE
+            [centro_definitivo] => ALBORADA
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 14
+            [nordensorteo] => 84
+        )
+
+    [6] => stdClass Object
+        (
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
-            [calle_dfamiliar] => calle
+            [calle_dfamiliar] => Desiderio Escosura 
             [localidad] => Zaragoza
-            [id_alumno] => 1327
-            [nombre] => Jorge Miguel
-            [id_centro1] => 50008915
-            [id_centro2] => 
+            [id_alumno] => 1464
+            [nombre] => Alexia 
+            [id_centro1] => 50010387
+            [id_centro2] => 50018131
             [id_centro3] => 
-            [id_centro4] => 
-            [id_centro5] => 
+            [id_centro4] => 50011537
+            [id_centro5] => 50007674
             [id_centro6] => 
             [id_centro] => 50017369
             [nombre_centro] => ANGEL RIVIÈRE
             [centro_definitivo] => nocentro
             [tipoestudios] => ebo
             [transporte] => 2
-            [puntos_validados] => 12
-            [nordensorteo] => 45
-        )
-
-    [6] => stdClass Object
-        (
-            [id_centro_definitivo] => 50006128
-            [coordenadas] => nodata
-            [calle_dfamiliar] => Calle
-            [localidad] => ZARAGOZA
-            [id_alumno] => 1326
-            [nombre] => Jorge Miguel
-            [id_centro1] => 50006128
-            [id_centro2] => 
-            [id_centro3] => 
-            [id_centro4] => 
-            [id_centro5] => 
-            [id_centro6] => 
-            [id_centro] => 50017369
-            [nombre_centro] => ANGEL RIVIÈRE
-            [centro_definitivo] => SAN BRAULIO
-            [tipoestudios] => ebo
-            [transporte] => 2
-            [puntos_validados] => 11
-            [nordensorteo] => 18
+            [puntos_validados] => 14
+            [nordensorteo] => 84
         )
 
     [7] => stdClass Object
         (
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
-            [calle_dfamiliar] => caaaaa
-            [localidad] => Aínsa
-            [id_alumno] => 1316
-            [nombre] => asas
-            [id_centro1] => 
+            [calle_dfamiliar] => Paseo La Ribera
+            [localidad] => Zaragoza
+            [id_alumno] => 1462
+            [nombre] => Noa
+            [id_centro1] => 50007674
             [id_centro2] => 
             [id_centro3] => 
             [id_centro4] => 
             [id_centro5] => 
             [id_centro6] => 
-            [id_centro] => 50017369
-            [nombre_centro] => ANGEL RIVIÈRE
+            [id_centro] => 50018131
+            [nombre_centro] => JEAN PIAGET
             [centro_definitivo] => nocentro
-            [tipoestudios] => dos
+            [tipoestudios] => ebo
             [transporte] => 2
-            [puntos_validados] => 6
-            [nordensorteo] => 27
+            [puntos_validados] => 12
+            [nordensorteo] => 66
         )
 
     [8] => stdClass Object
         (
-            [id_centro_definitivo] => 22003835
+            [id_centro_definitivo] => 0
             [coordenadas] => nodata
-            [calle_dfamiliar] => nodata
-            [localidad] => Adahuesca
-            [id_alumno] => 1346
-            [nombre] => luis31
-            [id_centro1] => 
+            [calle_dfamiliar] => Paseo La Ribera
+            [localidad] => Zaragoza
+            [id_alumno] => 1461
+            [nombre] => Sara
+            [id_centro1] => 50007674
             [id_centro2] => 
             [id_centro3] => 
             [id_centro4] => 
             [id_centro5] => 
             [id_centro6] => 
-            [id_centro] => 22003835
-            [nombre_centro] => MONTECORONA
-            [centro_definitivo] => MONTECORONA
+            [id_centro] => 50018131
+            [nombre_centro] => JEAN PIAGET
+            [centro_definitivo] => nocentro
             [tipoestudios] => ebo
             [transporte] => 2
-            [puntos_validados] => 4
-            [nordensorteo] => 41
+            [puntos_validados] => 12
+            [nordensorteo] => 66
         )
 
     [9] => stdClass Object
         (
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
-            [calle_dfamiliar] => nodata
-            [localidad] => Alcañiz
-            [id_alumno] => 1336
-            [nombre] => OLIVIA
-            [id_centro1] => 
-            [id_centro2] => 
-            [id_centro3] => 
-            [id_centro4] => 
+            [calle_dfamiliar] => CALLE PANAMÁ
+            [localidad] => ZARAGOZA
+            [id_alumno] => 1453
+            [nombre] => GUILLERMO
+            [id_centro1] => 50010387
+            [id_centro2] => 50011537
+            [id_centro3] => 50018131
+            [id_centro4] => 50007674
             [id_centro5] => 
             [id_centro6] => 
             [id_centro] => 50017369
@@ -361,363 +371,708 @@ Array
             [centro_definitivo] => nocentro
             [tipoestudios] => ebo
             [transporte] => 2
-            [puntos_validados] => 1
-            [nordensorteo] => 9
+            [puntos_validados] => 8
+            [nordensorteo] => 22
         )
 
     [10] => stdClass Object
         (
-            [id_centro_definitivo] => 0
+            [id_centro_definitivo] => 50007674
             [coordenadas] => nodata
-            [calle_dfamiliar] => nodata
-            [localidad] => nodata
-            [id_alumno] => 1314
-            [nombre] => luis1
-            [id_centro1] => 
-            [id_centro2] => 
-            [id_centro3] => 
+            [calle_dfamiliar] => AVENIDA TENOR FLETA
+            [localidad] => Zaragoza
+            [id_alumno] => 1450
+            [nombre] => VIDAL
+            [id_centro1] => 50017369
+            [id_centro2] => 50010387
+            [id_centro3] => 50008630
             [id_centro4] => 
             [id_centro5] => 
             [id_centro6] => 
-            [id_centro] => 22003835
-            [nombre_centro] => MONTECORONA
-            [centro_definitivo] => nocentro
+            [id_centro] => 50007674
+            [nombre_centro] => ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES
+            [centro_definitivo] => ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES
             [tipoestudios] => ebo
             [transporte] => 2
-            [puntos_validados] => 0
-            [nordensorteo] => 1
+            [puntos_validados] => 8
+            [nordensorteo] => 37
         )
 
     [11] => stdClass Object
         (
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
-            [calle_dfamiliar] => nodata
-            [localidad] => nodata
-            [id_alumno] => 1317
-            [nombre] => sdsdsd
-            [id_centro1] => 
-            [id_centro2] => 
-            [id_centro3] => 
-            [id_centro4] => 
+            [calle_dfamiliar] => C/ Reina Petronila 
+            [localidad] => Zaragoza
+            [id_alumno] => 1559
+            [nombre] => Marcos
+            [id_centro1] => 50007674
+            [id_centro2] => 50010387
+            [id_centro3] => 50018131
+            [id_centro4] => 50017369
             [id_centro5] => 
             [id_centro6] => 
-            [id_centro] => 22002511
-            [nombre_centro] => PIRÁMIDE
+            [id_centro] => 50011537
+            [nombre_centro] => RINCÓN DE GOYA
             [centro_definitivo] => nocentro
             [tipoestudios] => ebo
             [transporte] => 2
-            [puntos_validados] => 0
-            [nordensorteo] => 2
+            [puntos_validados] => 8
+            [nordensorteo] => 43
         )
 
     [12] => stdClass Object
         (
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
-            [calle_dfamiliar] => nodata
-            [localidad] => nodata
-            [id_alumno] => 1318
-            [nombre] => asas
+            [calle_dfamiliar] => AVENIDA SAN JOSE
+            [localidad] => Zaragoza
+            [id_alumno] => 1431
+            [nombre] => CLARA
             [id_centro1] => 
             [id_centro2] => 
             [id_centro3] => 
             [id_centro4] => 
             [id_centro5] => 
             [id_centro6] => 
-            [id_centro] => 22003835
-            [nombre_centro] => MONTECORONA
+            [id_centro] => 50007674
+            [nombre_centro] => ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES
             [centro_definitivo] => nocentro
             [tipoestudios] => ebo
             [transporte] => 2
-            [puntos_validados] => 0
-            [nordensorteo] => 4
+            [puntos_validados] => 8
+            [nordensorteo] => 118
         )
 
     [13] => stdClass Object
         (
-            [id_centro_definitivo] => 0
+            [id_centro_definitivo] => 50008630
             [coordenadas] => nodata
-            [calle_dfamiliar] => nodata
-            [localidad] => Zaragoza
-            [id_alumno] => 1321
-            [nombre] => PATRICIA
-            [id_centro1] => 
-            [id_centro2] => 
-            [id_centro3] => 
-            [id_centro4] => 
-            [id_centro5] => 
+            [calle_dfamiliar] => JULIAN SANZ IBAÑEZ
+            [localidad] => ZARAGOZA
+            [id_alumno] => 1477
+            [nombre] => DIEGO
+            [id_centro1] => 50008630
+            [id_centro2] => 50010387
+            [id_centro3] => 50017369
+            [id_centro4] => 50007376
+            [id_centro5] => 50006128
             [id_centro6] => 
-            [id_centro] => 50017369
-            [nombre_centro] => ANGEL RIVIÈRE
-            [centro_definitivo] => nocentro
+            [id_centro] => 50007674
+            [nombre_centro] => ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES
+            [centro_definitivo] => CEDES
             [tipoestudios] => ebo
             [transporte] => 2
-            [puntos_validados] => 0
-            [nordensorteo] => 6
+            [puntos_validados] => 7
+            [nordensorteo] => 45
         )
 
     [14] => stdClass Object
         (
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
-            [calle_dfamiliar] => nodata
-            [localidad] => nodata
-            [id_alumno] => 1312
-            [nombre] => hluis11
-            [id_centro1] => 
-            [id_centro2] => 
-            [id_centro3] => 
-            [id_centro4] => 
-            [id_centro5] => 
+            [calle_dfamiliar] => CALLE ROGER DE FLOR 
+            [localidad] => ZARAGOZA
+            [id_alumno] => 1578
+            [nombre] => LEO
+            [id_centro1] => 50011537
+            [id_centro2] => 50006049
+            [id_centro3] => 50010387
+            [id_centro4] => 50018131
+            [id_centro5] => 50008630
             [id_centro6] => 
-            [id_centro] => 22003835
-            [nombre_centro] => MONTECORONA
+            [id_centro] => 50017369
+            [nombre_centro] => ANGEL RIVIÈRE
             [centro_definitivo] => nocentro
             [tipoestudios] => ebo
             [transporte] => 2
-            [puntos_validados] => 0
-            [nordensorteo] => 14
+            [puntos_validados] => 7
+            [nordensorteo] => 52
         )
 
     [15] => stdClass Object
         (
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
-            [calle_dfamiliar] => nodata
-            [localidad] => Alcolea de Cinca
-            [id_alumno] => 1339
-            [nombre] => nhl2
-            [id_centro1] => 
-            [id_centro2] => 
-            [id_centro3] => 
-            [id_centro4] => 
+            [calle_dfamiliar] => Calle Martín Cortes
+            [localidad] => Zaragoza
+            [id_alumno] => 1444
+            [nombre] => Jara 
+            [id_centro1] => 50017369
+            [id_centro2] => 50007674
+            [id_centro3] => 50010387
+            [id_centro4] => 50018131
             [id_centro5] => 
             [id_centro6] => 
-            [id_centro] => 22003835
-            [nombre_centro] => MONTECORONA
+            [id_centro] => 50017369
+            [nombre_centro] => ANGEL RIVIÈRE
             [centro_definitivo] => nocentro
             [tipoestudios] => ebo
             [transporte] => 2
-            [puntos_validados] => 0
-            [nordensorteo] => 15
+            [puntos_validados] => 7
+            [nordensorteo] => 103
         )
 
     [16] => stdClass Object
         (
-            [id_centro_definitivo] => 0
+            [id_centro_definitivo] => 50008630
             [coordenadas] => nodata
-            [calle_dfamiliar] => nodata
-            [localidad] => Adahuesca
-            [id_alumno] => 1319
-            [nombre] => asasas
-            [id_centro1] => 
-            [id_centro2] => 
+            [calle_dfamiliar] => C/RIO JILOCA 
+            [localidad] => LA PUEBLA DE ALFINDEN
+            [id_alumno] => 1467
+            [nombre] => ALVARO
+            [id_centro1] => 50008630
+            [id_centro2] => 50009646
             [id_centro3] => 
             [id_centro4] => 
             [id_centro5] => 
             [id_centro6] => 
-            [id_centro] => 22003835
-            [nombre_centro] => MONTECORONA
-            [centro_definitivo] => nocentro
+            [id_centro] => 50007674
+            [nombre_centro] => ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES
+            [centro_definitivo] => CEDES
             [tipoestudios] => ebo
             [transporte] => 2
-            [puntos_validados] => 0
-            [nordensorteo] => 20
+            [puntos_validados] => 7
+            [nordensorteo] => 109
         )
 
     [17] => stdClass Object
         (
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
-            [calle_dfamiliar] => nodata
-            [localidad] => nodata
-            [id_alumno] => 1311
-            [nombre] => nom2
-            [id_centro1] => 
-            [id_centro2] => 
-            [id_centro3] => 
-            [id_centro4] => 
+            [calle_dfamiliar] => Calle Alfonso Carlos Comin Ros 
+            [localidad] => Zaragoza
+            [id_alumno] => 1505
+            [nombre] => Angela
+            [id_centro1] => 50017369
+            [id_centro2] => 50018131
+            [id_centro3] => 50010387
+            [id_centro4] => 50007674
             [id_centro5] => 
             [id_centro6] => 
-            [id_centro] => 22003835
-            [nombre_centro] => MONTECORONA
+            [id_centro] => 50011537
+            [nombre_centro] => RINCÓN DE GOYA
             [centro_definitivo] => nocentro
             [tipoestudios] => ebo
             [transporte] => 2
-            [puntos_validados] => 0
-            [nordensorteo] => 21
+            [puntos_validados] => 7
+            [nordensorteo] => 124
         )
 
     [18] => stdClass Object
         (
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
-            [calle_dfamiliar] => nodata
-            [localidad] => Aínsa
-            [id_alumno] => 1325
-            [nombre] => VERA
+            [calle_dfamiliar] => C/zaragoza 
+            [localidad] => Illueca
+            [id_alumno] => 1432
+            [nombre] => Lucas javier
             [id_centro1] => 
             [id_centro2] => 
             [id_centro3] => 
             [id_centro4] => 
             [id_centro5] => 
             [id_centro6] => 
-            [id_centro] => 50017369
-            [nombre_centro] => ANGEL RIVIÈRE
+            [id_centro] => 50018131
+            [nombre_centro] => JEAN PIAGET
             [centro_definitivo] => nocentro
-            [tipoestudios] => tva
+            [tipoestudios] => ebo
             [transporte] => 2
-            [puntos_validados] => 0
-            [nordensorteo] => 23
+            [puntos_validados] => 6
+            [nordensorteo] => 59
         )
 
     [19] => stdClass Object
         (
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
-            [calle_dfamiliar] => nodata
-            [localidad] => Barbastro
-            [id_alumno] => 1328
-            [nombre] => SERGIO
-            [id_centro1] => 
-            [id_centro2] => 
-            [id_centro3] => 
-            [id_centro4] => 
-            [id_centro5] => 
+            [calle_dfamiliar] => ronda ibon de plan 
+            [localidad] => zaragoza
+            [id_alumno] => 1466
+            [nombre] => LIAM
+            [id_centro1] => 50017369
+            [id_centro2] => 50018131
+            [id_centro3] => 50010387
+            [id_centro4] => 50009488
+            [id_centro5] => 50007674
             [id_centro6] => 
-            [id_centro] => 50017369
-            [nombre_centro] => ANGEL RIVIÈRE
+            [id_centro] => 50011537
+            [nombre_centro] => RINCÓN DE GOYA
             [centro_definitivo] => nocentro
             [tipoestudios] => ebo
             [transporte] => 2
-            [puntos_validados] => 0
-            [nordensorteo] => 24
+            [puntos_validados] => 5
+            [nordensorteo] => 15
         )
 
     [20] => stdClass Object
         (
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
-            [calle_dfamiliar] => nodata
-            [localidad] => nodata
-            [id_alumno] => 1308
-            [nombre] => luis1
+            [calle_dfamiliar] => VÍA IBÉRICA
+            [localidad] => ZARAGOZA
+            [id_alumno] => 1443
+            [nombre] => MARTA
             [id_centro1] => 
             [id_centro2] => 
             [id_centro3] => 
             [id_centro4] => 
             [id_centro5] => 
             [id_centro6] => 
-            [id_centro] => 22004891
-            [nombre_centro] => BIELLO ARAGÓN
+            [id_centro] => 50007674
+            [nombre_centro] => ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES
             [centro_definitivo] => nocentro
             [tipoestudios] => ebo
             [transporte] => 2
-            [puntos_validados] => 0
-            [nordensorteo] => 25
+            [puntos_validados] => 5
+            [nordensorteo] => 27
         )
 
     [21] => stdClass Object
         (
-            [id_centro_definitivo] => 0
+            [id_centro_definitivo] => 50007376
             [coordenadas] => nodata
-            [calle_dfamiliar] => nodata
-            [localidad] => Adahuesca
-            [id_alumno] => 1333
-            [nombre] => luis1
-            [id_centro1] => 
-            [id_centro2] => 
+            [calle_dfamiliar] => OLIVER MISTRAL, GABRIELA
+            [localidad] => Zaragoza
+            [id_alumno] => 1415
+            [nombre] => OLAMIDA
+            [id_centro1] => 50007674
+            [id_centro2] => 50007376
             [id_centro3] => 
             [id_centro4] => 
             [id_centro5] => 
             [id_centro6] => 
-            [id_centro] => 22003835
-            [nombre_centro] => MONTECORONA
-            [centro_definitivo] => nocentro
-            [tipoestudios] => dos
+            [id_centro] => 50011537
+            [nombre_centro] => RINCÓN DE GOYA
+            [centro_definitivo] => LA PURÍSIMA PARA NIÑOS SORDOS
+            [tipoestudios] => ebo
             [transporte] => 2
-            [puntos_validados] => 0
-            [nordensorteo] => 38
+            [puntos_validados] => 5
+            [nordensorteo] => 81
         )
 
     [22] => stdClass Object
         (
-            [id_centro_definitivo] => 0
+            [id_centro_definitivo] => 50009488
             [coordenadas] => nodata
-            [calle_dfamiliar] => nodata
-            [localidad] => Alcolea de Cinca
-            [id_alumno] => 1331
-            [nombre] => VANESA
-            [id_centro1] => 
-            [id_centro2] => 
+            [calle_dfamiliar] => calle Norte 
+            [localidad] => ZARAGOZA (Santa Isabel)
+            [id_alumno] => 1545
+            [nombre] => JOSE
+            [id_centro1] => 50009488
+            [id_centro2] => 50018131
             [id_centro3] => 
             [id_centro4] => 
             [id_centro5] => 
             [id_centro6] => 
-            [id_centro] => 50017369
-            [nombre_centro] => ANGEL RIVIÈRE
-            [centro_definitivo] => nocentro
-            [tipoestudios] => tva
+            [id_centro] => 50007674
+            [nombre_centro] => ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES
+            [centro_definitivo] => LOS PUEYOS
+            [tipoestudios] => ebo
             [transporte] => 2
-            [puntos_validados] => 0
-            [nordensorteo] => 39
+            [puntos_validados] => 4
+            [nordensorteo] => 11
         )
 
     [23] => stdClass Object
         (
-            [id_centro_definitivo] => 0
+            [id_centro_definitivo] => 50009646
             [coordenadas] => nodata
-            [calle_dfamiliar] => nodata
-            [localidad] => Adahuesca
-            [id_alumno] => 1335
-            [nombre] => nhc1
-            [id_centro1] => 
-            [id_centro2] => 
+            [calle_dfamiliar] => Caracol 
+            [localidad] => Grisen
+            [id_alumno] => 1469
+            [nombre] => Daniel 
+            [id_centro1] => 50018131
+            [id_centro2] => 50009646
             [id_centro3] => 
-            [id_centro4] => 
-            [id_centro5] => 
+            [id_centro4] => 50017369
+            [id_centro5] => 50010387
             [id_centro6] => 
-            [id_centro] => 22003835
-            [nombre_centro] => MONTECORONA
-            [centro_definitivo] => nocentro
+            [id_centro] => 50011537
+            [nombre_centro] => RINCÓN DE GOYA
+            [centro_definitivo] => MARÍA SORIANO
             [tipoestudios] => ebo
             [transporte] => 2
-            [puntos_validados] => 0
-            [nordensorteo] => 40
+            [puntos_validados] => 3
+            [nordensorteo] => 82
         )
 
     [24] => stdClass Object
         (
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
-            [calle_dfamiliar] => nodata
-            [localidad] => Zaragoza
-            [id_alumno] => 1320
-            [nombre] => NURIA
-            [id_centro1] => 
-            [id_centro2] => 
-            [id_centro3] => 
-            [id_centro4] => 
+            [calle_dfamiliar] => CALLE ARAGON
+            [localidad] => Ejea de los Caballeros
+            [id_alumno] => 1565
+            [nombre] => HAFIZ
+            [id_centro1] => 50011537
+            [id_centro2] => 50017369
+            [id_centro3] => 50010387
+            [id_centro4] => 50009646
             [id_centro5] => 
             [id_centro6] => 
-            [id_centro] => 50017369
-            [nombre_centro] => ANGEL RIVIÈRE
+            [id_centro] => 50018131
+            [nombre_centro] => JEAN PIAGET
             [centro_definitivo] => nocentro
-            [tipoestudios] => dos
+            [tipoestudios] => tva
             [transporte] => 2
-            [puntos_validados] => 0
-            [nordensorteo] => 42
+            [puntos_validados] => 2
+            [nordensorteo] => 18
         )
 
     [25] => stdClass Object
         (
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
-            [calle_dfamiliar] => nodata
-            [localidad] => Alcañiz
-            [id_alumno] => 1337
-            [nombre] => ANTONIO
+            [calle_dfamiliar] => CALLE UNICA
+            [localidad] => ALUJAN
+            [id_alumno] => 1407
+            [nombre] => HECTOR
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50018131
+            [nombre_centro] => JEAN PIAGET
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 2
+            [nordensorteo] => 53
+        )
+
+    [26] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => CALLE PORTAZA
+            [localidad] => Ejea de los Caballeros
+            [id_alumno] => 1563
+            [nombre] => EMMANUEL DE JESÚS
+            [id_centro1] => 50011537
+            [id_centro2] => 50017369
+            [id_centro3] => 50010387
+            [id_centro4] => 50009646
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50018131
+            [nombre_centro] => JEAN PIAGET
+            [centro_definitivo] => nocentro
+            [tipoestudios] => tva
+            [transporte] => 2
+            [puntos_validados] => 2
+            [nordensorteo] => 98
+        )
+
+    [27] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => Calle Maria Lostal
+            [localidad] => Zaragoza
+            [id_alumno] => 1445
+            [nombre] => Richard Yeray
+            [id_centro1] => 50011537
+            [id_centro2] => 50007674
+            [id_centro3] => 50017369
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50011537
+            [nombre_centro] => RINCÓN DE GOYA
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 1
+            [nordensorteo] => 5
+        )
+
+    [28] => stdClass Object
+        (
+            [id_centro_definitivo] => 50009646
+            [coordenadas] => nodata
+            [calle_dfamiliar] => CALLE BIARRITZ 
+            [localidad] => ZARAGOZA
+            [id_alumno] => 1463
+            [nombre] => ACHER
+            [id_centro1] => 50009646
+            [id_centro2] => 50011537
+            [id_centro3] => 50010387
+            [id_centro4] => 50017369
+            [id_centro5] => 50018131
+            [id_centro6] => 50008630
+            [id_centro] => 50007674
+            [nombre_centro] => ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES
+            [centro_definitivo] => MARÍA SORIANO
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 1
+            [nordensorteo] => 25
+        )
+
+    [29] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => calle pedro mateo
+            [localidad] => Gallur
+            [id_alumno] => 1541
+            [nombre] => marcos
+            [id_centro1] => 50010387
+            [id_centro2] => 50018131
+            [id_centro3] => 50008630
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50011537
+            [nombre_centro] => RINCÓN DE GOYA
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 1
+            [nordensorteo] => 63
+        )
+
+    [30] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => DON JUAN DE ARAGÓN
+            [localidad] => Zaragoza
+            [id_alumno] => 1574
+            [nombre] => ADRIAN
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50018131
+            [nombre_centro] => JEAN PIAGET
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 1
+            [nordensorteo] => 95
+        )
+
+    [31] => stdClass Object
+        (
+            [id_centro_definitivo] => 50009646
+            [coordenadas] => nodata
+            [calle_dfamiliar] => CALLE PORTILLO
+            [localidad] => Alagón
+            [id_alumno] => 1577
+            [nombre] => MARIO
+            [id_centro1] => 50018131
+            [id_centro2] => 50010387
+            [id_centro3] => 50017369
+            [id_centro4] => 50007674
+            [id_centro5] => 50009646
+            [id_centro6] => 
+            [id_centro] => 50011537
+            [nombre_centro] => RINCÓN DE GOYA
+            [centro_definitivo] => MARÍA SORIANO
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 1
+            [nordensorteo] => 102
+        )
+
+    [32] => stdClass Object
+        (
+            [id_centro_definitivo] => 50007376
+            [coordenadas] => nodata
+            [calle_dfamiliar] => Calle Luis Lopez Allue
+            [localidad] => Zaragoza
+            [id_alumno] => 1454
+            [nombre] => Adrian
+            [id_centro1] => 50007376
+            [id_centro2] => 50011537
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50007674
+            [nombre_centro] => ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES
+            [centro_definitivo] => LA PURÍSIMA PARA NIÑOS SORDOS
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 0
+            [nordensorteo] => 2
+        )
+
+    [33] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => calle fuenterrabia 
+            [localidad] => Zaragoza
+            [id_alumno] => 1547
+            [nombre] => HUGO SANTIAGO
+            [id_centro1] => 50010387
+            [id_centro2] => 50018131
+            [id_centro3] => 
+            [id_centro4] => 50017369
+            [id_centro5] => 50007674
+            [id_centro6] => 
+            [id_centro] => 50011537
+            [nombre_centro] => RINCÓN DE GOYA
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 0
+            [nordensorteo] => 44
+        )
+
+    [34] => stdClass Object
+        (
+            [id_centro_definitivo] => 50009646
+            [coordenadas] => nodata
+            [calle_dfamiliar] => CALLE MANUEL CANDAU
+            [localidad] => UTEBO
+            [id_alumno] => 1562
+            [nombre] => JAWAD
+            [id_centro1] => 50011537
+            [id_centro2] => 50009646
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50011537
+            [nombre_centro] => RINCÓN DE GOYA
+            [centro_definitivo] => MARÍA SORIANO
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 0
+            [nordensorteo] => 48
+        )
+
+    [35] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => C/ EUGENIO LUCAS
+            [localidad] => Zaragoza
+            [id_alumno] => 1571
+            [nombre] => JEINABA
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50018131
+            [nombre_centro] => JEAN PIAGET
+            [centro_definitivo] => nocentro
+            [tipoestudios] => tva
+            [transporte] => 2
+            [puntos_validados] => 0
+            [nordensorteo] => 49
+        )
+
+    [36] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => CALLE BELGICA
+            [localidad] => Zaragoza
+            [id_alumno] => 1564
+            [nombre] => CIRILO ALEJANDRO
+            [id_centro1] => 50018131
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50011537
+            [nombre_centro] => RINCÓN DE GOYA
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 0
+            [nordensorteo] => 50
+        )
+
+    [37] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => Ave.de la Academia General Militar
+            [localidad] => Zaragoza
+            [id_alumno] => 1411
+            [nombre] => JORGE NEIMAR
+            [id_centro1] => 50010387
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50018131
+            [nombre_centro] => JEAN PIAGET
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 0
+            [nordensorteo] => 56
+        )
+
+    [38] => stdClass Object
+        (
+            [id_centro_definitivo] => 50009646
+            [coordenadas] => nodata
+            [calle_dfamiliar] => CALLE LA FRONDOSA
+            [localidad] => GARRAPINILLOS
+            [id_alumno] => 1479
+            [nombre] => MANUEL
+            [id_centro1] => 50011537
+            [id_centro2] => 50009646
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50011537
+            [nombre_centro] => RINCÓN DE GOYA
+            [centro_definitivo] => MARÍA SORIANO
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 0
+            [nordensorteo] => 73
+        )
+
+    [39] => stdClass Object
+        (
+            [id_centro_definitivo] => 50009646
+            [coordenadas] => nodata
+            [calle_dfamiliar] => CALLE SAN FRANCISCO
+            [localidad] => ZARAGOZA
+            [id_alumno] => 1560
+            [nombre] => JUAN JOSÉ
+            [id_centro1] => 50011537
+            [id_centro2] => 50009646
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50011537
+            [nombre_centro] => RINCÓN DE GOYA
+            [centro_definitivo] => MARÍA SORIANO
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 0
+            [nordensorteo] => 91
+        )
+
+    [40] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => Tomás Higuera
+            [localidad] => Zaragoza
+            [id_alumno] => 1557
+            [nombre] => ANTONIO STEFAN
             [id_centro1] => 
             [id_centro2] => 
             [id_centro3] => 
@@ -730,9 +1085,193 @@ Array
             [tipoestudios] => ebo
             [transporte] => 2
             [puntos_validados] => 0
-            [nordensorteo] => 46
+            [nordensorteo] => 101
+        )
+
+    [41] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => CAMINO CASA BERDEJO
+            [localidad] => Garrapinillos
+            [id_alumno] => 1417
+            [nombre] => RUBÉN
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50018131
+            [nombre_centro] => JEAN PIAGET
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 1
+            [puntos_validados] => 8
+            [nordensorteo] => 29
+        )
+
+    [42] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => Calle Pirineos 
+            [localidad] => Cuarte de Huerva
+            [id_alumno] => 1439
+            [nombre] => LUCAS
+            [id_centro1] => 50011537
+            [id_centro2] => 50017369
+            [id_centro3] => 50007674
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50011537
+            [nombre_centro] => RINCÓN DE GOYA
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 1
+            [puntos_validados] => 2
+            [nordensorteo] => 4
+        )
+
+    [43] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => AVENIDA STADIUM
+            [localidad] => María de Huerva
+            [id_alumno] => 1570
+            [nombre] => LISANDRO
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50011537
+            [nombre_centro] => RINCÓN DE GOYA
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 1
+            [puntos_validados] => 2
+            [nordensorteo] => 23
+        )
+
+    [44] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => CARNICERÍA
+            [localidad] => Alfamén
+            [id_alumno] => 1549
+            [nombre] => MIRUNA VALENTINA
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50011537
+            [nombre_centro] => RINCÓN DE GOYA
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 1
+            [puntos_validados] => 1
+            [nordensorteo] => 32
+        )
+
+    [45] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => Calle Garcia
+            [localidad] => Longares
+            [id_alumno] => 1536
+            [nombre] => Paul Gheorghita 
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50011537
+            [nombre_centro] => RINCÓN DE GOYA
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 1
+            [puntos_validados] => 1
+            [nordensorteo] => 35
+        )
+
+    [46] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => CALLE CARRUEZ
+            [localidad] => ZUERA
+            [id_alumno] => 1528
+            [nombre] => CHARLES
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50018131
+            [nombre_centro] => JEAN PIAGET
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 1
+            [puntos_validados] => 1
+            [nordensorteo] => 68
+        )
+
+    [47] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => Calle Urbezo Unsain
+            [localidad] => Cariñena
+            [id_alumno] => 1566
+            [nombre] => Fadoua
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50011537
+            [nombre_centro] => RINCÓN DE GOYA
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 1
+            [puntos_validados] => 1
+            [nordensorteo] => 92
+        )
+
+    [48] => stdClass Object
+        (
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => Ronda de la Villa
+            [localidad] => Longares
+            [id_alumno] => 1529
+            [nombre] => David Andrés
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50011537
+            [nombre_centro] => RINCÓN DE GOYA
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 1
+            [puntos_validados] => 0
+            [nordensorteo] => 97
         )
 
 )
 
-Asignadas vacantes centros para fase 2 a las 10:02 del dia 16-Feb-2023
+Asignadas vacantes centros para fase 2 a las 16:04 del dia 17-Apr-2023
