@@ -1,0 +1,92 @@
+<?php
+define("CONTROLADOR_DEFECTO", "centros");
+define("ACCION_DEFECTO", "index");
+define("EDICION","/educacionespecial2324");
+if(isset($_SERVER['CONTEXT_DOCUMENT_ROOT']))
+   define("DIR_BASE",$_SERVER['CONTEXT_DOCUMENT_ROOT'].EDICION);
+else
+   define("DIR_BASE","/datos/www/preadmespecial.aragon.es/public_admespecial/".EDICION);
+define("DIR_CORE",DIR_BASE."/clases/core");
+define("IPREMOTA2","79.116.138.70");//ip hueso
+define("IPREMOTA1","1.43.8.1033");
+define("MANTENIMIENTO","NO");
+define("CURSO_LARGO","2023/2024");
+define("CURSO","2023");
+define("CURSOANTERIOR_LARGO","2022/2023");
+define("AINICIO_EBO","2006");
+define("AFIN_EBO","2020");
+define("AINICIO_TVA","2003");
+define("AFIN_TVA","2005");
+define("ADOS","2021");
+define("DATA_SCRIPTS_DIR",'/scripts/datos_entrada/');
+define("URL_BASE",'http://preadmespecial.aragon.es/');
+define("VERSION",'PRE');
+
+//DIAS CLAVE PROCESO ADMISION
+##########################################################################################################
+//FASE 0, proceso de preinscripción
+//FASE 1, proceso de inscripción y asignación de plazas
+define("DIA_INICIO_MATRICULA",'2023/04/17 10:25:00');
+define("DIA_INICIO_INSCRIPCION",'2023/04/17 11:40:00');
+define("DIA_FIN_INSCRIPCION",'2023/04/17 11:50:00');
+//DIA PUBLICACION BAREMADAS
+define("DIA_PUBLICACION_BAREMADAS",'2023/04/17 11:11:00');
+//DIA INICIO REC BAREMADAS
+//Los ciudadanos pueden reclamas en un formlario
+define("DIA_INICIO_RECLAMACIONES_BAREMADAS",'2023/04/17 11:12:00');
+define("DIA_FIN_RECLAMACIONES_BAREMADAS",'2023/03/17 12:01:00');
+//PUBLICACION NUMERO ALEATORIO Y SORTEO
+//los admin ven el botond esortoe y el resto el listado numero aleatorio
+//se hace el sorteo y los centros ven listas provisionales
+define("DIA_ALEATORIO",'2023/04/17 07:04:00');
+//dia sorteo
+define("DIA_SORTEO",'2023/04/17 08:08:00');
+//publicacion listados prosiionales para el ciudadano
+//las listas se fijan, si se modifican se verá reflejado en las listas definitivas
+define("DIA_PUBLICACION_PROVISIONAL",'2023/04/17 09:10:00');
+define("DIA_INICIO_RECLAMACIONES_PROVISIONAL",'2023/04/17 09:11:00');
+define("DIA_FIN_RECLAMACIONES_PROVISIONAL",'2023/04/17 10:59:00');
+//publicacion listados definiitvos para el ciudadano
+define("DIA_PUBLICACION_DEFINITIVOS",'2023/04/17 11:13:00');
+
+//FASE 2, todos los no admitidos van al 'cajon' para se reasignados automáticamente
+define("DIA_INICIO_ASIGNACIONES",'2023/04/17 14:14:00');
+define("DIA_PUBLICACION_ASIGNACIONES",'2023/04/18 10:15:00');
+
+define("DIA_MATRICULACION_ASIGNACIONES",'2023/04/18 10:20:00');
+//publicación adjudicaciones
+define("DIA_FIN",'2023/04/23 11:35:00');
+
+//parametros propios de la aplicacion
+define("DIR_APP",DIR_BASE."/app/");
+define("DIR_CONF",DIR_BASE."/config/");
+define("DIR_CLASES",DIR_BASE."/scripts/clases/");
+define("DIR_LOGS",DIR_BASE.'/logs/');
+
+//codigos para los estados de la convocatoria
+define("ESTADO_PREMATRICULA","1");
+define("ESTADO_PREINSCRIPCION","9");
+
+define("ESTADO_INSCRIPCION",'10');
+define("ESTADO_FININSCRIPCION",'20');
+
+define("ESTADO_PUBLICACION_BAREMADAS",'30');
+define("ESTADO_RECLAMACIONES_BAREMADAS",'31');
+
+define("ESTADO_PREALEATORIO",'40');
+define("ESTADO_ALEATORIO",'41');
+define("ESTADO_SORTEO",'42');
+
+define("ESTADO_PUBLICACION_PROVISIONAL",'50');
+define("ESTADO_RECLAMACIONES_PROVISIONAL",'51');
+
+define("ESTADO_DEFINITIVOS",'60');
+define("ESTADO_PUBLICACION_DEFINITIVOS",'61');
+define("ESTADO_PUBLICACION_VACANTES",'62');
+
+#FASE2: reasignacion plazas
+define("ESTADO_ASIGNACIONES",'70');
+define("ESTADO_PUBLICACION_ASIGNACIONES",'71');
+define("ESTADO_FIN",'100');
+
+?>

@@ -64,6 +64,14 @@ class UtilidadesAdmision{
    $dni1=$aldata['dni_tutor1'];
    $dni2=$aldata['dni_tutor2'];
    $conjunta=$aldata['conjunta'];
+   $hermanoscentro=$aldata['num_hbaremo'];
+   $vhermanoscentro=$aldata['validar_hnos_centro'];
+   if($hermanoscentro>=1)
+   {
+      $puntos_baremo=$puntos_baremo+8;
+      if($vhermanoscentro==1)
+         $puntos_baremo_validados=$puntos_baremo_validados+8;
+   }
    if($conjunta=='si')
    {
       $puntos_baremo=$puntos_barmeo+4;
@@ -540,7 +548,8 @@ id_centro=1";
 	}
  	public function setAlumnoCentroFase2($ida,$idc,$nc){
 		//modificamos el centro en a tabla de alumnos_fase2
-		$sql="UPDATE alumnos_fase2 set id_centro_definitivo=$idc,centro_definitivo='$nc' where id_alumno=$ida";
+		$sql="UPDATE alumnos_fase2 set id_centro_definitivo=$idc,centro_definitivo='$nc',tipo_modificacion='automatica' where id_alumno=$ida";
+		$this->log_asigna_fase2->warning("CONSULTA ASIGNACION PLAZA CENTRO: $idc");
 		$this->log_asigna_fase2->warning("CONSULTA ASIGNACION PLAZA: $sql");
 		if(!$this->conexion->query($sql)) return $this->conexion->error;
       return 1;
@@ -553,7 +562,7 @@ id_centro=1";
       {
          if($alumno_fase2->id_centro_definitivo!=0)
          {
- 	         $sql="UPDATE alumnos a SET a.id_centro_final=$alumno_fase2->id_centro_definitivo,est_desp_sorteo='admitidafase2' WHERE id_alumno=$alumno_fase2->id_alumno";
+ 	         $sql="UPDATE alumnos a SET a.id_centro_final=$alumno_fase2->id_centro_definitivo,est_desp_sorteo='admitida' WHERE id_alumno=$alumno_fase2->id_alumno";
 		      if(!$this->conexion->query($sql)) return $this->conexion->error;
          }
       }
@@ -641,6 +650,8 @@ id_centro=$idcentro";
 	}
  	public function asignarVacantesCentros($centros_fase2=array(),$alumnos_fase2=array(),$centro_alternativo=0,$tipoestudios,$post=0)
 	{
+      //deifnimos el array para llevar registro de los alumnos de conjuntas q sean asignados
+      $hermanos_asignados=array();
 		if(sizeof($centros_fase2)==0 or sizeof($alumnos_fase2)==0){print("ARRAY VACIO"); return -1;}
 
 		$this->log_asigna_fase2->warning("ASIGNANDO VACANTES FASE2 CENTRO ALT: $centro_alternativo TIPOESTUDIOS: $tipoestudios");
@@ -712,18 +723,26 @@ id_centro=$idcentro";
 						
                   $this->log_asigna_fase2->warning("COINCIDENCIA: $alumno->id_alumno CENTRO: $nombrecentro");
 					
-                  //si no hay reserva de plaza asignamos la vacante al alumno en la tabla alumnos_fase2
-						$this->setAlumnoCentroFase2($alumno->id_alumno,$centro['id_centro'],$nombrecentro);
-                  //si es conjunta tb
-                  
+                  //antes de admitir al alumno probamos si es conjunta o no
 						$id_hermanos=$this->getHermanosConjunta($alumno->id_alumno);
-                  foreach($id_hermanos as $id_hermano)
+                  $numero_hermanosconjunta=sizeof($id_hermanos);
+                  $this->log_asigna_fase2->warning("NUMERO DE HERMANOS CONJUNTA: $numero_hermanosconjunta");
+                  if(($numero_hermanosconjunta+1)<=$vacantes)
                   {
-                     print("HERMANOS CONJUNTA, idhermano:".$id_hermano->id_alumno);
-						   $this->setAlumnoCentroFase2($id_hermano->id_alumno,$centro['id_centro'],$nombrecentro);
+                     //si ya lo hemos procesado como hermano lo omitimos
+                     if(in_array($alumno->id_alumno,$hermanos_asignados))
+                        continue;
+						   $this->setAlumnoCentroFase2($alumno->id_alumno,$centro['id_centro'],$nombrecentro);
+                     $vacantes--;
+                     foreach($id_hermanos as $id_hermano)
+                     {
+                        print("ASIGNANDO ID HERMANO CONJUNTA:".$id_hermano->id_alumno);
+                        $this->setAlumnoCentroFase2($id_hermano->id_alumno,$centro['id_centro'],$nombrecentro);
+                        array_push($hermanos_asignados,$id_hermano->id_alumno);
+                        $vacantes--;
+                     }
+						   $vasignada=1;
                   }
-						$vasignada=1;
-						$vacantes--;
 					}
 					//si se acaban las vacantes del centro
 					if($vacantes==0)
@@ -758,6 +777,17 @@ id_centro=$idcentro";
 		}
 	   print($sql);	
 		return $resultSet;
+    }
+   public function descuentaPuntosHermanosFase2()
+	{
+      //modificamos los puntos para los q tengan puntos de hermanos, quitando los 8 puntos
+      $usql="UPDATE alumnos_fase2 SET puntos_validados=puntos_validados-8 WHERE id_alumno IN(SELECT id_alumno FROM baremo WHERE validar_hnos_centro=1)";
+		$query=$this->conexion->query($usql);
+		$resultSet=array();
+		if($query)
+	      return 1;
+      else
+         return 0;	
     }
    public function getAlumnosFase2($t='tmp')
 	{

@@ -125,7 +125,7 @@ ID CENTRO: 50010387NOMBRE CENTRO: ALBORADAArray
 )
 ID CENTRO: 50011537NOMBRE CENTRO: RINCÓN DE GOYAArray
 (
-    [ebo] => -1
+    [ebo] => -13
     [tva] => 8
 )
 ID CENTRO: 50017369NOMBRE CENTRO: ANGEL RIVIÈREArray
@@ -135,7 +135,7 @@ ID CENTRO: 50017369NOMBRE CENTRO: ANGEL RIVIÈREArray
 )
 ID CENTRO: 50018131NOMBRE CENTRO: JEAN PIAGETArray
 (
-    [ebo] => 0
+    [ebo] => -4
     [tva] => 0
 )
 ID CENTRO: 50019408NOMBRE CENTRO: SEGEDAArray
@@ -143,156 +143,12 @@ ID CENTRO: 50019408NOMBRE CENTRO: SEGEDAArray
     [ebo] => 11
     [tva] => 2
 )
-SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1450)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1431)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1477)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1467)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1545)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1468)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1465)HERMANOS CONJUNTA, idhermano:1464HERMANOS CONJUNTA, idhermano:1465SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1415)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1415)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1415)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1415)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1415)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1415)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1469)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1562)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1479)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1560)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1469)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1562)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1479)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1560)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1469)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1562)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1479)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1560)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577)Array
+SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1450)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1431)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1477)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1467)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1545)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1464)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1465)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1453)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1468)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1415)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1415)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1415)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1415)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1415)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1415)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1469)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1562)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1479)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1560)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1469)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1562)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1479)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1560)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1469)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1562)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1479)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1560)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577)Array
 (
     [0] => stdClass Object
         (
-            [modalidad_origen] => especial-1ebo
-            [id_centro_definitivo] => 0
-            [coordenadas] => nodata
-            [calle_dfamiliar] => CALLE DOCE DE OCTUBRE
-            [localidad] => ZARAGOZA
-            [id_alumno] => 1576
-            [nombre] => YOUSSEF
-            [id_centro1] => 50007674
-            [id_centro2] => 50018131
-            [id_centro3] => 
-            [id_centro4] => 
-            [id_centro5] => 
-            [id_centro6] => 
-            [id_centro] => 50017369
-            [nombre_centro] => ANGEL RIVIÈRE
-            [centro_definitivo] => nocentro
-            [tipoestudios] => ebo
-            [transporte] => 2
-            [puntos_validados] => 17
-            [nordensorteo] => 51
-        )
-
-    [1] => stdClass Object
-        (
-            [modalidad_origen] => nodata
-            [id_centro_definitivo] => 0
-            [coordenadas] => nodata
-            [calle_dfamiliar] => CALLE JULIÁN GALLEGO 
-            [localidad] => ZARAGOZA
-            [id_alumno] => 1556
-            [nombre] => JUAN DARÍO
-            [id_centro1] => 
-            [id_centro2] => 
-            [id_centro3] => 
-            [id_centro4] => 
-            [id_centro5] => 
-            [id_centro6] => 
-            [id_centro] => 50006049
-            [nombre_centro] => JULIÁN SANZ IBÁÑEZ
-            [centro_definitivo] => nocentro
-            [tipoestudios] => ebo
-            [transporte] => 2
-            [puntos_validados] => 16
-            [nordensorteo] => 10
-        )
-
-    [2] => stdClass Object
-        (
-            [modalidad_origen] => especial-1ebo
-            [id_centro_definitivo] => 0
-            [coordenadas] => nodata
-            [calle_dfamiliar] => C/ ALARIFE MARIEN DE MARGUAN
-            [localidad] => Zaragoza
-            [id_alumno] => 1551
-            [nombre] => CRISTIAN
-            [id_centro1] => 
-            [id_centro2] => 
-            [id_centro3] => 
-            [id_centro4] => 
-            [id_centro5] => 
-            [id_centro6] => 
-            [id_centro] => 50011537
-            [nombre_centro] => RINCÓN DE GOYA
-            [centro_definitivo] => nocentro
-            [tipoestudios] => ebo
-            [transporte] => 2
-            [puntos_validados] => 16
-            [nordensorteo] => 33
-        )
-
-    [3] => stdClass Object
-        (
-            [modalidad_origen] => combinada-4primaria
-            [id_centro_definitivo] => 50010387
-            [coordenadas] => nodata
-            [calle_dfamiliar] => Calle de Yolanda de Bar
-            [localidad] => Zaragoza
-            [id_alumno] => 1468
-            [nombre] => JULIA
-            [id_centro1] => 50010387
-            [id_centro2] => 50011537
-            [id_centro3] => 50018131
-            [id_centro4] => 50007674
-            [id_centro5] => 50008630
-            [id_centro6] => 50007376
-            [id_centro] => 50017369
-            [nombre_centro] => ANGEL RIVIÈRE
-            [centro_definitivo] => ALBORADA
-            [tipoestudios] => ebo
-            [transporte] => 2
-            [puntos_validados] => 16
-            [nordensorteo] => 69
-        )
-
-    [4] => stdClass Object
-        (
             [modalidad_origen] => combinada-3infantil
             [id_centro_definitivo] => 0
-            [coordenadas] => nodata
-            [calle_dfamiliar] => Calle Portegado
-            [localidad] => Cunchillos
-            [id_alumno] => 1408
-            [nombre] => Nathan
-            [id_centro1] => 
-            [id_centro2] => 
-            [id_centro3] => 
-            [id_centro4] => 
-            [id_centro5] => 
-            [id_centro6] => 
-            [id_centro] => 50004612
-            [nombre_centro] => MONCAYO
-            [centro_definitivo] => nocentro
-            [tipoestudios] => ebo
-            [transporte] => 2
-            [puntos_validados] => 14
-            [nordensorteo] => 16
-        )
-
-    [5] => stdClass Object
-        (
-            [modalidad_origen] => combinada-3infantil
-            [id_centro_definitivo] => 50010387
-            [coordenadas] => nodata
-            [calle_dfamiliar] => Desiderio Escosura 
-            [localidad] => Zaragoza
-            [id_alumno] => 1465
-            [nombre] => Rodrigo
-            [id_centro1] => 50010387
-            [id_centro2] => 50018131
-            [id_centro3] => 
-            [id_centro4] => 50011537
-            [id_centro5] => 50007674
-            [id_centro6] => 
-            [id_centro] => 50017369
-            [nombre_centro] => ANGEL RIVIÈRE
-            [centro_definitivo] => ALBORADA
-            [tipoestudios] => ebo
-            [transporte] => 2
-            [puntos_validados] => 14
-            [nordensorteo] => 84
-        )
-
-    [6] => stdClass Object
-        (
-            [modalidad_origen] => combinada-3infantil
-            [id_centro_definitivo] => 50010387
             [coordenadas] => nodata
             [calle_dfamiliar] => Desiderio Escosura 
             [localidad] => Zaragoza
@@ -306,16 +162,40 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
             [id_centro6] => 
             [id_centro] => 50017369
             [nombre_centro] => ANGEL RIVIÈRE
-            [centro_definitivo] => ALBORADA
+            [centro_definitivo] => nocentro
             [tipoestudios] => ebo
             [transporte] => 2
             [puntos_validados] => 14
             [nordensorteo] => 84
         )
 
-    [7] => stdClass Object
+    [1] => stdClass Object
         (
-            [modalidad_origen] => especial-1ebo
+            [modalidad_origen] => combinada-3infantil
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => Desiderio Escosura 
+            [localidad] => Zaragoza
+            [id_alumno] => 1465
+            [nombre] => Rodrigo
+            [id_centro1] => 50010387
+            [id_centro2] => 50018131
+            [id_centro3] => 
+            [id_centro4] => 50011537
+            [id_centro5] => 50007674
+            [id_centro6] => 
+            [id_centro] => 50017369
+            [nombre_centro] => ANGEL RIVIÈRE
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 14
+            [nordensorteo] => 84
+        )
+
+    [2] => stdClass Object
+        (
+            [modalidad_origen] => MODALIDAD: EDUCACION ESPECIAL
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => Paseo La Ribera
@@ -337,9 +217,9 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
             [nordensorteo] => 66
         )
 
-    [8] => stdClass Object
+    [3] => stdClass Object
         (
-            [modalidad_origen] => especial-1ebo
+            [modalidad_origen] => MODALIDAD: EDUCACION ESPECIAL
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => Paseo La Ribera
@@ -361,10 +241,58 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
             [nordensorteo] => 66
         )
 
-    [9] => stdClass Object
+    [4] => stdClass Object
+        (
+            [modalidad_origen] => especial-1ebo
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => CALLE DOCE DE OCTUBRE
+            [localidad] => ZARAGOZA
+            [id_alumno] => 1576
+            [nombre] => YOUSSEF
+            [id_centro1] => 50007674
+            [id_centro2] => 50018131
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50017369
+            [nombre_centro] => ANGEL RIVIÈRE
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 9
+            [nordensorteo] => 51
+        )
+
+    [5] => stdClass Object
         (
             [modalidad_origen] => nodata
             [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => CALLE JULIÁN GALLEGO 
+            [localidad] => ZARAGOZA
+            [id_alumno] => 1556
+            [nombre] => JUAN DARÍO
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50006049
+            [nombre_centro] => JULIÁN SANZ IBÁÑEZ
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 8
+            [nordensorteo] => 10
+        )
+
+    [6] => stdClass Object
+        (
+            [modalidad_origen] => nodata
+            [id_centro_definitivo] => 50010387
             [coordenadas] => nodata
             [calle_dfamiliar] => CALLE PANAMÁ
             [localidad] => ZARAGOZA
@@ -378,14 +306,38 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
             [id_centro6] => 
             [id_centro] => 50017369
             [nombre_centro] => ANGEL RIVIÈRE
-            [centro_definitivo] => nocentro
+            [centro_definitivo] => ALBORADA
             [tipoestudios] => ebo
             [transporte] => 2
             [puntos_validados] => 8
             [nordensorteo] => 22
         )
 
-    [10] => stdClass Object
+    [7] => stdClass Object
+        (
+            [modalidad_origen] => especial-1ebo
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => C/ ALARIFE MARIEN DE MARGUAN
+            [localidad] => Zaragoza
+            [id_alumno] => 1551
+            [nombre] => CRISTIAN
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50011537
+            [nombre_centro] => RINCÓN DE GOYA
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 8
+            [nordensorteo] => 33
+        )
+
+    [8] => stdClass Object
         (
             [modalidad_origen] => combinada-6primaria
             [id_centro_definitivo] => 50007674
@@ -409,7 +361,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
             [nordensorteo] => 37
         )
 
-    [11] => stdClass Object
+    [9] => stdClass Object
         (
             [modalidad_origen] => combinada-6primaria
             [id_centro_definitivo] => 0
@@ -433,7 +385,31 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
             [nordensorteo] => 43
         )
 
-    [12] => stdClass Object
+    [10] => stdClass Object
+        (
+            [modalidad_origen] => combinada-4primaria
+            [id_centro_definitivo] => 50010387
+            [coordenadas] => nodata
+            [calle_dfamiliar] => Calle de Yolanda de Bar
+            [localidad] => Zaragoza
+            [id_alumno] => 1468
+            [nombre] => JULIA
+            [id_centro1] => 50010387
+            [id_centro2] => 50011537
+            [id_centro3] => 50018131
+            [id_centro4] => 50007674
+            [id_centro5] => 50008630
+            [id_centro6] => 50007376
+            [id_centro] => 50017369
+            [nombre_centro] => ANGEL RIVIÈRE
+            [centro_definitivo] => ALBORADA
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 8
+            [nordensorteo] => 69
+        )
+
+    [11] => stdClass Object
         (
             [modalidad_origen] => especial-1ebo
             [id_centro_definitivo] => 50007674
@@ -457,7 +433,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
             [nordensorteo] => 118
         )
 
-    [13] => stdClass Object
+    [12] => stdClass Object
         (
             [modalidad_origen] => especial-1ebo
             [id_centro_definitivo] => 50007674
@@ -481,7 +457,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
             [nordensorteo] => 45
         )
 
-    [14] => stdClass Object
+    [13] => stdClass Object
         (
             [modalidad_origen] => combinada-4primaria
             [id_centro_definitivo] => 0
@@ -505,7 +481,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
             [nordensorteo] => 52
         )
 
-    [15] => stdClass Object
+    [14] => stdClass Object
         (
             [modalidad_origen] => nodata
             [id_centro_definitivo] => 0
@@ -529,7 +505,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
             [nordensorteo] => 103
         )
 
-    [16] => stdClass Object
+    [15] => stdClass Object
         (
             [modalidad_origen] => combinada-5primaria
             [id_centro_definitivo] => 50008630
@@ -553,7 +529,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
             [nordensorteo] => 109
         )
 
-    [17] => stdClass Object
+    [16] => stdClass Object
         (
             [modalidad_origen] => combinada-3infantil
             [id_centro_definitivo] => 0
@@ -575,6 +551,30 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
             [transporte] => 2
             [puntos_validados] => 7
             [nordensorteo] => 124
+        )
+
+    [17] => stdClass Object
+        (
+            [modalidad_origen] => combinada-3infantil
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => Calle Portegado
+            [localidad] => Cunchillos
+            [id_alumno] => 1408
+            [nombre] => Nathan
+            [id_centro1] => 
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50004612
+            [nombre_centro] => MONCAYO
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 6
+            [nordensorteo] => 16
         )
 
     [18] => stdClass Object
@@ -1035,7 +1035,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
 
     [37] => stdClass Object
         (
-            [modalidad_origen] => especial-1ebo
+            [modalidad_origen] => MODALIDAD: EDUCACION ESPECIAL
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => Ave.de la Academia General Militar
@@ -1132,7 +1132,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
     [41] => stdClass Object
         (
             [modalidad_origen] => combinada-2infantil
-            [id_centro_definitivo] => 0
+            [id_centro_definitivo] => 50018131
             [coordenadas] => nodata
             [calle_dfamiliar] => CAMINO CASA BERDEJO
             [localidad] => Garrapinillos
@@ -1146,7 +1146,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
             [id_centro6] => 
             [id_centro] => 50018131
             [nombre_centro] => JEAN PIAGET
-            [centro_definitivo] => nocentro
+            [centro_definitivo] => JEAN PIAGET
             [tipoestudios] => ebo
             [transporte] => 1
             [puntos_validados] => 8
@@ -1156,7 +1156,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
     [42] => stdClass Object
         (
             [modalidad_origen] => combinada-3infantil
-            [id_centro_definitivo] => 0
+            [id_centro_definitivo] => 50011537
             [coordenadas] => nodata
             [calle_dfamiliar] => Calle Pirineos 
             [localidad] => Cuarte de Huerva
@@ -1170,7 +1170,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
             [id_centro6] => 
             [id_centro] => 50011537
             [nombre_centro] => RINCÓN DE GOYA
-            [centro_definitivo] => nocentro
+            [centro_definitivo] => RINCÓN DE GOYA
             [tipoestudios] => ebo
             [transporte] => 1
             [puntos_validados] => 2
@@ -1180,7 +1180,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
     [43] => stdClass Object
         (
             [modalidad_origen] => nodata
-            [id_centro_definitivo] => 0
+            [id_centro_definitivo] => 50011537
             [coordenadas] => nodata
             [calle_dfamiliar] => AVENIDA STADIUM
             [localidad] => María de Huerva
@@ -1194,7 +1194,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
             [id_centro6] => 
             [id_centro] => 50011537
             [nombre_centro] => RINCÓN DE GOYA
-            [centro_definitivo] => nocentro
+            [centro_definitivo] => RINCÓN DE GOYA
             [tipoestudios] => ebo
             [transporte] => 1
             [puntos_validados] => 2
@@ -1204,7 +1204,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
     [44] => stdClass Object
         (
             [modalidad_origen] => combinada-3infantil
-            [id_centro_definitivo] => 0
+            [id_centro_definitivo] => 50011537
             [coordenadas] => nodata
             [calle_dfamiliar] => CARNICERÍA
             [localidad] => Alfamén
@@ -1218,7 +1218,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
             [id_centro6] => 
             [id_centro] => 50011537
             [nombre_centro] => RINCÓN DE GOYA
-            [centro_definitivo] => nocentro
+            [centro_definitivo] => RINCÓN DE GOYA
             [tipoestudios] => ebo
             [transporte] => 1
             [puntos_validados] => 1
@@ -1228,7 +1228,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
     [45] => stdClass Object
         (
             [modalidad_origen] => combinada-6primaria
-            [id_centro_definitivo] => 0
+            [id_centro_definitivo] => 50011537
             [coordenadas] => nodata
             [calle_dfamiliar] => Calle Garcia
             [localidad] => Longares
@@ -1242,7 +1242,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
             [id_centro6] => 
             [id_centro] => 50011537
             [nombre_centro] => RINCÓN DE GOYA
-            [centro_definitivo] => nocentro
+            [centro_definitivo] => RINCÓN DE GOYA
             [tipoestudios] => ebo
             [transporte] => 1
             [puntos_validados] => 1
@@ -1252,7 +1252,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
     [46] => stdClass Object
         (
             [modalidad_origen] => combinada-3infantil
-            [id_centro_definitivo] => 0
+            [id_centro_definitivo] => 50018131
             [coordenadas] => nodata
             [calle_dfamiliar] => CALLE CARRUEZ
             [localidad] => ZUERA
@@ -1266,7 +1266,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
             [id_centro6] => 
             [id_centro] => 50018131
             [nombre_centro] => JEAN PIAGET
-            [centro_definitivo] => nocentro
+            [centro_definitivo] => JEAN PIAGET
             [tipoestudios] => ebo
             [transporte] => 1
             [puntos_validados] => 1
@@ -1276,7 +1276,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
     [47] => stdClass Object
         (
             [modalidad_origen] => combinada-6primaria
-            [id_centro_definitivo] => 0
+            [id_centro_definitivo] => 50011537
             [coordenadas] => nodata
             [calle_dfamiliar] => Calle Urbezo Unsain
             [localidad] => Cariñena
@@ -1290,7 +1290,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
             [id_centro6] => 
             [id_centro] => 50011537
             [nombre_centro] => RINCÓN DE GOYA
-            [centro_definitivo] => nocentro
+            [centro_definitivo] => RINCÓN DE GOYA
             [tipoestudios] => ebo
             [transporte] => 1
             [puntos_validados] => 1
@@ -1300,7 +1300,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
     [48] => stdClass Object
         (
             [modalidad_origen] => combinada-4primaria
-            [id_centro_definitivo] => 0
+            [id_centro_definitivo] => 50011537
             [coordenadas] => nodata
             [calle_dfamiliar] => Ronda de la Villa
             [localidad] => Longares
@@ -1314,7 +1314,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
             [id_centro6] => 
             [id_centro] => 50011537
             [nombre_centro] => RINCÓN DE GOYA
-            [centro_definitivo] => nocentro
+            [centro_definitivo] => RINCÓN DE GOYA
             [tipoestudios] => ebo
             [transporte] => 1
             [puntos_validados] => 0
@@ -1323,4 +1323,4 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
 
 )
 
-Asignadas vacantes centros para fase 2 a las 17:04 del dia 18-Apr-2023
+Asignadas vacantes centros para fase 2 a las 11:04 del dia 19-Apr-2023

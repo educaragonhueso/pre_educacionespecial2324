@@ -45,6 +45,9 @@ if(!$utils->copiaTablaTmpFase2())
    $log_asigna_fase2->warning("ERROR COPIANDO TABAL TMP FASE2");
    exit();
 }
+//descontmaos los 8 puntos de hermanos
+
+$utils->descuentaPuntosHermanosFase2();
 //asignar vacantetes de cada centro a centro elegido en primera opcion (oopcion 0)
 do{
    $log_asigna_fase2->warning("INICIOLOG INICIANDO PROCESO POR $j VECES");
