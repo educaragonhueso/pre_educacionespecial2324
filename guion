@@ -152,12 +152,12 @@ FASE1
 FASE2 Asignación plazas restantes
 --------------------------------------------------------------------------------------------------------------------------------
 
-      Generamos la tabla alumnos_fase2 para la gestión de alumnos sin plaza
+      2.1 Generamos la tabla alumnos_fase2 para la gestión de alumnos sin plaza
 
           servidor#php sc_copia_tabla_fase2.php
 
-      Primero se hace la asignación manual de plazas desde la pestaña de Asignaciones
-      Después se hace la automática usando script
+      2.2 Primero se hace la asignación manual de plazas desde la pestaña de Asignaciones
+      2.3 Después se hace la automática usando script
 
          Generamos las tablas para la fase2
 
@@ -172,7 +172,7 @@ FASE2 Asignación plazas restantes
          ...servidor#php sc_asignavacantes_fase2.php
          
 
-      Finalmente se procede a una nueva asignación manual con lo que queda.
+      2.4 Finalmente se procede a una nueva asignación manual con lo que queda.
 
 
 

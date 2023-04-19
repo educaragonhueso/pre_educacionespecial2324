@@ -82,7 +82,7 @@ if(strtoupper($_POST['centroactual'])!='NOCENTRO')
 $sql="UPDATE alumnos_fase2 SET centro_definitivo='".$nombre_centro_destino."',id_centro_definitivo=$id_centroelegido,tipo_modificacion='manual' where id_alumno=".$_POST['id_alumno'];
 $result=$conexion->query($sql);
 //modificamos alumno en tabla de alumnos original
-$sql="UPDATE alumnos SET id_centro_final=$id_centroelegido,est_desp_sorteo='admitidafase2' where id_alumno=".$_POST['id_alumno'];
+$sql="UPDATE alumnos SET id_centro_final=$id_centroelegido,est_desp_sorteo='admitida' where id_alumno=".$_POST['id_alumno'];
 $result=$conexion->query($sql);
 $conexion->close();
 

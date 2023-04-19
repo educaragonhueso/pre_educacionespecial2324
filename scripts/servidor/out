@@ -80,17 +80,17 @@ ID CENTRO: 50006049NOMBRE CENTRO: JULIÁN SANZ IBÁÑEZArray
 )
 ID CENTRO: 50006128NOMBRE CENTRO: SAN BRAULIOArray
 (
-    [ebo] => 7
+    [ebo] => 8
     [tva] => 0
 )
 ID CENTRO: 50007376NOMBRE CENTRO: LA PURÍSIMA PARA NIÑOS SORDOSArray
 (
-    [ebo] => 5
+    [ebo] => 7
     [tva] => 0
 )
 ID CENTRO: 50007674NOMBRE CENTRO: ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRESArray
 (
-    [ebo] => 1
+    [ebo] => 3
     [tva] => 2
 )
 ID CENTRO: 50008630NOMBRE CENTRO: CEDESArray
@@ -106,7 +106,7 @@ ID CENTRO: 50008678NOMBRE CENTRO: RECTOR MAMÉS ESPERABÉArray
 ID CENTRO: 50008915NOMBRE CENTRO: SAN GERMÁNArray
 (
     [ebo] => 2
-    [tva] => 0
+    [tva] => 1
 )
 ID CENTRO: 50009488NOMBRE CENTRO: LOS PUEYOSArray
 (
@@ -115,7 +115,7 @@ ID CENTRO: 50009488NOMBRE CENTRO: LOS PUEYOSArray
 )
 ID CENTRO: 50009646NOMBRE CENTRO: MARÍA SORIANOArray
 (
-    [ebo] => 12
+    [ebo] => 13
     [tva] => 0
 )
 ID CENTRO: 50010387NOMBRE CENTRO: ALBORADAArray
@@ -143,10 +143,11 @@ ID CENTRO: 50019408NOMBRE CENTRO: SEGEDAArray
     [ebo] => 11
     [tva] => 2
 )
-Array
+SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1450)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1431)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1477)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1467)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1545)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1468)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1465)HERMANOS CONJUNTA, idhermano:1464HERMANOS CONJUNTA, idhermano:1465SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1415)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1415)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1415)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1415)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1415)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1415)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1469)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1562)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1479)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1560)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1469)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1562)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1479)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1560)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1469)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1562)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1479)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1560)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577)Array
 (
     [0] => stdClass Object
         (
+            [modalidad_origen] => especial-1ebo
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => CALLE DOCE DE OCTUBRE
@@ -170,6 +171,7 @@ Array
 
     [1] => stdClass Object
         (
+            [modalidad_origen] => nodata
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => CALLE JULIÁN GALLEGO 
@@ -193,6 +195,7 @@ Array
 
     [2] => stdClass Object
         (
+            [modalidad_origen] => especial-1ebo
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => C/ ALARIFE MARIEN DE MARGUAN
@@ -216,6 +219,7 @@ Array
 
     [3] => stdClass Object
         (
+            [modalidad_origen] => combinada-4primaria
             [id_centro_definitivo] => 50010387
             [coordenadas] => nodata
             [calle_dfamiliar] => Calle de Yolanda de Bar
@@ -239,6 +243,7 @@ Array
 
     [4] => stdClass Object
         (
+            [modalidad_origen] => combinada-3infantil
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => Calle Portegado
@@ -262,6 +267,7 @@ Array
 
     [5] => stdClass Object
         (
+            [modalidad_origen] => combinada-3infantil
             [id_centro_definitivo] => 50010387
             [coordenadas] => nodata
             [calle_dfamiliar] => Desiderio Escosura 
@@ -285,7 +291,8 @@ Array
 
     [6] => stdClass Object
         (
-            [id_centro_definitivo] => 0
+            [modalidad_origen] => combinada-3infantil
+            [id_centro_definitivo] => 50010387
             [coordenadas] => nodata
             [calle_dfamiliar] => Desiderio Escosura 
             [localidad] => Zaragoza
@@ -299,7 +306,7 @@ Array
             [id_centro6] => 
             [id_centro] => 50017369
             [nombre_centro] => ANGEL RIVIÈRE
-            [centro_definitivo] => nocentro
+            [centro_definitivo] => ALBORADA
             [tipoestudios] => ebo
             [transporte] => 2
             [puntos_validados] => 14
@@ -308,29 +315,7 @@ Array
 
     [7] => stdClass Object
         (
-            [id_centro_definitivo] => 0
-            [coordenadas] => nodata
-            [calle_dfamiliar] => Paseo La Ribera
-            [localidad] => Zaragoza
-            [id_alumno] => 1462
-            [nombre] => Noa
-            [id_centro1] => 50007674
-            [id_centro2] => 
-            [id_centro3] => 
-            [id_centro4] => 
-            [id_centro5] => 
-            [id_centro6] => 
-            [id_centro] => 50018131
-            [nombre_centro] => JEAN PIAGET
-            [centro_definitivo] => nocentro
-            [tipoestudios] => ebo
-            [transporte] => 2
-            [puntos_validados] => 12
-            [nordensorteo] => 66
-        )
-
-    [8] => stdClass Object
-        (
+            [modalidad_origen] => especial-1ebo
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => Paseo La Ribera
@@ -352,8 +337,33 @@ Array
             [nordensorteo] => 66
         )
 
+    [8] => stdClass Object
+        (
+            [modalidad_origen] => especial-1ebo
+            [id_centro_definitivo] => 0
+            [coordenadas] => nodata
+            [calle_dfamiliar] => Paseo La Ribera
+            [localidad] => Zaragoza
+            [id_alumno] => 1462
+            [nombre] => Noa
+            [id_centro1] => 50007674
+            [id_centro2] => 
+            [id_centro3] => 
+            [id_centro4] => 
+            [id_centro5] => 
+            [id_centro6] => 
+            [id_centro] => 50018131
+            [nombre_centro] => JEAN PIAGET
+            [centro_definitivo] => nocentro
+            [tipoestudios] => ebo
+            [transporte] => 2
+            [puntos_validados] => 12
+            [nordensorteo] => 66
+        )
+
     [9] => stdClass Object
         (
+            [modalidad_origen] => nodata
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => CALLE PANAMÁ
@@ -377,6 +387,7 @@ Array
 
     [10] => stdClass Object
         (
+            [modalidad_origen] => combinada-6primaria
             [id_centro_definitivo] => 50007674
             [coordenadas] => nodata
             [calle_dfamiliar] => AVENIDA TENOR FLETA
@@ -400,6 +411,7 @@ Array
 
     [11] => stdClass Object
         (
+            [modalidad_origen] => combinada-6primaria
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => C/ Reina Petronila 
@@ -423,7 +435,8 @@ Array
 
     [12] => stdClass Object
         (
-            [id_centro_definitivo] => 0
+            [modalidad_origen] => especial-1ebo
+            [id_centro_definitivo] => 50007674
             [coordenadas] => nodata
             [calle_dfamiliar] => AVENIDA SAN JOSE
             [localidad] => Zaragoza
@@ -437,7 +450,7 @@ Array
             [id_centro6] => 
             [id_centro] => 50007674
             [nombre_centro] => ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES
-            [centro_definitivo] => nocentro
+            [centro_definitivo] => ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES
             [tipoestudios] => ebo
             [transporte] => 2
             [puntos_validados] => 8
@@ -446,7 +459,8 @@ Array
 
     [13] => stdClass Object
         (
-            [id_centro_definitivo] => 50008630
+            [modalidad_origen] => especial-1ebo
+            [id_centro_definitivo] => 50007674
             [coordenadas] => nodata
             [calle_dfamiliar] => JULIAN SANZ IBAÑEZ
             [localidad] => ZARAGOZA
@@ -460,7 +474,7 @@ Array
             [id_centro6] => 
             [id_centro] => 50007674
             [nombre_centro] => ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES
-            [centro_definitivo] => CEDES
+            [centro_definitivo] => ATADES, CENTRO DE EDUCACIÓN ESPECIAL SAN MARTÍN DE PORRES
             [tipoestudios] => ebo
             [transporte] => 2
             [puntos_validados] => 7
@@ -469,6 +483,7 @@ Array
 
     [14] => stdClass Object
         (
+            [modalidad_origen] => combinada-4primaria
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => CALLE ROGER DE FLOR 
@@ -492,6 +507,7 @@ Array
 
     [15] => stdClass Object
         (
+            [modalidad_origen] => nodata
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => Calle Martín Cortes
@@ -515,6 +531,7 @@ Array
 
     [16] => stdClass Object
         (
+            [modalidad_origen] => combinada-5primaria
             [id_centro_definitivo] => 50008630
             [coordenadas] => nodata
             [calle_dfamiliar] => C/RIO JILOCA 
@@ -538,6 +555,7 @@ Array
 
     [17] => stdClass Object
         (
+            [modalidad_origen] => combinada-3infantil
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => Calle Alfonso Carlos Comin Ros 
@@ -561,6 +579,7 @@ Array
 
     [18] => stdClass Object
         (
+            [modalidad_origen] => especial-1ebo
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => C/zaragoza 
@@ -584,6 +603,7 @@ Array
 
     [19] => stdClass Object
         (
+            [modalidad_origen] => combinada-3infantil
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => ronda ibon de plan 
@@ -607,6 +627,7 @@ Array
 
     [20] => stdClass Object
         (
+            [modalidad_origen] => especial-1ebo
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => VÍA IBÉRICA
@@ -630,6 +651,7 @@ Array
 
     [21] => stdClass Object
         (
+            [modalidad_origen] => combinada-3infantil
             [id_centro_definitivo] => 50007376
             [coordenadas] => nodata
             [calle_dfamiliar] => OLIVER MISTRAL, GABRIELA
@@ -653,6 +675,7 @@ Array
 
     [22] => stdClass Object
         (
+            [modalidad_origen] => especial-1ebo
             [id_centro_definitivo] => 50009488
             [coordenadas] => nodata
             [calle_dfamiliar] => calle Norte 
@@ -676,6 +699,7 @@ Array
 
     [23] => stdClass Object
         (
+            [modalidad_origen] => combinada-6primaria
             [id_centro_definitivo] => 50009646
             [coordenadas] => nodata
             [calle_dfamiliar] => Caracol 
@@ -699,6 +723,7 @@ Array
 
     [24] => stdClass Object
         (
+            [modalidad_origen] => especial-1ebo
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => CALLE ARAGON
@@ -722,6 +747,7 @@ Array
 
     [25] => stdClass Object
         (
+            [modalidad_origen] => especial-1ebo
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => CALLE UNICA
@@ -745,6 +771,7 @@ Array
 
     [26] => stdClass Object
         (
+            [modalidad_origen] => especial-1ebo
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => CALLE PORTAZA
@@ -768,6 +795,7 @@ Array
 
     [27] => stdClass Object
         (
+            [modalidad_origen] => nodata
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => Calle Maria Lostal
@@ -791,6 +819,7 @@ Array
 
     [28] => stdClass Object
         (
+            [modalidad_origen] => especial-1ebo
             [id_centro_definitivo] => 50009646
             [coordenadas] => nodata
             [calle_dfamiliar] => CALLE BIARRITZ 
@@ -814,6 +843,7 @@ Array
 
     [29] => stdClass Object
         (
+            [modalidad_origen] => combinada-3infantil
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => calle pedro mateo
@@ -837,6 +867,7 @@ Array
 
     [30] => stdClass Object
         (
+            [modalidad_origen] => MODALIDAD: EDUCACION ESPECIAL
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => DON JUAN DE ARAGÓN
@@ -860,6 +891,7 @@ Array
 
     [31] => stdClass Object
         (
+            [modalidad_origen] => especial-1ebo
             [id_centro_definitivo] => 50009646
             [coordenadas] => nodata
             [calle_dfamiliar] => CALLE PORTILLO
@@ -883,6 +915,7 @@ Array
 
     [32] => stdClass Object
         (
+            [modalidad_origen] => combinada-3infantil
             [id_centro_definitivo] => 50007376
             [coordenadas] => nodata
             [calle_dfamiliar] => Calle Luis Lopez Allue
@@ -906,6 +939,7 @@ Array
 
     [33] => stdClass Object
         (
+            [modalidad_origen] => MODALIDAD: EDUCACION ESPECIAL
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => calle fuenterrabia 
@@ -929,6 +963,7 @@ Array
 
     [34] => stdClass Object
         (
+            [modalidad_origen] => nodata
             [id_centro_definitivo] => 50009646
             [coordenadas] => nodata
             [calle_dfamiliar] => CALLE MANUEL CANDAU
@@ -952,6 +987,7 @@ Array
 
     [35] => stdClass Object
         (
+            [modalidad_origen] => especial-1ebo
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => C/ EUGENIO LUCAS
@@ -975,6 +1011,7 @@ Array
 
     [36] => stdClass Object
         (
+            [modalidad_origen] => especial-1ebo
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => CALLE BELGICA
@@ -998,6 +1035,7 @@ Array
 
     [37] => stdClass Object
         (
+            [modalidad_origen] => especial-1ebo
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => Ave.de la Academia General Militar
@@ -1021,6 +1059,7 @@ Array
 
     [38] => stdClass Object
         (
+            [modalidad_origen] => combinada-6primaria
             [id_centro_definitivo] => 50009646
             [coordenadas] => nodata
             [calle_dfamiliar] => CALLE LA FRONDOSA
@@ -1044,6 +1083,7 @@ Array
 
     [39] => stdClass Object
         (
+            [modalidad_origen] => MODALIDAD ESCOLARIZACION ORDINARIA
             [id_centro_definitivo] => 50009646
             [coordenadas] => nodata
             [calle_dfamiliar] => CALLE SAN FRANCISCO
@@ -1067,6 +1107,7 @@ Array
 
     [40] => stdClass Object
         (
+            [modalidad_origen] => MODALIDAD ESCOLARIZACION ORDINARIA
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => Tomás Higuera
@@ -1090,6 +1131,7 @@ Array
 
     [41] => stdClass Object
         (
+            [modalidad_origen] => combinada-2infantil
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => CAMINO CASA BERDEJO
@@ -1113,6 +1155,7 @@ Array
 
     [42] => stdClass Object
         (
+            [modalidad_origen] => combinada-3infantil
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => Calle Pirineos 
@@ -1136,6 +1179,7 @@ Array
 
     [43] => stdClass Object
         (
+            [modalidad_origen] => nodata
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => AVENIDA STADIUM
@@ -1159,6 +1203,7 @@ Array
 
     [44] => stdClass Object
         (
+            [modalidad_origen] => combinada-3infantil
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => CARNICERÍA
@@ -1182,6 +1227,7 @@ Array
 
     [45] => stdClass Object
         (
+            [modalidad_origen] => combinada-6primaria
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => Calle Garcia
@@ -1205,6 +1251,7 @@ Array
 
     [46] => stdClass Object
         (
+            [modalidad_origen] => combinada-3infantil
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => CALLE CARRUEZ
@@ -1228,6 +1275,7 @@ Array
 
     [47] => stdClass Object
         (
+            [modalidad_origen] => combinada-6primaria
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => Calle Urbezo Unsain
@@ -1251,6 +1299,7 @@ Array
 
     [48] => stdClass Object
         (
+            [modalidad_origen] => combinada-4primaria
             [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => Ronda de la Villa
@@ -1274,4 +1323,4 @@ Array
 
 )
 
-Asignadas vacantes centros para fase 2 a las 16:04 del dia 17-Apr-2023
+Asignadas vacantes centros para fase 2 a las 17:04 del dia 18-Apr-2023
