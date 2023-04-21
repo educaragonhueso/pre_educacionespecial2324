@@ -673,7 +673,7 @@ class ListadosController{
 
 	return $html;
 	}
-   public function showListadoFase2Final($a,$rol='centro',$cabecera=array(),$camposdatos=array(),$provisional=0,$subtipo='',$log,$vacantes_centros)
+   public function showListadoFase2Final($a,$rol='centro',$cabecera=array(),$camposdatos=array(),$provisional=0,$subtipo='',$log,$vacantes_centros,$subtipo_listado_original)
    {
 		//$centros=$this->getCentrosNombreVacantesFase2();
 		$centros=$vacantes_centros;
@@ -723,7 +723,10 @@ class ListadosController{
 		if($rol=='admin' || $rol=='sp')
 		{
 			$centroanterior=$centroactual;
-			$centroactual=$sol->id_centro_final;
+         if($subtipo_listado_original=='lfinal_sol_ebo_desplazados')
+			   $centroactual=$sol->id_centro_destino;
+         else
+			   $centroactual=$sol->id_centro_final;
 			if($centroactual!=$centroanterior)
 			{
 	         $cab=0;

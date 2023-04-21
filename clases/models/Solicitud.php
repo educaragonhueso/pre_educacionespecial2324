@@ -1785,9 +1785,9 @@ desc,a.tutores_centro desc,a.nordensorteo asc,a.nasignado desc";
       $where="";
       //mostramos los alumnos q eleigieron ese centro o q lo han obtenido en la fase 2
       if($rol=='centro')
-         $where=" AND id_centro_final=$id_centro AND est_desp_sorteo='admitida' AND tipo_inscripcion!='ordinaria' AND id_centro_estudios_origen!=id_centro_final ";
+         $where=" AND id_centro_final=$id_centro AND est_desp_sorteo='admitida' AND tipo_inscripcion!='ordinaria' AND id_centro_estudios_origen!=id_centro_final AND nombre_centro!='NOCENTRO' ";
       if($rol=='admin')
-         $where=" AND est_desp_sorteo='admitida' AND tipo_inscripcion!='ordinaria' AND id_centro_estudios_origen!=id_centro_final";
+         $where=" AND est_desp_sorteo='admitida' AND tipo_inscripcion!='ordinaria' AND id_centro_estudios_origen!=id_centro_final AND c.nombre_centro!='NOCENTRO' ";
       
       $resultSet=array();
 		if($subtipo_listado=='lfinal_sol_ebo')
@@ -1848,9 +1848,9 @@ desc,a.tutores_centro desc,a.nordensorteo asc,a.nasignado desc";
       
       $resultSet=array();
 		if($subtipo_listado=='lfinal_sol_ebo')
-		   $sql="SELECT a.email as correo,a.tel_dfamiliar1 as telefono,a.id_alumno,a.tipoestudios,a.id_centro_final, a.apellido1,a.apellido2,a.nombre,c.nombre_centro as centro_definitivo,cc.nombre_centro as centro_solicitado FROM alumnos a,centros c,centros cc WHERE c.id_centro=a.id_centro_final AND cc.id_centro=a.id_centro_destino AND a.tipoestudios='ebo' $where AND id_centro_destino!=id_centro_final ORDER by a.id_centro_final desc, a.tipoestudios asc,a.nordensorteo asc,a.transporte asc";
+		   $sql="SELECT a.id_centro_destino, a.email as correo,a.tel_dfamiliar1 as telefono,a.id_alumno,a.tipoestudios,a.id_centro_final, a.apellido1,a.apellido2,a.nombre,c.nombre_centro as centro_definitivo,cc.nombre_centro as centro_solicitado FROM alumnos a,centros c,centros cc WHERE c.id_centro=a.id_centro_final AND cc.id_centro=a.id_centro_destino AND a.tipoestudios='ebo' $where AND id_centro_destino!=id_centro_final ORDER by a.id_centro_destino desc, a.tipoestudios asc,a.nordensorteo asc,a.transporte asc";
    	elseif($subtipo_listado=='lfinal_sol_tva')
-		   $sql="SELECT a.email as correo,a.tel_dfamiliar1 as telefono,a.id_alumno,a.tipoestudios,a.id_centro_final, a.apellido1,a.apellido2,a.nombre,c.nombre_centro as centro_definitivo,cc.nombre_centro as centro_solicitado FROM alumnos a,centros c,centros cc WHERE c.id_centro=a.id_centro_final AND cc.id_centro=a.id_centro_destino AND a.tipoestudios='tva' $where AND id_centro_destino!=id_centro_final ORDER by a.id_centro_final desc, a.tipoestudios asc,a.nordensorteo asc,a.transporte asc";
+		   $sql="SELECT a.id_centro_destino, a.email as correo,a.tel_dfamiliar1 as telefono,a.id_alumno,a.tipoestudios,a.id_centro_final, a.apellido1,a.apellido2,a.nombre,c.nombre_centro as centro_definitivo,cc.nombre_centro as centro_solicitado FROM alumnos a,centros c,centros cc WHERE c.id_centro=a.id_centro_final AND cc.id_centro=a.id_centro_destino AND a.tipoestudios='tva' $where AND id_centro_destino!=id_centro_final ORDER by a.id_centro_destino desc, a.tipoestudios asc,a.nordensorteo asc,a.transporte asc";
 		elseif($subtipo_listado=='csv_final') //para el csv 
       {
 		   $sql="SELECT 'centrosdisponibles' as centrosdisponibles, a.id_alumno,a.nombre,a.apellido1,a.apellido2,a.localidad,a.calle_dfamiliar,a.centro_origen,a.id_centro_origen, a.nombre_centro,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado as nasignado,a.puntos_validados,a.id_centro,a.centro1,a.centro2,a.centro3,a.centro4,a.centro5,a.centro6,a.centro_definitivo,a.id_centro_definitivo, a.tipo_modificacion,a.reserva,a.reserva_original  FROM alumnos_fase2_final a left join baremo b on b.id_alumno=a.id_alumno order by a.id_centro desc, a.tipoestudios asc,a.transporte asc, b.puntos_validados desc";

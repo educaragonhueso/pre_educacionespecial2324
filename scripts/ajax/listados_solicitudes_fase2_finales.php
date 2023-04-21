@@ -39,6 +39,8 @@ else $id_alumno='';
 if(isset($_POST['subtipo']))
 	$subtipo_listado=$_POST['subtipo'];//dentro de cada tipo, el subtipo de listado, para ebo o tva
 
+$subtipo_listado_original=$_POST['subtipo'];//dentro de cada tipo, el subtipo de listado, para ebo o tva
+
 if($subtipo_listado=='lfinal_sol_ebo')
  $nombre_listado='LISTADO DEFINITIVO FASE FINAL EBO';
 else
@@ -146,6 +148,6 @@ if($_POST['rol']=='admin' or $_POST['rol']=='sp' or $_POST['rol']=='centro')
    print($boton_descarga.'<br>'); //
 }
 //print($list->showListadoFase2($solicitudes,$rol,$$cabecera,$$camposdatos,$provisional=1,$subtipo_listado));
-print($list->showListadoFase2Final($solicitudes,$rol,$$cabecera,$$camposdatos,$provisional=1,$subtipo_listado,$log_listados_solicitudes_fase2_finales,$vacantes_centros));
+print($list->showListadoFase2Final($solicitudes,$rol,$$cabecera,$$camposdatos,$provisional=1,$subtipo_listado,$log_listados_solicitudes_fase2_finales,$vacantes_centros,$subtipo_listado_original));
 print($script);
 ?>
