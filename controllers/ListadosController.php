@@ -632,13 +632,13 @@ class ListadosController{
   $html.="</tr></thead><tbody>";
 	$cabadmin=0;
 	$cab=0;
-	if($rol=='centro' or $rol=='admin')
-			$html.="<tr class='filasol' style='color:white;background-color: #84839e;'><td colspan='".$ncolumnas."'><b>EBO</b></td></tr>";
 
 	foreach($a as $sol) 
 	{
 		if($rol=='admin' || $rol=='sp')
 		{
+			$tipoestudios_anterior=$tipoestudios_actual;
+         $tipoestudios_actual=$sol->tipoestudios;
 			$centroanterior=$centroactual;
 			$centroactual=$sol->id_centro;
 			if($sol->tipoestudios=='tva' and $cabadmin==0)
@@ -657,6 +657,10 @@ class ListadosController{
             $html.="<tr class='filasol' id='filasol".$sol->id_alumno."' style='color:white;background-color: #84839e;'><td colspan='".$ncolumnas."'><b>".strtoupper($sol->tipoestudios)."</b></td></tr>";
 
 			}
+			if($centroactual==$centroanterior and $tipoestudios_actual!=$tipoestudios_anterior)
+			{
+		       $html.="<tr class='filasol' id='filasol".$sol->id_alumno."' style='color:white;background-color: #84839e;'><td colspan='".$ncolumnas."'><b>".strtoupper($sol->tipoestudios)."</b></td></tr>";
+         }
 		}
       if($centroactual==$centroanterior and $tipoestudios_actual!=$tipoestudios_anterior)
       {
@@ -708,8 +712,6 @@ class ListadosController{
   $html.="</tr></thead><tbody>";
 	$cabadmin=0;
 	$cab=0;
-	if($rol=='centro' or $rol=='admin')
-			$html.="<tr class='filasol' style='color:white;background-color: #84839e;'><td colspan='".$ncolumnas."'><b>EBO</b></td></tr>";
 	if($rol=='centro')
    {
       foreach($cabecera as $cab)
