@@ -106,7 +106,7 @@ ID CENTRO: 50008678NOMBRE CENTRO: RECTOR MAMÉS ESPERABÉArray
 ID CENTRO: 50008915NOMBRE CENTRO: SAN GERMÁNArray
 (
     [ebo] => 2
-    [tva] => 1
+    [tva] => 2
 )
 ID CENTRO: 50009488NOMBRE CENTRO: LOS PUEYOSArray
 (
@@ -125,7 +125,7 @@ ID CENTRO: 50010387NOMBRE CENTRO: ALBORADAArray
 )
 ID CENTRO: 50011537NOMBRE CENTRO: RINCÓN DE GOYAArray
 (
-    [ebo] => -13
+    [ebo] => -7
     [tva] => 8
 )
 ID CENTRO: 50017369NOMBRE CENTRO: ANGEL RIVIÈREArray
@@ -135,7 +135,7 @@ ID CENTRO: 50017369NOMBRE CENTRO: ANGEL RIVIÈREArray
 )
 ID CENTRO: 50018131NOMBRE CENTRO: JEAN PIAGETArray
 (
-    [ebo] => -4
+    [ebo] => -2
     [tva] => 0
 )
 ID CENTRO: 50019408NOMBRE CENTRO: SEGEDAArray
@@ -143,12 +143,12 @@ ID CENTRO: 50019408NOMBRE CENTRO: SEGEDAArray
     [ebo] => 11
     [tva] => 2
 )
-SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1450)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1431)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1477)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1467)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1545)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1464)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1465)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1453)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1468)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1415)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1415)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1415)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1415)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1415)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1415)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1469)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1562)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1479)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1560)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1469)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1562)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1479)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1560)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1469)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1562)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1479)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1560)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577)Array
+SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1450 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1450 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1431 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1450 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1431 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1477 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1450 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1431 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1477 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1576 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1467 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1450 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1431 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1477 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1576 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1454 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1467 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1467 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1545 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1463 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1464 AND b.id_alumno!=a.id_alumno)ASIGNANDO ID HERMANO CONJUNTA:1465SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1415 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1415 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1415 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1415 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1415 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1415 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1469 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1562 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1479 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1560 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1469 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1562 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1479 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1560 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1469 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1562 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1479 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1560 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1541 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1577 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1468 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1468 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1468 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1468 AND b.id_alumno!=a.id_alumno)SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELECT b.nordensorteo FROM alumnos b WHERE b.id_alumno=1468 AND b.id_alumno!=a.id_alumno)Array
 (
     [0] => stdClass Object
         (
             [modalidad_origen] => combinada-3infantil
-            [id_centro_definitivo] => 0
+            [id_centro_definitivo] => 50010387
             [coordenadas] => nodata
             [calle_dfamiliar] => Desiderio Escosura 
             [localidad] => Zaragoza
@@ -162,7 +162,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
             [id_centro6] => 
             [id_centro] => 50017369
             [nombre_centro] => ANGEL RIVIÈRE
-            [centro_definitivo] => nocentro
+            [centro_definitivo] => ALBORADA
             [tipoestudios] => ebo
             [transporte] => 2
             [puntos_validados] => 14
@@ -172,7 +172,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
     [1] => stdClass Object
         (
             [modalidad_origen] => combinada-3infantil
-            [id_centro_definitivo] => 0
+            [id_centro_definitivo] => 50010387
             [coordenadas] => nodata
             [calle_dfamiliar] => Desiderio Escosura 
             [localidad] => Zaragoza
@@ -186,7 +186,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
             [id_centro6] => 
             [id_centro] => 50017369
             [nombre_centro] => ANGEL RIVIÈRE
-            [centro_definitivo] => nocentro
+            [centro_definitivo] => ALBORADA
             [tipoestudios] => ebo
             [transporte] => 2
             [puntos_validados] => 14
@@ -244,7 +244,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
     [4] => stdClass Object
         (
             [modalidad_origen] => especial-1ebo
-            [id_centro_definitivo] => 0
+            [id_centro_definitivo] => 50017369
             [coordenadas] => nodata
             [calle_dfamiliar] => CALLE DOCE DE OCTUBRE
             [localidad] => ZARAGOZA
@@ -258,7 +258,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
             [id_centro6] => 
             [id_centro] => 50017369
             [nombre_centro] => ANGEL RIVIÈRE
-            [centro_definitivo] => nocentro
+            [centro_definitivo] => ANGEL RIVIÈRE
             [tipoestudios] => ebo
             [transporte] => 2
             [puntos_validados] => 9
@@ -292,7 +292,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
     [6] => stdClass Object
         (
             [modalidad_origen] => nodata
-            [id_centro_definitivo] => 50010387
+            [id_centro_definitivo] => 0
             [coordenadas] => nodata
             [calle_dfamiliar] => CALLE PANAMÁ
             [localidad] => ZARAGOZA
@@ -306,7 +306,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
             [id_centro6] => 
             [id_centro] => 50017369
             [nombre_centro] => ANGEL RIVIÈRE
-            [centro_definitivo] => ALBORADA
+            [centro_definitivo] => nocentro
             [tipoestudios] => ebo
             [transporte] => 2
             [puntos_validados] => 8
@@ -388,7 +388,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
     [10] => stdClass Object
         (
             [modalidad_origen] => combinada-4primaria
-            [id_centro_definitivo] => 50010387
+            [id_centro_definitivo] => 50007376
             [coordenadas] => nodata
             [calle_dfamiliar] => Calle de Yolanda de Bar
             [localidad] => Zaragoza
@@ -402,7 +402,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
             [id_centro6] => 50007376
             [id_centro] => 50017369
             [nombre_centro] => ANGEL RIVIÈRE
-            [centro_definitivo] => ALBORADA
+            [centro_definitivo] => LA PURÍSIMA PARA NIÑOS SORDOS
             [tipoestudios] => ebo
             [transporte] => 2
             [puntos_validados] => 8
@@ -844,7 +844,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
     [29] => stdClass Object
         (
             [modalidad_origen] => combinada-3infantil
-            [id_centro_definitivo] => 0
+            [id_centro_definitivo] => 50008630
             [coordenadas] => nodata
             [calle_dfamiliar] => calle pedro mateo
             [localidad] => Gallur
@@ -858,7 +858,7 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
             [id_centro6] => 
             [id_centro] => 50011537
             [nombre_centro] => RINCÓN DE GOYA
-            [centro_definitivo] => nocentro
+            [centro_definitivo] => CEDES
             [tipoestudios] => ebo
             [transporte] => 2
             [puntos_validados] => 1
@@ -1323,4 +1323,4 @@ SELECT id_alumno FROM alumnos a WHERE a.conjunta='si' AND a.nordensorteo IN(SELE
 
 )
 
-Asignadas vacantes centros para fase 2 a las 11:04 del dia 19-Apr-2023
+Asignadas vacantes centros para fase 2 a las 06:04 del dia 21-Apr-2023

@@ -38,7 +38,7 @@ foreach($centros_fase2 as $cf)
    print_r($v);
    $res=$tcentros_fase2->setVacantes($v);
 }
-//ANTES DE EMPEZAR REPLCIAMOS LA TABAL DE ALUMNOS A LA TABAL TEMPORAL Y ORIGINAL PARA GUARDAR DATOS ORIGINALES Y LLEVAR LA CUENTA DE LAS MODIFICACIONES
+//ANTES DE EMPEZAR REPLCIAMOS LA TABAL DE ALUMNOS A LA TABAL TEMPORAL Y ORIGINAL PARA GUARDAR DATOS ORIGINALES
 //USAREMOS EN EL RESETEO
 if(!$utils->copiaTablaTmpFase2()) 
 {
@@ -60,16 +60,12 @@ do{
       $log_asigna_fase2->warning("EMPEZANDO CENTRO VACANTE NUMERO: $i");
       $alumnos_fase2=$utils->getAlumnosFase2('actual');
 		$centros_fase2=$tcentros_fase2->getCentrosFase2();
-      //versión complleta  computando reservas
-		$avac=$utils->asignarVacantesCentros_old($centros_fase2,$alumnos_fase2,$i,$tipoestudios,$alumnos_fase2_sindescuentohermanos);
-      //versión semi sin computar reservas
-		//$avac=$utils->asignarVacantesCentros($centros_fase2,$alumnos_fase2,$i,$tipoestudios,$alumnos_fase2_sindescuentohermanos);
+		$avac=$utils->asignarVacantesCentros($centros_fase2,$alumnos_fase2,$i,$tipoestudios,$alumnos_fase2_sindescuentohermanos);
 		
 		if($avac==0) break;
 		if($avac==-2)//si se ha liberado reserva 
       {
-         //descontmaos los 8 puntos de hermanos
-         $utils->descuentaPuntosHermanosFase2();
+			$reset=$utils->resetAlumnosFase2();
          //recargamos de nuevo la tabla de laumnos fase2 con los valores originales previamente almacenados en la alumnos_fase2_tmp
 			$j++; 
 			break;
@@ -89,4 +85,5 @@ elseif($avac==-1) print("Array de alumnos o de centros vacio");
 elseif($avac==-2) print("Alumnos libera reserva");
 elseif($avac==0) print("Error asignando");
 
+exit();
 ?>
