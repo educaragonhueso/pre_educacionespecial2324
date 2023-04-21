@@ -88,7 +88,7 @@ $campos_cabecera_lfinal_sol_ebo=array('Primer Apellido','Segundo Apellido','Nomb
 $campos_bbdd_lfinal_sol_ebo=array('apellido1','apellido2','nombre','centro_solicitado','centro_definitivo','telefono','correo');
 
 $campos_cabecera_lfinal_sol_tva=array('Primer Apellido','Segundo Apellido','Nombre','Centro Solicitado','Centro Definitivo','Telefono','Correo');
-$campos_bbdd_lfinal_sol_tva=array('apellido1','apellido2','nombre','cetro_solicitado','centro_definitivo','telefono','correo');
+$campos_bbdd_lfinal_sol_tva=array('apellido1','apellido2','nombre','centro_solicitado','centro_definitivo','telefono','correo');
 
 //DATOS PARA LISTADOS DE MATRICULA FINAL
 $campos_cabecera_mat_final=array('Primer Apellido','Segundo apellido','Nombre','tel_dfamiliar1','email','Puntos Baremo','Matricular');
