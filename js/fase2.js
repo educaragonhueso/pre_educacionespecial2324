@@ -11,7 +11,7 @@ $(".lfase2").click(function () {
   var vidcentro=$('#id_centro').html();
   var vprovincia=$('#provincia').attr("value");
   var vsubtipo=$(this).attr("data-subtipo");
-  var vestado_convocatoria=$('#estado_convocatoria').val();
+  var vestado_convocatoria=$('#estado_convocatoria').attr("value");
 	$.ajax({
 	  method: "POST",
 	  url: "../"+edicion+"/scripts/ajax/listados_solicitudes_fase2.php",

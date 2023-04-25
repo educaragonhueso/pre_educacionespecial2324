@@ -139,7 +139,10 @@ if($_POST['rol']=='admin' or $_POST['rol']=='sp' or $_POST['rol']=='centro')
    }
 
    //$tablaresumen=$tcentro->getResumenFase2($_POST['rol']);
-   $vacantes_centros=$tcentro->getVacantesCentros($log_listados_solicitudes_fase2_finales);
+   if($estado_convocatoria>=ESTADO_ASIGNACIONES)
+      $vacantes_centros=$tcentro->getVacantesCentrosFinales($log_listados_solicitudes_fase2_finales);
+   else
+      $vacantes_centros=$tcentro->getVacantesCentros($log_listados_solicitudes_fase2_finales);
    print($list->showTablaResumenFase2($vacantes_centros,$ncol=1));
    #print($list->showFiltrosTipo());
    print($filtro_datos);

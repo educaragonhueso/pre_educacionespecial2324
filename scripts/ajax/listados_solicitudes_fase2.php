@@ -90,9 +90,12 @@ if($_POST['rol']=='admin' or $_POST['rol']=='sp' or $_POST['rol']=='centro')
       $pdf->Output(DIR_SOR.$nombrefichero.'.pdf','F');
    }
 
-   $vacantes_centros=$tcentro->getVacantesCentrosFase2($log_listados_solicitudes_fase2);
+   if($estado_convocatoria>=ESTADO_ASIGNACIONES)
+      $vacantes_centros=$tcentro->getVacantesCentrosFinales($log_listados_solicitudes_fase2);
+   else
+      $vacantes_centros=$tcentro->getVacantesCentrosFase2($log_listados_solicitudes_fase2);
    ######################################################################################
-   $log_listados_solicitudes_fase2->warning("RESUMEN VACANTES TODOS CENTROS:");
+   $log_listados_solicitudes_fase2->warning("RESUMEN VACANTES TODOS CENTROS ESTADO: $estado_convocatoria");
    $log_listados_solicitudes_fase2->warning(print_r($vacantes_centros,true));
    ######################################################################################
 
