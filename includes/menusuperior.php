@@ -161,7 +161,7 @@ elseif((($rol=='anonimo' OR $rol=='alumno') and $estado_convocatoria<=ESTADO_FIN
 		   <?php }?>
 		<?php }?>
 		<?php 
-            if((($_SESSION['rol']=='admin' or $_SESSION['rol']=='sp') and ($_SESSION['estado_convocatoria']>=61)) OR ($_SESSION['rol']=='centro' and $_SESSION['estado_convocatoria']>=61)) 
+            if((($_SESSION['rol']=='admin' or $_SESSION['rol']=='sp') and ($_SESSION['estado_convocatoria']>=ESTADO_ASIGNACIONES)) OR ($_SESSION['rol']=='centro' and $_SESSION['estado_convocatoria']>=ESTADO_PUBLICACION_ASIGNACIONES)) 
             {
                 echo '<li class="nav-item active msuperior dropdown itemderecho" id="mdefinitivo">';
                 echo '<a class="nav-link dropdown-toggle desplegable2" id="navbardrop" data-toggle="dropdown" href="#">Adjudicación Servicio Provincial</a>';
