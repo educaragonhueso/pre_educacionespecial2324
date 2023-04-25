@@ -1785,7 +1785,7 @@ desc,a.tutores_centro desc,a.nordensorteo asc,a.nasignado desc";
       $where="";
       //mostramos los alumnos q eleigieron ese centro o q lo han obtenido en la fase 2
       if($rol=='centro')
-         $where=" AND id_centro_final=$id_centro AND est_desp_sorteo='admitida' AND tipo_inscripcion!='ordinaria' AND id_centro_estudios_origen!=id_centro_final AND nombre_centro!='NOCENTRO' ";
+         $where=" AND id_centro_final=$id_centro AND est_desp_sorteo='admitida' AND tipo_inscripcion!='ordinaria' AND id_centro_estudios_origen!=id_centro_final AND c.nombre_centro!='NOCENTRO' ";
       if($rol=='admin')
          $where=" AND est_desp_sorteo='admitida' AND tipo_inscripcion!='ordinaria' AND id_centro_estudios_origen!=id_centro_final AND c.nombre_centro!='NOCENTRO' ";
       
