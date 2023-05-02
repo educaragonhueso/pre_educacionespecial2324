@@ -65,9 +65,9 @@ $('body').on('click', '.matriculafinal', function(e){
             console.log(data);
             console.log(vid_alumno);
             if(vestado=='Matricular')
-	            alert("Alumno Desmatriculado correctamente, recibirás un correo confirmatorio");
-            else
 	            alert("Alumno Matriculado correctamente, recibirás un correo confirmatorio");
+            else
+	            alert("Alumno Desmatriculado correctamente, recibirás un correo confirmatorio");
             if(vestado=='Matricular')
             $("#matricular"+vid_alumno).html("Desmatricular");
             else

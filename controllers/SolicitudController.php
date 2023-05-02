@@ -27,27 +27,33 @@ class SolicitudController{
    }
    public function getEstadoAlumno($token)
 	{
-         $centro_alumno=$this->getCentroAdmisionAlumno($token);
-         if($this->estado_convocatoria==ESTADO_PUBLICACION_BAREMADAS)
-            $msg= "<div class='cajainfo'>PUBLICADAS LISTADAS BAREMADAS, CONSÚLTALAS EN EL ENLACE SUPERIOR DERECHO O <a class='lbaremadas' data-subtipo='sor_bar' style='color:darkblue;background-color:black;padding:6px'>EN ESTE ENLACE</a></div>";
-         if($this->estado_convocatoria==ESTADO_RECLAMACIONES_BAREMADAS)
-            $msg= "<div class='cajainfo'>PUEDES HACER TU RECLAMACIÓN DESDE EL ENLACE SUPERIOR DERECHO O <a href='".URL_BASE.EDICION."/reclamaciones_baremo.php?token=$token' style='color:darkblue;background-color:black;padding:6px'> DESDE ESTE ENLACE</a></div>";
-         if($this->estado_convocatoria==ESTADO_ALEATORIO)
-            $msg= "<div class='cajainfo'>PUBLICADOS LISTADOS DE NÚMERO ALEATORIO, CONSÚLTALO EN EL ENLACE SUPERIOR DERECHO O <a class='lbaremadas' data-subtipo='sor_ale' style='color:darkblue;background-color:black;padding:6px'>EN ESTE ENLACE</a><p><i style='font-size:15px'>Este número junto con el número de sorteo permite generar un orden de solicitudes en caso de empate</i></p></div>";
-         if($this->estado_convocatoria==ESTADO_SORTEO)
-            $msg= "<div class='cajainfo'>SE HA REALIZADO EL SORTEO, LOS LISTADOS PROVISIONALES SE PUBLICARÁN EL ".$this->convertirFecha(DIA_PUBLICACION_PROVISIONAL)."</div>";
-         if($this->estado_convocatoria==ESTADO_PUBLICACION_PROVISIONAL)
-            //$msg= "<div class='cajainfo'>PUBLICADAS LISTAS PROVISIONALES, PUEDES CONSULTARLAS DESDE EL ENLACE SUPERIOR DERECHO. EL PERIODO DE RECLAMACIONES ES DESDE EL ".$this->convertirFecha(DIA_INICIO_RECLAMACIONES_PROVISIONAL)." HASTA EL ".$this->convertirFecha(DIA_FIN_RECLAMACIONES_PROVISIONAL)."<br></div><div style='padding:10px;margin-left:40%'> PUEDES RECLAMAR DESDE ESTE ENLACE <a href='https://preadmespecial.aragon.es/educacionespecial2324/reclamaciones_provisional.php?token=$token' style='color:darkblue;background-color:black;padding:6px'> DESDE ESTE ENLACE</a></div>";
-            $msg= "<div class='cajainfo'>PUBLICADAS LISTAS PROVISIONALES, PUEDES CONSULTARLAS DESDE EL ENLACE SUPERIOR DERECHO. EL PERIODO DE RECLAMACIONES ES DESDE EL ".$this->convertirFecha(DIA_INICIO_RECLAMACIONES_PROVISIONAL)." HASTA EL ".$this->convertirFecha(DIA_FIN_RECLAMACIONES_PROVISIONAL)."<br></div>";
-         if($this->estado_convocatoria==ESTADO_RECLAMACIONES_PROVISIONAL)
-            $msg.= "<div style='padding:10px;margin-left:40%'> PUEDES RECLAMAR DESDE ESTE ENLACE <a href='".URL_BASE.EDICION."/reclamaciones_provisional.php?token=$token' style='color:darkblue;background-color:black;padding:6px'> DESDE ESTE ENLACE</a></div>";
-         if($this->estado_convocatoria==ESTADO_PUBLICACION_DEFINITIVOS)
-            $msg= "<div class='cajainfo'>PUBLICADOS LISTADOS DEFINITIVOS, PUEDES CONSULTARLOS DESDE EL ENLACE SUPERIOR DERECHO.</div>";
-         if($this->estado_convocatoria>=ESTADO_PUBLICACION_ASIGNACIONES)
-         {
-            $msg= "<div class='cajainfo'>";
-            $msg.= "TU SOLICITUD HA SIDO ADMITIDA EN EL CENTRO:<b> $centro_alumno</b> </div>";
-         }
+      $centro_alumno=$this->getCentroAdmisionAlumno($token);
+      $matricula_alumno=$this->checkMatriculaAlumno($token);
+      if($this->estado_convocatoria==ESTADO_PUBLICACION_BAREMADAS)
+         $msg= "<div class='cajainfo'>PUBLICADAS LISTADAS BAREMADAS, CONSÚLTALAS EN EL ENLACE SUPERIOR DERECHO O <a class='lbaremadas' data-subtipo='sor_bar' style='color:darkblue;background-color:black;padding:6px'>EN ESTE ENLACE</a></div>";
+      if($this->estado_convocatoria==ESTADO_RECLAMACIONES_BAREMADAS)
+         $msg= "<div class='cajainfo'>PUEDES HACER TU RECLAMACIÓN DESDE EL ENLACE SUPERIOR DERECHO O <a href='".URL_BASE.EDICION."/reclamaciones_baremo.php?token=$token' style='color:darkblue;background-color:black;padding:6px'> DESDE ESTE ENLACE</a></div>";
+      if($this->estado_convocatoria==ESTADO_ALEATORIO)
+         $msg= "<div class='cajainfo'>PUBLICADOS LISTADOS DE NÚMERO ALEATORIO, CONSÚLTALO EN EL ENLACE SUPERIOR DERECHO O <a class='lbaremadas' data-subtipo='sor_ale' style='color:darkblue;background-color:black;padding:6px'>EN ESTE ENLACE</a><p><i style='font-size:15px'>Este número junto con el número de sorteo permite generar un orden de solicitudes en caso de empate</i></p></div>";
+      if($this->estado_convocatoria==ESTADO_SORTEO)
+         $msg= "<div class='cajainfo'>SE HA REALIZADO EL SORTEO, LOS LISTADOS PROVISIONALES SE PUBLICARÁN EL ".$this->convertirFecha(DIA_PUBLICACION_PROVISIONAL)."</div>";
+      if($this->estado_convocatoria==ESTADO_PUBLICACION_PROVISIONAL)
+         //$msg= "<div class='cajainfo'>PUBLICADAS LISTAS PROVISIONALES, PUEDES CONSULTARLAS DESDE EL ENLACE SUPERIOR DERECHO. EL PERIODO DE RECLAMACIONES ES DESDE EL ".$this->convertirFecha(DIA_INICIO_RECLAMACIONES_PROVISIONAL)." HASTA EL ".$this->convertirFecha(DIA_FIN_RECLAMACIONES_PROVISIONAL)."<br></div><div style='padding:10px;margin-left:40%'> PUEDES RECLAMAR DESDE ESTE ENLACE <a href='https://preadmespecial.aragon.es/educacionespecial2324/reclamaciones_provisional.php?token=$token' style='color:darkblue;background-color:black;padding:6px'> DESDE ESTE ENLACE</a></div>";
+         $msg= "<div class='cajainfo'>PUBLICADAS LISTAS PROVISIONALES, PUEDES CONSULTARLAS DESDE EL ENLACE SUPERIOR DERECHO. EL PERIODO DE RECLAMACIONES ES DESDE EL ".$this->convertirFecha(DIA_INICIO_RECLAMACIONES_PROVISIONAL)." HASTA EL ".$this->convertirFecha(DIA_FIN_RECLAMACIONES_PROVISIONAL)."<br></div>";
+      if($this->estado_convocatoria==ESTADO_RECLAMACIONES_PROVISIONAL)
+         $msg.= "<div style='padding:10px;margin-left:40%'> PUEDES RECLAMAR DESDE ESTE ENLACE <a href='".URL_BASE.EDICION."/reclamaciones_provisional.php?token=$token' style='color:darkblue;background-color:black;padding:6px'> DESDE ESTE ENLACE</a></div>";
+      if($this->estado_convocatoria==ESTADO_PUBLICACION_DEFINITIVOS)
+         $msg= "<div class='cajainfo'>PUBLICADOS LISTADOS DEFINITIVOS, PUEDES CONSULTARLOS DESDE EL ENLACE SUPERIOR DERECHO.</div>";
+      if($this->estado_convocatoria>=ESTADO_PUBLICACION_ASIGNACIONES)
+      {
+         $msg= "<div class='cajainfo'>";
+         $msg.= "TU SOLICITUD HA SIDO ADMITIDA EN EL CENTRO:<b> $centro_alumno</b>";
+         if($matricula_alumno==1) 
+            $msg.= "<br>LA MATRÍCULA SE HA REALIZADO CORRECTAMENTE</div>";
+         else
+            $msg.= "<br>ESTÁ PENDIENTE DE MATRICULAR</div>";
+            
+      }
 	   return $msg;
    }
    public function getCentroAdmisionAlumno($token)
@@ -57,6 +63,14 @@ class SolicitudController{
 		if($query)
     	   return $query->fetch_object()->nombre_centro;
 		else return 0;
+	}
+   public function checkMatriculaAlumno($token)
+	{
+			$sql="SELECT a.matricula FROM alumnos a WHERE token='$token'";
+ 			$query=$this->getConexion()->query($sql);
+				if($query)
+    	  return $query->fetch_object()->matricula;
+			else return 0;
 	}
     public function getIdAlumnoPin($pin)
 		{
