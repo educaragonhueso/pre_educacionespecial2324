@@ -370,7 +370,7 @@ class Centro{
    } 
    public function getVacantesCentrosFinales($log)
 	{
-      $idct=50007674;
+      $idct=50007376;
       $vacantes_totales=array();
       $ids=$this->getCentrosIds();
       //$plazasliberadas=$this->getPlazasLiberadasCentros($log);
@@ -378,7 +378,7 @@ class Centro{
       foreach($ids as $id)
       {
          if($id[0]==$idct)
-            $log->warning("TEST ATADES");
+            $log->warning("TEST PURISIMA");
          $this->id_centro=$id[0]; 
          $this->setNombre(); 
          $vacantes_total=array('ebo'=>0,'tva'=>0);
