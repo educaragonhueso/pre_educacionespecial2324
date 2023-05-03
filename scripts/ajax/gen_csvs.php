@@ -68,11 +68,11 @@ if($subtipo_original=='csv_mat')
 //si es para datos de fase2
 if($subtipo_original=='csv_fase2')
 {
-	$solicitudes=$solicitud->getSolicitudesFase2($subtipo_original,$rol,$id_centro,$estado_convocatoria,$log_gencsvs); 
+	$solicitudes=$solicitud->getMatriculadosFinal($subtipo_original,$rol,$log_gencsvs); 
 }
 if($subtipo_original=='csv_mat_final')
 {
-	$solicitudes=$solicitud->getMatriculadosFinales($id_centro,$subtipo_listado,$estado_convocatoria,$log_gencsvs,$rol,$id_alumno); 
+	$solicitudes=$solicitud->getMatriculadosFinales($subtipo_original,$rol,$log_gencsvs); 
 }
 //$fcsv=$list->genCsv($solicitudes,$id_centro,$subtipo_original,$$cabecera,$$camposdatos,DIR_CSVS_WEB);
 $fcsv=$list->genCsv($solicitudes,$id_centro,$subtipo_original,$$cabecera,$$camposdatos,DIR_CSVS,$log_gencsvs);

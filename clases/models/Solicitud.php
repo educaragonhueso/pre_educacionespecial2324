@@ -2041,6 +2041,24 @@ as nasignado,c.nombre_centro, a.puntos_validados,a.id_centro_destino as id_centr
                   $resultSet[]=$row;
         return $resultSet;
 	}
+	public function getMatriculadosFinales($subtipo_listado,$rol,$log) 
+	{
+      $resultSet=array();
+		if($rol=='centro')
+		   $sql="SELECT * FROM alumnos a left join centros c on a.id_centro_final=c.id_centro JOIN baremo b ON b.id_alumno=a.id_alumno WHERE matricula='si' AND c.id_centro=$c order by tipoestudios";
+      else
+         $sql="SELECT * FROM alumnos a JOIN centros c ON a.id_centro_final=c.id_centro JOIN baremo b ON b.id_alumno=a.id_alumno WHERE matricula='si' ORDER BY id_centro ";
+		$log->warning("CONSULTA MATRICULADOS FINAL SUBTIPO: ".$subtipo_listado);
+		$log->warning($sql);
+
+      $query=$this->conexion->query($sql);
+      if($query)
+         while ($row = $query->fetch_object()) 
+         {
+            $resultSet[]=$row;
+         }
+        return $resultSet;
+	}
 	public function getSolicitudesMatriculaFinal($c=1,$subtipo_listado,$estado_convocatoria,$log,$rol,$id_alumno) 
 	{
       $order=" order by id_centro_final,a.tipoestudios";
