@@ -44,7 +44,7 @@ class SolicitudController{
          $msg.= "<div style='padding:10px;margin-left:40%'> PUEDES RECLAMAR DESDE ESTE ENLACE <a href='".URL_BASE.EDICION."/reclamaciones_provisional.php?token=$token' style='color:darkblue;background-color:black;padding:6px'> DESDE ESTE ENLACE</a></div>";
       if($this->estado_convocatoria==ESTADO_PUBLICACION_DEFINITIVOS)
          $msg= "<div class='cajainfo'>PUBLICADOS LISTADOS DEFINITIVOS, PUEDES CONSULTARLOS DESDE EL ENLACE SUPERIOR DERECHO.</div>";
-      if($this->estado_convocatoria>=ESTADO_PUBLICACION_ASIGNACIONES)
+      if($this->estado_convocatoria>=ESTADO_MATRICULA)
       {
          $msg= "<div class='cajainfo'>";
          $msg.= "TU SOLICITUD HA SIDO ADMITIDA EN EL CENTRO:<b> $centro_alumno</b>";

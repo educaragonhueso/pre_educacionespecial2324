@@ -2064,14 +2064,14 @@ as nasignado,c.nombre_centro, a.puntos_validados,a.id_centro_destino as id_centr
       $order=" order by id_centro_final,a.tipoestudios";
 		
       $resultSet=array();
-		if($rol=='admin')
-         $sql="SELECT * FROM alumnos a,baremo b WHERE a.id_alumno=b.id_alumno $order";
-		else if($rol=='centro')
-		   $sql="SELECT a.tel_dfamiliar1,a.matricula,a.email,a.id_alumno,a.nombre,a.apellido1,a.apellido2,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado as nasignado,c.nombre_centro,b.puntos_validados FROM alumnos a left join baremo b on b.id_alumno=a.id_alumno left join centros c on a.id_centro_final=c.id_centro where c.id_centro=$c order by tipoestudios";
-		else if($rol=='alumno')
-         $sql="SELECT * FROM alumnos a,baremo b WHERE a.id_alumno=b.id_alumno AND a.id_alumno=$id_alumno";
+
+      if($rol=='admin')
+         $sql="SELECT * FROM alumnos a,baremo b WHERE a.id_alumno=b.id_alumno AND fase_solicitud!='borrador' AND estado_solicitud='apta' AND id_centro_estudios_origen!=id_centro_final $order";                                                   else if($rol=='centro')                                                                                                                                                                                                                         $sql="SELECT a.tel_dfamiliar1,a.matricula,a.email,a.id_alumno,a.nombre,a.apellido1,a.apellido2,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado as nasignado,c.nombre_centro,b.puntos_validados FROM alumnos a left join baremo b on b.id_alumno=a.id_alumno left join centros c on a.id_centro_final=c.id_centro WHERE fase_solicitud!='borrador' AND estado_solicitud='apta' AND c.id_centro=$c AND id_centro_estudios_origen!=id_centro_final order by tipoestudios";
+      else if($rol=='alumno')
+         $sql="SELECT * FROM alumnos a,baremo b WHERE a.id_alumno=b.id_alumno AND a.id_alumno=$id_alumno AND fase_solicitud!='borrador' AND estado_solicitud='apta' AND id_centro_estudios_origen!=id_centro_final";
       else
-         $sql="SELECT * FROM alumnos af JOIN centros c ON af.id_centro=c.id_centro and provincia='$provincia' ";
+         $sql="SELECT * FROM alumnos af JOIN centros c ON af.id_centro=c.id_centro AND fase_solicitud!='borrador' AND estado_solicitud='apta' and provincia='$provincia' AND id_centro_estudios_origen!=id_centro_final ";
+
 		$log->warning("CONSULTA SOLICITUDES MATRICULA FINAL SUBTIPO: ".$subtipo_listado);
 		$log->warning($sql);
 

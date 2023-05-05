@@ -52,8 +52,10 @@ else if($_SESSION['fecha_actual']>=DIA_PUBLICACION_DEFINITIVOS and $_SESSION['fe
  		$_SESSION['estado_convocatoria'] =ESTADO_PUBLICACION_DEFINITIVOS;
 else if($_SESSION['fecha_actual']>=DIA_INICIO_ASIGNACIONES and $_SESSION['fecha_actual']<DIA_PUBLICACION_ASIGNACIONES)       
  		$_SESSION['estado_convocatoria'] =ESTADO_ASIGNACIONES;
-else if($_SESSION['fecha_actual']>=DIA_PUBLICACION_ASIGNACIONES and $_SESSION['fecha_actual']<DIA_MATRICULACION_ASIGNACIONES)       
+else if($_SESSION['fecha_actual']>=DIA_PUBLICACION_ASIGNACIONES and $_SESSION['fecha_actual']<DIA_MATRICULA)       
  		$_SESSION['estado_convocatoria'] =ESTADO_PUBLICACION_ASIGNACIONES;
+else if($_SESSION['fecha_actual']>=DIA_MATRICULA and $_SESSION['fecha_actual']<DIA_FIN)       
+ 		$_SESSION['estado_convocatoria'] =ESTADO_MATRICULA;
 else
  		$_SESSION['estado_convocatoria'] =ESTADO_FIN;
 
