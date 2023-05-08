@@ -21,7 +21,7 @@ $campos_bbdd_sor_det=array('apellido1','apellido2','nombre','proximidad_domicili
 
 //DATOS PARA EXPORTAR DATOS CSVS
 $campos_cabecera_csv_fase2=array('Tipo','Ap1','Ap2','Nombre','Loc','Calle','Reserva','Reserva Original','Centro origen','Cen.Pref','Cen.Alt1','Cen.Alt2','Cen.Alt3','Cen.Alt4','Cen.Alt5','Cen.Alt6','Baremo Fase2','Baremo Original','Prioridad','Estado','Centro definitivo','Numero de sorteo asignado','Modificacion');
-$campos_bbdd_csv_fase2=array('tipoestudios','apellido1','apellido2','nombre','localidad','calle_dfamiliar','reserva','reserva_original','centro_origen','nombre_centro','centro1','centro2','centro3','centro4','centro5','centro6','puntos_validados','puntos_validados_originales','transporte','estado_solicitud','centro_definitivo','nasignado','tipo_modificacion');
+$campos_bbdd_csv_fase2=array('tipoestudios','apellido1','apellido2','nombre','localidad','calle_dfamiliar','reserva','reserva_original','centro_origen','nombre_centro','centro1','centro2','centro3','centro4','centro5','centro6','puntos_validados','puntos_validados_originales','transporte','estado_solicitud','centro_definitivo','nasignado','tipo_inscripcion');
 
 $campos_cabecera_csv_fase3=array('Tipo','Primer apellido','Segundo apellido','Nombre','Centro Adjudicado');
 $campos_bbdd_csv_fase3=array('tipoestudios','apellido1','apellido2','nombre','centro_definitivo');
@@ -91,11 +91,11 @@ $campos_cabecera_lfinal_sol_tva=array('Primer Apellido','Segundo Apellido','Nomb
 $campos_bbdd_lfinal_sol_tva=array('apellido1','apellido2','nombre','centro_solicitado','centro_definitivo','telefono','correo');
 
 //DATOS PARA LISTADOS DE MATRICULA FINAL
-$campos_cabecera_mat_final=array('Primer Apellido','Segundo apellido','Nombre','tel_dfamiliar1','email','Puntos Baremo','Matricular');
-$campos_bbdd_mat_final=array('apellido1','apellido2','nombre','tel_dfamiliar1','email','puntos_validados');
+$campos_cabecera_mat_final=array('Centro Final','Primer Apellido','Segundo apellido','Nombre','tel_dfamiliar1','email','Puntos Baremo','Matricular');
+$campos_bbdd_mat_final=array('centro_definitivo','apellido1','apellido2','nombre','tel_dfamiliar1','email','puntos_validados');
 
-$campos_cabecera_csv_mat_final=array('Primer Apellido','Segundo apellido','Nombre','tel_dfamiliar1','email','Puntos Baremo');
-$campos_bbdd_csv_mat_final=array('apellido1','apellido2','nombre','tel_dfamiliar1','email','puntos_validados');
+$campos_cabecera_csv_mat_final=array('Centro Final','Primer Apellido','Segundo apellido','Nombre','tel_dfamiliar1','email','Puntos Baremo');
+$campos_bbdd_csv_mat_final=array('centro_definitivo','apellido1','apellido2','nombre','tel_dfamiliar1','email','puntos_validados');
 
 //DATOS PARA LISTADOS SOLICITUDES FASE III
 $campos_cabecera_lfase3_sol_ebo=array('Ap1','Ap2','Nombre','Loc','Calle','Cen.Pref','Cen.Alt','Baremo','Prioridad','Estado','Cen.Adj','NSorteo','Centros','Reserva','nordsor');

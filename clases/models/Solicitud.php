@@ -2045,9 +2045,9 @@ as nasignado,c.nombre_centro, a.puntos_validados,a.id_centro_destino as id_centr
 	{
       $resultSet=array();
 		if($rol=='centro')
-		   $sql="SELECT * FROM alumnos a left join centros c on a.id_centro_final=c.id_centro JOIN baremo b ON b.id_alumno=a.id_alumno WHERE c.id_centro=$c AND estado_solicitud='apta' AND fase_solicitud!='borrador' AND tipo_inscripcion|='ordinaria' order by tipoestudios";
+		   $sql="SELECT a.* FROM alumnos a left join centros c on a.id_centro_final=c.id_centro JOIN baremo b ON b.id_alumno=a.id_alumno WHERE c.id_centro=$c AND estado_solicitud='apta' AND fase_solicitud!='borrador' AND tipo_inscripcion|='ordinaria' order by tipoestudios";
       else
-         $sql="SELECT * FROM alumnos a JOIN centros c ON a.id_centro_final=c.id_centro JOIN baremo b ON b.id_alumno=a.id_alumno WHERE estado_solicitud='apta' AND fase_solicitud!='borrador' AND tipo_inscripcion!='ordinaria' ORDER BY id_centro ";
+         $sql="SELECT a.*,c.nombre_centro AS centro_definitivo FROM alumnos a JOIN centros c ON a.id_centro_final=c.id_centro JOIN baremo b ON b.id_alumno=a.id_alumno WHERE estado_solicitud='apta' AND fase_solicitud!='borrador' AND tipo_inscripcion!='ordinaria' ORDER BY id_centro ";
 		$log->warning("CONSULTA MATRICULADOS FINAL SUBTIPO: ".$subtipo_listado);
 		$log->warning($sql);
 
@@ -2063,9 +2063,9 @@ as nasignado,c.nombre_centro, a.puntos_validados,a.id_centro_destino as id_centr
 	{
       $resultSet=array();
 		if($rol=='centro')
-		   $sql="SELECT * FROM alumnos a left join centros c on a.id_centro_final=c.id_centro JOIN baremo b ON b.id_alumno=a.id_alumno WHERE matricula='si' AND c.id_centro=$c order by tipoestudios";
+		   $sql="SELECT * FROM alumnos a left join centros c on a.id_centro_final=c.id_centro JOIN baremo b ON b.id_alumno=a.id_alumno WHERE matricula='si' AND c.id_centro=$c AND fase_solicitud!='borrador' order by tipoestudios";
       else
-         $sql="SELECT * FROM alumnos a JOIN centros c ON a.id_centro_final=c.id_centro JOIN baremo b ON b.id_alumno=a.id_alumno WHERE matricula='si' ORDER BY id_centro ";
+         $sql="SELECT a.*,c.nombre_centro as centro_definitivo FROM alumnos a JOIN centros c ON a.id_centro_final=c.id_centro JOIN baremo b ON b.id_alumno=a.id_alumno WHERE matricula='si' AND fase_solicitud!='borrador' ORDER BY id_centro ";
 		$log->warning("CONSULTA MATRICULADOS FINAL SUBTIPO: ".$subtipo_listado);
 		$log->warning($sql);
 
