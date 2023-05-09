@@ -182,7 +182,7 @@ elseif((($rol=='anonimo' OR $rol=='alumno') and $estado_convocatoria<=ESTADO_FIN
                 echo '<li class="nav-item active msuperior dropdown" id="mdefinitivo">';
                 echo '</li>';
 		      }
-		      if($_SESSION['estado_convocatoria']>=ESTADO_MATRICULA)
+		      if($_SESSION['estado_convocatoria']>=ESTADO_MATRICULA AND $_SESSION['estado_convocatoria']<ESTADO_FIN )
             {
                echo '<li class="nav-item active msuperior itemderecho" id="matriculafinal">';
                   echo '<a class="show_matricula_final nav-link" data-subtipo="mat_final" href="#">Matrícula final</a>';

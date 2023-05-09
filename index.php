@@ -143,6 +143,7 @@ if(isset($_GET['token']) or $rol=='alumno')
    else if($rol=='alumno' or $rol=='anonimo')
    {
       //si llegamos al final y hay matrícula pendiente añadmos formulario de matrícula
+      /*
       if($estado_convocatoria>=ESTADO_FIN)
       {
          $cabecera="campos_cabecera_mat_final";
@@ -152,6 +153,7 @@ if(isset($_GET['token']) or $rol=='alumno')
          $solicitudes=$list->getSolicitudes($id_centro,'matriculafinal','mat_final',$tsolicitud,$log_listados_matricula_final,$id_alumno,$rol,''); 
          print_r($list->showListado($solicitudes,$_POST['rol'],$$cabecera,$$camposdatos,'matriculafinal'));
       }
+      */
       $mensaje_estado_alumno=$scontroller->getEstadoAlumno($token);
       $sform=preg_replace('/<span>PUNTOS BAREMO VALIDADOS:<span id="id_puntos_baremo_validados">.*<\/span>/','',$sform);
       print_r($tokenhtml);
