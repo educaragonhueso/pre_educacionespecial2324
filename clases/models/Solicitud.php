@@ -2089,7 +2089,8 @@ as nasignado,c.nombre_centro, a.puntos_validados,a.id_centro_destino as id_centr
       else if($rol=='alumno')
          $sql="SELECT * FROM alumnos a,baremo b WHERE a.id_alumno=b.id_alumno AND a.id_alumno=$id_alumno AND fase_solicitud!='borrador' AND estado_solicitud='apta' AND (id_centro_estudios_origen!=id_centro_final OR (id_centro_estudios_origen=id_centro_final AND modalidad_origen not like '%ebo' AND modalidad_origen not like '%tva')) ";
       else
-         $sql="SELECT * FROM alumnos af JOIN centros c ON af.id_centro_final=c.id_centro AND fase_solicitud!='borrador' AND estado_solicitud='apta' and provincia='$provincia' AND id_centro_estudios_origen!=id_centro_final ORDER BY id_centro_final ";
+         $sql="SELECT a.*,b.*,c.* FROM centros c,alumnos a,baremo b WHERE c.id_centro=a.id_centro_final AND a.id_alumno=b.id_alumno AND fase_solicitud!='borrador' AND estado_solicitud='apta' AND provincia='$provincia' AND id_centro_estudios_origen!=id_centro_final $order"; 
+         //$sql="SELECT * FROM alumnos af JOIN centros c ON af.id_centro_final=c.id_centro AND fase_solicitud!='borrador' AND estado_solicitud='apta' and provincia='$provincia' AND id_centro_estudios_origen!=id_centro_final ORDER BY id_centro_final,af.tipoestudios ";
 
 		$log->warning("CONSULTA SOLICITUDES MATRICULA FINAL SUBTIPO: ".$subtipo_listado);
 		$log->warning($sql);

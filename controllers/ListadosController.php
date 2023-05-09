@@ -549,8 +549,8 @@ class ListadosController{
 			$centroanterior=$centroactual;
 			$tipoestudios_anterior=$tipoestudios_actual;
          $tipoestudios_actual=$sol->tipoestudios;
-         if(isset($sol->id_centro_destino))
-            $centroactual=$sol->id_centro_destino;
+         if(isset($sol->id_centro_final))
+            $centroactual=$sol->id_centro_final;
          else
             $centroactual=$sol->id_centro;
 	
