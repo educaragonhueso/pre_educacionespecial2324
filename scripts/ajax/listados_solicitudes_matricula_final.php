@@ -23,6 +23,7 @@ $log_listados_matricula_final->warning(print_r($_POST,true));
 //VARIABLES
 $dir_pdf=DIR_BASE.'/scripts/datossalida/pdflistados/definitivos/';
 $id_centro=$_POST['id_centro'];
+$provincia=$_POST['provincia'];
 $estado_convocatoria=$_POST['estado_convocatoria'];
 $subtipo_listado=$_POST['subtipo'];//dentro de cada tipo, el subtipo de listado
 $filtro_datos='<input type="text" class="form-control" id="filtrosol"  placeholder="Introduce datos del alumno"><small id="emailHelp" class="form-text text-muted"></small>';
@@ -42,10 +43,6 @@ $titulo_listado="Listados definitivos";
 $tipo_listado="Listados definitivos";
 
 $rol=$_POST['rol'];
-if($rol=='admin')
-   $provincia='todas';
-else
-   $provincia=substr($rol,2);
 
 //La convocatoria esta en definitivo según el dia programado
 //si la convocatoria esta en definitivo, entramos una vez para copiar la tabla con los datos del centro

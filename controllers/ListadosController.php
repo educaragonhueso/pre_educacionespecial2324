@@ -219,7 +219,7 @@ class ListadosController{
 		elseif($modo=='matriculafinal')
 		{
 			$log->warning('OBTENIENDO DEFINITIVOS ESTADO: '.$estado_convocatoria);
-		   $allsolicitudes=$solicitud->getSolicitudesMatriculaFinal($id_centro,$subtipo_listado,$estado_convocatoria,$log,$rol,$id_alumno);
+		   $allsolicitudes=$solicitud->getSolicitudesMatriculaFinal($id_centro,$subtipo_listado,$estado_convocatoria,$log,$rol,$id_alumno,$provincia);
 		}
 		elseif($modo=='fase2' || $modo=='fase3')
 		{

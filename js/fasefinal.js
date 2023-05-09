@@ -6,6 +6,7 @@ $(".lfinales").click(function () {
   $("#map-canvas").hide();
   var vpdf='1';
   var vrol=$('#rol').attr("value");
+  var vprovincia=$('#provincia').attr("value");
   var vidcentro=$('#id_centro').html();
   var vid_alumno=$('#id_alumno').attr("value");
   var vsubtipo=$(this).attr("data-subtipo");
@@ -14,7 +15,7 @@ $(".lfinales").click(function () {
 	$.ajax({
 	  method: "POST",
 	  url: "../"+edicion+"/scripts/ajax/listados_solicitudes_fase2_finales.php",
-	  data: {rol:vrol,subtipo:vsubtipo,pdf:vpdf,estado_convocatoria:vestado_convocatoria,id_centro:vidcentro,id_alumno:vid_alumno},
+	  data: {rol:vrol,subtipo:vsubtipo,pdf:vpdf,estado_convocatoria:vestado_convocatoria,id_centro:vidcentro,id_alumno:vid_alumno,provincia:vprovincia},
 	  success: function(data) {
 				$("#mapcontrol").hide();
 				$("#map-canvas").hide();
@@ -29,16 +30,17 @@ $(".lfinales").click(function () {
 //LISTADO SOLICITUDES PARA MATRICULA EN FASE FINAL
 $(".show_matricula_final").click(function () {
   var vrol=$('#rol').attr("value");
+  var vprovincia=$('#provincia').attr("value");
   var vidcentro=$('#id_centro').html();
   var vid_alumno=$('#id_alumno').attr("value");
   var vsubtipo=$(this).attr("data-subtipo");
-   console.log("id ade alumno final: "+vid_alumno);
   var vestado_convocatoria=$('#estado_convocatoria').val();
 	$.ajax({
 	  method: "POST",
 	  url: "../"+edicion+"/scripts/ajax/listados_solicitudes_matricula_final.php",
-	  data: {rol:vrol,subtipo:vsubtipo,estado_convocatoria:vestado_convocatoria,id_centro:vidcentro,id_alumno:vid_alumno},
+	  data: {rol:vrol,subtipo:vsubtipo,estado_convocatoria:vestado_convocatoria,id_centro:vidcentro,id_alumno:vid_alumno,provincia:vprovincia},
 	  success: function(data) {
+            
 				$("#mapcontrol").hide();
 				$("#map-canvas").hide();
 				$("#l_matricula").html(data);
