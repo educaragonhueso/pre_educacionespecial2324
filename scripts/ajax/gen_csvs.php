@@ -68,7 +68,8 @@ if($subtipo_original=='csv_mat')
 //si es para datos de fase2
 if($subtipo_original=='csv_fase2')
 {
-	$solicitudes=$solicitud->getMatriculadosAdjudicadosServProvincial($subtipo_original,$rol,$log_gencsvs); 
+	//$solicitudes=$solicitud->getMatriculadosAdjudicadosServProvincial($subtipo_original,$rol,$log_gencsvs); 
+    $solicitudes=$solicitud->getSolicitudesFase2($subtipo_original,$rol,$id_centro,$estado_convocatoria,$log_gencsvs);
 }
 if($subtipo_original=='csv_mat_final')
 {

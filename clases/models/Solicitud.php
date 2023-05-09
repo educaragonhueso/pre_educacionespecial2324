@@ -2063,9 +2063,9 @@ as nasignado,c.nombre_centro, a.puntos_validados,a.id_centro_destino as id_centr
 	{
       $resultSet=array();
 		if($rol=='centro')
-		   $sql="SELECT * FROM alumnos a left join centros c on a.id_centro_final=c.id_centro JOIN baremo b ON b.id_alumno=a.id_alumno WHERE matricula='si' AND c.id_centro=$c AND fase_solicitud!='borrador' order by tipoestudios";
+		   $sql="SELECT * FROM alumnos a left join centros c on a.id_centro_final=c.id_centro JOIN baremo b ON b.id_alumno=a.id_alumno WHERE matricula=1 AND c.id_centro=$c AND fase_solicitud!='borrador' order by tipoestudios";
       else
-         $sql="SELECT a.*,c.nombre_centro as centro_definitivo FROM alumnos a JOIN centros c ON a.id_centro_final=c.id_centro JOIN baremo b ON b.id_alumno=a.id_alumno WHERE matricula='si' AND fase_solicitud!='borrador' ORDER BY id_centro ";
+         $sql="SELECT a.*,c.nombre_centro as centro_definitivo FROM alumnos a JOIN centros c ON a.id_centro_final=c.id_centro JOIN baremo b ON b.id_alumno=a.id_alumno WHERE matricula=1 AND fase_solicitud!='borrador' ORDER BY id_centro ";
 		$log->warning("CONSULTA MATRICULADOS FINAL SUBTIPO: ".$subtipo_listado);
 		$log->warning($sql);
 
@@ -2084,7 +2084,8 @@ as nasignado,c.nombre_centro, a.puntos_validados,a.id_centro_destino as id_centr
       $resultSet=array();
 
       if($rol=='admin')
-         $sql="SELECT * FROM alumnos a,baremo b WHERE a.id_alumno=b.id_alumno AND fase_solicitud!='borrador' AND estado_solicitud='apta' AND id_centro_estudios_origen!=id_centro_final $order";                                                   else if($rol=='centro')                                                                                                                                                                                                                         $sql="SELECT a.tel_dfamiliar1,a.matricula,a.email,a.id_alumno,a.nombre,a.apellido1,a.apellido2,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado as nasignado,c.nombre_centro,b.puntos_validados FROM alumnos a left join baremo b on b.id_alumno=a.id_alumno left join centros c on a.id_centro_final=c.id_centro WHERE fase_solicitud!='borrador' AND estado_solicitud='apta' AND c.id_centro=$c AND id_centro_estudios_origen!=id_centro_final order by tipoestudios";
+         $sql="SELECT a.*,b.*,c.* FROM centros c,alumnos a,baremo b WHERE c.id_centro=a.id_centro_final AND a.id_alumno=b.id_alumno AND fase_solicitud!='borrador' AND estado_solicitud='apta' AND id_centro_estudios_origen!=id_centro_final $order"; 
+      else if($rol=='centro')                                                                                                                                                                                                                         $sql="SELECT a.tel_dfamiliar1,a.matricula,a.email,a.id_alumno,a.nombre,a.apellido1,a.apellido2,a.tipoestudios,a.fase_solicitud,a.estado_solicitud,a.transporte,a.nordensorteo,a.nasignado as nasignado,c.nombre_centro,b.puntos_validados FROM alumnos a left join baremo b on b.id_alumno=a.id_alumno left join centros c on a.id_centro_final=c.id_centro WHERE fase_solicitud!='borrador' AND estado_solicitud='apta' AND c.id_centro=$c AND id_centro_estudios_origen!=id_centro_final order by tipoestudios";
       else if($rol=='alumno')
          $sql="SELECT * FROM alumnos a,baremo b WHERE a.id_alumno=b.id_alumno AND a.id_alumno=$id_alumno AND fase_solicitud!='borrador' AND estado_solicitud='apta' AND id_centro_estudios_origen!=id_centro_final";
       else
